@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+.text {
+    font-family: "Outfit", serif;
+}
+
+.offcanvas {
+    --bs-offcanvas-width: 500px;
+}
+
+/* === empty cart === */
+
+.V_emptycard_img {
+    width: 186px;
+    height: 150px;
+}
+
+.V_oops {
+    color: #141414;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.V_sub_oops {
+    color: #14141499;
+    width: 176px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.V_c_shopping {
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    font-weight: 500;
+    background-color: rgba(61, 73, 54, 1);
+    border-radius: 4px;
+    box-shadow: 0px -8px 10px 0px rgba(0, 0, 0, 0.2) inset;
+
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.5) inset;
+}
+
+/*  === cart with data === */
+
+.V_cart_item_text {
+    width: 200px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.V_shade {
+    color: rgba(20, 20, 20, 0.6);
+}
+
+.V_selected_price {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.V_count {
+    font-size: 20px;
+}
+
+.V_minus {
+    border: 0.51px solid rgba(20, 20, 20, 0.3);
+    color: rgba(20, 20, 20, 0.2);
+    font-size: 22px;
+    width: 28px;
+    height: 28px;
+    font-weight: 300;
+    line-height: 28px;
+
+}
+
+.V_plus {
+    font-size: 22px;
+    width: 28px;
+    height: 28px;
+    font-weight: 300;
+    color: rgba(20, 20, 20, 1);
+    border: 0.51px solid rgba(20, 20, 20, 1);
+    line-height: 28px;
+}
+
+.V_delete {
+    width: 28px;
+    height: 28px;
+    /* padding-left: 10px; */
+}
+
+.V_amount{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+/* ================ media query ================ */
+
+
+@media (max-width: 1921px) and (min-width: 1651px) {
+
+    /* === empty cart === */
+
+    .offcanvas {
+        --bs-offcanvas-width: 500px;
+    }
+
+    .V_emptycard_img {
+        width: 186px;
+        height: 150px;
+    }
+
+    .V_oops {
+        font-size: 18px;
+    }
+
+    .V_sub_oops {
+        width: 176px;
+        font-size: 14px;
+    }
+
+    .V_c_shopping {
+        font-size: 16px;
+    }
+
+    /*  === cart with data === */
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .V_count {
+        font-size: 20px;
+    }
+
+    .V_minus {
+        font-size: 22px;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+
+    }
+
+    .V_plus {
+        font-size: 22px;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+    }
+
+    .V_delete {
+        width: 28px;
+        height: 28px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+}
+
+@media (max-width: 1650px) and (min-width: 1441px) {
+
+    /* === empty cart === */
+
+    .offcanvas {
+        --bs-offcanvas-width: 450px;
+    }
+
+    .V_emptycard_img {
+        width: 186px;
+        height: 150px;
+    }
+
+    .V_oops {
+        font-size: 18px;
+    }
+
+    .V_sub_oops {
+        width: 176px;
+        font-size: 14px;
+    }
+
+    .V_c_shopping {
+        font-size: 16px;
+    }
+
+    /*  === cart with data === */
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .V_count {
+        font-size: 20px;
+    }
+
+    .V_minus {
+        font-size: 22px;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+
+    }
+
+    .V_plus {
+        font-size: 22px;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+    }
+
+    .V_delete {
+        width: 28px;
+        height: 28px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+}
+
+@media (max-width: 1440px) and (min-width: 1200px) {
+
+    /* === empty cart === */
+
+    .offcanvas {
+        --bs-offcanvas-width: 450px;
+    }
+
+    .V_emptycard_img {
+        width: 186px;
+        height: 150px;
+    }
+
+    .V_oops {
+        font-size: 18px;
+    }
+
+    .V_sub_oops {
+        width: 176px;
+        font-size: 14px;
+    }
+
+    .V_c_shopping {
+        font-size: 16px;
+    }
+
+    /*  === cart with data === */
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .V_count {
+        font-size: 20px;
+    }
+
+    .V_minus {
+        font-size: 22px;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+
+    }
+
+    .V_plus {
+        font-size: 22px;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+    }
+
+    .V_delete {
+        width: 28px;
+        height: 28px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+
+    /* === empty cart === */
+
+    .offcanvas {
+        --bs-offcanvas-width: 400px;
+    }
+
+    .V_emptycard_img {
+        width: 160px;
+        height: 150px;
+    }
+
+    .V_oops {
+        font-size: 16px;
+    }
+
+    .V_sub_oops {
+        width: 176px;
+        font-size: 14px;
+    }
+
+    .V_c_shopping {
+        font-size: 16px;
+    }
+
+    /*  === cart with data === */
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .V_count {
+        font-size: 20px;
+    }
+
+    .V_minus {
+        font-size: 22px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+
+    }
+
+    .V_plus {
+        font-size: 22px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .V_delete {
+        width: 20px;
+        height: 20px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+
+    /* === empty cart === */
+
+    .offcanvas {
+        --bs-offcanvas-width: 380px;
+    }
+
+    .V_emptycard_img {
+        width: 160px;
+        height: 150px;
+    }
+
+    .V_oops {
+        font-size: 16px;
+    }
+
+    .V_sub_oops {
+        width: 176px;
+        font-size: 14px;
+    }
+
+    .V_c_shopping {
+        font-size: 16px;
+    }
+
+    /*  === cart with data === */
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 13px;
+    }
+
+    .V_count {
+        font-size: 20px;
+    }
+
+    .V_minus {
+        font-size: 22px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+
+    }
+
+    .V_plus {
+        font-size: 22px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .V_delete {
+        width: 20px;
+        height: 20px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+
+    /* === empty cart === */
+
+    .offcanvas {
+        --bs-offcanvas-width: 350px;
+    }
+
+    .V_emptycard_img {
+        width: 130px;
+        height: 120px;
+    }
+
+    .V_oops {
+        font-size: 16px;
+    }
+
+    .V_sub_oops {
+        width: 176px;
+        font-size: 14px;
+    }
+
+    .V_c_shopping {
+        font-size: 14px;
+    }
+
+    /*  === cart with data === */
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 13px;
+    }
+
+    .V_count {
+        font-size: 20px;
+    }
+
+    .V_minus {
+        font-size: 22px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+
+    }
+
+    .V_plus {
+        font-size: 22px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .V_delete {
+        width: 20px;
+        height: 20px;
+    }
+
+    .V_eveline_height {
+        height: 150px;
+        object-fit: cover;
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 575px) and (min-width: 481px) {
+
+    /* === empty cart === */
+
+    .offcanvas {
+        --bs-offcanvas-width: 300px;
+    }
+
+    .V_emptycard_img {
+        width: 130px;
+        height: 120px;
+    }
+
+    .V_oops {
+        font-size: 16px;
+    }
+
+    .V_sub_oops {
+        width: 176px;
+        font-size: 14px;
+    }
+
+    .V_c_shopping {
+        font-size: 14px;
+    }
+
+    /*  === cart with data === */
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 13px;
+    }
+
+    .V_count {
+        font-size: 20px;
+    }
+
+    .V_minus {
+        font-size: 22px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+
+    }
+
+    .V_plus {
+        font-size: 22px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .V_delete {
+        width: 20px;
+        height: 20px;
+    }
+
+    /*  === cart with data === */
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 13px;
+    }
+
+    .V_count {
+        font-size: 20px;
+    }
+
+    .V_minus {
+        font-size: 22px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+
+    }
+
+    .V_plus {
+        font-size: 22px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .V_delete {
+        width: 20px;
+        height: 20px;
+    }
+
+    .V_eveline_height {
+        height: 150px;
+        object-fit: cover;
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+
+
+    /* === empty cart === */
+
+    .offcanvas {
+        --bs-offcanvas-width: 280px;
+    }
+
+    .V_emptycard_img {
+        width: 130px;
+        height: 120px;
+    }
+
+    .V_oops {
+        font-size: 16px;
+    }
+
+    .V_sub_oops {
+        width: 176px;
+        font-size: 14px;
+    }
+
+    .V_c_shopping {
+        font-size: 14px;
+    }
+
+    /*  === cart with data === */
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 13px;
+    }
+
+    .V_count {
+        font-size: 20px;
+    }
+
+    .V_minus {
+        font-size: 22px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+
+    }
+
+    .V_plus {
+        font-size: 22px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .V_delete {
+        width: 20px;
+        height: 20px;
+    }
+
+    .V_eveline_height {
+        height: 150px;
+        object-fit: cover;
+        width: 50% !important;
+    }
+}
