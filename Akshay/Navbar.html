@@ -5,353 +5,762 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <!-- **************** boostrep 5 ****************** -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Font Awesome CSS file -->
+    <!-- **************** Font Awesome CSS file  **************** -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- **************** owl carosal slider  **************** -->
+    <link rel="stylesheet" href="../CSS/owl.carousel.min.css">
+    <link rel="stylesheet" href="../CSS/owl.theme.default.min.css">
+
     <link rel="stylesheet" href="../index.html">
     <link rel="stylesheet" href="../CSS/main.css">
+
 </head>
 
 <body>
-    <div class="container-xxl">
-        <header class="header" id="header">
-            <div class="">
-                <p class="A_welcome mb-0 text-center py-2">Welcome to our Store</p>
-            </div>
-            <nav class="navbar container-xxl">
-                <section class="navbar-left">
-                    <a href="#" class="brand">Brand</a>
-                    <div class="burger" id="burger">
-                        <span class="burger-line"></span>
-                        <span class="burger-line"></span>
-                        <span class="burger-line"></span>
-                    </div>
-                </section>
-                <section class="navbar-center">
-                    <span class="overlay"></span>
-                    <div class="menu" id="menu">
-                        <div class="menu-header">
-                            <span class="menu-arrow"><i class="bx bx-chevron-left"></i></span>
-                            <span class="menu-title"></span>
+    <div>
+        <div class="">
+            <header class="header" id="header">
+                <div class="">
+                    <p class="A_welcome mb-0 text-center py-2">Welcome to our Store</p>
+                </div>
+                <nav class="navbar container-xxl">
+                    <section class="navbar-left">
+                        <a href="#" class="brand">Brand</a>
+                        <div class="burger" id="burger">
+                            <span class="burger-line"></span>
+                            <span class="burger-line"></span>
+                            <span class="burger-line"></span>
                         </div>
-                        <ul class="menu-inner">
-                            <li class="menu-item"><a href="#" class="menu-link text-decoration-none">New Arrival</a></li>
-                            <li class="menu-item menu-dropdown">
-                                <span class="menu-link">Brands<i class="fa-solid fa-angle-down ps-2"></i></span>
-                                <div class="submenu megamenu megamenu-column-2">
-                                    <ul class="submenu-list">
-                                        <li>
-                                            <div class="py-2">
-                                                <div class="input-group">
-                                                    <span class="input-group-text border-0"><i class="fa-solid fa-magnifying-glass "></i></span>
-                                                    <input type="text" class="form-control py-2 px-1 bg-light border-0" placeholder="Search Here">
+                    </section>
+                    <section class="navbar-center">
+                        <span class="overlay"></span>
+                        <div class="menu" id="menu">
+                            <div class="menu-header">
+                                <span class="menu-arrow"><i class="bx bx-chevron-left"></i></span>
+                                <span class="menu-title"></span>
+                            </div>
+                            <ul class="menu-inner">
+                                <li class="menu-item"><a href="#" class="menu-link text-decoration-none">New Arrival</a>
+                                </li>
+                                <li class="menu-item menu-dropdown">
+                                    <span class="menu-link">Brands<i class="fa-solid fa-angle-down ps-2"></i></span>
+                                    <div class="submenu megamenu megamenu-column-2">
+                                        <ul class="submenu-list">
+                                            <li>
+                                                <div class="py-2">
+                                                    <div class="input-group">
+                                                        <span class="input-group-text border-0"><i
+                                                                class="fa-solid fa-magnifying-glass "></i></span>
+                                                        <input type="text"
+                                                            class="form-control py-2 px-1 bg-light border-0"
+                                                            placeholder="Search Here">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li><p class="mb-0 fw-bold " style="font-size: 18px; color: #3D4936;">Brands</p></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Maybelline New York</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Babyliss</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Huda Beauty</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">The Body Shop</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">M.A.C</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">BadgePack Designs</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Nykaa Naturals</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">L’Oreal Paris</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Carry City</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Chik</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">DAX</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu-item menu-dropdown">
-                                <span class="menu-link">Make up<i class="fa-solid fa-angle-down ps-2"></i></i></span>
-                                <div class="submenu megamenu megamenu-column-4">
-                                    <div class="submenu-inner">
-                                        <h4 class="submenu-title fw-bold">Face</h4>
-                                        <ul class="submenu-list">
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Face Prime</a>
                                             </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Blush</a>
+                                            <li>
+                                                <p class="mb-0 fw-bold " style="font-size: 18px; color: #3D4936;">Brands
+                                                </p>
                                             </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Brozer</a>
+                                            <li class="submenu-item"><a href="#"
+                                                    class="submenu-link text-decoration-none text-secondary">Maybelline
+                                                    New
+                                                    York</a></li>
+                                            <li class="submenu-item"><a href="#"
+                                                    class="submenu-link text-decoration-none text-secondary">Babyliss</a>
                                             </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Foundation</a>
+                                            <li class="submenu-item"><a href="#"
+                                                    class="submenu-link text-decoration-none text-secondary">Huda
+                                                    Beauty</a>
                                             </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Concealer</a>
+                                            <li class="submenu-item"><a href="#"
+                                                    class="submenu-link text-decoration-none text-secondary">The Body
+                                                    Shop</a></li>
+                                            <li class="submenu-item"><a href="#"
+                                                    class="submenu-link text-decoration-none text-secondary">M.A.C</a>
                                             </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Compact</a>
+                                            <li class="submenu-item"><a href="#"
+                                                    class="submenu-link text-decoration-none text-secondary">BadgePack
+                                                    Designs</a></li>
+                                            <li class="submenu-item"><a href="#"
+                                                    class="submenu-link text-decoration-none text-secondary">Nykaa
+                                                    Naturals</a></li>
+                                            <li class="submenu-item"><a href="#"
+                                                    class="submenu-link text-decoration-none text-secondary">L'Oreal
+                                                    Paris</a></li>
+                                            <li class="submenu-item"><a href="#"
+                                                    class="submenu-link text-decoration-none text-secondary">Carry
+                                                    City</a>
                                             </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Contour</a>
+                                            <li class="submenu-item"><a href="#"
+                                                    class="submenu-link text-decoration-none text-secondary">Chik</a>
                                             </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">BB & CC Cream</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Primer</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Loose Powder</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Setting Spray</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Highlighter</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Makeup Combo</a>
-                                            </li>
-                                        </ul>
-                                        
-                                    </div>
-                                    <div class="submenu-inner">
-                                        <h4 class="submenu-title fw-bold">Eyes</h4>
-                                        <ul class="submenu-list">
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Kajal</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eyeliner</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eyeshadow</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eye Lashes</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eye Primer</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eye Brow Enhancers</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Mascara</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eye Makeup Remover</a>
-                                            </li>
-                                        </ul>
-                                        <h4 class="submenu-title fw-bold">Nails</h4>
-                                        <ul class="submenu-list">
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Nail Polish</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Nail Art Kits</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Nail Care</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Nail Polish Remover</a>
+                                            <li class="submenu-item"><a href="#"
+                                                    class="submenu-link text-decoration-none text-secondary">DAX</a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="submenu-inner">
-                                        <h4 class="submenu-title fw-bold">Lips</h4>
-                                        <ul class="submenu-list">
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Lipstick</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Lip Gloss</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Lip Liner</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Liquid Lipsticks</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Lip Oil</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Matte Lipsticks</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Powder Lipsticks</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Lip Plumper</a>
-                                            </li>
-                                        </ul>
-                                        <h4 class="submenu-title fw-bold">Makeup Kits & Combos</h4>
-                                        <ul class="submenu-list">
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Makeup Kits</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Makeup Combos</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="submenu-inner">
-                                        <h4 class="submenu-title fw-bold">Tools & Brushes</h4>
-                                        <ul class="submenu-list">
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Brush Sets</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eye Brush</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Lip Brush</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Face Brush</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Sponges & Applicators</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eyelash Curlers</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Sharpeners</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Brush Cleaners</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="menu-item menu-dropdown">
-                                <span class="menu-link">Skin<i class="fa-solid fa-angle-down ps-2"></i></span>
-                                <div class="submenu megamenu megamenu-column-4">
-                                    <div class="submenu-inner">
-                                        <h4 class="submenu-title fw-bold">Face</h4>
-                                        <ul class="submenu-list">
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Face Prime</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Blush</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Brozer</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Foundation</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Concealer</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Compact</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Contour</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">BB & CC Cream</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Primer</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Loose Powder</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Setting Spray</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Highlighter</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Makeup Combo</a>
-                                            </li>
-                                        </ul>
-                                        
-                                    </div>
-                                    <div class="submenu-inner">
-                                        <h4 class="submenu-title fw-bold">Eyes</h4>
-                                        <ul class="submenu-list">
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Kajal</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eyeliner</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eyeshadow</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eye Lashes</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eye Primer</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eye Brow Enhancers</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Mascara</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eye Makeup Remover</a>
-                                            </li>
-                                        </ul>
-                                        <h4 class="submenu-title fw-bold">Nails</h4>
-                                        <ul class="submenu-list">
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Nail Polish</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Nail Art Kits</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Nail Care</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Nail Polish Remover</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="submenu-inner">
-                                        <h4 class="submenu-title fw-bold">Lips</h4>
-                                        <ul class="submenu-list">
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Lipstick</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Lip Gloss</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Lip Liner</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Liquid Lipsticks</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Lip Oil</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Matte Lipsticks</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Powder Lipsticks</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Lip Plumper</a>
-                                            </li>
-                                        </ul>
-                                        <h4 class="submenu-title fw-bold">Makeup Kits & Combos</h4>
-                                        <ul class="submenu-list">
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Makeup Kits</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Makeup Combos</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="submenu-inner">
-                                        <h4 class="submenu-title fw-bold">Tools & Brushes</h4>
-                                        <ul class="submenu-list">
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Brush Sets</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eye Brush</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Lip Brush</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Face Brush</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Sponges & Applicators</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Eyelash Curlers</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Sharpeners</a>
-                                            </li>
-                                            <li class="submenu-item"><a href="#" class="submenu-link text-decoration-none text-secondary">Brush Cleaners</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="menu-item menu-dropdown">
-                                <span class="menu-link">Hair<i class="fa-solid fa-angle-down ps-2"></i></span>
-                                <div class="submenu megamenu megamenu-column-3">
-                                    <ul class="submenu-list">
-                                        <li class="submenu-item"><a href="#" class="submenu-link">Login</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link">Register</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link">Track Order</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link">Help</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu-item menu-dropdown">
-                                <span class="menu-link">Combo<i class="fa-solid fa-angle-down ps-2"></i></span>
-                                <div class="submenu megamenu megamenu-column-1">
-                                    <ul class="submenu-list">
-                                        <li class="submenu-item"><a href="#" class="submenu-link">Login</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link">Register</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link">Track Order</a></li>
-                                        <li class="submenu-item"><a href="#" class="submenu-link">Help</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu-item"><a href="#" class="menu-link text-decoration-none">Offers</a></li>
-                        </ul>
-                    </div>
-                </section>
-                <section class="navbar-right">
-                    <div>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                    <div>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-user"></i>
-                    </div>
-                </section>
-            </nav>
-        </header>
+                                </li>
+                                <li class="menu-item menu-dropdown">
+                                    <span class="menu-link">Make up<i
+                                            class="fa-solid fa-angle-down ps-2"></i></i></span>
+                                    <div class="submenu megamenu megamenu-column-4">
+                                        <div class="submenu-inner">
+                                            <h4 class="submenu-title fw-bold">Face</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Face
+                                                        Prime</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Blush</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Brozer</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Foundation</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Concealer</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Compact</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Contour</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">BB & CC
+                                                        Cream</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Primer</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Loose
+                                                        Powder</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Setting
+                                                        Spray</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Highlighter</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Makeup
+                                                        Combo</a>
+                                                </li>
+                                            </ul>
 
+                                        </div>
+                                        <div class="submenu-inner">
+                                            <h4 class="submenu-title fw-bold">Eyes</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Kajal</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Eyeliner</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Eyeshadow</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Eye
+                                                        Lashes</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Eye
+                                                        Primer</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Eye
+                                                        Brow
+                                                        Enhancers</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Mascara</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Eye
+                                                        Makeup
+                                                        Remover</a>
+                                                </li>
+                                            </ul>
+                                            <h4 class="submenu-title fw-bold">Nails</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Nail
+                                                        Polish</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Nail
+                                                        Art
+                                                        Kits</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Nail
+                                                        Care</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Nail
+                                                        Polish
+                                                        Remover</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="submenu-inner">
+                                            <h4 class="submenu-title fw-bold">Lips</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Lipstick</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Lip
+                                                        Gloss</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Lip
+                                                        Liner</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Liquid
+                                                        Lipsticks</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Lip
+                                                        Oil</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Matte
+                                                        Lipsticks</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Powder
+                                                        Lipsticks</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Lip
+                                                        Plumper</a>
+                                                </li>
+                                            </ul>
+                                            <h4 class="submenu-title fw-bold">Makeup Kits & Combos</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Makeup
+                                                        Kits</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Makeup
+                                                        Combos</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="submenu-inner">
+                                            <h4 class="submenu-title fw-bold">Tools & Brushes</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Brush
+                                                        Sets</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Eye
+                                                        Brush</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Lip
+                                                        Brush</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Face
+                                                        Brush</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Sponges
+                                                        &
+                                                        Applicators</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Eyelash
+                                                        Curlers</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Sharpeners</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Brush
+                                                        Cleaners</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="menu-item menu-dropdown">
+                                    <span class="menu-link">Skin<i class="fa-solid fa-angle-down ps-2"></i></span>
+                                    <div class="submenu megamenu megamenu-column-4">
+                                        <div class="submenu-inner">
+                                            <h4 class="submenu-title fw-bold">Moisturizers</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Face
+                                                        Moisturizer</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Face
+                                                        Cream</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Night
+                                                        Cream</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Face
+                                                        Oils</a>
+                                                </li>
+                                            </ul>
+                                            <h4 class="submenu-title fw-bold">Serums</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Serums
+                                                        &
+                                                        Essence</a>
+                                                </li>
+                                            </ul>
+                                            <h4 class="submenu-title fw-bold">Masks</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Sheet
+                                                        Masks</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Sleeping
+                                                        Masks</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Face
+                                                        Masks</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Masks &
+                                                        Peels</a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                        <div class="submenu-inner">
+                                            <h4 class="submenu-title fw-bold">Cleansers</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Face
+                                                        Wash</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Cleanser</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Micellar
+                                                        Water</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Face
+                                                        Wipes</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Makeup
+                                                        Remover</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Scrubs</a>
+                                                </li>
+
+                                            </ul>
+                                            <h4 class="submenu-title fw-bold">Toners</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Toners
+                                                        &
+                                                        Mists</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Rose
+                                                        Water</a>
+                                                </li>
+                                            </ul>
+                                            <h4 class="submenu-title fw-bold">Sun Care</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Face
+                                                        Sunscreen</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Body
+                                                        Sunscreen</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="submenu-inner">
+                                            <h4 class="submenu-title fw-bold">Body Care</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Lotion
+                                                        &
+                                                        Creams</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Body
+                                                        Butter</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Massage
+                                                        Oils</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Shower
+                                                        Gels
+                                                    </a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Soaps</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Scrubs
+                                                        &
+                                                        Loofahs</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Bath
+                                                        Salts</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Body
+                                                        Wash</a>
+                                                </li>
+                                            </ul>
+                                            <h4 class="submenu-title fw-bold">Skin Tools</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Face
+                                                        Massagers</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Cleansing
+                                                        Brushes</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Blackhead
+                                                        Remover</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Dermarollers</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="submenu-inner">
+                                            <h4 class="submenu-title fw-bold">Eye Care</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Under
+                                                        Eye
+                                                        Cream </a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Under
+                                                        Eye
+                                                        Patches</a>
+                                                </li>
+                                            </ul>
+                                            <h4 class="submenu-title fw-bold">Lip Care</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Lip
+                                                        Balm
+                                                    </a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Lip
+                                                        Scrubs</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Lip
+                                                        Masks</a>
+                                                </li>
+                                            </ul>
+                                            <h4 class="submenu-title fw-bold">Hands & Feet</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hand &
+                                                        Foot
+                                                        Cream </a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hand &
+                                                        Foot
+                                                        Mask</a>
+                                                </li>
+                                            </ul>
+                                            <h4 class="submenu-title fw-bold">Kits & Combos</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Facial
+                                                        Kits</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Combos</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="menu-item menu-dropdown">
+                                    <span class="menu-link">Hair<i class="fa-solid fa-angle-down ps-2"></i></span>
+                                    <div class="submenu megamenu megamenu-column-3">
+                                        <div class="submenu-inner">
+                                            <h4 class="submenu-title fw-bold">Hair Styling</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hair
+                                                        Color</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Gels &
+                                                        Waxes</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hair
+                                                        Spray</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hair
+                                                        Fiber</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Styling
+                                                        Creams</a>
+                                                </li>
+                                            </ul>
+                                            <h4 class="submenu-title fw-bold">Hair Nourishments</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hair
+                                                        Oil</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Conditioner</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Shampoo</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hair
+                                                        Creams
+                                                        & Masks</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Dry
+                                                        Shampoo</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hair
+                                                        Supplements</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="submenu-inner">
+                                            <h4 class="submenu-title fw-bold">Tools & Accessories</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hair
+                                                        Extensions</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Straighteners</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hair
+                                                        Brushes</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Rollers
+                                                        &
+                                                        Curlers</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Dryers
+                                                        &
+                                                        Stylers</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hair
+                                                        Accessories</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hair
+                                                        Clips
+                                                        & Bands</a>
+                                                </li>
+
+                                            </ul>
+                                            <h4 class="submenu-title fw-bold">Hair Kits & Combos</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hair
+                                                        Kits</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Hair
+                                                        Combos</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="submenu-inner">
+                                            <h4 class="submenu-title fw-bold">Shop By Hair Type</h4>
+                                            <ul class="submenu-list">
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Straight</a>
+                                                </li>
+                                                <li class="submenu-item"><a href="#"
+                                                        class="submenu-link text-decoration-none text-secondary">Curly &
+                                                        Wavy</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="menu-item menu-dropdown">
+                                    <span class="menu-link">Combo<i class="fa-solid fa-angle-down ps-2"></i></span>
+                                    <div class="submenu megamenu megamenu-column-1">
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item"><a href="#" class="submenu-link">Login</a></li>
+                                            <li class="submenu-item"><a href="#" class="submenu-link">Register</a></li>
+                                            <li class="submenu-item"><a href="#" class="submenu-link">Track Order</a>
+                                            </li>
+                                            <li class="submenu-item"><a href="#" class="submenu-link">Help</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="menu-item"><a href="#" class="menu-link text-decoration-none">Offers</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="navbar-right">
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                    </section>
+                </nav>
+            </header>
+        </div>
     </div>
+    <div>
+        <div class="">
+            <div class="owl-carousel owl-theme A_dots">
+                <div class="item ">
+                    <div>
+                        <div class="position-relative">
+                            <img src="../IMG/Akshay/Banner 4.png" alt="" class="img-fluid">
+                            <div class="position-absolute text-overlay">
+                                <h2 class="text-start display-4 display-md-3 display-lg-2">GLOW FROM <br>WITHIN, SHINE ON <br>THE OUTSIDE.</h2>
+                                <p class="pb-2 lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Veniam voluptatibus velit reiciendis illo, 
+                                        exercitationem dolorum facere?</p>
+                                <div><hr class="py-3"></div>        
+                                <a href="#" class="text-decoration-none" style="color:#3D4936 ;"><span class="A_buttan_class">Shop now</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                        <div>
+                                <div class="position-relative">
+                                    <img src="../IMG/Akshay/Banner 6.png" alt="" class="img-fluid">
+                                    <div class="position-absolute text-overlay">
+                                        <h2 class="text-start display-4 display-md-3 display-lg-2">SKIN CARE</h2>
+                                        <h4 class="text-start">Moisturizer</h4>
+                                        <p class="pb-2 lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Veniam voluptatibus velit reiciendis illo, 
+                                                exercitationem dolorum facere?</p>
+                                        <div><hr class="py-3"></div>        
+                                        <a href="#" class="text-decoration-none" style="color:#3D4936 ;"><span class="A_buttan_class">Shop now</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <div class="position-relative">
+                            <img src="../IMG/Akshay/Banner 5.png" alt="" class="img-fluid">
+                            <div class="position-absolute text-overlay">
+                                <h2 class="text-start display-4 display-md-3 display-lg-2">STAY FLAWLESS, <br> ONE SWIPE AT A  <br>TIME</h2>
+                                <p class="pb-2 lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Veniam voluptatibus velit reiciendis illo, 
+                                        exercitationem dolorum facere?</p>
+                                <div><hr class="py-3"></div>        
+                                <a href="#" class="text-decoration-none" style="color:#3D4936 ;"><span class="A_buttan_class">Shop now</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-xxl">
+        <div class="owl-carousel smallslider owl-theme">
+                <div class="item">
+                        <div>
+                              <a href="#"><img src="../IMG/Akshay/face.png" alt="" class="A_smallslider"></a>  
+                        </div>
+                </div>
+                <div class="item">
+                        <div>
+                                <a href="#"><img src="../IMG/Akshay/eyes.png" alt="" class="A_smallslider"></a>  
+                          </div>
+                </div>
+                <div class="item">
+                        <div>
+                                <a href="#"><img src="../IMG/Akshay/lips.png" alt="" class="A_smallslider"></a>  
+                        </div>
+                </div>
+                <div class="item">
+                        <div>
+                                <a href="#"><img src="../IMG/Akshay/hair.png" alt="" class="A_smallslider"></a>  
+                        </div>
+                </div>
+                <div class="item">
+                        <div>
+                            <a href="#"><img src="../IMG/Akshay/nail.png" alt="" class="A_smallslider"></a>  
+                        </div>
+                </div>
+                <div class="item">
+                        <div>
+                            <a href="#"><img src="../IMG/Akshay/skin.png" alt="" class="A_smallslider"></a>  
+                        </div>
+                </div>
+                <div class="item">
+                        <div>
+                            <a href="#"><img src="../IMG/Akshay/bathbody.png" alt="" class="A_smallslider"></a>  
+                        </div>
+                </div>       
+             </div>
+    </div>
+    
 
-  
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/owl.carousel.min.js"></script>
     <!-- bootsrap scripts  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -362,7 +771,64 @@
             menu.classList.toggle("open");
         }
     </script>
-      <script src="../JS/navbar.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel.A_dots').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 1
+                    }
+                },
+                // autoplay:true,
+                autoplayTimeout:4000
+            })
+       
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+    $('.owl-carousel.smallslider').owlCarousel({
+        loop: true,              
+        margin: 10,              
+        nav: true,               
+        dots: false,              
+        // autoplay: true,          
+        // autoplayTimeout: 3000,   
+        // autoplayHoverPause: true, 
+        // responsiveClass: true,   
+        responsive:{
+            0:{       // Mobile screens
+                items: 1
+            },
+            480:{     // Small screens
+                items: 2
+            },
+            768:{     // Tablets
+                items: 3
+            },
+            1024:{    // Desktops
+                items: 4
+            },
+            1200:{    // Large screens
+                items: 7
+            }
+        }
+    });
+});
+
+
+    </script>
+    <script src="../JS/navbar.js"></script>
+    
 </body>
 
 </html>
