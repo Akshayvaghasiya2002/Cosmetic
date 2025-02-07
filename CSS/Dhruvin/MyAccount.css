@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+.ds_fs{
+    font-family: "Outfit", serif;
+}
+.ds_muted{
+    color: #14141499;
+}
+.ds_color{
+    color: #3D4936;
+}
+.ds_cursor{
+    cursor: pointer;
+}
+.ds_lh{
+    line-height: 20px;
+}
+.ds_600{
+    font-weight: 600;
+}
+.ds_star-img{
+    width: 25px;
+    object-fit: cover;
+}
+.ds_inner{
+    border: 0.6px solid #14141433;
+    border-radius: 5px;
+}
+.ds_person-img{
+    width: 90px;
+}
+.ds_email{
+    font-size: 14px;
+}
+.ds_border{
+    border: 0.8px solid #14141433
+}
+.ds_active-border{
+   border-left: 4px solid #3D4936;
+   border-radius: 3px 3px 3px 3px;
+}
+.ds_icon-img{
+    width: 22px;
+}
+
+
+
+
+/* ***************** My Profile *************** */
+.ds_pro_inner{
+    border: 0.6px solid #14141433;
+    border-radius: 5px;
+}
+.ds_pro_img{
+    width: 120px;
+}
+.ds_pro_round{
+    position: absolute;
+    top: 72%;
+    right: 7%;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ds_pro_camera{
+    width: 20px;
+}
+.ds_pro_label{
+    font-size: 13px;
+}
+.ds_pro_input{
+    background: #1414140F;
+    border: 0;
+    height: 45px;
+}
+.ds_pro_input:focus{
+   background-color: #1414140F;
+   box-shadow: none;
+}
+.ds_pro_calender{
+    position: absolute;
+    top: 10px;
+    right: 9px;
+}
+.ds_calender_img{
+    width: 25px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    /* -webkit-appearance: none; */
+}
+.ds_pro_div{
+    height: 45px;
+    width: 90px;
+    background: #1414140F;
+    border-radius: 5px;
+}
+.ds_pro_btn{
+    box-shadow: 0px -8px 10px 0px #00000033 inset;
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+    background: #3D4936;
+    color: white;
+    width: 100%;
+    padding: 10px 0px;
+    border: 0;
+    border-radius: 5px;
+}
+.ds_pro_res{
+    box-shadow: 0px 0px 24px 3px #7272721A;
+    background: #FFFFFF; 
+    padding: 10px 22px; 
+}
+
+
+
+
+/* <!-- ************ My Order  *********** --> */
+.ds_no_order{
+    height: 600px;
+}
+.ds_orderno_img{
+    width: 230px;
+}
+.ds_order_select{
+    border: 0;
+}
+.ds_order_select:focus-visible{
+    border: 0;
+}
+.ds_order_round{
+    width: 12px;
+    height: 12px;
+    background: #F8A120;
+    border-radius: 50%;
+}
+.ds_order_color{
+    color: #F8A120;
+}
+.ds_order_txt{
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+.ds_order_round2{
+    width: 12px;
+    height: 12px;
+    background: #388E3C;
+    border-radius: 50%;
+}
+.ds_order_color2{
+    color: #388E3C;
+}
+.ds_order_round3{
+    width: 12px;
+    height: 12px;
+    background: #FF3300;
+    border-radius: 50%;
+}
+.ds_order_color3{
+    color: #FF3300;
+}
+
+
+@media (max-width:992px) {
+    .ds_order_txt{
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width:767px) {
+    .ds_pro_offcanvas{
+        --bs-offcanvas-zindex: 1051 !important;
+        --bs-offcanvas-width: 400px !important;
+    }  
+
+    /* <!-- ************ My Order  *********** --> */
+    .ds_no_order{
+        height: 500px;
+    }
+}
+
+@media (max-width:575px) {
+    .ds_pro_text{
+        font-size: 16px;
+    }
+    .ds_icon-img {
+        width: 18px;
+    }
+}
+
+@media (max-width:426px) {
+    .ds_pro_offcanvas{
+        --bs-offcanvas-width: 300px !important;
+    } 
+    .ds_flex_manage{
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width:321px) {
+    .ds_pro_offcanvas{
+        --bs-offcanvas-width: 290px !important;
+    } 
+
+/* <!-- ************ My Order  *********** --> */
+.ds_order_text{
+    font-size: 18px;
+}
+}
