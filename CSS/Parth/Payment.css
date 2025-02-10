@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+.text {
+    font-family: "Outfit", serif;
+}
+
+.V_cuppon {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.V_div {
+    background-color: rgba(20, 20, 20, 0.06);
+    height: 50px;
+    border: 0px;
+    width: 87%;
+    border-radius: 4px;
+
+}
+.V_div1 {
+    background-color: rgba(20, 20, 20, 0.06);
+    height: 50px;
+    border: 0px;
+    width: 100%;
+    border-radius: 4px;
+
+}
+
+
+.V_input_cuppon {
+    background-color: transparent;
+    border: 0px;
+    height: 50px;
+    outline: none !important;
+}
+
+.V_input_cuppon::placeholder {
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(20, 20, 20, 0.6);
+
+}
+
+.V_c_icon {
+    width: 18px;
+    height: 18px;
+}
+
+.V_apply {
+    background: rgba(61, 73, 54, 1);
+    box-shadow: 0px -8px 10px 0px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.5) inset;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+    height: 50px;
+}
+
+.V_sprcial {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.V_C_code {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.V_code_des {
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(20, 20, 20, 0.6);
+}
+
+.V_C_save_price {
+    font-weight: 500;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.V_banking {
+    font-weight: 500;
+    font-size: 22px;
+}
+.V_card_number{
+    font-weight: 300;
+    font-size: 12px;
+    color: rgba(20, 20, 20, 0.6);
+    border: 0px;
+}
+
+
+
+.accordion-button:not(.collapsed) {
+    color: rgba(20, 20, 20, 1);
+    background-color: transparent;
+    box-shadow: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+.V_border {
+    border: 0.6px solid rgba(20, 20, 20, 0.4);
+}
+
+.V_select_add {
+    border: 0.6px solid rgba(20, 20, 20, 0.4);
+    border-radius: 4px;
+}
+
+.V_summary {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(20, 20, 20, 1);
+}
+
+.V_cart_item_text {
+    width: 200px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.V_shade {
+    color: rgba(20, 20, 20, 0.6);
+}
+
+.V_selected_price {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.V_line {
+    width: 90% !important;
+}
+
+.V_delivery {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.V_price_detail {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.V_green {
+    color: rgba(56, 142, 60, 1);
+}
+
+.V_price_detail1 {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+
+/* ================ media query ================ */
+
+
+@media (max-width: 1921px) and (min-width: 1651px) {
+
+    .V_summary {
+        font-size: 16px;
+    }
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 16px;
+    }
+
+    .V_price_detail {
+        font-size: 16px;
+    }
+
+    .V_price_detail1 {
+        font-size: 18px;
+    }
+
+
+}
+
+@media (max-width: 1650px) and (min-width: 1441px) {
+
+
+    .V_summary {
+        font-size: 16px;
+    }
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 16px;
+    }
+
+    .V_price_detail {
+        font-size: 16px;
+    }
+
+    .V_price_detail1 {
+        font-size: 18px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+
+
+}
+
+@media (max-width: 1440px) and (min-width: 1200px) {
+
+
+    .V_summary {
+        font-size: 16px;
+    }
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 16px;
+    }
+
+    .V_price_detail {
+        font-size: 16px;
+    }
+
+    .V_price_detail1 {
+        font-size: 18px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+
+
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+
+
+    .V_summary {
+        font-size: 16px;
+    }
+
+    .V_cart_item_text {
+        width: 140px;
+        font-size: 12px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 14px;
+    }
+
+    .V_price_detail {
+        font-size: 14px;
+    }
+
+    .V_price_detail1 {
+        font-size: 16px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+
+
+
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+
+    .V_summary {
+        font-size: 16px;
+    }
+
+    .V_cart_item_text {
+        width: 175px;
+        font-size: 12px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 14px;
+    }
+
+    .V_price_detail {
+        font-size: 14px;
+    }
+
+    .V_price_detail1 {
+        font-size: 16px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+
+
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+
+    .V_summary {
+        font-size: 16px;
+    }
+
+    .V_cart_item_text {
+        width: 350px;
+        font-size: 16px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 16px;
+    }
+
+    .V_price_detail {
+        font-size: 14px;
+    }
+
+    .V_price_detail1 {
+        font-size: 16px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+
+}
+
+@media (max-width: 575px) and (min-width: 481px) {
+
+    .V_summary {
+        font-size: 14px;
+    }
+
+    .V_cart_item_text {
+        width: 350px;
+        font-size: 16px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 14px;
+    }
+
+    .V_price_detail {
+        font-size: 14px;
+    }
+
+    .V_price_detail1 {
+        font-size: 14px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+        width: 50% !important;
+    }
+
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+
+    .V_summary {
+        font-size: 14px;
+    }
+
+    .V_cart_item_text {
+        width: 250px;
+        font-size: 12px;
+    }
+
+    .V_selected_price {
+        font-size: 14px;
+    }
+
+    .V_delivery {
+        font-size: 14px;
+    }
+
+    .V_price_detail {
+        font-size: 14px;
+    }
+
+    .V_price_detail1 {
+        font-size: 14px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+        width: 50% !important;
+    }
+
+}
+
+
+
+/* / ************* Container ********** / */
+.d_container {
+    /* margin-right: auto;
+  margin-left: auto; */
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+}
+
+@media (min-width: 1650px) {
+    .d_container {
+        width: 1500px;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1649px) {
+    .d_container {
+        width: 1199px;
+        max-width: none;
+        margin: auto;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .d_container {
+        width: 970px;
+        max-width: none;
+        margin: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .d_container {
+        width: 750px;
+        max-width: none;
+        margin: auto;
+
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .d_container {
+        max-width: 750px;
+        margin: auto;
+
+    }
+}
+
+@media (min-width: 300px) and (max-width: 450px) {
+    .d_container {
+        max-width: 750px;
+        padding: 0px 10px;
+        margin: auto;
+    }
+}

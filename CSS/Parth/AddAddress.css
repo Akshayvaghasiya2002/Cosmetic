@@ -66,7 +66,7 @@
     border-radius: 4px;
 }
 
-.V_proceed_paymeny {
+.V_proceed_payment {
     color: rgba(255, 255, 255, 1);
     font-size: 16px;
     font-weight: 500;
@@ -103,43 +103,652 @@
     font-size: 16px;
 }
 
-.V_line{
+.V_line {
     width: 90% !important;
 }
-.V_delivery{
+
+.V_delivery {
     font-size: 16px;
     font-weight: 500;
 }
 
-.V_price_detail{
+.V_price_detail {
     font-size: 16px;
     font-weight: 500;
 }
-.V_green{
+
+.V_green {
     color: rgba(56, 142, 60, 1);
 }
-.V_price_detail1{
+
+.V_price_detail1 {
     font-weight: 500;
     font-size: 18px;
 }
+
+
+
+
+/* ===============  select Addredd =============== */
+
+.V_address {
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba(61, 73, 54, 1);
+    border: 0.8px solid rgba(61, 73, 54, 0.6);
+    border-radius: 4px;
+}
+
+.V_select_add {
+    border: 0.6px solid rgba(20, 20, 20, 1);
+    border-radius: 4px;
+}
+
+.V_select_add1 {
+    border: 0.6px solid rgba(20, 20, 20, 0.2);
+    border-radius: 4px;
+}
+
+.V_place {
+    background-color: rgba(236, 243, 229, 1);
+    width: 100px;
+    border-radius: 4px;
+}
+
+.V_nsme {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.V_Address {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.V_change {
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba(61, 73, 54, 1);
+    border: 0.8px solid rgba(61, 73, 54, 0.6);
+    border-radius: 4px;
+    width: 160px;
+}
+
+
+/*   Edit Shipping Information */
+
+.modal-header {
+    border-bottom: 0px;
+}
+
+.modal {
+    --bs-modal-width: 800px;
+}
+
+.V_line1 {
+    width: 95% !important;
+}
+
+.form-label {
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(20, 20, 20, 0.6);
+}
+
+.V_cancle {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+    border: 0.8px solid rgba(61, 73, 54, 0.6);
+    color: rgba(61, 73, 54, 1);
+}
+
+.modal-footer {
+    border-top: 0px;
+}
+
+.V_save_change {
+    background: rgba(61, 73, 54, 1);
+    box-shadow: 0px -8px 10px 0px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.5) inset;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+}
+
 /* ================ media query ================ */
 
 
-@media (max-width: 1921px) and (min-width: 1651px) {}
+@media (max-width: 1921px) and (min-width: 1651px) {
 
-@media (max-width: 1650px) and (min-width: 1441px) {}
+    .V_add_head {
+        font-size: 22px;
+    }
 
-@media (max-width: 1440px) and (min-width: 1200px) {}
+    .V_bottom {
+        padding-bottom: 30px;
+    }
 
-@media (max-width: 1199px) and (min-width: 992px) {}
+    .V_select {
+        height: 50px;
+        width: 100%;
+    }
 
-@media (max-width: 991px) and (min-width: 768px) {}
+    .V_save {
+        font-size: 18px;
+    }
 
-@media (max-width: 767px) and (min-width: 576px) {}
+    .V_layout {
+        width: 100px;
+        height: 50px;
+    }
 
-@media (max-width: 575px) and (min-width: 481px) {}
+    .V_proceed_payment {
+        font-size: 16px;
+        width: 300px;
+        height: 50px;
+    }
 
-@media (max-width: 480px) and (min-width: 320px) {}
+    .V_summary {
+        font-size: 16px;
+    }
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 16px;
+    }
+
+    .V_price_detail {
+        font-size: 16px;
+    }
+
+    .V_price_detail1 {
+        font-size: 18px;
+    }
+
+
+}
+
+@media (max-width: 1650px) and (min-width: 1441px) {
+    .V_add_head {
+        font-size: 22px;
+    }
+
+    .V_bottom {
+        padding-bottom: 30px;
+    }
+
+    .V_select {
+        height: 50px;
+        width: 100%;
+    }
+
+    .V_save {
+        font-size: 18px;
+    }
+
+    .V_layout {
+        width: 100px;
+        height: 50px;
+    }
+
+    .V_proceed_payment {
+        font-size: 16px;
+        width: 300px;
+        height: 50px;
+    }
+
+    .V_summary {
+        font-size: 16px;
+    }
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 16px;
+    }
+
+    .V_price_detail {
+        font-size: 16px;
+    }
+
+    .V_price_detail1 {
+        font-size: 18px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+
+
+}
+
+@media (max-width: 1440px) and (min-width: 1200px) {
+    .V_add_head {
+        font-size: 22px;
+    }
+
+    .V_bottom {
+        padding-bottom: 30px;
+    }
+
+    .V_select {
+        height: 50px;
+        width: 100%;
+    }
+
+    .V_save {
+        font-size: 18px;
+    }
+
+    .V_layout {
+        width: 100px;
+        height: 50px;
+    }
+
+    .V_proceed_payment {
+        font-size: 16px;
+        width: 300px;
+        height: 50px;
+    }
+
+    .V_summary {
+        font-size: 16px;
+    }
+
+    .V_cart_item_text {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 16px;
+    }
+
+    .V_price_detail {
+        font-size: 16px;
+    }
+
+    .V_price_detail1 {
+        font-size: 18px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+
+
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .V_add_head {
+        font-size: 22px;
+    }
+
+    .V_bottom {
+        padding-bottom: 30px;
+    }
+
+    .form-control {
+        height: 40px;
+    }
+
+    .V_select {
+        height: 40px;
+        width: 100%;
+    }
+
+    .V_save {
+        font-size: 18px;
+    }
+
+    .V_layout {
+        width: 80px;
+        height: 40px;
+    }
+
+    .V_proceed_payment {
+        font-size: 16px;
+        width: 280px;
+        height: 45px;
+    }
+
+    .V_summary {
+        font-size: 16px;
+    }
+
+    .V_cart_item_text {
+        width: 140px;
+        font-size: 12px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 14px;
+    }
+
+    .V_price_detail {
+        font-size: 14px;
+    }
+
+    .V_price_detail1 {
+        font-size: 16px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+
+
+
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .V_add_head {
+        font-size: 22px;
+    }
+
+    .V_bottom {
+        padding-bottom: 30px;
+    }
+
+    .form-control {
+        height: 40px;
+    }
+
+    .V_select {
+        height: 40px;
+        width: 100%;
+    }
+
+    .V_save {
+        font-size: 18px;
+    }
+
+    .V_layout {
+        width: 80px;
+        height: 40px;
+    }
+
+    .V_proceed_payment {
+        font-size: 16px;
+        width: 280px;
+        height: 45px;
+    }
+
+    .V_summary {
+        font-size: 16px;
+    }
+
+    .V_cart_item_text {
+        width: 175px;
+        font-size: 12px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 14px;
+    }
+
+    .V_price_detail {
+        font-size: 14px;
+    }
+
+    .V_price_detail1 {
+        font-size: 16px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+
+    /* === Edit Shipping Address */
+
+    .modal {
+        --bs-modal-width: 600px;
+    }
+
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+    .V_add_head {
+        font-size: 18px;
+    }
+
+    .V_bottom {
+        padding-bottom: 30px;
+    }
+
+    .form-control {
+        height: 35px;
+    }
+
+    .V_select {
+        height: 35px;
+        width: 100%;
+    }
+
+    .V_save {
+        font-size: 18px;
+    }
+
+    .V_layout {
+        width: 60px;
+        height: 30px;
+    }
+
+    .V_proceed_payment {
+        font-size: 14px;
+        width: 220px;
+        height: 40px;
+    }
+
+    .V_summary {
+        font-size: 16px;
+    }
+
+    .V_cart_item_text {
+        width: 350px;
+        font-size: 16px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 16px;
+    }
+
+    .V_price_detail {
+        font-size: 14px;
+    }
+
+    .V_price_detail1 {
+        font-size: 16px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+    }
+
+    /* === Edit Shipping Address */
+
+    .modal {
+        --bs-modal-width: 400px;
+    }
+}
+
+@media (max-width: 575px) and (min-width: 481px) {
+    .V_add_head {
+        font-size: 18px;
+    }
+
+    .V_bottom {
+        padding-bottom: 30px;
+    }
+
+    .form-control {
+        height: 35px;
+    }
+
+    .V_select {
+        height: 35px;
+        width: 100%;
+    }
+
+    .V_save {
+        font-size: 18px;
+    }
+
+    .V_layout {
+        width: 60px;
+        height: 30px;
+    }
+
+    .V_proceed_payment {
+        font-size: 14px;
+        width: 220px;
+        height: 40px;
+    }
+
+    .V_summary {
+        font-size: 14px;
+    }
+
+    .V_cart_item_text {
+        width: 350px;
+        font-size: 16px;
+    }
+
+    .V_selected_price {
+        font-size: 16px;
+    }
+
+    .V_delivery {
+        font-size: 14px;
+    }
+
+    .V_price_detail {
+        font-size: 14px;
+    }
+
+    .V_price_detail1 {
+        font-size: 14px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+        width: 50% !important;
+    }
+
+    /* === Edit Shipping Address */
+
+    .V_modal_width {
+        max-width: 350px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+    .V_add_head {
+        font-size: 18px;
+    }
+
+    .V_bottom {
+        padding-bottom: 30px;
+    }
+
+    .form-control {
+        height: 35px;
+    }
+
+    .V_select {
+        height: 35px;
+        width: 100%;
+    }
+
+    .V_save {
+        font-size: 18px;
+    }
+
+    .V_layout {
+        width: 60px;
+        height: 30px;
+    }
+
+    .V_proceed_payment {
+        font-size: 14px;
+        width: 220px;
+        height: 40px;
+        margin: 30px auto !important;
+    }
+
+    .V_summary {
+        font-size: 14px;
+    }
+
+    .V_cart_item_text {
+        width: 250px;
+        font-size: 12px;
+    }
+
+    .V_selected_price {
+        font-size: 14px;
+    }
+
+    .V_delivery {
+        font-size: 14px;
+    }
+
+    .V_price_detail {
+        font-size: 14px;
+    }
+
+    .V_price_detail1 {
+        font-size: 14px;
+    }
+
+    .V_eveline_height {
+        height: 100%;
+        width: 50% !important;
+    }
+    /* === Edit Shipping Address */
+
+    .V_modal_width {
+        max-width: 290px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
 
 
 
