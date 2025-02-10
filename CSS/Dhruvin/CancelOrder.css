@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+.ds_fs{
+    font-family: "Outfit", serif;
+}
+.ds_muted{
+    color: #14141499;
+}
+.ds_color{
+    color: #3D4936;
+}
+.ds_cursor{
+    cursor: pointer;
+}
+.ds_lh{
+    line-height: 20px;
+}
+.ds_600{
+    font-weight: 600;
+}
+.ds_14{
+    font-size: 14px;
+}
+
+.ds_cancel_input{
+    background: #1414140F;
+    border: 0;
+    height: 45px;
+    padding: 0px 5px;
+    border-radius: 5px;
+}
+.ds_cancel_txtarea{
+    background: #1414140F;
+    border: none;
+}
+.ds_cancel_txtarea:focus{
+    box-shadow: none !important;
+    background: #1414140F !important;
+    border-color: inherit !important;
+}
+.ds_cancel_btn{
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+    background: #3D4936;
+    color: white;
+    font-size: 14px;
+    padding: 10px 100px;
+    border: none;
+}
+
+/* ************ Return Order Page *********** */
+.ds_return_otp{
+    height: 45px;
+    width: 45px;
+    background: #1414140F;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+/* <!-- *********** Popup ************** --> */
+.ds_popup_img{
+   width: 250px;
+}
+
+/* <!-- *********** Return Order ************** --> */
+.ds_confirm_return{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+
+@media (max-width:321px) {
+   .ds_cancel_btn{
+     padding: 10px 82px;
+   } 
+/* ************ Return Order Page *********** */
+.ds_return_otp{
+    height: 40px;
+    width: 40px;
+}
+}

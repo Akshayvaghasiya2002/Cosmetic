@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+.ds_fs{
+    font-family: "Outfit", serif;
+}
+.ds_muted{
+    color: #14141499;
+}
+.ds_color{
+    color: #3D4936;
+}
+.ds_cursor{
+    cursor: pointer;
+}
+.ds_lh{
+    line-height: 20px;
+}
+.ds_600{
+    font-weight: 600;
+}
+.ds_14{
+    font-size: 14px;
+}
+
+.ds_order_box{
+    border: 0.6px solid #14141433;
+    border-radius: 5px;
+}
+
+.ds_order_round{
+    background: #3D4936;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 9px;
+}
+.ds_order_check{
+    width: 20px;
+}
+.ds_order_line{
+    position: absolute;
+    left: 7%;
+    top: 54%;
+    background-color: #3D4936;
+    height: 2px;
+    width: 88%;
+    z-index: -1;
+}
+.ds_order_line2{
+    position: absolute;
+    left: 7%;
+    top: 54%;
+    background-color: #3D4936;
+    height: 2px;
+    width: 86%;
+    z-index: -1;
+}
+
+/* *********** Return & Refund Status only line ************ */
+.ds_order_line3{
+    position: absolute;
+    left: 6%;
+    top: 54%;
+    background-color: #3D4936;
+    height: 2px;
+    width: 87%;
+    z-index: -1;
+}
+.ds_cancel_order{
+    padding: 10px 40px;
+    border: 0.8px solid #3D493699;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.ds_order_border{
+    border: 0.8px solid #1414144D
+}
+
+
+@media (max-width:1441px) {
+    .ds_order_line{
+        left: 8%;
+        width: 84%;
+    }
+    .ds_order_line2{
+        left: 8%;
+        width: 83%;
+    }
+    /* *********** Return & Refund Status only line ************ */
+.ds_order_line3{
+    left: 7%;
+    width: 84%;
+}
+}
+
+@media (max-width:1201px) {
+    .ds_order_line{
+        left: 10%;
+        width: 81%;
+    }
+    .ds_order_line2{
+        left: 10%;
+        width: 79%;
+    }
+/* *********** Return & Refund Status only line ************ */
+.ds_order_line3{
+    left: 9%;
+    width: 80%;
+}
+}
+
+@media (max-width:992px) {
+    .ds_order_line{
+        left: 13%;
+        width: 75%;
+    }
+    .ds_order_line2{
+        left: 13%;
+        width: 73%;
+    }
+    /* *********** Return & Refund Status only line ************ */
+.ds_order_line3{
+    left: 12%;
+    width: 74%;
+}
+}
+
+
+ @media (max-width: 768px) {
+   .ds_max_width{
+     min-width: 700px;
+   }
+ }
+
+ @media (max-width: 321px) {
+   .ds_cancel_order {
+    padding: 10px 15px;
+   }
+  }
