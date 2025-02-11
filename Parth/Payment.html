@@ -25,18 +25,18 @@
             <div class="row m-0">
                 <div class="col-12 col-md-8">
                     <div class="V_select_add">
-                        <p class="py-2 V_cuppon  mb-0  my-3 ms-4 ms-xl-5 text">Apply Coupon </p>
+                        <p class="py-2 V_cuppon  mb-0  my-3 ms-3 ms-sm-5 text">Apply Coupon </p>
                         <hr class=" V_line mx-auto mt-3">
-                        <div class="d-flex  mx-2 V_div mx-auto align-items-center mb-3">
+                        <div class="d-flex  mx-2 V_div mx-auto align-items-center mb-3 ">
                             <img src="../IMG//Parth/Enter cuppon icon.png" alt="" class="V_c_icon ms-2">
                             <input type="text " placeholder="Enter Coupon code"
-                                class=" ms-3 flex-fill V_input_cuppon text">
+                                class=" ms-3 flex-fill V_input_cuppon text w-100">
 
                             <button type="button" class="V_apply text-white py-2 px-3 px-sm-5 ">Apply</button>
                         </div>
-                        <p class="text mx-5 px-3 V_sprcial">Special offers</p>
+                        <p class="text mx-3 mx-sm-5 px-xl-3 V_sprcial">Special offers</p>
                         <hr class=" V_line mx-auto mt-3">
-                        <div class="d-flex mx-5 px-3 justify-content-between">
+                        <div class="d-flex  mx-3 mx-sm-5 px-xl-3 justify-content-between">
                             <div class="d-flex">
                                 <div class="align-content-center">
                                     <input type="radio" name="name" class=" ">
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                         <hr class=" V_line mx-auto mt-3">
-                        <div class="d-flex mx-5 px-3 justify-content-between">
+                        <div class="d-flex mx-3 mx-sm-5 px-xl-3 justify-content-between">
                             <div class="d-flex">
                                 <div class="align-content-center">
                                     <input type="radio" name="name" class=" ">
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <hr class=" V_line mx-auto mt-3">
-                        <div class="d-flex mx-5 px-3 pb-3 justify-content-between">
+                        <div class="d-flex mx-3 mx-sm-5 px-xl-3 pb-3 justify-content-between">
                             <div class="d-flex">
                                 <div class="align-content-center">
                                     <input type="radio" name="name" class=" ">
@@ -91,7 +91,7 @@
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
-                                    <div class="d-flex align-content-center mx-5 px-3">
+                                    <div class="d-flex align-content-center mx-3 mx-sm-5 px-xl-3">
                                         <input type="radio" name="name" class=" ">
                                         <button class="accordion-button" type="button">
                                             Pay on Delivery
@@ -101,7 +101,7 @@
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
-                                    <div class="d-flex align-content-center mx-5 px-3">
+                                    <div class="d-flex align-content-center mx-3 mx-sm-5 px-xl-3">
                                         <input type="radio" name="name" class=" " data-bs-toggle="collapse"
                                             data-bs-target="#collapseTwo">
                                         <button class="accordion-button collapsed" type="button"
@@ -113,27 +113,42 @@
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionExample">
-                                    <div class="accordion-body mx-5 px-5">
-                                        <div class="row m-0">
-                                            <div class="col-12 V_div1 d-flex mx-auto align-items-center">
-                                                <div>
+                                    <div class="accordion-body mx-sm-5 px-xl-5">
+                                        <div class="row m-0 w-100">
+                                            <div class="col-12 V_div1 d-flex mx-auto align-items-center V_bottom">
+                                                <div class="flex-fill">
                                                     <input type="text " placeholder="Card Number"
-                                                        class=" ms-3 flex-fill V_card_number text bg-transparent">
+                                                        class="  flex-fill V_card_number text bg-transparent w-100">
                                                 </div>
-                                                <div>
-                                                    <img src="" alt="">
-                                                    <img src="" alt="">
-                                                    <img src="" alt="">
-                                                    <img src="" alt="">
+                                                <div class="d-flex justify-content-end ">
+                                                    <img class="V_credit_card" src="../IMG/Parth/visa.png" alt="">
+                                                    <img class="V_credit_card" src="../IMG/Parth/Credit card.png"
+                                                        alt="">
+                                                    <img class="V_credit_card" src="../IMG/Parth/Amex.png" alt="">
+                                                    <img class="V_credit_card" src="../IMG//Parth/Discover.png" alt="">
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="V_50 V_bottom ">
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    aria-describedby="text" placeholder="MM/YYYY">
+                                            </div>
+                                            <div class="V_50 V_bottom ">
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    aria-describedby="text" placeholder="CVV">
+                                            </div>
+                                        </div>
+                                        <div class="col-12  ">
+                                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                                aria-describedby="text" placeholder="Card Holder Name">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
-                                    <div class="d-flex align-content-center mx-5 px-3">
+                                    <div class="d-flex align-content-center mx-3 mx-sm-5 px-xl-3">
                                         <input type="radio" name="name" class=" " data-bs-toggle="collapse"
                                             data-bs-target="#collapseThree">
                                         <button class="accordion-button collapsed" type="button"
@@ -145,15 +160,104 @@
                                 </h2>
                                 <div id="collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body mx-5 px-5">
-                                        zcd
+                                    <div class="accordion-body mx-sm-5 px-sm-5">
+                                        <div class="V_div1 d-flex  align-items-center flex-fill V_bottom">
+                                            <div class="mx-3">
+                                                <i class="fa-solid fa-magnifying-glass V_color"></i>
+                                            </div>
+                                            <div class="flex-fill ">
+                                                <input type="text" placeholder="Search your bank..."
+                                                    class=" w-100 V_card_number bg-transparent">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-wrap justify-content-between">
+                                            <div class="V_bank_width">
+                                                <img src="../IMG/Parth/citi bank.png" alt="citi bank" class="V_bank mx-auto">
+                                                <p class="text V_bank_name text-center mt-2">Citi
+                                                    Bank</p>
+                                            </div>
+                                            <div class="V_bank_width">
+                                                <img src="../IMG/Parth/walse fargo bank.png" alt="Wells Fargo Bank" class="V_bank mx-auto">
+                                                <p class="text V_bank_name text-center mt-2">Wells Fargo
+                                                    Bank</p>
+                                            </div>
+                                            <div class="V_bank_width">
+                                                <img src="../IMG/Parth/capital one.png" alt="Capital One Bank" class="V_bank mx-auto">
+                                                <p class="text V_bank_name text-center mt-2">Capital One
+                                                    Bank</p>
+                                            </div>
+                                            <div class="V_bank_width">
+                                                <img src="../IMG/Parth/TD bank.png" alt="TD Bank" class="V_bank mx-auto">
+                                                <p class="text V_bank_name text-center mt-2">TD
+                                                    Bank</p>
+                                            </div>
+                                            <div class="V_bank_width" >
+                                                <img src="../IMG/Parth/citi bank.png" alt="citi bank" class="V_bank mx-auto">
+                                                <p class="text V_bank_name text-center mt-2">Citi
+                                                    Bank</p>
+                                            </div>
+                                            <div class="V_bank_width">
+                                                <img src="../IMG/Parth/capital one.png" alt="Capital One Bank" class="V_bank mx-auto">
+                                                <p class="text V_bank_name text-center mt-2">Capital One
+                                                    Bank</p>
+                                            </div>
+                                            <div class="V_bank_width" >
+                                                <img src="../IMG/Parth/citi bank.png" alt="citi bank" class="V_bank mx-auto">
+                                                <p class="text V_bank_name text-center mt-2">Citi
+                                                    Bank</p>
+                                            </div>
+                                            <div class="V_bank_width">
+                                                <img src="../IMG/Parth/walse fargo bank.png" alt="Wells Fargo Bank" class="V_bank mx-auto">
+                                                <p class="text V_bank_name text-center mt-2">Wells Fargo
+                                                    Bank</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="text-center  text-white text V_proceed_payment V_wid align-content-center ms-2  my-5 my-md-5" data-bs-toggle="modal"
+                    data-bs-target="#successModal">
+                        Pay $1350
+                        </div>
                 </div>
+
+
+                <div class="modal" tabindex="-1" id="successModal">
+                    <div class="modal-dialog modal-sm modal-dialog-centered">
+                      <div class="modal-content">
+                        <!-- <div class="modal-header">
+                          <h5 class="modal-title">Modal title</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div> -->
+                        <div class="modal-body p-sm-3  m-sm-5 text-center">
+                          <p class="text V_success_head mb-0">Thank you </p>
+                          <p class="text V_shade ">Your order has been placed successfully. </p>
+                          <img src="../IMG/Parth/Succes Icons.png" alt="" class="V_s_icon mx-auto">
+                          <p class="text V_shade mt-sm-3">Please don’t refresh. You’ll be redirected to the order confirmation page.</p>
+                        </div>
+                        <!-- <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
                 <div class="col-12 col-md-4">
+                    <div class="row m-0 V_border mb-5 ">
+                        <div class="d-flex justify-content-between py-3 px-4">
+                            <p class="text V_summary align-self-center mb-0 ">Shipping Address</p>
+                            <p class="py-2 px-3 V_place mb-0 text-center  text">Home </p>
+                        </div>
+                        <hr class="mx-auto V_line">
+                        <p class="text px-4 V_nsme">Jenny Wilson</p>
+                        <p class="text px-4 V_nsme">+1 56565 56565</p>
+                        <p class="text px-4 V_Address">Ehrenkranz 13 Washington Square S, New
+                            York,Washington
+                            Square, NY
+                            10012, USA</p>
+                    </div>
                     <div class="row m-0  V_border">
                         <p class="text V_summary ps-4 py-3 m-0 ms-sm-2 ms-md-0">Order Summary</p>
                         <hr class="mx-auto V_line">
@@ -247,7 +351,7 @@
                             <p class="text V_price_detail">$1</p>
                         </div>
                         <div class="d-flex justify-content-between px-4 ">
-                            <p class="text V_price_detail">Delivery Charges</p>
+                            <p class="text V_price_detail mb-0">Delivery Charges</p>
                             <p class="text V_price_detail">
                                 <span class="V_shade text-decoration-line-through">$20</span>
                                 <span class="V_green">FREE </span>
