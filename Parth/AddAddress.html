@@ -19,30 +19,30 @@
 </head>
 
 <body>
-    <section class="my-5 mb-3 pt-3 pb-5">
+    <section class="my-3 my-md-5 mb-3 pt-3 pb-5">
         <div class="d_container">
             <div class="row m-0">
-                <div class="col-8">
-                    <div class="mb-5 ms-2">
+                <div class="col-12 col-md-8 d-none">
+                    <div class="mb-4 mb-md-5 ms-2">
                         <p class="text m-0 V_add_head mb-2">Shipping Address</p>
                     </div>
-                    <div class="row m-0">
+                    <div class="row m-0 ">
 
 
-                        <div class="col-6 V_bottom ">
+                        <div class="col-lg-6 V_bottom ">
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
                                 placeholder="First Name">
                         </div>
-                        <div class="col-6 V_bottom ">
+                        <div class="col-lg-6 V_bottom ">
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
                                 placeholder="Last Name">
                         </div>
 
-                        <div class="col-6 V_bottom ">
+                        <div class="col-lg-6 V_bottom ">
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
                                 placeholder="Mobile Number">
                         </div>
-                        <div class="col-6 V_bottom">
+                        <div class="col-lg-6 V_bottom">
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
                                 placeholder="Email">
                         </div>
@@ -59,11 +59,11 @@
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
                                 placeholder="Street Address 2 (Optional)">
                         </div>
-                        <div class="col-6 V_bottom ">
+                        <div class="col-lg-6 V_bottom ">
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
                                 placeholder="City">
                         </div>
-                        <div class="col-6 V_bottom ">
+                        <div class="col-lg-6 V_bottom ">
                             <select class="V_select" placeholder="State">
                                 <option>State</option>
                                 <option value="Guj">Gujarat</option>
@@ -97,105 +97,162 @@
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
                                 placeholder="Address Type">
                         </div>
-                        <div class="text-center  text-white text V_proceed_paymeny V_wid align-content-center ms-2">
+                        <div
+                            class="text-center  text-white text V_proceed_payment V_wid align-content-center ms-2 mb-5">
                             Proceed to Payment
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-8">
+                    <div class="d-flex justify-content-between  align-items-center">
+                        <div class="mb-4 mb-md-5 ms-2 ">
+                            <p class="text m-0 V_add_head ">Shipping Address</p>
+                        </div>
+                        <div class=" text text-center">
+                            <p class="py-2 px-3 V_address" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal1">
+                                +Add Address
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row m-0">
+                        <div class="col-12 col-sm-6 mb-3">
+                            <div class="V_select_add">
+                                <p class="py-2 px-3 V_place mb-0 text-center my-3 ms-4 ms-xl-5 text">Home </p>
+                                <hr class=" V_line mx-auto mt-3">
+                                <p class="text ms-4 ms-xl-5 V_nsme">Jenny Wilson</p>
+                                <p class="text ms-4 ms-xl-5 V_nsme">+1 56565 56565</p>
+                                <p class="text mx-4 mx-xl-5 V_Address">Ehrenkranz 13 Washington Square S, New
+                                    York,Washington
+                                    Square, NY
+                                    10012, USA</p>
+                                <p class="py-2 px-3 ms-4 ms-xl-5 V_change text-center" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Change
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="V_select_add1 ">
+                                <p class="py-2 px-3 V_place mb-0 text-center my-3 ms-4 ms-xl-5 text">Office </p>
+                                <hr class=" V_line mx-auto mt-3">
+                                <p class="text ms-4 ms-xl-5 V_nsme">Jenny Wilson</p>
+                                <p class="text ms-4 ms-xl-5 V_nsme">+1 56565 56565</p>
+                                <p class="text mx-4 mx-xl-5 V_Address">Ehrenkranz 13 Washington Square S, New
+                                    York,Washington
+                                    Square, NY
+                                    10012, USA</p>
+                                <p class="py-2 px-3 ms-4 ms-xl-5 V_change text-center" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Change
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="text-center  text-white text V_proceed_payment V_wid align-content-center ms-2  my-4 my-md-5">
+                            Proceed to Payment
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
                     <div class="row m-0  V_border">
-                        <p class="text V_summary ps-4 py-3 m-0">Order Summary</p>
+                        <p class="text V_summary ps-4 py-3 m-0 ms-sm-2 ms-md-0">Order Summary</p>
                         <hr class="mx-auto V_line">
-                        <div class="row m-0 mt-2">
-                            <div class="col-12 col-md-3">
+                        <div class="row m-0 mt-2 ms-sm-2 ms-md-0">
+                            <div class="col-12 col-sm-3 col-md-12 col-lg-4 ">
                                 <img src="../IMG//Parth/eveline.png" alt="Eveline Lipstick"
                                     class="w-100 V_eveline_height">
                             </div>
-                            <div class="col-12 col-md-9 d-flex justify-content-between">
-                                <div class="V_cart_item_text">
-                                    <p class="text m-0">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick
+                            <div
+                                class="col-12 col-sm-9 col-md-12 col-lg-8 d-flex flex-lg-row flex-column justify-content-between">
+                                <div class="V_cart_item_text w-100">
+                                    <p class="text mb-0 mt-2 mt-lg-0">Eveline Cosmetics Wonder Match Creamy Liquid Matte
+                                        Lipstick
                                         4.5gm
                                     </p>
                                     <p class="text m-0 mt-2"> <span class="V_shade">Shade :</span> Vintage Rose </p>
                                 </div>
                                 <div class="d-flex flex-column justify-content-between">
-                                    <div class="">
-                                        <p class="text V_selected_price m-0 text-end">$450</p>
-                                        <p class="text V_shade m-0 text-end">X1</p>
+                                    <div class="d-flex flex-lg-column flex-column-reverse">
+                                        <p class="text V_selected_price m-0 text-lg-end">$450</p>
+                                        <p class="text V_shade m-0 text-lg-end">X1</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <hr class="mx-auto mt-3 V_line">
-                        <div class="row m-0 mt-2">
-                            <div class="col-12 col-md-3">
+                        <div class="row m-0 mt-2 ms-sm-2 ms-md-0">
+                            <div class="col-12 col-sm-3 col-md-12 col-lg-4 ">
                                 <img src="../IMG//Parth/eveline.png" alt="Eveline Lipstick"
                                     class="w-100 V_eveline_height">
                             </div>
-
-                            <div class="col-12 col-md-9 d-flex justify-content-between">
-                                <div class="V_cart_item_text">
-                                    <p class="text m-0">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick
+                            <div
+                                class="col-12 col-sm-9 col-md-12 col-lg-8 d-flex flex-lg-row flex-column justify-content-between">
+                                <div class="V_cart_item_text w-100">
+                                    <p class="text mb-0 mt-2 mt-lg-0">Eveline Cosmetics Wonder Match Creamy Liquid Matte
+                                        Lipstick
                                         4.5gm
                                     </p>
                                     <p class="text m-0 mt-2"> <span class="V_shade">Shade :</span> Vintage Rose </p>
                                 </div>
                                 <div class="d-flex flex-column justify-content-between">
-                                    <div class="">
-                                        <p class="text V_selected_price m-0 text-end">$450</p>
-                                        <p class="text V_shade m-0 text-end">X1</p>
+                                    <div class="d-flex flex-lg-column flex-column-reverse">
+                                        <p class="text V_selected_price m-0 text-lg-end">$450</p>
+                                        <p class="text V_shade m-0 text-lg-end">X1</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <hr class=" V_line mx-auto mt-3">
-                        <div class="row m-0 mt-2">
-                            <div class="col-12 col-md-3">
+                        <div class="row m-0 mt-2 ms-sm-2 ms-md-0">
+                            <div class="col-12 col-sm-3 col-md-12 col-lg-4 ">
                                 <img src="../IMG//Parth/eveline.png" alt="Eveline Lipstick"
                                     class="w-100 V_eveline_height">
                             </div>
-
-                            <div class="col-12 col-md-9 d-flex justify-content-between">
-                                <div class="V_cart_item_text">
-                                    <p class="text m-0">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick
+                            <div
+                                class="col-12 col-sm-9 col-md-12 col-lg-8 d-flex flex-lg-row flex-column justify-content-between">
+                                <div class="V_cart_item_text w-100">
+                                    <p class="text mb-0 mt-2 mt-lg-0">Eveline Cosmetics Wonder Match Creamy Liquid Matte
+                                        Lipstick
                                         4.5gm
                                     </p>
                                     <p class="text m-0 mt-2"> <span class="V_shade">Shade :</span> Vintage Rose </p>
                                 </div>
                                 <div class="d-flex flex-column justify-content-between">
-                                    <div class="">
-                                        <p class="text V_selected_price m-0 text-end">$450</p>
-                                        <p class="text V_shade m-0 text-end">X1</p>
+                                    <div class="d-flex flex-lg-column flex-column-reverse">
+                                        <p class="text V_selected_price m-0 text-lg-end">$450</p>
+                                        <p class="text V_shade m-0 text-lg-end">X1</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <hr class=" V_line mx-auto mt-3">
                         <div class="">
-                            <p class="text V_delivery ps-3">Expected Delivery Date :<span class="V_shade"> Thu, 30 Jan </span></p>
+                            <p class="text V_delivery ps-sm-3 ms-2 ms-sm-2 ms-md-0">Expected Delivery Date :<span
+                                    class="V_shade"> Thu, 30 Jan </span></p>
                         </div>
                     </div>
-                    <div class="row m-0  V_border mt-5">
-                        <p class="text V_summary ps-4 py-3 m-0">Price Details</p>
+                    <div class="row m-0   V_border mt-5">
+                        <p class="text V_summary  py-3 m-0 mx-3">Price Details</p>
                         <hr class="mx-auto V_line">
-                        <div class="d-flex justify-content-between px-4">
+                        <div class="d-flex justify-content-between  px-4">
                             <p class="text V_price_detail">Price (3 Items)</p>
                             <p class="text V_price_detail">$1800</p>
                         </div>
-                        <div class="d-flex justify-content-between px-4">
+                        <div class="d-flex justify-content-between px-4 ">
                             <p class="text V_price_detail">Discount</p>
                             <p class="text V_price_detail V_green">-$550</p>
                         </div>
-                        <div class="d-flex justify-content-between px-4">
+                        <div class="d-flex justify-content-between px-4 ">
                             <p class="text V_price_detail">Platform Fee</p>
                             <p class="text V_price_detail">$1</p>
                         </div>
-                        <div class="d-flex justify-content-between px-4">
+                        <div class="d-flex justify-content-between px-4 ">
                             <p class="text V_price_detail">Delivery Charges</p>
                             <p class="text V_price_detail">
                                 <span class="V_shade text-decoration-line-through">$20</span>
-                                 <span class="V_green">FREE </span>
-                                </p>
+                                <span class="V_green">FREE </span>
+                            </p>
                         </div>
                         <hr class=" V_line mx-auto mt-3">
                         <div class="">
@@ -211,6 +268,169 @@
     </section>
 
 
+
+    <div class="modal V_modal_width" tabindex="-1" id="exampleModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text px-3">Edit Shipping information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <hr class=" V_line1 mx-auto my-0">
+                <div class="modal-body">
+                    <div class="row m-0">
+                        <div class="col-lg-6 mt-2">
+                            <label for="exampleInputFirstname" class="form-label text">First Name</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-lg-6 mt-2">
+                            <label for="exampleInputLastname" class="form-label text">Last Name</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <label for="exampleInputNumber" class="form-label text">Mobile Number</label>
+                            <input type="number" class="form-control" />
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <label for="exampleInputEmail1" class="form-label text">Email</label>
+                            <input type="email" class="form-control" />
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label for="exampleInputpostelCode" class="form-label text">ZIP / Postal Code</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label for="exampleInputAddress" class="form-label text">Address(House no, Building, Street,
+                                Area)</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label for="exampleInputpostelCode" class="form-label text">Street Address 2
+                                (Optional)</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <label for="exampleInputCity" class="form-label text">City</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <label for="exampleInputState" class="form-label text">State</label>
+                            <select class="V_select ps-2" placeholder="State">
+                                <option>State</option>
+                                <option value="Guj">Gujarat</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Raj">Rajsthan</option>
+                            </select>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label for="exampleInputState" class="form-label text">Country</label>
+                            <select class="V_select ps-2" placeholder="Country" type="select">
+                                <option>Country</option>
+                                <option value="IND">India</option>
+                                <option value="USA">United States of America</option>
+                                <option value="UK">United Kingdom</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="mx-auto">
+                        <button type="button" class="V_cancle py-2 px-3 px-sm-5 text me-3 me-sm-5" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="V_save_change text-white py-2 px-3 px-sm-5">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal V_modal_width" tabindex="-1" id="exampleModal1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text px-3">Add Shipping information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <hr class=" V_line1 mx-auto my-0">
+                <div class="modal-body">
+                    <div class="row m-0 ">
+                        <div class="col-lg-6 V_bottom ">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
+                                placeholder="First Name">
+                        </div>
+                        <div class="col-lg-6 V_bottom ">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
+                                placeholder="Last Name">
+                        </div>
+
+                        <div class="col-lg-6 V_bottom ">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
+                                placeholder="Mobile Number">
+                        </div>
+                        <div class="col-lg-6 V_bottom">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
+                                placeholder="Email">
+                        </div>
+
+                        <div class="V_bottom col-12">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
+                                placeholder="ZIP / Postal Code">
+                        </div>
+                        <div class="V_bottom col-12">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
+                                placeholder="Address(House no, Building, Street, Area)">
+                        </div>
+                        <div class="V_bottom col-12">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
+                                placeholder="Street Address 2 (Optional)">
+                        </div>
+                        <div class="col-lg-6 V_bottom ">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
+                                placeholder="City">
+                        </div>
+                        <div class="col-lg-6 V_bottom ">
+                            <select class="V_select" placeholder="State">
+                                <option>State</option>
+                                <option value="Guj">Gujarat</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Raj">Rajsthan</option>
+                            </select>
+                        </div>
+                        <div class="col-12 V_bottom ">
+                            <select class="V_select" placeholder="Country" type="select">
+                                <option>Country</option>
+                                <option value="IND">India</option>
+                                <option value="USA">United States of America</option>
+                                <option value="UK">United Kingdom</option>
+                            </select>
+                        </div>
+                        <div class="V_bottom">
+                            <p class="text V_save">Save Address as</p>
+                            <div class="d-flex">
+                                <div class="V_layout align-content-center text-center me-3">
+                                    Home
+                                </div>
+                                <div class="V_layout align-content-center text-center me-3">
+                                    Office
+                                </div>
+                                <div class="V_layout align-content-center text-center">
+                                    Other
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 V_bottom ">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="text"
+                                placeholder="Address Type">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="mx-auto">
+                        <button type="button" class="V_cancle py-2 px-3 px-sm-5 text me-3 me-sm-5" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="V_save_change text-white py-2 px-3 px-sm-5">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
