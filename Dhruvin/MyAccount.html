@@ -30,7 +30,7 @@
             </div>
             <div class="">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-5 mt-5 position-sticky top-0" style="height: max-content;">
+                    <div class="col-xl-3 col-lg-4 col-md-5 mt-5 position-sticky top-0 z-1" style="height: max-content;">
                         <div class="ds_inner d-md-block d-none">
                            <div>
                               <div class="d-flex px-4 my-4">
@@ -101,7 +101,7 @@
                                             <div>
                                                 <img src="/IMG/Dhruvin/logout.png" alt="" class="ds_icon-img">
                                             </div>
-                                            <h5 class="ds_fs ms-2 ds_muted">Logout</h5>
+                                            <h5 class="ds_fs ms-2 ds_muted" data-bs-toggle="modal" data-bs-target="#logOutModal">Logout</h5>
                                         </div>
                                     </div>
                                  </div>
@@ -290,7 +290,7 @@
                              </section>
 
                             <!-- ************ My Order  *********** -->
-                            <section>
+                            <section class="d-none">
                                 <div>
                                     <div class="d-flex justify-content-between">
                                         <h4 class="ds_color">My Order</h4>
@@ -326,76 +326,85 @@
                                                         <h5 class="mb-0 me-2 ds_order_text" style="color:#F8A120;">Order arriving</h5>
                                                         <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">On  26 Oct, 2024</p>
                                                     </div>
-                                                    <a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color" style="white-space: nowrap;">Track Order</a>
                                                 </div>
                                                 <div class="row align-items-center">
-                                                   <div class="col-xl-2 col-lg-3 col-md-6 col-sm-4 col-6 mt-3">
+                                                   <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 mt-3">
                                                       <div>
                                                         <img src="/IMG/Dhruvin/lipstick.png" alt="" class="ds_order_img">
                                                       </div>
                                                    </div>
-                                                   <div class="col-xl-10 col-lg-9 col-md-6 col-sm-6 mt-lg-4 mt-3">
+                                                   <div class="col-xl-10 col-lg-9 col-md-12 col-sm-8 mt-lg-4 mt-3">
                                                       <div class="row justify-content-between">
-                                                        <div class="col-xl-5 col-lg-8 col-md-12 col-sm-12 col-12">
+                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                             <div>
-                                                                <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
+                                                                    <a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">Track Order</a>
+                                                                </div>
                                                                 <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
-                                                                <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
+                                                                    <h5 class="text-md-end">$450</h5>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 col-12 mt-auto">
+                                                        <!-- <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 col-12 mt-auto">
                                                             <div>
                                                                 <h5 class="text-md-end">$450</h5>
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                       </div>
                                                    </div>
                                                 </div>
                                                 <div class="ds_border mt-3"></div>
                                                 <div class="row align-items-center">
-                                                    <div class="col-xl-2 col-lg-3 col-md-6 col-sm-4 col-6 mt-3">
+                                                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 mt-3">
                                                        <div>
                                                          <img src="/IMG/Dhruvin/lipstick.png" alt="" class="ds_order_img">
                                                        </div>
                                                     </div>
-                                                    <div class="col-xl-10 col-lg-9 col-md-6 col-sm-6 mt-lg-4 mt-3">
+                                                    <div class="col-xl-10 col-lg-9 col-md-12 col-sm-8 mt-lg-4 mt-3">
                                                        <div class="row justify-content-between">
-                                                         <div class="col-xl-5 col-lg-8 col-md-12 col-sm-12 col-12">
+                                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                              <div>
-                                                                 <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
+                                                                 <div class="d-flex justify-content-between">
+                                                                     <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
+                                                                     <a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">Track Order</a>
+                                                                 </div>
                                                                  <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
-                                                                 <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
+                                                                 <div class="d-flex justify-content-between">
+                                                                     <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
+                                                                     <h5 class="text-md-end">$450</h5>
+                                                                 </div>
                                                              </div>
                                                          </div>
-                                                         <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 col-12 mt-auto">
-                                                             <div>
-                                                                 <h5 class="text-md-end">$450</h5>
-                                                             </div>
-                                                         </div>
+                                                       
                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="ds_border mt-3"></div>
                                                 <div class="row align-items-center">
-                                                    <div class="col-xl-2 col-lg-3 col-md-6 col-sm-4 col-6 mt-3">
+                                                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 mt-3">
                                                        <div>
                                                          <img src="/IMG/Dhruvin/lipstick.png" alt="" class="ds_order_img">
                                                        </div>
                                                     </div>
-                                                    <div class="col-xl-10 col-lg-9 col-md-6 col-sm-6 mt-lg-4 mt-3">
+                                                    <div class="col-xl-10 col-lg-9 col-md-12 col-sm-8 mt-lg-4 mt-3">
                                                        <div class="row justify-content-between">
-                                                         <div class="col-xl-5 col-lg-8 col-md-12 col-sm-12 col-12">
+                                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                              <div>
-                                                                 <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
+                                                                 <div class="d-flex justify-content-between">
+                                                                     <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
+                                                                     <a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">Track Order</a>
+                                                                 </div>
                                                                  <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
-                                                                 <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
+                                                                 <div class="d-flex justify-content-between">
+                                                                     <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
+                                                                     <h5 class="text-md-end">$450</h5>
+                                                                 </div>
                                                              </div>
                                                          </div>
-                                                         <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 col-12 mt-auto">
-                                                             <div>
-                                                                 <h5 class="text-md-end">$450</h5>
-                                                             </div>
-                                                         </div>
+                                                       
                                                        </div>
                                                     </div>
                                                 </div>
@@ -410,32 +419,33 @@
                                                         <h5 class="mb-0 me-2 ds_order_color2 ds_order_text" >Order Delivered</h5>
                                                         <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">On  04 Oct, 2024</p>
                                                     </div>
-                                                    <a href="" class="ds_color" style="white-space: nowrap;">Submit Review</a>
                                                 </div>
                                                 <a href="/Dhruvin/OrderStatus(Delivered).html" class="text-decoration-none">
-                                                  <div class="row align-items-center">
-                                                   <div class="col-xl-2 col-lg-3 col-md-6 col-sm-4 col-6 mt-3">
-                                                      <div>
-                                                        <img src="/IMG/Dhruvin/lipstick.png" alt="" class="ds_order_img">
-                                                      </div>
-                                                   </div>
-                                                   <div class="col-xl-10 col-lg-9 col-md-6 col-sm-6 mt-lg-4 mt-3">
-                                                      <div class="row justify-content-between">
-                                                        <div class="col-xl-5 col-lg-8 col-md-12 col-sm-12 col-12">
-                                                            <div>
-                                                                <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
-                                                                <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
-                                                                <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
-                                                            </div>
+                                                    <div class="row align-items-center">
+                                                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 mt-3">
+                                                           <div>
+                                                             <img src="/IMG/Dhruvin/lipstick.png" alt="" class="ds_order_img">
+                                                           </div>
                                                         </div>
-                                                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 col-12 mt-auto">
-                                                            <div>
-                                                                <h5 class="text-md-end ds_color">$450</h5>
-                                                            </div>
+                                                        <div class="col-xl-10 col-lg-9 col-md-12 col-sm-8 mt-lg-4 mt-3">
+                                                           <div class="row justify-content-between">
+                                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                                 <div>
+                                                                     <div class="d-flex justify-content-between">
+                                                                         <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
+                                                                         <button   class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit Review</button>
+                                                                     </div>
+                                                                     <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
+                                                                     <div class="d-flex justify-content-between">
+                                                                         <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
+                                                                         <h5 class="text-md-end ds_color">$450</h5>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                           
+                                                           </div>
                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                  </div>
+                                                    </div>
                                                 </a>
                                                 <div class="ds_border mt-3"></div>
                                             </div>
@@ -447,34 +457,396 @@
                                                         <h5 class="mb-0 me-2 ds_order_color3 ds_order_text" >Order Cancelled</h5>
                                                         <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">On  01 Oct, 2024</p>
                                                     </div>
-                                                    <a href="" class="ds_color" style="white-space: nowrap;">View refund status</a>
                                                 </div>
                                                 <div class="row align-items-center">
-                                                   <div class="col-xl-2 col-lg-3 col-md-6 col-sm-4 col-6 mt-3">
-                                                      <div>
-                                                        <img src="/IMG/Dhruvin/lipstick.png" alt="" class="ds_order_img">
-                                                      </div>
-                                                   </div>
-                                                   <div class="col-xl-10 col-lg-9 col-md-6 col-sm-6 mt-lg-4 mt-3">
-                                                      <div class="row justify-content-between">
-                                                        <div class="col-xl-5 col-lg-8 col-md-12 col-sm-12 col-12">
-                                                            <div>
-                                                                <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
-                                                                <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
-                                                                <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 col-12 mt-auto">
-                                                            <div>
-                                                                <h5 class="text-md-end">$450</h5>
-                                                            </div>
-                                                        </div>
-                                                      </div>
-                                                   </div>
+                                                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 mt-3">
+                                                       <div>
+                                                         <img src="/IMG/Dhruvin/lipstick.png" alt="" class="ds_order_img">
+                                                       </div>
+                                                    </div>
+                                                    <div class="col-xl-10 col-lg-9 col-md-12 col-sm-8 mt-lg-4 mt-3">
+                                                       <div class="row justify-content-between">
+                                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                             <div>
+                                                                 <div class="d-flex justify-content-between">
+                                                                     <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
+                                                                     <a href="./TrackRefund.html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">View refund status</a>
+                                                                 </div>
+                                                                 <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
+                                                                 <div class="d-flex justify-content-between">
+                                                                     <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
+                                                                     <h5 class="text-md-end">$450</h5>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                       
+                                                       </div>
+                                                    </div>
                                                 </div>
                                                 <div class="ds_border mt-3"></div>
                                             </div>
                                          </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- ************ My Address  *********** -->
+                            <section class="d-none">
+                                <div>
+                                    <div class="d-flex justify-content-between">
+                                        <h4 class="ds_color">My Address</h4>
+                                        <button class="ds_add_btn ds_color ds_600" data-bs-toggle="modal" data-bs-target="#addressModal">+Add Address</button>
+                                    </div>
+                                    <!-- ------------ No Address ---------  -->
+                                    <div class="ds_pro_inner mt-4 d-none">
+                                       <div class="ds_add_height">
+                                           <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                                              <img src="/IMG/Dhruvin/noaddress.png" alt="" class="ds_add_img">
+                                              <h5>No saved address</h5>
+                                           </div>
+                                       </div>
+                                    </div>
+
+                                    <!-- ----------- Address ----------  -->
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6 col-12 mt-3">
+                                            <div class="ds_pro_inner p-4 position-relative">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="ds_add_type ds_color ds_600">Home</div>
+                                                    <i class="fa-solid fa-ellipsis-vertical" onclick="toggleDropdown(this)" style="cursor: pointer;"></i>
+                                                </div>
+                                                <div class="ds_border mt-3 mb-3"></div>
+                                                <div id="ds_add_dropdown" class="ds_add_dropdown d-none">
+                                                    <p data-bs-toggle="modal" data-bs-target="#editModal" style="cursor: pointer;">Edit</p>
+                                                    <p class="mb-0" data-bs-toggle="modal" data-bs-target="#deleteModal" style="cursor: pointer;">Delete</p>
+                                                </div>
+                                                <div>
+                                                    <h5 class="mb-3">Jenny Wilson</h5>
+                                                    <h6 class="mb-3">+1 56565 56565</h6>
+                                                    <p class="mb-0 ds_lh">Ehrenkranz 13 Washington Square S, New York,Washington Square, NY 10012, USA</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6 col-12 mt-3">
+                                            <div class="ds_pro_inner p-4 position-relative">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="ds_add_type ds_color ds_600">Office</div>
+                                                    <i class="fa-solid fa-ellipsis-vertical" onclick="toggleDropdown(this)" style="cursor: pointer;"></i>
+                                                </div>
+                                                <div class="ds_border mt-3 mb-3"></div>
+                                                <div id="ds_add_dropdown" class="ds_add_dropdown d-none">
+                                                    <p data-bs-toggle="modal" data-bs-target="#editModal" style="cursor: pointer;">Edit</p>
+                                                    <p class="mb-0" data-bs-toggle="modal" data-bs-target="#deleteModal" style="cursor: pointer;">Delete</p>
+                                                </div>
+                                                <div>
+                                                    <h5 class="mb-3">Jenny Wilson</h5>
+                                                    <h6 class="mb-3">+1 56565 56565</h6>
+                                                    <p class="mb-0 ds_lh">Ehrenkranz 13 Washington Square S, New York,Washington Square, NY 10012, USA</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- -------------- Add Address Popup ---------  -->
+                                     <div>
+                                        <div class="modal ds_add_add_popup fade" id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content px-sm-3 ">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title mb-0 ds_color" id="exampleModalLabel">Add Address</h5>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body pt-0">
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="First Name">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="Last Name">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="Mobile Number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="Email">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="ZIP / Postal Code">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="Address(House no, Building, Street, Area)">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="Street Address 2 (Optional)">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="City">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                                                <div>
+                                                                    <select class="ds_pro_input w-100 px-2" style="border-radius: 5px;" >
+                                                                        <option >State</option>
+                                                                    <select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-12 mt-4">
+                                                                <div>
+                                                                    <select class="ds_pro_input w-100 px-2" style="border-radius: 5px;" >
+                                                                        <option >Country</option>
+                                                                    <select>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mt-4 pt-2">Save Address as</h6>
+                                                            <div class="">
+                                                                <button class="ds_add_popup_btn mt-3">Home</button>
+                                                                <button class="ds_add_non_select mt-3">Office</button>
+                                                                <button class="ds_add_non_select mt-3">Other</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center  pt-3 mb-3">
+                                                            <button class="ds_add_cancel mt-3">Cancel</button>
+                                                            <button class="ds_add_save mt-3">Save</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                     </div>
+
+                                    <!-- -------------- Edit Address Popup ---------  -->
+                                     <div>
+                                        <div class="modal ds_add_add_popup fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content px-sm-3 ">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title mb-0 ds_color" id="exampleModalLabel">Edit Address</h5>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body pt-0">
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="First Name">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="Last Name">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="Mobile Number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="Email">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="ZIP / Postal Code">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="Address(House no, Building, Street, Area)">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="Street Address 2 (Optional)">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                                                <div>
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="City">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                                                <div>
+                                                                    <select class="ds_pro_input w-100 px-2" style="border-radius: 5px;" >
+                                                                        <option >State</option>
+                                                                    <select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-12 mt-4">
+                                                                <div>
+                                                                    <select class="ds_pro_input w-100 px-2" style="border-radius: 5px;" >
+                                                                        <option >Country</option>
+                                                                    <select>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        <div class="text-center  pt-3 mb-3">
+                                                            <button class="ds_add_cancel mt-3">Cancel</button>
+                                                            <button class="ds_add_save mt-3">Save</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                     </div>
+
+                                    <!-- -------------- Delete Address Popup ---------  -->
+                                     <div>
+                                        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                              <div class="modal-content">
+                                                <div class="modal-header pb-0 border-0">
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body pt-0">
+                                                  <div>
+                                                     <h5 class="ds_color text-center">Delete Address</h5>
+                                                     <h6 class="text-center ds_muted mt-3">Are you sure you want to <br>
+                                                        delete Address?</h6>
+                                                     <div class="text-center mt-3 mb-4">
+                                                        <button class="ds_delete_cancel mt-2">Cancel</button>
+                                                        <button class="ds_delete_delete mt-2">Delete</button>
+                                                     </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                </div>
+                            </section>
+
+                            <!-- ************ Change Password  *********** -->
+                            <section class="d-none">
+                                <div>
+                                    <h4 class="ds_color">Change Password</h4>
+                                    <div class="ds_pro_inner mt-4 p-4">
+                                       <div class="position-relative">
+                                          <input type="text" class="ds_pro_input w-100 px-3" placeholder="Old Password">
+                                          <i class="fa-solid fa-eye-slash ds_muted ds_change_eye"></i>
+                                       </div>
+                                       <div class="mt-4 position-relative">
+                                         <input type="text" class="ds_pro_input w-100 px-3" placeholder="New password">
+                                         <i class="fa-solid fa-eye-slash ds_muted ds_change_eye"></i>
+                                       </div>
+                                       <div class="mt-4 position-relative">
+                                        <input type="text" class="ds_pro_input w-100 px-3" placeholder="Confirm password">
+                                        <i class="fa-solid fa-eye-slash ds_muted ds_change_eye"></i>
+                                      </div>
+                                      <div class="text-center mt-3 mb-3">
+                                         <button class="ds_change_cancel mt-3">Cancel</button>
+                                         <button class="ds_change_reset mt-3">Reset Password</button>
+                                      </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- ************ Deactivate  Account  *********** -->
+                            <section>
+                                <div>
+                                   <h4 class="ds_color">Deactivate Account</h4>
+                                   <div class="ds_pro_inner p-4 mt-4">
+                                     <h6>When you deactivate your account</h6>
+                                      <ul class="ps-4 mt-4">
+                                        <li class="ds_deactive_li ds_muted mb-2" style="list-style:disc;">You are logged out of your Quickcart Account</li>
+                                        <li class="ds_deactive_li ds_muted mb-2" style="list-style:disc;">Your public profile on Quickcart is no longer visible</li>
+                                        <li class="ds_deactive_li ds_muted mb-2" style="list-style:disc;">Your reviews/ratings are still visible, while your profile information is shown as ‘unavailable’ as a result of deactivation.</li>
+                                        <li class="ds_deactive_li ds_muted mb-2" style="list-style:disc;">Your wishlist items are no longer accessible through the associated public hyperlink. Wishlist is shown as ‘unavailable’ as a result of deactivation</li>
+                                        <li class="ds_deactive_li ds_muted mb-2" style="list-style:disc;">You will be unsubscribed from receiving promotional emails from Quickcart.</li>
+                                        <li class="ds_deactive_li ds_muted mb-2" style="list-style:disc;">Your account data is retained and is restored in case you choose to reactivate your account</li>
+                                        <li class="ds_deactive_li ds_muted mb-2" style="list-style:disc;">Your wishlist items are no longer accessible through the associated public hyperlink. Wishlist is shown as ‘unavailable’ as a result of deactivation</li>
+                                        <li class="ds_deactive_li ds_muted mb-2" style="list-style:disc;">You will be unsubscribed from receiving promotional emails from Quickcart.</li>
+                                      </ul>
+                                      <div class="mt-4 pt-3">
+                                        <button class="ds_deactive_btn " data-bs-toggle="modal" data-bs-target="#deactivateModal">Deactivate Account</button>
+                                      </div>
+                                   </div>
+   
+                                   <!-- -------------- Deactivate  Account Popup  -------------- -->
+                                   <div>
+                                    <div class="modal fade" id="deactivateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Deactivate Account</h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <div class="px-sm-4">
+                                                <h5 class="text-center">Are you sure you want to leave?</h5>
+                                                <div class="mt-4 pt-2">
+                                                    <div class="position-relative">
+                                                        <input type="text " class="ds_pro_input  w-100 px-3" placeholder="+1 56565 65656">
+                                                        <a href="" class="ds_deactivate_text ds_color">Send OTP</a>
+                                                    </div>
+                                                    <div class="mt-5 mx-sm-5 mx-3">
+                                                       <div class="d-flex justify-content-between">
+                                                          <input type="text" class="ds_deactivate_otp">
+                                                          <input type="text" class="ds_deactivate_otp">
+                                                          <input type="text" class="ds_deactivate_otp">
+                                                          <input type="text" class="ds_deactivate_otp">
+                                                          <input type="text" class="ds_deactivate_otp">
+                                                       </div>
+                                                    </div>
+                                                    <p class="ds_muted text-center mt-3 pt-1">Didn’t received code? <a href="" class="ds_color">Resend</a></p>
+                                                    <div class="mt-3 mb-3 text-center">
+                                                        <button class="ds_deactivate_let mt-3">Let me stay</button>
+                                                        <button class="ds_deactivate_btn mt-3">Deactivate </button>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        
+                                          </div>
+                                        </div>
+                                      </div>
+                                   </div>
+                                </div>
+                            </section>
+
+                            <!-- ************ Log Out Popup  *********** -->
+                            <section>
+                                <div class="modal fade" id="logOutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                        <div class="modal-header pb-0 border-0">
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body pt-0">
+                                          <div>
+                                             <h5 class="ds_color text-center">Logout</h5>
+                                             <h6 class="text-center ds_muted mt-4">Are you sure you want to  <br>
+                                                Logout?</h6>
+                                             <div class="text-center mt-4 mb-4">
+                                                <button class="ds_delete_cancel mt-2">Cancel</button>
+                                                <button class="ds_delete_delete mt-2">Delete</button>
+                                             </div>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
                                 </div>
                             </section>
@@ -484,6 +856,60 @@
             </div>
         </div>
     </section>
+
+    <!-- ************ Add Review Popup ************ -->
+     <section class="">
+        <div class="modal fade ds_review_content" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content px-3 ">
+                <div class="modal-header">
+                  <h5 class="modal-title ds_color" id="exampleModalLabel">Write a review</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                       <div class="row align-items-center">
+                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-5">
+                            <img src="/IMG/Dhruvin/lipstick.png" alt="">
+                         </div>
+                         <div class="col-xl-7 col-lg-8 col-md-8 col-sm-8 col-12">
+                            <div>
+                                <h5 class="ds_color ds_review_text mt-sm-0 mt-2">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick</h5>
+                                <i class="fa-solid fa-star ds_review_star"></i>
+                                <i class="fa-solid fa-star ds_review_star"></i>
+                                <i class="fa-solid fa-star ds_review_star"></i>
+                                <i class="fa-solid fa-star ds_review_star"></i>
+                                <i class="fa-solid fa-star ds_review_star"></i>
+                            </div>
+                         </div>
+                       </div>
+
+                       <div>
+                          <div class="mt-4">
+                            <label for="exampleInputEmail1" class="form-label ds_color">Review title</label>
+                            <input type="text" class="ds_pro_input w-100 px-3 ds_muted" placeholder="Enter Title">
+                          </div>
+                          <div class="mt-4">
+                            <label for="floatingTextarea2">What’s your overall experience?</label>
+                            <textarea class="form-control ds_review_area mt-2" rows="5" placeholder="Write your Review" id="floatingTextarea2" ></textarea>
+                          </div>
+                          <div class="mt-4">
+                            <label for="floatingTextarea2">Add a  photo or Video</label>
+                             <div class="ds_review_video mt-2 p-4">
+                                <img src="/IMG/Dhruvin/image-icon.png" alt="">
+                             </div>
+                          </div>
+                          <div class="mt-3 text-center mb-3">
+                            <button class="ds_review_cancel mt-2 ">Cancel</button>
+                            <button class="ds_review_submit mt-2">Submit</button>
+                          </div>
+                       </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+     </section>
 </body>
   <script src="/JS/Dhruvin/MyAccount.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

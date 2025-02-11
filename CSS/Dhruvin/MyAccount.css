@@ -143,6 +143,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .ds_order_txt{
     font-size: 17px;
     margin-bottom: 8px;
+    width: 40%;
 }
 .ds_order_round2{
     width: 12px;
@@ -164,11 +165,212 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 
+
+/* <!-- ************ Add Review Popup ************ --> */
+.ds_review_content{
+    --bs-modal-width: 650px !important;
+}
+.ds_review_star{
+    font-size:1.5rem;
+    color: #14141433;
+}
+.ds_review_area{
+    background: #1414140F;
+    border: 0;
+}
+.ds_review_area:focus {
+    box-shadow: none;
+    border: 0;
+    background: #1414140F;
+}
+.ds_review_video{
+    width: 80px;
+    height: 80px;
+    background: #1414140F;
+    border-radius: 5px;
+}
+.ds_review_cancel{
+    padding: 8px 40px;
+    border: 0.8px solid #3D493699;
+    color: #3D4936;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+.ds_review_submit{
+    padding: 8px 40px;
+    background: #3D4936;
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+    color: white;
+    border-radius: 5px;
+}
+
+
+/* <!-- ************ My Address  *********** --> */
+.ds_add_btn{
+    border: 0.8px solid #3D493699;
+    padding: 7px 15px;
+    border-radius: 5px;
+}
+.ds_add_height{
+    height: 600px;
+}
+.ds_add_img{
+    width: 150px;
+}
+.ds_add_type{
+    background: #ECF3E5;
+    padding: 4px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.ds_add_dropdown{
+    position: absolute;
+    top: 17px;
+    right: 35px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0px 0px 24px 3px #7272721A;
+    width: 30%;
+}
+
+/* <!-- -------------- Add Address Popup ---------  --> */
+.ds_add_add_popup{
+    --bs-modal-width: 800px !important;
+}
+.ds_add_popup_btn{
+    padding: 8px 30px;
+    background: #3D4936;
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-right: 10px;
+}
+.ds_add_non_select{
+    padding: 7px 30px;
+    border: 0.8px solid #3D493699;
+    color: #3D4936;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-right: 10px;
+}
+.ds_add_cancel{
+    padding: 7px 50px;
+    border: 0.8px solid #3D493699;
+    color: #3D4936;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.ds_add_save{
+    padding: 7px 55px;
+    background: #3D4936;
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+
+/* <!-- -------------- Delete Address Popup ---------  --> */
+.ds_delete_cancel{
+    padding: 7px 50px;
+    border: 0.8px solid #3D493699;
+    color: #3D4936;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.ds_delete_delete{
+    padding: 7px 55px;
+    background: #3D4936;
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* <!-- ************ Change Password  *********** --> */
+.ds_change_eye{
+    position: absolute;
+    top: 13px;
+    right: 14px
+}
+.ds_change_cancel{
+    padding: 8px 55px;
+    border: 0.8px solid #3D493699;
+    color: #3D4936;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.ds_change_reset{
+    padding: 8px 25px;
+    background: #3D4936;
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.ds_deactive_li{
+    font-size: 14px;
+}
+.ds_deactive_btn{
+    padding: 8px 70px;
+    background: #3D4936;
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* <!-- -------------- Deactivate  Account Popup  -------------- --> */
+.ds_deactivate_text{
+    position: absolute;
+    top: 11px;
+    right: 14px;
+    font-size: 14px;
+}
+.ds_deactivate_otp{
+    height: 50px;
+    width: 50px;
+    background: #1414140F;
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+}
+.ds_deactivate_let{
+    padding: 8px 40px;
+    border: 0.8px solid #3D493699;
+    color: #3D4936;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+.ds_deactivate_btn{
+    padding: 8px 40px;
+    background: #3D4936;
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+@media (max-width:1200px) {
+/* <!-- ************ My Order  *********** --> */
+.ds_order_txt{
+    width: 60%;
+}
+.ds_order_anker{
+    font-size: 14px;
+}
+}
+
 @media (max-width:992px) {
     .ds_order_txt{
-        font-size: 16px;
+        font-size: 15px;
         margin-bottom: 5px;
     }
+/* <!-- -------------- Add Address Popup ---------  --> */
+.ds_add_add_popup{
+    --bs-modal-width: 650px !important;
+}
 }
 
 @media (max-width:767px) {
@@ -181,6 +383,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .ds_no_order{
         height: 500px;
     }
+
+/* <!-- ************ Add Review Popup ************ --> */
+.ds_review_content {
+    --bs-modal-width: 520px !important;
+}
+
+/* <!-- ************ My Address  *********** --> */
+.ds_add_height{
+    height: 300px;
+}
+/* <!-- -------------- Add Address Popup ---------  --> */
+.ds_add_add_popup{
+    --bs-modal-width: 500px !important;
+}
 }
 
 @media (max-width:575px) {
@@ -190,6 +406,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .ds_icon-img {
         width: 18px;
     }
+
+/* <!-- ************ Add Review Popup ************ --> */
+.ds_review_text{
+    font-size: 17px;
+}
 }
 
 @media (max-width:426px) {
@@ -199,6 +420,45 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .ds_flex_manage{
         flex-wrap: wrap;
     }
+
+}
+
+@media (max-width:400px) {
+ /* <!-- -------------- Add Address Popup ---------  --> */
+.ds_add_cancel{
+    margin-right: 0;
+}
+.ds_add_save{
+    margin-right: 0;
+}
+
+/* <!-- -------------- Delete Address Popup ---------  --> */
+
+}
+
+@media (max-width:376px) {
+    .ds_deactive_btn{
+        padding: 8px 40px;
+        background: #3D4936;
+        box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+        color: white;
+        border-radius: 5px;
+        margin-right: 10px;
+    }    
+}
+
+@media (max-width:365px) {
+    /* <!-- ************ Add Review Popup ************ --> */
+    .ds_review_cancel{
+        margin-right: 0px
+    }
+
+/* <!-- -------------- Deactivate  Account Popup  -------------- --> */
+.ds_deactivate_otp{
+    height: 43px;
+    width: 43px;
+}
+
 }
 
 @media (max-width:321px) {
