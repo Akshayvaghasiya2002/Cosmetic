@@ -716,44 +716,61 @@
             </div>
         </div>
     </div>
+    <div>
+        <div class="container-xxl py-2 my-3">
+            <div class="owl-carousel smallslider owl-theme">
+                    <div class="item">
+                            <div>
+                                  <a href="#"><img src="../IMG/Akshay/face.png" alt="" class="A_smallslider img_center"></a>  
+                                  <div class="text-center py-2">Face</div>
+                            </div>
+                    </div>
+                    <div class="item">
+                            <div>
+                                    <a href="#"><img src="../IMG/Akshay/eyes.png" alt="" class="A_smallslider img_center"></a>
+                                    <div class="text-center py-2">EYES</div>  
+                              </div>
+                    </div>
+                    <div class="item">
+                            <div>
+                                    <a href="#"><img src="../IMG/Akshay/lips.png" alt="" class="A_smallslider img_center"></a>
+                                    <div class="text-center py-2">LIPS</div>  
+                            </div>
+                    </div>
+                    <div class="item">
+                            <div>
+                                    <a href="#"><img src="../IMG/Akshay/hair.png" alt="" class="A_smallslider img_center"></a>
+                                    <div class="text-center py-2">HAIR</div>  
+                            </div>
+                    </div>
+                    <div class="item">
+                            <div>
+                                <a href="#"><img src="../IMG/Akshay/nail.png" alt="" class="A_smallslider img_center"></a> 
+                                <div class="text-center py-2">NAIL</div> 
+                            </div>
+                    </div>
+                    <div class="item">
+                            <div>
+                                <a href="#"><img src="../IMG/Akshay/skin.png" alt="" class="A_smallslider img_center"></a> 
+                                <div class="text-center py-2">SKIN</div> 
+                            </div>
+                    </div>
+                    <div class="item">
+                            <div>
+                                <a href="#"><img src="../IMG/Akshay/bathbody.png" alt="" class="A_smallslider img_center"></a>  
+                                <div class="text-center py-2">BATHBODY</div>
+                            </div>
+                    </div>       
+                 </div>
+        </div>
+    </div>
     <div class="container-xxl">
-        <div class="owl-carousel smallslider owl-theme">
-                <div class="item">
-                        <div>
-                              <a href="#"><img src="../IMG/Akshay/face.png" alt="" class="A_smallslider"></a>  
-                        </div>
-                </div>
-                <div class="item">
-                        <div>
-                                <a href="#"><img src="../IMG/Akshay/eyes.png" alt="" class="A_smallslider"></a>  
-                          </div>
-                </div>
-                <div class="item">
-                        <div>
-                                <a href="#"><img src="../IMG/Akshay/lips.png" alt="" class="A_smallslider"></a>  
-                        </div>
-                </div>
-                <div class="item">
-                        <div>
-                                <a href="#"><img src="../IMG/Akshay/hair.png" alt="" class="A_smallslider"></a>  
-                        </div>
-                </div>
-                <div class="item">
-                        <div>
-                            <a href="#"><img src="../IMG/Akshay/nail.png" alt="" class="A_smallslider"></a>  
-                        </div>
-                </div>
-                <div class="item">
-                        <div>
-                            <a href="#"><img src="../IMG/Akshay/skin.png" alt="" class="A_smallslider"></a>  
-                        </div>
-                </div>
-                <div class="item">
-                        <div>
-                            <a href="#"><img src="../IMG/Akshay/bathbody.png" alt="" class="A_smallslider"></a>  
-                        </div>
-                </div>       
-             </div>
+            <div class="py-3">
+                <div class="text-center fw-bold" style="color: #3D4936; font-size: 32px;">Best Seller</div>
+                <div class="text-center text-secondary" style="font-size: 14px;">OUR PRODUCTS</div>
+            </div>
+            <div id="product-container"></div>
+
     </div>
     
 
@@ -789,7 +806,8 @@
                     }
                 },
                 // autoplay:true,
-                autoplayTimeout:4000
+                autoplayTimeout:4000,
+                
             })
        
         });
@@ -799,12 +817,8 @@
     $('.owl-carousel.smallslider').owlCarousel({
         loop: true,              
         margin: 10,              
-        nav: true,               
+        nav: true,               // Enable navigation
         dots: false,              
-        // autoplay: true,          
-        // autoplayTimeout: 3000,   
-        // autoplayHoverPause: true, 
-        // responsiveClass: true,   
         responsive:{
             0:{       // Mobile screens
                 items: 1

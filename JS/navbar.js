@@ -52,40 +52,35 @@ window.addEventListener("resize", () => {
    }
 });
 
-// Dark and Light Mode with localStorage
-(function () {
-   let darkMode = localStorage.getItem("darkMode");
-   const darkSwitch = document.getElementById("switch");
-
-   // Enable and Disable Darkmode
-   const enableDarkMode = () => {
-      document.body.classList.add("darkmode");
-      localStorage.setItem("darkMode", "enabled");
-   };
-
-   const disableDarkMode = () => {
-      document.body.classList.remove("darkmode");
-      localStorage.setItem("darkMode", null);
-   };
-
-   // User Already Enable Darkmode
-   if (darkMode === "enabled") {
-      enableDarkMode();
-   }
-
-   // User Clicks the Darkmode Toggle
-   darkSwitch.addEventListener("click", () => {
-      darkMode = localStorage.getItem("darkMode");
-      if (darkMode !== "enabled") {
-         enableDarkMode();
-      } else {
-         disableDarkMode();
-      }
-   });
-})();
-
 // Initialize All Event Listeners
 burger.addEventListener("click", toggleMenu);
 overlay.addEventListener("click", toggleMenu);
 menuArrow.addEventListener("click", hideSubMenu);
 menuInner.addEventListener("click", toggleSubMenu);
+
+// *****************************   best seller js************************  //
+
+const bestSellerData = async () => {
+   try {
+      const response = await fetch("http://localhost:3000/products");
+      const products = await response.json();
+      
+      const container = document.getElementById("product-container");
+      container.innerHTML = ""; // Clear previous content
+      
+      products.forEach(product => {
+         const productElement = document.createElement("div");
+         productElement.innerHTML = `
+            <h3>${product.name}</h3>
+            <p>Price: $${product.price}</p>
+            <img src="${product.image}" alt="${product.name}" width="100">
+         `;
+         container.appendChild(productElement);
+      });
+   } catch (error) {
+      console.error("Error fetching products:", error.message);
+   }
+};
+
+// Call the function when the page loads
+window.onload = bestSellerData;
