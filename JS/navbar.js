@@ -60,27 +60,77 @@ menuInner.addEventListener("click", toggleSubMenu);
 
 // *****************************   best seller js************************  //
 
-const bestSellerData = async () => {
-   try {
-      const response = await fetch("http://localhost:3000/products");
-      const products = await response.json();
+// const bestSellerData = async () => {
+//    try {
+//       const response = await fetch("http://localhost:3000/products");
+//       const products = await response.json();
       
-      const container = document.getElementById("product-container");
-      container.innerHTML = ""; // Clear previous content
+//       const container = document.getElementById("product-container");
+//       container.innerHTML = ""; // Clear previous content
       
-      products.forEach(product => {
-         const productElement = document.createElement("div");
-         productElement.innerHTML = `
-            <h3>${product.name}</h3>
-            <p>Price: $${product.price}</p>
-            <img src="${product.image}" alt="${product.name}" width="100">
-         `;
-         container.appendChild(productElement);
-      });
-   } catch (error) {
-      console.error("Error fetching products:", error.message);
-   }
-};
+//       products.forEach(product => {
+//          const productElement = document.createElement("div");
+//          productElement.innerHTML = `
 
-// Call the function when the page loads
-window.onload = bestSellerData;
+//             <h3>${product.name}</h3>
+//             <p>Price: $${product.price}</p>
+//             <img src="${product.image}" alt="${product.name}" width="100">
+//          `;
+//          container.appendChild(productElement);
+//       });
+//    } catch (error) {
+//       console.error("Error fetching products:", error.message);
+//    }
+// };
+
+// // Call the function when the page loads
+// window.onload = bestSellerData;
+
+
+        const bestSellerData = async () => {
+            try {
+                const response = await fetch("http://localhost:3000/products");
+                const products = await response.json();
+                console.log(products);
+                
+                const container = document.getElementById("product-container");
+                container.innerHTML = ""; // Clear previous content
+                
+                products.forEach(product => {
+                    const productElement = document.createElement("div");
+                    productElement.classList.add("col-lg-3", "mb-4");
+                    productElement.innerHTML = `
+                        <div class="card h-100 text-center p-3">
+                           <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                   ${product.tags ? `<span class="badge">${product.tags}</span>` : ''}
+                              </div>
+                              <div class="ms-auto heart-container">
+                                    <i class="fa-regular fa-heart"></i>
+                              </div>
+                           </div>
+                            <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}" >
+                            <div class="card-body">
+                                <h6 class="card-title">${product.name}</h6>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="card-text mb-0">
+                                        Price: $${product.price} <span style="text-decoration: line-through; color: #14141499;   font-weight: 500; ">$${product.originalPrice}</span></p>
+                                    <p class="card-text" style="color:#388E3C">${product.discount}</p>
+                                </div>
+                                <div>
+                                <div>
+                                       <button style="" class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(productElement);
+                });
+            } catch (error) {
+                console.error("Error fetching products:", error.message);
+            }
+        };
+
+        window.onload = bestSellerData;
+
