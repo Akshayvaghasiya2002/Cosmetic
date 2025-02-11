@@ -18,6 +18,7 @@
     border-radius: 4px;
 
 }
+
 .V_div1 {
     background-color: rgba(20, 20, 20, 0.06);
     height: 50px;
@@ -84,11 +85,18 @@
     font-weight: 500;
     font-size: 22px;
 }
-.V_card_number{
+
+.V_card_number {
     font-weight: 300;
-    font-size: 12px;
+    font-size: 14px;
     color: rgba(20, 20, 20, 0.6);
     border: 0px;
+    outline: none;
+}
+
+.V_card_number::placeholder {
+    font-size: 14px;
+    color: rgba(20, 20, 20, 0.6);
 }
 
 
@@ -109,9 +117,95 @@
     box-shadow: none;
 }
 
+.form-control {
+    border: 0px;
+    background-color: rgba(20, 20, 20, 0.06) !important;
+    height: 50px;
+}
+
+.form-control:focus {
+    border-color: rgba(20, 20, 20, 0.06) !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.form-control::placeholder {
+    color: rgba(20, 20, 20, 0.6);
+    font-size: 14px;
+}
 
 
+.V_credit_card {
+    width: 30px;
+    height: 23px;
+    /* margin-right: 10px; */
+    background-color: white;
+}
 
+.V_bottom {
+    margin-bottom: 30px;
+}
+
+.V_50 {
+    width: calc(50% - 20px);
+}
+
+.V_color {
+    color: rgba(20, 20, 20, 0.6);
+}
+
+.V_bank {
+    height: 30px;
+    width: 30px;
+}
+
+.V_bank_name {
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color: rgba(20, 20, 20, 1);
+}
+
+.V_save_change {
+    background: rgba(61, 73, 54, 1);
+    box-shadow: 0px -8px 10px 0px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.5) inset;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.V_place {
+    background-color: rgba(236, 243, 229, 1);
+    width: 100px;
+    border-radius: 4px;
+}
+
+.V_nsme {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.V_Address {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.V_proceed_payment {
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    font-weight: 500;
+    background-color: rgba(61, 73, 54, 1);
+    border-radius: 4px;
+    box-shadow: 0px -8px 10px 0px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.5) inset;
+    width: 300px;
+    height: 50px;
+}
+
+.V_bank_width {
+    width: 78px;
+}
 
 
 
@@ -173,6 +267,19 @@
 }
 
 
+.V_success_head {
+    font-weight: 500;
+    font-size: 28px;
+    color: rgba(20, 20, 20, 1);
+}
+.modal-sm {
+    --bs-modal-width: 562px;
+}
+
+.V_s_icon{
+    width: 90px;
+    height: 90px;
+}
 /* ================ media query ================ */
 
 
@@ -203,7 +310,30 @@
         font-size: 18px;
     }
 
+    .V_proceed_payment {
+        font-size: 16px;
+        width: 300px;
+        height: 50px;
+    }
 
+    .V_div {
+        background-color: rgba(20, 20, 20, 0.06);
+        height: 50px;
+        width: 88%;
+    }
+
+    .V_apply {
+        font-size: 16px;
+        height: 50px;
+    }
+
+    .V_div1 {
+        height: 50px;
+    }
+
+    .form-control {
+        height: 50px;
+    }
 }
 
 @media (max-width: 1650px) and (min-width: 1441px) {
@@ -238,7 +368,30 @@
         height: 100%;
     }
 
+    .V_proceed_payment {
+        font-size: 16px;
+        width: 300px;
+        height: 50px;
+    }
 
+    .V_div {
+        background-color: rgba(20, 20, 20, 0.06);
+        height: 50px;
+        width: 88%;
+    }
+
+    .V_apply {
+        font-size: 16px;
+        height: 50px;
+    }
+
+    .V_div1 {
+        height: 50px;
+    }
+
+    .form-control {
+        height: 50px;
+    }
 }
 
 @media (max-width: 1440px) and (min-width: 1200px) {
@@ -273,7 +426,30 @@
         height: 100%;
     }
 
+    .V_proceed_payment {
+        font-size: 16px;
+        width: 300px;
+        height: 50px;
+    }
 
+    .V_div {
+        background-color: rgba(20, 20, 20, 0.06);
+        height: 50px;
+        width: 88%;
+    }
+
+    .V_apply {
+        font-size: 16px;
+        height: 50px;
+    }
+
+    .V_div1 {
+        height: 50px;
+    }
+
+    .form-control {
+        height: 50px;
+    }
 }
 
 @media (max-width: 1199px) and (min-width: 992px) {
@@ -309,7 +485,31 @@
     }
 
 
+    .V_proceed_payment {
+        font-size: 16px;
+        width: 280px;
+        height: 45px;
+    }
 
+
+    .V_div {
+        background-color: rgba(20, 20, 20, 0.06);
+        height: 45px;
+        width: 88%;
+    }
+
+    .V_apply {
+        font-size: 16px;
+        height: 45px;
+    }
+
+    .V_div1 {
+        height: 45px;
+    }
+
+    .form-control {
+        height: 45px;
+    }
 }
 
 @media (max-width: 991px) and (min-width: 768px) {
@@ -343,7 +543,30 @@
         height: 100%;
     }
 
+    .V_proceed_payment {
+        font-size: 16px;
+        width: 280px;
+        height: 45px;
+    }
 
+    .V_div {
+        background-color: rgba(20, 20, 20, 0.06);
+        height: 45px;
+        width: 88%;
+    }
+
+    .V_apply {
+        font-size: 16px;
+        height: 45px;
+    }
+
+    .V_div1 {
+        height: 45px;
+    }
+
+    .form-control {
+        height: 45px;
+    }
 }
 
 @media (max-width: 767px) and (min-width: 576px) {
@@ -377,6 +600,46 @@
         height: 100%;
     }
 
+    .V_proceed_payment {
+        font-size: 14px;
+        width: 220px;
+        height: 40px;
+    }
+
+    .V_div {
+        background-color: rgba(20, 20, 20, 0.06);
+        height: 40px;
+        width: 88%;
+    }
+
+    .V_apply {
+        font-size: 14px;
+        height: 40px;
+    }
+
+    .V_C_code {
+        font-size: 14px;
+    }
+
+    .V_code_des {
+        font-size: 12px;
+    }
+
+    .V_C_save_price {
+        font-size: 12px;
+    }
+
+    .V_div1 {
+        height: 40px;
+    }
+
+    .form-control {
+        height: 40px;
+    }
+
+    .V_50 {
+        width: calc(50% - 20px);
+    }
 }
 
 @media (max-width: 575px) and (min-width: 481px) {
@@ -411,6 +674,53 @@
         width: 50% !important;
     }
 
+    .V_proceed_payment {
+        font-size: 14px;
+        width: 220px;
+        height: 40px;
+    }
+
+    .V_div {
+        background-color: rgba(20, 20, 20, 0.06);
+        height: 40px;
+        width: 94%;
+    }
+
+    .V_apply {
+        font-size: 14px;
+        height: 40px;
+    }
+
+    .V_C_code {
+        font-size: 14px;
+    }
+
+    .V_code_des {
+        font-size: 12px;
+    }
+
+    .V_C_save_price {
+        font-size: 12px;
+    }
+
+    .V_div1 {
+        height: 40px;
+    }
+
+    .form-control {
+        height: 40px;
+    }
+
+    .V_50 {
+        width: calc(50% - 10px);
+    }
+    .V_success_head {
+        font-size: 24px;
+    }
+    .V_s_icon {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 @media (max-width: 480px) and (min-width: 320px) {
@@ -445,8 +755,55 @@
         width: 50% !important;
     }
 
-}
+    .V_proceed_payment {
+        font-size: 14px;
+        width: 220px;
+        height: 40px;
+        margin: 30px auto !important;
+    }
 
+    .V_div {
+        background-color: rgba(20, 20, 20, 0.06);
+        height: 40px;
+        width: 94%;
+    }
+
+    .V_apply {
+        font-size: 14px;
+        height: 40px;
+    }
+
+    .V_C_code {
+        font-size: 14px;
+    }
+
+    .V_code_des {
+        font-size: 12px;
+    }
+
+    .V_C_save_price {
+        font-size: 12px;
+    }
+
+    .V_div1 {
+        height: 40px;
+    }
+
+    .form-control {
+        height: 40px;
+    }
+
+    .V_50 {
+        width: calc(50% - 10px);
+    }
+    .V_success_head {
+        font-size: 24px;
+    }
+    .V_s_icon {
+        width: 60px;
+        height: 60px;
+    }
+}
 
 
 /* / ************* Container ********** / */
