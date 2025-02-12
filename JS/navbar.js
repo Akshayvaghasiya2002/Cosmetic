@@ -134,3 +134,38 @@ menuInner.addEventListener("click", toggleSubMenu);
 
         window.onload = bestSellerData;
 
+
+
+
+
+
+
+
+
+
+
+        // search functionality
+   
+
+        function emptyNav() {
+
+           const emptyNavbar = document.querySelector("nav");
+           emptyNavbar.classList.toggle("d-none");
+
+           const displaySearch =  document.querySelector(".V_search");
+           displaySearch.classList.toggle('d-none');
+         }
+   
+
+         const searchInput = document.querySelector(".V_input");
+         const searchResult = document.querySelector(".V_result");
+     
+         // Function to toggle d-none class based on input value
+         searchInput.addEventListener("input", function () {
+             if (searchInput.value.trim() !== "" || searchInput.value.length > 0) {
+                 searchResult.classList.remove("d-none"); // Show results
+             } else {
+                 searchResult.classList.add("d-none"); // Hide results
+             }
+         });
+      
