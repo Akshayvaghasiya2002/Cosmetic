@@ -20,11 +20,11 @@
                         <div><img src="/IMG/Dhruvin/star.png" alt="" class="ds_star-img ms-1 me-1"></div>
                     </div>
                     <div class="d-flex">
-                        <div class="ds_muted">My  Account </div>
+                        <div class="ds_muted">My Account </div>
                         <div><img src="/IMG/Dhruvin/star.png" alt="" class="ds_star-img ms-1 me-1"></div>
                     </div>
                     <div class="d-flex">
-                        <div class="ds_muted">My  Order</div>
+                        <div class="ds_muted" id="ds_above_text">Edit Profile</div>
                     </div>
                 </div>
             </div>
@@ -44,75 +44,64 @@
                                  </div>
                               </div>
                               <div class="ds_border mx-4"></div>
-                              <div class="mt-4 pt-1">
-                                 <div class="ps-3 ds_active-border py-2">
-                                    <div class="mx-4">
-                                        <div class="d-flex ">
-                                            <div>
-                                                <img src="/IMG/Dhruvin/pen.png" alt="" class="ds_icon-img">
-                                            </div>
-                                            <h5 class="ds_fs ms-2 ds_muted mb-0">Edit Profile</h5>
-                                        </div>
-                                    </div>
-                                 </div>
-                                  <div class="ps-3 mt-4 py-2">
-                                    <div class="mx-4">
-                                        <div class="d-flex ">
-                                            <div>
-                                                <img src="/IMG/Dhruvin/box.png" alt="" class="ds_icon-img">
-                                            </div>
-                                            <h5 class="ds_fs ms-2 ds_muted">My Order</h5>
-                                        </div>
-                                    </div>
-                                 </div>
-                                 <div class="ps-3 mt-4 py-2">
-                                    <div class="mx-4">
-                                        <div class="d-flex ">
-                                            <div>
-                                                <img src="/IMG/Dhruvin/location.png" alt="" class="ds_icon-img">
-                                            </div>
-                                            <h5 class="ds_fs ms-2 ds_muted">My Address</h5>
-                                        </div>
-                                    </div>
-                                 </div>
-                                 <div class="ps-3 mt-4 py-2">
-                                    <div class="mx-4">
-                                        <div class="d-flex ">
-                                            <div>
-                                                <img src="/IMG/Dhruvin/lock.png" alt="" class="ds_icon-img">
-                                            </div>
-                                            <h5 class="ds_fs ms-2 ds_muted">Change Password</h5>
-                                        </div>
-                                    </div>
-                                 </div>
-                                 <div class="ps-3 mt-4 py-2">
-                                    <div class="mx-4">
-                                        <div class="d-flex ">
-                                            <div>
-                                                <img src="/IMG/Dhruvin/detective.png" alt="" class="ds_icon-img">
-                                            </div>
-                                            <h5 class="ds_fs ms-2 ds_muted">Deactivate Account</h5>
-                                        </div>
-                                    </div>
-                                 </div>
-                                 <div class="ps-3 mt-4 py-2 mb-4">
-                                    <div class="mx-4">
-                                        <div class="d-flex ">
-                                            <div>
-                                                <img src="/IMG/Dhruvin/logout.png" alt="" class="ds_icon-img">
-                                            </div>
-                                            <h5 class="ds_fs ms-2 ds_muted" data-bs-toggle="modal" data-bs-target="#logOutModal">Logout</h5>
-                                        </div>
-                                    </div>
-                                 </div>
-                              </div>
+                              <!-- Sidebar Menu -->
+                                  <div class="mt-4 pt-1">
+                                      <div class="ps-3 ds_active-border ds_hide_border py-2 ds_func_manage ds_cursor" onclick="handleManage(this)" data-value="1" data-target="profileSection">
+                                          <div class="mx-4">
+                                              <div class="d-flex">
+                                                  <div><img src="/IMG/Dhruvin/pen.png" alt="" class="ds_icon-img"></div>
+                                                  <h5 class="ds_fs ms-2 ds_muted mb-0 ds_pro_text">Edit Profile</h5>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="ps-3 mt-4 py-2 ds_hide_border ds_func_manage2 ds_cursor" onclick="handleManage(this)" data-value="2" data-target="orderSection">
+                                          <div class="mx-4">
+                                              <div class="d-flex">
+                                                  <div><img src="/IMG/Dhruvin/box.png" alt="" class="ds_icon-img"></div>
+                                                  <h5 class="ds_fs ms-2 ds_muted ds_pro_text">My Order</h5>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="ps-3 mt-4 py-2 ds_hide_border ds_func_manage3 ds_cursor" onclick="handleManage(this)" data-value="3" data-target="addressSection">
+                                          <div class="mx-4">
+                                              <div class="d-flex">
+                                                  <div><img src="/IMG/Dhruvin/location.png" alt="" class="ds_icon-img"></div>
+                                                  <h5 class="ds_fs ms-2 ds_muted ds_pro_text">My Address</h5>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="ps-3 mt-4 py-2 ds_hide_border ds_func_manage4 ds_cursor" onclick="handleManage(this)" data-value="4" data-target="passwordSection">
+                                          <div class="mx-4">
+                                              <div class="d-flex">
+                                                  <div><img src="/IMG/Dhruvin/lock.png" alt="" class="ds_icon-img"></div>
+                                                  <h5 class="ds_fs ms-2 ds_muted ds_pro_text">Change Password</h5>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="ps-3 mt-4 py-2 ds_hide_border ds_func_manage5 ds_cursor" onclick="handleManage(this)" data-value="5" data-target="deactivateSection">
+                                          <div class="mx-4">
+                                              <div class="d-flex">
+                                                  <div><img src="/IMG/Dhruvin/detective.png" alt="" class="ds_icon-img"></div>
+                                                  <h5 class="ds_fs ms-2 ds_muted ds_pro_text">Deactivate Account</h5>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="ps-3 mt-4 py-2 mb-4 ds_func_manage6 ds_cursor"  onclick="handleManage(this)" data-value="6">
+                                         <div class="mx-4">
+                                             <div class="d-flex">
+                                                 <div><img src="/IMG/Dhruvin/logout.png" alt="" class="ds_icon-img"></div>
+                                                 <h5 class="ds_fs ms-2 ds_muted ds_pro_text">Logout</h5>
+                                             </div>
+                                         </div>
+                                     </div>
+                                  </div>
                            </div>
                         </div>
 
                         <div class="d-md-none">
                             <div class="ds_pro_res">
                               <div class="d-flex justify-content-between">
-                                <h4 class="py-2 mb-0">My Account</h4>
+                                <h4 class="py-2 mb-0" >My Account</h4>
                                 <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button> -->
                                 <!-- <i class="fa-solid fa-bars" data-bs-dismiss="offcanvas" aria-label="Close"></i> -->
                                 <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">Bar</button>
@@ -135,68 +124,57 @@
                                        <p><i class="fa-solid fa-phone ds_email"></i> <span>+1 56565 56565</span></p>
                                     </div>
                                  </div>
-                                <div class="mt-4 pt-1">
-                                    <div class="ps-3 ds_active-border py-2">
-                                       <div class="mx-4">
-                                           <div class="d-flex ">
-                                               <div>
-                                                   <img src="/IMG/Dhruvin/pen.png" alt="" class="ds_icon-img">
-                                               </div>
-                                               <h5 class="ds_fs ms-2 ds_muted mb-0 ds_pro_text">Edit Profile</h5>
-                                           </div>
-                                       </div>
+                                 <div class="mt-4 pt-1">
+                                    <div class="ps-3 ds_active-border py-2 ds_func_manage ds_cursor" onclick="handleManage(this)" data-value="1" data-target="profileSection">
+                                        <div class="mx-4">
+                                            <div class="d-flex">
+                                                <div><img src="/IMG/Dhruvin/pen.png" alt="" class="ds_icon-img"></div>
+                                                <h5 class="ds_fs ms-2 ds_muted mb-0 ds_pro_text">Edit Profile</h5>
+                                            </div>
+                                        </div>
                                     </div>
-                                     <div class="ps-3 mt-4 py-2">
-                                       <div class="mx-4">
-                                           <div class="d-flex ">
-                                               <div>
-                                                   <img src="/IMG/Dhruvin/box.png" alt="" class="ds_icon-img">
-                                               </div>
-                                               <h5 class="ds_fs ms-2 ds_muted ds_pro_text">My Order</h5>
-                                           </div>
-                                       </div>
+                                    <div class="ps-3 mt-4 py-2 ds_func_manage2 ds_cursor" onclick="handleManage(this)" data-value="2" data-target="orderSection">
+                                        <div class="mx-4">
+                                            <div class="d-flex">
+                                                <div><img src="/IMG/Dhruvin/box.png" alt="" class="ds_icon-img"></div>
+                                                <h5 class="ds_fs ms-2 ds_muted ds_pro_text">My Order</h5>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="ps-3 mt-4 py-2">
-                                       <div class="mx-4">
-                                           <div class="d-flex ">
-                                               <div>
-                                                   <img src="/IMG/Dhruvin/location.png" alt="" class="ds_icon-img">
-                                               </div>
-                                               <h5 class="ds_fs ms-2 ds_muted ds_pro_text">My Address</h5>
-                                           </div>
-                                       </div>
+                                    <div class="ps-3 mt-4 py-2 ds_func_manage3 ds_cursor" onclick="handleManage(this)" data-value="3" data-target="addressSection">
+                                        <div class="mx-4">
+                                            <div class="d-flex">
+                                                <div><img src="/IMG/Dhruvin/location.png" alt="" class="ds_icon-img"></div>
+                                                <h5 class="ds_fs ms-2 ds_muted ds_pro_text">My Address</h5>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="ps-3 mt-4 py-2">
-                                       <div class="mx-4">
-                                           <div class="d-flex ">
-                                               <div>
-                                                   <img src="/IMG/Dhruvin/lock.png" alt="" class="ds_icon-img">
-                                               </div>
-                                               <h5 class="ds_fs ms-2 ds_muted ds_pro_text">Change Password</h5>
-                                           </div>
-                                       </div>
+                                    <div class="ps-3 mt-4 py-2 ds_func_manage4 ds_cursor" onclick="handleManage(this)" data-value="4" data-target="passwordSection">
+                                        <div class="mx-4">
+                                            <div class="d-flex">
+                                                <div><img src="/IMG/Dhruvin/lock.png" alt="" class="ds_icon-img"></div>
+                                                <h5 class="ds_fs ms-2 ds_muted ds_pro_text">Change Password</h5>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="ps-3 mt-4 py-2">
-                                       <div class="mx-4">
-                                           <div class="d-flex ">
-                                               <div>
-                                                   <img src="/IMG/Dhruvin/detective.png" alt="" class="ds_icon-img">
-                                               </div>
-                                               <h5 class="ds_fs ms-2 ds_muted ds_pro_text">Deactivate Account</h5>
-                                           </div>
-                                       </div>
+                                    <div class="ps-3 mt-4 py-2 ds_func_manage5 ds_cursor" onclick="handleManage(this)" data-value="5" data-target="deactivateSection">
+                                        <div class="mx-4">
+                                            <div class="d-flex">
+                                                <div><img src="/IMG/Dhruvin/detective.png" alt="" class="ds_icon-img"></div>
+                                                <h5 class="ds_fs ms-2 ds_muted ds_pro_text">Deactivate Account</h5>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="ps-3 mt-4 py-2 mb-4">
-                                       <div class="mx-4">
-                                           <div class="d-flex ">
-                                               <div>
-                                                   <img src="/IMG/Dhruvin/logout.png" alt="" class="ds_icon-img">
-                                               </div>
-                                               <h5 class="ds_fs ms-2 ds_muted ds_pro_text">Logout</h5>
-                                           </div>
-                                       </div>
-                                    </div>
-                                 </div>
+                                    <div class="ps-3 mt-4 py-2 mb-4 ds_func_manage6 ds_cursor"  onclick="handleManage(this)" data-value="6">
+                                        <div class="mx-4">
+                                            <div class="d-flex">
+                                                <div><img src="/IMG/Dhruvin/logout.png" alt="" class="ds_icon-img"></div>
+                                                <h5 class="ds_fs ms-2 ds_muted ds_pro_text">Logout</h5>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                
                                </div>
                              </div>
                         </div>
@@ -205,7 +183,7 @@
                     <div class="col-xl-9 col-lg-8 col-md-7 ps-4 mt-5">
                         <div>
                             <!-- ************ My Profile  *********** -->
-                             <section class="d-none">
+                             <section class="d-non " id="profileSection">
                                 <div>
                                     <h4>Edit Profile</h4>
                                     <div class="ds_pro_inner mt-3 px-4">
@@ -290,7 +268,7 @@
                              </section>
 
                             <!-- ************ My Order  *********** -->
-                            <section class="d-none">
+                            <section class="d-none " id="orderSection">
                                 <div>
                                     <div class="d-flex justify-content-between">
                                         <h4 class="ds_color">My Order</h4>
@@ -420,11 +398,12 @@
                                                         <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">On  04 Oct, 2024</p>
                                                     </div>
                                                 </div>
-                                                <a href="/Dhruvin/OrderStatus(Delivered).html" class="text-decoration-none">
                                                     <div class="row align-items-center">
                                                         <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 mt-3">
                                                            <div>
-                                                             <img src="/IMG/Dhruvin/lipstick.png" alt="" class="ds_order_img">
+                                                           <a href="/Dhruvin/OrderStatus(Delivered).html" class="text-decoration-none">
+                                                              <img src="/IMG/Dhruvin/lipstick.png" alt="" class="ds_order_img">
+                                                           </a>
                                                            </div>
                                                         </div>
                                                         <div class="col-xl-10 col-lg-9 col-md-12 col-sm-8 mt-lg-4 mt-3">
@@ -432,12 +411,13 @@
                                                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                                  <div>
                                                                      <div class="d-flex justify-content-between">
-                                                                         <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
+                                                                         <p class="ds_color ds_lh ds_order_txt"><a href="/Dhruvin/OrderStatus(Delivered).html" class="text-decoration-none ds_color"> Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm </a>
+                                                                        </p>
                                                                          <button   class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit Review</button>
                                                                      </div>
-                                                                     <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
+                                                                     <p class="ds_muted ds_order_txt"><a href="/Dhruvin/OrderStatus(Delivered).html" class="text-decoration-none ds_color">Shade : <span class="ds_color">Vintage Rose</span></a></p>
                                                                      <div class="d-flex justify-content-between">
-                                                                         <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
+                                                                         <p class="ds_muted ds_order_txt"><a href="/Dhruvin/OrderStatus(Delivered).html" class="text-decoration-none ds_color">Qty : <span class="ds_color">X1</span></a></p>
                                                                          <h5 class="text-md-end ds_color">$450</h5>
                                                                      </div>
                                                                  </div>
@@ -446,7 +426,6 @@
                                                            </div>
                                                         </div>
                                                     </div>
-                                                </a>
                                                 <div class="ds_border mt-3"></div>
                                             </div>
 
@@ -491,7 +470,7 @@
                             </section>
 
                             <!-- ************ My Address  *********** -->
-                            <section class="d-none">
+                            <section class="d-none " id="addressSection">
                                 <div>
                                     <div class="d-flex justify-content-between">
                                         <h4 class="ds_color">My Address</h4>
@@ -603,14 +582,14 @@
                                                                 <div>
                                                                     <select class="ds_pro_input w-100 px-2" style="border-radius: 5px;" >
                                                                         <option >State</option>
-                                                                    <select>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-12 mt-4">
                                                                 <div>
                                                                     <select class="ds_pro_input w-100 px-2" style="border-radius: 5px;" >
                                                                         <option >Country</option>
-                                                                    <select>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             
@@ -690,14 +669,14 @@
                                                                 <div>
                                                                     <select class="ds_pro_input w-100 px-2" style="border-radius: 5px;" >
                                                                         <option >State</option>
-                                                                    <select>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-12 mt-4">
                                                                 <div>
                                                                     <select class="ds_pro_input w-100 px-2" style="border-radius: 5px;" >
                                                                         <option >Country</option>
-                                                                    <select>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             
@@ -740,7 +719,7 @@
                             </section>
 
                             <!-- ************ Change Password  *********** -->
-                            <section class="d-none">
+                            <section class="d-none " id="passwordSection">
                                 <div>
                                     <h4 class="ds_color">Change Password</h4>
                                     <div class="ds_pro_inner mt-4 p-4">
@@ -765,7 +744,7 @@
                             </section>
 
                             <!-- ************ Deactivate  Account  *********** -->
-                            <section>
+                            <section class="d-none " id="deactivateSection">
                                 <div>
                                    <h4 class="ds_color">Deactivate Account</h4>
                                    <div class="ds_pro_inner p-4 mt-4">
@@ -828,28 +807,28 @@
                             </section>
 
                             <!-- ************ Log Out Popup  *********** -->
-                            <section>
-                                <div class="modal fade" id="logOutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                      <div class="modal-content">
-                                        <div class="modal-header pb-0 border-0">
-                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <section id="logoutSection">
+                                    <div class="modal fade" id="logOutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header pb-0 border-0">
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body pt-0">
+                                                    <div>
+                                                        <h5 class="ds_color text-center">Logout</h5>
+                                                        <h6 class="text-center ds_muted mt-4">Are you sure you want to <br> Logout?</h6>
+                                                        <div class="text-center mt-4 mb-4">
+                                                            <button class="ds_delete_cancel mt-2" data-bs-dismiss="modal">Cancel</button>
+                                                            <button class="ds_delete_delete mt-2">Logout</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="modal-body pt-0">
-                                          <div>
-                                             <h5 class="ds_color text-center">Logout</h5>
-                                             <h6 class="text-center ds_muted mt-4">Are you sure you want to  <br>
-                                                Logout?</h6>
-                                             <div class="text-center mt-4 mb-4">
-                                                <button class="ds_delete_cancel mt-2">Cancel</button>
-                                                <button class="ds_delete_delete mt-2">Delete</button>
-                                             </div>
-                                          </div>
-                                        </div>
-                                      </div>
                                     </div>
-                                </div>
-                            </section>
+                                </section>
+
                         </div>
                     </div>
                 </div>
@@ -911,6 +890,6 @@
           </div>
      </section>
 </body>
-  <script src="/JS/Dhruvin/MyAccount.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="/JS/Dhruvin/MyAccount.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>

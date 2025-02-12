@@ -1,27 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 
-.ds_fs{
-    font-family: "Outfit", serif;
-}
-.ds_muted{
-    color: #14141499;
-}
-.ds_color{
-    color: #3D4936;
-}
-.ds_cursor{
-    cursor: pointer;
-}
-.ds_lh{
-    line-height: 20px;
-}
-.ds_600{
-    font-weight: 600;
-}
-.ds_14{
-    font-size: 14px;
-}
 
 .ds_order_box{
     border: 0.6px solid #14141433;
@@ -72,7 +51,14 @@
     border: 0.8px solid #3D493699;
     border-radius: 5px;
     font-size: 14px;
+    transition: 0.3s ease-in-out;
 }
+.ds_cancel_order:hover{
+    background: #3D4936;
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+    color: white;
+}
+
 .ds_order_border{
     border: 0.8px solid #1414144D
 }

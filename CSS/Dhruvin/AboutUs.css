@@ -1,0 +1,186 @@
+.ds_about_box {
+    border: 20px solid;
+    height: 630px;
+    width: 70%; /* Add width for visibility */
+    border-image-source: 
+        linear-gradient(to bottom, 
+            #E7ECE2 50%, /* Top half */
+            #F9FBF8 50%); /* Bottom half */
+    border-image-slice: 1;
+}
+.ds_about_first{
+    position: absolute;
+    top: 12%;
+    left: 6%;
+    width: 400px;
+}
+.ds_about_cicrle{
+    position: absolute;
+    top: 14%;
+    right: 24%;
+    width: 130px;
+}
+.ds_about_cream{
+    position: absolute;
+    top: 48%;
+    right: 6%;
+    width: 320px;
+}
+.ds_about_mini_box{
+    width: 60px;
+    height: 60px;
+    background: #ECF3E5;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+@media (max-width:1441px) {
+    .ds_about_box {
+        height: 475px;
+        width: 80%; /* Add width for visibility */
+    }
+    .ds_about_first{
+        position: absolute;
+        top: 12%;
+        left: 3%;
+        width: 300px;
+    }
+    .ds_about_cicrle{
+        position: absolute;
+        top: 14%;
+        right: 24%;
+        width: 110px;
+    }
+    .ds_about_cream{
+        position: absolute;
+        top: 44%;
+        right: 6%;
+        width: 280px;
+    }
+}
+
+@media (max-width:1200px) {
+    .ds_about_box {
+        height: 400px;
+        width: 80%; /* Add width for visibility */
+    }
+    .ds_about_first{
+        position: absolute;
+        top: 12%;
+        left: 3%;
+        width: 260px;
+    }
+    .ds_about_cicrle{
+        position: absolute;
+        top: 14%;
+        right: 20%;
+        width: 90px;
+    }
+    .ds_about_cream{
+        position: absolute;
+        top: 44%;
+        right: 6%;
+        width: 200px;
+    }
+}
+
+@media (max-width:992px) {
+    .ds_about_box {
+        height: 300px;
+        width: 80%; /* Add width for visibility */
+    }
+    .ds_about_first{
+        position: absolute;
+        top: 12%;
+        left: 3%;
+        width: 200px;
+    }
+    .ds_about_cicrle{
+        position: absolute;
+        top: 14%;
+        right: 20%;
+        width: 75px;
+    }
+    .ds_about_cream{
+        position: absolute;
+        top: 46%;
+        right: 6%;
+        width: 150px;
+    }
+}
+
+@media (max-width:767px) {
+    .ds_about_box {
+        height: 400px;
+        width: 80%; /* Add width for visibility */
+    }
+    .ds_about_first{
+        position: absolute;
+        top: 12%;
+        left: 3%;
+        width: 250px;
+    }
+    .ds_about_cicrle{
+        position: absolute;
+        top: 14%;
+        right: 20%;
+        width: 75px;
+    }
+    .ds_about_cream{
+        position: absolute;
+        top: 46%;
+        right: 6%;
+        width: 200px;
+    }
+}
+
+@media (max-width:575px) {
+    .ds_about_box {
+        height: 290px;
+        width: 100%; /* Add width for visibility */
+    }
+    .ds_about_first{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width:48%;
+    }
+    .ds_about_cicrle{
+        position: absolute;
+        top: 14%;
+        right: 20%;
+        width: 75px;
+        display: none;
+    }
+    .ds_about_cream{
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        width: 49%;
+    }
+}
+
+@media (max-width:426px) {
+    .ds_about_box {
+        height: 220px;
+        width: 100%;
+         /* Add width for visibility */
+    }
+}
+
+@media (max-width:376px) {
+    .ds_about_box {
+        height: 190px;
+        width: 100%;
+         /* Add width for visibility */
+    }
+}
+
+@media (max-width:321px) {
+    .ds_about_box {
+        height: 160px;
+        width: 100%;
+         /* Add width for visibility */
+    }
+}

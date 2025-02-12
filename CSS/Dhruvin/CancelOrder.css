@@ -1,28 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 
-.ds_fs{
-    font-family: "Outfit", serif;
-}
-.ds_muted{
-    color: #14141499;
-}
-.ds_color{
-    color: #3D4936;
-}
-.ds_cursor{
-    cursor: pointer;
-}
-.ds_lh{
-    line-height: 20px;
-}
-.ds_600{
-    font-weight: 600;
-}
-.ds_14{
-    font-size: 14px;
-}
-
 .ds_cancel_input{
     background: #1414140F;
     border: 0;
@@ -45,7 +23,12 @@
     color: white;
     font-size: 14px;
     padding: 10px 100px;
-    border: none;
+    border: 0.8px solid #3D493699;
+    transition: 0.3s ease-in-out;
+}
+.ds_cancel_btn:hover{
+    color: #3D4936;
+    background-color: white;
 }
 
 /* ************ Return Order Page *********** */

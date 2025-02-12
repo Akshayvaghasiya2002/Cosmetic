@@ -1,23 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-.ds_fs{
-    font-family: "Outfit", serif;
-}
-.ds_muted{
-    color: #14141499;
-}
-.ds_color{
-    color: #3D4936;
-}
-.ds_cursor{
-    cursor: pointer;
-}
-.ds_lh{
-    line-height: 20px;
-}
-.ds_600{
-    font-weight: 600;
-}
+
 .ds_star-img{
     width: 25px;
     object-fit: cover;
@@ -35,9 +18,19 @@
 .ds_border{
     border: 0.8px solid #14141433
 }
+.ds_hide_border{
+   border-left: 4px solid white;
+}
 .ds_active-border{
-   border-left: 4px solid #3D4936;
+   border-left: 4px solid #3D4936 !important;
    border-radius: 3px 3px 3px 3px;
+}
+.ds_active-border img {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(155%) saturate(542%) hue-rotate(54deg) brightness(0%) contrast(1000%)
+}
+.ds_active-border h5{
+    color: #3D4936 !important;
+    font-weight: 600;
 }
 .ds_icon-img{
     width: 22px;
@@ -106,8 +99,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: white;
     width: 100%;
     padding: 10px 0px;
-    border: 0;
+    border: 1px solid #3D4936;
     border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+.ds_pro_btn:hover{
+    color: #3D4936;
+    background-color: white;
+    
 }
 .ds_pro_res{
     box-shadow: 0px 0px 24px 3px #7272721A;
@@ -163,7 +162,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .ds_order_color3{
     color: #FF3300;
 }
-
+.ds_order_anker:hover{
+    color: #14141499;
+}
 
 
 /* <!-- ************ Add Review Popup ************ --> */
@@ -195,6 +196,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #3D4936;
     border-radius: 5px;
     margin-right: 20px;
+    transition: 0.3s ease-in-out;
+}
+.ds_review_cancel:hover{
+    color: white;
+    background-color: #3D4936;
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
 }
 .ds_review_submit{
     padding: 8px 40px;
@@ -202,15 +209,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
     color: white;
     border-radius: 5px;
+    border: 0.8px solid #3D493699;
+    transition: 0.3s ease-in-out;
 }
-
+.ds_review_submit:hover{
+    color: #3D4936;
+    background-color: white;
+}
 
 /* <!-- ************ My Address  *********** --> */
 .ds_add_btn{
     border: 0.8px solid #3D493699;
     padding: 7px 15px;
     border-radius: 5px;
+    transition: 0.3s ease-in-out;
 }
+.ds_add_btn:hover{
+    background: #3D4936;
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+    color: white;
+}
+
 .ds_add_height{
     height: 600px;
 }
@@ -231,6 +250,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-color: white;
     box-shadow: 0px 0px 24px 3px #7272721A;
     width: 30%;
+}
+.ds_add_dropdown p:hover{
+    color: #8fc470;
 }
 
 /* <!-- -------------- Add Address Popup ---------  --> */
@@ -260,6 +282,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #3D4936;
     border-radius: 5px;
     margin-right: 10px;
+    transition: 0.3s ease-in-out;
+}
+.ds_add_cancel:hover{
+    background: #3D4936;
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+    color: white;
 }
 .ds_add_save{
     padding: 7px 55px;
@@ -268,8 +296,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: white;
     border-radius: 5px;
     margin-right: 10px;
+    transition: 0.3s ease-in-out;
+    border: 0.8px solid #3D493699;
 }
-
+.ds_add_save:hover{
+    color: #3D4936;
+    background-color: white;
+}
 
 /* <!-- -------------- Delete Address Popup ---------  --> */
 .ds_delete_cancel{
@@ -278,6 +311,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #3D4936;
     border-radius: 5px;
     margin-right: 10px;
+    transition: 0.3s ease-in-out;
+}
+.ds_delete_cancel:hover{
+    background: #3D4936;
+    box-shadow: 0px 4px 4px 0px #FFFFFF80 inset;
+    color: white;
 }
 .ds_delete_delete{
     padding: 7px 55px;
@@ -286,6 +325,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: white;
     border-radius: 5px;
     margin-right: 10px;
+    border: 0.8px solid #3D493699;
+}
+.ds_delete_delete:hover{
+    color: #3D4936;
+    background-color: white;
 }
 
 /* <!-- ************ Change Password  *********** --> */
@@ -300,6 +344,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #3D4936;
     border-radius: 5px;
     margin-right: 10px;
+    transition: 0.3s ease-in-out;
+}
+.ds_change_cancel:hover{
+    background-color: #3D4936;
+    color: white;
+    border: 0.8px solid #3D493699;
 }
 .ds_change_reset{
     padding: 8px 25px;
@@ -308,6 +358,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: white;
     border-radius: 5px;
     margin-right: 10px;
+    border: 0.8px solid #3D493699;
+    transition: 0.3s ease-in-out;
+}
+.ds_change_reset:hover{
+    background-color: white;
+    color: #3D4936;
 }
 .ds_deactive_li{
     font-size: 14px;
@@ -319,6 +375,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: white;
     border-radius: 5px;
     margin-right: 10px;
+    border: 0.8px solid #3D493699;
+    transition: 0.3s ease-in-out;
+}
+.ds_deactive_btn:hover{
+    border: 0.8px solid #3D493699;
+    background-color: white;
+    color: #3D4936;
 }
 
 /* <!-- -------------- Deactivate  Account Popup  -------------- --> */

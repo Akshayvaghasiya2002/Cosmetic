@@ -3,11 +3,39 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Outfit", serif;
-
-
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+.ds_fs{
+  font-family: "Outfit", serif;
+}
+.ds_muted{
+  color: #14141499;
+}
+.ds_color{
+  color: #3D4936;
+}
+.ds_cursor{
+  cursor: pointer;
+}
+.ds_lh{
+  line-height: 20px;
+}
+.ds_600{
+  font-weight: 600;
+}
+.ds_14{
+  font-size: 14px;
+}
+.ds_space{
+  white-space: nowrap;
+}
+
+
+
+
 
 .text {
   font-family: "Outfit", serif;
