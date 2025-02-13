@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+.text {
+    font-family: "Outfit", serif;
+}
+
+
 .V_search {
     /* height: 4rem; */
     background-color: white;
@@ -85,9 +93,162 @@
     color: rgba(20, 20, 20, 1);
 }
 
-.V_emptysearch{
+.V_emptysearch {
     width: 150px;
     height: 90px;
+}
+
+
+.V_sign_login {
+    --bs-modal-width: 1010px;
+    /* margin-top: 100px; */
+}
+
+.V_header {
+    border-bottom: 0px;
+}
+
+.V_logo_b {
+    font-family: Oregano;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+.V_logo {
+    font-family: Outfit;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.V_sign {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.V_modal_head {
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+    color: rgba(20, 20, 20, 1);
+}
+
+.V_account {
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+    color: rgba(20, 20, 20, 0.6);
+}
+
+.V_control {
+    border: 0px;
+    background-color: rgba(20, 20, 20, 0.06) !important;
+    height: 50px;
+}
+
+
+.form-control:focus {
+    border-color: rgba(20, 20, 20, 0.06) !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.form-control::placeholder {
+    color: rgba(20, 20, 20, 0.6);
+}
+
+.V_bottom {
+    padding-bottom: 30px;
+}
+
+.V_bottom1 {
+    margin-bottom: 30px;
+}
+
+.V_bottom2 {
+    margin-bottom: 15px;
+}
+
+.V_register {
+    font-family: Lexend Deca;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: rgba(61, 73, 54, 1);
+    box-shadow: 0px -8px 10px 0px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.5) inset;
+    height: 50px;
+    border-radius: 4px;
+    border: 0.8px solid #3D4936;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.V_register:hover {
+    background-color: white;
+    color: #3D4936 !important;
+    border: 0.8px solid #3D4936;
+}
+
+.V_half {
+    border: 0.75px solid;
+    border-image-source: linear-gradient(190deg, #141414 0%, #D8D8D8 100%);
+    width: 50%;
+    border-image-slice: 1;
+}
+
+.V_half1 {
+    border: 0.75px solid;
+    border-image-source: linear-gradient(90deg, #141414 0%, #D8D8D8 100%);
+    width: 50%;
+    border-image-slice: 1;
+}
+
+.V_log_google {
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba(20, 20, 20, 1);
+}
+
+.V_border {
+    border: 0.8px solid #3D4936;
+    height: 50px;
+    border-radius: 4px;
+}
+
+.V_glg {
+    width: 20px;
+    height: 20px;
+}
+
+.V_question {
+    font-weight: 300;
+    font-size: 14px;
+    color: rgba(20, 20, 20, 0.6);
+}
+
+.V_r_login {
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-offset: Auto;
+    text-decoration-thickness: Auto;
+    text-decoration-skip-ink: auto;
+    color: rgba(20, 20, 20, 1);
+}
+
+.V_me {
+    font-weight: 300;
+    font-size: 12px;
+    color: rgba(20, 20, 20, 0.6);
+}
+
+.V_for_pwd {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(255, 0, 0, 1);
 }
 
 
@@ -97,6 +258,36 @@
 
 
 
+.V_520 {
+    --bs-modal-width: 520px;
+}
+
+.V_bot_margine {
+    margin-bottom: 60px;
+}
+
+
+.V_email {
+    font-family: Outfit;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17.64px;
+    letter-spacing: 0%;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-offset: Auto;
+    text-decoration-thickness: Auto;
+    text-decoration-skip-ink: auto;
+    color: rgba(20, 20, 20, 1);
+}
+
+
+.V_otp_6{
+    height: 50px !important;
+    width: 50px;
+    font-size: 20px;
+}
 /* ================ media query ================ */
 
 
@@ -318,6 +509,63 @@
     .V_for_li {
         font-size: 16px;
     }
+
+
+    .V_sign_login {
+        --bs-modal-width: 800px;
+    }
+
+    .V_logo_b {
+        font-size: 40px;
+    }
+
+    .V_logo {
+        font-size: 30px;
+    }
+
+    .V_sign {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 94%;
+    }
+
+    .V_modal_head {
+        font-size: 18px;
+    }
+
+    .V_account {
+        font-size: 14px;
+    }
+
+    .V_control {
+        height: 45px;
+    }
+
+
+
+
+
+    .V_register {
+        height: 45px;
+    }
+
+    .V_log_google {
+        font-size: 14px;
+    }
+
+    .V_border {
+        height: 45px;
+    }
+
+    .V_glg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .V_question {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 991px) and (min-width: 768px) {
@@ -373,6 +621,67 @@
     .V_for_li {
         font-size: 16px;
     }
+
+
+
+
+
+    .V_sign_login {
+        --bs-modal-width: 700px;
+    }
+
+    .V_logo_b {
+        font-size: 30px;
+    }
+
+    .V_logo {
+        font-size: 20px;
+    }
+
+    .V_sign {
+        bottom: 0;
+        left: 0;
+        width: 350px;
+        height: 73%;
+    }
+
+    .V_modal_head {
+        font-size: 18px;
+    }
+
+    .V_account {
+        font-size: 14px;
+    }
+
+    .V_control {
+        height: 45px;
+    }
+
+
+
+
+
+    .V_register {
+        height: 45px;
+    }
+
+    .V_log_google {
+        font-size: 14px;
+    }
+
+    .V_border {
+        height: 45px;
+    }
+
+    .V_glg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .V_question {
+        font-size: 14px;
+    }
+
 }
 
 @media (max-width: 767px) and (min-width: 576px) {
@@ -427,6 +736,72 @@
 
     .V_for_li {
         font-size: 16px;
+    }
+
+
+    .V_sign_login {
+        width: calc(100% - 100px);
+        left: 50%;
+        transform: translatex(-50%) !important;
+    }
+
+
+    .V_modal_head {
+        font-size: 16px;
+    }
+
+    .V_account {
+        font-size: 12px;
+    }
+
+    .V_control {
+        height: 40px;
+    }
+
+
+    .V_bottom {
+        padding-bottom: 30px;
+    }
+
+    .V_bottom1 {
+        margin-bottom: 30px;
+    }
+
+    .V_register {
+        font-size: 16px;
+        height: 40px;
+        width: 350px;
+    }
+
+
+
+    .V_log_google {
+        font-size: 16px;
+    }
+
+    .V_border {
+        height: 40px;
+    }
+
+    .V_520 {
+        width: calc(100% - 30px);
+        left: 50%;
+        transform: translatex(-50%) !important;
+    }
+
+    .V_bot_margine {
+        margin-bottom: 30px;
+    }
+
+    .V_pwd {
+        width: 350px;
+        margin: 0px auto;
+    }
+
+    .V_otp_6{
+        height: 50px !important;
+        width: 50px;
+        font-size: 20px;
     }
 }
 
@@ -483,6 +858,86 @@
     .V_for_li {
         font-size: 16px;
     }
+
+
+
+    .V_sign_login {
+        width: calc(100% - 100px);
+        left: 50%;
+        transform: translatex(-50%) !important;
+    }
+
+    .V_header {
+        border-bottom: 0px;
+    }
+
+    .V_logo_b {
+        font-weight: 400;
+        font-size: 40px;
+    }
+
+    .V_logo {
+        font-weight: 500;
+        font-size: 30px;
+    }
+
+    .V_modal_head {
+        font-size: 16px;
+    }
+
+    .V_account {
+        font-size: 12px;
+    }
+
+    .V_control {
+        height: 40px;
+    }
+
+
+    .V_bottom {
+        padding-bottom: 30px;
+    }
+
+    .V_bottom1 {
+        margin-bottom: 30px;
+    }
+
+    .V_register {
+        font-size: 14px;
+        height: 40px;
+        width: 300px;
+    }
+
+
+
+    .V_log_google {
+        font-size: 14px;
+    }
+
+    .V_border {
+        height: 40px;
+    }
+
+    .V_520 {
+        width: calc(100% - 30px);
+        left: 50%;
+        transform: translatex(-50%) !important;
+    }
+
+    .V_bot_margine {
+        margin-bottom: 30px;
+    }
+
+    .V_pwd {
+        width: 300px;
+        margin: 0px auto;
+    }
+
+    .V_otp_6{
+        height: 50px !important;
+        width: 50px;
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 480px) and (min-width: 320px) {
@@ -538,5 +993,79 @@
     .V_for_li {
         font-size: 14px;
     }
-    
+
+
+
+    .V_sign_login {
+        width: calc(100% - 30px);
+        left: 50%;
+        transform: translatex(-50%) !important;
+    }
+
+    .V_header {
+        border-bottom: 0px;
+    }
+
+    .V_logo_b {
+        font-weight: 400;
+        font-size: 40px;
+    }
+
+    .V_logo {
+        font-weight: 500;
+        font-size: 30px;
+    }
+
+    .V_modal_head {
+        font-size: 16px;
+    }
+
+    .V_account {
+        font-size: 12px;
+    }
+
+    .V_control {
+        height: 40px;
+    }
+
+
+    .V_bottom {
+        padding-bottom: 30px;
+    }
+
+    .V_bottom1 {
+        margin-bottom: 30px;
+    }
+
+    .V_register {
+        font-size: 14px;
+        height: 40px;
+    }
+
+
+
+    .V_log_google {
+        font-size: 14px;
+    }
+
+    .V_border {
+        height: 40px;
+    }
+
+
+    .V_520 {
+        width: calc(100% - 30px);
+        left: 50%;
+        transform: translatex(-50%) !important;
+    }
+
+    .V_bot_margine {
+        margin-bottom: 30px;
+    }
+
+    .V_otp_6{
+        height: 35px !important;
+        width: 35px;
+        font-size: 16px;
+    }
 }
