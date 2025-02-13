@@ -555,14 +555,24 @@ img {
 .text-overlay {
   position: absolute;
   top: 40%;
-  left: 30%;
+  left: 35%;
   transform: translate(-50%, -50%);
   color: var(--color-3D4936);
   border-radius: 10px;
 }
 
+.A_banner_title_width {
+  width: 46%;
+}
+
+.A_banner_subtitle_width {
+  width: 80%;
+  line-height: 24px;
+}
+
+
 .text-overlay h2 {
-  font-size: 35px;
+  font-size: 28px;
   font-weight: 600;
 }
 
@@ -573,7 +583,7 @@ img {
 
 .A_dots .owl-dots {
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 48%;
 }
 
@@ -730,6 +740,7 @@ img {
   color: white;
   transition: 0.5s;
 }
+
 .offer-box {
   position: relative;
   width: 100%;
@@ -756,6 +767,7 @@ img {
   padding: 15px;
   border-radius: 10px;
 }
+
 .offer-text2 {
   position: absolute;
   width: 50%;
@@ -767,6 +779,7 @@ img {
   padding: 15px;
   border-radius: 10px;
 }
+
 .offer-text3 {
   position: absolute;
   width: 50%;
@@ -808,8 +821,25 @@ img {
   transition: 0.7s;
 }
 
+.A_newarrival_slider .owl-carousel.owl-nav button.owl-prev {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 35%;
+  margin-left: -30px !important;
+  display: block !important;
+  border: 1px solid black !important;
+  border-radius: 50% !important;
+}
+
 /* ***************************** slider end ************************ */
 /* ***************************** All mediaquery start ************************ */
+@media only screen and (max-width: 1024px) {
+  .text-overlay {
+    left: 42%;
+  }
+}
+
 @media only screen and (min-width: 993px) {
   .menu-dropdown:hover>.submenu {
     opacity: 1;
@@ -880,7 +910,7 @@ img {
     display: none;
     cursor: pointer;
     width: 3rem;
-  
+
     text-align: center;
   }
 
@@ -996,6 +1026,57 @@ img {
   .burger {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .A_banner_title_width {
+    width: 65%;
+  }
+
+  .text-overlay h2 {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+  }
+
+  .A_banner_subtitle_width {
+    width: 100%;
+    line-height: 18px;
+  }
+
+  .A_buttan_class {
+    padding: 7px 40px;
+  }
+
+  .A_dots .owl-dots {
+    left: 42%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .A_banner_title_width {
+    width: 100%;
+  }
+  .A_sm_banner{
+    height: 500px !important;
+  }
+
+  .text-overlay h2 {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+  }
+
+  .A_banner_subtitle_width {
+  width: 100%;
+  }
+  .text-overlay {
+    top: 50%;
+  }
+  .A_buttan_class {
+    padding: 7px 28px;
+  }
+
+  .A_dots .owl-dots {
+    left: 34%;
   }
 }
 
