@@ -114,10 +114,40 @@
 
 
  @media (max-width: 768px) {
-   .ds_max_width{
+   /* .ds_max_width{
      min-width: 700px;
-   }
+   } */
+   .ds_order_line{
+    left: 13%;
+    width: 75%;
+    display: none;
+  }
  }
+
+ @media (max-width: 575px) {
+    .ds_order_round{
+        width: 47px;
+        height: 47px;
+    }
+    /* .ds_order_newline{
+        position: absolute;
+        top: 21%;
+        left: 33%;
+        height: 57%;
+        border: 0.8px solid #3D4936;
+        z-index: -1;
+    } */
+     .ds_order_newline{
+        height: 80px;
+        background-color: #3D4936;
+        width: 2px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+     }
+   }
 
  @media (max-width: 321px) {
    .ds_cancel_order {

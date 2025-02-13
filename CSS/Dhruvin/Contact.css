@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+
+.ds_contact_bg{
+    /* background-image: url(/IMG/Dhruvin/left-design.png); */
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+}
+.ds_contact_bg2{
+    /* background-image: url(/IMG/Dhruvin/right-design.png); */
+    background-repeat: no-repeat;
+    background-position: right; 
+}
+.ds_contact_border{
+    background: #3D4936;
+    height: 60px;
+    width: 80%;
+}
+.ds_contact_box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 60%;
+    box-shadow: -4px 4px 14px 0px #0000000F;
+}
+.ds_contact_input{
+    border: 0;
+    height: 45px;
+    background: #1414140F;
+    width: 100%;
+    padding: 0px 15px;
+    border-radius: 5px;
+}
