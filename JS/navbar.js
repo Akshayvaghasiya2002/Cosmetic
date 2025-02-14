@@ -91,11 +91,11 @@ const bestSellerData = async () => {
                                         Price: $${product.price} <span style="text-decoration: line-through; color: #14141499;   font-weight: 500; ">$${product.originalPrice}</span></p>
                                     <p class="card-text" style="color:#388E3C">${product.discount}</p>
                                 </div>
-                                <div>
+                                
                                 <div>
                                        <button style="" class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
                                 </div>
-                                </div>
+                            
                             </div>
                         </div>
                     `;
