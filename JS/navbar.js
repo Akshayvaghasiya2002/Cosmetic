@@ -131,8 +131,8 @@ $(document).ready(async function () {
                              </div>
                              <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}">
                              <div class="card-body">
-                                 <h6 class="card-title">${product.name}</h6>
-                                 <div class="d-flex justify-content-between align-items-center">
+                                 <h6 class="card-title text-truncate">${product.name}</h6>
+                                 <div class="d-flex justify-content-between align-items-center flex-column">
                                      <p class="card-text mb-0">Price: $${product.price} <span style="text-decoration: line-through; color: #14141499; font-weight: 500;">$${product.originalPrice}</span></p>
                                      <p class="card-text" style="color:#388E3C">${product.discount}</p>
                                  </div>
@@ -142,6 +142,47 @@ $(document).ready(async function () {
                      </div>`;
             carousel.append(productElement);
         });
+
+        // ////////////////////////////////// btn filter products //////////////////////////////////
+        let allProducts = [];
+
+        async function fetchProducts() {
+            try {
+                const response = await fetch("http://localhost:3000/products");
+                if (!response.ok) throw new Error("Failed to fetch products");
+                allProducts = await response.json();
+                console.log("Products Loaded:", allProducts);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+
+        function filterProducts(category) {
+            const productContainer = document.getElementById("product-container");
+            productContainer.innerHTML = "";
+
+            const filtered = allProducts.filter(product => product.category.toLowerCase() === category.toLowerCase());
+            
+            if (filtered.length === 0) {
+                productContainer.innerHTML = `<p>No products found.</p>`;
+                return;
+            }
+
+            filtered.forEach(product => {
+                productContainer.innerHTML += `
+                    <div>
+                        <h3>${product.name}</h3>
+                        <p>Price: $${product.price}</p>
+                        <p>Category: ${product.category}</p>
+                    </div>
+                    <hr>
+                `;
+            });
+        }
+
+        fetchProducts();
+        // ////////////////////////////////// btn filter products //////////////////////////////////
+
 
         carousel.owlCarousel({
             loop: true,
