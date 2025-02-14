@@ -1,0 +1,1135 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+.text {
+    font-family: "Outfit", serif;
+}
+
+
+.V_head {
+    font-weight: 500;
+    font-size: 44px;
+    color: rgba(61, 73, 54, 1);
+}
+
+.V_grab {
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(20, 20, 20, 0.6);
+}
+
+.V_off_back {
+    background-image: url("../../IMG/Parth/off_back.png");
+    width: 100%;
+    height: 510px;
+    background-size: cover;
+}
+
+.V_image_first_tag {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(61, 73, 54, 0.7);
+}
+
+.V_image_second_tag {
+    font-family: Times New Roman;
+    font-weight: 700;
+    font-size: 34px;
+    color: rgba(61, 73, 54, 1);
+}
+
+.V_text_image_width {
+    width: 250px;
+}
+
+
+
+.V_back_image_1 {
+    background-image: url("../../IMG/Parth/iconic_image.png");
+    width: 100%;
+    height: 270px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.V_logo_size {
+    position: absolute;
+    width: 80px;
+    height: 25px;
+    top: 30px;
+    left: 30px;
+}
+
+.V_des_width {
+    position: absolute;
+    width: 224px;
+    bottom: 30px;
+    left: 30px;
+}
+
+.V_offer {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.V_effect {
+    font-family: Times New Roman;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.V_effect_color {
+    background: linear-gradient(273.91deg, #8D473B 13.28%, #271410 98.76%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.V_effect_color_2 {
+    background: linear-gradient(102.19deg, #475240 19.18%, #A7B781 99.86%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.V_effect_color_3 {
+    background: linear-gradient(99.94deg, #C77756 -4.35%, #692A04 57.12%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.V_back_image_2 {
+    background-image: url("../../IMG/Parth/Loreal_image.png");
+    width: 100%;
+    height: 270px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.V_back_image_3 {
+    background-image: url("../../IMG/Parth/Sugar_image.png");
+    width: 100%;
+    height: 270px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+.V_border {
+    border: 0.6px solid rgba(20, 20, 20, 0.2);
+    box-shadow: -4px 4px 14px 0px rgba(0, 0, 0, 0.06);
+    width: 310px;
+}
+
+.V_image {
+    width: 300px;
+    height: 300px;
+    margin: 15px;
+}
+
+.V_name_width {
+    width: 240px;
+}
+
+.V_name {
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(20, 20, 20, 1);
+}
+
+.V_price {
+    font-weight: 500;
+    font-size: 22px;
+    color: rgba(20, 20, 20, 1);
+}
+
+.V_actual_price {
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: line-through;
+    color: rgba(20, 20, 20, 0.6);
+}
+
+.V_green {
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(56, 142, 60, 1);
+}
+
+.V_color_border {
+    border: 0.6px solid rgba(20, 20, 20, 0.2);
+    box-shadow: -4px 4px 14px 0px rgba(0, 0, 0, 0.06);
+    border-radius: 50%;
+}
+
+.V_color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 5px;
+    line-height: 20px;
+}
+
+.V_cart_btn {
+    border: 0.6px solid rgba(20, 20, 20, 0.2);
+    box-shadow: -4px 4px 14px 0px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+}
+
+.V_top_rated {
+    position: absolute;
+    top: -3px;
+    left: 5px;
+    width: 120px;
+    height: 50px;
+}
+
+.V_dil_border {
+    border: 0.6px solid rgba(20, 20, 20, 0.6);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    right: 23px;
+}
+.fa-heart{
+    line-height: 30px;
+}
+.V_height {
+    height: 32px;
+}
+
+.V_more {
+    font-size: 14px;
+}
+
+.owl-nav{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    top: 43%;
+    display: block !important;
+    transform: translateY(-50%);
+}
+.owl-prev{
+    position: absolute;
+    padding: 10px !important;
+    border: 1px solid black !important;
+    border-radius: 50% !important;
+    height: 20px;
+    width: 30px;
+    height: 30px;
+    background: transparent !important;
+    color: #3D4936 !important;
+    left: -15px !important;
+}
+
+.owl-prev:hover{
+    background: #3D4936 !important;
+    color: white !important;
+}
+
+.owl-next{
+    position: absolute;
+    padding: 10px !important;
+    border: 1px solid black !important;
+    border-radius: 50% !important;
+    height: 20px;
+    width: 30px;
+    height: 30px;
+    background: transparent !important;
+    color: #3D4936 !important;
+    right: -15px !important;
+}
+.owl-next:hover{
+    background: #3D4936 !important;
+    color: white !important;
+}
+/* ================ media query ================ */
+
+
+@media (max-width: 1921px) and (min-width: 1651px) {
+    .V_head {
+        font-size: 44px;
+    }
+
+    .V_grab {
+        font-size: 16px;
+    }
+
+    .V_off_back {
+        width: 100%;
+        height: 510px;
+        background-size: cover;
+    }
+
+    .V_image_first_tag {
+
+        font-size: 14px;
+    }
+
+    .V_image_second_tag {
+        font-size: 34px;
+    }
+
+    .V_text_image_width {
+        width: 250px;
+    }
+
+
+    .V_border {
+        width: 100%;
+    }
+
+    .V_image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .V_name_width {
+        width: 240px;
+    }
+
+    .V_name {
+        font-size: 16px;
+    }
+
+    .V_price {
+        font-size: 22px;
+    }
+
+    .V_actual_price {
+        font-size: 16px;
+    }
+
+    .V_green {
+        font-size: 16px;
+    }
+
+
+    .V_more {
+        font-size: 14px;
+    }
+
+    
+    .owl-prev{
+        width: 30px;
+        height: 30px;
+        left: -90px !important;
+    }
+    
+    .owl-next{
+        width: 30px;
+        height: 30px;
+        right: -90px !important;
+    }
+}
+
+@media (max-width: 1650px) and (min-width: 1441px) {
+    .V_head {
+        font-size: 44px;
+    }
+
+    .V_grab {
+        font-size: 16px;
+    }
+
+    .V_off_back {
+        width: 100%;
+        height: 510px;
+        background-size: cover;
+        background-position-x: -220px;
+    }
+
+    .V_image_first_tag {
+
+        font-size: 14px;
+    }
+
+    .V_image_second_tag {
+        font-size: 34px;
+    }
+
+    .V_text_image_width {
+        width: 250px;
+    }
+
+    .V_back_image_1 {
+        width: 100%;
+        height: 243px;
+    }
+
+    .V_back_image_3 {
+        width: 100%;
+        height: 243px;
+        background-position: right;
+    }
+
+    .V_back_image_2 {
+        width: 100%;
+        height: 243px;
+        background-position: right;
+    }
+
+    .V_logo_size {
+        position: absolute;
+        width: 80px;
+        height: 25px;
+        top: 30px;
+        left: 30px;
+    }
+
+    .V_des_width {
+        position: absolute;
+        width: 224px;
+        bottom: 30px;
+        left: 30px;
+    }
+
+    .V_offer {
+        font-size: 14px;
+    }
+
+    .V_effect {
+        font-size: 26px;
+    }
+
+
+    .V_border {
+        width: 100%;
+    }
+
+    .V_image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .V_name_width {
+        width: 240px;
+    }
+
+    .V_name {
+        font-size: 16px;
+    }
+
+    .V_price {
+        font-size: 22px;
+    }
+
+    .V_actual_price {
+        font-size: 16px;
+    }
+
+    .V_green {
+        font-size: 16px;
+    }
+
+
+    .V_more {
+        font-size: 14px;
+    }
+
+    .owl-prev{
+        width: 30px;
+        height: 30px;
+        left: -100px !important;
+    }
+    
+    .owl-next{
+        width: 30px;
+        height: 30px;
+        right: -100px !important;
+    }
+}
+
+@media (max-width: 1440px) and (min-width: 1200px) {
+    .V_head {
+        font-size: 38px;
+    }
+
+    .V_grab {
+        font-size: 16px;
+    }
+
+    .V_off_back {
+        width: 100%;
+        height: 450px;
+        background-size: cover;
+        background-position-x: -90px;
+    }
+
+    .V_image_first_tag {
+
+        font-size: 14px;
+    }
+
+    .V_image_second_tag {
+        font-size: 34px;
+    }
+
+    .V_text_image_width {
+        width: 250px;
+    }
+
+    .V_back_image_2 {
+        background-position: right;
+    }
+
+
+    .V_border {
+        width: 100%;
+    }
+
+    .V_image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .V_name_width {
+        width: 240px;
+    }
+
+    .V_name {
+        font-size: 16px;
+    }
+
+    .V_price {
+        font-size: 22px;
+    }
+
+    .V_actual_price {
+        font-size: 16px;
+    }
+
+    .V_green {
+        font-size: 16px;
+    }
+
+
+    .V_more {
+        font-size: 14px;
+    }
+
+
+    .owl-prev{
+        width: 30px;
+        height: 30px;
+        left: -20px !important;
+    }
+    
+    .owl-next{
+        width: 30px;
+        height: 30px;
+        right: -20px !important;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .V_head {
+        font-size: 38px;
+    }
+
+    .V_grab {
+        font-size: 16px;
+    }
+
+    .V_off_back {
+        width: 100%;
+        height: 375px;
+        background-size: cover;
+        background-position-x: -60px;
+    }
+
+    .V_image_first_tag {
+
+        font-size: 14px;
+    }
+
+    .V_image_second_tag {
+        font-size: 34px;
+    }
+
+    .V_text_image_width {
+        width: 250px;
+    }
+
+    .V_back_image_1 {
+        width: 100%;
+        height: 200px;
+    }
+
+    .V_back_image_2 {
+        width: 100%;
+        height: 200px;
+        background-position: right;
+    }
+
+    .V_back_image_3 {
+        width: 100%;
+        height: 200px;
+        background-position: right;
+    }
+
+    .V_logo_size {
+        position: absolute;
+        width: 70px;
+        height: 20px;
+        top: 15px;
+        left: 15px;
+    }
+
+    .V_des_width {
+        position: absolute;
+        width: 207px;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .V_offer {
+        font-size: 14px;
+    }
+
+    .V_effect {
+        font-size: 24px;
+    }
+
+
+    .V_border {
+        width: 100%;
+    }
+
+    .V_image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .V_name_width {
+        width: 240px;
+    }
+
+    .V_name {
+        font-size: 16px;
+    }
+
+    .V_price {
+        font-size: 22px;
+    }
+
+    .V_actual_price {
+        font-size: 16px;
+    }
+
+    .V_green {
+        font-size: 16px;
+    }
+
+
+    .V_more {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .V_head {
+        font-size: 34px;
+    }
+
+    .V_grab {
+        font-size: 16px;
+    }
+
+    .V_off_back {
+        width: 100%;
+        height: 325px;
+        background-size: cover;
+        background-position-x: -100px;
+    }
+
+    .V_image_first_tag {
+
+        font-size: 14px;
+    }
+
+    .V_image_second_tag {
+        font-size: 28px;
+    }
+
+    .V_text_image_width {
+        width: 200px;
+    }
+
+
+    .V_back_image_1 {
+        width: 100%;
+        height: 250px;
+    }
+
+    .V_back_image_2 {
+        width: 100%;
+        height: 250px;
+        background-position: right;
+    }
+
+    .V_back_image_3 {
+        width: 100%;
+        height: 250px;
+        background-position: right;
+    }
+
+    .V_logo_size {
+        position: absolute;
+        width: 70px;
+        height: 20px;
+        top: 15px;
+        left: 15px;
+    }
+
+    .V_des_width {
+        position: absolute;
+        width: 207px;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .V_offer {
+        font-size: 14px;
+    }
+
+    .V_effect {
+        font-size: 24px;
+    }
+
+
+
+    .V_border {
+        width: 100%;
+    }
+
+    .V_image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .V_name_width {
+        width: 220px;
+    }
+
+    .V_name {
+        font-size: 14px;
+    }
+
+    .V_price {
+        font-size: 20px;
+    }
+
+    .V_actual_price {
+        font-size: 16px;
+    }
+
+    .V_green {
+        font-size: 16px;
+    }
+
+
+    .V_more {
+        font-size: 14px;
+    }
+
+    .owl-prev{
+        width: 30px;
+        height: 30px;
+        left: -20px !important;
+    }
+    
+    .owl-next{
+        width: 30px;
+        height: 30px;
+        right: -20px !important;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+    .V_head {
+        font-size: 30px;
+    }
+
+    .V_grab {
+        font-size: 14px;
+    }
+
+    .V_off_back {
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-position-x: -150px;
+    }
+
+    .V_image_first_tag {
+
+        font-size: 12px;
+    }
+
+    .V_image_second_tag {
+        font-size: 20px;
+    }
+
+    .V_text_image_width {
+        width: 150px;
+    }
+
+    .V_back_image_1 {
+        width: 100%;
+        height: 250px;
+    }
+
+    .V_back_image_2 {
+        width: 100%;
+        height: 250px;
+        background-position: right;
+    }
+
+    .V_back_image_3 {
+        width: 100%;
+        height: 250px;
+        background-position: right;
+    }
+
+    .V_logo_size {
+        position: absolute;
+        width: 80px;
+        height: 25px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .V_des_width {
+        position: absolute;
+        width: 181px;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .V_offer {
+        font-size: 14px;
+    }
+
+    .V_effect {
+        font-size: 21px;
+    }
+
+
+
+    .V_border {
+        width: 100%;
+    }
+
+    .V_image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .V_name_width {
+        width: 220px;
+    }
+
+    .V_name {
+        font-size: 14px;
+    }
+
+    .V_price {
+        font-size: 20px;
+    }
+
+    .V_actual_price {
+        font-size: 16px;
+    }
+
+    .V_green {
+        font-size: 16px;
+    }
+
+
+    .V_more {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 575px) and (min-width: 481px) {
+    .V_head {
+        font-size: 30px;
+    }
+
+    .V_grab {
+        font-size: 14px;
+    }
+
+    .V_off_back {
+        width: 100%;
+        height: 275px;
+        background-size: cover;
+        background-position-x: -150px;
+    }
+
+    .V_image_first_tag {
+
+        font-size: 12px;
+    }
+
+    .V_image_second_tag {
+        font-size: 20px;
+    }
+
+    .V_text_image_width {
+        width: 150px;
+    }
+
+
+    .V_back_image_1 {
+        width: 100%;
+        height: 225px;
+    }
+
+    .V_back_image_2 {
+        width: 100%;
+        height: 225px;
+        background-position: right;
+    }
+
+    .V_back_image_3 {
+        width: 100%;
+        height: 225px;
+        background-position: right;
+    }
+
+    .V_logo_size {
+        position: absolute;
+        width: 80px;
+        height: 25px;
+        top: 15px;
+        left: 15px;
+    }
+
+    .V_des_width {
+        position: absolute;
+        width: 181px;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .V_offer {
+        font-size: 14px;
+    }
+
+    .V_effect {
+        font-size: 21px;
+    }
+
+
+
+    .V_border {
+        width: 100%;
+    }
+
+    .V_image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .V_name_width {
+        width: 350px;
+    }
+
+    .V_name {
+        font-size: 16px;
+    }
+
+    .V_price {
+        font-size: 20px;
+    }
+
+    .V_actual_price {
+        font-size: 16px;
+    }
+
+    .V_green {
+        font-size: 16px;
+    }
+
+
+    .V_more {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+    .V_head {
+        font-size: 30px;
+    }
+
+    .V_grab {
+        font-size: 14px;
+    }
+
+    .V_off_back {
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        background-position-x: -150px;
+    }
+
+    .V_image_first_tag {
+
+        font-size: 12px;
+    }
+
+    .V_image_second_tag {
+        font-size: 20px;
+    }
+
+    .V_text_image_width {
+        width: 150px;
+    }
+
+
+
+    .V_back_image_1 {
+        width: 100%;
+        height: 200px;
+    }
+
+    .V_back_image_2 {
+        width: 100%;
+        height: 200px;
+        background-position: right;
+    }
+
+    .V_back_image_3 {
+        width: 100%;
+        height: 200px;
+        background-position: right;
+    }
+
+    .V_logo_size {
+        position: absolute;
+        width: 64px;
+        height: 20px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .V_des_width {
+        position: absolute;
+        width: 164px;
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .V_offer {
+        font-size: 12px;
+    }
+
+    .V_effect {
+        font-size: 19px;
+    }
+
+
+
+
+
+
+    .V_border {
+        width: 100%;
+    }
+
+    .V_image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .V_name_width {
+        width: 240px;
+    }
+
+    .V_name {
+        font-size: 16px;
+    }
+
+    .V_price {
+        font-size: 18px;
+    }
+
+    .V_actual_price {
+        font-size: 14px;
+    }
+
+    .V_green {
+        font-size: 14px;
+    }
+
+    .V_more {
+        font-size: 14px;
+    }
+}
+
+
+/* / ************* Container ********** / */
+.d_container {
+    /* margin-right: auto;
+  margin-left: auto; */
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+}
+
+@media (min-width: 1650px) {
+    .d_container {
+        width: 1501px;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1649px) {
+    .d_container {
+        width: 1200px;
+        max-width: none;
+        margin: auto;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .d_container {
+        width: 970px;
+        max-width: none;
+        margin: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .d_container {
+        width: 751px;
+        max-width: none;
+        margin: auto;
+
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .d_container {
+        max-width: 750px;
+        margin: auto;
+
+    }
+}
+
+@media (min-width: 300px) and (max-width: 450px) {
+    .d_container {
+        max-width: 750px;
+        padding: 0px 10px;
+        margin: auto;
+    }
+}
