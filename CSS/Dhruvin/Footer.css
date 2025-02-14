@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+.ds_foot_bg{
+    background: #3D4936;
+    padding: 50px 0px;
+}
+.ds_foot_text{
+    color: #FFFFFF99;
+}
+.ds_foot_mini{
+    height: 40px;
+    width: 40px;
+    border: 1px solid white;
+    border-radius: 5px;
+}

@@ -63,9 +63,44 @@ function toggleDropdown(icon) {
     dropdown.classList.toggle("d-none");
 }
 
+// --- Gender Selection 
+function selectGender(gender) {
+    document.querySelectorAll('.gender-option').forEach(el => {
+        el.classList.remove('active');
+    });
+
+    let selectedLabel = document.getElementById(gender + 'Label');
+    selectedLabel.parentElement.classList.add('active');
+}
+
 // Hide dropdowns when clicking outside
 document.addEventListener("click", function (event) {
     if (!event.target.closest(".fa-ellipsis-vertical")) {
         document.querySelectorAll(".ds_add_dropdown").forEach(d => d.classList.add("d-none"));
     }
+});
+
+
+// <!-- -------------- Deactivate  Account Popup  -------------- -->
+
+const otpFields = document.querySelectorAll('.ds_deactivate_otp');
+
+otpFields.forEach((field, index) => {
+    field.addEventListener('input', (e) => {
+        let value = e.target.value;
+        
+        // Ensure only a single digit is entered
+        e.target.value = value.replace(/\D/g, '').slice(0, 1);
+
+        // Move to next field if a digit is entered
+        if (e.target.value && index < otpFields.length - 1) {
+            otpFields[index + 1].focus();
+        }
+    });
+
+    field.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !field.value && index > 0) {
+            otpFields[index - 1].focus();
+        }
+    });
 });

@@ -183,7 +183,7 @@
                     <div class="col-xl-9 col-lg-8 col-md-7 ps-4 mt-5">
                         <div>
                             <!-- ************ My Profile  *********** -->
-                             <section class="d-non " id="profileSection">
+                             <section class="d-none " id="profileSection">
                                 <div>
                                     <h4>Edit Profile</h4>
                                     <div class="ds_pro_inner mt-3 px-4">
@@ -248,9 +248,15 @@
                                                         <div>
                                                             <div class="mb-3">
                                                                 <label for="exampleInputEmail1" class="form-label ds_pro_label ds_muted">Gender</label>
-                                                                <div class="position-relative d-flex">
-                                                                   <div class="ds_pro_div d-flex justify-content-center align-items-center me-3"><span>Female</span></div>
-                                                                   <div class="ds_pro_div d-flex justify-content-center align-items-center"><span>Male</span></div>
+                                                                <div class="d-flex">
+                                                                    <div class="gender-option ds_muted ds_color ds_cursor me-3" onclick="selectGender('female')">
+                                                                        <input type="radio " id="female" name="gender" value="Female" hidden>
+                                                                        <label for="female" class="ds_pro_div text-center ds_cursor pt-2" id="femaleLabel">Female</label>
+                                                                    </div>
+                                                                    <div class="gender-option ds_cursor" onclick="selectGender('male')">
+                                                                        <input type="radio " id="male" name="gender" value="Male" hidden>
+                                                                        <label class="ds_pro_div text-center pt-2 ds_cursor " for="male" id="maleLabel">Male</label>
+                                                                    </div>
                                                                 </div>
                                                               </div>
                                                         </div>  
@@ -744,7 +750,7 @@
                             </section>
 
                             <!-- ************ Deactivate  Account  *********** -->
-                            <section class="d-none " id="deactivateSection">
+                            <section class="d-non " id="deactivateSection">
                                 <div>
                                    <h4 class="ds_color">Deactivate Account</h4>
                                    <div class="ds_pro_inner p-4 mt-4">
@@ -779,7 +785,7 @@
                                                 <div class="mt-4 pt-2">
                                                     <div class="position-relative">
                                                         <input type="text " class="ds_pro_input  w-100 px-3" placeholder="+1 56565 65656">
-                                                        <a href="" class="ds_deactivate_text ds_color">Send OTP</a>
+                                                        <button href="" class="ds_deactivate_text ds_color text-decoration-underline">Send OTP</button>
                                                     </div>
                                                     <div class="mt-5 mx-sm-5 mx-3">
                                                        <div class="d-flex justify-content-between">
@@ -790,7 +796,7 @@
                                                           <input type="text" class="ds_deactivate_otp">
                                                        </div>
                                                     </div>
-                                                    <p class="ds_muted text-center mt-3 pt-1">Didn’t received code? <a href="" class="ds_color">Resend</a></p>
+                                                    <p class="ds_muted text-center mt-3 pt-1">Didn’t received code? <button  class="ds_color text-decoration-underline  ">Resend</button></p>
                                                     <div class="mt-3 mb-3 text-center">
                                                         <button class="ds_deactivate_let mt-3">Let me stay</button>
                                                         <button class="ds_deactivate_btn mt-3">Deactivate </button>

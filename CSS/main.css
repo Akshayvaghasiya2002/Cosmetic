@@ -965,6 +965,32 @@ width: 80%;
     width: 3%;
   }
 }
+
+
+@media (max-width:1200px) {
+  .smallslider .owl-prev {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 32%;
+    margin-left: 0px !important;
+    display: block !important;
+    border: 1px solid black !important;
+    border-radius: 50% !important;
+  }
+
+  .smallslider .owl-next {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 32%;
+    right: 0px;
+    display: block !important;
+    border: 1px solid black !important;
+    border-radius: 50% !important;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   .text-overlay {
     left: 42%;

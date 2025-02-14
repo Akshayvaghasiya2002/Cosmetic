@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+.ds_fre-btn{
+    width: 100%;
+    padding: 10px 20px;
+    font-weight: 500;
+    background-color: white;
+    color: #14141499;
+    border-left: 4px solid white !important;
+
+}
+.ds_active{
+    border-left: 4px solid  #3D4936 !important;
+    border-radius: 4px 23px 21px 3px;
+    color: #3D4936 !important;
+
+
+}
+.ds_fre-inner{
+    margin-right: 25px;
+    border: 0.6px solid #14141433;
+    border-radius: 5px;
+}
+
+
+.accordion {
+    border-radius: 4px;
+    overflow: hidden;
+    border: 0.6px solid #14141433
+  }
+  
+  .accordion-header {
+    cursor: pointer;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none;
+    position: relative;
+  }
+  .ds_accor-title{
+    font-size: 17px;
+  }
+  .accordion-body {
+    max-height: 0;
+    padding: 0px 0px !important;
+    background: #fff;
+    position: relative;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+  } 
+  
+  
+    
+    .accordion.open .accordion-body {
+    margin-top: 10px; 
+    max-height: 500px !important; 
+    padding: 10px 0px !important;
+    }
+
+    .ds_accor-shadow{
+      box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+    }
+  
+    .ds_accor-border{
+      border: 0.75px solid #72727240
+    }
+
+  .ds_accor-question {
+    font-size: 18px;
+    background: linear-gradient(92.98deg, #1163B8 4.99%, #2888E1 85.36%);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 500;
+    padding: 20px 15px;
+  }
+  
+  .accordion-header {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .accordion-header .fa-plus
+ {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  
+  .accordion-header .fa-plus {
+    display: inline;
+  }
+  
+  .accordion-header .fa-minus {
+    display: none;
+  }
+  
+  .accordion.open .fa-plus {
+    display: none;
+  }
+  
+  .accordion.open .fa-minus {
+    display: inline;
+    cursor: pointer;
+  }
