@@ -211,12 +211,24 @@
     color: rgba(20, 20, 20, 1);
 }
 
+/* .V_log_google:hover {
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+} */
 .V_border {
     border: 0.8px solid #3D4936;
     height: 50px;
     border-radius: 4px;
 }
-
+.V_border:hover {
+    background-color: rgba(20, 20, 20, 1);
+    cursor: pointer;
+    color: white;
+}
+.V_border:hover .V_log_google {
+    color: white;
+}
 .V_glg {
     width: 20px;
     height: 20px;

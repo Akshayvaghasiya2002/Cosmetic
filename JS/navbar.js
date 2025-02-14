@@ -264,6 +264,21 @@ function displayLogin() {
     displaySignUp.classList.toggle('d-none');
 }
 
+function verifyEmail() {
+    const hideResister = document.querySelector('.V_sign_section');
+    hideResister.classList.add('d-none');
+    const displaySignUp = document.querySelector(".V_520");
+    displaySignUp.classList.remove('d-none');
+    const displayEmail = document.querySelector(".V_verify_email_section");
+    displayEmail.classList.remove("d-none");
+    const displayOtp = document.querySelector(".V_verify_section");
+    displayOtp.classList.add('d-none');
+    const displayResetPwd = document.querySelector(".V_reset_section");
+    displayResetPwd.classList.add('d-none');
+    const hideforPwd = document.querySelector(".V_Forgot_section");
+    hideforPwd.classList.add("d-none");
+}
+
 function displayForgetPwd() {
     const displayLogin = document.querySelector(".V_login_section");
     displayLogin.classList.add("d-none");
@@ -273,6 +288,8 @@ function displayForgetPwd() {
     displayOtp.classList.add('d-none');
     const displayResetPwd = document.querySelector(".V_reset_section");
     displayResetPwd.classList.add('d-none');
+    const displayEmail = document.querySelector(".V_verify_email_section");
+    displayEmail.classList.add("d-none");
 }
 
 function loginClose() {
@@ -307,40 +324,26 @@ function resetPassword() {
     displayResetPwd.classList.remove('d-none');
 }
 
-// Select all OTP input fields
+
+
 const otpFields = document.querySelectorAll('.V_otp_6');
 
-// Function to move to the next field
-const moveToNext = (currentField, nextField) => {
-    if (nextField) {
-        nextField.focus();
-    }
-};
-
-// Function to move to the previous field
-const moveToPrevious = (currentField, previousField) => {
-    if (previousField) {
-        previousField.focus();
-    }
-};
-
-// Event listener for each OTP input field
 otpFields.forEach((field, index) => {
-    // When a value is entered, move to the next input field
-    field.addEventListener('input', () => {
-        if (field.value.length === 1) {
-            // Move to next input if current input has a value
-            const nextField = otpFields[index + 1];
-            moveToNext(field, nextField);
+    field.addEventListener('input', (e) => {
+        let value = e.target.value;
+        
+        // Ensure only a single digit is entered
+        e.target.value = value.replace(/\D/g, '').slice(0, 1);
+
+        // Move to next field if a digit is entered
+        if (e.target.value && index < otpFields.length - 1) {
+            otpFields[index + 1].focus();
         }
     });
 
-    // When a key is pressed (backspace), move to the previous input field
     field.addEventListener('keydown', (e) => {
-        if (e.key === 'Backspace' && field.value === '') {
-            // Move to previous input if current input is empty and backspace is pressed
-            const previousField = otpFields[index - 1];
-            moveToPrevious(field, previousField);
+        if (e.key === 'Backspace' && !field.value && index > 0) {
+            otpFields[index - 1].focus();
         }
     });
 });
