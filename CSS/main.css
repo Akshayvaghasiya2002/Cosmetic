@@ -776,8 +776,21 @@ img {
   overflow: hidden;
   border-radius: 12px;
 }
+.offer-box1 {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+  border-radius: 12px;
+}
 
 .offer-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.offer-image1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -819,7 +832,26 @@ img {
   padding: 15px;
   border-radius: 10px;
 }
+.offer-text4 {
+  position: absolute;
+  width: 40%;
+  top: 40%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-3D4936);
+  padding: 15px;
+  border-radius: 10px;
+}
 
+.offer-text4 h4{
+width: 60%;
+font-size: 28px;
+font-weight: bold;
+}
+.offer-text4 p{
+width: 80%;
+}
 .a_subtitle {
   font-size: 24px;
   letter-spacing: 1px;
@@ -841,6 +873,17 @@ img {
   font-size: 14px;
   border-radius: 5px;
 }
+.shop-btn1 {
+  background: transparent;
+  color: var(--color-3D4936);
+  border: none;
+  padding: 5px 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #3D4936;
+}
 
 .shop-btn:hover {
   background: transparent;
@@ -848,20 +891,80 @@ img {
   border: 1px solid #3D4936;
   transition: 0.7s;
 }
+.shop-btn1:hover {
+  background: var(--color-3D4936);
+  color: white;
+  border: 1px solid #3D4936;
+  transition: 0.7s;
+}
 
-.A_newarrival_slider .owl-carousel.owl-nav button.owl-prev {
-  width: 30px;
-  height: 30px;
+/* #product-carousel .owl-nav  {
+  width: 100%;
   position: absolute;
-  top: 35%;
-  margin-left: -30px !important;
-  display: block !important;
+  top: 50%;
+  display: flex !important;
+ justify-content: space-between;
+} */
+.A_img_size2 img {
+  width: 60% !important;
+}
+#product-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+#product-carousel .owl-nav button {
+  background: transparent !important;
+  border: none !important;
+  font-size: 24px;
+  color: #000 !important;
+}
+
+#product-carousel .owl-nav button.owl-prev {
+  position: absolute;
+  left: -70px;
   border: 1px solid black !important;
   border-radius: 50% !important;
+  width: 3%;
+}
+
+#product-carousel .owl-nav button.owl-next {
+  position: absolute;
+  right: -70px;
+  border: 1px solid black !important;
+  border-radius: 50% !important;
+  width: 3%;
+}
+#product-carousel .owl-nav button:hover {
+  background-color: var(--color-3D4936) !important;
+  color: var(--color-ffffff) !important;
+  transition: 0.7s;
+  border: var(--color-ffffff) !important;
 }
 
 /* ***************************** slider end ************************ */
 /* ***************************** All mediaquery start ************************ */
+
+@media only screen and (max-width: 1440px) {
+  #product-carousel .owl-nav button.owl-next {
+    position: absolute;
+    right: -50px;
+    border: 1px solid black !important;
+    border-radius: 50% !important;
+    width: 3%;
+  }
+  #product-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    left: -50px;
+    border: 1px solid black !important;
+    border-radius: 50% !important;
+    width: 3%;
+  }
+}
 @media only screen and (max-width: 1024px) {
   .text-overlay {
     left: 42%;
@@ -873,6 +976,15 @@ img {
     opacity: 1;
     visibility: visible;
     margin-top: 1rem;
+  }
+  .offer-image1{
+    height: 500px;
+  }
+  .offer-text4 h4 {
+    width: 75%;
+  }
+  .offer-text4 p {
+width: 100%;
   }
 }
 
@@ -1079,6 +1191,14 @@ img {
   .A_dots .owl-dots {
     left: 42%;
   }
+  .offer-image1{
+    height: 500px;
+  }
+  .offer-text4 {
+    width: 65%;
+  }
+
+
 }
 @media only screen and (max-width: 425px) {
   .A_banner_title_width {
@@ -1105,6 +1225,30 @@ img {
 
   .A_dots .owl-dots {
     left: 34%;
+  }
+  #product-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    left: -70px;
+    border: 1px solid black !important;
+    border-radius: 50% !important;
+    width: 3%;
+  }
+  
+  #product-carousel .owl-nav button.owl-next {
+    position: absolute;
+    right: -70px;
+    border: 1px solid black !important;
+    border-radius: 50% !important;
+    width: 3%;
+  }
+  .offer-text4 {
+    width: 100%;
+    left: 60%;
+  }
+  .offer-text4 h4{
+    width: 100%;
+    left: 60%;
+    font-size: 24px;
   }
 }
 
