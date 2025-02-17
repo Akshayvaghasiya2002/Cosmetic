@@ -3,7 +3,7 @@
 const wishlistData = [
     {
         id: 1,
-        topRated: "25%_off.png",
+        topRated: "/IMG/Parth/25_off.png",
         Image: "../../IMG/Parth/offer_1.png",
         productName: "Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick",
         Price: "$450",
@@ -14,7 +14,7 @@ const wishlistData = [
     },
     {
         id: 2,
-        topRated: "10_off.png",
+        topRated: "/IMG/Parth/10_off.png",
         Image: "../../IMG/Parth/offer_2.png",
         productName: "MAC Glow Play Tender Talk Lip Balm",
         Price: "$450",
@@ -25,7 +25,7 @@ const wishlistData = [
     },
     {
         id: 3,
-        topRated: "15%_off.png",
+        topRated: "/IMG/Parth/15_off.png",
         Image: "../../IMG/Parth/offer_3.png",
         productName: "MAC MACXIMAL SLEEK SATIN LIPSTICK",
         Price: "$450",
@@ -36,7 +36,7 @@ const wishlistData = [
     },
     {
         id: 4,
-        topRated: "20%_off.png",
+        topRated: "/IMG/Parth/20_off.png",
         Image: "../../IMG/Parth/offer_4.png",
         productName: "SUGAR Matte As Hell Mini Crayon Lipstick",
         Price: "$450",
@@ -74,7 +74,7 @@ const wishlistHTML = wishlistData.map((item) => {
             <div class="V_border">
                 <div class="position-relative">
                     <img src="${item.Image}" alt="${item.productName}" class="V_image mx-auto">
-                    <img src="../../IMG/Parth/10%_off.png" alt="Top Rated" class="V_top_rated w-auto">
+                    <img src="${item.topRated}" alt="Top Rated" class="V_top_rated w-auto">
                     <div class="V_dil_border d-flex align-items-center justify-content-center">
                         <i class="fa-regular fa-heart"></i>
                     </div>

@@ -181,8 +181,8 @@
 
 .V_top_rated {
     position: absolute;
-    top: -3px;
-    left: 5px;
+    top: 0px;
+    left: 20px;
     width: 120px;
     height: 50px;
 }

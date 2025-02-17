@@ -282,5 +282,28 @@
       "manufacturingDate": "2023-12-05",
       "howToApply": "Dab onto cheeks using fingers or a brush and blend outwards."
     }
+  ],
+  "User": [
+    {
+      "id": "e91d",
+      "fullName": "Parth Vaghasiya",
+      "phoneNumber": "1234567890",
+      "email": "parthvaghasi.kalathiyainfotech@gmail.com",
+      "password": "cvbc@12233"
+    },
+    {
+      "id": "30da",
+      "fullName": "Parth Vaghasiya",
+      "phoneNumber": "6352285710",
+      "email": "abc@gmail.com",
+      "password": "Abc@1234"
+    },
+    {
+      "id": "cb27",
+      "fullName": "Parth Vaghasiya",
+      "phoneNumber": "6352285710",
+      "email": "Parth@gmail.com",
+      "password": "Parth@1234"
+    }
   ]
 }

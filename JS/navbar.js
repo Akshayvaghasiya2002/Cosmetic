@@ -305,20 +305,20 @@ function displayLogin() {
     displaySignUp.classList.toggle('d-none');
 }
 
-function verifyEmail() {
-    const hideResister = document.querySelector('.V_sign_section');
-    hideResister.classList.add('d-none');
-    const displaySignUp = document.querySelector(".V_520");
-    displaySignUp.classList.remove('d-none');
-    const displayEmail = document.querySelector(".V_verify_email_section");
-    displayEmail.classList.remove("d-none");
-    const displayOtp = document.querySelector(".V_verify_section");
-    displayOtp.classList.add('d-none');
-    const displayResetPwd = document.querySelector(".V_reset_section");
-    displayResetPwd.classList.add('d-none');
-    const hideforPwd = document.querySelector(".V_Forgot_section");
-    hideforPwd.classList.add("d-none");
-}
+// function verifyEmail() {
+//     const hideResister = document.querySelector('.V_sign_section');
+//     hideResister.classList.add('d-none');
+//     const displaySignUp = document.querySelector(".V_520");
+//     displaySignUp.classList.remove('d-none');
+//     const displayEmail = document.querySelector(".V_verify_email_section");
+//     displayEmail.classList.remove("d-none");
+//     const displayOtp = document.querySelector(".V_verify_section");
+//     displayOtp.classList.add('d-none');
+//     const displayResetPwd = document.querySelector(".V_reset_section");
+//     displayResetPwd.classList.add('d-none');
+//     const hideforPwd = document.querySelector(".V_Forgot_section");
+//     hideforPwd.classList.add("d-none");
+// }
 
 function displayForgetPwd() {
     const displayLogin = document.querySelector(".V_login_section");
