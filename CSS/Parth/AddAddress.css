@@ -64,7 +64,29 @@
     height: 50px;
     border: 0.8px solid rgba(20, 20, 20, 0.6);
     border-radius: 4px;
+    transition: 0.3s ease-in-out;
 }
+
+.V_layout:hover {
+    background-color: #3D4936;
+    color: white;
+    cursor: pointer;
+}
+
+/* Selected button color */
+.selected {
+    background-color: #3D4936;
+    /* Add a unique color for selected button */
+    color: white;
+    /* Make the text color white for contrast */
+}
+
+/* 
+.V_other_btn.selected {
+    background-color: #28a745;  
+    color: white;  
+} */
+
 
 .V_proceed_payment {
     color: rgba(255, 255, 255, 1);
@@ -76,6 +98,14 @@
     box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.5) inset;
     width: 300px;
     height: 50px;
+    border: 0.8px solid rgba(20, 20, 20, 0.2);
+    transition: 0.3s ease-in-out;
+}
+
+.V_proceed_payment:hover {
+    background-color: white;
+    color: #3D4936;
+    cursor: pointer;
 }
 
 .V_border {
@@ -137,15 +167,28 @@
     color: rgba(61, 73, 54, 1);
     border: 0.8px solid rgba(61, 73, 54, 0.6);
     border-radius: 4px;
+    transition: 0.3s ease-in-out;
+}
+
+.V_address:hover {
+    background-color: #3D4936;
+    color: white;
+    cursor: pointer;
 }
 
 .V_select_add {
-    border: 0.6px solid rgba(20, 20, 20, 1);
+    border: 1px solid rgba(20, 20, 20, 1);
     border-radius: 4px;
 }
 
 .V_select_add1 {
     border: 0.6px solid rgba(20, 20, 20, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.selected_border{
+    border: 1px solid rgba(20, 20, 20, 1);
     border-radius: 4px;
 }
 
@@ -172,8 +215,14 @@
     border: 0.8px solid rgba(61, 73, 54, 0.6);
     border-radius: 4px;
     width: 160px;
+    transition: 0.3s ease-in-out;
 }
 
+.V_change:hover {
+    background-color: #3D4936;
+    color: white;
+    cursor: pointer;
+}
 
 /*   Edit Shipping Information */
 
@@ -202,6 +251,13 @@
     border-radius: 4px;
     border: 0.8px solid rgba(61, 73, 54, 0.6);
     color: rgba(61, 73, 54, 1);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.V_cancle:hover {
+    background-color: #3D4936;
+    color: white;
 }
 
 .modal-footer {
@@ -216,6 +272,15 @@
     font-size: 16px;
     text-align: center;
     border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    border: 0.8px solid rgba(61, 73, 54, 0.6);
+    color: white;
+}
+
+.V_save_change:hover {
+    background-color: white;
+    color: #3D4936;
 }
 
 /* ================ media query ================ */
@@ -741,6 +806,7 @@
         height: 100%;
         width: 50% !important;
     }
+
     /* === Edit Shipping Address */
 
     .V_modal_width {

@@ -68,7 +68,7 @@ const wishlistHTML = wishlistData.map((item) => {
     return `
       
                 <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 mb-5 mb-sm-4">
-                    <div class="V_border">
+                    <div class="V_border mx-auto">
                         <div class="position-relative">
                             <img src=${item.Image} alt="${item.productName}" class="V_image mx-auto">
                             ${topRatedHTML}

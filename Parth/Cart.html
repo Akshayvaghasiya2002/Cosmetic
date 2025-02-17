@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../index.html">
     <link rel="stylesheet" href="../CSS/main.css">
     <link rel="stylesheet" href="../CSS/Parth/cart.css">
+    <script src="../JS/Parth/Cart.js"></script>
 </head>
 
 <body>
@@ -61,16 +62,16 @@
                                     <p class="text V_selected_price m-0 text-end">$450</p>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <div class="px-xl-2 V_minus text-center">
+                                    <div class="px-xl-2 V_minus text-center"  onclick="decreaseCount()">
                                         -
                                     </div>
                                     <div class="text V_count m-0">
-                                        <p class="mx-1 px-xl-3 m-0">1</p>
+                                        <p class="mx-1 px-xl-3 m-0"  id="itemCount1">1</p>
                                     </div>
-                                    <div class="px-xl-2 V_plus text-center">
+                                    <div class="px-xl-2 V_plus text-center" onclick="increaseCount()">
                                         +
                                     </div>
-                                    <div class="V_delete ms-1 ms-xl-2">
+                                    <div class="V_delete ms-1 ms-xl-2" onclick="deleteItem()">
                                         <img src="../IMG/Parth/delete.png" alt="delete btn" class=" ms-auto">
                                     </div>
                                 </div>
@@ -94,16 +95,16 @@
                                     <p class="text V_selected_price m-0 text-end">$450</p>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <div class="px-xl-2 V_minus text-center">
+                                    <div class="px-xl-2 V_minus text-center"  onclick="decreaseCount()">
                                         -
                                     </div>
                                     <div class="text V_count m-0">
-                                        <p class="mx-1 px-xl-3 m-0">1</p>
+                                        <p class="mx-1 px-xl-3 m-0"  id="itemCount2">1</p>
                                     </div>
-                                    <div class="px-xl-2 V_plus text-center">
+                                    <div class="px-xl-2 V_plus text-center" onclick="increaseCount()">
                                         +
                                     </div>
-                                    <div class="V_delete ms-1 ms-xl-2">
+                                    <div class="V_delete ms-1 ms-xl-2" onclick="deleteItem()">
                                         <img src="../IMG/Parth/delete.png" alt="delete btn" class=" ms-auto">
                                     </div>
                                 </div>
@@ -127,16 +128,16 @@
                                     <p class="text V_selected_price m-0 text-end">$450</p>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <div class="px-xl-2 V_minus text-center">
+                                    <div class="px-xl-2 V_minus text-center"  onclick="decreaseCount()">
                                         -
                                     </div>
                                     <div class="text V_count m-0">
-                                        <p class="mx-1 px-xl-3 m-0">1</p>
+                                        <p class="mx-1 px-xl-3 m-0"  id="itemCount">1</p>
                                     </div>
-                                    <div class="px-xl-2 V_plus text-center">
+                                    <div class="px-xl-2 V_plus text-center" onclick="increaseCount()">
                                         +
                                     </div>
-                                    <div class="V_delete ms-1 ms-xl-2">
+                                    <div class="V_delete ms-1 ms-xl-2" onclick="deleteItem()">
                                         <img src="../IMG/Parth/delete.png" alt="delete btn" class=" ms-auto">
                                     </div>
                                 </div>
@@ -150,7 +151,7 @@
                         <p class="text V_amount m-0">Total</p>
                         <p class="text V_amount m-0">$1350.00</p>
                     </div>
-                    <div class="mt-4 mb-4 mb-md-0  text-center text-white text V_c_shopping py-2 ">
+                    <div class="mt-4 mb-4 mb-md-0  text-center  text V_c_shopping py-2 ">
                         Checkout
                     </div>
                 </div>
