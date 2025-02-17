@@ -71,7 +71,7 @@ const wishlistHTML = wishlistData.map((item) => {
 
     return `
         <div class="item">
-            <div class="V_border">
+            <div class="V_border mx-auto">
                 <div class="position-relative">
                     <img src="${item.Image}" alt="${item.productName}" class="V_image mx-auto">
                     <img src="${item.topRated}" alt="Top Rated" class="V_top_rated w-auto">
@@ -102,5 +102,3 @@ const wishlistHTML = wishlistData.map((item) => {
 // Insert the HTML content into OfferContainer
 OfferContainer.innerHTML = wishlistHTML;
 
-
-OfferContainer.innerHTML = wishlistHTML;

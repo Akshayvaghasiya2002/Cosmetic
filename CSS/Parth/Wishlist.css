@@ -38,6 +38,12 @@
     width: 200px;
     height: 50px;
     border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    border: 0.6px solid rgba(20, 20, 20, 0.2);
+}
+.V_continue:hover {
+    background-color: white;
+    color: #3D4936;
 }
 
 .V_border {
@@ -99,6 +105,12 @@
     border: 0.6px solid rgba(20, 20, 20, 0.2);
     box-shadow: -4px 4px 14px 0px rgba(0, 0, 0, 0.06);
     border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.V_cart_btn:hover {
+    background-color: #3D4936;
+    color: white;
 }
 
 .V_top_rated {
@@ -118,6 +130,7 @@
     top: 8px;
     right: 23px;
 }
+
 .fa-heart{
     line-height: 30px;
 }

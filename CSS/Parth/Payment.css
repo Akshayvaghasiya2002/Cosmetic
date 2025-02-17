@@ -57,8 +57,17 @@
     text-align: center;
     border-radius: 4px;
     height: 50px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s ease-in-out;
+    border: 1px solid rgba(20, 20, 20, 1);
+    border-radius: 4px;
 }
 
+.V_apply:hover {
+    background-color: white;
+    color: #3D4936;
+}
 .V_sprcial {
     font-weight: 500;
     font-size: 16px;
@@ -201,6 +210,14 @@
     box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.5) inset;
     width: 300px;
     height: 50px;
+    border: 1px solid rgba(20, 20, 20, 0.2);
+    transition: 0.3s ease-in-out;
+}
+
+.V_proceed_payment:hover {
+    background-color: white;
+    color: #3D4936;
+    cursor: pointer;
 }
 
 .V_bank_width {
@@ -280,6 +297,60 @@
     width: 90px;
     height: 90px;
 }
+
+
+
+
+
+
+/* Hide the default radio button */
+.hidden-radio {
+    display: none;
+}
+
+/* Custom radio button container */
+.custom-radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Outer circle */
+.radio-circle {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #777;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transition: all 0.3s ease; */
+}
+
+/* Inner filled circle */
+.radio-circle::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Checked radio button styles */
+.hidden-radio:checked + .radio-circle {
+    /* border-color: #000; Border color when selected */
+    border: 5px solid black
+}
+
+.hidden-radio:checked + .radio-circle::after {
+    /* background-color: #000; Inner circle color when selected */
+}
+
+
+
+
+
 /* ================ media query ================ */
 
 
