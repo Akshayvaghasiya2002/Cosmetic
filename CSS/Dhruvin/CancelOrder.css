@@ -9,7 +9,7 @@
     border-radius: 5px;
 }
 .ds_cancel_txtarea{
-    background: #1414140F;
+    background: #1414140F !important;
     border: none;
 }
 .ds_cancel_txtarea:focus{
@@ -49,7 +49,10 @@
     border: 0.8px solid #3D493699;
     transition: 0.3s ease-in-out;
 }
-
+.ds_return_btn:hover{
+    background-color: white;
+    color: #3D4936;
+}
 /* <!-- *********** Popup ************** --> */
 .ds_popup_img{
    width: 250px;

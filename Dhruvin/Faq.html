@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/CSS/Dhruvin/Faq.css">
 </head>
 <body>
-    <section>
+    <section class="mb-5 pb-sm-5">
         <div class="d_container">
            <div class="text-center mt-5">
               <h2 class="ds_color">FAQ’s</h2>
@@ -26,11 +26,11 @@
                         <button class="ds_fre-btn ds_active text-start mb-2" id="ds_fre-btn" onclick="handleNavTab(0 , 'General')">General</button>
                         <button class="ds_fre-btn  text-start mb-2" id="ds_fre-btn2" onclick="handleNavTab(1 , 'Booking related')">Booking related</button>
                         <button class="ds_fre-btn  text-start mb-2" id="ds_fre-btn3" onclick="handleNavTab(2 , 'Payment related')">Payment related</button>
-                        <button class="ds_fre-btn  text-start mb-2 border-0" id="ds_fre-btn4" onclick="handleNavTab(3 , 'Exchange & Returns')">Exchange & Returns</button>
-                        <button class="ds_fre-btn  text-start mb-2 border-0" id="ds_fre-btn5" onclick="handleNavTab(4 , 'Orders & Payments')">Orders & Payments</button>
-                        <button class="ds_fre-btn  text-start mb-2 border-0" id="ds_fre-btn6" onclick="handleNavTab(5 , 'Account')">Account</button>
-                        <button class="ds_fre-btn  text-start mb-2 border-0" id="ds_fre-btn7" onclick="handleNavTab(6 , 'Customer Support')">Customer Support</button>
-                        <button class="ds_fre-btn  text-start mb-2 border-0" id="ds_fre-btn8" onclick="handleNavTab(7 , 'Privacy & Policy')">Privacy & Policy</button>
+                        <button class="ds_fre-btn  text-start mb-2 " id="ds_fre-btn4" onclick="handleNavTab(3 , 'Exchange & Returns')">Exchange & Returns</button>
+                        <button class="ds_fre-btn  text-start mb-2 " id="ds_fre-btn5" onclick="handleNavTab(4 , 'Orders & Payments')">Orders & Payments</button>
+                        <button class="ds_fre-btn  text-start mb-2 " id="ds_fre-btn6" onclick="handleNavTab(5 , 'Account')">Account</button>
+                        <button class="ds_fre-btn  text-start mb-2 " id="ds_fre-btn7" onclick="handleNavTab(6 , 'Customer Support')">Customer Support</button>
+                        <button class="ds_fre-btn  text-start mb-2 " id="ds_fre-btn8" onclick="handleNavTab(7 , 'Privacy & Policy')">Privacy & Policy</button>
                       </div>
                     </div>
                 </div>
@@ -48,7 +48,19 @@
         </div>
         </div>
     </section>
+
+    <section id="Footer" ></section>
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+          fetch('Footer.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('Footer').innerHTML = data;
+              })
+              .catch(error => console.error('Error loading Footer:', error));
+      });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="/JS/Dhruvin/Faq.js"></script>
 </html>

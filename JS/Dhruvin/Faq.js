@@ -91,6 +91,8 @@ const accorArr = [
 ]
 
 function filterFAQs(selectedType) {
+    console.log("adfqwdfqwf " , selectedType);
+    
     const filteredAccorArr = accorArr.filter(element => {
         return selectedType === 'all' || element.type === selectedType;
     });
@@ -125,45 +127,37 @@ function attachAccordionListeners() {
     document.querySelectorAll('.accordion').forEach(accordion => {
         const header = accordion.querySelector('.accordion-header');
         const plusIcon = header.querySelector('.fa-plus');
-        const minusIcon = header.querySelector('.fa-minus'); // Updated selector to find the minus icon inside the header
+        const minusIcon = header.querySelector('.fa-minus'); 
         const body = accordion.querySelector('.accordion-body');
-        const border = accordion.querySelector(".ds_accor-border")
 
         // Initially hide the minus icon since the accordion is closed by default
         minusIcon.style.display = 'none';
 
-        // Click event for the header to toggle the accordion
         header.addEventListener('click', function () {
             const isOpen = accordion.classList.contains('open');
-            
-            if (isOpen) {
-                // Close the accordion
-                accordion.classList.remove('open');
-                accordion.classList.remove('ds_accor-shadow')
-                plusIcon.style.display = 'block'; // Show plus icon
-                minusIcon.style.display = 'none'; // Hide minus icon
-                header.classList.remove("ds_accor-question");
-                header.classList.add("pb-3")
 
-                // header.style.backgroundColor = '#2888E10D';
-                // border.classList.add("d-none")
-            } else {
-                // Open the accordion
+            // Close all accordions before opening a new one
+            document.querySelectorAll('.accordion').forEach(acc => {
+                acc.classList.remove('open');
+                acc.classList.remove('ds_accor-shadow');
+                acc.querySelector('.fa-plus').style.display = 'block';
+                acc.querySelector('.fa-minus').style.display = 'none';
+                acc.querySelector('.accordion-header').classList.remove("ds_accor-question");
+                acc.querySelector('.accordion-header').classList.add("pb-3");
+            });
+
+            if (!isOpen) {
+                // Open the clicked accordion
                 accordion.classList.add('open');
-                // accordion.classList.add('ds_accor-shadow')
-                plusIcon.style.display = 'none'; // Hide plus icon
-                minusIcon.style.display = 'block'; // Show minus icon
+                plusIcon.style.display = 'none';
+                minusIcon.style.display = 'block';
                 header.style.backgroundColor = 'white';
-                // header.classList.add("ds_accor-question");
-                // border.classList.remove("d-none")
-                document.getElementById("ds_accordian").style.borderRadius = "5px";
-                header.classList.remove("pb-3")
-                header.classList.add("pb-0")
+                header.classList.remove("pb-3");
+                header.classList.add("pb-0");
             }
         });
     });
 }
-
 
 // Initialize accordion listeners
 attachAccordionListeners();

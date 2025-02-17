@@ -41,10 +41,14 @@
     background: #3D4936;
     color: white;
     font-size: 14px;
-    padding: 10px 60px;
+    padding: 10px 70px;
     border: 0.8px solid #3D493699;
     transition: 0.3s ease-in-out;
     border-radius: 5px;
+}
+.ds_contact_btn:hover{
+    background-color: white;
+    color: #3D4936;
 }
 .ds_contact_left{
     position: absolute;
@@ -99,5 +103,8 @@
 @media (max-width:575px) {
    .ds_contact_border{
       height: 30px;
+   }
+   .ds_contact_btn{
+      padding: 10px 45px;
    }
 }
