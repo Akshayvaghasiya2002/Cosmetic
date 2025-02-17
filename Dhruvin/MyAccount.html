@@ -184,7 +184,7 @@
                     <div class="col-xl-9 col-lg-8 col-md-7 ps-4 mt-5">
                         <div>
                             <!-- ************ My Profile  *********** -->
-                             <section class="d-non " id="profileSection">
+                             <section class="d-none " id="profileSection">
                                 <div>
                                     <h4>Edit Profile</h4>
                                     <div class="ds_pro_inner mt-3 px-4">
@@ -197,14 +197,14 @@
                                                      </div>
                                                 </span>
                                             </div>
-                                            <div>
+                                            <form onsubmit="handleEditSubmit(event)">
                                                 <h5 class="mb-4">Your Details</h5>
                                                 <div class="row">
                                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
                                                         <div>
                                                             <div class="mb-3">
                                                                 <label for="exampleInputEmail21" class="form-label ds_pro_label ds_muted">First Name</label>
-                                                                <input type="email" class="form-control ds_pro_input" id="exampleInputEmail21" aria-describedby="emailHelp">
+                                                                <input type="text" class="form-control ds_pro_input" id="ds_edit_first" aria-describedby="emailHelp">
                                                               </div>
                                                         </div>
                                                     </div>
@@ -212,7 +212,7 @@
                                                         <div>
                                                             <div class="mb-3">
                                                                 <label for="exampleInputEmail22" class="form-label ds_pro_label ds_muted">Last Name</label>
-                                                                <input type="email" class="form-control ds_pro_input" id="exampleInputEmail22" aria-describedby="emailHelp">
+                                                                <input type="text" class="form-control ds_pro_input" id="ds_edit_last" aria-describedby="emailHelp">
                                                               </div>
                                                         </div>
                                                     </div>
@@ -220,7 +220,7 @@
                                                         <div>
                                                             <div class="mb-3">
                                                                 <label for="exampleInputEmail23" class="form-label ds_pro_label ds_muted">Mobile Number</label>
-                                                                <input type="email" class="form-control ds_pro_input" id="exampleInputEmail23" aria-describedby="emailHelp">
+                                                                <input type="number" class="form-control ds_pro_input" id="ds_edit_mobile" aria-describedby="emailHelp">
                                                               </div>
                                                         </div>
                                                     </div>
@@ -228,7 +228,7 @@
                                                         <div>
                                                             <div class="mb-3">
                                                                 <label for="exampleInputEmail24" class="form-label ds_pro_label ds_muted">Email</label>
-                                                                <input type="email" class="form-control ds_pro_input" id="exampleInputEmail24" aria-describedby="emailHelp">
+                                                                <input type="email" class="form-control ds_pro_input" id="ds_edit_email" aria-describedby="emailHelp">
                                                               </div>
                                                         </div>
                                                     </div>
@@ -251,11 +251,11 @@
                                                                 <label for="exampleInputEmail1" class="form-label ds_pro_label ds_muted">Gender</label>
                                                                 <div class="d-flex">
                                                                     <div class="gender-option ds_muted ds_color ds_cursor me-3" onclick="selectGender('female')">
-                                                                        <input type="radio " id="female" name="gender" value="Female" hidden>
+                                                                        <input type="radio " id="female" name="gender"  hidden>
                                                                         <label for="female" class="ds_pro_div text-center ds_cursor pt-2" id="femaleLabel">Female</label>
                                                                     </div>
                                                                     <div class="gender-option ds_cursor" onclick="selectGender('male')">
-                                                                        <input type="radio " id="male" name="gender" value="Male" hidden>
+                                                                        <input type="radio " id="male" name="gender" hidden>
                                                                         <label class="ds_pro_div text-center pt-2 ds_cursor " for="male" id="maleLabel">Male</label>
                                                                     </div>
                                                                 </div>
@@ -264,11 +264,11 @@
                                                     </div>
                                                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-12 mt-4 pt-2 mb-4 pb-1">
                                                         <div>
-                                                            <button class="ds_pro_btn">Update</button>
+                                                            <button type="submit" class="ds_pro_btn">Update</button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -477,7 +477,7 @@
                             </section>
 
                             <!-- ************ My Address  *********** -->
-                            <section class="d-none " id="addressSection">
+                            <section class="d-non " id="addressSection">
                                 <div>
                                     <div class="d-flex justify-content-between">
                                         <h4 class="ds_color">My Address</h4>
@@ -543,77 +543,81 @@
                                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body pt-0">
-                                                    <div>
+                                                    <form >
                                                         <div class="row">
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword1" placeholder="First Name">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_first" placeholder="First Name">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword2" placeholder="Last Name">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_last" placeholder="Last Name">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword3" placeholder="Mobile Number">
+                                                                    <input type="number" class="form-control ds_pro_input w-100" id="ds_add_mobile" placeholder="Mobile Number">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword4" placeholder="Email">
+                                                                    <input type="email" class="form-control ds_pro_input w-100" id="ds_add_email" placeholder="Email">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword5" placeholder="ZIP / Postal Code">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_zip" placeholder="ZIP / Postal Code">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword6" placeholder="Address(House no, Building, Street, Area)">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_bilding" placeholder="Address(House no, Building, Street, Area)">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword7" placeholder="Street Address 2 (Optional)">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_street" placeholder="Street Address 2 (Optional)">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword8" placeholder="City">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_city" placeholder="City">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                                                 <div>
-                                                                    <select class="ds_pro_input w-100 px-2" style="border-radius: 5px;" >
-                                                                        <option >State</option>
+                                                                    <select class="ds_pro_input w-100 px-2" name="state" style="border-radius: 5px;" >
+                                                                        <option selected>State</option>
+                                                                        <option>Gujarat</option>
+                                                                        <option>Maharastra</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-12 mt-4">
                                                                 <div>
-                                                                    <select class="ds_pro_input w-100 px-2" style="border-radius: 5px;" >
-                                                                        <option >Country</option>
+                                                                    <select class="ds_pro_input w-100 px-2" name="country" style="border-radius: 5px;" >
+                                                                        <option selected>Country</option>
+                                                                        <option>India</option>
+                                                                        <option>Austrlia</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
                                                             
                                                         </div>
                                                         <div>
-                                                            <h6 class="mt-4 pt-2">Save Address as</h6>
+                                                            <h6 class="mt-4 pt-2">Save Address asa</h6>
                                                             <div class="">
-                                                                <button class="ds_add_popup_btn mt-3">Home</button>
-                                                                <button class="ds_add_non_select mt-3">Office</button>
-                                                                <button class="ds_add_non_select mt-3">Other</button>
+                                                                <button class="ds_add_popup_btn mt-3" onclick="selectAddressType(this, 'Home' , event)">Home</button>
+                                                                <button class="ds_add_non_select mt-3" onclick="selectAddressType(this, 'Office' , event)">Office</button>
+                                                                <button class="ds_add_non_select mt-3" onclick="selectAddressType(this, 'Other' , event)">Other</button>
                                                             </div>
                                                         </div>
                                                         <div class="text-center  pt-3 mb-3">
-                                                            <button class="ds_add_cancel mt-3">Cancel</button>
-                                                            <button class="ds_add_save mt-3">Save</button>
+                                                            <button data-bs-dismiss="#addressModal" class="ds_add_cancel mt-3">Cancel</button>
+                                                            <button onclick="handleAddress(event)" class="ds_add_save mt-3">Save</button>
                                                         </div>
-                                                    </div>
+                                                    </form>
                                                 </div>
                                               </div>
                                             </div>
@@ -634,63 +638,67 @@
                                                         <div class="row">
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword11" placeholder="First Name">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_edit_first" placeholder="First Name">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword12" placeholder="Last Name">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_edit_last" placeholder="Last Name">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword13" placeholder="Mobile Number">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_edit_mobile" placeholder="Mobile Number">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword14" placeholder="Email">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_edit_email" placeholder="Email">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword15" placeholder="ZIP / Postal Code">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_edit_zip" placeholder="ZIP / Postal Code">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword16" placeholder="Address(House no, Building, Street, Area)">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_edit_bilding" placeholder="Address(House no, Building, Street, Area)">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword17" placeholder="Street Address 2 (Optional)">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_edit_street" placeholder="Street Address 2 (Optional)">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                                                 <div>
-                                                                    <input type="text" class="form-control ds_pro_input w-100" id="exampleInputPassword18" placeholder="City">
+                                                                    <input type="text" class="form-control ds_pro_input w-100" id="ds_add_edit_city" placeholder="City">
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                                                 <div>
-                                                                    <select class="ds_pro_input w-100 px-2" style="border-radius: 5px;" >
-                                                                        <option >State</option>
+                                                                    <select class="ds_pro_input w-100 px-2" name="ds_state" style="border-radius: 5px;" >
+                                                                        <option selected>State</option>
+                                                                        <option >Gujarat</option>
+                                                                        <option >Maharastra</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-12 mt-4">
                                                                 <div>
-                                                                    <select class="ds_pro_input w-100 px-2" style="border-radius: 5px;" >
-                                                                        <option >Country</option>
+                                                                    <select class="ds_pro_input w-100 px-2" name="ds_country" style="border-radius: 5px;" >
+                                                                        <option selected>Country</option>
+                                                                        <option >India</option>
+                                                                        <option >Australia</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
                                                             
                                                         </div>
                                                         <div class="text-center  pt-3 mb-3">
-                                                            <button class="ds_add_cancel mt-3">Cancel</button>
-                                                            <button class="ds_add_save mt-3">Save</button>
+                                                            <button data-bs-dismiss="modal" class="ds_add_cancel mt-3">Cancel</button>
+                                                            <button onclick="handleEditAddress(event)" class="ds_add_save mt-3">Save</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -713,7 +721,7 @@
                                                      <h6 class="text-center ds_muted mt-3">Are you sure you want to <br>
                                                         delete Address?</h6>
                                                      <div class="text-center mt-3 mb-4">
-                                                        <button class="ds_delete_cancel mt-2">Cancel</button>
+                                                        <button data-bs-dismiss="modal" class="ds_delete_cancel mt-2">Cancel</button>
                                                         <button class="ds_delete_delete mt-2">Delete</button>
                                                      </div>
                                                   </div>
@@ -900,6 +908,7 @@
      <section id="Footer" ></section>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
             fetch('Footer.html')

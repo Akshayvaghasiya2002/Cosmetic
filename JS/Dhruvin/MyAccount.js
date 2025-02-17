@@ -50,6 +50,55 @@ function handleManage(element) {
     }
 }
 
+// *********** My Profile **********
+
+// ----- Edit Profile 
+function handleEditSubmit(event) {
+    event.preventDefault();
+
+    let firstName = document.getElementById("ds_edit_first").value.trim();
+    let lastName = document.getElementById("ds_edit_last").value.trim();
+    let mobile = document.getElementById("ds_edit_mobile").value.trim();
+    let email = document.getElementById("ds_edit_email").value.trim();
+    let dob = document.getElementById("datePicker").value.trim();
+    let femaleChecked = document.getElementById("female").checked;
+    let maleChecked = document.getElementById("male").checked;
+
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let mobilePattern = /^\d{10}$/; // Assumes a 10-digit mobile number
+
+    if (firstName === "") {
+        alert("First Name is required");
+        return;
+    }
+    if (lastName === "") {
+        alert("Last Name is required");
+        return;
+    }
+    if (!mobilePattern.test(mobile)) {
+        alert("Enter a valid 10-digit Mobile Number");
+        return;
+    }
+    if (!emailPattern.test(email)) {
+        alert("Enter a valid Email Address");
+        return;
+    }
+    if (dob === "") {
+        alert("Date of Birth is required");
+        return;
+    }
+    if (!femaleChecked && !maleChecked) {
+        alert("Please select a gender");
+        return;
+    }
+
+    alert("Form submitted successfully!");
+}
+
+
+
+
+
 // *********** My Address **********
 function toggleDropdown(icon) {
     let dropdown = icon.parentElement.parentElement.querySelector(".ds_add_dropdown");
@@ -63,15 +112,179 @@ function toggleDropdown(icon) {
     dropdown.classList.toggle("d-none");
 }
 
-// --- Gender Selection 
-function selectGender(gender) {
-    document.querySelectorAll('.gender-option').forEach(el => {
-        el.classList.remove('active');
+function selectAddressType(button, type) {
+    // Remove active class from all buttons
+    document.querySelectorAll('.ds_add_popup_btn, .ds_add_non_select').forEach(btn => {
+        btn.classList.remove('ds_add_popup_btn');
+        btn.classList.add('ds_add_non_select');
     });
 
-    let selectedLabel = document.getElementById(gender + 'Label');
-    selectedLabel.parentElement.classList.add('active');
+    // Add active class to the selected button
+    button.classList.remove('ds_add_non_select');
+    button.classList.add('ds_add_popup_btn');
+
 }
+
+// --- Gender Selection 
+function selectGender(gender) {
+    document.querySelectorAll('.gender-option').forEach(el => el.classList.remove('active'));
+
+    let selectedInput = document.getElementById(gender);
+    selectedInput.checked = true;
+    selectedInput.parentElement.classList.add('active');
+}
+
+let selectedAddressType = "Home";
+
+function selectAddressType(button, type , event) {
+    event.preventDefault()
+    document.querySelectorAll('.ds_add_popup_btn, .ds_add_non_select').forEach(btn => {
+        btn.classList.remove('ds_add_popup_btn');
+        btn.classList.add('ds_add_non_select');
+    });
+
+    button.classList.remove('ds_add_non_select');
+    button.classList.add('ds_add_popup_btn');
+
+    selectedAddressType = type;
+}
+
+// ------ add address popup
+function handleAddress(event) {
+    event.preventDefault();
+
+    let firstName = document.getElementById("ds_add_first")?.value.trim();
+    let lastName = document.getElementById("ds_add_last")?.value.trim();
+    let mobile = document.getElementById("ds_add_mobile")?.value.trim();
+    let email = document.getElementById("ds_add_email")?.value.trim();
+    let zip = document.getElementById("ds_add_zip")?.value.trim();
+    let address = document.getElementById("ds_add_bilding")?.value.trim();
+    let city = document.getElementById("ds_add_city")?.value.trim();
+    let state = document.querySelector("select.ds_pro_input[name='state']")?.value;
+    let country = document.querySelector("select.ds_pro_input[name='country']")?.value;
+
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let mobilePattern = /^\d{10}$/;
+    let zipPattern = /^\d{5,}$/; // Minimum 5 digits ZIP Code
+
+    if (!firstName) {
+        alert("First Name is required");
+        return;
+    }
+    if (!lastName) {
+        alert("Last Name is required");
+        return;
+    }
+    if (!mobilePattern.test(mobile)) {
+        alert("Enter a valid 10-digit Mobile Number");
+        return;
+    }
+    if (!emailPattern.test(email)) {
+        alert("Enter a valid Email Address");
+        return;
+    }
+    if (!zipPattern.test(zip)) {
+        alert("Enter a valid ZIP / Postal Code (at least 5 digits)");
+        return;
+    }
+    if (!address) {
+        alert("Address is required");
+        return;
+    }
+    if (!city) {
+        alert("City is required");
+        return;
+    }
+    if (!state || state === "State") {
+        alert("Please select a State");
+        return;
+    }
+    if (!country || country === "Country") {
+        alert("Please select a Country");
+        return;
+    }
+    if (!selectedAddressType) {
+        alert("Please select an Address Type (Home, Office, or Other)");
+        return;
+    }
+
+    alert("Address saved successfully!");
+    // Close the modal
+    $('#addressModal').hide(); // Hide the modal
+    
+    // Remove the backdrop
+    $('.modal-backdrop').remove(); // Remove the backdrop
+
+}
+
+// ------ Edit address popup
+function handleEditAddress(event) {
+    event.preventDefault(); // Prevent the form from submitting until validation is complete
+    
+    let firstName = document.getElementById("ds_add_edit_first")?.value.trim();
+    let lastName = document.getElementById("ds_add_edit_last")?.value.trim();
+    let mobile = document.getElementById("ds_add_edit_mobile")?.value.trim();
+    let email = document.getElementById("ds_add_edit_email")?.value.trim();
+    let zip = document.getElementById("ds_add_edit_zip")?.value.trim();
+    let address = document.getElementById("ds_add_edit_bilding")?.value.trim();
+    let city = document.getElementById("ds_add_edit_city")?.value.trim();
+    let state = document.querySelector("select.ds_pro_input[name='ds_state']")?.value;
+    let country = document.querySelector("select.ds_pro_input[name='ds_country']")?.value;
+
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let mobilePattern = /^\d{10}$/;
+    let zipPattern = /^\d{5,}$/; // Minimum 5 digits ZIP Code
+
+    if (!firstName) {
+        alert("First Name is required");
+        return;
+    }
+    if (!lastName) {
+        alert("Last Name is required");
+        return;
+    }
+    if (!mobilePattern.test(mobile)) {
+        alert("Enter a valid 10-digit Mobile Number");
+        return;
+    }
+    if (!emailPattern.test(email)) {
+        alert("Enter a valid Email Address");
+        return;
+    }
+    if (!zipPattern.test(zip)) {
+        alert("Enter a valid ZIP / Postal Code (at least 5 digits)");
+        return;
+    }
+    if (!address) {
+        alert("Address is required");
+        return;
+    }
+    if (!city) {
+        alert("City is required");
+        return;
+    }
+    if (!state || state === "State") {
+        alert("Please select a State");
+        return;
+    }
+    if (!country || country === "Country") {
+        alert("Please select a Country");
+        return;
+    }
+    if (!selectedAddressType) {
+        alert("Please select an Address Type (Home, Office, or Other)");
+        return;
+    }
+
+    alert("Address saved successfully!");
+    // Close the modal
+    $('#editModal').hide(); // Hide the modal
+    
+    // Remove the backdrop
+    $('.modal-backdrop').remove(); // Remove the backdrop
+}
+
+
 
 // Hide dropdowns when clicking outside
 document.addEventListener("click", function (event) {
