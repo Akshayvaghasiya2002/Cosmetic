@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../CSS/Dhruvin/MyAccount.css">
-    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/home.css">
 </head>
 <body>  
     <section class="mt-5 mb-5 pb-sm-5">
@@ -184,7 +184,7 @@
                     <div class="col-xl-9 col-lg-8 col-md-7 ps-4 mt-5">
                         <div>
                             <!-- ************ My Profile  *********** -->
-                             <section class="d-none " id="profileSection">
+                             <section class="d-none" id="profileSection">
                                 <div>
                                     <h4>Edit Profile</h4>
                                     <div class="ds_pro_inner mt-3 px-4">
@@ -237,7 +237,7 @@
                                                             <div class="mb-3">
                                                                 <label for="exampleInputEmail25" class="form-label ds_pro_label ds_muted">Date of Birth</label>
                                                                 <div class="position-relative">
-                                                                  <input type="date" id="datePicker" class="form-control ds_pro_input" id="exampleInputEmail25" aria-describedby="emailHelp">
+                                                                  <input type="date" id="datePicker" class="form-control ds_pro_input"  aria-describedby="emailHelp">
                                                                   <div class="ds_pro_calender ">
                                                                     <img src="/IMG/Dhruvin/calender.png" id="calendarIcon" alt="" class="ds_calender_img ds_cursor">
                                                                   </div>
@@ -264,7 +264,7 @@
                                                     </div>
                                                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-4 col-12 mt-4 pt-2 mb-4 pb-1">
                                                         <div>
-                                                            <button type="submit" class="ds_pro_btn">Update</button>
+                                                            <button type="submit" class="ds_pro_btn" onclick="handleUpdateProfile(event)">Update</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -477,14 +477,14 @@
                             </section>
 
                             <!-- ************ My Address  *********** -->
-                            <section class="d-non " id="addressSection">
+                            <section class="d-none " id="addressSection">
                                 <div>
                                     <div class="d-flex justify-content-between">
                                         <h4 class="ds_color">My Address</h4>
                                         <button class="ds_add_btn ds_color ds_600" data-bs-toggle="modal" data-bs-target="#addressModal">+Add Address</button>
                                     </div>
                                     <!-- ------------ No Address ---------  -->
-                                    <div class="ds_pro_inner mt-4 d-none">
+                                    <div id="ds_no_address" class="ds_pro_inner mt-4">
                                        <div class="ds_add_height">
                                            <div class="d-flex flex-column justify-content-center align-items-center h-100">
                                               <img src="/IMG/Dhruvin/noaddress.png" alt="" class="ds_add_img">
@@ -494,8 +494,8 @@
                                     </div>
 
                                     <!-- ----------- Address ----------  -->
-                                    <div class="row">
-                                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6 col-12 mt-3">
+                                    <div class="row" id="ds_show_address">
+                                        <!-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6 col-12 mt-3">
                                             <div class="ds_pro_inner p-4 position-relative">
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div class="ds_add_type ds_color ds_600">Home</div>
@@ -530,7 +530,7 @@
                                                     <p class="mb-0 ds_lh">Ehrenkranz 13 Washington Square S, New York,Washington Square, NY 10012, USA</p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
 
                                     <!-- -------------- Add Address Popup ---------  -->
@@ -611,6 +611,9 @@
                                                                 <button class="ds_add_popup_btn mt-3" onclick="selectAddressType(this, 'Home' , event)">Home</button>
                                                                 <button class="ds_add_non_select mt-3" onclick="selectAddressType(this, 'Office' , event)">Office</button>
                                                                 <button class="ds_add_non_select mt-3" onclick="selectAddressType(this, 'Other' , event)">Other</button>
+                                                                <div id="ds_address_type" style="display: none;">
+                                                                    <input type="text" id="ds_address_type_input" class="ds_pro_input w-100 px-3 mt-4" placeholder="Address Type">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="text-center  pt-3 mb-3">
@@ -722,7 +725,7 @@
                                                         delete Address?</h6>
                                                      <div class="text-center mt-3 mb-4">
                                                         <button data-bs-dismiss="modal" class="ds_delete_cancel mt-2">Cancel</button>
-                                                        <button class="ds_delete_delete mt-2">Delete</button>
+                                                        <button  class="ds_delete_delete mt-2" onclick="handleDeleteAddress()">Delete</button>
                                                      </div>
                                                   </div>
                                                 </div>
@@ -734,25 +737,25 @@
                             </section>
 
                             <!-- ************ Change Password  *********** -->
-                            <section class="d-none " id="passwordSection">
+                            <section class="d-non " id="passwordSection">
                                 <div>
                                     <h4 class="ds_color">Change Password</h4>
                                     <div class="ds_pro_inner mt-4 p-4">
                                        <div class="position-relative">
-                                          <input type="text" class="ds_pro_input w-100 px-3" placeholder="Old Password">
-                                          <i class="fa-solid fa-eye-slash ds_muted ds_change_eye"></i>
+                                          <input type="text" id="oldPassword" class="ds_pro_input w-100 px-3"  placeholder="Old Password">
+                                          <i class="fa-solid fa-eye-slash ds_muted ds_change_eye" onclick="togglePasswordVisibility('oldPassword', this)"></i>
                                        </div>
                                        <div class="mt-4 position-relative">
-                                         <input type="text" class="ds_pro_input w-100 px-3" placeholder="New password">
-                                         <i class="fa-solid fa-eye-slash ds_muted ds_change_eye"></i>
+                                         <input type="text" id="newPassword" class="ds_pro_input w-100 px-3" placeholder="New password">
+                                         <i class="fa-solid fa-eye-slash ds_muted ds_change_eye" onclick="togglePasswordVisibility('newPassword', this)"></i>
                                        </div>
                                        <div class="mt-4 position-relative">
-                                        <input type="text" class="ds_pro_input w-100 px-3" placeholder="Confirm password">
-                                        <i class="fa-solid fa-eye-slash ds_muted ds_change_eye"></i>
+                                        <input type="text" id="confirmPassword" class="ds_pro_input w-100 px-3" placeholder="Confirm password">
+                                        <i class="fa-solid fa-eye-slash ds_muted ds_change_eye" onclick="togglePasswordVisibility('confirmPassword', this)"></i>
                                       </div>
                                       <div class="text-center mt-3 mb-3">
                                          <button class="ds_change_cancel mt-3">Cancel</button>
-                                         <button class="ds_change_reset mt-3">Reset Password</button>
+                                         <button class="ds_change_reset mt-3" onclick="handleResetPassword()">Reset Password</button>
                                       </div>
                                     </div>
                                 </div>
