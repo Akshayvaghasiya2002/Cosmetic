@@ -119,7 +119,7 @@ $(document).ready(async function () {
 
         products.forEach(product => {
             const productElement = `
-                     <div class="item A_newarrival_slider">
+                     <div class="item A_newarrival_slider ">
                          <div class="card h-100 text-center p-3">
                              <div class="d-flex justify-content-between align-items-center">
                                  <div>
@@ -181,6 +181,21 @@ $(document).ready(async function () {
         }
 
         fetchProducts();
+
+        // ////////////////////////////////// btn filter active //////////////////////////////////    
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll(".filter-btn");
+        
+            buttons.forEach((button) => {
+                button.addEventListener("click", function () {
+                    // Remove active class from all buttons
+                    buttons.forEach((btn) => btn.classList.remove("active"));
+        
+                    // Add active class to the clicked button
+                    this.classList.add("active");
+                });
+            });
+        });
         // ////////////////////////////////// btn filter products //////////////////////////////////
 
 
