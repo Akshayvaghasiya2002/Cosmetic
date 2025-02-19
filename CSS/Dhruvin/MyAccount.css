@@ -44,6 +44,10 @@
     border: 0.6px solid #14141433;
     border-radius: 5px;
 }
+.ds_active_border{
+    border: 0.6px solid #141414;
+    border-radius: 5px;
+}
 .ds_pro_img{
     width: 120px;
 }

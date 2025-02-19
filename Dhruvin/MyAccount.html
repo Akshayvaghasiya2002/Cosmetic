@@ -86,7 +86,7 @@
                                               </div>
                                           </div>
                                       </div>
-                                      <div class="ps-3 mt-4 py-2 mb-4 ds_func_manage6 ds_cursor"  onclick="handleManage(this)" data-value="6">
+                                      <div class="ps-3 mt-4 py-2 ds_hide_border mb-4 ds_func_manage6 ds_cursor"  onclick="handleManage(this)" data-value="6">
                                          <div class="mx-4">
                                              <div class="d-flex">
                                                  <div><img src="/IMG/Dhruvin/logout.png" alt="" class="ds_icon-img"></div>
@@ -181,10 +181,10 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-9 col-lg-8 col-md-7 ps-4 mt-5">
+                    <div class="col-xl-9 col-lg-8 col-md-7 ps-sm-4 mt-5">
                         <div>
                             <!-- ************ My Profile  *********** -->
-                             <section class="d-none" id="profileSection">
+                             <section class="d-non" id="profileSection">
                                 <div>
                                     <h4>Edit Profile</h4>
                                     <div class="ds_pro_inner mt-3 px-4">
@@ -637,7 +637,7 @@
                                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body pt-0">
-                                                    <div>
+                                                    <form >
                                                         <div class="row">
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                                                 <div>
@@ -700,10 +700,10 @@
                                                             
                                                         </div>
                                                         <div class="text-center  pt-3 mb-3">
-                                                            <button data-bs-dismiss="modal" class="ds_add_cancel mt-3">Cancel</button>
-                                                            <button onclick="handleEditAddress(event)" class="ds_add_save mt-3">Save</button>
+                                                            <a data-bs-dismiss="modal" class="ds_add_cancel mt-3">Cancel</a>
+                                                            <button onclick="handleEditAddress(event)"  class="ds_add_save mt-3">Save</button>
                                                         </div>
-                                                    </div>
+                                                    </form>
                                                 </div>
                                               </div>
                                             </div>
@@ -725,7 +725,7 @@
                                                         delete Address?</h6>
                                                      <div class="text-center mt-3 mb-4">
                                                         <button data-bs-dismiss="modal" class="ds_delete_cancel mt-2">Cancel</button>
-                                                        <button  class="ds_delete_delete mt-2" onclick="handleDeleteAddress()">Delete</button>
+                                                        <button  class="ds_delete_delete mt-2" onclick="handleDeleteAddress(event)">Delete</button>
                                                      </div>
                                                   </div>
                                                 </div>
@@ -737,24 +737,24 @@
                             </section>
 
                             <!-- ************ Change Password  *********** -->
-                            <section class="d-non " id="passwordSection">
+                            <section class="d-none " id="passwordSection">
                                 <div>
                                     <h4 class="ds_color">Change Password</h4>
                                     <div class="ds_pro_inner mt-4 p-4">
                                        <div class="position-relative">
-                                          <input type="text" id="oldPassword" class="ds_pro_input w-100 px-3"  placeholder="Old Password">
+                                          <input type="password" id="oldPassword" class="ds_pro_input w-100 px-3"  placeholder="Old Password">
                                           <i class="fa-solid fa-eye-slash ds_muted ds_change_eye" onclick="togglePasswordVisibility('oldPassword', this)"></i>
                                        </div>
                                        <div class="mt-4 position-relative">
-                                         <input type="text" id="newPassword" class="ds_pro_input w-100 px-3" placeholder="New password">
+                                         <input type="password" id="newPassword" class="ds_pro_input w-100 px-3" placeholder="New password">
                                          <i class="fa-solid fa-eye-slash ds_muted ds_change_eye" onclick="togglePasswordVisibility('newPassword', this)"></i>
                                        </div>
                                        <div class="mt-4 position-relative">
-                                        <input type="text" id="confirmPassword" class="ds_pro_input w-100 px-3" placeholder="Confirm password">
+                                        <input type="password" id="confirmPassword" class="ds_pro_input w-100 px-3" placeholder="Confirm password">
                                         <i class="fa-solid fa-eye-slash ds_muted ds_change_eye" onclick="togglePasswordVisibility('confirmPassword', this)"></i>
                                       </div>
                                       <div class="text-center mt-3 mb-3">
-                                         <button class="ds_change_cancel mt-3">Cancel</button>
+                                         <button class="ds_change_cancel mt-3" onclick="handlePasswordCancel()">Cancel</button>
                                          <button class="ds_change_reset mt-3" onclick="handleResetPassword()">Reset Password</button>
                                       </div>
                                     </div>
@@ -796,8 +796,8 @@
                                                 <h5 class="text-center">Are you sure you want to leave?</h5>
                                                 <div class="mt-4 pt-2">
                                                     <div class="position-relative">
-                                                        <input type="text " class="ds_pro_input  w-100 px-3" placeholder="+1 56565 65656">
-                                                        <button href="" class="ds_deactivate_text ds_color text-decoration-underline">Send OTP</button>
+                                                        <input type="text" id="ds_deactive_input" class="ds_pro_input  w-100 px-3" placeholder="+1 56565 65656">
+                                                        <button class="ds_deactivate_text ds_color text-decoration-underline" onclick="handleDeactiveSendOtp()">Send OTP</button>
                                                     </div>
                                                     <div class="mt-5 mx-sm-5 mx-3">
                                                        <div class="d-flex justify-content-between">
@@ -810,8 +810,8 @@
                                                     </div>
                                                     <p class="ds_muted text-center mt-3 pt-1">Didn’t received code? <button  class="ds_color text-decoration-underline  ">Resend</button></p>
                                                     <div class="mt-3 mb-3 text-center">
-                                                        <button class="ds_deactivate_let mt-3">Let me stay</button>
-                                                        <button class="ds_deactivate_btn mt-3">Deactivate </button>
+                                                        <button class="ds_deactivate_let mt-3" data-bs-dismiss="modal">Let me stay</button>
+                                                        <button class="ds_deactivate_btn mt-3" onclick="handleDeactive()">Deactivate </button>
                                                     </div>
                                                 </div>
                                               </div>
@@ -838,7 +838,7 @@
                                                         <h6 class="text-center ds_muted mt-4">Are you sure you want to <br> Logout?</h6>
                                                         <div class="text-center mt-4 mb-4">
                                                             <button class="ds_delete_cancel mt-2" data-bs-dismiss="modal">Cancel</button>
-                                                            <button class="ds_delete_delete mt-2">Logout</button>
+                                                            <button class="ds_delete_delete mt-2" onclick="handleLogOut()">Logout</button>
                                                         </div>
                                                     </div>
                                                 </div>

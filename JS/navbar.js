@@ -1,3 +1,18 @@
+let userId = localStorage.getItem("userId")
+
+function handleSingUp() {
+    if(userId){
+        window.location.href = "/Dhruvin/MyAccount.html"
+    }
+    else{
+        var myModal = new bootstrap.Modal(document.getElementById('signUpModal'));
+        myModal.show();
+    }
+}
+
+
+
+
 const menu = document.querySelector(".menu");
 const menuInner = menu.querySelector(".menu-inner");
 const menuArrow = menu.querySelector(".menu-arrow");
