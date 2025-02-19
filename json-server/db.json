@@ -307,14 +307,63 @@
       "fullName": "Parth Vaghasiya",
       "phoneNumber": "1234567890",
       "email": "parthvaghasi.kalathiyainfotech@gmail.com",
-      "password": "cvbc@12233"
+      "password": "cvbc@12233",
+      "addresses": [
+        {
+          "id": 1739870666572,
+          "firstName": "Parth",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "6352285710",
+          "email": "parth@gmail.com",
+          "zipCode": "102030",
+          "address1": "london",
+          "address2": "united Kingdome",
+          "city": "london",
+          "state": "Guj",
+          "country": "IND",
+          "addressType": "Home",
+          "otherType": null
+        },
+        {
+          "id": 1739877366908,
+          "firstName": "Jon",
+          "lastName": "Doe",
+          "mobileNumber": "7284854011",
+          "email": "test@example.usasddasd",
+          "zipCode": "94043",
+          "address1": "1600 Fake Street",
+          "address2": "Apartment 1",
+          "city": "Mountain View",
+          "state": "Guj",
+          "country": "IND",
+          "addressType": "Office",
+          "otherType": ""
+        }
+      ]
     },
     {
       "id": "30da",
       "fullName": "Parth Vaghasiya",
       "phoneNumber": "6352285710",
       "email": "abc@gmail.com",
-      "password": "Abc@1234"
+      "password": "Abc@1234",
+      "addresses": [
+        {
+          "id": 1739854391752,
+          "firstName": "Parth",
+          "lastName": "vaghasiya",
+          "mobileNumber": "07284854011",
+          "email": "parthvaghasiya2911@gmail.com",
+          "zipCode": "395004",
+          "address1": "163, Gadhpur Township, Pasodara",
+          "address2": "",
+          "city": "surat",
+          "state": "Guj",
+          "country": "IND",
+          "addressType": "Home",
+          "otherType": null
+        }
+      ]
     },
     {
       "fullName": "Parth Vaghasiya",
