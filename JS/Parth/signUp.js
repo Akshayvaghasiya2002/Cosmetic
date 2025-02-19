@@ -205,3 +205,9 @@ function handleLogin() {
         });
 }
 
+
+
+
+function renderWishlist() {
+    window.location.href = "/Parth/Wishlist.html";
+}

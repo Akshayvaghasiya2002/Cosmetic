@@ -718,10 +718,12 @@ input[type="text"] {
 .product-card {
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: -4px 4px 14px 0px #0000000F;
   overflow: hidden;
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
+  border: 0.6px solid #14141433
+  
 }
 
 .product-card:hover {
@@ -775,16 +777,13 @@ input[type="text"] {
 
 .wishlist-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #fff;
+  top: 25px;
   border: none;
   border-radius: 50%;
   width: 30px;
   height: 30px;
   display: flex;
   justify-content: center;
-  align-items: center;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -869,16 +868,23 @@ input[type="text"] {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  cursor: pointer;
-  border: 1px solid #ddd;
+  margin: 5px;
+  line-height: 20px;
+
 }
 
 .more-colors {
   font-size: 12px;
   color: #666;
-  margin-left: 6px;
+  padding: 5px;
   line-height: 20px;
+  border: 0.6px solid rgba(20, 20, 20, 0.2);
+  box-shadow: -4px 4px 14px 0px rgba(0, 0, 0, 0.06);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
 }
+
 .heart-container {
   display: flex;
   align-items: center;

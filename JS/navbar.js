@@ -79,9 +79,10 @@ const bestSellerData = async () => {
                               <div>
                                    ${product.tags ? `<span class="badge">${product.tags}</span>` : ''}
                               </div>
-                              <div class="ms-auto heart-container">
-                                    <i class="fa-regular fa-heart"></i>
-                              </div>
+                              <span class="ms-auto heart-container" >
+                    <i class="fa-regular fa-heart" onclick="addWishList(event)" ></i>
+                    <i class="fa-solid fa-heart d-none" style=" color: #ff0000; " onclick="addWishList(event)" ></i>
+                </span>
                            </div>
                             <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}" >
                             <div class="card-body">
@@ -125,9 +126,10 @@ $(document).ready(async function () {
                                  <div>
                                      ${product.tags ? `<span class="badge">${product.tags}</span>` : ''}
                                  </div>
-                                 <div class="ms-auto heart-container">
-                                     <i class="fa-regular fa-heart"></i>
-                                 </div>
+                                 <span class="ms-auto heart-container" >
+                    <i class="fa-regular fa-heart" onclick="addWishList(event)" ></i>
+                    <i class="fa-solid fa-heart d-none" style=" color: #ff0000; " onclick="addWishList(event)" ></i>
+                </span>
                              </div>
                              <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}">
                              <div class="card-body">
@@ -162,7 +164,7 @@ $(document).ready(async function () {
             productContainer.innerHTML = "";
 
             const filtered = allProducts.filter(product => product.category.toLowerCase() === category.toLowerCase());
-            
+
             if (filtered.length === 0) {
                 productContainer.innerHTML = `<p>No products found.</p>`;
                 return;
@@ -185,12 +187,12 @@ $(document).ready(async function () {
         // ////////////////////////////////// btn filter active //////////////////////////////////    
         document.addEventListener("DOMContentLoaded", function () {
             const buttons = document.querySelectorAll(".filter-btn");
-        
+
             buttons.forEach((button) => {
                 button.addEventListener("click", function () {
                     // Remove active class from all buttons
                     buttons.forEach((btn) => btn.classList.remove("active"));
-        
+
                     // Add active class to the clicked button
                     this.classList.add("active");
                 });
@@ -271,14 +273,14 @@ function displayPwd1() {
     displayNewPassword.classList.toggle("d-none");
     const hideNewPassword = document.getElementById("openeye1");
     hideNewPassword.classList.toggle('d-none');
-   
+
     const newPassword = document.getElementById("pwd1");
     if (newPassword.type === "password") {
         newPassword.type = "text";
     } else {
         newPassword.type = "password";
     }
-    
+
 }
 
 function displayPwd2() {
@@ -287,7 +289,7 @@ function displayPwd2() {
     displayConfirmPassword.classList.toggle("d-none");
     const hideConfirmPassword = document.getElementById("openeye2");
     hideConfirmPassword.classList.toggle('d-none');
-   
+
     const confirmPassword = document.getElementById("pwd2");
     if (confirmPassword.type === "password") {
         confirmPassword.type = "text";
@@ -303,7 +305,7 @@ function displayPwd3() {
     displayConfirmPassword.classList.toggle("d-none");
     const hideConfirmPassword = document.getElementById("openeye3");
     hideConfirmPassword.classList.toggle('d-none');
-   
+
     const confirmPassword = document.getElementById("pwd3");
     if (confirmPassword.type === "password") {
         confirmPassword.type = "text";
@@ -387,7 +389,7 @@ const otpFields = document.querySelectorAll('.V_otp_6');
 otpFields.forEach((field, index) => {
     field.addEventListener('input', (e) => {
         let value = e.target.value;
-        
+
         // Ensure only a single digit is entered
         e.target.value = value.replace(/\D/g, '').slice(0, 1);
 
@@ -403,3 +405,26 @@ otpFields.forEach((field, index) => {
         }
     });
 });
+
+
+
+
+
+
+
+
+function addWishList(event) {
+    // Get the clicked heart icon
+    const clickedHeart = event.target;
+
+    // Find the container (parent) that holds both hearts
+    const heartContainer = clickedHeart.closest(".heart-container");
+
+    // Select the hearts inside the same container
+    const regularHeart = heartContainer.querySelector(".fa-regular");
+    const solidHeart = heartContainer.querySelector(".fa-solid");
+
+    // Toggle visibility
+    regularHeart.classList.toggle("d-none");
+    solidHeart.classList.toggle("d-none");
+}
