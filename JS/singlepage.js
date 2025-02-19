@@ -237,38 +237,91 @@ otpFields.forEach((field, index) => {
     });
 });
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////// first part  left side////////////////////////////////////////////////////////////
 
-const imagesWrapper = document.querySelector('.images-wrapper');
-const images = document.querySelectorAll('.A_single_pro_size');
-const imageHeight = images[0].offsetHeight + 10; // 10px is the margin-bottom
-let currentIndex = 0;
-const totalImages = images.length;
+document.addEventListener('DOMContentLoaded', function() {
+    const wrapper = document.querySelector('.slider-wrapper');
+    const slides = document.querySelectorAll('.slide-item');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    
+    let currentIndex = 0;
+    const slideHeight = slides[0].offsetHeight;
+    const maxIndex = slides.length - 5; // Show 5 slides at once
 
-// Initial positioning
-updateCarouselPosition();
-
-function moveUp() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateCarouselPosition();
+    function updateSlider() {
+        wrapper.style.transform = `translateY(-${currentIndex * slideHeight}px)`;
     }
-}
 
-function moveDown() {
-    if (currentIndex < totalImages - 1) {
-        currentIndex++;
-        updateCarouselPosition();
+    function nextSlide() {
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateSlider();
+        }
     }
-}
 
-function updateCarouselPosition() {
-    const newPosition = -currentIndex * imageHeight;
-    imagesWrapper.style.transform = `translateY(${newPosition}px)`;
-}
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    }
 
-// Recalculate heights on window resize
-window.addEventListener('resize', () => {
-    const newImageHeight = images[0].offsetHeight + 10;
-    updateCarouselPosition();
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Optional: Auto-slide
+    setInterval(() => {
+        if (currentIndex < maxIndex) {
+            nextSlide();
+        } else {
+            currentIndex = 0;
+            updateSlider();
+        }
+    }, 3000);
 });
+
+///////////////////////////////////// first part right side //////////////////////////////////////////////////////
+document.addEventListener('DOMContentLoaded', function() {
+    // Color selection
+    const colorOptions = document.querySelectorAll('.color-option');
+    colorOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        colorOptions.forEach(opt => opt.classList.remove('selected'));
+        this.classList.add('selected');
+      });
+    });
+    
+    // Quantity buttons
+    const minusBtn = document.querySelector('.quantity-btn:first-child');
+    const plusBtn = document.querySelector('.quantity-btn:last-child');
+    const quantityInput = document.querySelector('.quantity-input');
+    
+    minusBtn.addEventListener('click', function() {
+      let value = parseInt(quantityInput.value);
+      if (value > 1) {
+        quantityInput.value = value - 1;
+      }
+    });
+    
+    plusBtn.addEventListener('click', function() {
+      let value = parseInt(quantityInput.value);
+      quantityInput.value = value + 1;
+    });
+    
+    // Offers dropdown
+    const offersSection = document.querySelector('.offers-section');
+    const offersHeader = document.querySelector('.offers-header');
+    
+    offersHeader.addEventListener('click', function() {
+      offersSection.classList.toggle('expanded');
+      // Ensure the offers content is toggled
+      const offersContent = offersSection.querySelector('.offers-content');
+      if (offersSection.classList.contains('expanded')) {
+          offersContent.style.maxHeight = offersContent.scrollHeight + "px"; // Set max-height to the scroll height
+      } else {
+          offersContent.style.maxHeight = "0"; // Collapse
+      }
+    });
+  });
