@@ -193,6 +193,7 @@ function handleLogin() {
                 // If user is found, store the user ID in localStorage
                 localStorage.setItem("userId", user.id);
                 alert("Login successful!");
+                window.location.reload();
                 // You can now redirect to another page or update the UI accordingly
             } else {
                 // If no match found

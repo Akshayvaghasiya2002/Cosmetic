@@ -95,7 +95,6 @@ function handleEditSubmit(event) {
     alert("Form submitted successfully!");
 }
 
-
 let userID = localStorage.getItem("userId")
 let passwordObj = {}
 
@@ -130,6 +129,7 @@ function getUserProfileData() {
 // Call function to load user data into form
 getUserProfileData();
 
+
 function handleUpdateProfile(event) {
     event.preventDefault(); // Prevent form submission from refreshing the page
 
@@ -149,9 +149,11 @@ function handleUpdateProfile(event) {
         email: Email,
         dateOfBirth: Date,
         gender: gender,
-        password:passwordObj?.password
+        password:passwordObj?.password,
+        addresses:passwordObj?.addresses ? passwordObj?.addresses : []
     };
 
+    
     fetch(`http://localhost:3000/User/${userID}`, {
         method: "PUT",  // Use PUT to update the user
         headers: {
@@ -184,7 +186,7 @@ async function toggleDropdown(icon, id) {
     });
 
     // Select the dropdown related to the clicked icon
-    let dropdown = icon.closest(".ds_pro_inner").querySelector(".ds_add_dropdown");
+    let dropdown = icon.closest(".ds_pro_main").querySelector(".ds_add_dropdown");
 
     // Toggle the clicked dropdown
     if (dropdown) {
@@ -259,6 +261,8 @@ function selectAddressType(button, type, event) {
 }
 
 // ---- get address
+const addressId = localStorage.getItem("selectedAddressId")
+
 async function getAddressData () {
    const response = await fetch('http://localhost:3000/User')
    const json = await response.json()
@@ -266,8 +270,8 @@ async function getAddressData () {
        const address = json.find((element)=> element.id == userID)       
     //    console.log(address.addresses);
 
-       const noAddress = address.addresses
-       if(noAddress?.length == 0){
+       const noAddress = address?.addresses
+       if(noAddress?.length == 0 || noAddress == undefined){
           document.querySelector("#ds_no_address").classList.add("d-block")
           document.querySelector("#ds_no_address").classList.remove("d-none")
        }
@@ -282,33 +286,52 @@ async function getAddressData () {
         
         
         return (
-            `<div class="col-xl-6 col-lg-6 col-md-12 col-sm-6 col-12 mt-3" key="${element?.id}">
-                                            <div class="ds_pro_inner p-4 position-relative">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div class="ds_add_type ds_color ds_600">${element?.addressType}</div>
-                                                    <i class="fa-solid fa-ellipsis-vertical" onclick="toggleDropdown(this , ${element?.id})" style="cursor: pointer;"></i>
-                                                </div>
-                                                <div class="ds_border mt-3 mb-3"></div>
-                                                <div id="ds_add_dropdown" class="ds_add_dropdown d-none">
-                                                    <p data-bs-toggle="modal" data-bs-target="#editModal" style="cursor: pointer;">Edit</p>
-                                                    <p class="mb-0" data-bs-toggle="modal" data-bs-target="#deleteModal" style="cursor: pointer;">Delete</p>
-                                                </div>
-                                                <div>
-                                                    <h5 class="mb-3">${element?.firstName} ${element?.lastName}</h5>
-                                                    <h6 class="mb-3">+1 ${element?.mobileNumber}</h6>
-                                                    <p class="mb-0 ds_lh">${element?.address2} , ${element?.address1}  , ${element?.city} , ${element?.state} , ${element?.country} </p>
-                                                </div>
-                                            </div>
-                                        </div>`
+            `<div class="col-xl-6 col-lg-6 col-md-12 col-sm-6 col-12 mt-3">
+            <div class=" ${element.id == addressId ? "ds_active_border" : "ds_pro_inner"} ds_pro_main p-4 position-relative address-card" 
+                 id="address_${element?.id}">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="ds_add_type ds_color ds_600">${element?.addressType}</div>
+                    <i class="fa-solid fa-ellipsis-vertical" onclick="toggleDropdown(this, ${element?.id})" style="cursor: pointer;"></i>
+                </div>
+                <div class="ds_border mt-3 mb-3"></div>
+                <div id="ds_add_dropdown" class="ds_add_dropdown d-none">
+                    <p data-bs-toggle="modal" data-bs-target="#editModal" style="cursor: pointer;">Edit</p>
+                    <p class="mb-0" data-bs-toggle="modal" data-bs-target="#deleteModal" style="cursor: pointer;">Delete</p>
+                </div>
+                <div class="ds_cursor" onclick="handleSelectAddress(${element?.id})">
+                    <h5 class="mb-3">${element?.firstName} ${element?.lastName}</h5>
+                    <h6 class="mb-3">+1 ${element?.mobileNumber}</h6>
+                    <p class="mb-0 ds_lh">${element?.address2} , ${element?.address1} , ${element?.city} , ${element?.state} , ${element?.country}</p>
+                </div>
+            </div>
+          </div>`
         )
       }).join("")
 
-     document.getElementById("ds_show_address").innerHTML = html
+     document.getElementById("ds_show_address").innerHTML = html ? html : ""
     
        
    }   
 }
  getAddressData()
+
+ function handleSelectAddress(id) {
+    // Remove border from all address cards
+    document.querySelectorAll(".address-card").forEach(card => {
+        card.classList.remove("ds_active_border");
+        card.classList.add("ds_pro_inner");
+    });
+
+    // Add border to the selected address
+    const selectedCard = document.getElementById(`address_${id}`);
+    if (selectedCard) {
+        selectedCard.classList.add("ds_active_border");
+        selectedCard.classList.remove("ds_pro_inner");
+    }
+
+    // Store selected address ID in localStorage
+    localStorage.setItem("selectedAddressId", id);
+}
 
 // ------ add address popup
 async function handleAddress(event) {
@@ -396,7 +419,8 @@ async function handleAddress(event) {
 
 // ------ Edit address popup
 async function handleEditAddress(event) {
-    event.preventDefault(); 
+    event.preventDefault();
+    // event.stopPropagation();
 
     let firstName = document.getElementById("ds_add_edit_first")?.value.trim();
     let lastName = document.getElementById("ds_add_edit_last")?.value.trim();
@@ -435,21 +459,21 @@ async function handleEditAddress(event) {
         city,
         state,
         country,
-        addressType : selectedAddressType
+        addressType: selectedAddressType
     };
 
     try {
         const response = await fetch(`http://localhost:3000/User/${userID}`);
         if (!response.ok) throw new Error("Failed to fetch user data");
-        
+
         const userData = await response.json();
-        userData.addresses = userData.addresses || []; // Ensure addresses array exists
-        
+        userData.addresses = userData.addresses || []; 
+
         const existingIndex = userData.addresses.findIndex(addr => addr.id === editId);
         if (existingIndex !== -1) {
             userData.addresses[existingIndex] = addressData;
         } else {
-            userData.addresses.push(addressData); // Optional: Add if not found
+            userData.addresses.push(addressData);
         }
 
         await fetch(`http://localhost:3000/User/${userID}`, {
@@ -458,20 +482,23 @@ async function handleEditAddress(event) {
             body: JSON.stringify(userData)
         });
 
-        alert("Address saved successfully!");
+        // Close the modal
         $('#editModal').modal('hide'); 
         $('.modal-backdrop').remove();
+
+        // Dynamically update the UI
+        await getAddressData(); 
+
     } catch (error) {
         console.error("Error while saving address: ", error);
         alert("Failed to save address.");
     }
-
-    getAddressData()
-
 }
 
+
 // ---- Delete Address Popup
-async function handleDeleteAddress () {
+async function handleDeleteAddress (event) {
+    event.preventDefault();
     try {
         const response = await fetch(`http://localhost:3000/User/${userID}`);
         if (!response.ok) throw new Error("Failed to fetch user data");
@@ -523,18 +550,84 @@ function togglePasswordVisibility(inputId, icon) {
     }    
 }
 
-function handleResetPassword () {
-    passwordObj
-  let oldPass = document.getElementById("oldPassword").value.trim()
-  let newPass = document.getElementById("newPassword").value.trim()
-  let confirmPass = document.getElementById("confirmPassword").value.trim()
-
-  if(passwordObj){
-    console.log(passwordObj);
-    
-  }
+function handlePasswordCancel () {
+     document.getElementById("oldPassword").value = ""
+     document.getElementById("newPassword").value = ""
+     document.getElementById("confirmPassword").value = ""
 }
 
+async function handleResetPassword() {
+    let oldPass = document.getElementById("oldPassword").value.trim();
+    let newPass = document.getElementById("newPassword").value.trim();
+    let confirmPass = document.getElementById("confirmPassword").value.trim();
+
+    // Assume passwordObj contains user data
+    if (!passwordObj || !passwordObj.password) {
+        alert("User data not found. Please log in again.");
+        return;
+    }
+
+    // Check if old password is correct
+    if (oldPass !== passwordObj.password) {
+        alert("Old password is incorrect!");
+        return;
+    }
+
+    // Password strength check
+    let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    if (!passwordRegex.test(newPass)) {
+        alert("New password must be at least 8 characters long, contain one uppercase letter, one lowercase letter, and one number.");
+        return;
+    }
+
+    // Check if new password and confirm password match
+    if (newPass !== confirmPass) {
+        alert("New password and confirm password do not match!");
+        return;
+    }
+
+    // Prevent setting the same password again
+    if (newPass === oldPass) {
+        alert("New password cannot be the same as the old password!");
+        return;
+    }
+
+    // Ensure user ID is available
+    let userID = passwordObj.id;
+    if (!userID) {
+        alert("User ID is missing. Please log in again.");
+        return;
+    }
+
+    try {
+        let updatedUserData = {
+            id: passwordObj.id,
+            fullName: passwordObj.fullName,
+            phoneNumber: passwordObj.phoneNumber,
+            email: passwordObj.email,
+            password: newPass,
+            addresses:passwordObj?.addresses
+        };
+        
+        const response = await fetch(`http://localhost:3000/User/${userID}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedUserData),
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+        }
+
+        alert("Password changed successfully!");
+        console.log("Password updated for user:", userID);
+        
+        // Optionally, update local user data (if stored in passwordObj)
+        passwordObj.password = newPass;
+    } catch (error) {
+        alert("Failed to update password. " + error.message);
+    }
+}
 
 
 // Hide dropdowns when clicking outside
@@ -568,3 +661,105 @@ otpFields.forEach((field, index) => {
         }
     });
 });
+
+function handleDeactiveSendOtp() {
+    
+    let mobileInput = document.getElementById("ds_deactive_input")?.value.trim();
+    // console.log(passwordObj?.phoneNumber == mobileInput);
+
+    
+    let mobilePattern = /^\+?[1-9]\d{9,14}$/; // Ensures at least 10 digits
+
+    // Check if the input is valid
+    if (!mobilePattern.test(mobileInput)) {
+        return alert("Please enter a valid mobile number with at least 10 digits.");
+    }
+
+    // Check if the input matches the stored phone number
+    if (passwordObj?.phoneNumber == mobileInput) {
+        return alert("Your OTP is: 12345");
+    }
+
+    alert("Your Number Is Wrong !")
+
+    // Proceed with sending OTP logic...
+}
+
+async function handleDeactive() {
+    let otpInputs = document.querySelectorAll(".ds_deactivate_otp");
+    let enteredOtp = Array.from(otpInputs).map(input => input.value).join('');
+
+    if (enteredOtp !== "12345") {  // Simulate OTP validation (replace with actual API)
+        alert("Invalid OTP. Please try again.");
+        return;
+    }
+
+
+    // Clear OTP input fields
+    document.getElementById("ds_deactive_input").value = ""
+    otpInputs.forEach(input => input.value = "");
+
+
+    try {
+        let response = await fetch(`http://localhost:3000/User/${userID}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        alert("Account deactivated successfully!"); // Replace with actual deactivation logic
+    }catch(error){
+        alert(error)
+    }
+
+    $('#deactivateModal').modal('hide'); 
+    $('.modal-backdrop').remove();
+
+}
+
+
+// ************ Log Out ***********
+
+function handleLogOut () {
+    localStorage.removeItem("userId")
+    window.location.href = "/Akshay/home.html"
+}
+
+
+function setupAddressSelection() {
+    const addressDivs = document.querySelectorAll(".V_select_add1");
+    const changeButtons = document.querySelectorAll(".V_change");
+
+    // Function to handle selection
+    function selectAddress(element) {
+        // Remove "selected_border" class from all addresses
+        addressDivs.forEach(item => item.classList.remove("selected_border"));
+
+        // Find the closest address div
+        const addressDiv = element.closest(".V_select_add1");
+        if (!addressDiv) return;
+
+        // Add "selected_border" class to the clicked address
+        addressDiv.classList.add("selected_border");
+
+        // Store the selected address ID in localStorage
+        const selectedAddressId = addressDiv.getAttribute("data-address-id");
+        localStorage.setItem("selectedAddressId", selectedAddressId);
+        console.log("Selected Address ID stored:", selectedAddressId);
+    }
+
+    // Attach event listener to all address divs
+    addressDivs.forEach(div => {
+        div.addEventListener("click", function () {
+            selectAddress(this);
+        });
+    });
+
+    // Attach event listener to all change buttons
+    changeButtons.forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.stopPropagation(); // Prevent the event from bubbling to parent
+            selectAddress(this);
+        });
+    });
+}
