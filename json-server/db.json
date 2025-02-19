@@ -339,6 +339,62 @@
           "addressType": "Office",
           "otherType": ""
         }
+      ],
+      "wishlist": [
+        {
+          "id": "1",
+          "image": "http://127.0.0.1:5503/IMG/Akshay/bodyshot.png",
+          "brand": "Eveline Cosmetics",
+          "name": "Wonder Match Creamy Liquid Matte Lipstick",
+          "currentPrice": "$4.50",
+          "originalPrice": "$6.00",
+          "discount": "20% OFF",
+          "badge": true,
+          "colors": [
+            "#D69F9F",
+            "#9D2235",
+            "#CC3333",
+            "#E68FAC"
+          ],
+          "moreColors": 4,
+          "selectedColor": "#CC3333"
+        },
+        {
+          "id": "2",
+          "image": "http://127.0.0.1:5503/IMG/Akshay/lip%20balm.png",
+          "brand": "MAC",
+          "name": "Glow Play Tender Talk Lip Balm",
+          "currentPrice": "$4.50",
+          "originalPrice": "$6.00",
+          "discount": "20% OFF",
+          "badge": false,
+          "colors": [
+            "#FF9EBF",
+            "#EFCFCE",
+            "#FFBE7D",
+            "#E04F80"
+          ],
+          "moreColors": 10,
+          "selectedColor": "#EFCFCE"
+        },
+        {
+          "id": "3",
+          "image": "http://127.0.0.1:5503/IMG/Akshay/pink%20lipstick.png",
+          "brand": "SUGAR",
+          "name": "Matte As Hell Mini Crayon Lipstick - 07 Viola",
+          "currentPrice": "$4.50",
+          "originalPrice": "$6.00",
+          "discount": "20% OFF",
+          "badge": true,
+          "colors": [
+            "#A54E4E",
+            "#8A2232",
+            "#B95C5C",
+            "#C06A6A"
+          ],
+          "moreColors": 2,
+          "selectedColor": "#B95C5C"
+        }
       ]
     },
     {
@@ -352,7 +408,7 @@
           "id": 1739854391752,
           "firstName": "Parth",
           "lastName": "vaghasiya",
-          "mobileNumber": "07284854011",
+          "mobileNumber": "7284854011",
           "email": "parthvaghasiya2911@gmail.com",
           "zipCode": "395004",
           "address1": "163, Gadhpur Township, Pasodara",
@@ -362,6 +418,62 @@
           "country": "IND",
           "addressType": "Home",
           "otherType": null
+        }
+      ],
+      "wishlist": [
+        {
+          "id": "4",
+          "image": "http://127.0.0.1:5503/IMG/Akshay/makeup.png",
+          "brand": "SWISS BEAUTY",
+          "name": "Non-Transfer Lipstick",
+          "currentPrice": "$4.50",
+          "originalPrice": "$6.00",
+          "discount": "20% OFF",
+          "badge": true,
+          "colors": [
+            "#C88C8C",
+            "#5A142A",
+            "#FF2D2D",
+            "#F29B9B"
+          ],
+          "moreColors": 2,
+          "selectedColor": "#5A142A"
+        },
+        {
+          "id": "5",
+          "image": "http://127.0.0.1:5503/IMG/Akshay/eyes.png",
+          "brand": "COLORBAR",
+          "name": "Power Kiss Matte Lipstick",
+          "currentPrice": "$4.50",
+          "originalPrice": "$6.00",
+          "discount": "20% OFF",
+          "badge": false,
+          "colors": [
+            "#B97562",
+            "#612A31",
+            "#CC5B6B",
+            "#843344"
+          ],
+          "moreColors": 10,
+          "selectedColor": null
+        },
+        {
+          "id": "3",
+          "image": "http://127.0.0.1:5503/IMG/Akshay/pink%20lipstick.png",
+          "brand": "SUGAR",
+          "name": "Matte As Hell Mini Crayon Lipstick - 07 Viola",
+          "currentPrice": "$4.50",
+          "originalPrice": "$6.00",
+          "discount": "20% OFF",
+          "badge": true,
+          "colors": [
+            "#A54E4E",
+            "#8A2232",
+            "#B95C5C",
+            "#C06A6A"
+          ],
+          "moreColors": 2,
+          "selectedColor": "#B95C5C"
         }
       ]
     }
