@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../CSS/multiproduct.css">
+
     <link rel="stylesheet" href="../CSS/Parth/Search.css">
+    <link rel="stylesheet" href="../CSS/singlepage.css">
 
 </head>
 
@@ -1165,291 +1166,44 @@
             </div>
         </div>
     </section>
-
     <section>
-        <div class="container-xxl mt-4">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="filters-container">
-                        <div class="filters-header">
-                            <h2 style="color: #3D4936;">Filters</h2>
-                            <button class="remove-all">Remove All</button>
-                        </div>
-                
-                        <!-- Product Type Filter -->
-                        <div class="filter-section active">
-                            <div class="filter-header">
-                                <h3>Product Type</h3>
-                                <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                <div class="image-carousel-container">
+                    <div class="image-carousel">
+                        <div class="images-wrapper">
+                            <div>
+                                <img src="../IMG/Akshay/bodyshot.png" alt="Pink image 1" class="A_single_pro_size">
                             </div>
-                            <div class="filter-content">
-                                <label class="filter-option">
-                                    <input type="checkbox" checked> Lipstick
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Lipstick Combo
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Lip Balm
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Lip Balm Combo
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Lip Gloss
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Lip Kit
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Lip Liner
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Lip Oil
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Lip Tint
-                                </label>
+                            <div>
+                                <img src="../IMG/Akshay/bodyshot.png" alt="Pink image 2" class="A_single_pro_size">
+                            </div>
+                            <div>
+                                <img src="../IMG/Akshay/bodyshot.png" alt="Pink image 3" class="A_single_pro_size">
+                            </div>
+                            <div>
+                                <img src="../IMG/Akshay/bodyshot.png" alt="Pink image 4" class="A_single_pro_size">
+                            </div>
+                            <div>
+                                <img src="../IMG/Akshay/bodyshot.png" alt="Pink image 5" class="A_single_pro_size">
                             </div>
                         </div>
-                
-                        <!-- Brands Filter -->
-                        <div class="filter-section">
-                            <div class="filter-header">
-                                <h3>Brands</h3>
-                                <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
-                            </div>
-                            <div class="filter-content">
-                                <label class="filter-option">
-                                    <input type="checkbox"> Colorbar
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Lakmé
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Lakmé Herbals
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> L'Oréal
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Maybelline
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> SUGAR
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" checked> RENEE
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" checked> SWISS BEAUTY
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Nykaa
-                                </label>
-                                <button class="show-more">Show More</button>
-                            </div>
-                        </div>
-                
-                        <!-- Colors Filter -->
-                        <div class="filter-section">
-                            <div class="filter-header">
-                                <h3>Colors</h3>
-                                <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
-                            </div>
-                            <div class="filter-content">
-                                <div class="color-option">
-                                    <input type="checkbox" checked>
-                                    <span class="color-swatch" style="background-color: #8B4513;"></span>
-                                    <span>Brown</span>
-                                </div>
-                                <div class="color-option">
-                                    <input type="checkbox">
-                                    <span class="color-swatch" style="background-color: #FFD700;"></span>
-                                    <span>Gold</span>
-                                </div>
-                                <div class="color-option">
-                                    <input type="checkbox" checked>
-                                    <span class="color-swatch" style="background-color: #800080;"></span>
-                                    <span>Purple</span>
-                                </div>
-                                <div class="color-option">
-                                    <input type="checkbox">
-                                    <span class="color-swatch" style="background-color: #FF0000;"></span>
-                                    <span>Red</span>
-                                </div>
-                                <div class="color-option">
-                                    <input type="checkbox">
-                                    <span class="color-swatch" style="background-color: #FFC0CB;"></span>
-                                    <span>Pink</span>
-                                </div>
-                                <button class="show-more">Show More</button>
-                            </div>
-                        </div>
-                
-                        <!-- Finish Filter -->
-                        <div class="filter-section">
-                            <div class="filter-header">
-                                <h3>Finish</h3>
-                                <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
-                            </div>
-                            <div class="filter-content">
-                                <label class="filter-option">
-                                    <input type="checkbox"> Matte
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Satin
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Glossy
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Tinted
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Shiny
-                                </label>
-                            </div>
-                        </div>
-                
-                        <!-- Formulation Filter -->
-                        <div class="filter-section">
-                            <div class="filter-header">
-                                <h3>Formulation</h3>
-                                <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
-                            </div>
-                            <div class="filter-content">
-                                <label class="filter-option">
-                                    <input type="checkbox"> Liquid
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Solid
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Pencil
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Tint
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox"> Cream
-                                </label>
-                                <button class="show-more">Show More</button>
-                            </div>
-                        </div>
-                
-                        <!-- Price Filter -->
-                        <div class="filter-section">
-                            <div class="filter-header">
-                                <h3>Price</h3>
-                                <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
-                            </div>
-                            <div class="filter-content">
-                                <div class="price-slider">
-                                    <input type="range" class="price-range A_range_width" min="0" max="1000" value="50" id="minPrice">
-                                    <input type="range" class="price-range " min="0" max="1000" value="200" id="maxPrice">
-                                    <div class="price-inputs">
-                                        <span class="price-label mt-4">From <input type="text" id="minPriceInput" class="A_range_width" value="$50" readonly></span>
-                                        <span class="price-label mt-4">To <input type="text" id="maxPriceInput" class="A_range_width" value="$200" readonly></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="carousel-arrows">
+                        <button class="arrow up-arrow" onclick="moveUp()">↑</button>
+                        <button class="arrow down-arrow" onclick="moveDown()">↓</button>
                     </div>
                 </div>
-                <div class="col-lg-9">
-                    <div class="header d-flex justify-content-between align-items-center">
-                        <div class="results-count">Showing <span id="results-number">0</span> Results</div>
-                        <div class="sort-container">
-                            <span class="sort-text">Sort By:</span>
-                            <select class="sort-select" id="sort-select">
-                                <option value="default">Default</option>
-                                <option value="price-low-high">Price: Low to High</option>
-                                <option value="price-high-low">Price: High to Low</option>
-                                <option value="name-a-z">Name: A to Z</option>
-                                <option value="name-z-a">Name: Z to A</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="filters" id="filters-container">
-                        <!-- Filters will be loaded dynamically -->
-                    </div>
-                    
-                    <div class="products-grid" id="products-container">
-                        <!-- Products will be loaded dynamically -->
-                    </div>
-                </div>
+                <div class="col-lg-5"></div>
+                <div class="col-lg-5"></div>
             </div>
         </div>
-        
     </section>
-    <footer class="mt-3">
-        <div class="A_container">
-            <div class="row">
-                <!-- Left Section: Logo + Social Media -->
-                <div class="col-lg-6 col-md-12 text-center text-md-start">
-                    <h2 class="footer-title">Bloom Beauty</h2>
-                    <p class="footer-text w-75 text-wrap mx-auto mx-md-0">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the.
-                    </p>
-                    
-                    <h5>Follow us</h5>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
 
-                <!-- Right Section: Categories + Links -->
-                <div class="col-lg-6 col-md-12 d-flex flex-wrap mt-3 justify-content-around">
-                    <div class="footer-section">
-                        <h3>Category</h3>
-                        <ul>
-                            <li><a href="#">Eyes</a></li>
-                            <li><a href="#">Lips</a></li>
-                            <li><a href="#">Face</a></li>
-                            <li><a href="#">Skin</a></li>
-                            <li><a href="#">Hair</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Popular Brands</h3>
-                        <ul>
-                            <li><a href="#">SWISS BEAUTY</a></li>
-                            <li><a href="#">Nykaa</a></li>
-                            <li><a href="#">MARS</a></li>
-                            <li><a href="#">RENEE</a></li>
-                            <li><a href="#">MAC</a></li>
-                            <li><a href="#">SUGAR</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Terms & Condition</a></li>
-                            <li><a href="#">Track Order</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom text-center mt-3">
-            <p>Copyright 2025 ASK Project</p>
-        </div>
-    </footer>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../JS/multiproduct.js"></script>
-    <script src="../JS/navbar.js"></script>
+    <script src="../JS/singlepage.js"></script>
     <!-- bootsrap scripts  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
