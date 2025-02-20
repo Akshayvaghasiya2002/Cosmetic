@@ -325,3 +325,80 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+//   //////////////////////////////// review all ////////////////////////////////
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the button and review elements
+    const viewAllBtn = document.getElementById('viewAllBtn');
+    const thirdReview = document.getElementById('thirdReview');
+    
+    // Add CSS for hidden class if not already in your CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        .hidden {
+            display: none !important;
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Track if reviews are expanded
+    let isExpanded = false;
+    
+    // Add click event listener to the button
+    viewAllBtn.addEventListener('click', function() {
+        // Toggle the expanded state
+        isExpanded = !isExpanded;
+        
+        // Toggle the hidden class on the third review
+        thirdReview.classList.toggle('hidden');
+        
+        // Update button text
+        viewAllBtn.textContent = isExpanded ? 'Show Less' : 'View All';
+    });
+});
+// ////////////////////////////////// review model /////////////////////////////////////
+document.querySelectorAll('.star').forEach(star => {
+    star.addEventListener('click', function() {
+        const rating = this.dataset.rating;
+        document.querySelectorAll('.star').forEach(s => {
+            s.classList.remove('active');
+            if (s.dataset.rating <= rating) {
+                s.classList.add('active');
+            }
+        });
+    });
+});
+
+// Submit review function
+function submitReview() {
+    const title = document.getElementById('reviewTitle').value;
+    const text = document.getElementById('reviewText').value;
+    const rating = document.querySelectorAll('.star.active').length;
+
+    if (title && text && rating) {
+        alert('Review submitted successfully!');
+        // Here you would typically send the data to your backend
+        
+        // Close modal and reset form
+        const modal = bootstrap.Modal.getInstance(document.getElementById('reviewModal'));
+        modal.hide();
+        document.getElementById('reviewForm').reset();
+        document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+    } else {
+        alert('Please fill in all fields and provide a rating.');
+    }
+}
+////////////////////////////////////// share model //////////////////////////////////////////////
+function copyLink() {
+    const input = document.querySelector('.input-group input');
+    input.select();
+    document.execCommand('copy');
+    
+    const button = document.querySelector('.input-group button');
+    const originalText = button.textContent;
+    button.textContent = 'Copied!';
+    
+    setTimeout(() => {
+        button.textContent = originalText;
+    }, 2000);
+}

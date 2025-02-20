@@ -345,10 +345,13 @@ async function handleAddress(event) {
     let address = document.getElementById("ds_add_bilding")?.value.trim();
     let address2 = document.getElementById("ds_add_street")?.value.trim();
     let city = document.getElementById("ds_add_city")?.value.trim();
-    let state = document.querySelector("select.ds_pro_input[name='state']")?.value;
-    let country = document.querySelector("select.ds_pro_input[name='country']")?.value;
+    let state = document.querySelector("select[name='state']")?.value;
+    let country = document.querySelector("select[name='country']")?.value;
     let otherAddress = document.getElementById("ds_address_type_input")?.value.trim();
 
+    // Ensure the selected address type is captured
+    let selectedAddressType = document.querySelector(".ds_add_popup_btn, .ds_add_non_select.active")?.innerText || "";
+    
     let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let mobilePattern = /^\d{10}$/;
     let zipPattern = /^\d{5,}$/;
@@ -364,6 +367,9 @@ async function handleAddress(event) {
         alert("Please enter an Address Type for 'Other'");
         return;
     }
+
+    // Get userID dynamically (Replace with actual logic)
+    const userID = "e91d"; // Example: Replace with the actual logged-in user ID
 
     // Collect the address data
     const addressData = {
@@ -382,9 +388,8 @@ async function handleAddress(event) {
         otherType: otherAddress || ""
     };
 
-    // Send the address data to the backend
     try {
-        // This should be dynamically fetched based on the logged-in user
+        // Fetch current user data
         const userResponse = await fetch(`http://localhost:3000/User/${userID}`);
         const userData = await userResponse.json();
 
@@ -392,30 +397,29 @@ async function handleAddress(event) {
             userData.addresses = []; // Initialize addresses array if not already present
         }
 
-        // Add the new address to the user's addresses
+        // Add new address
         userData.addresses.push(addressData);
 
-        // Update the user data in the database (db.json)
+        // Update user data in the backend
         await fetch(`http://localhost:3000/User/${userID}`, {
             method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData)
         });
+        $('#addressModal').modal('hide');
 
         alert("Address saved successfully!");
 
-        // Close the modal 
-        $('#addressModal').hide();
-        $('.modal-backdrop').remove(); // Remove the backdrop
+        // Close the modal properly
 
+        // Refresh address list
+        getAddressData();
     } catch (error) {
         console.error("Error while saving address: ", error);
         alert("Failed to save address.");
     }
-    getAddressData()
 }
+
 
 // ------ Edit address popup
 async function handleEditAddress(event) {
