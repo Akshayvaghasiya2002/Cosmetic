@@ -334,7 +334,97 @@ async function getAddressData () {
 }
 
 // ------ add address popup
+
+// const form = document.querySelector('#ds_add_new'); 
+ 
+// form.addEventListener('submit', async function(event) { 
+//   event.preventDefault(); 
+//   // Your form submission logic here 
+
+//   let firstName = document.getElementById("ds_add_first")?.value.trim();
+//   let lastName = document.getElementById("ds_add_last")?.value.trim();
+//   let mobile = document.getElementById("ds_add_mobile")?.value.trim();
+//   let email = document.getElementById("ds_add_email")?.value.trim();
+//   let zip = document.getElementById("ds_add_zip")?.value.trim();
+//   let address = document.getElementById("ds_add_bilding")?.value.trim();
+//   let address2 = document.getElementById("ds_add_street")?.value.trim();
+//   let city = document.getElementById("ds_add_city")?.value.trim();
+//   let state = document.querySelector("select.ds_pro_input[name='state']")?.value;
+//   let country = document.querySelector("select.ds_pro_input[name='country']")?.value;
+//   let otherAddress = document.getElementById("ds_address_type_input")?.value.trim();
+
+//   let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//   let mobilePattern = /^\d{10}$/;
+//   let zipPattern = /^\d{5,}$/;
+
+
+//   // Validation checks
+//   if (!firstName || !lastName || !mobilePattern.test(mobile) || !emailPattern.test(email) ||
+//       !zipPattern.test(zip) || !address || !city || !state || !country || !selectedAddressType) {
+//       alert("Please fill all required fields correctly.");
+//       return;
+//   }
+
+//   if (selectedAddressType === "Other" && !otherAddress) {
+//       alert("Please enter an Address Type for 'Other'");
+//       return;
+//   }
+
+//   // Collect the address data
+//   const addressData = {
+//       id: Date.now(), 
+//       firstName: firstName,
+//       lastName: lastName,
+//       mobileNumber: mobile,
+//       email: email,
+//       zipCode: zip,
+//       address1: address,
+//       address2: address2 || "",
+//       city: city,
+//       state: state,
+//       country: country,
+//       addressType: selectedAddressType,
+//       otherType: otherAddress || ""
+//   };
+
+//   // Send the address data to the backend
+//   try {
+//       // This should be dynamically fetched based on the logged-in user
+//       const userResponse = await fetch(`http://localhost:3000/User/${userID}`);
+//       const userData = await userResponse.json();
+
+//       if (!userData.addresses) {
+//           userData.addresses = []; // Initialize addresses array if not already present
+//       }
+
+//       // Add the new address to the user's addresses
+//       userData.addresses.push(addressData);
+
+//       // Update the user data in the database (db.json)
+//       await fetch(`http://localhost:3000/User/${userID}`, {
+//           method: 'PUT',
+//           headers: {
+//               'Content-Type': 'application/json'
+//           },
+//           body: JSON.stringify(userData)
+//       });
+
+//       alert("Address saved successfully!");
+
+//       // Close the modal 
+//       $('#addressModal').hide();
+//       $('.modal-backdrop').remove(); // Remove the backdrop
+
+//   } catch (error) {
+//       console.error("Error while saving address: ", error);
+//       alert("Failed to save address.");
+//   }
+
+//   getAddressData()
+// }); 
+
 async function handleAddress(event) {
+    // event.stopPropagation();
     event.preventDefault();
 
     let firstName = document.getElementById("ds_add_first")?.value.trim();
@@ -353,68 +443,70 @@ async function handleAddress(event) {
     let mobilePattern = /^\d{10}$/;
     let zipPattern = /^\d{5,}$/;
 
+
     // Validation checks
     if (!firstName || !lastName || !mobilePattern.test(mobile) || !emailPattern.test(email) ||
-        !zipPattern.test(zip) || !address || !city || !state || !country || !selectedAddressType) {
-        alert("Please fill all required fields correctly.");
-        return;
+      !zipPattern.test(zip) || !address || !city || !state || !country || !selectedAddressType) {
+      alert("Please fill all required fields correctly.");
+      return;
     }
 
     if (selectedAddressType === "Other" && !otherAddress) {
-        alert("Please enter an Address Type for 'Other'");
-        return;
+      alert("Please enter an Address Type for 'Other'");
+      return;
     }
 
     // Collect the address data
     const addressData = {
-        id: Date.now(), 
-        firstName: firstName,
-        lastName: lastName,
-        mobileNumber: mobile,
-        email: email,
-        zipCode: zip,
-        address1: address,
-        address2: address2 || "",
-        city: city,
-        state: state,
-        country: country,
-        addressType: selectedAddressType,
-        otherType: otherAddress || ""
+      id: Date.now(),
+      firstName: firstName,
+      lastName: lastName,
+      mobileNumber: mobile,
+      email: email,
+      zipCode: zip,
+      address1: address,
+      address2: address2 || "",
+      city: city,
+      state: state,
+      country: country,
+      addressType: selectedAddressType,
+      otherType: otherAddress || ""
     };
 
     // Send the address data to the backend
     try {
-        // This should be dynamically fetched based on the logged-in user
-        const userResponse = await fetch(`http://localhost:3000/User/${userID}`);
-        const userData = await userResponse.json();
+      const userResponse = await fetch(`http://localhost:3000/User/${userID}`);
+      const userData = await userResponse.json();
 
-        if (!userData.addresses) {
-            userData.addresses = []; // Initialize addresses array if not already present
-        }
+      if (!userData.addresses) {
+        userData.addresses = []; // Initialize addresses array if not already present
+      }
 
-        // Add the new address to the user's addresses
-        userData.addresses.push(addressData);
+      // Add the new address to the user's addresses
+      userData.addresses.push(addressData);
 
-        // Update the user data in the database (db.json)
-        await fetch(`http://localhost:3000/User/${userID}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(userData)
-        });
+      // Update the user data in the database (db.json)
+      await fetch(`http://localhost:3000/User/${userID}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+      });
 
-        alert("Address saved successfully!");
+      alert("Address saved successfully!");
 
-        // Close the modal 
-        $('#addressModal').hide();
-        $('.modal-backdrop').remove(); // Remove the backdrop
+      // Close the modal (if you're using one)
+      $('#addressModal').modal('hide');
+
+      // Refresh the address list
+      getAddressData();
 
     } catch (error) {
-        console.error("Error while saving address: ", error);
-        alert("Failed to save address.");
+      console.error("Error while saving address: ", error);
+      alert("Failed to save address.");
     }
-    getAddressData()
+    return false;
 }
 
 // ------ Edit address popup
@@ -677,7 +769,7 @@ function handleDeactiveSendOtp() {
 
     // Check if the input matches the stored phone number
     if (passwordObj?.phoneNumber == mobileInput) {
-        return alert("Your OTP is: 12345");
+        return alert("Your OTP is: 123456");
     }
 
     alert("Your Number Is Wrong !")
@@ -685,20 +777,22 @@ function handleDeactiveSendOtp() {
     // Proceed with sending OTP logic...
 }
 
-async function handleDeactive() {
+async function handleDeactive(event) {
+    event.preventDefault();
     let otpInputs = document.querySelectorAll(".ds_deactivate_otp");
     let enteredOtp = Array.from(otpInputs).map(input => input.value).join('');
 
-    if (enteredOtp !== "12345") {  // Simulate OTP validation (replace with actual API)
+    if (enteredOtp !== "123456") {  // Simulate OTP validation (replace with actual API)
         alert("Invalid OTP. Please try again.");
         return;
     }
 
-
     // Clear OTP input fields
-    document.getElementById("ds_deactive_input").value = ""
+    document.getElementById("ds_deactive_input").value = "";
     otpInputs.forEach(input => input.value = "");
 
+    let userID = localStorage.getItem("userId");  // Ensure userID is defined
+    console.log("UserID:", userID);
 
     try {
         let response = await fetch(`http://localhost:3000/User/${userID}`, {
@@ -707,15 +801,22 @@ async function handleDeactive() {
                 "Content-Type": "application/json"
             }
         });
-        alert("Account deactivated successfully!"); // Replace with actual deactivation logic
-    }catch(error){
-        alert(error)
+
+        alert("Account deactivated successfully!"); 
+
+        $('#deactivateModal').modal('hide'); 
+        $('.modal-backdrop').remove();
+
+        localStorage.removeItem("userId");
+
+        // Delay before redirecting to ensure modal is fully closed
+            window.open('http://127.0.0.1:5503/Akshay/home.html');
+
+    } catch (error) {
+        alert(error);
     }
-
-    $('#deactivateModal').modal('hide'); 
-    $('.modal-backdrop').remove();
-
 }
+
 
 
 // ************ Log Out ***********
