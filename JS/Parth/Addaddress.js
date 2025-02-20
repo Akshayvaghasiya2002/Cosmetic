@@ -97,27 +97,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 });
 
-// // Function to handle address selection
-// function setupAddressSelection() {
-//     const addressDivs = document.querySelectorAll(".V_select_add1", "V_change");
-
-//     addressDivs.forEach(div => {
-//         div.addEventListener("click", function () {
-//             // Remove "selected_border" class from all addresses
-//             addressDivs.forEach(item => item.classList.remove("selected_border"));
-
-//             // Add "selected_border" class to the clicked address
-//             this.classList.add("selected_border");
-
-//             // Store the selected address ID in localStorage
-//             const selectedAddressId = this.getAttribute("data-address-id");
-//             // console.log("selectedAddressId", selectedAddressId);
-//             localStorage.setItem("selectedAddressId", selectedAddressId);
-//         });
-//     });
-// }
-
-
 function setupAddressSelection() {
     const addressDivs = document.querySelectorAll(".V_select_add1");
     const changeButtons = document.querySelectorAll(".V_change");
@@ -260,6 +239,8 @@ function setupChangeAddress(addresses) {
         modal.hide();
     });
 }
+
+
 function validateForm1() {
     let firstName = document.querySelector(".first").value.trim();
     let lastName = document.querySelector(".last").value.trim();
@@ -294,35 +275,6 @@ function validateForm1() {
     return true; // Validation passed
 }
 
-// Function to load the modal HTML dynamically from another file
-// async function loadModal() {
-//     try {
-//         let response = await fetch("modal.html"); // Adjust the path as needed
-//         let modalHTML = await response.text();
-
-//         // Inject modal into the body if it's not already present
-//         if (!document.getElementById("exampleModal")) {
-//             document.body.insertAdjacentHTML("beforeend", modalHTML);
-//         }
-//     } catch (error) {
-//         console.error("Error loading modal:", error);
-//     }
-// }
-
-// document.querySelectorAll(".V_change").forEach(button => {
-//     button.addEventListener("click", function () {
-//         // Find the closest address container
-//         const addressDiv = this.closest(".V_select_add1");
-//         if (!addressDiv) return;
-
-//         // Get the address ID from the container
-//         const selectedAddressId = addressDiv.getAttribute("data-address-id");
-
-//         // Store the selected address ID in local storage
-//         localStorage.setItem("selectedAddressId", selectedAddressId);
-//         console.log("Selected Address ID stored:", selectedAddressId);
-//     });
-// });
 
 
 
@@ -525,6 +477,7 @@ function selectAddressType(button, type, event) {
             inputContainer.style.display = 'none'; // Hide input field for other types
         }
 }
+
 async function handleAddress(event) {
     event.preventDefault();
     const userID = localStorage.getItem("userId")
@@ -610,3 +563,15 @@ async function handleAddress(event) {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

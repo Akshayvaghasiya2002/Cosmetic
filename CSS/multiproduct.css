@@ -777,7 +777,7 @@ input[type="text"] {
 
 .wishlist-button {
   position: absolute;
-  top: 25px;
+  top: 27px;
   border: none;
   border-radius: 50%;
   width: 30px;
@@ -893,7 +893,7 @@ input[type="text"] {
   /* Adjust size as needed */
   height: 40px;
   border-radius: 50%;
-  border: 2px solid black;
+  border: 0.6px solid rgba(20, 20, 20, 0.6);
   /* Default border */
   transition: all 0.3s ease-in-out;
 }

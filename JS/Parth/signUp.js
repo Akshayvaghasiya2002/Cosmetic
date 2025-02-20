@@ -90,7 +90,8 @@
         }
 
         // Function to store user data on the JSON Server
-        function storeUserData() {
+        function storeUserData(event) {
+            
             const fullName = document.getElementById("fullName").value.trim();
             const phoneNumber = document.getElementById("phoneNumber").value.trim();
             const email = document.getElementById("email").value.trim();
