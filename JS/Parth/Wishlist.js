@@ -89,7 +89,7 @@ document.getElementById("wishlistContainer").addEventListener("click", async (ev
     }
 
     // Apply border to the newly selected color
-    selectedElement.style.border = "2px solid black";
+    selectedElement.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";
     lastSelectedColor = selectedElement;
 
     // Update selected color in JSON Server
@@ -121,7 +121,7 @@ function applyStoredColorSelection() {
     document.querySelectorAll(".V_color_border").forEach(el => {
         const storedColor = localStorage.getItem("selectedColor");
         if (el.getAttribute("data-color") === storedColor) {
-            el.style.border = "2px solid black";
+            el.style.border = "1px solid black";
             lastSelectedColor = el;
         } else {
             el.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";

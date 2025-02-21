@@ -79,7 +79,7 @@
 
 .V_plus {
     font-size: 22px;
-    width: 28px;
+    width: 30px;
     height: 28px;
     font-weight: 300;
     color: rgba(20, 20, 20, 1);
@@ -148,17 +148,17 @@
 
     .V_minus {
         font-size: 22px;
-        width: 28px;
+        width: 30px;
         height: 28px;
-        line-height: 28px;
+        line-height: 22px;
 
     }
 
     .V_plus {
         font-size: 22px;
-        width: 28px;
+        width: 30px;
         height: 28px;
-        line-height: 28px;
+        line-height: 22px;
     }
 
     .V_delete {
@@ -209,18 +209,17 @@
     }
 
     .V_minus {
-        font-size: 22px;
+        line-height: 22px;
+        font-size: 28px;
         width: 28px;
         height: 28px;
-        line-height: 28px;
-
     }
 
     .V_plus {
+        line-height: 22px;
         font-size: 22px;
         width: 28px;
         height: 28px;
-        line-height: 28px;
     }
 
     .V_delete {
@@ -271,18 +270,17 @@
     }
 
     .V_minus {
-        font-size: 22px;
+        line-height: 22px;
+        font-size: 28px;
         width: 28px;
         height: 28px;
-        line-height: 28px;
-
     }
 
     .V_plus {
+        line-height: 22px;
         font-size: 22px;
         width: 28px;
         height: 28px;
-        line-height: 28px;
     }
 
     .V_delete {
@@ -332,19 +330,20 @@
         font-size: 20px;
     }
 
+    
     .V_minus {
         font-size: 22px;
-        width: 20px;
+        width: 22px;
         height: 20px;
-        line-height: 20px;
+        line-height: 15px;
 
     }
 
     .V_plus {
         font-size: 22px;
-        width: 20px;
+        width: 22px;
         height: 20px;
-        line-height: 20px;
+        line-height: 15px;
     }
 
     .V_delete {
@@ -394,19 +393,20 @@
         font-size: 20px;
     }
 
+
     .V_minus {
         font-size: 22px;
-        width: 20px;
+        width: 22px;
         height: 20px;
-        line-height: 20px;
+        line-height: 15px;
 
     }
 
     .V_plus {
         font-size: 22px;
-        width: 20px;
+        width: 22px;
         height: 20px;
-        line-height: 20px;
+        line-height: 15px;
     }
 
     .V_delete {
@@ -456,19 +456,20 @@
         font-size: 20px;
     }
 
+  
     .V_minus {
         font-size: 22px;
-        width: 20px;
+        width: 22px;
         height: 20px;
-        line-height: 20px;
+        line-height: 15px;
 
     }
 
     .V_plus {
         font-size: 22px;
-        width: 20px;
+        width: 22px;
         height: 20px;
-        line-height: 20px;
+        line-height: 15px;
     }
 
     .V_delete {
@@ -551,19 +552,20 @@
         font-size: 20px;
     }
 
+   
     .V_minus {
         font-size: 22px;
-        width: 20px;
+        width: 22px;
         height: 20px;
-        line-height: 20px;
+        line-height: 15px;
 
     }
 
     .V_plus {
         font-size: 22px;
-        width: 20px;
+        width: 22px;
         height: 20px;
-        line-height: 20px;
+        line-height: 15px;
     }
 
     .V_delete {
@@ -618,17 +620,17 @@
 
     .V_minus {
         font-size: 22px;
-        width: 20px;
+        width: 22px;
         height: 20px;
-        line-height: 20px;
+        line-height: 15px;
 
     }
 
     .V_plus {
         font-size: 22px;
-        width: 20px;
+        width: 22px;
         height: 20px;
-        line-height: 20px;
+        line-height: 15px;
     }
 
     .V_delete {

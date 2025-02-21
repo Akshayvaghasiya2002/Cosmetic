@@ -553,320 +553,121 @@ document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(check
     
 
 
-// Function to add/remove products from the wishlist
-// async function renderProducts() {
-//     const productsContainer = document.getElementById('products-container');
-//     productsContainer.innerHTML = '';
-
-//     const userId = localStorage.getItem("userId");
-//     let wishlist = [];
-
-//     // Fetch the user's wishlist if logged in
-//     if (userId) {
-//         try {
-//             const response = await fetch(`http://localhost:3000/User/${userId}`);
-//             if (response.ok) {
-//                 const userData = await response.json();
-//                 wishlist = userData.wishlist || [];
-//             }
-//         } catch (error) {
-//             console.error("Error fetching wishlist data:", error);
-//         }
-//     }
-
-//     products.forEach(product => {
-//         const productCard = document.createElement('div');
-//         productCard.className = 'product-card';
-//         productCard.dataset.id = product.id;
-
-//         // Badge handling
-//         let badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
-
-//         // Color options
-//         let colorDotsHTML = product.colors.map((color, index) => `
-//             <div class="V_color_border mx-1" data-color-index="${index}" data-color="${color.color}">
-//                 <p class="color-dot" style="background-color: ${color.color};"></p>
-//             </div>
-//         `).join('');
-
-//         let moreColorsHTML = product.moreColors ? `<span class="more-colors">+${product.moreColors}</span>` : '';
-
-//         // Check if product is in wishlist
-//         const isWishlisted = wishlist.some(item => item.id == product.id);
-
-//         productCard.innerHTML = `
-//             <div class="product-header px-3 pt-3">
-//                 ${badgeHTML}
-//                 <span class="ms-auto heart-container">
-//                     <i class="fa-regular fa-heart wishlist-button ${isWishlisted ? 'd-none' : ''}" data-id="${product.id}"></i>
-//                     <i class="fa-solid fa-heart wishlist-button ${isWishlisted ? '' : 'd-none'}" data-id="${product.id}" style="color: #ff0000;"></i>
-//                 </span>
-//             </div>
-//             <div class="product-image">
-//                 <img src="${product.image}" alt="${product.brand} ${product.name}">
-//             </div>
-//             <div class="product-info">
-//                 <div class="product-brand">${product.brand}</div>
-//                 <div class="product-title">${product.name}</div>
-//                 <div class="product-price">
-//                     <span class="current-price">$${product.currentPrice.toFixed(2)}</span>
-//                     <span class="original-price">$${product.originalPrice.toFixed(2)}</span>
-//                     <span class="discount">${product.discount}</span>
-//                 </div>
-//                 <div class="color-options">
-//                     ${colorDotsHTML}
-//                     ${moreColorsHTML}
-//                 </div>
-//                 <button class="add-to-cart">Add to Cart</button>
-//             </div>
-//         `;
-            
-
-//         productsContainer.appendChild(productCard);
-//     });
-
-//     document.getElementById('results-number').textContent = products.length;
-//     let lastSelectedColor = null; // Store the last selected color element
-
-//     document.querySelectorAll('.V_color_border').forEach(dot => {
-//         dot.addEventListener('click', event => {
-//             const productCard = event.target.closest('.product-card'); // Get the parent product card
-//             if (!productCard) return;
-    
-//             // Remove border from the previously selected color (if any)
-//             if (lastSelectedColor) {
-//                 lastSelectedColor.style.border = 'none';
-//             }
-    
-//             // Add border to the selected color
-//             dot.style.border = '2px solid black';
-    
-//             // Store the selected color for this specific product
-//             productCard.dataset.selectedColor = dot.dataset.color;
-//             localStorage.setItem('selectedColor', dot.dataset.color);
-    
-//             // Update lastSelectedColor reference
-//             lastSelectedColor = dot;
-//         });
-//     });
-    
-    
-
-//     // Wishlist button handling
-//     document.querySelectorAll('.wishlist-button').forEach(button => {
-//         button.addEventListener('click', async event => {
-//             event.stopPropagation(); // Prevent page refresh
-
-//             const productId = button.dataset.id;
-//             const productCard = button.closest(".product-card");
-//             const regularHeart = productCard.querySelector(".fa-regular");
-//             const solidHeart = productCard.querySelector(".fa-solid");
-
-//             if (!userId) {
-//                 alert("User not logged in!");
-//                 return;
-//             }
-
-//             const productData = {
-//                 id: productId,
-//                 image: productCard.querySelector(".product-image img").src,
-//                 brand: productCard.querySelector(".product-brand").textContent,
-//                 name: productCard.querySelector(".product-title").textContent,
-//                 currentPrice: productCard.querySelector(".current-price").textContent,
-//                 originalPrice: productCard.querySelector(".original-price").textContent,
-//                 discount: productCard.querySelector(".discount").textContent,
-//                 badge: productDetails.badge ? true : false, // Store badge as true/false
-//                 colors: productDetails.colors.map(c => c.color), // Store all available colors in an array
-//                 moreColors: productDetails.moreColors || null, // Store more colors count if available
-//                 selectedColor: selectedColor, // Store the selected color (if any)
-//             };
-
-//             try {
-//                 const response = await fetch(`http://localhost:3000/User/${userId}`);
-//                 if (!response.ok) throw new Error("Failed to fetch user data");
-
-//                 const userData = await response.json();
-//                 let wishlist = userData.wishlist || [];
-
-//                 const existingIndex = wishlist.findIndex(item => item.id == productId);
-
-//                 if (existingIndex === -1) {
-//                     wishlist.push(productData);
-//                 } else {
-//                     wishlist.splice(existingIndex, 1);
-//                 }
-
-//                 const updateResponse = await fetch(`http://localhost:3000/User/${userId}`, {
-//                     method: "PATCH",
-//                     headers: { "Content-Type": "application/json" },
-//                     body: JSON.stringify({ wishlist })
-//                 });
-
-//                 if (!updateResponse.ok) throw new Error("Failed to update wishlist");
-
-//                 // Toggle heart icon
-//                 regularHeart.classList.toggle("d-none");
-//                 solidHeart.classList.toggle("d-none");
-//             } catch (error) {
-//                 console.error("Error updating wishlist:", error);
-//                 alert("Something went wrong while updating the wishlist.");
-//             }
-//         });
-//     });
-
-//     // Cart button handling
-//     document.querySelectorAll('.add-to-cart').forEach(button => {
-//         button.addEventListener('click', function () {
-//             this.textContent = 'Added!';
-//             this.style.backgroundColor = '#4caf50';
-//             this.style.color = '#fff';
-//             this.style.borderColor = '#4caf50';
-
-//             setTimeout(() => {
-//                 this.textContent = 'Add to Cart';
-//                 this.style.backgroundColor = '';
-//                 this.style.color = '';
-//                 this.style.borderColor = '';
-//             }, 1000);
-//         });
-//     });
-// }
 
 
 
 
 
-// Function to add/remove products from the wishlist
+
+// Function to render products, handle wishlist and cart functionality
 async function renderProducts() {
     const productsContainer = document.getElementById('products-container');
     productsContainer.innerHTML = '';
 
     const userId = localStorage.getItem("userId");
     let wishlist = [];
+    let cart = []; // <-- Ensure 'cart' is initialized
 
-    // Fetch the user's wishlist if logged in
+    // Fetch the user's wishlist and cart if logged in
     if (userId) {
         try {
             const response = await fetch(`http://localhost:3000/User/${userId}`);
             if (response.ok) {
                 const userData = await response.json();
                 wishlist = userData.wishlist || [];
+                cart = userData.orders || []; // Fetch user's cart from JSON Server
             }
         } catch (error) {
-            console.error("Error fetching wishlist data:", error);
+            console.error("Error fetching user data:", error);
         }
     }
 
+    // Ensure products have unique IDs using a Set
+    const uniqueProductsMap = new Map();
     products.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.className = 'product-card';
-        productCard.dataset.id = product.id;
+        if (!uniqueProductsMap.has(product.id)) {
+            uniqueProductsMap.set(product.id, product);
+        }
+    });
+    const uniqueProducts = Array.from(uniqueProductsMap.values());
 
-        // Badge handling
+    productsContainer.innerHTML = uniqueProducts.map(product => {
+        const isWishlisted = wishlist.some(item => item.id == product.id);
         let badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
-
-        // Color options
         let colorDotsHTML = product.colors.map((color, index) => `
             <div class="V_color_border mx-1" data-color-index="${index}" data-color="${color.color}">
                 <p class="color-dot" style="background-color: ${color.color};"></p>
             </div>
         `).join('');
-
         let moreColorsHTML = product.moreColors ? `<span class="more-colors">+${product.moreColors}</span>` : '';
 
-        // Check if product is in wishlist
-        const isWishlisted = wishlist.some(item => item.id == product.id);
-
-        productCard.innerHTML = `
-            <div class="product-header px-3 pt-3">
-                ${badgeHTML}
-                <span class="ms-auto heart-container">
-                    <i class="fa-regular fa-heart wishlist-button ${isWishlisted ? 'd-none' : ''}" data-id="${product.id}"></i>
-                    <i class="fa-solid fa-heart wishlist-button ${isWishlisted ? '' : 'd-none'}" data-id="${product.id}" style="color: #ff0000;"></i>
-                </span>
-            </div>
-            <div class="product-image">
-                <img src="${product.image}" alt="${product.brand} ${product.name}">
-            </div>
-            <div class="product-info">
-                <div class="product-brand">${product.brand}</div>
-                <div class="product-title">${product.name}</div>
-                <div class="product-price">
-                    <span class="current-price">$${product.currentPrice.toFixed(2)}</span>
-                    <span class="original-price">$${product.originalPrice.toFixed(2)}</span>
-                    <span class="discount">${product.discount}</span>
+        return `
+            <div class="product-card" data-id="${product.id}">
+                <div class="product-header px-3 pt-3">
+                    ${badgeHTML}
+                    <span class="ms-auto heart-container">
+                        <i class="fa-regular fa-heart wishlist-button ${isWishlisted ? 'd-none' : ''}" data-id="${product.id}"></i>
+                        <i class="fa-solid fa-heart wishlist-button ${isWishlisted ? '' : 'd-none'}" data-id="${product.id}" style="color: #ff0000;"></i>
+                    </span>
                 </div>
-                <div class="color-options">
-                    ${colorDotsHTML}
-                    ${moreColorsHTML}
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.brand} ${product.name}">
                 </div>
-                <button class="add-to-cart">Add to Cart</button>
+                <div class="product-info">
+                    <div class="product-brand">${product.brand}</div>
+                    <div class="product-title">${product.name}</div>
+                    <div class="product-price">
+                        <span class="current-price">$${product.currentPrice.toFixed(2)}</span>
+                        <span class="original-price">$${product.originalPrice.toFixed(2)}</span>
+                        <span class="discount">${product.discount}</span>
+                    </div>
+                    <div class="color-options">
+                        ${colorDotsHTML}
+                        ${moreColorsHTML}
+                    </div>
+                    <button class="add-to-cart V_add_cart" data-id="${product.id}">Add to Cart</button>
+                </div>
             </div>
         `;
+    }).join('');
 
-        productsContainer.appendChild(productCard);
-    });
+    document.getElementById('results-number').textContent = uniqueProducts.length;
 
-    document.getElementById('results-number').textContent = products.length;
+    // Event delegation for better performance
+    document.getElementById('products-container').addEventListener('click', async (event) => {
+        const target = event.target;
 
-    let lastSelectedColor = null; // Store reference to the last globally selected color
+        // Handle Color Selection
+        if (target.closest('.V_color_border')) {
+            const colorDot = target.closest('.V_color_border');
+            const productCard = colorDot.closest('.product-card');
+            productCard.querySelectorAll('.V_color_border').forEach(dot => dot.style.border = '0.6px solid rgba(20, 20, 20, 0.2)');
+            colorDot.style.border = '1px solid black';
+            localStorage.setItem(`selectedColor_${productCard.dataset.id}`, colorDot.dataset.color);
+        }
 
-document.querySelectorAll('.product-card').forEach(productCard => {
-    productCard.querySelectorAll('.V_color_border').forEach(dot => {
-        dot.addEventListener('click', event => {
-            // Reset the previously selected color's border
-            if (lastSelectedColor) {
-                lastSelectedColor.style.border = '0.6px solid rgba(20, 20, 20, 0.2)';
-            } 
-
-            // Add border to the newly selected color
-            dot.style.border = '1px solid black';
-
-            // Store the new globally selected color
-            lastSelectedColor = dot;
-
-            // Save selected color to localStorage
-            localStorage.setItem('selectedColor', dot.dataset.color);
-        });
-    });
-});
-
-    
-
-    // Wishlist button handling
-    document.querySelectorAll('.wishlist-button').forEach(button => {
-        button.addEventListener('click', async event => {
+        // Handle Wishlist Button Click
+        if (target.classList.contains('wishlist-button')) {
             event.stopPropagation();
-
-            const productId = button.dataset.id;
-            const productCard = button.closest(".product-card");
-            const regularHeart = productCard.querySelector(".fa-regular");
-            const solidHeart = productCard.querySelector(".fa-solid");
+            const productId = target.dataset.id;
+            const productCard = target.closest(".product-card");
 
             if (!userId) {
                 alert("User not logged in!");
                 return;
             }
 
-            // Find product details
-            const productDetails = products.find(p => p.id == productId);
+            const productDetails = uniqueProducts.find(p => p.id == productId);
             if (!productDetails) return;
 
-            // Get the selected color for this specific product
-            const selectedColor = productCard.dataset.selectedColor || null;
+            const selectedColor = localStorage.getItem(`selectedColor_${productId}`) || null;
 
-            // Prepare product data to be stored in the wishlist
             const productData = {
                 id: productId,
                 image: productCard.querySelector(".product-image img").src,
                 brand: productCard.querySelector(".product-brand").textContent,
                 name: productCard.querySelector(".product-title").textContent,
                 currentPrice: productCard.querySelector(".current-price").textContent,
-                originalPrice: productCard.querySelector(".original-price").textContent,
-                discount: productCard.querySelector(".discount").textContent,
-                badge: productDetails.badge ? true : false,
-                colors: productDetails.colors.map(c => c.color),
-                moreColors: productDetails.moreColors || null,
                 selectedColor: selectedColor
             };
 
@@ -885,38 +686,64 @@ document.querySelectorAll('.product-card').forEach(productCard => {
                     wishlist.splice(existingIndex, 1);
                 }
 
-                const updateResponse = await fetch(`http://localhost:3000/User/${userId}`, {
+                await fetch(`http://localhost:3000/User/${userId}`, {
                     method: "PATCH",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ wishlist })
                 });
 
-                if (!updateResponse.ok) throw new Error("Failed to update wishlist");
-
-                // Toggle heart icon
-                regularHeart.classList.toggle("d-none");
-                solidHeart.classList.toggle("d-none");
+                productCard.querySelector(".fa-regular").classList.toggle("d-none");
+                productCard.querySelector(".fa-solid").classList.toggle("d-none");
             } catch (error) {
                 console.error("Error updating wishlist:", error);
-                alert("Something went wrong while updating the wishlist.");
             }
-        });
-    });
+        }
 
-    // Cart button handling
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', function () {
-            this.textContent = 'Added!';
-            this.style.backgroundColor = '#4caf50';
-            this.style.color = '#fff';
-            this.style.borderColor = '#4caf50';
+        // Handle Add to Cart
+        if (target.classList.contains('V_add_cart')) {
+            const productCard = target.closest(".product-card");
+            const productId = productCard.dataset.id;
+            const selectedColor = localStorage.getItem(`selectedColor_${productId}`) || null;
 
-            setTimeout(() => {
-                this.textContent = 'Add to Cart';
-                this.style.backgroundColor = '';
-                this.style.color = '';
-                this.style.borderColor = '';
-            }, 1000);
-        });
+            if (!userId) {
+                alert("User not logged in!");
+                return;
+            }
+
+            let existingItem = cart.find(item => item.id == productId && item.selectedColor == selectedColor);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                const cartItem = {
+                    id: Date.now(),
+                    image: productCard.querySelector(".product-image img").src,
+                    brand: productCard.querySelector(".product-brand").textContent,
+                    name: productCard.querySelector(".product-title").textContent,
+                    currentPrice: parseFloat(productCard.querySelector(".current-price").textContent.replace("$", "")),
+                    quantity: 1,
+                    selectedColor: selectedColor
+                };
+                cart.push(cartItem);
+            }
+
+            // Update JSON Server
+            try {
+                await fetch(`http://localhost:3000/User/${userId}`, {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ orders: cart })
+                });
+            } catch (error) {
+                console.error("Error updating cart:", error);
+            }
+
+            target.textContent = 'Added!';
+            setTimeout(() => target.textContent = 'Add to Cart', 1000);
+        }
     });
 }
+
+// Call function to render products
+renderProducts();
+
