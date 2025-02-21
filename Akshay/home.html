@@ -1073,10 +1073,11 @@
                 </div>
         </div>
     </section>
-    <footer>
+
+    
+    <!-- <footer>
         <div class="A_container">
             <div class="row">
-                <!-- Left Section: Logo + Social Media -->
                 <div class="col-lg-6 col-md-12 text-center text-md-start">
                     <h2 class="footer-title">Bloom Beauty</h2>
                     <p class="footer-text w-75 text-wrap mx-auto mx-md-0">
@@ -1092,7 +1093,6 @@
                     </div>
                 </div>
 
-                <!-- Right Section: Categories + Links -->
                 <div class="col-lg-6 col-md-12 d-flex flex-wrap mt-3 justify-content-around">
                     <div class="footer-section">
                         <h3>Category</h3>
@@ -1129,12 +1129,14 @@
             </div>
         </div>
 
-        <!-- Footer Bottom -->
         <div class="footer-bottom text-center mt-3">
             <p>Copyright 2025 ASK Project</p>
         </div>
-    </footer>
+    </footer> -->
     
+
+    <section id="Footer" ></section>
+
 
 <div class="modal V_sign_login" tabindex="-1" id="signUpModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -1453,5 +1455,14 @@
     <script src="../JS/navbar.js"></script>
   
 </body>
-
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+                fetch('../Dhruvin/Footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('Footer').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading Footer:', error));
+            });
+    </script>
 </html>

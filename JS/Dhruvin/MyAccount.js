@@ -459,8 +459,6 @@ async function handleAddress(event) {
       return;
     }
 
-    // Get userID dynamically (Replace with actual logic)
-    const userID = "e91d"; // Example: Replace with the actual logged-in user ID
 
     // Collect the address data
     const addressData = {

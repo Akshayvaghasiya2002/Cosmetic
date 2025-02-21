@@ -633,27 +633,6 @@
       ],
       "wishlist": [
         {
-          "id": "2",
-          "image": "http://127.0.0.1:5503/IMG/Akshay/lip%20balm.png",
-          "brand": "MAC",
-          "name": "Glow Play Tender Talk Lip Balm",
-          "currentPrice": "$4.50",
-          "originalPrice": "$6.00",
-          "discount": "20% OFF",
-          "badge": false,
-          "colors": [
-            "#FF9EBF",
-            "#EFCFCE",
-            "#FFBE7D",
-            "#E04F80"
-          ],
-          "moreColors": 10,
-          "selectedColor": "#FF9EBF"
-        }
-      ],
-<<<<<<< HEAD
-      "wishlist": [
-        {
           "id": "4",
           "image": "http://127.0.0.1:5503/IMG/Akshay/makeup.png",
           "brand": "SWISS BEAUTY",
@@ -708,167 +687,13 @@
           "selectedColor": "#B95C5C"
         }
       ]
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
     },
     {
-<<<<<<< HEAD
-=======
-    },
-    {
->>>>>>> origin/Akshay20-02
-      "fullName": "Akshay Vaghasiya",
-      "phoneNumber": "9328430104",
-      "email": "akshaygvaghasiya@gmail.com",
-      "dateOfBirth": "",
-      "gender": "",
-      "password": "Aksh@1425",
-      "addresses": [],
-      "id": "bce3"
-<<<<<<< HEAD
-=======
-      "id": "948b",
-      "fullName": "hello",
-      "phoneNumber": "1234567890",
-      "email": "hi@gmail.com",
-      "password": "hello@123",
-      "addresses": [
-        {
-          "id": 1740041154880,
-          "firstName": "Sujal",
-          "lastName": "Parajapat",
-          "mobileNumber": "0123456789",
-          "email": "hi@gmail.com",
-          "zipCode": "525252",
-          "address1": "katargam",
-          "address2": "new rise",
-          "city": "surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Home",
-          "otherType": ""
-        },
-        {
-          "id": 1740042111616,
-          "firstName": "Sujaldfefrqwef",
-          "lastName": "Parajapat",
-          "mobileNumber": "0123456789",
-          "email": "hi@gmail.com",
-          "zipCode": "525252",
-          "address1": "katargam",
-          "address2": "new rise",
-          "city": "surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Home",
-          "otherType": ""
-        },
-        {
-          "id": 1740042169888,
-          "firstName": "Hello",
-          "lastName": "Parajapat",
-          "mobileNumber": "0987654321",
-          "email": "hi@gmail.com",
-          "zipCode": "525252",
-          "address1": "katargam",
-          "address2": "new rise",
-          "city": "surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740042711057,
-          "firstName": "Sujalss",
-          "lastName": "Parajapat",
-          "mobileNumber": "0123456789",
-          "email": "hi@gmail.com",
-          "zipCode": "525252",
-          "address1": "katargam",
-          "address2": "new rise",
-          "city": "surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740042746801,
-          "firstName": "Sujaldfefrqwef",
-          "lastName": "Parajapat",
-          "mobileNumber": "1234567890",
-          "email": "hi@gmail.com",
-          "zipCode": "525252",
-          "address1": "katargam",
-          "address2": "new rise",
-          "city": "surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740042783201,
-          "firstName": "Sujaldfefrqwef",
-          "lastName": "Parajapat",
-          "mobileNumber": "0123456789",
-          "email": "hi@gmail.com",
-          "zipCode": "525252",
-          "address1": "katargam",
-          "address2": "new rise",
-          "city": "surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Other",
-          "otherType": "yhertyh"
-        },
-        {
-          "id": 1740048433651,
-          "firstName": "Sujaldfefrqwef",
-          "lastName": "Parajapat",
-          "mobileNumber": "1234567890",
-          "email": "hi@gmail.com",
-          "zipCode": "525252",
-          "address1": "katargam",
-          "address2": "new rise",
-          "city": "surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740048480987,
-          "firstName": "Sujaldfefrqwef",
-          "lastName": "Parajapat",
-          "mobileNumber": "0123456789",
-          "email": "hi@gmail.com",
-          "zipCode": "525252",
-          "address1": "katargam",
-          "address2": "new rise",
-          "city": "surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Home",
-          "otherType": ""
-        }
-      ]
-    },
-    {
-      "id": "9757",
+      "id": "1662",
       "fullName": "hello",
       "phoneNumber": "1234567890",
       "email": "hi@gmail.com",
       "password": "hello@123"
->>>>>>> origin/savani20-2
->>>>>>> Stashed changes
-=======
-      "orders": []
->>>>>>> origin/Parth20-02
-=======
->>>>>>> origin/Akshay20-02
     }
   ]
 }
