@@ -338,6 +338,246 @@
           "country": "IND",
           "addressType": "Office",
           "otherType": ""
+        },
+        {
+          "id": 1740044997922,
+          "firstName": "Xerit",
+          "lastName": "Grassdev",
+          "mobileNumber": "0123546523",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "395006",
+          "address1": "99,rajesh bldg,grant road",
+          "address2": "Pasodara",
+          "city": "Mumbai",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740045029210,
+          "firstName": "Xerit",
+          "lastName": "Grassdev",
+          "mobileNumber": "0932843010",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "710723",
+          "address1": "99,rajesh bldg,grant road",
+          "address2": "Pasodara",
+          "city": "Mumbai",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740045063434,
+          "firstName": "Akshay",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "0932843104",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "394326",
+          "address1": "72, Gadhpur Road",
+          "address2": "Pasodara",
+          "city": "Surat",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740045143034,
+          "firstName": "Xerit",
+          "lastName": "Grassdev",
+          "mobileNumber": "0932830104",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "710736",
+          "address1": "99,rajesh bldg,grant road",
+          "address2": "Pasodara",
+          "city": "Mumbai",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740045672674,
+          "firstName": "Xerit",
+          "lastName": "Grassdev",
+          "mobileNumber": "0932843010",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "710725",
+          "address1": "99,rajesh bldg,grant road",
+          "address2": "Pasodara",
+          "city": "Mumbai",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740046299794,
+          "firstName": "Akshay",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "0932843004",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "395006",
+          "address1": "72, gadhapur township",
+          "address2": "Pasodara",
+          "city": "Surat",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740047085594,
+          "firstName": "Akshay",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "0932843004",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "395006",
+          "address1": "72, gadhapur township",
+          "address2": "Pasodara",
+          "city": "Surat",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740047126386,
+          "firstName": "Xerit",
+          "lastName": "Grassdev",
+          "mobileNumber": "0932840104",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "710725",
+          "address1": "99,rajesh bldg,grant road",
+          "address2": "Pasodara",
+          "city": "Mumbai",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740047424626,
+          "firstName": "Akshay",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "0932840104",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "395006",
+          "address1": "72, gadhapur township",
+          "address2": "Pasodara",
+          "city": "Surat",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740047558538,
+          "firstName": "Akshay",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "0932843004",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "395006",
+          "address1": "72, gadhapur township",
+          "address2": "Pasodara",
+          "city": "Surat",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740047579050,
+          "firstName": "Akshay",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "0932840104",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "395006",
+          "address1": "72, gadhapur township",
+          "address2": "Pasodara",
+          "city": "Surat",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740047705018,
+          "firstName": "Akshay",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "0932430104",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "395006",
+          "address1": "72, gadhapur township",
+          "address2": "Pasodara",
+          "city": "Surat",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740047897362,
+          "firstName": "Akshay",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "0932801048",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "395006",
+          "address1": "72, gadhapur township",
+          "address2": "Pasodara",
+          "city": "Surat",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Home",
+          "otherType": ""
+        },
+        {
+          "id": 1740048255699,
+          "firstName": "Akshay",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "0932843004",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "395006",
+          "address1": "72, gadhapur township",
+          "address2": "Pasodara",
+          "city": "Surat",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740048283706,
+          "firstName": "Akshay",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "0928430104",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "395006",
+          "address1": "72, gadhapur township",
+          "address2": "Pasodara",
+          "city": "Surat",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1740048524946,
+          "firstName": "Akshay",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "0932843010",
+          "email": "akshaygvaghasiya@gmail.com",
+          "zipCode": "395006",
+          "address1": "72, gadhapur township",
+          "address2": "Pasodara",
+          "city": "Surat",
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Home",
+          "otherType": ""
         }
       ],
       "wishlist": [],
@@ -468,11 +708,16 @@
           "selectedColor": "#B95C5C"
         }
       ]
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
     },
     {
 <<<<<<< HEAD
+=======
+    },
+    {
+>>>>>>> origin/Akshay20-02
       "fullName": "Akshay Vaghasiya",
       "phoneNumber": "9328430104",
       "email": "akshaygvaghasiya@gmail.com",
@@ -481,6 +726,7 @@
       "password": "Aksh@1425",
       "addresses": [],
       "id": "bce3"
+<<<<<<< HEAD
 =======
       "id": "948b",
       "fullName": "hello",
@@ -621,6 +867,8 @@
 =======
       "orders": []
 >>>>>>> origin/Parth20-02
+=======
+>>>>>>> origin/Akshay20-02
     }
   ]
 }
