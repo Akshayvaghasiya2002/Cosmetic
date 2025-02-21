@@ -512,6 +512,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         flex-wrap: wrap;
     }
 
+    /* <!-- -------------- Deactivate  Account Popup  -------------- --> */
+.ds_deactivate_otp{
+    height: 43px;
+    width: 43px;
+}
+
 }
 
 @media (max-width:400px) {
@@ -524,7 +530,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /* <!-- -------------- Delete Address Popup ---------  --> */
-
+    /* <!-- -------------- Deactivate  Account Popup  -------------- --> */
+.ds_deactivate_otp{
+    height: 40px;
+    width: 40px;
+}
 }
 
 @media (max-width:376px) {
@@ -572,8 +582,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 /* <!-- -------------- Deactivate  Account Popup  -------------- --> */
 .ds_deactivate_otp{
-    height: 43px;
-    width: 43px;
+    height: 35px;
+    width: 35px;
 }
 
 }
