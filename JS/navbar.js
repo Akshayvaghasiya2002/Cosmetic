@@ -1,10 +1,9 @@
 let userId = localStorage.getItem("userId")
 
 function handleSingUp() {
-    if(userId){
+    if (userId) {
         window.location.href = "/Dhruvin/MyAccount.html"
-    }
-    else{
+    } else {
         var myModal = new bootstrap.Modal(document.getElementById('signUpModal'));
         myModal.show();
     }
@@ -101,26 +100,35 @@ const bestSellerData = async () => {
         products.forEach(product => {
             const productElement = document.createElement("div");
             productElement.classList.add("col-lg-3", "mb-4");
+            let colorDotsHTML = product.colors ? product.colors.map((color, index) => `
+            <div class="V_color_border mx-1" data-color-index="${index}" data-color="${color.color}">
+                <p class="color-dot" style="background-color: ${color.color};"></p>
+            </div>
+        `).join('') : "";
+            let moreColorsHTML = product.moreColors ? `<span class="more-colors ">+${product.moreColors}</span>` : '';
             productElement.innerHTML = `
                         <div class="card h-100 text-center p-3">
-                           <div class="d-flex justify-content-between align-items-center">
-                              <div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
                                    ${product.tags ? `<span class="badge">${product.tags}</span>` : ''}
-                              </div>
-                              <span class="ms-auto heart-container" >
-                    <i class="fa-regular fa-heart" onclick="addWishList(event)" ></i>
-                    <i class="fa-solid fa-heart d-none" style=" color: #ff0000; " onclick="addWishList(event)" ></i>
-                </span>
+                                </div>
+                                <span class="ms-auto heart-container" >
+                                    <i class="fa-regular fa-heart" onclick="addWishList(event)" ></i>
+                                    <i class="fa-solid fa-heart d-none" style=" color: #ff0000; " onclick="addWishList(event)" ></i>
+                                </span>
                            </div>
                             <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}" >
-                            <div class="card-body">
+                            <div class="card-body ">
                                 <h6 class="card-title">${product.name}</h6>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <p class="card-text mb-0">
-                                        Price: $${product.price} <span style="text-decoration: line-through; color: #14141499;   font-weight: 500; ">$${product.originalPrice}</span></p>
-                                    <p class="card-text" style="color:#388E3C">${product.discount}</p>
+                                <div class="product-price justify-content-center">
+                                    <span class="current-price">$${product.price}</span>
+                                    <span class="original-price">$${product.originalPrice}</span>
+                                    <span class="discount">${product.discount}</span>
                                 </div>
-                                
+                                <div class="color-options justify-content-center">
+                                    ${colorDotsHTML}
+                                    ${moreColorsHTML}
+                                </div>
                                 <div>
                                        <button style="" class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
                                 </div>
@@ -138,118 +146,338 @@ const bestSellerData = async () => {
 window.onload = bestSellerData;
 
 $(document).ready(async function () {
-    try {
-        const response = await fetch("http://localhost:3000/newarrival");
-        const products = await response.json();
-        console.log(products);
+    const userId = localStorage.getItem("userId");
+    const userUrl = `http://localhost:3000/User/${userId}`;
 
-        const carousel = $("#product-carousel");
-        carousel.empty();
+    let userData = await fetchUserData(userUrl);
+    let wishlist = userData.wishlist || [];
 
-        products.forEach(product => {
-            const productElement = `
-                     <div class="item A_newarrival_slider ">
-                         <div class="card h-100 text-center p-3">
-                             <div class="d-flex justify-content-between align-items-center">
-                                 <div>
-                                     ${product.tags ? `<span class="badge">${product.tags}</span>` : ''}
-                                 </div>
-                                 <span class="ms-auto heart-container" >
-                    <i class="fa-regular fa-heart" onclick="addWishList(event)" ></i>
-                    <i class="fa-solid fa-heart d-none" style=" color: #ff0000; " onclick="addWishList(event)" ></i>
-                </span>
-                             </div>
-                             <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}">
-                             <div class="card-body">
-                                 <h6 class="card-title text-truncate">${product.name}</h6>
-                                 <div class="d-flex justify-content-between align-items-center flex-column">
-                                     <p class="card-text mb-0">Price: $${product.price} <span style="text-decoration: line-through; color: #14141499; font-weight: 500;">$${product.originalPrice}</span></p>
-                                     <p class="card-text" style="color:#388E3C">${product.discount}</p>
-                                 </div>
-                                 <button class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
-                             </div>
-                         </div>
-                     </div>`;
-            carousel.append(productElement);
-        });
+    // Ensure wishlist exists; if not, create it
+    if (!userData.hasOwnProperty("wishlist")) {
+        await createWishlist(userUrl);
+        wishlist = [];
+    }
 
-        // ////////////////////////////////// btn filter products //////////////////////////////////
-        let allProducts = [];
-
-        async function fetchProducts() {
-            try {
-                const response = await fetch("http://localhost:3000/products");
-                if (!response.ok) throw new Error("Failed to fetch products");
-                allProducts = await response.json();
-                console.log("Products Loaded:", allProducts);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
+    async function fetchUserData(url) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error("User not found");
+            return await response.json();
+        } catch (error) {
+            console.error("Error fetching user data:", error);
+            return {};
         }
+    }
 
-        function filterProducts(category) {
-            const productContainer = document.getElementById("product-container");
-            productContainer.innerHTML = "";
+    async function createWishlist(url) {
+        try {
+            await fetch(url, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ wishlist: [] })
+            });
+        } catch (error) {
+            console.error("Error creating wishlist:", error);
+        }
+    }
 
-            const filtered = allProducts.filter(product => product.category.toLowerCase() === category.toLowerCase());
+    async function updateWishlist(url, updatedWishlist) {
+        try {
+            await fetch(url, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ wishlist: updatedWishlist })
+            });
+        } catch (error) {
+            console.error("Error updating wishlist:", error);
+        }
+    }
 
-            if (filtered.length === 0) {
-                productContainer.innerHTML = `<p>No products found.</p>`;
-                return;
-            }
+    async function fetchProducts() {
+        try {
+            const response = await fetch("http://localhost:3000/newarrival");
+            if (!response.ok) throw new Error("Failed to fetch products");
+            const products = await response.json();
 
-            filtered.forEach(product => {
-                productContainer.innerHTML += `
-                    <div>
-                        <h3>${product.name}</h3>
-                        <p>Price: $${product.price}</p>
-                        <p>Category: ${product.category}</p>
+            const carousel = $("#product-carousel");
+            carousel.empty();
+
+            products.forEach(product => {
+                let colorDotsHTML = product.colors ? product.colors.map((color, index) => `
+                    <div class="V_color_border" data-color-index="${index}" data-color="${color.color}">
+                        <p class="color-dot" style="background-color: ${color.color};"></p>
                     </div>
-                    <hr>
-                `;
+                `).join('') : "";
+
+                let moreColorsHTML = product.moreColors ? `<span class="more-colors ">+${product.moreColors}</span>` : '';
+
+                const isWishlisted = wishlist.some(item => item.id === product.id);
+                const productElement = `
+                    <div class="item A_newarrival_slider" data-id="${product.id}">
+                        <div class="card h-100 text-center p-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>${product.tags ? `<span class="badge">${product.tags}</span>` : ''}</div>
+                                <div class="heart-container">
+                                    <i class="fa-regular fa-heart wishlist-btn ${isWishlisted ? 'd-none' : ''}"></i>
+                                    <i class="fa-solid fa-heart wishlist-btn ${isWishlisted ? '' : 'd-none'}" style="color: #ff0000;"></i>
+                                </div>
+                            </div>
+                            <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}">
+                            <div class="card-body">
+                                <h6 class="card-title text-truncate">${product.name}</h6>
+                                <div class="product-price justify-content-center">
+                                    <span class="current-price">$${product.price}</span>
+                                    <span class="original-price">$${product.originalPrice}</span>
+                                    <span class="discount">${product.discount}</span>
+                                </div>
+                                <div class="color-options justify-content-center">
+                                    ${colorDotsHTML} ${moreColorsHTML}
+                                </div>
+                                <button class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>`;
+
+                carousel.append(productElement);
             });
+
+            // Initialize the carousel after appending elements
+            carousel.owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                dots: false,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 2 },
+                    1000: { items: 5 }
+                }
+            });
+        } catch (error) {
+            console.error("Error fetching products:", error);
+        }
+    }
+
+    async function toggleWishlist(event) {
+        event.stopPropagation();
+        const heartContainer = $(event.currentTarget).closest(".heart-container");
+        const regularHeart = heartContainer.find(".fa-regular.fa-heart");
+        const solidHeart = heartContainer.find(".fa-solid.fa-heart");
+
+        const productElement = $(event.currentTarget).closest(".item");
+        const productId = productElement.data("id");
+
+        // Fetch product data from JSON server
+        const response = await fetch(`http://localhost:3000/newarrival/${productId}`);
+        if (!response.ok) return;
+        const product = await response.json();
+
+        const existingItemIndex = wishlist.findIndex(item => item.id === product.id);
+
+        if (existingItemIndex !== -1) {
+            wishlist.splice(existingItemIndex, 1);
+            await updateWishlist(userUrl, wishlist);
+            regularHeart.removeClass("d-none");
+            solidHeart.addClass("d-none");
+        } else {
+            const wishlistItem = {
+                id: product.id,
+                image: product.image,
+                brand: product.brand,
+                name: product.name,
+                originalPrice: product.originalPrice,
+                currentPrice: product.price,
+                discount: product.discount,
+                colors: product.colors ? product.colors.map(color => color.color) : [], // Extract only color values
+                moreColors: product.moreColors || 0,
+                selectedColor: product.selectedColor || null,
+                badge: product.tags ? true : false
+            };
+
+            wishlist.push(wishlistItem);
+            await updateWishlist(userUrl, wishlist);
+            regularHeart.addClass("d-none");
+            solidHeart.removeClass("d-none");
+        }
+    }
+
+    // Delegate event listeners to dynamically loaded elements
+    $(document).on("click", ".heart-container", toggleWishlist);
+
+    await fetchProducts();
+});
+
+$(document).on("click", ".A_addtocart_hover", async function (event) {
+    event.stopPropagation();
+
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+        console.error("User not logged in.");
+        return;
+    }
+
+    const userUrl = `http://localhost:3000/User/${userId}`;
+    const productElement = $(this).closest(".item");
+    const productId = productElement.data("id");
+
+    try {
+        // Fetch product details
+        const response = await fetch(`http://localhost:3000/newarrival/${productId}`);
+        if (!response.ok) throw new Error("Product not found");
+        const product = await response.json();
+
+        // Fetch user data
+        let userResponse = await fetch(userUrl);
+        if (!userResponse.ok) throw new Error("User not found");
+        let userData = await userResponse.json();
+
+        let cart = userData.orders || []; // Get existing cart items
+
+        // Check if product already exists in cart
+        const existingItemIndex = cart.findIndex(item => item.id === product.id);
+
+        if (existingItemIndex !== -1) {
+            // If product exists, increase quantity
+            cart[existingItemIndex].quantity += 1;
+        } else {
+            // If product does not exist, add it to cart
+            const cartItem = {
+                id: Date.now(),
+                image: product.image,
+                brand: product.brand,
+                name: product.name,
+                currentPrice: product.price,
+                quantity: 1,
+                selectedColor: null // Default color selection
+            };
+            cart.push(cartItem);
         }
 
-        fetchProducts();
-
-        // ////////////////////////////////// btn filter active //////////////////////////////////    
-        document.addEventListener("DOMContentLoaded", function () {
-            const buttons = document.querySelectorAll(".filter-btn");
-
-            buttons.forEach((button) => {
-                button.addEventListener("click", function () {
-                    // Remove active class from all buttons
-                    buttons.forEach((btn) => btn.classList.remove("active"));
-
-                    // Add active class to the clicked button
-                    this.classList.add("active");
-                });
-            });
+        // Update the orders array in the JSON server
+        await fetch(userUrl, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ orders: cart })
         });
-        // ////////////////////////////////// btn filter products //////////////////////////////////
 
-
-        carousel.owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            dots: false,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 5
-                }
-            }
-        });
+        console.log("Cart updated successfully:", cart);
     } catch (error) {
-        console.error("Error fetching products:", error.message);
+        console.error("Error adding to cart:", error);
     }
 });
+
+
+
+
+// document.addEventListener("DOMContentLoaded", async function () {
+//     const userId = localStorage.getItem("userId"); // Get user ID from localStorage
+//     const userUrl = `http://localhost:3000/users/${userId}`; // JSON Server User API
+
+//     let userData = await fetchUserData(userUrl);
+    
+//     // Ensure wishlist exists; if not, create an empty array
+//     let wishlist = userData.wishlist || [];
+//     if (!userData.hasOwnProperty("wishlist")) {
+//         await createWishlist(userUrl);
+//         wishlist = [];
+//     }
+
+//     // Function to fetch user data
+//     async function fetchUserData(url) {
+//         try {
+//             const response = await fetch(url);
+//             if (!response.ok) throw new Error("User not found");
+//             return await response.json();
+//         } catch (error) {
+//             console.error("Error fetching user data:", error);
+//             return {};
+//         }
+//     }
+
+//     // Function to create an empty wishlist if not present
+//     async function createWishlist(url) {
+//         try {
+//             await fetch(url, {
+//                 method: "PATCH",
+//                 headers: { "Content-Type": "application/json" },
+//                 body: JSON.stringify({ wishlist: [] })
+//             });
+//         } catch (error) {
+//             console.error("Error creating wishlist:", error);
+//         }
+//     }
+
+//     // Function to update the wishlist in JSON server
+//     async function updateWishlist(url, updatedWishlist) {
+//         try {
+//             await fetch(url, {
+//                 method: "PATCH",
+//                 headers: { "Content-Type": "application/json" },
+//                 body: JSON.stringify({ wishlist: updatedWishlist })
+//             });
+//         } catch (error) {
+//             console.error("Error updating wishlist:", error);
+//         }
+//     }
+
+//     // Function to toggle wishlist
+//     async function toggleWishlist(event, product) {
+//         event.stopPropagation();
+//         const heartContainer = event.currentTarget.closest(".heart-container");
+//         const regularHeart = heartContainer.querySelector(".fa-regular.fa-heart");
+//         const solidHeart = heartContainer.querySelector(".fa-solid.fa-heart");
+
+//         const existingItemIndex = wishlist.findIndex(item => item.id === product.id);
+
+//         if (existingItemIndex !== -1) {
+//             // Remove from wishlist
+//             wishlist.splice(existingItemIndex, 1);
+//             await updateWishlist(userUrl, wishlist);
+//             regularHeart.classList.remove("d-none");
+//             solidHeart.classList.add("d-none");
+//         } else {
+//             // Add to wishlist
+//             const wishlistItem = {
+//                 id: product.id,
+//                 image: product.image,
+//                 brand: product.brand,
+//                 name: product.name,
+//                 actualPrice: product.originalPrice,
+//                 currentPrice: product.price,
+//                 discount: product.discount,
+//                 colors: product.colors || [],
+//                 moreColors: product.moreColors || 0,
+//                 selectedColor: product.selectedColor || null,
+//                 hasTag: product.tags ? true : false
+//             };
+
+//             wishlist.push(wishlistItem);
+//             await updateWishlist(userUrl, wishlist);
+//             regularHeart.classList.add("d-none");
+//             solidHeart.classList.remove("d-none");
+//         }
+//     }
+
+//     // Attach event listeners to wishlist buttons
+//     document.querySelectorAll(".heart-container").forEach((heartContainer, index) => {
+//         const regularHeart = heartContainer.querySelector(".fa-regular.fa-heart");
+//         const solidHeart = heartContainer.querySelector(".fa-solid.fa-heart");
+
+//         // Get corresponding product data
+//         const product = products[index];
+
+//         // Check if the product is already in the wishlist
+//         if (wishlist.some(item => item.id === product.id)) {
+//             regularHeart.classList.add("d-none");
+//             solidHeart.classList.remove("d-none");
+//         }
+
+//         // Attach event listener to toggle wishlist
+//         heartContainer.addEventListener("click", (event) => toggleWishlist(event, product));
+//     });
+// });
+
+
 
 
 

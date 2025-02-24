@@ -133,81 +133,41 @@
                     <div class="row m-0  V_border">
                         <p class="text V_summary ps-4 py-3 m-0 ms-sm-2 ms-md-0">Order Summary</p>
                         <hr class="mx-auto V_line">
-                        <div class="row m-0 mt-2 ms-sm-2 ms-md-0">
-                            <div class="col-12 col-sm-3 col-md-12 col-lg-4 ">
-                                <img src="../IMG//Parth/eveline.png" alt="Eveline Lipstick"
-                                    class="w-100 V_eveline_height">
-                            </div>
-                            <div
-                                class="col-12 col-sm-9 col-md-12 col-lg-8 d-flex flex-lg-row flex-column justify-content-between">
-                                <div class="V_cart_item_text w-100">
-                                    <p class="text mb-0 mt-2 mt-lg-0">Eveline Cosmetics Wonder Match Creamy Liquid Matte
-                                        Lipstick
-                                        4.5gm
-                                    </p>
-                                    <p class="text m-0 mt-2"> <span class="V_shade">Shade :</span> Vintage Rose </p>
-                                </div>
-                                <div class="d-flex flex-column justify-content-between">
-                                    <div class="d-flex flex-lg-column flex-column-reverse">
-                                        <p class="text V_selected_price m-0 text-lg-end">$450</p>
-                                        <p class="text V_shade m-0 text-lg-end">X1</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="mx-auto mt-3 V_line">
-                        <div class="row m-0 mt-2 ms-sm-2 ms-md-0">
-                            <div class="col-12 col-sm-3 col-md-12 col-lg-4 ">
-                                <img src="../IMG//Parth/eveline.png" alt="Eveline Lipstick"
-                                    class="w-100 V_eveline_height">
-                            </div>
-                            <div
-                                class="col-12 col-sm-9 col-md-12 col-lg-8 d-flex flex-lg-row flex-column justify-content-between">
-                                <div class="V_cart_item_text w-100">
-                                    <p class="text mb-0 mt-2 mt-lg-0">Eveline Cosmetics Wonder Match Creamy Liquid Matte
-                                        Lipstick
-                                        4.5gm
-                                    </p>
-                                    <p class="text m-0 mt-2"> <span class="V_shade">Shade :</span> Vintage Rose </p>
-                                </div>
-                                <div class="d-flex flex-column justify-content-between">
-                                    <div class="d-flex flex-lg-column flex-column-reverse">
-                                        <p class="text V_selected_price m-0 text-lg-end">$450</p>
-                                        <p class="text V_shade m-0 text-lg-end">X1</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class=" V_line mx-auto mt-3">
-                        <div class="row m-0 mt-2 ms-sm-2 ms-md-0">
-                            <div class="col-12 col-sm-3 col-md-12 col-lg-4 ">
-                                <img src="../IMG//Parth/eveline.png" alt="Eveline Lipstick"
-                                    class="w-100 V_eveline_height">
-                            </div>
-                            <div
-                                class="col-12 col-sm-9 col-md-12 col-lg-8 d-flex flex-lg-row flex-column justify-content-between">
-                                <div class="V_cart_item_text w-100">
-                                    <p class="text mb-0 mt-2 mt-lg-0">Eveline Cosmetics Wonder Match Creamy Liquid Matte
-                                        Lipstick
-                                        4.5gm
-                                    </p>
-                                    <p class="text m-0 mt-2"> <span class="V_shade">Shade :</span> Vintage Rose </p>
-                                </div>
-                                <div class="d-flex flex-column justify-content-between">
-                                    <div class="d-flex flex-lg-column flex-column-reverse">
-                                        <p class="text V_selected_price m-0 text-lg-end">$450</p>
-                                        <p class="text V_shade m-0 text-lg-end">X1</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class=" V_line mx-auto mt-3">
+                        <div id="order-container"></div>
                         <div class="">
                             <p class="text V_delivery ps-sm-3 ms-2 ms-sm-2 ms-md-0">Expected Delivery Date :<span
                                     class="V_shade"> Thu, 30 Jan </span></p>
                         </div>
                     </div>
-                    <div class="row m-0   V_border mt-5">
+                    <div id="price-details-container" class="row m-0 V_border mt-5">
+                        <p class="text V_summary py-3 m-0 mx-3">Price Details</p>
+                        <hr class="mx-auto V_line">
+                        <div class="d-flex justify-content-between px-4">
+                            <p class="text V_price_detail">Price (<span id="total-items">0</span> Items)</p>
+                            <p class="text V_price_detail" id="total-price">$0</p>
+                        </div>
+                        <div class="d-flex justify-content-between px-4">
+                            <p class="text V_price_detail">Discount</p>
+                            <p class="text V_price_detail V_green" id="discount">-$0</p>
+                        </div>
+                        <div class="d-flex justify-content-between px-4">
+                            <p class="text V_price_detail">Platform Fee</p>
+                            <p class="text V_price_detail" id="platform-fee">$1</p>
+                        </div>
+                        <div class="d-flex justify-content-between px-4">
+                            <p class="text V_price_detail">Delivery Charges</p>
+                            <p class="text V_price_detail">
+                                <span class="V_shade text-decoration-line-through">$20</span>
+                                <span class="V_green">FREE</span>
+                            </p>
+                        </div>
+                        <hr class="V_line mx-auto mt-3">
+                        <div class="d-flex justify-content-between px-3">
+                            <p class="text V_price_detail1">Total</p>
+                            <p class="text V_price_detail1" id="final-total">$0</p>
+                        </div>
+                    </div>
+                    <!-- <div class="row m-0   V_border mt-5">
                         <p class="text V_summary  py-3 m-0 mx-3">Price Details</p>
                         <hr class="mx-auto V_line">
                         <div class="d-flex justify-content-between  px-4">
@@ -236,7 +196,7 @@
                                 <p class="text V_price_detail1">$1350.00</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

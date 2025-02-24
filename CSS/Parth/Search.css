@@ -100,7 +100,7 @@
 
 
 .V_sign_login {
-    --bs-modal-width: 1010px;
+    --bs-modal-width: 1010px !important;
     /* margin-top: 100px; */
 }
 
@@ -551,7 +551,7 @@
 
 
     .V_sign_login {
-        --bs-modal-width: 800px;
+        --bs-modal-width: 800px !important;
     }
 
     .V_logo_b {
@@ -666,7 +666,7 @@
 
 
     .V_sign_login {
-        --bs-modal-width: 700px;
+        --bs-modal-width: 700px !important;
     }
 
     .V_logo_b {
@@ -779,8 +779,8 @@
 
 
     .V_sign_login {
-        width: calc(100% - 100px);
-        left: 50%;
+        width: calc(100% - 100px) !important;
+        left: 50% !important;
         transform: translatex(-50%) !important;
     }
 
@@ -823,8 +823,8 @@
     }
 
     .V_520 {
-        width: calc(100% - 30px);
-        left: 50%;
+        width: calc(100% - 30px) !important;
+        left: 50% !important;
         transform: translatex(-50%) !important;
     }
 
@@ -901,8 +901,8 @@
 
 
     .V_sign_login {
-        width: calc(100% - 100px);
-        left: 50%;
+        width: calc(100% - 100px) !important; 
+        left: 50% !important;
         transform: translatex(-50%) !important;
     }
 
@@ -958,8 +958,8 @@
     }
 
     .V_520 {
-        width: calc(100% - 30px);
-        left: 50%;
+        width: calc(100% - 30px) !important;
+        left: 50% !important;
         transform: translatex(-50%) !important;
     }
 
@@ -1036,8 +1036,8 @@
 
 
     .V_sign_login {
-        width: calc(100% - 30px);
-        left: 50%;
+        width: calc(100% - 30px) !important;
+        left: 50% !important;
         transform: translatex(-50%) !important;
     }
 
@@ -1093,8 +1093,8 @@
 
 
     .V_520 {
-        width: calc(100% - 30px);
-        left: 50%;
+        width: calc(100% - 30px) !important;
+        left: 50% !important;
         transform: translatex(-50%) !important;
     }
 

@@ -1,115 +1,4 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//     let cartItems = [
-//         {
-//             id: 1,
-//             name: "Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm",
-//             shade: "Vintage Rose",
-//             price: 450,
-//             quantity: 1,
-//             image: "../IMG/Parth/eveline.png"
-//         },
-//         {
-//             id: 2,
-//             name: "Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm",
-//             shade: "Vintage Rose",
-//             price: 450,
-//             quantity: 1,
-//             image: "../IMG/Parth/eveline.png"
-//         },
-//         {
-//             id: 3,
-//             name: "Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm",
-//             shade: "Vintage Rose",
-//             price: 450,
-//             quantity: 1,
-//             image: "../IMG/Parth/eveline.png"
-//         }
-//     ];
 
-//     const cartContainer = document.getElementById("cartContainer");
-//     const cartHeader = document.getElementById("offcanvasRightLabel"); // Cart header
-//     const totalAmount = document.getElementById("totalAmount"); // Total price
-//     const emptyCartSection = document.querySelector(".offcanvas-body.h-100.d-none");
-//     const filledCartSection = document.querySelector(".offcanvas-body:not(.h-100.d-none)");
-
-//     function updateCartSummary() {
-//         const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-//         const totalPrice = cartItems.reduce((sum, item) => sum + item.quantity * item.price, 0);
-        
-//         cartHeader.textContent = `Cart(${totalCount})`;
-//         totalAmount.textContent = `$${totalPrice.toFixed(2)}`;
-
-//         // Show/hide sections based on cart state
-//         if (cartItems.length === 0) {
-//             emptyCartSection.classList.remove("d-none"); // Show empty cart message
-//             filledCartSection.classList.add("d-none"); // Hide cart items
-//         } else {
-//             emptyCartSection.classList.add("d-none"); // Hide empty cart message
-//             filledCartSection.classList.remove("d-none"); // Show cart items
-//         }
-//     }
-
-//     function renderCart() {
-//         cartContainer.innerHTML = "";
-//         cartItems.forEach((item) => {
-//             const cartItemHTML = `
-//                 <div class="row m-0 mt-2" data-id="${item.id}">
-//                     <div class="col-12 col-md-3">
-//                         <img src="${item.image}" alt="${item.name}" class="w-100 V_eveline_height">
-//                     </div>
-//                     <div class="col-12 col-md-9 d-flex justify-content-between">
-//                         <div class="V_cart_item_text">
-//                             <p class="text m-0">${item.name}</p>
-//                             <p class="text m-0 mt-2"><span class="V_shade">Shade :</span> ${item.shade}</p>
-//                         </div>
-//                         <div class="d-flex flex-column justify-content-between">
-//                             <div>
-//                                 <p class="text V_selected_price m-0 text-end">$${(item.price * item.quantity).toFixed(2)}</p>
-//                             </div>
-//                             <div class="d-flex justify-content-center align-items-center justify-content-between pt-4">
-//                                 <div class="px-xl-2 V_minus text-center mt-4" onclick="updateQuantity(${item.id}, 'decrease')">-</div>
-//                                 <div class="text V_count m-0 mt-4">
-//                                     <p class="mx-1 px-xl-3 m-0" id="itemCount${item.id}">${item.quantity}</p>
-//                                 </div>
-//                                 <div class="px-xl-2 V_plus text-center mt-4" onclick="updateQuantity(${item.id}, 'increase')">+</div>
-//                                 <div class="V_delete ms-1 ms-xl-2 pt-2" onclick="deleteItem(${item.id})">
-//                                     <img src="../IMG/Parth/delete.png" alt="delete btn" class="ms-auto w-100">
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 <hr>
-//             `;
-//             cartContainer.innerHTML += cartItemHTML;
-//         });
-
-//         updateCartSummary(); // Update cart count and total price after rendering
-//     }
-
-//     window.updateQuantity = (id, action) => {
-//         const item = cartItems.find(cartItem => cartItem.id === id);
-//         if (!item) return;
-
-//         if (action === "increase") {
-//             item.quantity++;
-//         } else if (action === "decrease" && item.quantity > 1) {
-//             item.quantity--;
-//         }
-
-//         document.getElementById(`itemCount${id}`).textContent = item.quantity;
-//         document.querySelector(`[data-id="${id}"] .V_selected_price`).textContent = `$${(item.quantity * item.price).toFixed(2)}`;
-    
-//         updateCartSummary(); // Update cart count and total price
-//     };
-
-//     window.deleteItem = (id) => {
-//         cartItems = cartItems.filter(cartItem => cartItem.id !== id); // Remove the item from the array
-//         renderCart(); // Re-render the cart to reflect changes
-//     };
-
-//     renderCart();
-// });
 
 
 
@@ -152,7 +41,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
         // Update item quantity (increase or decrease) without reloading entire cart
-        async function updateQuantity(id, action) {
+        async function updateQuantity(id, action, event) {
+            // event.preventd
+
             const item = cartItems.find(cartItem => cartItem.id === id);
             if (!item) return;
     

@@ -342,7 +342,7 @@ const products = [
         id: 3,
         brand: "SUGAR",
         name: "Matte As Hell Mini Crayon Lipstick - 07 Viola",
-        currentPrice: 4.50,
+        currentPrice: 6.50,
         originalPrice: 6.00,
         discount: "20% OFF",
         badge: { type: "BEST SELLER", class: "badge-best-seller" },
@@ -596,7 +596,7 @@ async function renderProducts() {
         let badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
         let colorDotsHTML = product.colors.map((color, index) => `
             <div class="V_color_border mx-1" data-color-index="${index}" data-color="${color.color}">
-                <p class="color-dot" style="background-color: ${color.color};"></p>
+                <p class="color-dot" style="background-color: ${color.color };"></p>
             </div>
         `).join('');
         let moreColorsHTML = product.moreColors ? `<span class="more-colors">+${product.moreColors}</span>` : '';
@@ -668,6 +668,10 @@ async function renderProducts() {
                 brand: productCard.querySelector(".product-brand").textContent,
                 name: productCard.querySelector(".product-title").textContent,
                 currentPrice: productCard.querySelector(".current-price").textContent,
+                originalPrice: productCard.querySelector(".original-price").textContent,
+                discount: productCard.querySelector(".discount").textContent,
+                colors: productDetails.colors.map(color => color.color), // Store all colors
+                moreColors: productDetails.moreColors || null, // Store moreColors value if present
                 selectedColor: selectedColor
             };
 
@@ -725,6 +729,7 @@ async function renderProducts() {
                     selectedColor: selectedColor
                 };
                 cart.push(cartItem);
+                alert("product added to cart.")
             }
 
             // Update JSON Server
