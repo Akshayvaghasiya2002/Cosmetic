@@ -24,11 +24,26 @@
       "tags": [
         ""
       ],
-      "image": "/IMG/Akshay/lip balm.png",
+      "image": "/IMG/Akshay/lip_balm.png",
       "description": "A hydrating lip balm with a natural tint that adjusts to your lip’s pH for a custom color.",
       "expiryDate": "2026-08-15",
       "manufacturingDate": "2023-12-10",
-      "howToApply": "Apply directly to lips for hydration and a natural glow."
+      "howToApply": "Apply directly to lips for hydration and a natural glow.",
+      "colors": [
+        {
+          "color": "#FF7AA6"
+        },
+        {
+          "color": "#CCB9D8"
+        },
+        {
+          "color": "#EC9C53"
+        },
+        {
+          "color": "#B5296A"
+        }
+      ],
+      "moreColors": 10
     },
     {
       "id": "3",
@@ -40,11 +55,26 @@
       "tags": [
         "BEST SELLER"
       ],
-      "image": "/IMG/Akshay/pink lipstick.png",
+      "image": "/IMG/Akshay/pink_lipstick.png",
       "description": "A matte crayon lipstick that glides effortlessly and provides a bold color payoff.",
       "expiryDate": "2027-06-20",
       "manufacturingDate": "2024-02-05",
-      "howToApply": "Outline your lips with the crayon and fill them in for a defined look."
+      "howToApply": "Outline your lips with the crayon and fill them in for a defined look.",
+      "colors": [
+        {
+          "color": "#8E3E42"
+        },
+        {
+          "color": "#830021"
+        },
+        {
+          "color": "#9F2D56"
+        },
+        {
+          "color": "#FD9FBD"
+        }
+      ],
+      "moreColors": 2
     },
     {
       "id": "4",
@@ -56,11 +86,19 @@
       "tags": [
         "BEST SELLER"
       ],
-      "image": "/IMG/Akshay/dark pink.png",
+      "image": "/IMG/Akshay/dark_pink.png",
       "description": "A lightweight matte lipstick with a smudge-proof formula that lasts all day.",
       "expiryDate": "2026-11-30",
       "manufacturingDate": "2023-09-20",
-      "howToApply": "Swipe directly onto lips. Reapply as needed."
+      "howToApply": "Swipe directly onto lips. Reapply as needed.",
+      "colors": [
+        {
+          "color": "#AB1111"
+        },
+        {
+          "color": "#974338"
+        }
+      ]
     },
     {
       "id": "5",
@@ -120,7 +158,7 @@
       "tags": [
         "BEST SELLER"
       ],
-      "image": "/IMG/Akshay/clean balm.png",
+      "image": "/IMG/Akshay/clean_balm.png",
       "description": "A nourishing cleansing balm that removes makeup and impurities while keeping the skin hydrated.",
       "expiryDate": "2026-12-10",
       "manufacturingDate": "2023-11-22",
@@ -156,7 +194,22 @@
       "description": "A creamy blush that blends seamlessly, giving a natural flush to the cheeks.",
       "expiryDate": "2026-10-20",
       "manufacturingDate": "2023-12-05",
-      "howToApply": "Dab onto cheeks using fingers or a brush and blend outwards."
+      "howToApply": "Dab onto cheeks using fingers or a brush and blend outwards.",
+      "colors": [
+        {
+          "color": "#E88482"
+        },
+        {
+          "color": "#E48883"
+        },
+        {
+          "color": "#E27F7C"
+        },
+        {
+          "color": "#E37E65"
+        }
+      ],
+      "moreColors": 1
     }
   ],
   "newarrival": [
@@ -166,7 +219,7 @@
       "price": 450,
       "originalPrice": 600,
       "discount": "20% OFF",
-      "category": "Lipstick",
+      "category": "heir care",
       "tags": "BEST SELLER",
       "image": "/IMG/Akshay/bodyshot.png",
       "description": "A highly pigmented liquid matte lipstick that provides long-lasting color with a creamy finish.",
@@ -180,13 +233,30 @@
       "price": 450,
       "originalPrice": 600,
       "discount": "20% OFF",
-      "category": "Lip Balm",
-      "tags": "",
-      "image": "/IMG/Akshay/lip balm.png",
+      "category": "body care",
+      "tags": [
+        ""
+      ],
+      "image": "../IMG/Parth/MAC_glow_lip_balm.png",
       "description": "A hydrating lip balm with a natural tint that adjusts to your lip’s pH for a custom color.",
       "expiryDate": "2026-08-15",
       "manufacturingDate": "2023-12-10",
-      "howToApply": "Apply directly to lips for hydration and a natural glow."
+      "howToApply": "Apply directly to lips for hydration and a natural glow.",
+      "colors": [
+        {
+          "color": "#FF7AA6"
+        },
+        {
+          "color": "#CCB9D8"
+        },
+        {
+          "color": "#EC9C53"
+        },
+        {
+          "color": "#B5296A"
+        }
+      ],
+      "moreColors": 10
     },
     {
       "id": "3",
@@ -195,12 +265,29 @@
       "originalPrice": 600,
       "discount": "20% OFF",
       "category": "Lipstick",
-      "tags": "TOP RATED",
-      "image": "/IMG/Akshay/pink lipstick.png",
+      "tags": [
+        "BEST SELLER"
+      ],
+      "image": "/IMG/Akshay/pink_lipstick.png",
       "description": "A matte crayon lipstick that glides effortlessly and provides a bold color payoff.",
       "expiryDate": "2027-06-20",
       "manufacturingDate": "2024-02-05",
-      "howToApply": "Outline your lips with the crayon and fill them in for a defined look."
+      "howToApply": "Outline your lips with the crayon and fill them in for a defined look.",
+      "colors": [
+        {
+          "color": "#8E3E42"
+        },
+        {
+          "color": "#830021"
+        },
+        {
+          "color": "#9F2D56"
+        },
+        {
+          "color": "#FD9FBD"
+        }
+      ],
+      "moreColors": 2
     },
     {
       "id": "4",
@@ -209,12 +296,22 @@
       "originalPrice": 600,
       "discount": "20% OFF",
       "category": "Lipstick",
-      "tags": "TOP RATED",
-      "image": "/IMG/Akshay/dark pink.png",
+      "tags": [
+        "BEST SELLER"
+      ],
+      "image": "/IMG/Akshay/dark_pink.png",
       "description": "A lightweight matte lipstick with a smudge-proof formula that lasts all day.",
       "expiryDate": "2026-11-30",
       "manufacturingDate": "2023-09-20",
-      "howToApply": "Swipe directly onto lips. Reapply as needed."
+      "howToApply": "Swipe directly onto lips. Reapply as needed.",
+      "colors": [
+        {
+          "color": "#AB1111"
+        },
+        {
+          "color": "#974338"
+        }
+      ]
     },
     {
       "id": "5",
@@ -223,7 +320,9 @@
       "originalPrice": 600,
       "discount": "20% OFF",
       "category": "Lipstick",
-      "tags": "",
+      "tags": [
+        "BEST SELLER"
+      ],
       "image": "/IMG/Akshay/makeup.png",
       "description": "A versatile 5-in-1 lipstick with a smooth matte finish, perfect for any occasion.",
       "expiryDate": "2027-01-10",
@@ -237,7 +336,9 @@
       "originalPrice": 600,
       "discount": "20% OFF",
       "category": "Eyeshadow",
-      "tags": "",
+      "tags": [
+        "BEST SELLER"
+      ],
       "image": "/IMG/Akshay/eyes.png",
       "description": "A highly pigmented eyeshadow palette with vibrant and blendable shades.",
       "expiryDate": "2026-09-15",
@@ -250,8 +351,10 @@
       "price": 450,
       "originalPrice": 600,
       "discount": "20% OFF",
-      "category": "Hair Care",
-      "tags": "",
+      "category": "Skincare",
+      "tags": [
+        "BEST SELLER"
+      ],
       "image": "/IMG/Akshay/skin.png",
       "description": "A mini skincare kit designed to provide hydration and a radiant glow.",
       "expiryDate": "2027-04-25",
@@ -264,9 +367,11 @@
       "price": 450,
       "originalPrice": 600,
       "discount": "20% OFF",
-      "category": "Body Care",
-      "tags": "",
-      "image": "/IMG/Akshay/clean balm.png",
+      "category": "Skincare",
+      "tags": [
+        "BEST SELLER"
+      ],
+      "image": "/IMG/Akshay/clean_balm.png",
       "description": "A nourishing cleansing balm that removes makeup and impurities while keeping the skin hydrated.",
       "expiryDate": "2026-12-10",
       "manufacturingDate": "2023-11-22",
@@ -279,7 +384,9 @@
       "originalPrice": 600,
       "discount": "20% OFF",
       "category": "Body Care",
-      "tags": "",
+      "tags": [
+        "BEST SELLER"
+      ],
       "image": "/IMG/Akshay/bathbody.png",
       "description": "A collagen-infused body cream that provides deep hydration and skin regeneration.",
       "expiryDate": "2027-08-05",
@@ -292,13 +399,30 @@
       "price": 450,
       "originalPrice": 600,
       "discount": "20% OFF",
-      "category": "Blusher",
-      "tags": "TOP RATED",
+      "category": "Skincare",
+      "tags": [
+        "BEST SELLER"
+      ],
       "image": "/IMG/Akshay/swiss.png",
       "description": "A creamy blush that blends seamlessly, giving a natural flush to the cheeks.",
       "expiryDate": "2026-10-20",
       "manufacturingDate": "2023-12-05",
-      "howToApply": "Dab onto cheeks using fingers or a brush and blend outwards."
+      "howToApply": "Dab onto cheeks using fingers or a brush and blend outwards.",
+      "colors": [
+        {
+          "color": "#E88482"
+        },
+        {
+          "color": "#E48883"
+        },
+        {
+          "color": "#E27F7C"
+        },
+        {
+          "color": "#E37E65"
+        }
+      ],
+      "moreColors": 1
     }
   ],
   "User": [
@@ -325,201 +449,6 @@
           "otherType": null
         },
         {
-          "id": 1739877366908,
-          "firstName": "Jon",
-          "lastName": "Doe",
-          "mobileNumber": "7284854011",
-          "email": "test@example.usasddasd",
-          "zipCode": "94043",
-          "address1": "1600 Fake Street",
-          "address2": "Apartment 1",
-          "city": "Mountain View",
-          "state": "Guj",
-          "country": "IND",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740044997922,
-          "firstName": "Xerit",
-          "lastName": "Grassdev",
-          "mobileNumber": "0123546523",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "395006",
-          "address1": "99,rajesh bldg,grant road",
-          "address2": "Pasodara",
-          "city": "Mumbai",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740045029210,
-          "firstName": "Xerit",
-          "lastName": "Grassdev",
-          "mobileNumber": "0932843010",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "710723",
-          "address1": "99,rajesh bldg,grant road",
-          "address2": "Pasodara",
-          "city": "Mumbai",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740045063434,
-          "firstName": "Akshay",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "0932843104",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "394326",
-          "address1": "72, Gadhpur Road",
-          "address2": "Pasodara",
-          "city": "Surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740045143034,
-          "firstName": "Xerit",
-          "lastName": "Grassdev",
-          "mobileNumber": "0932830104",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "710736",
-          "address1": "99,rajesh bldg,grant road",
-          "address2": "Pasodara",
-          "city": "Mumbai",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740045672674,
-          "firstName": "Xerit",
-          "lastName": "Grassdev",
-          "mobileNumber": "0932843010",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "710725",
-          "address1": "99,rajesh bldg,grant road",
-          "address2": "Pasodara",
-          "city": "Mumbai",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740046299794,
-          "firstName": "Akshay",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "0932843004",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "395006",
-          "address1": "72, gadhapur township",
-          "address2": "Pasodara",
-          "city": "Surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740047085594,
-          "firstName": "Akshay",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "0932843004",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "395006",
-          "address1": "72, gadhapur township",
-          "address2": "Pasodara",
-          "city": "Surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740047126386,
-          "firstName": "Xerit",
-          "lastName": "Grassdev",
-          "mobileNumber": "0932840104",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "710725",
-          "address1": "99,rajesh bldg,grant road",
-          "address2": "Pasodara",
-          "city": "Mumbai",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740047424626,
-          "firstName": "Akshay",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "0932840104",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "395006",
-          "address1": "72, gadhapur township",
-          "address2": "Pasodara",
-          "city": "Surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740047558538,
-          "firstName": "Akshay",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "0932843004",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "395006",
-          "address1": "72, gadhapur township",
-          "address2": "Pasodara",
-          "city": "Surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740047579050,
-          "firstName": "Akshay",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "0932840104",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "395006",
-          "address1": "72, gadhapur township",
-          "address2": "Pasodara",
-          "city": "Surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740047705018,
-          "firstName": "Akshay",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "0932430104",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "395006",
-          "address1": "72, gadhapur township",
-          "address2": "Pasodara",
-          "city": "Surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
           "id": 1740047897362,
           "firstName": "Akshay",
           "lastName": "Vaghasiya",
@@ -533,63 +462,44 @@
           "country": "India",
           "addressType": "Home",
           "otherType": ""
-        },
-        {
-          "id": 1740048255699,
-          "firstName": "Akshay",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "0932843004",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "395006",
-          "address1": "72, gadhapur township",
-          "address2": "Pasodara",
-          "city": "Surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740048283706,
-          "firstName": "Akshay",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "0928430104",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "395006",
-          "address1": "72, gadhapur township",
-          "address2": "Pasodara",
-          "city": "Surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740048524946,
-          "firstName": "Akshay",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "0932843010",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "395006",
-          "address1": "72, gadhapur township",
-          "address2": "Pasodara",
-          "city": "Surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Home",
-          "otherType": ""
         }
       ],
-      "wishlist": [],
+      "wishlist": [
+        {
+          "id": "2",
+          "image": "../IMG/Parth/MAC_glow_lip_balm.png",
+          "name": "MAC Glow Play Tender Talk Lip Balm",
+          "originalPrice": 600,
+          "currentPrice": 450,
+          "discount": "20% OFF",
+          "colors": [
+            "#FF7AA6",
+            "#CCB9D8",
+            "#EC9C53",
+            "#B5296A"
+          ],
+          "moreColors": 10,
+          "selectedColor": null,
+          "badge": true
+        }
+      ],
       "orders": [
         {
-          "id": 1740054437429,
-          "image": "http://127.0.0.1:5503/IMG/Akshay/pink%20lipstick.png",
-          "brand": "SUGAR",
-          "name": "Matte As Hell Mini Crayon Lipstick - 07 Viola",
-          "currentPrice": 4.5,
-          "quantity": 1,
+          "id": "2",
+          "image": "../IMG/Parth/MAC_glow_lip_balm.png",
+          "name": "MAC Glow Play Tender Talk Lip Balm",
+          "currentPrice": 450,
+          "quantity": 2,
           "selectedColor": null
+        },
+        {
+          "id": 1740399607941,
+          "image": "http://127.0.0.1:5504/IMG/Akshay/bodyshot.png",
+          "brand": "Eveline Cosmetics",
+          "name": "Wonder Match Creamy Liquid Matte Lipstick",
+          "currentPrice": 4.5,
+          "quantity": 4,
+          "selectedColor": "#9D2235"
         }
       ]
     },

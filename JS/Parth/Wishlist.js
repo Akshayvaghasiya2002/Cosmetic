@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const userData = await response.json();
         const wishlistData = userData.wishlist || [];
 
+        console.log('wishlistData', wishlistData);
         const wishlistContainer = document.getElementById("wishlistContainer");
         const emptyWishlistSection = document.querySelector("section.d-none");
 
@@ -34,9 +35,12 @@ function renderWishlist(wishlistData) {
             </div>`
         ).join("");
 
+        console.log(item.image);
+
         const moreColorHTML = item.moreColors ? 
             `<div class="V_color_border mx-1"><p class="V_color V_more d-flex align-items-center justify-content-center">+${item.moreColors}</p></div>` : "";
 
+            // console.log('moreColorHTML', moreColorHTML);
             const badgeHTML = item.badge === true ?
             `<img src="../../IMG/Parth/top rated.png" alt="top rated" class="V_top_rated">` : "";
 
@@ -77,6 +81,7 @@ function renderWishlist(wishlistData) {
 let lastSelectedColor = null;
 
 document.getElementById("wishlistContainer").addEventListener("click", async (event) => {
+    event.preventDefault();
     const selectedElement = event.target.closest(".V_color_border");
     if (!selectedElement) return;
 
