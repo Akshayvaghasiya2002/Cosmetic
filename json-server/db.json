@@ -1,164 +1,156 @@
 {
-  "products": [
-    {
-      "id": "1",
-      "name": "Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick",
-      "price": 450,
-      "originalPrice": 600,
-      "discount": "20% OFF",
-      "category": "heir care",
-      "tags": "BEST SELLER",
-      "image": "/IMG/Akshay/bodyshot.png",
-      "description": "A highly pigmented liquid matte lipstick that provides long-lasting color with a creamy finish.",
-      "expiryDate": "2026-12-31",
-      "manufacturingDate": "2024-01-15",
-      "howToApply": "Apply evenly to lips using the applicator. Allow it to dry for a long-lasting matte finish."
-    },
-    {
-      "id": "2",
-      "name": "MAC Glow Play Tender Talk Lip Balm",
-      "price": 450,
-      "originalPrice": 600,
-      "discount": "20% OFF",
-      "category": "body care",
-      "tags": [
-        ""
-      ],
-      "image": "/IMG/Akshay/lip balm.png",
-      "description": "A hydrating lip balm with a natural tint that adjusts to your lip’s pH for a custom color.",
-      "expiryDate": "2026-08-15",
-      "manufacturingDate": "2023-12-10",
-      "howToApply": "Apply directly to lips for hydration and a natural glow."
-    },
-    {
-      "id": "3",
-      "name": "SUGAR Matte As Hell Mini Crayon Lipstick",
-      "price": 450,
-      "originalPrice": 600,
-      "discount": "20% OFF",
-      "category": "Lipstick",
-      "tags": [
-        "BEST SELLER"
-      ],
-      "image": "/IMG/Akshay/pink lipstick.png",
-      "description": "A matte crayon lipstick that glides effortlessly and provides a bold color payoff.",
-      "expiryDate": "2027-06-20",
-      "manufacturingDate": "2024-02-05",
-      "howToApply": "Outline your lips with the crayon and fill them in for a defined look."
-    },
-    {
-      "id": "4",
-      "name": "COLORBAR Power Kiss Matte Lipstick",
-      "price": 450,
-      "originalPrice": 600,
-      "discount": "20% OFF",
-      "category": "Lipstick",
-      "tags": [
-        "BEST SELLER"
-      ],
-      "image": "/IMG/Akshay/dark pink.png",
-      "description": "A lightweight matte lipstick with a smudge-proof formula that lasts all day.",
-      "expiryDate": "2026-11-30",
-      "manufacturingDate": "2023-09-20",
-      "howToApply": "Swipe directly onto lips. Reapply as needed."
-    },
-    {
-      "id": "5",
-      "name": "RENEE FAB 5 Matte Finish 5 in 1 Lipstick",
-      "price": 450,
-      "originalPrice": 600,
-      "discount": "20% OFF",
-      "category": "Lipstick",
-      "tags": [
-        "BEST SELLER"
-      ],
-      "image": "/IMG/Akshay/makeup.png",
-      "description": "A versatile 5-in-1 lipstick with a smooth matte finish, perfect for any occasion.",
-      "expiryDate": "2027-01-10",
-      "manufacturingDate": "2024-03-12",
-      "howToApply": "Twist the lipstick to reveal the desired shade and apply to lips."
-    },
-    {
-      "id": "6",
-      "name": "Prixa Love Eyeshadow Palette",
-      "price": 450,
-      "originalPrice": 600,
-      "discount": "20% OFF",
-      "category": "Eyeshadow",
-      "tags": [
-        "BEST SELLER"
-      ],
-      "image": "/IMG/Akshay/eyes.png",
-      "description": "A highly pigmented eyeshadow palette with vibrant and blendable shades.",
-      "expiryDate": "2026-09-15",
-      "manufacturingDate": "2023-07-05",
-      "howToApply": "Use a brush or fingers to blend shades on eyelids."
-    },
-    {
-      "id": "7",
-      "name": "Holy Grail Mini Hyper Real Kit",
-      "price": 450,
-      "originalPrice": 600,
-      "discount": "20% OFF",
-      "category": "Skincare",
-      "tags": [
-        "BEST SELLER"
-      ],
-      "image": "/IMG/Akshay/skin.png",
-      "description": "A mini skincare kit designed to provide hydration and a radiant glow.",
-      "expiryDate": "2027-04-25",
-      "manufacturingDate": "2024-05-10",
-      "howToApply": "Apply products as per instructions for a complete skincare routine."
-    },
-    {
-      "id": "8",
-      "name": "Karité Premium Superfood Cleansing Balm",
-      "price": 450,
-      "originalPrice": 600,
-      "discount": "20% OFF",
-      "category": "Skincare",
-      "tags": [
-        "BEST SELLER"
-      ],
-      "image": "/IMG/Akshay/clean balm.png",
-      "description": "A nourishing cleansing balm that removes makeup and impurities while keeping the skin hydrated.",
-      "expiryDate": "2026-12-10",
-      "manufacturingDate": "2023-11-22",
-      "howToApply": "Massage onto dry skin and rinse off with warm water."
-    },
-    {
-      "id": "9",
-      "name": "Eveline Cosmetics Body SHE Collagen Regeneration 200gm",
-      "price": 450,
-      "originalPrice": 600,
-      "discount": "20% OFF",
-      "category": "Body Care",
-      "tags": [
-        "BEST SELLER"
-      ],
-      "image": "/IMG/Akshay/bathbody.png",
-      "description": "A collagen-infused body cream that provides deep hydration and skin regeneration.",
-      "expiryDate": "2027-08-05",
-      "manufacturingDate": "2024-04-15",
-      "howToApply": "Apply generously on the body and massage gently."
-    },
-    {
-      "id": "10",
-      "name": "SWISS BEAUTY Cream It Up Blusher",
-      "price": 450,
-      "originalPrice": 600,
-      "discount": "20% OFF",
-      "category": "Skincare",
-      "tags": [
-        "BEST SELLER"
-      ],
-      "image": "/IMG/Akshay/swiss.png",
-      "description": "A creamy blush that blends seamlessly, giving a natural flush to the cheeks.",
-      "expiryDate": "2026-10-20",
-      "manufacturingDate": "2023-12-05",
-      "howToApply": "Dab onto cheeks using fingers or a brush and blend outwards."
-    }
-  ],
+    "products": [
+      {
+        "id": "1",
+        "name": "Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick",
+        "price": 450,
+        "originalPrice": 600,
+        "discount": "20% OFF",
+        "category": "Hair Care",
+        "tags": "BEST SELLER",
+        "image": "/IMG/Akshay/bodyshot.png",
+        "description": "A highly pigmented liquid matte lipstick that provides long-lasting color with a creamy finish.",
+        "expiryDate": "2026-12-31",
+        "manufacturingDate": "2024-01-15",
+        "howToApply": "Apply evenly to lips using the applicator. Allow it to dry for a long-lasting matte finish.",
+        "colors": ["Red", "Maroon", "Berry"]
+      },
+      {
+        "id": "2",
+        "name": "MAC Glow Play Tender Talk Lip Balm",
+        "price": 450,
+        "originalPrice": 600,
+        "discount": "20% OFF",
+        "category": "Body Care",
+        "tags": [""],
+        "image": "/IMG/Akshay/lip balm.png",
+        "description": "A hydrating lip balm with a natural tint that adjusts to your lip’s pH for a custom color.",
+        "expiryDate": "2026-08-15",
+        "manufacturingDate": "2023-12-10",
+        "howToApply": "Apply directly to lips for hydration and a natural glow.",
+        "colors": ["Pink", "Coral", "Peach"]
+      },
+      {
+        "id": "3",
+        "name": "SUGAR Matte As Hell Mini Crayon Lipstick",
+        "price": 450,
+        "originalPrice": 600,
+        "discount": "20% OFF",
+        "category": "Lipstick",
+        "tags": ["BEST SELLER"],
+        "image": "/IMG/Akshay/pink lipstick.png",
+        "description": "A matte crayon lipstick that glides effortlessly and provides a bold color payoff.",
+        "expiryDate": "2027-06-20",
+        "manufacturingDate": "2024-02-05",
+        "howToApply": "Outline your lips with the crayon and fill them in for a defined look.",
+        "colors": ["Deep Pink", "Plum", "Burgundy"]
+      },
+      {
+        "id": "4",
+        "name": "COLORBAR Power Kiss Matte Lipstick",
+        "price": 450,
+        "originalPrice": 600,
+        "discount": "20% OFF",
+        "category": "Lipstick",
+        "tags": ["BEST SELLER"],
+        "image": "/IMG/Akshay/dark pink.png",
+        "description": "A lightweight matte lipstick with a smudge-proof formula that lasts all day.",
+        "expiryDate": "2026-11-30",
+        "manufacturingDate": "2023-09-20",
+        "howToApply": "Swipe directly onto lips. Reapply as needed.",
+        "colors": ["Dark Pink", "Fuchsia", "Rose"]
+      },
+      {
+        "id": "5",
+        "name": "RENEE FAB 5 Matte Finish 5 in 1 Lipstick",
+        "price": 450,
+        "originalPrice": 600,
+        "discount": "20% OFF",
+        "category": "Lipstick",
+        "tags": ["BEST SELLER"],
+        "image": "/IMG/Akshay/makeup.png",
+        "description": "A versatile 5-in-1 lipstick with a smooth matte finish, perfect for any occasion.",
+        "expiryDate": "2027-01-10",
+        "manufacturingDate": "2024-03-12",
+        "howToApply": "Twist the lipstick to reveal the desired shade and apply to lips.",
+        "colors": ["Red", "Pink", "Nude", "Berry", "Coral"]
+      },
+      {
+        "id": "6",
+        "name": "Prixa Love Eyeshadow Palette",
+        "price": 450,
+        "originalPrice": 600,
+        "discount": "20% OFF",
+        "category": "Eyeshadow",
+        "tags": ["BEST SELLER"],
+        "image": "/IMG/Akshay/eyes.png",
+        "description": "A highly pigmented eyeshadow palette with vibrant and blendable shades.",
+        "expiryDate": "2026-09-15",
+        "manufacturingDate": "2023-07-05",
+        "howToApply": "Use a brush or fingers to blend shades on eyelids.",
+        "colors": ["Blue", "Green", "Gold", "Bronze", "Purple"]
+      },
+      {
+        "id": "7",
+        "name": "Holy Grail Mini Hyper Real Kit",
+        "price": 450,
+        "originalPrice": 600,
+        "discount": "20% OFF",
+        "category": "Skincare",
+        "tags": ["BEST SELLER"],
+        "image": "/IMG/Akshay/skin.png",
+        "description": "A mini skincare kit designed to provide hydration and a radiant glow.",
+        "expiryDate": "2027-04-25",
+        "manufacturingDate": "2024-05-10",
+        "howToApply": "Apply products as per instructions for a complete skincare routine.",
+        "colors": ["Light Pink", "Peach", "Beige"]
+      },
+      {
+        "id": "8",
+        "name": "Karité Premium Superfood Cleansing Balm",
+        "price": 450,
+        "originalPrice": 600,
+        "discount": "20% OFF",
+        "category": "Skincare",
+        "tags": ["BEST SELLER"],
+        "image": "/IMG/Akshay/clean balm.png",
+        "description": "A nourishing cleansing balm that removes makeup and impurities while keeping the skin hydrated.",
+        "expiryDate": "2026-12-10",
+        "manufacturingDate": "2023-11-22",
+        "howToApply": "Massage onto dry skin and rinse off with warm water.",
+        "colors": ["Yellow", "Gold", "Cream"]
+      },
+      {
+        "id": "9",
+        "name": "Eveline Cosmetics Body SHE Collagen Regeneration 200gm",
+        "price": 450,
+        "originalPrice": 600,
+        "discount": "20% OFF",
+        "category": "Body Care",
+        "tags": ["BEST SELLER"],
+        "image": "/IMG/Akshay/bathbody.png",
+        "description": "A collagen-infused body cream that provides deep hydration and skin regeneration.",
+        "expiryDate": "2027-08-05",
+        "manufacturingDate": "2024-04-15",
+        "howToApply": "Apply generously on the body and massage gently.",
+        "colors": ["White", "Ivory", "Beige"]
+      },
+      {
+        "id": "10",
+        "name": "SWISS BEAUTY Cream It Up Blusher",
+        "price": 450,
+        "originalPrice": 600,
+        "discount": "20% OFF",
+        "category": "Skincare",
+        "tags": ["BEST SELLER"],
+        "image": "/IMG/Akshay/swiss.png",
+        "description": "A creamy blush that blends seamlessly, giving a natural flush to the cheeks.",
+        "expiryDate": "2026-10-20",
+        "manufacturingDate": "2023-12-05",
+        "howToApply": "Dab onto cheeks using fingers or a brush and blend outwards.",
+        "colors": ["yellow", "red", "Coral"]
+      }
+    ],
   "newarrival": [
     {
       "id": "1",
@@ -172,7 +164,8 @@
       "description": "A highly pigmented liquid matte lipstick that provides long-lasting color with a creamy finish.",
       "expiryDate": "2026-12-31",
       "manufacturingDate": "2024-01-15",
-      "howToApply": "Apply evenly to lips using the applicator. Allow it to dry for a long-lasting matte finish."
+      "howToApply": "Apply evenly to lips using the applicator. Allow it to dry for a long-lasting matte finish.",
+      "color": ["Nude", "Red", "Pink"]
     },
     {
       "id": "2",
@@ -186,7 +179,8 @@
       "description": "A hydrating lip balm with a natural tint that adjusts to your lip’s pH for a custom color.",
       "expiryDate": "2026-08-15",
       "manufacturingDate": "2023-12-10",
-      "howToApply": "Apply directly to lips for hydration and a natural glow."
+      "howToApply": "Apply directly to lips for hydration and a natural glow.",
+      "color": ["Peach", "Rose", "Berry"]
     },
     {
       "id": "3",
@@ -200,7 +194,8 @@
       "description": "A matte crayon lipstick that glides effortlessly and provides a bold color payoff.",
       "expiryDate": "2027-06-20",
       "manufacturingDate": "2024-02-05",
-      "howToApply": "Outline your lips with the crayon and fill them in for a defined look."
+      "howToApply": "Outline your lips with the crayon and fill them in for a defined look.",
+      "color": ["Red", "Mauve", "Plum"]
     },
     {
       "id": "4",
@@ -214,7 +209,8 @@
       "description": "A lightweight matte lipstick with a smudge-proof formula that lasts all day.",
       "expiryDate": "2026-11-30",
       "manufacturingDate": "2023-09-20",
-      "howToApply": "Swipe directly onto lips. Reapply as needed."
+      "howToApply": "Swipe directly onto lips. Reapply as needed.",
+      "color": ["Dark Pink", "Maroon", "Brown"]
     },
     {
       "id": "5",
@@ -228,7 +224,8 @@
       "description": "A versatile 5-in-1 lipstick with a smooth matte finish, perfect for any occasion.",
       "expiryDate": "2027-01-10",
       "manufacturingDate": "2024-03-12",
-      "howToApply": "Twist the lipstick to reveal the desired shade and apply to lips."
+      "howToApply": "Twist the lipstick to reveal the desired shade and apply to lips.",
+      "color": ["Red", "Pink", "Coral", "Nude", "Brown"]
     },
     {
       "id": "6",
@@ -242,7 +239,8 @@
       "description": "A highly pigmented eyeshadow palette with vibrant and blendable shades.",
       "expiryDate": "2026-09-15",
       "manufacturingDate": "2023-07-05",
-      "howToApply": "Use a brush or fingers to blend shades on eyelids."
+      "howToApply": "Use a brush or fingers to blend shades on eyelids.",
+      "color": ["Gold", "Bronze", "Pink", "Purple", "Blue"]
     },
     {
       "id": "7",
@@ -256,7 +254,8 @@
       "description": "A mini skincare kit designed to provide hydration and a radiant glow.",
       "expiryDate": "2027-04-25",
       "manufacturingDate": "2024-05-10",
-      "howToApply": "Apply products as per instructions for a complete skincare routine."
+      "howToApply": "Apply products as per instructions for a complete skincare routine.",
+      "color": ["Transparent"]
     },
     {
       "id": "8",
@@ -270,7 +269,8 @@
       "description": "A nourishing cleansing balm that removes makeup and impurities while keeping the skin hydrated.",
       "expiryDate": "2026-12-10",
       "manufacturingDate": "2023-11-22",
-      "howToApply": "Massage onto dry skin and rinse off with warm water."
+      "howToApply": "Massage onto dry skin and rinse off with warm water.",
+      "color": ["Yellow"]
     },
     {
       "id": "9",
@@ -284,7 +284,8 @@
       "description": "A collagen-infused body cream that provides deep hydration and skin regeneration.",
       "expiryDate": "2027-08-05",
       "manufacturingDate": "2024-04-15",
-      "howToApply": "Apply generously on the body and massage gently."
+      "howToApply": "Apply generously on the body and massage gently.",
+      "color": ["White"]
     },
     {
       "id": "10",
@@ -298,7 +299,8 @@
       "description": "A creamy blush that blends seamlessly, giving a natural flush to the cheeks.",
       "expiryDate": "2026-10-20",
       "manufacturingDate": "2023-12-05",
-      "howToApply": "Dab onto cheeks using fingers or a brush and blend outwards."
+      "howToApply": "Dab onto cheeks using fingers or a brush and blend outwards.",
+      "color": ["Peach", "Pink", "Coral"]
     }
   ],
   "User": [

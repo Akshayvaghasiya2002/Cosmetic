@@ -75,7 +75,6 @@ menuInner.addEventListener("click", toggleSubMenu);
 
 // *****************************   best seller js************************  //
 
-
 const bestSellerData = async () => {
     try {
         const response = await fetch("http://localhost:3000/products");
@@ -87,34 +86,40 @@ const bestSellerData = async () => {
 
         products.forEach(product => {
             const productElement = document.createElement("div");
-            productElement.classList.add("col-lg-3", "mb-4");
+            productElement.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-3", "mb-4");
             productElement.innerHTML = `
-                        <div class="card h-100 text-center p-3">
-                           <div class="d-flex justify-content-between align-items-center">
-                              <div>
-                                   ${product.tags ? `<span class="badge">${product.tags}</span>` : ''}
-                              </div>
-                              <span class="ms-auto heart-container" >
-                    <i class="fa-regular fa-heart" onclick="addWishList(event)" ></i>
-                    <i class="fa-solid fa-heart d-none" style=" color: #ff0000; " onclick="addWishList(event)" ></i>
-                </span>
-                           </div>
-                            <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}" >
-                            <div class="card-body">
-                                <h6 class="card-title">${product.name}</h6>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <p class="card-text mb-0">
-                                        Price: $${product.price} <span style="text-decoration: line-through; color: #14141499;   font-weight: 500; ">$${product.originalPrice}</span></p>
-                                    <p class="card-text" style="color:#388E3C">${product.discount}</p>
-                                </div>
-                                
-                                <div>
-                                       <button style="" class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
-                                </div>
-                            
-                            </div>
+                <div class="card h-100 text-center p-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            ${product.tags ? `<span class="badge">${product.tags}</span>` : ''}
                         </div>
-                    `;
+                        <span class="ms-auto heart-container">
+                            <i class="fa-regular fa-heart" onclick="addWishList(event)"></i>
+                            <i class="fa-solid fa-heart d-none" style="color: #ff0000;" onclick="addWishList(event)"></i>
+                        </span>
+                    </div>
+                    <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}">
+                    <div class="card-body">
+                        <h6 class="card-title">${product.name}</h6>
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <p class="card-text mb-0">
+                                Price: $${product.price} <span style="text-decoration: line-through; color: #14141499; font-weight: 500;">$${product.originalPrice}</span>
+                            </p>
+                            <p class="card-text" style="color:#388E3C">${product.discount}</p>
+                        </div>
+
+                        <!-- Color Swatches -->
+                       <div class="d-flex justify-content-center mt-2 color-options" >
+                            ${product.colors ? product.colors.map(color => `
+                                <span class="color-swatch" style="background-color: ${color}; width: 22px; height: 22px; border-radius: 50%; margin: 0 4px;  display: inline-block; border: 2px solid #ddd; cursor: pointer;" onclick="selectColor(event, '${color}')"></span>
+                            `).join('') : ''}
+                        </div>
+
+
+                        <button class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
+                    </div>
+                </div>
+            `;
             container.appendChild(productElement);
         });
     } catch (error) {
@@ -153,6 +158,11 @@ $(document).ready(async function () {
                                      <p class="card-text mb-0">Price: $${product.price} <span style="text-decoration: line-through; color: #14141499; font-weight: 500;">$${product.originalPrice}</span></p>
                                      <p class="card-text" style="color:#388E3C">${product.discount}</p>
                                  </div>
+                                 <div class="d-flex justify-content-center mt-2 color-options" >
+                            ${product.color ? product.color.map(color => `
+                                <span class="color-swatch" style="background-color: ${color}; width: 22px; height: 22px; border-radius: 50%; margin: 0 4px;  display: inline-block; border: 2px solid #ddd; cursor: pointer;" onclick="selectColor(event, '${color}')"></span>
+                            `).join('') : ''}
+                        </div>
                                  <button class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
                              </div>
                          </div>
@@ -160,6 +170,32 @@ $(document).ready(async function () {
             carousel.append(productElement);
         });
 
+        carousel.owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    stagePadding: 10
+                },
+                600: {
+                    items: 2,
+                    stagePadding: 10
+                },
+                1000: {
+                    items: 3
+                },
+                1050:{
+                    items: 4
+                }
+            }
+        });
+    } catch (error) {
+        console.error("Error fetching products:", error.message);
+    }
+});
         // ////////////////////////////////// btn filter products //////////////////////////////////
         let allProducts = [];
 
@@ -216,27 +252,7 @@ $(document).ready(async function () {
         // ////////////////////////////////// btn filter products //////////////////////////////////
 
 
-        carousel.owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            dots: false,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 5
-                }
-            }
-        });
-    } catch (error) {
-        console.error("Error fetching products:", error.message);
-    }
-});
+       
 
 
 
