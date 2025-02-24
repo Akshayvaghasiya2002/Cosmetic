@@ -62,7 +62,7 @@
                                               </div>
                                           </div>
                                       </div>
-                                      <div class="ps-3 mt-4 py-2 ds_hide_border ds_func_manage3 ds_cursor" onclick="handleManage(this)" data-value="3" data-target="addressSection">
+                                      <div class="ps-3 mt-4 py-2 ds_hide_border ds_func_manage3 ds_cursor" id="ds_MyAddress" onclick="handleManage(this)" data-value="3" data-target="addressSection">
                                           <div class="mx-4">
                                               <div class="d-flex">
                                                   <div><img src="/IMG/Dhruvin/location.png" alt="" class="ds_icon-img"></div>
@@ -479,7 +479,7 @@
                             <!-- ************ My Address  *********** -->
                             <section class="d-none " id="addressSection">
                                 <div>
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-between" id="kabali" onclick="handle(this)">
                                         <h4 class="ds_color">My Address</h4>
                                         <button class="ds_add_btn ds_color ds_600" data-bs-toggle="modal" data-bs-target="#addressModal">+Add Address</button>
                                     </div>

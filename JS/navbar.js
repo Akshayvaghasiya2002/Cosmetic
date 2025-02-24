@@ -10,8 +10,21 @@ function handleSingUp() {
     }
 }
 
+let registerId = localStorage.getItem("RegisterId")
+let handleObj = {}
 
-
+async function handleApiGetData() {
+    if(registerId){
+        try{
+            const response = await fetch(`http://localhost:3000/User/${registerId}`)
+            const json = await response.json()
+               handleObj = json
+          }catch(error){
+             alert(error)
+          }
+    }
+}
+handleApiGetData()
 
 const menu = document.querySelector(".menu");
 const menuInner = menu.querySelector(".menu-inner");
@@ -382,21 +395,81 @@ function asItIs() {
 }
 
 function verifyOtp() {
-    const hideforPwd = document.querySelector(".V_Forgot_section");
-    hideforPwd.classList.add("d-none");
-    const displayOtp = document.querySelector(".V_verify_section");
-    displayOtp.classList.remove('d-none');
+    
+    
+    const veriEmail = document.getElementById("ds_verify_email").value.trim()
+    
+    if(registerId){
+        if(handleObj?.email == veriEmail){
+            const displayOtp = document.querySelector(".V_verify_section");
+            displayOtp.classList.remove('d-none'); 
+            const hideforPwd = document.querySelector(".V_Forgot_section");
+            hideforPwd.classList.add("d-none");
+            setTimeout(()=>{
+               alert("Your Otp Is -: 123456")
+            }, 1000)
+        }
+        else{
+            alert("Your Emil Is Wrong!")
+        }
+    }
 }
 
 function resetPassword() {
-    const hideforPwd = document.querySelector(".V_Forgot_section");
-    hideforPwd.classList.add("d-none");
-    const hideOtp = document.querySelector(".V_verify_section");
-    hideOtp.classList.add('d-none');
-    const displayResetPwd = document.querySelector(".V_reset_section");
-    displayResetPwd.classList.remove('d-none');
+    
+    let otpInputs = document.querySelectorAll(".ds_verify_otp");
+    let enteredOtp = Array.from(otpInputs).map(input => input.value).join('');
+
+    if (enteredOtp !== "123456") {  // Simulate OTP validation (replace with actual API)
+        alert("Invalid OTP. Please try again.");
+        const hideforPwd = document.querySelector(".V_Forgot_section");
+        hideforPwd.classList.add("d-none");
+        return;
+    }
+    else{
+        
+        const hideOtp = document.querySelector(".V_verify_section");
+        hideOtp.classList.add('d-none');
+        const displayResetPwd = document.querySelector(".V_reset_section");
+        displayResetPwd.classList.remove('d-none');
+    }
+    // if(){
+
+    // }
 }
 
+async function handleResetPassword () {
+   let newPass = document.getElementById("pwd1").value.trim()
+   let conPass = document.getElementById("pwd2").value.trim()
+
+   if(newPass != conPass){
+     alert("Passwords do not match.");
+     return;
+   }
+   else{
+     let obj = {
+        fullName: `${handleObj.fullName}`,
+        phoneNumber: handleObj?.phoneNumber,
+        email: handleObj?.email,
+        dateOfBirth: handleObj?.dateOfBirth,
+        gender: handleObj?.gender,
+        password:conPass,
+        addresses:handleObj?.addresses ? handleObj?.addresses : []
+     }
+     try{
+        const response = await fetch(`http://localhost:3000/User/${registerId}`,{
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(obj)
+       })
+         console.log("response" , response);
+         alert("Password Change SuccessFully")
+       }catch(error){
+        alert(error)
+       }
+     
+   }
+}
 
 
 const otpFields = document.querySelectorAll('.V_otp_6');
@@ -420,11 +493,6 @@ otpFields.forEach((field, index) => {
         }
     });
 });
-
-
-
-
-
 
 
 

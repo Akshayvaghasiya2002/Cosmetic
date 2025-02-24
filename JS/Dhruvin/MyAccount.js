@@ -4,7 +4,16 @@ document.getElementById("calendarIcon").addEventListener("click", function() {
 
 
 function handleManage(element) {
+    
     const value = element.dataset.value;
+
+    let offCanvas = document.getElementById("offcanvasRight");
+    if (offCanvas && offCanvas.classList.contains("show")) {
+        let offcanvasInstance = bootstrap.Offcanvas.getInstance(offCanvas);
+        if (offcanvasInstance) {
+            offcanvasInstance.hide();
+        }
+    }
     
     if (value === "6") {
         // Open the modal if the logout button is clicked
@@ -48,8 +57,21 @@ function handleManage(element) {
             // console.log("Section Title:", sectionH4.textContent.trim()); // Logs the text of the <h4>
         }
     }
+
+   
 }
 
+
+
+function handle (element) {
+   console.log("element",element);
+}
+
+function yes () {
+    let data = document.getElementById("kabali")
+    handle(data)
+}
+yes()
 // *********** My Profile **********
 
 // ----- Edit Profile 
@@ -129,6 +151,24 @@ function getUserProfileData() {
 // Call function to load user data into form
 getUserProfileData();
 
+function handleImageUpload(event) {
+    let file = event.target.files[0];
+    if (!file) return;
+
+    let reader = new FileReader();
+    reader.onload = function(e) {
+        let imageUrl = e.target.result; // Base64 format
+        document.getElementById("profileImage").src = imageUrl;
+
+        // If uploading to a real server, you need to send the image via a fetch request
+        uploadImageToServer(file).then(url => {
+            if (url) {
+                imageUrl = url; // Use the uploaded image URL
+            }
+        });
+    };
+    reader.readAsDataURL(file);
+}
 
 function handleUpdateProfile(event) {
     event.preventDefault(); // Prevent form submission from refreshing the page
@@ -507,6 +547,8 @@ async function handleAddress(event) {
       console.error("Error while saving address: ", error);
       alert("Failed to save address.");
     }
+
+    
 }
 
 
@@ -586,6 +628,7 @@ async function handleEditAddress(event) {
         console.error("Error while saving address: ", error);
         alert("Failed to save address.");
     }
+    
 }
 
 

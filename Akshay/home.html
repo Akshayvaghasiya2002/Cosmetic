@@ -1254,7 +1254,7 @@
                                 <p class="text V_account V_bot_margine ">Recover your account easily enter your email below</p>
                                         
                                 <div class=" mt-3 mt-md-4 mt-lg-5">
-                                        <input type="email" class="form-control V_control V_pwd" id="exampleInputEmail1" aria-describedby="text"
+                                        <input type="email" class="form-control V_control V_pwd" id="ds_verify_email" aria-describedby="text"
                                             placeholder="Your email">
                                 </div>
                                 
@@ -1268,12 +1268,12 @@
                                 <p class="text V_account V_bot_margine">Please verify your email by entering the code we just sent to <span class="V_email">jennywilson23@gmail.com</span></p>       
                                 <div class=" mt-3 mt-md-4 mt-lg-5">
                                         <div class="d-flex justify-content-around ">
-                                                <input type="text" class="form-control V_control V_pwd V_otp_6 text-center" id="exampleInputEmail1" aria-describedby="text">
-                                                <input type="text" class="form-control V_control V_pwd V_otp_6 text-center" id="exampleInputEmail1" aria-describedby="text">
-                                                <input type="text" class="form-control V_control V_pwd V_otp_6 text-center" id="exampleInputEmail1" aria-describedby="text">
-                                                <input type="text" class="form-control V_control V_pwd V_otp_6 text-center" id="exampleInputEmail1" aria-describedby="text">
-                                                <input type="text" class="form-control V_control V_pwd V_otp_6 text-center" id="exampleInputEmail1" aria-describedby="text">
-                                                <input type="text" class="form-control V_control V_pwd V_otp_6 text-center" id="exampleInputEmail1" aria-describedby="text">
+                                                <input type="text" class="form-control V_control V_pwd V_otp_6 text-center ds_verify_otp" id="exampleInputEmail1" aria-describedby="text">
+                                                <input type="text" class="form-control V_control V_pwd V_otp_6 text-center ds_verify_otp" id="exampleInputEmail1" aria-describedby="text">
+                                                <input type="text" class="form-control V_control V_pwd V_otp_6 text-center ds_verify_otp" id="exampleInputEmail1" aria-describedby="text">
+                                                <input type="text" class="form-control V_control V_pwd V_otp_6 text-center ds_verify_otp" id="exampleInputEmail1" aria-describedby="text">
+                                                <input type="text" class="form-control V_control V_pwd V_otp_6 text-center ds_verify_otp" id="exampleInputEmail1" aria-describedby="text">
+                                                <input type="text" class="form-control V_control V_pwd V_otp_6 text-center ds_verify_otp" id="exampleInputEmail1" aria-describedby="text">
                                         </div>
                                 </div>
                                 <div class="text-center py-2 text text-white V_register mx-auto align-content-center my-4  my-md-5 "
@@ -1281,7 +1281,7 @@
                                         Verify OTP
                                 </div>
                                 <div class="text-center mb-5">
-                                        <p class="text V_question mb-0" >Didn’t received code?<span class="V_r_login"> Resend </span></p>
+                                        <p class="text V_question mb-0" >Didn’t received code?<span class="V_r_login" onclick="alert('Your Otp Is -: 123456')"> Resend </span></p>
                                 </div>
                         </div>
                         <div class="col-12 d  px-4 px-md-5 V_reset_section ">
@@ -1301,7 +1301,7 @@
                                                     <i class="fa-solid fa-eye pe-3 d-none ds_cursor" id="openeye2" onclick="displayPwd2()"></i>
                                         </div>
                                 </div>
-                                <div class="text-center py-2 text text-white V_register mx-auto align-content-center my-4  my-md-5" >
+                                <div class="text-center py-2 text text-white V_register mx-auto align-content-center my-4  my-md-5" onclick="handleResetPassword()">
                                         Reset Password
                                 </div>
                         </div>
