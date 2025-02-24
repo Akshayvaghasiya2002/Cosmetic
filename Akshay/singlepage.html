@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="../CSS/Parth/Search.css">
     <link rel="stylesheet" href="../CSS/singlepage.css">
+    <link rel="stylesheet" href="/CSS/home.css">
 
 </head>
 
@@ -1321,7 +1322,27 @@
     </section>
     <section class="mt-5 product-info">
         <div class="container-xxl">
-            <ul class="nav nav-tabs" id="productTabs" role="tablist">
+            <div class="nav-container">
+                <ul class="nav-tabs" id="productTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info"
+                            type="button" role="tab" aria-controls="info" aria-selected="true">Product Information</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="benefits-tab" data-bs-toggle="tab" data-bs-target="#benefits"
+                            type="button" role="tab" aria-controls="benefits" aria-selected="false">Benefits</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="apply-tab" data-bs-toggle="tab" data-bs-target="#apply"
+                            type="button" role="tab" aria-controls="apply" aria-selected="false">How to Apply</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients"
+                            type="button" role="tab" aria-controls="ingredients" aria-selected="false">Ingredients</button>
+                    </li>
+                </ul>
+            </div>
+            <!-- <ul class="nav nav-tabs" id="productTabs" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info"
                         type="button" role="tab" aria-controls="info" aria-selected="true">Product Information</button>
@@ -1338,7 +1359,7 @@
                     <button class="nav-link" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients"
                         type="button" role="tab" aria-controls="ingredients" aria-selected="false">Ingredients</button>
                 </li>
-            </ul>
+            </ul> -->
             <div class="tab-content" id="productTabsContent">
                 <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
                     <div class="mb-4">
@@ -1637,48 +1658,52 @@
                     <div class="modal-body">
                         <!-- Product Info -->
                         <div class="d-flex align-items-center mb-4">
-                            <img src="/api/placeholder/60/60" alt="Product" class="product-img rounded me-3">
-                            <p class="m-0">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick</p>
+                            <img src="../IMG/Akshay/image 3278.png" alt="Product" class="product-img rounded me-3">
+                            <p class="m-0" style="color: #383838;">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick</p>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" value="https://www.example.com/product/lipstick" readonly style="background-color: #f8f8f8;">
+                            <button class=" V_proceed_payment3" type="button" onclick="copyLink()">Copy URL</button>
                         </div>
         
                         <!-- Share Icons -->
-                        <div class="d-flex justify-content-center gap-4 mb-4">
-                            <a href="#" class="share-link text-center">
-                                <div class="share-icon facebook mb-2">
-                                    <i class="fab fa-facebook-f"></i>
+                        <div class="social-container mt-5">
+                            <a href="#" class="share-link">
+                                <div class="share-icon">
+                                    <img src="../IMG/Akshay/facebook.png" alt="Facebook">
                                 </div>
                                 <span>Facebook</span>
                             </a>
-                            <a href="#" class="share-link text-center">
-                                <div class="share-icon whatsapp mb-2">
-                                    <i class="fab fa-whatsapp"></i>
+                            <a href="#" class="share-link">
+                                <div class="share-icon">
+                                    <img src="../IMG/Akshay/whatsapp.png" alt="WhatsApp">
                                 </div>
                                 <span>WhatsApp</span>
                             </a>
-                            <a href="#" class="share-link text-center">
-                                <div class="share-icon twitter mb-2">
-                                    <i class="fab fa-x-twitter"></i>
+                            <a href="#" class="share-link">
+                                <div class="share-icon">
+                                    <img src="../IMG/Akshay/x.jpg" alt="X">
                                 </div>
                                 <span>X</span>
                             </a>
-                            <a href="#" class="share-link text-center">
-                                <div class="share-icon instagram mb-2">
-                                    <i class="fab fa-instagram"></i>
+                            <a href="#" class="share-link">
+                                <div class="share-icon">
+                                    <img src="../IMG/Akshay/insta.png" alt="Instagram">
                                 </div>
                                 <span>Instagram</span>
                             </a>
                         </div>
         
                         <!-- Copy Link -->
-                        <div class="input-group">
-                            <input type="text" class="form-control" value="https://www.example.com/product/lipstick" readonly>
-                            <button class="btn btn-dark" type="button" onclick="copyLink()">Copy URL</button>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
+  
+    <section id="Footer"></section>
 
 
     <!-- jQuery -->
@@ -1702,6 +1727,17 @@
             });
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+                fetch('../Dhruvin/Footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('Footer').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading Footer:', error));
+            });
+      </script>
+   
 </body>
 
 </html>
