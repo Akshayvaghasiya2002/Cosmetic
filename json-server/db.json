@@ -225,7 +225,8 @@
       "description": "A highly pigmented liquid matte lipstick that provides long-lasting color with a creamy finish.",
       "expiryDate": "2026-12-31",
       "manufacturingDate": "2024-01-15",
-      "howToApply": "Apply evenly to lips using the applicator. Allow it to dry for a long-lasting matte finish."
+      "howToApply": "Apply evenly to lips using the applicator. Allow it to dry for a long-lasting matte finish.",
+      "color": ["Nude", "Red", "Pink"]
     },
     {
       "id": "2",
@@ -327,7 +328,8 @@
       "description": "A versatile 5-in-1 lipstick with a smooth matte finish, perfect for any occasion.",
       "expiryDate": "2027-01-10",
       "manufacturingDate": "2024-03-12",
-      "howToApply": "Twist the lipstick to reveal the desired shade and apply to lips."
+      "howToApply": "Twist the lipstick to reveal the desired shade and apply to lips.",
+      "color": ["Red", "Pink", "Coral", "Nude", "Brown"]
     },
     {
       "id": "6",
@@ -343,7 +345,8 @@
       "description": "A highly pigmented eyeshadow palette with vibrant and blendable shades.",
       "expiryDate": "2026-09-15",
       "manufacturingDate": "2023-07-05",
-      "howToApply": "Use a brush or fingers to blend shades on eyelids."
+      "howToApply": "Use a brush or fingers to blend shades on eyelids.",
+      "color": ["Gold", "Bronze", "Pink", "Purple", "Blue"]
     },
     {
       "id": "7",
@@ -359,7 +362,8 @@
       "description": "A mini skincare kit designed to provide hydration and a radiant glow.",
       "expiryDate": "2027-04-25",
       "manufacturingDate": "2024-05-10",
-      "howToApply": "Apply products as per instructions for a complete skincare routine."
+      "howToApply": "Apply products as per instructions for a complete skincare routine.",
+      "color": ["Transparent"]
     },
     {
       "id": "8",
@@ -375,7 +379,8 @@
       "description": "A nourishing cleansing balm that removes makeup and impurities while keeping the skin hydrated.",
       "expiryDate": "2026-12-10",
       "manufacturingDate": "2023-11-22",
-      "howToApply": "Massage onto dry skin and rinse off with warm water."
+      "howToApply": "Massage onto dry skin and rinse off with warm water.",
+      "color": ["Yellow"]
     },
     {
       "id": "9",
@@ -391,7 +396,8 @@
       "description": "A collagen-infused body cream that provides deep hydration and skin regeneration.",
       "expiryDate": "2027-08-05",
       "manufacturingDate": "2024-04-15",
-      "howToApply": "Apply generously on the body and massage gently."
+      "howToApply": "Apply generously on the body and massage gently.",
+      "color": ["White"]
     },
     {
       "id": "10",
