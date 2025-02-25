@@ -134,33 +134,7 @@ const bestSellerData = async () => {
                             
                             </div>
                         </div>
-                        <span class="ms-auto heart-container">
-                            <i class="fa-regular fa-heart" onclick="addWishList(event)"></i>
-                            <i class="fa-solid fa-heart d-none" style="color: #ff0000;" onclick="addWishList(event)"></i>
-                        </span>
-                    </div>
-                    <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}">
-                    <div class="card-body">
-                        <h6 class="card-title">${product.name}</h6>
-                        <div class="d-flex justify-content-between align-items-center flex-wrap">
-                            <p class="card-text mb-0">
-                                Price: $${product.price} <span style="text-decoration: line-through; color: #14141499; font-weight: 500;">$${product.originalPrice}</span>
-                            </p>
-                            <p class="card-text" style="color:#388E3C">${product.discount}</p>
-                        </div>
-
-                        <!-- Color Swatches -->
-                       <div class="d-flex justify-content-center mt-2 color-options" >
-                            ${product.colors ? product.colors.map(color => `
-                                <span class="color-swatch" style="background-color: ${color}; width: 22px; height: 22px; border-radius: 50%; margin: 0 4px;  display: inline-block; border: 2px solid #ddd; cursor: pointer;" onclick="selectColor(event, '${color}')"></span>
-                            `).join('') : ''}
-                        </div>
-
-
-                        <button class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
-                    </div>
-                </div>
-            `;
+                    `;
             container.appendChild(productElement);
         });
     } catch (error) {
