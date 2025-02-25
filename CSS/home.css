@@ -659,7 +659,7 @@ img {
 
 
 .text-overlay h2 {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 600;
 }
 
@@ -693,38 +693,64 @@ img {
   display: block !important;
 }
 
-/* .smallslider.owl-carousel .owl-nav {
-  position: absolute !important;
-  bottom: 50%;
-  margin: auto !important;
-} */
+.smallslider.owl-theme .owl-nav [class*=owl-] {
+  border-radius: 20px !important;
+}
 
-.smallslider .owl-prev {
-  width: 30px;
-  height: 30px;
+.smallslider .owl-prev, 
+.smallslider .owl-next {
+  width: 35px;
+  height: 35px;
   position: absolute;
-  top: 30%;
-  margin-left: -30px !important;
-  display: block !important;
-  border: 1px solid black !important;
-  border-radius: 50% !important;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Default position */
+.smallslider .owl-prev {
+  left: -40px;
 }
 
 .smallslider .owl-next {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 30%;
   right: -40px;
-  display: block !important;
-  border: 1px solid black !important;
-  border-radius: 50% !important;
 }
 
-.owl-prev i,
-.owl-next i {
-  transform: scale(1, 6);
-  color: #ccc;
+/* Normal state: Black arrow */
+.smallslider .owl-prev::before,
+.smallslider .owl-next::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 16px;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.smallslider .owl-prev::before {
+  content: '\f104'; /* Left arrow */
+}
+
+.smallslider .owl-next::before {
+  content: '\f105'; /* Right arrow */
+}
+
+/* Hover state */
+.smallslider .owl-prev:hover, 
+.smallslider .owl-next:hover {
+  background: #3D4936 !important;
+}
+
+.smallslider .owl-prev:hover::before,
+.smallslider .owl-next:hover::before {
+  color: white;
 }
 
 .img_center {
@@ -1311,7 +1337,7 @@ img {
   position: absolute;
   top: 35%;
   transform: translateY(-50%);
-  background: #3D4936 !important;
+  background: #3D4936;
   color: white;
   padding: 0px 18px !important;
   border-radius: 50% !important;
@@ -1462,8 +1488,12 @@ footer {
 @media only screen and (max-width: 1024px) {
   .text-overlay {
     left: 42%;
+    top: 46%;
   }
-
+  .text-overlay h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
   .content {
     left: 5%;
     max-width: 90%;
@@ -1472,11 +1502,19 @@ footer {
   .title {
     font-size: 2.2rem;
   }
-  .smallslider .owl-prev{
-    margin-left: 10px !important;
+  .smallslider .owl-prev {
+    left: 10px; /* Adjust to prevent overflow */
+    top: 46%;
   }
+  
   .smallslider .owl-next {
-    right: 10px;
+    right: 10px; /* Adjust position to fit screen */
+    top: 46%;
+  }
+  .smallslider .owl-next::before {
+    position: absolute;
+    top: 9%;
+    left: 36%;
   }
   .A_newletter_content{
     right: 5px;
@@ -1495,6 +1533,18 @@ footer {
     right: -10px;
     top: 45% !important;
   }
+  .A_newarrival_slider {
+    width: 90%; /* Adjust the width of each card */
+    margin: 0 auto; /* Center the cards */
+}
+
+.A_newarrival_slider.owl-carousel .item {
+    margin: 5px; /* Add some margin between items */
+}
+
+.A_newarrival_slider.card {
+    max-width: 100%; /* Ensure cards do not exceed their container */
+}
 }
 
 @media only screen and (min-width: 993px) {
@@ -1749,6 +1799,19 @@ footer {
   .filter-btn {
     padding: 7px 20px;
   }
+  .smallslider .owl-prev,
+  .smallslider .owl-next {
+    width: 30px; /* Make buttons smaller */
+    height: 30px;
+  }
+
+  .smallslider .owl-prev {
+    left: 20px;
+  }
+
+  .smallslider .owl-next {
+    right: 10px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1865,6 +1928,19 @@ height: 130px;
   .care-content {
     top: 18%;
     left: 72%;
+  }
+  .smallslider .owl-prev,
+  .smallslider .owl-next {
+    width: 25px; /* Even smaller for mobile */
+    height: 25px;
+  }
+
+  .smallslider .owl-prev {
+    left: 5px;
+  }
+
+  .smallslider .owl-next {
+    right: 5px;
   }
 }
 @media only screen and (max-width: 320px) {

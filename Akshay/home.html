@@ -1423,7 +1423,8 @@
         loop: true,              
         margin: 10,              
         nav: true,               // Enable navigation
-        dots: false,              
+        dots: false,   
+        navText: ["", ""],            
         responsive:{
             0:{       // Mobile screens
                 items: 1
@@ -1451,6 +1452,33 @@
 });
     </script>
     <script>
+         $('.owl-carousel.brandslider').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    dots: false,       
+    navText: ["<span class='owl-prev'>&lsaquo;</span>", "<span class='owl-next'>&rsaquo;</span>"], // Custom navigation icons
+    responsive:{
+        0:{
+            items:1
+        },  
+        600:{
+            items:1,
+            stagePadding: 10
+
+        },
+        767:{
+            items:2,
+            stagePadding: 10
+        },
+        1000:{
+            items:3,
+        },
+        1025:{
+            items:5
+        }
+    }
+})
     $(document).ready(function(){
         $('.owl-carousel.brandslider').owlCarousel({
             loop: true,              
@@ -1471,12 +1499,9 @@
                 1024: {    // Desktops
                     items: 4
                 },
-                1200: {    // Large screens
-                    items: 6,
-                    margin: 5              
-                },
+                
                 1400: {
-                    items: 7
+                    items: 5
                 }
             }
         })
