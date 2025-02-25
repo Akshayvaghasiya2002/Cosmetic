@@ -6,7 +6,7 @@
 }
 
 .offcanvas {
-    --bs-offcanvas-width: 500px;
+    --bs-offcanvas-width: 500px !important;
 }
 
 /* === empty cart === */
@@ -114,7 +114,7 @@
     /* === empty cart === */
 
     .offcanvas {
-        --bs-offcanvas-width: 500px;
+        --bs-offcanvas-width: 500px !important;
     }
 
     .V_emptycard_img {
@@ -176,7 +176,7 @@
     /* === empty cart === */
 
     .offcanvas {
-        --bs-offcanvas-width: 450px;
+        --bs-offcanvas-width: 450px !important;
     }
 
     .V_emptycard_img {
@@ -237,7 +237,7 @@
     /* === empty cart === */
 
     .offcanvas {
-        --bs-offcanvas-width: 450px;
+        --bs-offcanvas-width: 450px !important;
     }
 
     .V_emptycard_img {
@@ -298,7 +298,7 @@
     /* === empty cart === */
 
     .offcanvas {
-        --bs-offcanvas-width: 400px;
+        --bs-offcanvas-width: 400px !important;
     }
 
     .V_emptycard_img {
@@ -361,7 +361,7 @@
     /* === empty cart === */
 
     .offcanvas {
-        --bs-offcanvas-width: 380px;
+        --bs-offcanvas-width: 380px !important;
     }
 
     .V_emptycard_img {
@@ -424,7 +424,7 @@
     /* === empty cart === */
 
     .offcanvas {
-        --bs-offcanvas-width: 350px;
+        --bs-offcanvas-width: 350px !important;
     }
 
     .V_emptycard_img {
@@ -489,7 +489,7 @@
     /* === empty cart === */
 
     .offcanvas {
-        --bs-offcanvas-width: 300px;
+        --bs-offcanvas-width: 300px !important;
     }
 
     .V_emptycard_img {
@@ -586,7 +586,7 @@
     /* === empty cart === */
 
     .offcanvas {
-        --bs-offcanvas-width: 280px;
+        --bs-offcanvas-width: 280px !important;
     }
 
     .V_emptycard_img {

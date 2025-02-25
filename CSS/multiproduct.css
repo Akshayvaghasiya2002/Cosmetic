@@ -780,7 +780,7 @@ input[type="text"] {
   top: 27px;
   border: none;
   border-radius: 50%;
-  width: 30px;
+  /* width: 30px; */
   height: 30px;
   display: flex;
   justify-content: center;

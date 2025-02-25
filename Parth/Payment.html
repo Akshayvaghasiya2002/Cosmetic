@@ -129,35 +129,35 @@
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body mx-sm-5 px-xl-5">
-                                        <div class="row m-0 w-100">
-                                            <div class="col-12 V_div1 d-flex mx-auto align-items-center V_bottom">
-                                                <div class="flex-fill">
-                                                    <input type="text " placeholder="Card Number"
-                                                        class="  flex-fill V_card_number text bg-transparent w-100">
+                                            <div class="row m-0 w-100">
+                                                <div class="col-12 V_div1 d-flex mx-auto align-items-center V_bottom">
+                                                    <div class="flex-fill">
+                                                        <input type="text " placeholder="Card Number" id="cardNumber"
+                                                            class="  flex-fill V_card_number text bg-transparent w-100">
+                                                    </div>
+                                                    <div class="d-flex justify-content-end ">
+                                                        <img class="V_credit_card" src="../IMG/Parth/visa.png" alt="">
+                                                        <img class="V_credit_card" src="../IMG/Parth/Credit card.png"
+                                                            alt="">
+                                                        <img class="V_credit_card" src="../IMG/Parth/Amex.png" alt="">
+                                                        <img class="V_credit_card" src="../IMG//Parth/Discover.png" alt="">
+                                                    </div>
                                                 </div>
-                                                <div class="d-flex justify-content-end ">
-                                                    <img class="V_credit_card" src="../IMG/Parth/visa.png" alt="">
-                                                    <img class="V_credit_card" src="../IMG/Parth/Credit card.png"
-                                                        alt="">
-                                                    <img class="V_credit_card" src="../IMG/Parth/Amex.png" alt="">
-                                                    <img class="V_credit_card" src="../IMG//Parth/Discover.png" alt="">
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <div class="V_50 V_bottom ">
+                                                    <input type="text" class="form-control" id="expiryDtae"
+                                                        aria-describedby="text" placeholder="MM/YYYY">
+                                                </div>
+                                                <div class="V_50 V_bottom ">
+                                                    <input type="text" class="form-control" id="cvv"
+                                                        aria-describedby="text" placeholder="CVV">
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="d-flex justify-content-between">
-                                            <div class="V_50 V_bottom ">
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    aria-describedby="text" placeholder="MM/YYYY">
+                                            <div class="col-12  ">
+                                                <input type="text" class="form-control" id="cardholdername"
+                                                    aria-describedby="text" placeholder="Card Holder Name">
                                             </div>
-                                            <div class="V_50 V_bottom ">
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    aria-describedby="text" placeholder="CVV">
-                                            </div>
-                                        </div>
-                                        <div class="col-12  ">
-                                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                                aria-describedby="text" placeholder="Card Holder Name">
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -244,8 +244,8 @@
                         </div>
                     </div>
                     <div class="text-center text V_proceed_payment V_wid align-content-center ms-2  my-5 my-md-5"
-                        data-bs-toggle="modal" data-bs-target="#successModal">
-                        Pay $1350
+                        >
+                        Pay <span id="V_total"> $1350 </span>
                     </div>
                 </div>
 

@@ -329,7 +329,7 @@ const products = [
         currentPrice: 4.50,
         originalPrice: 6.00,
         discount: "20% OFF",
-        image: "/IMG/Akshay/lip balm.png",
+        image: "/IMG/Akshay/lip_balm.png",
         colors: [
             { color: "#FF9EBF" },
             { color: "#EFCFCE" },
@@ -346,7 +346,7 @@ const products = [
         originalPrice: 6.00,
         discount: "20% OFF",
         badge: { type: "BEST SELLER", class: "badge-best-seller" },
-        image: "/IMG/Akshay/pink lipstick.png",
+        image: "/IMG/Akshay/pink_lipstick.png",
         colors: [
             { color: "#A54E4E" },
             { color: "#8A2232" },

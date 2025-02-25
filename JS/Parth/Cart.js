@@ -1,5 +1,8 @@
 
-
+function gotoaddresspage() {
+    window.location.href = "../../Parth/AddAddress.html";
+    console.log('btn');
+}
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -105,7 +108,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <div class="col-12 col-md-3">
                         <img src="${item.image}" alt="${item.name}" class="w-100 V_eveline_height">
                     </div>
-                    <div class="col-12 col-md-9 d-flex justify-content-between">
+                    <div class="col-12 col-md-9 d-flex justify-content-between mt-4">
                         <div class="V_cart_item_text">
                             <p class="text m-0">${item.brand} - ${item.name}</p>
                             ${item.selectedColor ? `<p class="text m-0 mt-2"><span class="V_shade">Shade:</span> <span">${item.selectedColor}</span></p>` : ""}

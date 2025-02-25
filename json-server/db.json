@@ -226,7 +226,11 @@
       "expiryDate": "2026-12-31",
       "manufacturingDate": "2024-01-15",
       "howToApply": "Apply evenly to lips using the applicator. Allow it to dry for a long-lasting matte finish.",
-      "color": ["Nude", "Red", "Pink"]
+      "color": [
+        "Nude",
+        "Red",
+        "Pink"
+      ]
     },
     {
       "id": "2",
@@ -329,7 +333,13 @@
       "expiryDate": "2027-01-10",
       "manufacturingDate": "2024-03-12",
       "howToApply": "Twist the lipstick to reveal the desired shade and apply to lips.",
-      "color": ["Red", "Pink", "Coral", "Nude", "Brown"]
+      "color": [
+        "Red",
+        "Pink",
+        "Coral",
+        "Nude",
+        "Brown"
+      ]
     },
     {
       "id": "6",
@@ -346,7 +356,13 @@
       "expiryDate": "2026-09-15",
       "manufacturingDate": "2023-07-05",
       "howToApply": "Use a brush or fingers to blend shades on eyelids.",
-      "color": ["Gold", "Bronze", "Pink", "Purple", "Blue"]
+      "color": [
+        "Gold",
+        "Bronze",
+        "Pink",
+        "Purple",
+        "Blue"
+      ]
     },
     {
       "id": "7",
@@ -363,7 +379,9 @@
       "expiryDate": "2027-04-25",
       "manufacturingDate": "2024-05-10",
       "howToApply": "Apply products as per instructions for a complete skincare routine.",
-      "color": ["Transparent"]
+      "color": [
+        "Transparent"
+      ]
     },
     {
       "id": "8",
@@ -380,7 +398,9 @@
       "expiryDate": "2026-12-10",
       "manufacturingDate": "2023-11-22",
       "howToApply": "Massage onto dry skin and rinse off with warm water.",
-      "color": ["Yellow"]
+      "color": [
+        "Yellow"
+      ]
     },
     {
       "id": "9",
@@ -397,7 +417,9 @@
       "expiryDate": "2027-08-05",
       "manufacturingDate": "2024-04-15",
       "howToApply": "Apply generously on the body and massage gently.",
-      "color": ["White"]
+      "color": [
+        "White"
+      ]
     },
     {
       "id": "10",
@@ -433,260 +455,70 @@
   ],
   "User": [
     {
-      "id": "e91d",
-      "fullName": "Parth Vaghasiya",
+      "id": "2448",
+      "fullName": "hi",
       "phoneNumber": "1234567890",
-      "email": "parthvaghasi.kalathiyainfotech@gmail.com",
-      "password": "cvbc@12233",
+      "email": "hi@gmail.com",
+      "password": "hello@123",
+      "wishlist": [],
+      "orders": [],
       "addresses": [
         {
-          "id": 1739870666572,
-          "firstName": "Parth",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "6352285710",
-          "email": "parth@gmail.com",
-          "zipCode": "102030",
-          "address1": "london",
-          "address2": "united Kingdome",
+          "id": 1740483561687,
+          "firstName": "hi`",
+          "lastName": "by",
+          "mobileNumber": "6234567890",
+          "email": "hi@gmail.com",
+          "zipCode": "123456",
+          "address1": "dubai",
+          "address2": "",
           "city": "london",
           "state": "Guj",
           "country": "IND",
-          "addressType": "Home",
-          "otherType": null
-        },
-        {
-          "id": 1740047897362,
-          "firstName": "Akshay",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "0932801048",
-          "email": "akshaygvaghasiya@gmail.com",
-          "zipCode": "395006",
-          "address1": "72, gadhapur township",
-          "address2": "Pasodara",
-          "city": "Surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Home",
-          "otherType": ""
-        }
-      ],
-      "wishlist": [
-        {
-          "id": "2",
-          "image": "../IMG/Parth/MAC_glow_lip_balm.png",
-          "name": "MAC Glow Play Tender Talk Lip Balm",
-          "originalPrice": 600,
-          "currentPrice": 450,
-          "discount": "20% OFF",
-          "colors": [
-            "#FF7AA6",
-            "#CCB9D8",
-            "#EC9C53",
-            "#B5296A"
-          ],
-          "moreColors": 10,
-          "selectedColor": null,
-          "badge": true
-        }
-      ],
-      "orders": [
-        {
-          "id": "2",
-          "image": "../IMG/Parth/MAC_glow_lip_balm.png",
-          "name": "MAC Glow Play Tender Talk Lip Balm",
-          "currentPrice": 450,
-          "quantity": 2,
-          "selectedColor": null
-        },
-        {
-          "id": 1740399607941,
-          "image": "http://127.0.0.1:5504/IMG/Akshay/bodyshot.png",
-          "brand": "Eveline Cosmetics",
-          "name": "Wonder Match Creamy Liquid Matte Lipstick",
-          "currentPrice": 4.5,
-          "quantity": 4,
-          "selectedColor": "#9D2235"
-        }
-      ]
-    },
-    {
-      "id": "30da",
-      "fullName": "Parth Vaghasiya",
-      "phoneNumber": "6352285710",
-      "email": "abc@gmail.com",
-      "password": "Abc@1234",
-      "addresses": [
-        {
-          "id": 1740033161434,
-          "firstName": "John",
-          "lastName": "Wick",
-          "mobileNumber": "6991231234",
-          "email": "john@wick123gmail.com",
-          "zipCode": "940431",
-          "address1": "1600 Fake Street",
-          "address2": "Apartment 1",
-          "city": "Mountain View",
-          "state": "Guj",
-          "country": "IND",
           "addressType": "Office",
           "otherType": null
-        },
-        {
-          "id": 1740053190866,
-          "firstName": "John",
-          "lastName": "Wick",
-          "mobileNumber": "0123123123",
-          "email": "john@wick123gmail.com",
-          "zipCode": "940431",
-          "address1": "1600 Fake Street",
-          "address2": "Apartment 1",
-          "city": "Mountain View",
-          "state": "Guj",
-          "country": "IND",
-          "addressType": "Other",
-          "otherType": "566652"
         }
       ],
-      "wishlist": [
+      "carddetails": [
         {
-          "id": "4",
-          "image": "http://127.0.0.1:5503/IMG/Akshay/makeup.png",
-          "brand": "SWISS BEAUTY",
-          "name": "Non-Transfer Lipstick",
-          "currentPrice": "$4.50",
-          "originalPrice": "$6.00",
-          "discount": "20% OFF",
-          "badge": true,
-          "colors": [
-            "#C88C8C",
-            "#5A142A",
-            "#FF2D2D",
-            "#F29B9B"
-          ],
-          "moreColors": 2,
-          "selectedColor": "#5A142A"
-        },
+          "cardNumber": "123456789090",
+          "expiryDate": "12/2090",
+          "cvv": "12345",
+          "cardHolderName": "VAGHASIYA PARTH RAMESHBHAI"
+        }
+      ],
+      "confirmedOrders": [
         {
-          "id": "5",
-          "image": "http://127.0.0.1:5503/IMG/Akshay/eyes.png",
-          "brand": "COLORBAR",
-          "name": "Power Kiss Matte Lipstick",
-          "currentPrice": "$4.50",
-          "originalPrice": "$6.00",
-          "discount": "20% OFF",
-          "badge": false,
-          "colors": [
-            "#B97562",
-            "#612A31",
-            "#CC5B6B",
-            "#843344"
-          ],
-          "moreColors": 10,
-          "selectedColor": null
-        },
-        {
-          "id": "3",
-          "image": "http://127.0.0.1:5503/IMG/Akshay/pink%20lipstick.png",
-          "brand": "SUGAR",
-          "name": "Matte As Hell Mini Crayon Lipstick - 07 Viola",
-          "currentPrice": "$4.50",
-          "originalPrice": "$6.00",
-          "discount": "20% OFF",
-          "badge": true,
-          "colors": [
-            "#A54E4E",
-            "#8A2232",
-            "#B95C5C",
-            "#C06A6A"
-          ],
-          "moreColors": 2,
-          "selectedColor": "#B95C5C"
+          "batchId": "batch_1740483607193",
+          "orderDate": "2025-02-25",
+          "deliveryDate": "2025-03-07",
+          "orderStatus": "pending",
+          "totalAmount": "728.2",
+          "orders": [
+            {
+              "id": 1740483478453,
+              "image": "/IMG/Akshay/pink_lipstick.png",
+              "name": "SUGAR Matte As Hell Mini Crayon Lipstick",
+              "currentPrice": 450,
+              "quantity": 2,
+              "selectedColor": null,
+              "orderId": "order_1740483607194",
+              "totalAmount": 900
+            },
+            {
+              "id": 1740483487975,
+              "image": "http://127.0.0.1:5504/IMG/Akshay/lip_balm.png",
+              "brand": "MAC",
+              "name": "Glow Play Tender Talk Lip Balm",
+              "currentPrice": 4.5,
+              "quantity": 2,
+              "selectedColor": null,
+              "orderId": "order_1740483607194",
+              "totalAmount": 9
+            }
+          ]
         }
       ]
-    },
-    {
-      "fullName": "hello Hi",
-      "phoneNumber": "1234567890",
-      "email": "hi@gmail.com",
-      "dateOfBirth": "2025-02-24",
-      "gender": "Female",
-      "password": "Hello@123",
-      "addresses": [
-        {
-          "id": 1740392292710,
-          "firstName": "Sujal",
-          "lastName": "Parajapat",
-          "mobileNumber": "0123456789",
-          "email": "hi@gmail.com",
-          "zipCode": "525252",
-          "address1": "katargam",
-          "address2": "new rise",
-          "city": "surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Home",
-          "otherType": ""
-        },
-        {
-          "id": 1740393764640,
-          "firstName": "Sujaldfefrqwef",
-          "lastName": "Parajapat",
-          "mobileNumber": "0123456789",
-          "email": "hi@gmail.com",
-          "zipCode": "525252",
-          "address1": "katargam",
-          "address2": "new rise",
-          "city": "surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1740393810872,
-          "firstName": "Sujalss",
-          "lastName": "Parajapat",
-          "mobileNumber": "0123456789",
-          "email": "hi@gmail.com",
-          "zipCode": "525252",
-          "address1": "katargam",
-          "address2": "new rise",
-          "city": "surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Office",
-          "otherType": ""
-        }
-      ],
-      "id": "1662"
-    },
-    {
-      "id": "f6d1",
-      "fullName": "hello",
-      "phoneNumber": "1234567890",
-      "email": "hi@gmail.com",
-      "password": "hello@123"
-    },
-    {
-      "id": "ac50",
-      "fullName": "hello",
-      "phoneNumber": "1234567890",
-      "email": "hi@gmail.com",
-      "password": "hello@123"
-    },
-    {
-      "id": "ac58",
-      "fullName": "hello",
-      "phoneNumber": "1234567890",
-      "email": "hi@gmail.com",
-      "password": "hello@123"
-    },
-    {
-      "id": "e920",
-      "fullName": "hello",
-      "phoneNumber": "1234567890",
-      "email": "hi@gmail.com",
-      "password": "hello@123"
     }
   ]
 }
