@@ -63,16 +63,35 @@ function handleManage(element) {
 
 
 
-function handle (element) {
-   console.log("element",element);
-}
+// function handle (element) {
+//    console.log("element",element);
+// }
 
-function yes () {
-    let data = document.getElementById("kabali")
-    handle(data)
-}
-yes()
+// function yes () {
+//     let data = document.getElementById("kabali")
+//     handle(data)
+// }
+// yes()
 // *********** My Profile **********
+
+// -------- Edit Image
+let selectedImage = null; // Variable to store selected image
+
+document.getElementById('cameraIcon').addEventListener('click', function() {
+    document.getElementById('fileInput').click(); // Trigger file input
+});document.getElementById('fileInput').addEventListener('change', function(event) {
+    const file = event.target.files[0]; // Get selected file
+    
+    if (file) {
+        selectedImage = file; // Store in variable        // Preview the selected image
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('userImage').src = e.target.result;
+            document.getElementById('ds_mini_img').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
 
 // ----- Edit Profile 
 function handleEditSubmit(event) {
@@ -126,6 +145,8 @@ function getUserProfileData() {
         .then((data) => {
             
             let user = data?.find((element) => element?.id == userID);             
+            console.log(user);
+            
             passwordObj = user      
             
             if (user) {
@@ -134,6 +155,8 @@ function getUserProfileData() {
                 document.getElementById("ds_edit_mobile").value = user?.phoneNumber || "";
                 document.getElementById("ds_edit_email").value = user?.email || "";
                 document.getElementById("datePicker").value = user?.dateOfBirth || "";
+                document.getElementById("ds_mini_img").src = `${user?.selectedImage}` ;
+                document.getElementById("userImage").src = `${user?.selectedImage}` ;
                 
                 // Set gender correctly
                 if (user?.gender == "Female") {
@@ -150,6 +173,7 @@ function getUserProfileData() {
 
 // Call function to load user data into form
 getUserProfileData();
+
 
 function handleImageUpload(event) {
     let file = event.target.files[0];
@@ -183,32 +207,76 @@ function handleUpdateProfile(event) {
     let gender = document.getElementById("female").checked ? "Female" : 
                  document.getElementById("male").checked ? "Male" : "";
 
-    let updatedUserData = {
-        fullName: `${First} ${Last}`,
-        phoneNumber: Mobile,
-        email: Email,
-        dateOfBirth: Date,
-        gender: gender,
-        password:passwordObj?.password,
-        addresses:passwordObj?.addresses ? passwordObj?.addresses : []
-    };
+    // Function to convert image to Base64
+    function convertImageToBase64(imageFile, callback) {
+        const reader = new FileReader();
+        reader.onloadend = function () {
+            callback(reader.result); // Get Base64 string
+        };
+        reader.readAsDataURL(imageFile);
+    }
 
-    
-    fetch(`http://localhost:3000/User/${userID}`, {
-        method: "PUT",  // Use PUT to update the user
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(updatedUserData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert("Profile updated successfully!");
-        console.log("Updated User:", data);
-    })
-    .catch(error => console.error("Error updating profile:", error));
-    getUserProfileData();
+    if (selectedImage) {
+        convertImageToBase64(selectedImage, function (base64String) {
+            let updatedUserData = {
+                fullName: `${First} ${Last}`,
+                phoneNumber: Mobile,
+                email: Email,
+                dateOfBirth: Date,
+                gender: gender,
+                password: passwordObj?.password,
+                selectedImage: base64String, // Store Base64 image string
+                addresses: passwordObj?.addresses ? passwordObj?.addresses : []
+            };
+
+            // Send JSON data to JSON Server
+            fetch(`http://localhost:3000/User/${userID}`, {
+                method: "PUT",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(updatedUserData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("Profile updated successfully!");
+                console.log("Updated User:", data);
+            })
+            .catch(error => console.error("Error updating profile:", error));
+            
+            getUserProfileData();
+        });
+    } else {
+        // If no new image is selected, update profile without changing image
+        let updatedUserData = {
+            fullName: `${First} ${Last}`,
+            phoneNumber: Mobile,
+            email: Email,
+            dateOfBirth: Date,
+            gender: gender,
+            password: passwordObj?.password,
+            selectedImage: null, // No image selected
+            addresses: passwordObj?.addresses ? passwordObj?.addresses : []
+        };
+
+        fetch(`http://localhost:3000/User/${userID}`, {
+            method: "PUT",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedUserData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert("Profile updated successfully!");
+            console.log("Updated User:", data);
+        })
+        .catch(error => console.error("Error updating profile:", error));
+
+        getUserProfileData();
+    }
 }
 
 
