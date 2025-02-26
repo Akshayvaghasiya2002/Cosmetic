@@ -154,6 +154,9 @@
         transform: translateX(-50%);
         z-index: -1;
      }
+     .ds_order_manage{
+        min-width: 230px;
+     }
    }
 
  @media (max-width: 321px) {

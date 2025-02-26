@@ -38,9 +38,9 @@
                                     <img src="/IMG/Dhruvin/myPerson.png" alt="" id="ds_mini_img" class="ds_person-img">
                                  </div>
                                  <div class="ms-2 mt-1">
-                                    <h5 class="ds_color ds_600 ds_fs ">Jenny Wilson</h5>
-                                    <p class="ds_fs ds_email ds_color mb-2 d-flex align-items-center"><i class="fa-solid fa-envelope"></i> <span class="ms-2"> jennywilson12@gmail.com</span></p>
-                                    <p><i class="fa-solid fa-phone ds_email"></i> <span>+1 56565 56565</span></p>
+                                    <h5 class="ds_color ds_600 ds_fs " id="ds_person_name">Jenny Wilson</h5>
+                                    <p class="ds_fs ds_email ds_color mb-2 d-flex align-items-center"><i class="fa-solid fa-envelope"></i> <span class="ms-2" id="ds_person_email"> jennywilson12@gmail.com</span></p>
+                                    <p><i class="fa-solid fa-phone ds_email"></i> +91 <span id="ds_person_num"> 56565 56565</span></p>
                                  </div>
                               </div>
                               <div class="ds_border mx-4"></div>
@@ -310,44 +310,46 @@
 
                                         <!-- -------------- Order ----------- -->
                                          <div>
-                                            <div class="mx-sm-4 mx-3">
-                                                <div class="d-flex  justify-content-between mt-4">
-                                                    <div class="d-flex  justify-content-between w-100 align-items-center">
-                                                        <div class="d-flex flex-wrap align-items-center">
-                                                           <div class="ds_order_round me-2"></div>
-                                                           <h5 class="mb-0 me-2 ds_order_text" style="color:#F8A120;">Order arriving</h5>
-                                                           <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">On  26 Oct, 2024</p>
-                                                         </div>  
-                                                         <a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">Track Order</a>
+                                            <div class="mx-sm-4 mx-3" id="ds_Order">
+                                                <div>
+                                                    <div class="d-flex  justify-content-between mt-4">
+                                                        <div class="d-flex  justify-content-between w-100 align-items-center">
+                                                            <div class="d-flex flex-wrap align-items-center">
+                                                               <div class="ds_order_round me-2"></div>
+                                                               <h5 class="mb-0 me-2 ds_order_text" style="color:#F8A120;">Order arriving</h5>
+                                                               <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">On  26 Oct, 2024</p>
+                                                             </div>  
+                                                             <a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">Track Order</a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="row align-items-center">
-                                                   <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 mt-3">
-                                                      <div>
-                                                        <img src="/IMG/Dhruvin/lipstick.png" alt="" class="ds_order_img">
-                                                      </div>
-                                                   </div>
-                                                   <div class="col-xl-10 col-lg-9 col-md-12 col-sm-8 mt-lg-4 mt-3">
-                                                      <div class="row justify-content-between">
-                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                            <div>
-                                                                <div class="d-flex justify-content-between">
-                                                                    <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
+                                                    <div class="row align-items-center">
+                                                       <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 mt-3">
+                                                          <div>
+                                                            <img src="/IMG/Dhruvin/lipstick.png" alt="" class="ds_order_img">
+                                                          </div>
+                                                       </div>
+                                                       <div class="col-xl-10 col-lg-9 col-md-12 col-sm-8 mt-lg-4 mt-3">
+                                                          <div class="row justify-content-between">
+                                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                                <div>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
+                                                                    </div>
+                                                                    <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
+                                                                        <h5 class="text-md-end">$450</h5>
+                                                                    </div>
                                                                 </div>
-                                                                <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
-                                                                <div class="d-flex justify-content-between">
-                                                                    <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
+                                                            </div>
+                                                            <!-- <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 col-12 mt-auto">
+                                                                <div>
                                                                     <h5 class="text-md-end">$450</h5>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- <div class="col-xl-2 col-lg-2 col-md-3 col-sm-12 col-12 mt-auto">
-                                                            <div>
-                                                                <h5 class="text-md-end">$450</h5>
-                                                            </div>
-                                                        </div> -->
-                                                      </div>
-                                                   </div>
+                                                            </div> -->
+                                                          </div>
+                                                       </div>
+                                                    </div>
                                                 </div>
                                                 <div class="ds_border mt-3"></div>
                                                 <div class="row align-items-center">
@@ -403,7 +405,7 @@
 
                                             </div>
 
-                                            <div class="mx-sm-4 mx-3">
+                                            <!-- <div class="mx-sm-4 mx-3">
                                                 <div class="d-flex  justify-content-between mt-4">
                                                     <div class="d-flex justify-content-between w-100 align-items-center">
                                                         <div class="d-flex align-items-center">
@@ -411,7 +413,7 @@
                                                             <h5 class="mb-0 me-2 ds_order_color2 ds_order_text" >Order Delivered</h5>
                                                             <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">On  04 Oct, 2024</p>
                                                         </div>
-                                                        <button   class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit Review</button>
+                                                        <button class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit Review</button>
                                                     </div>
                                                 </div>
                                                     <div class="row align-items-center">
@@ -442,9 +444,9 @@
                                                         </div>
                                                     </div>
                                                 <div class="ds_border mt-3"></div>
-                                            </div>
+                                            </div> -->
 
-                                            <div class="mx-sm-4 mx-3">
+                                            <!-- <div class="mx-sm-4 mx-3">
                                                 <div class="d-flex  justify-content-between mt-4">
                                                     <div class="d-flex justify-content-between w-100 align-items-center">
                                                         <div class="d-flex align-items-center">
@@ -480,7 +482,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="ds_border mt-3"></div>
-                                            </div>
+                                            </div> -->
                                          </div>
                                     </div>
                                 </div>

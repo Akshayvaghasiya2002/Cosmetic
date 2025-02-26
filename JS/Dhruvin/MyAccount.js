@@ -157,7 +157,9 @@ function getUserProfileData() {
                 document.getElementById("datePicker").value = user?.dateOfBirth || "";
                 document.getElementById("ds_mini_img").src = `${user?.selectedImage}` ;
                 document.getElementById("userImage").src = `${user?.selectedImage}` ;
-                
+                document.getElementById("ds_person_name").innerHTML = user?.fullName.split(" ")[0] || "";
+                document.getElementById("ds_person_email").innerHTML = user?.email || "";
+                document.getElementById("ds_person_num").innerHTML = user?.phoneNumber || "";
                 // Set gender correctly
                 if (user?.gender == "Female") {
                     document.getElementById("female").checked = true;
@@ -166,6 +168,57 @@ function getUserProfileData() {
                     document.getElementById("male").checked = true;
                     selectGender("male");
                 }
+
+
+                const OrderId = document.getElementById("ds_Order")
+
+                const html = user?.confirmedOrders?.map((element)=>{
+                      return `<div class="d-flex justify-content-between mt-4">
+                                                    <div class="d-flex  justify-content-between w-100 align-items-center">
+                                                        <div class="d-flex flex-wrap align-items-center">
+                                                           <div class="${element?.orderStatus == 'pending' ? 'ds_order_round' : ''} ${element?.orderStatus == 'delivered' ? 'ds_order_round2' : ''} ${element?.orderStatus == 'cancelled' ? 'ds_order_round3' : ''} ds_order_round me-2"></div>
+                                                               ${element?.orderStatus == 'pending' ? '<h5 class="mb-0 me-2 ds_order_text" style="color:#F8A120;">Order arriving</h5>' : ''}
+                                                               ${element?.orderStatus == 'delivered' ? '<h5 class="mb-0 me-2 ds_order_color2 ds_order_text" >Order Delivered</h5>' : ''}
+                                                               ${element?.orderStatus == 'cancelled' ? '<h5 class="mb-0 me-2 ds_order_color3 ds_order_text" >Order Cancelled</h5>' : ''}
+                                                           <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">${element?.orderDate}</p>
+                                                         </div>  
+                                                               ${element?.orderStatus == 'pending' ? `<a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;" onclick="handleTrackOrder('${element?.batchId}')">Track Order</a>` : ''}
+                                                               ${element?.orderStatus == 'delivered' ? '<button class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit Review</button>' : ''}
+                                                               ${element?.orderStatus == 'cancelled' ? '<a href="./TrackRefund.html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">View refund status</a>' : ''}
+                                                       </div>
+                                                </div>
+                                                ${element?.orders?.map((element)=>{
+                                                    return  `<div class="row align-items-center">
+                                                                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 mt-3">
+                                                                    <div>
+                                                                      <img src="${element?.image}" alt="" class="ds_order_img">
+                                                                    </div>
+                                                                 </div>
+                                                                 <div class="col-xl-10 col-lg-9 col-md-12 col-sm-8 mt-lg-4 mt-3">
+                                                                    <div class="row justify-content-between">
+                                                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                                          <div>
+                                                                              <div class="d-flex justify-content-between">
+                                                                                  <p class="ds_color ds_lh ds_order_txt">${element?.brand ? element?.brand : ''} ${element?.name}</p>
+                                                                              </div>
+                                                                              <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">${element?.selectedColor ?  element?.selectedColor : 'No Color'}</span></p>
+                                                                              <div class="d-flex justify-content-between">
+                                                                                  <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
+                                                                                  <h5 class="text-md-end">$ ${element?.currentPrice}</h5>
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                         </div>
+                                                           <div class="ds_border mt-3"></div>
+                                                         `
+                                                }).join(" ")
+                                            } `
+                        }).join("")
+
+                        OrderId.innerHTML = html
             }
         })
         .catch((error) => console.error("Error fetching user data:", error));
@@ -279,6 +332,12 @@ function handleUpdateProfile(event) {
     }
 }
 
+
+// **************** My Order **********
+function handleTrackOrder (id) {
+    
+   localStorage.setItem("MyBatchId" , id)
+} 
 
 // *********** My Address **********
 var editId = "";
