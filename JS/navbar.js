@@ -634,7 +634,7 @@ function verifyOtp() {
             hideforPwd.classList.add("d-none");
             setTimeout(()=>{
                alert("Your Otp Is -: 123456")
-            }, 1000)
+            }, 500)
         }
         else{
             alert("Your Emil Is Wrong!")

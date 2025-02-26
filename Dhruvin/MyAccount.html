@@ -35,7 +35,7 @@
                            <div>
                               <div class="d-flex px-4 my-4">
                                  <div>
-                                    <img src="/IMG/Dhruvin/person.png" alt="" class="ds_person-img">
+                                    <img src="/IMG/Dhruvin/myPerson.png" alt="" id="ds_mini_img" class="ds_person-img">
                                  </div>
                                  <div class="ms-2 mt-1">
                                     <h5 class="ds_color ds_600 ds_fs ">Jenny Wilson</h5>
@@ -190,12 +190,18 @@
                                     <div class="ds_pro_inner mt-3 px-4">
                                         <div>
                                             <div class="my-4">
-                                                <span class="d-inline-block position-relative">
-                                                    <img src="/IMG/Dhruvin/person.png" alt="" class="ds_pro_img position-relative">
-                                                     <div class="ds_pro_round">
-                                                        <span><img src="/IMG/Dhruvin/camera.png" alt="" class="ds_pro_camera"></span>
-                                                     </div>
-                                                </span>
+                                                <div class="d-inline-block position-relative">
+                                                    <!-- User Image -->
+                                                    <img id="userImage" src="/IMG/Dhruvin/myPerson.png" alt="Profile"  class="ds_pro_img">
+                                                    
+                                                    <!-- Camera Icon -->
+                                                    <div class="ds_pro_round" id="cameraIcon">
+                                                        <img src="/IMG/Dhruvin/camera.png" alt="Camera Icon" class="ds_pro_camera ds_cursor">
+                                                    </div>
+                                                </div>
+                                            
+                                                <!-- Hidden File Input -->
+                                                <input type="file" id="fileInput" accept="image/*" style="display: none;">
                                             </div>
                                             <form onsubmit="handleEditSubmit(event)">
                                                 <h5 class="mb-4">Your Details</h5>
@@ -306,10 +312,13 @@
                                          <div>
                                             <div class="mx-sm-4 mx-3">
                                                 <div class="d-flex  justify-content-between mt-4">
-                                                    <div class="d-flex flex-wrap align-items-center">
-                                                        <div class="ds_order_round me-2"></div>
-                                                        <h5 class="mb-0 me-2 ds_order_text" style="color:#F8A120;">Order arriving</h5>
-                                                        <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">On  26 Oct, 2024</p>
+                                                    <div class="d-flex  justify-content-between w-100 align-items-center">
+                                                        <div class="d-flex flex-wrap align-items-center">
+                                                           <div class="ds_order_round me-2"></div>
+                                                           <h5 class="mb-0 me-2 ds_order_text" style="color:#F8A120;">Order arriving</h5>
+                                                           <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">On  26 Oct, 2024</p>
+                                                         </div>  
+                                                         <a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">Track Order</a>
                                                     </div>
                                                 </div>
                                                 <div class="row align-items-center">
@@ -324,7 +333,6 @@
                                                             <div>
                                                                 <div class="d-flex justify-content-between">
                                                                     <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
-                                                                    <a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">Track Order</a>
                                                                 </div>
                                                                 <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
                                                                 <div class="d-flex justify-content-between">
@@ -354,7 +362,6 @@
                                                              <div>
                                                                  <div class="d-flex justify-content-between">
                                                                      <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
-                                                                     <a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">Track Order</a>
                                                                  </div>
                                                                  <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
                                                                  <div class="d-flex justify-content-between">
@@ -380,7 +387,6 @@
                                                              <div>
                                                                  <div class="d-flex justify-content-between">
                                                                      <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
-                                                                     <a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">Track Order</a>
                                                                  </div>
                                                                  <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
                                                                  <div class="d-flex justify-content-between">
@@ -399,10 +405,13 @@
 
                                             <div class="mx-sm-4 mx-3">
                                                 <div class="d-flex  justify-content-between mt-4">
-                                                    <div class="d-flex flex-wrap align-items-center">
-                                                        <div class="ds_order_round2 me-2"></div>
-                                                        <h5 class="mb-0 me-2 ds_order_color2 ds_order_text" >Order Delivered</h5>
-                                                        <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">On  04 Oct, 2024</p>
+                                                    <div class="d-flex justify-content-between w-100 align-items-center">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="ds_order_round2 me-2"></div>
+                                                            <h5 class="mb-0 me-2 ds_order_color2 ds_order_text" >Order Delivered</h5>
+                                                            <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">On  04 Oct, 2024</p>
+                                                        </div>
+                                                        <button   class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit Review</button>
                                                     </div>
                                                 </div>
                                                     <div class="row align-items-center">
@@ -420,7 +429,6 @@
                                                                      <div class="d-flex justify-content-between">
                                                                          <p class="ds_color ds_lh ds_order_txt"><a href="/Dhruvin/OrderStatus(Delivered).html" class="text-decoration-none ds_color"> Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm </a>
                                                                         </p>
-                                                                         <button   class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit Review</button>
                                                                      </div>
                                                                      <p class="ds_muted ds_order_txt"><a href="/Dhruvin/OrderStatus(Delivered).html" class="text-decoration-none ds_color">Shade : <span class="ds_color">Vintage Rose</span></a></p>
                                                                      <div class="d-flex justify-content-between">
@@ -438,10 +446,13 @@
 
                                             <div class="mx-sm-4 mx-3">
                                                 <div class="d-flex  justify-content-between mt-4">
-                                                    <div class="d-flex flex-wrap align-items-center">
-                                                        <div class="ds_order_round3 me-2"></div>
-                                                        <h5 class="mb-0 me-2 ds_order_color3 ds_order_text" >Order Cancelled</h5>
-                                                        <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">On  01 Oct, 2024</p>
+                                                    <div class="d-flex justify-content-between w-100 align-items-center">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="ds_order_round3 me-2"></div>
+                                                            <h5 class="mb-0 me-2 ds_order_color3 ds_order_text" >Order Cancelled</h5>
+                                                            <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">On  01 Oct, 2024</p>
+                                                        </div>
+                                                        <a href="./TrackRefund.html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">View refund status</a>
                                                     </div>
                                                 </div>
                                                 <div class="row align-items-center">
@@ -456,7 +467,6 @@
                                                              <div>
                                                                  <div class="d-flex justify-content-between">
                                                                      <p class="ds_color ds_lh ds_order_txt">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
-                                                                     <a href="./TrackRefund.html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">View refund status</a>
                                                                  </div>
                                                                  <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">Vintage Rose</span></p>
                                                                  <div class="d-flex justify-content-between">
