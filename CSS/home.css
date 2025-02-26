@@ -41,7 +41,9 @@
 }
 
 
-
+.selected-color{
+  border: 0.6px solid rgba(20, 20, 20, 0.2);
+}
 
 .V_color_border {
   border: 0.6px solid rgba(20, 20, 20, 0.2);
