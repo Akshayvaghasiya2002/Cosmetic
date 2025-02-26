@@ -98,7 +98,7 @@ const bestSellerData = async () => {
 
         products.forEach(product => {
             const productElement = document.createElement("div");
-            productElement.classList.add("col-lg-3", "mb-4");
+            productElement.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-3", "mb-4");
             let colorDotsHTML = product.colors ? product.colors.map((color, index) => `
             <div class="V_color_border mx-1" data-color-index="${index}" data-color="${color.color}">
                 <p class="color-dot" style="background-color: ${color.color};"></p>
@@ -116,7 +116,7 @@ const bestSellerData = async () => {
                                     <i class="fa-solid fa-heart d-none" style=" color: #ff0000; " onclick="addWishList(event)" ></i>
                                 </span>
                            </div>
-                            <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}" >
+                            <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}" style="max-width: 100%; height: auto;">
                             <div class="card-body ">
                                 <h6 class="card-title">${product.name}</h6>
                                 <div class="product-price justify-content-center">
@@ -129,7 +129,7 @@ const bestSellerData = async () => {
                                     ${moreColorsHTML}
                                 </div>
                                 <div>
-                                       <button style="" class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
+                                       <button class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
                                 </div>
                             
                             </div>
@@ -245,11 +245,12 @@ $(document).ready(async function () {
                 loop: true,
                 margin: 10,
                 nav: true,
+                // navText: ["<span class='owl-prev'>&lsaquo;</span>", "<span class='owl-next'>&rsaquo;</span>"],
                 dots: false,
                 responsive: {
                     0: { items: 1 },
                     600: { items: 2 },
-                    1000: { items: 5 }
+                    1000: { items: 4 }
                 }
             });
         } catch (error) {

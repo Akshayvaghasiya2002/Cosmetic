@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../CSS/multiproduct.css">
     <link rel="stylesheet" href="../CSS/Parth/cart.css">
     <link rel="stylesheet" href="../CSS/Parth/Search.css">
-    <link rel="stylesheet" href="../CSS/main.css">
+    <!-- <link rel="stylesheet" href="../CSS/home.css"> -->
     <script src="../JS/Parth/signUp.js"></script>
     <script src="../JS/Parth/Cart.js"></script>
 </head>
@@ -785,11 +785,11 @@
                             <i class="fa-solid fa-magnifying-glass" id="searchIcon" onclick="emptyNav()"></i>
                         </div>
                         <div onclick="renderWishlist()">
-                            <i  class="fa-regular fa-heart"></i>
+                            <i class="fa-regular fa-heart"></i>
                         </div>
                         <div>
-                            <i class="fa-solid fa-cart-shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            aria-controls="offcanvasRight"></i>
+                            <i class="fa-solid fa-cart-shopping" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
                         </div>
                         <div>
                             <i class="fa-solid fa-user" data-bs-toggle="modal" data-bs-target="#signUpModal"></i>
@@ -1173,13 +1173,211 @@
     <section>
         <div class="container-xxl mt-4">
             <div class="row">
-                <div class="col-lg-3">
+                <!-- <button class=" A_filter_offcanvas btn-sm d-lg-none w-25" data-bs-toggle="offcanvas" data-bs-target="#filtersOffcanvas" aria-controls="filtersOffcanvas">
+                    Open Filters
+                </button> -->
+
+                <!-- Offcanvas for Filters -->
+                <div class="A_offcanvas_filter offcanvas offcanvas-start" tabindex="-1" id="filtersOffcanvas"
+                    aria-labelledby="filtersOffcanvasLabel">
+                    <div class="offcanvas-header">
+                        <h5 id="filtersOffcanvasLabel" class="m-0">Filters</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="filters-container">
+                            <div class="filters-header">
+                                <button class="remove-all">Remove All</button>
+                            </div>
+                            <!-- Product Type Filter -->
+                            <div class="filter-section active">
+                                <div class="filter-header">
+                                    <h3>Product Type</h3>
+                                    <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                                </div>
+                                <div class="filter-content">
+                                    <label class="filter-option">
+                                        <input type="checkbox" checked> Lipstick
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lipstick Combo
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Balm
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Balm Combo
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Gloss
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Kit
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Liner
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Oil
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Tint
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Brands Filter -->
+                            <div class="filter-section">
+                                <div class="filter-header">
+                                    <h3>Brands</h3>
+                                    <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                                </div>
+                                <div class="filter-content">
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Colorbar
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lakmé
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lakmé Herbals
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> L'Oréal
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Maybelline
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> SUGAR
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" checked> RENEE
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" checked> SWISS BEAUTY
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Nykaa
+                                    </label>
+                                    <button class="show-more">Show More</button>
+                                </div>
+                            </div>
+                            <!-- Colors Filter -->
+                            <div class="filter-section">
+                                <div class="filter-header">
+                                    <h3>Colors</h3>
+                                    <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                                </div>
+                                <div class="filter-content">
+                                    <div class="color-option">
+                                        <input type="checkbox" checked>
+                                        <span class="color-swatch" style="background-color: #8B4513;"></span>
+                                        <span>Brown</span>
+                                    </div>
+                                    <div class="color-option">
+                                        <input type="checkbox">
+                                        <span class="color-swatch" style="background-color: #FFD700;"></span>
+                                        <span>Gold</span>
+                                    </div>
+                                    <div class="color-option">
+                                        <input type="checkbox" checked>
+                                        <span class="color-swatch" style="background-color: #800080;"></span>
+                                        <span>Purple</span>
+                                    </div>
+                                    <div class="color-option">
+                                        <input type="checkbox">
+                                        <span class="color-swatch" style="background-color: #FF0000;"></span>
+                                        <span>Red</span>
+                                    </div>
+                                    <div class="color-option">
+                                        <input type="checkbox">
+                                        <span class="color-swatch" style="background-color: #FFC0CB;"></span>
+                                        <span>Pink</span>
+                                    </div>
+                                    <button class="show-more">Show More</button>
+                                </div>
+                            </div>
+                            <!-- Finish Filter -->
+                            <div class="filter-section">
+                                <div class="filter-header">
+                                    <h3>Finish</h3>
+                                    <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                                </div>
+                                <div class="filter-content">
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Matte
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Satin
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Glossy
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Tinted
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Shiny
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Formulation Filter -->
+                            <div class="filter-section">
+                                <div class="filter-header">
+                                    <h3>Formulation</h3>
+                                    <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                                </div>
+                                <div class="filter-content">
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Liquid
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Solid
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Pencil
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Tint
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Cream
+                                    </label>
+                                    <button class="show-more">Show More</button>
+                                </div>
+                            </div>
+                            <!-- Price Filter -->
+                            <div class="filter-section">
+                                <div class="filter-header">
+                                    <h3>Price</h3>
+                                    <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                                </div>
+                                <div class="filter-content">
+                                    <div class="price-slider">
+                                        <input type="range" class="price-range A_range_width" min="0" max="1000"
+                                            value="50" id="minPrice">
+                                        <input type="range" class="price-range" min="0" max="1000" value="200"
+                                            id="maxPrice">
+                                        <div class="price-inputs">
+                                            <span class="price-label mt-4">From <input type="text" id="minPriceInput"
+                                                    class="A_range_width" value="$50" readonly></span>
+                                            <span class="price-label mt-4">To <input type="text" id="maxPriceInput"
+                                                    class="A_range_width" value="$200" readonly></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 d-none d-lg-block">
                     <div class="filters-container">
                         <div class="filters-header">
                             <h2 style="color: #3D4936;">Filters</h2>
                             <button class="remove-all">Remove All</button>
                         </div>
-                
+
                         <!-- Product Type Filter -->
                         <div class="filter-section active">
                             <div class="filter-header">
@@ -1216,7 +1414,7 @@
                                 </label>
                             </div>
                         </div>
-                
+
                         <!-- Brands Filter -->
                         <div class="filter-section">
                             <div class="filter-header">
@@ -1254,7 +1452,7 @@
                                 <button class="show-more">Show More</button>
                             </div>
                         </div>
-                
+
                         <!-- Colors Filter -->
                         <div class="filter-section">
                             <div class="filter-header">
@@ -1290,7 +1488,7 @@
                                 <button class="show-more">Show More</button>
                             </div>
                         </div>
-                
+
                         <!-- Finish Filter -->
                         <div class="filter-section">
                             <div class="filter-header">
@@ -1315,7 +1513,7 @@
                                 </label>
                             </div>
                         </div>
-                
+
                         <!-- Formulation Filter -->
                         <div class="filter-section">
                             <div class="filter-header">
@@ -1341,7 +1539,7 @@
                                 <button class="show-more">Show More</button>
                             </div>
                         </div>
-                
+
                         <!-- Price Filter -->
                         <div class="filter-section">
                             <div class="filter-header">
@@ -1350,46 +1548,55 @@
                             </div>
                             <div class="filter-content">
                                 <div class="price-slider">
-                                    <input type="range" class="price-range A_range_width" min="0" max="1000" value="50" id="minPrice">
-                                    <input type="range" class="price-range " min="0" max="1000" value="200" id="maxPrice">
+                                    <input type="range" class="price-range A_range_width" min="0" max="1000" value="50"
+                                        id="minPrice">
+                                    <input type="range" class="price-range" min="0" max="1000" value="200"
+                                        id="maxPrice">
                                     <div class="price-inputs">
-                                        <span class="price-label mt-4">From <input type="text" id="minPriceInput" class="A_range_width" value="$50" readonly></span>
-                                        <span class="price-label mt-4">To <input type="text" id="maxPriceInput" class="A_range_width" value="$200" readonly></span>
+                                        <span class="price-label mt-4">From <input type="text" id="minPriceInput"
+                                                class="A_range_width" value="$50" readonly></span>
+                                        <span class="price-label mt-4">To <input type="text" id="maxPriceInput"
+                                                class="A_range_width" value="$200" readonly></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-xl-9 col-lg-8">
                     <div class="header d-flex justify-content-between align-items-center">
-                        <div class="results-count">Showing <span id="results-number">0</span> Results</div>
-                        <div class="sort-container">
-                            <span class="sort-text">Sort By:</span>
-                            <select class="sort-select" id="sort-select">
-                                <option value="default">Default</option>
-                                <option value="price-low-high">Price: Low to High</option>
-                                <option value="price-high-low">Price: High to Low</option>
-                                <option value="name-a-z">Name: A to Z</option>
-                                <option value="name-z-a">Name: Z to A</option>
-                            </select>
+                        <button class="A_filter_offcanvas btn-sm d-lg-none" data-bs-toggle="offcanvas"
+                            data-bs-target="#filtersOffcanvas" aria-controls="filtersOffcanvas">
+                            Open Filters
+                        </button>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="results-count">Showing <span id="results-number">0</span> Results</div>
+                            <div class="sort-container">
+                                <span class="sort-text">Sort By:</span>
+                                <select class="sort-select" id="sort-select">
+                                    <option value="default">Default</option>
+                                    <option value="price-low-high">Price: Low to High</option>
+                                    <option value="price-high-low">Price: High to Low</option>
+                                    <option value="name-a-z">Name: A to Z</option>
+                                    <option value="name-z-a">Name: Z to A</option>
+                                </select>
+                            </div>
                         </div>
+
                     </div>
-                    
                     <div class="filters" id="filters-container">
                         <!-- Filters will be loaded dynamically -->
                     </div>
-                    
                     <div class="products-grid" id="products-container">
                         <!-- Products will be loaded dynamically -->
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </section>
 
-    <section id="Footer" ></section>
+    <section id="Footer"></section>
 
     <!-- <footer class="mt-3">
         <div class="A_container">
@@ -1455,10 +1662,10 @@
 
 
 
-      <!-- cart's offcanvas -->
+    <!-- cart's offcanvas -->
 
-      
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h5 id="offcanvasRightLabel" class="m-0">Cart(0)</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -1507,12 +1714,13 @@
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-            fetch('../Dhruvin/Footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('Footer').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading Footer:', error));
-        });
+        fetch('../Dhruvin/Footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('Footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading Footer:', error));
+    });
 </script>
+
 </html>
