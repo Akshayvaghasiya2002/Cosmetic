@@ -402,3 +402,57 @@ function copyLink() {
         button.textContent = originalText;
     }, 2000);
 }
+/////////////////////////// horizontle slider //////////////////////////////////
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sliderWrapper = document.querySelector('.slider-wrapper');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const slideItems = document.querySelectorAll('.slide-item');
+            
+            // Calculate variables for slider movement
+            const slideWidth = slideItems[0].offsetWidth;
+            const visibleSlides = Math.floor(sliderWrapper.offsetWidth / slideWidth);
+            const totalSlides = slideItems.length;
+            let currentIndex = 0;
+            
+            // Initialize slider
+            updateSliderPosition();
+            
+            // Add event listeners for buttons
+            prevBtn.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSliderPosition();
+                }
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                if (currentIndex < totalSlides - visibleSlides) {
+                    currentIndex++;
+                    updateSliderPosition();
+                }
+            });
+            
+            // Function to update slider position
+            function updateSliderPosition() {
+                const translateX = -currentIndex * slideWidth;
+                sliderWrapper.style.transform = `translateX(${translateX}px)`;
+                
+                // Update button states (optional)
+                prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                nextBtn.style.opacity = currentIndex >= totalSlides - visibleSlides ? '0.5' : '1';
+            }
+            
+            // Handle window resize (recalculate visible slides)
+            window.addEventListener('resize', function() {
+                const newVisibleSlides = Math.floor(sliderWrapper.offsetWidth / slideItems[0].offsetWidth);
+                
+                // Adjust current index if needed
+                if (currentIndex > totalSlides - newVisibleSlides) {
+                    currentIndex = totalSlides - newVisibleSlides;
+                    if (currentIndex < 0) currentIndex = 0;
+                    updateSliderPosition();
+                }
+            });
+        });

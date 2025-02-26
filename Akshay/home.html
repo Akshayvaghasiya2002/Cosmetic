@@ -811,7 +811,7 @@
         <div class="row" id="product-container"></div>
 </div>
     <div>
-        <div class="container-xxl py-5 my-5">
+        <div class="container-xxl py-3 ">
                 <div class="row g-3">
                     <!-- Left Section -->
                     <div class="col-lg-4">
@@ -846,7 +846,7 @@
                 </div>
             </div>
     </div>
-    <div class="container">
+    <div class="container py-3">
         <div class="py-2">
             <div class="text-center fw-bold" style="color: #3D4936; font-size: 32px;">New Arrival</div>
             <div class="text-center text-secondary" style="font-size: 14px;">EXPLORE LATEST ADDITION</div>
@@ -854,7 +854,7 @@
         <div id="product-carousel" class="owl-carousel"></div>
     </div>
     <section class="A_banner">
-        <img src="../IMG/Akshay/bg-2-1 1.png" alt="Cosmetic Products" class="background-image">
+        <img src="../IMG/Akshay/bg1-2-1 1.png" alt="Cosmetic Products" class="background-image">
         
         <div class="A_content">
             <h6 class="A_category text-secondary">BEAUTY</h6>
@@ -1457,55 +1457,52 @@
     margin:10,
     nav:true,
     dots: false,       
-    navText: ["<span class='owl-prev'>&lsaquo;</span>", "<span class='owl-next'>&rsaquo;</span>"], // Custom navigation icons
+//     navText: ["<span class='owl-prev'>&lsaquo;</span>", "<span class='owl-next'>&rsaquo;</span>"], // Custom navigation icons
     responsive:{
         0:{
             items:1
         },  
         600:{
-            items:1,
+            items:2,
             stagePadding: 10
 
         },
         767:{
-            items:2,
-            stagePadding: 10
-        },
-        1000:{
             items:3,
+            stagePadding: 10
         },
         1025:{
             items:5
         }
     }
 })
-    $(document).ready(function(){
-        $('.owl-carousel.brandslider').owlCarousel({
-            loop: true,              
-            margin: 10,              
-            nav: true,  // Enable navigation
-            navText: ["<span class='owl-prev'>&lsaquo;</span>", "<span class='owl-next'>&rsaquo;</span>"], // Custom navigation icons
-            dots: false,              
-            responsive: {
-                0: {       // Mobile screens
-                    items: 1
-                },
-                480: {     // Small screens
-                    items: 2
-                },
-                768: {     // Tablets
-                    items: 3
-                },
-                1024: {    // Desktops
-                    items: 4
-                },
+//     $(document).ready(function(){
+//         $('.owl-carousel.brandslider').owlCarousel({
+//             loop: true,              
+//             margin: 10,              
+//             nav: true,  // Enable navigation
+//         //     navText: ["<span class='owl-prev'>&lsaquo;</span>", "<span class='owl-next'>&rsaquo;</span>"], // Custom navigation icons
+//             dots: false,              
+//             responsive: {
+//                 0: {       // Mobile screens
+//                     items: 1
+//                 },
+//                 480: {     // Small screens
+//                     items: 2
+//                 },
+//                 768: {     // Tablets
+//                     items: 3
+//                 },
+//                 1024: {    // Desktops
+//                     items: 4
+//                 },
                 
-                1400: {
-                    items: 5
-                }
-            }
-        })
-    });
+//                 1400: {
+//                     items: 5
+//                 }
+//             }
+//         })
+//     });
 
 
 

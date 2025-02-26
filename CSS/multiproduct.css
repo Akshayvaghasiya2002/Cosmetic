@@ -231,6 +231,9 @@ img {
 .navbar-center {
   display: flex;
 }
+.A_navbar_padding{
+  padding: 0px 20px !important;
+}
 
 .navbar-right {
   display: flex;
@@ -1338,13 +1341,14 @@ Footer Bottom
   }
   .A_filter_offcanvas {
     color: rgba(255, 255, 255, 1);
-    font-size: 12px;
+    font-size: 20px;
     background-color: rgba(61, 73, 54, 1);
     border-radius: 4px;
     box-shadow: 0px -8px 10px 0px rgba(0, 0, 0, 0.2) inset;
     box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.5) inset;
-    width: 150px;
+    width: 50px;
     height: 40px;
     margin-left: 10px;
+
   }
 }
