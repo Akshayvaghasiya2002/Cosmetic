@@ -19,21 +19,21 @@
                     <div>
                         <p class="text-center ds_color">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo .</p>
                         <div class="mx-sm-5 px-sm-3 px-3 mt-5">
-                            <select class="ds_cancel_input w-100 ">
-                                <option value="" selected class="ds_muted">Select Reason</option>
-                                <option value="">I was hopping for a shorter delivery time</option>
-                                <option value="">Price of the product has now decreased</option>
-                                <option value="">I want to change the delivery address</option>
-                                <option value="">I’m worried about the ratings/reviews</option>
-                                <option value="">I want to change the payment option</option>
-                                <option value="">I want to change the contact details</option>
-                                <option value="">My reason are not listed here</option>
+                            <select name="reason" class="ds_cancel_input w-100 ">
+                                <option value=""  class="ds_muted">Select Reason</option>
+                                <option >I was hopping for a shorter delivery time</option>
+                                <option >Price of the product has now decreased</option>
+                                <option >I want to change the delivery address</option>
+                                <option >I’m worried about the ratings/reviews</option>
+                                <option >I want to change the payment option</option>
+                                <option >I want to change the contact details</option>
+                                <option >My reason are not listed here</option>
                             </select>
                             <div class="mt-4 pt-2">
-                                <textarea class="form-control ds_cancel_txtarea" rows="5" placeholder="Add comments..." id="floatingTextarea"></textarea>
+                                <textarea class="form-control ds_cancel_txtarea" rows="5" placeholder="Add comments..." id="ds_textarea"></textarea>
                             </div>
                             <div class="text-center mt-5">
-                                <button class="ds_cancel_btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Cacel Order</button>
+                                <button class="ds_cancel_btn"  onclick="handleCancelOrder()">Cacel Order</button>
                             </div>
                             <p class="ds_muted mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             <p class="ds_muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -48,7 +48,7 @@
 
     <!-- *********** Popup ************** -->
      <div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="cancelOrder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content ">
                 <div class="modal-header border-0 pb-0">
@@ -79,5 +79,6 @@
                 .catch(error => console.error('Error loading Footer:', error));
         });
 </script>
+<script src="/JS/Dhruvin/CancelOrder.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>

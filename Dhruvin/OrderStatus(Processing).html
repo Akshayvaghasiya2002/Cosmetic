@@ -16,7 +16,7 @@
                 <h2 class="text-center mt-5 ds_color">Order Status</h2>
             </div>
             <div>
-                <p class="text-muted mt-4">Order #A1B2C3D4</p>
+                <p class="text-muted mt-4" >Order #<span id="ds_order_id"></span></p>
                 <div class="ds_order_box ds_order_manage " >
                   <div class="position-relative ">
                     <div class="d-sm-block d-none">
@@ -30,7 +30,7 @@
                              <img src="/IMG/Dhruvin/True.png" alt="" class="ds_order_check">
                            </div>
                            <div class="mt-4 text-center pt-1">
-                             <p class="ds_color mb-0">20 Dec 2024</p>
+                             <p class="ds_color mb-0" id="ds_order_date">20 Dec 2024</p>
                              <p class="ds_color mb-0">11:00 AM</p>
                            </div>
                         </div>
@@ -44,7 +44,7 @@
                             <img src="/IMG/Dhruvin/True.png" alt="" class="ds_order_check">
                           </div>
                           <div class="mt-4 text-center pt-1">
-                            <p class="ds_color mb-0">20 Dec 2024</p>
+                            <p class="ds_color mb-0" id="ds_order_ship">20 Dec 2024</p>
                             <p class="ds_color mb-0">11:00 AM</p>
                           </div>
                         </div>
@@ -59,7 +59,7 @@
                          </div>
                          <div class="mt-4 text-center pt-1">
                            <p class="ds_color mb-0">Expected</p>
-                           <p class="ds_color mb-0">24 Dec 2024</p>
+                           <p class="ds_color mb-0" id="ds_order_expected">24 Dec 2024</p>
                          </div>
                       </div>
 
@@ -73,7 +73,7 @@
                          </div>
                          <div class="mt-4 text-center pt-1">
                            <p class="ds_color mb-0">Expected</p>
-                           <p class="ds_color mb-0">24 Dec 2024</p>
+                           <p class="ds_color mb-0" id="ds_order_deliver">24 Dec 2024</p>
                          </div>
                       </div>
 
@@ -82,45 +82,45 @@
 
                     <div class="d-sm-none d-block">
                    <div class="position-relative d-flex justify-content-center align-items-center flex-column">
-                    <div class="d-flex mx-3 mt-5 ">
+                    <div class="d-flex mx-3 mt-5 ds_order_manage">
                         <div class="ds_order_Round me-3 position-relative ">
                           <img src="/IMG/Dhruvin/order.png" alt="">
                           <div class="ds_order_newline"></div>
                        </div>
                        <div>
                           <p class="ds_color  mb-0">Order Confirmed</p>
-                          <span>20 Dec 2024 11:00 AM</span>
+                          <span><span id="ds_order_date2">20 Dec 2024</span> 11:00 AM</span>
                        </div>
                     </div>
-                    <div class="d-flex mx-3 mt-5  ">
+                    <div class="d-flex mx-3 mt-5 ds_order_manage ">
                       <div class="ds_order_Round me-3 position-relative">
                         <img src="/IMG/Dhruvin/shipped.png" alt="">
                          <div class="ds_order_newline"></div>
                      </div>
                      <div>
                         <p class="ds_color  mb-0">Shipped</p>
-                        <span>20 Dec 2024 11:00 AM</span>
+                        <span> <span id="ds_order_ship2">20 Dec 2024</span> 11:00 AM</span>
                      </div>
 
                      </div>
-                    <div class="d-flex mx-3 mt-5  ">
+                    <div class="d-flex mx-3 mt-5  ds_order_manage">
                       <div class="ds_order_Round me-3 position-relative" >
                         <img src="/IMG/Dhruvin/Truck.png" alt="">
                         <div class="ds_order_newline"></div>
                      </div>
                      <div>
                         <p class="ds_color  mb-0">Out for Delivery</p>
-                        <span>20 Dec 2024 Expected</span>
+                        <span> <span id="ds_order_expected2">20 Dec 2024</span> Expected</span>
                      </div>
 
                     </div>
-                     <div class="d-flex mx-3 mt-5 mb-5">
+                     <div class="d-flex mx-3 mt-5 mb-5 ds_order_manage">
                        <div class="ds_order_Round me-3">
                          <img src="/IMG/Dhruvin/order.png" alt="">
                       </div>
                       <div>
                          <p class="ds_color  mb-0">Delivered</p>
-                         <span>20 Dec 2024 Expected</span>
+                         <span> <span id="ds_order_deliver2">20 Dec 2024</span> Expected</span>
                       </div>
                      </div>
                    </div>
@@ -158,15 +158,15 @@
                                    <p class="ds_color ds_600" style="font-size: 15px;">Order Details</p>
                                    <div class="d-flex justify-content-between">
                                       <p class="ds_muted ds_14 mb-2">Order ID</p>
-                                      <p class="ds_color ds_14 ds_600 mb-2">#123456789</p>
+                                      <p class="ds_color ds_14 ds_600 mb-2" ># <span id="ds_order_miniId">123456789</span></p>
                                    </div>
                                    <div class="d-flex justify-content-between">
                                       <p class="ds_muted ds_14 mb-2">Order Date</p>
-                                      <p class="ds_color ds_14 ds_600 mb-2">14 Jan 25</p>
+                                      <p class="ds_color ds_14 ds_600 mb-2" id="ds_order_confirm">14 Jan 25</p>
                                    </div>
                                    <div class="d-flex justify-content-between">
                                       <p class="ds_muted ds_14 mb-2">Delivery Date</p>
-                                      <p class="ds_color ds_14 ds_600 mb-2">20 Jan 25</p>
+                                      <p class="ds_color ds_14 ds_600 mb-2" id="ds_order_come">20 Jan 25</p>
                                    </div>
                                  
                                 </div>
@@ -197,7 +197,28 @@
                            <div class="ds_order_border"></div>
                            <div class="mt-4">
                              <p class="ds_color ds_600 mb-0" style="font-size: 16px;">Product Details</p>
-                             <div class="row align-items-center">
+                             <div id="ds_product_detail">
+                              <!-- <div class="row align-items-center">
+                                <div class="col-xl-2 col-lg-4 col-md-5 col-sm-4 col-6  mt-3">
+                                  <div>
+                                    <img src="/IMG/Dhruvin/lipstick.png" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-xl-10 col-lg-8 col-md-7 col-sm-8 col-12 mt-3">
+                                  <div>
+                                     <p class="ds_color">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
+                                     <p class="ds_muted">Shade : <span class="ds_color">Vintage Rose</span></p>
+                                     <div class="d-flex justify-content-between">
+                                        <p class="ds_muted">Qty : <span class="ds_color">X1</span></p>
+                                        <h5 class="ds_color ds_600">$450</h5>
+                                     </div>
+                                  </div>
+                                </div>
+                               </div>
+                             <div class="ds_order_border mt-3"></div> -->
+                             </div>
+                             
+                             <!-- <div class="row align-items-center">
                               <div class="col-xl-2 col-lg-4 col-md-5 col-sm-4 col-6  mt-3">
                                 <div>
                                   <img src="/IMG/Dhruvin/lipstick.png" alt="">
@@ -231,25 +252,7 @@
                                    </div>
                                 </div>
                               </div>
-                             </div>
-                             <div class="ds_order_border mt-3"></div>
-                             <div class="row align-items-center">
-                              <div class="col-xl-2 col-lg-4 col-md-5 col-sm-4 col-6  mt-3">
-                                <div>
-                                  <img src="/IMG/Dhruvin/lipstick.png" alt="">
-                                </div>
-                              </div>
-                              <div class="col-xl-10 col-lg-8 col-md-7 col-sm-8 col-12 mt-3">
-                                <div>
-                                   <p class="ds_color">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm</p>
-                                   <p class="ds_muted">Shade : <span class="ds_color">Vintage Rose</span></p>
-                                   <div class="d-flex justify-content-between">
-                                      <p class="ds_muted">Qty : <span class="ds_color">X1</span></p>
-                                      <h5 class="ds_color ds_600">$450</h5>
-                                   </div>
-                                </div>
-                              </div>
-                             </div>
+                             </div> -->
                            </div>
                         </div>
                       </div>
@@ -260,32 +263,32 @@
                           <div class="ds_order_border"></div>
                           <div class="px-1 mt-3">
                               <div class="d-flex justify-content-between">
-                                 <p class="ds_color ds_600 mb-0" style="font-size: 15px;">Price (3 Items)</p>
-                                 <p class="ds_color ds_600 mb-0" style="font-size: 15px;">$1800</p>
+                                 <p class="ds_color ds_600 mb-0" style="font-size: 15px;">Price (<span id="ds_item_length">3</span> Items)</p>
+                                 <p class="ds_color ds_600 mb-0" style="font-size: 15px;" >$<span id="ds_sub_total"></span></p>
                               </div>
                           </div>
                           <div class="px-1 mt-2">
                             <div class="d-flex justify-content-between">
                                <p class="ds_color ds_600 mb-0" style="font-size: 15px;">Discount</p>
-                               <p class="ds_color ds_600 mb-0" style="font-size: 15px; color: #388E3C;">-$550</p>
+                               <p class="ds_color ds_600 mb-0" style="font-size: 15px; color: #388E3C;">-$<span id="ds_item_discount">550</span></p>
                             </div>
                           </div>
                           <div class="px-1 mt-2">
                             <div class="d-flex justify-content-between">
                                <p class="ds_color ds_600 mb-0" style="font-size: 15px;">Platform Fee</p>
-                               <p class="ds_color ds_600 mb-0" style="font-size: 15px; color: #388E3C;">-$550</p>
+                               <p class="ds_color ds_600 mb-0" style="font-size: 15px; ">-$1</p>
                             </div>
                           </div>
                           <div class="px-1 mt-2">
                             <div class="d-flex justify-content-between">
                                <p class="ds_color ds_600 mb-0" style="font-size: 15px;">Delivery Charges</p>
-                               <p class="ds_muted ds_600 mb-0" style="font-size: 15px;">$20 <span style="color: #388E3C;">FREE</span></p>
+                               <p class="ds_muted ds_600 mb-0" style="font-size: 15px;"><span class="text-decoration-line-through">$20</span> <span style="color: #388E3C;">FREE</span></p>
                             </div>
                           </div>
                           <div class="ds_order_border mt-4 mb-3"></div>
                           <div class="d-flex justify-content-between px-1">
-                             <p class="ds_color mb-0 ds_600">Total</p>
-                             <p class="ds_color mb-0 ds_600">$1350.00</p>
+                             <p class="ds_color mb-0 ds_600" >Total</p>
+                             <p class="ds_color mb-0 ds_600">$<span id="ds_item_total"></span></p>
                           </div>
                         </div>
                       </div>
@@ -309,5 +312,6 @@
               .catch(error => console.error('Error loading Footer:', error));
       });
 </script>
+<script src="/JS/Dhruvin/OrderStatus(Processing).js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>
