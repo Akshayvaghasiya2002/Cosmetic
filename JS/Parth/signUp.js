@@ -91,62 +91,50 @@
 
         // Function to store user data on the JSON Server
         function storeUserData(event) {
-            
+            // event.preventDefault(); // Prevent form submission from reloading the page
+        
             const fullName = document.getElementById("fullName").value.trim();
             const phoneNumber = document.getElementById("phoneNumber").value.trim();
             const email = document.getElementById("email").value.trim();
             const password = document.getElementById("pwd").value.trim();
-
-            // Create a new user object
-            const newUser = {
-                fullName: fullName,
-                phoneNumber: phoneNumber,
-                email: email,
-                password: password
-            };
-
-            // Send a POST request to create a new user on the JSON Server
-            fetch('http://localhost:3000/User', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newUser)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("New user created:", data);
-
-                // Call verifyEmail after the user data is successfully stored
-                verifyEmail(); 
-            })
-            .catch(error => {
-                console.error("Error creating user:", error);
-            });
-
-            fetch('http://localhost:3000/User')
-            .then(response => response.json())
-            .then(users => {
-                // Search for the user that matches the email and password
-                const user = users.find(user => user.email === email && user.password === password);
-    
-                if (user) {
-                    // If user is found, store the user ID in localStorage
-                    localStorage.setItem("RegisterId", user.id);
-                    alert("Login successful!");
-                    window.location.reload();
-                    // You can now redirect to another page or update the UI accordingly
-                } else {
-                    // If no match found
-                    alert("Invalid email or password.");
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching users:", error);
-                alert("There was an error processing your login. Please try again.");
-            });
+        
+            if (!fullName || !phoneNumber || !email || !password) {
+                alert("Please fill in all fields!");
+                return;
+            }
+        
+            // Check if the user already exists before creating a new one
+            fetch(`http://localhost:3000/User`)
+                .then(response => response.json())
+                .then(users => {
+                    // Convert both stored and input emails to lowercase for comparison
+                    const existingUser = users.find(user => user.email.toLowerCase() === email.toLowerCase());
+            
+                    if (existingUser) {
+                        alert("This email is already registered. Please log in instead.");
+                        return;
+                    }
+            
+                    // If user does not exist, create new user
+                    const newUser = { fullName, phoneNumber, email, password, wishlist: [] };
+            
+                    return fetch('http://localhost:3000/User', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(newUser)
+                    });
+                })
+                .then(response => response ? response.json() : null)
+                .then(data => {
+                    if (data) {
+                        console.log("New user created:", data);
+                        localStorage.setItem("userId", data.id);
+                        verifyEmail();
+                    }
+                })
+                .catch(error => console.error("Error:", error));
         }
-
+        
 
 
         // Function to verify email and display the modal

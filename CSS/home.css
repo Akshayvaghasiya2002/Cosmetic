@@ -23,7 +23,9 @@
 .ds_cursor {
   cursor: pointer;
 }
-
+.ds_cur_text{
+  cursor:text ;
+}
 .ds_lh {
   line-height: 20px;
 }

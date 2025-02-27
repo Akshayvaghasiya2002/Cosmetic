@@ -119,9 +119,9 @@
                            <div class="row justify-content-between mb-2">
                               <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 mt-2">
                                 <div>
-                                   <p class="ds_color ds_14 ds_600 mb-2">Jenny Wilson</p>
-                                   <p class="ds_color ds_14 ds_600 ds_lh mb-2">Ehrenkranz 13 Washington Square S, New York, NY 10012, USA</p>
-                                   <p class="ds_color  ds_600 ds_lh mb-1" style="font-size: 15px;">+1 56565 56565</p>
+                                   <p class="ds_color ds_14 ds_600 mb-2" id="ds_track_name">Jenny Wilson</p>
+                                   <p class="ds_color ds_14 ds_600 ds_lh mb-2" id="ds_track_address">Ehrenkranz 13 Washington Square S, New York, NY 10012, USA</p>
+                                   <p class="ds_color  ds_600 ds_lh mb-1" style="font-size: 15px;">+91 <span id="ds_track_num">56565 56565</span></p>
                                 </div>
                               </div>
 
@@ -130,15 +130,15 @@
                                    <p class="ds_color ds_600" style="font-size: 15px;">Order Details</p>
                                    <div class="d-flex justify-content-between">
                                       <p class="ds_muted ds_14 mb-2">Order ID</p>
-                                      <p class="ds_color ds_14 ds_600 mb-2">#123456789</p>
+                                      <p class="ds_color ds_14 ds_600 mb-2">#<span id="ds_track_miniId"></span></p>
                                    </div>
                                    <div class="d-flex justify-content-between">
                                       <p class="ds_muted ds_14 mb-2">Order Date</p>
-                                      <p class="ds_color ds_14 ds_600 mb-2">14 Jan 25</p>
+                                      <p class="ds_color ds_14 ds_600 mb-2" id="ds_track_confirm">14 Jan 25</p>
                                    </div>
                                    <div class="d-flex justify-content-between">
                                       <p class="ds_muted ds_14 mb-2">Delivery Date</p>
-                                      <p class="ds_color ds_14 ds_600 mb-2">20 Jan 25</p>
+                                      <p class="ds_color ds_14 ds_600 mb-2" id="ds_track_come">20 Jan 25</p>
                                    </div>
                                  
                                 </div>
@@ -149,7 +149,9 @@
                            <div class="ds_order_border"></div>
                            <div class="mt-4">
                              <p class="ds_color ds_600 mb-0" style="font-size: 16px;">Product Details</p>
-                             <div class="row align-items-center">
+                             <div id="ds_track_detail">
+                             </div>
+                             <!-- <div class="row align-items-center">
                               <div class="col-xl-2 col-lg-4 col-md-5 col-sm-4 col-6  mt-3">
                                 <div>
                                   <img src="/IMG/Dhruvin/lipstick.png" alt="">
@@ -201,7 +203,7 @@
                                    </div>
                                 </div>
                               </div>
-                             </div>
+                             </div> -->
                            </div>
                         </div>
                       </div>
@@ -212,32 +214,32 @@
                           <div class="ds_order_border"></div>
                           <div class="px-1 mt-3">
                               <div class="d-flex justify-content-between">
-                                 <p class="ds_color ds_600 mb-0" style="font-size: 15px;">Price (3 Items)</p>
-                                 <p class="ds_color ds_600 mb-0" style="font-size: 15px;">$1800</p>
+                                 <p class="ds_color ds_600 mb-0" style="font-size: 15px;">Price (<span id="ds_track_length">3</span> Items)</p>
+                                 <p class="ds_color ds_600 mb-0" style="font-size: 15px;">$<span id="ds_track_subTotal">1800</span></p>
                               </div>
                           </div>
                           <div class="px-1 mt-2">
                             <div class="d-flex justify-content-between">
                                <p class="ds_color ds_600 mb-0" style="font-size: 15px;">Discount</p>
-                               <p class="ds_color ds_600 mb-0" style="font-size: 15px; color: #388E3C;">-$550</p>
+                               <p class="ds_color ds_600 mb-0" style="font-size: 15px; color: #388E3C;">-$<span id="ds_track_discount">550</span></p>
                             </div>
                           </div>
                           <div class="px-1 mt-2">
                             <div class="d-flex justify-content-between">
                                <p class="ds_color ds_600 mb-0" style="font-size: 15px;">Platform Fee</p>
-                               <p class="ds_color ds_600 mb-0" style="font-size: 15px; color: #388E3C;">-$550</p>
+                               <p class="ds_color ds_600 mb-0" style="font-size: 15px; ">$1</p>
                             </div>
                           </div>
                           <div class="px-1 mt-2">
                             <div class="d-flex justify-content-between">
                                <p class="ds_color ds_600 mb-0" style="font-size: 15px;">Delivery Charges</p>
-                               <p class="ds_muted ds_600 mb-0" style="font-size: 15px;">$20 <span style="color: #388E3C;">FREE</span></p>
+                               <p class="ds_muted ds_600 mb-0" style="font-size: 15px;"> <span class="text-decoration-line-through">$20</span> <span style="color: #388E3C;">FREE</span></p>
                             </div>
                           </div>
                           <div class="ds_order_border mt-4 mb-3"></div>
                           <div class="d-flex justify-content-between px-1">
                              <p class="ds_color mb-0 ds_600">Total</p>
-                             <p class="ds_color mb-0 ds_600">$1350.00</p>
+                             <p class="ds_color mb-0 ds_600">$<span id="ds_track_total">1350.00</span></p>
                           </div>
                         </div>
                       </div>

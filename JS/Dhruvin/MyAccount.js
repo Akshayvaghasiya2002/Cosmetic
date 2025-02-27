@@ -146,7 +146,6 @@ function getUserProfileData() {
             
             let user = data?.find((element) => element?.id == userID);             
             console.log(user);
-            
             passwordObj = user      
             
             if (user) {
@@ -155,8 +154,8 @@ function getUserProfileData() {
                 document.getElementById("ds_edit_mobile").value = user?.phoneNumber || "";
                 document.getElementById("ds_edit_email").value = user?.email || "";
                 document.getElementById("datePicker").value = user?.dateOfBirth || "";
-                document.getElementById("ds_mini_img").src = `${user?.selectedImage}` ;
-                document.getElementById("userImage").src = `${user?.selectedImage}` ;
+                document.getElementById("ds_mini_img").src = `${user?.selectedImage ? user?.selectedImage : '/IMG/Dhruvin/myPerson.png'}` ;
+                document.getElementById("userImage").src = `${user?.selectedImage ? user?.selectedImage : '/IMG/Dhruvin/myPerson.png'}` ;
                 document.getElementById("ds_person_name").innerHTML = user?.fullName.split(" ")[0] || "";
                 document.getElementById("ds_person_email").innerHTML = user?.email || "";
                 document.getElementById("ds_person_num").innerHTML = user?.phoneNumber || "";
@@ -187,31 +186,31 @@ function getUserProfileData() {
                                                                ${element?.orderStatus == 'cancelled' ? '<a href="./TrackRefund.html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">View refund status</a>' : ''}
                                                        </div>
                                                 </div>
-                                                ${element?.orders?.map((element)=>{
-                                                    return  `<div class="row align-items-center">
+                                                ${element?.orders?.map((item)=>{
+                                                    return  `<a href="${element?.orderStatus == 'delivered' ? '/Dhruvin/OrderStatus(Delivered).html' :'#'}" onclick="handleTrackOrder('${element?.batchId}')" class="row align-items-center text-decoration-none ${element?.orderStatus == 'delivered' ? 'ds_cursor' :'ds_cur_text'}" >
                                                                  <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 mt-3">
                                                                     <div>
-                                                                      <img src="${element?.image}" alt="" class="ds_order_img">
+                                                                      <img src="${item?.image}" alt="" class="ds_order_img">
                                                                     </div>
                                                                  </div>
                                                                  <div class="col-xl-10 col-lg-9 col-md-12 col-sm-8 mt-lg-4 mt-3">
                                                                     <div class="row justify-content-between">
-                                                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
                                                                           <div>
                                                                               <div class="d-flex justify-content-between">
-                                                                                  <p class="ds_color ds_lh ds_order_txt">${element?.brand ? element?.brand : ''} ${element?.name}</p>
+                                                                                  <p class="ds_color ds_lh ds_order_txt">${item?.brand ? item?.brand : ''} ${item?.name}</p>
                                                                               </div>
-                                                                              <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">${element?.selectedColor ?  element?.selectedColor : 'No Color'}</span></p>
+                                                                              <p class="ds_muted ds_order_txt">Shade : <span class="ds_color">${item?.selectedColor ?  item?.selectedColor : 'No Color'}</span></p>
                                                                               <div class="d-flex justify-content-between">
                                                                                   <p class="ds_muted ds_order_txt">Qty : <span class="ds_color">X1</span></p>
-                                                                                  <h5 class="text-md-end">$ ${element?.currentPrice}</h5>
+                                                                                  <h5 class="text-md-end ds_color">$ ${item?.currentPrice}</h5>
                                                                               </div>
                                                                           </div>
                                                                       </div>
                                                                         
                                                                     </div>
                                                                 </div>
-                                                         </div>
+                                                         </a>
                                                            <div class="ds_border mt-3"></div>
                                                          `
                                                 }).join(" ")
@@ -272,15 +271,22 @@ function handleUpdateProfile(event) {
     if (selectedImage) {
         convertImageToBase64(selectedImage, function (base64String) {
             let updatedUserData = {
+                id:passwordObj?.id,
                 fullName: `${First} ${Last}`,
-                phoneNumber: Mobile,
                 email: Email,
+                password: passwordObj?.password,
                 dateOfBirth: Date,
                 gender: gender,
-                password: passwordObj?.password,
+                phoneNumber: Mobile,
                 selectedImage: base64String, // Store Base64 image string
-                addresses: passwordObj?.addresses ? passwordObj?.addresses : []
+                addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
+                carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
+                confirmedOrders:passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
+                orders:passwordObj?.orders ? passwordObj?.orders : [],
+                wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
             };
+
+            
 
             // Send JSON data to JSON Server
             fetch(`http://localhost:3000/User/${userID}`, {
@@ -435,7 +441,7 @@ async function getAddressData () {
    const json = await response.json()
    if(json){
        const address = json.find((element)=> element.id == userID)       
-    //    console.log(address.addresses);
+       console.log("addreess" ,address);
 
        const noAddress = address?.addresses
        if(noAddress?.length == 0 || noAddress == undefined){
@@ -446,6 +452,18 @@ async function getAddressData () {
          document.querySelector("#ds_no_address").classList.add("d-none")
          document.querySelector("#ds_no_address").classList.remove("d-block")
        }
+
+       const noOrder = address.confirmedOrders
+       if(noOrder?.length == 0 || noOrder == undefined){
+          document.querySelector("#ds_no_order").classList.add("d-block")
+          document.querySelector("#ds_no_order").classList.remove("d-none")
+       }
+       else{
+          document.querySelector("#ds_no_order").classList.add("d-none")
+          document.querySelector("#ds_no_order").classList.remove("d-block")
+       }
+
+   
     //    console.log(noAddress.length);
        
 
@@ -864,12 +882,19 @@ async function handleResetPassword() {
 
     try {
         let updatedUserData = {
-            id: passwordObj.id,
-            fullName: passwordObj.fullName,
-            phoneNumber: passwordObj.phoneNumber,
-            email: passwordObj.email,
+            id: passwordObj?.id,
+            fullName: passwordObj?.fullName,
+            email: passwordObj?.email,
             password: newPass,
-            addresses:passwordObj?.addresses
+            dateOfBirth:passwordObj?.dateOfBirth,
+            gender:passwordObj?.gender,
+            phoneNumber: passwordObj?.phoneNumber,
+            selectedImage:passwordObj?.selectedImage,
+            addresses:passwordObj?.addresses ? passwordObj?.addresses : [],
+            carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
+            confirmedOrders: passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
+            orders:passwordObj?.orders ? passwordObj?.orders : [],
+            wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
         };
         
         const response = await fetch(`http://localhost:3000/User/${userID}`, {

@@ -8,34 +8,34 @@ async function getOrderData () {
 
     const filter = json?.confirmedOrders?.find((element)=> element?.batchId == batchId)
     console.log('filter' , filter);
-    document.getElementById("ds_order_id").innerHTML = filter?.batchId
-    document.getElementById("ds_order_date").innerHTML = filter?.orderDate
-    document.getElementById("ds_order_date2").innerHTML = filter?.orderDate
+    document.getElementById("ds_deliverOrder_id").innerHTML = filter?.batchId
+    document.getElementById("ds_deliverOrder_date").innerHTML = filter?.orderDate
+    document.getElementById("ds_deliverOrder_date2").innerHTML = filter?.orderDate
 
     const shipDate = new Date(filter?.orderDate)
     shipDate.setDate(shipDate.getDate() + 3);
-    document.getElementById("ds_order_ship").innerHTML = shipDate?.toISOString()?.split("T")[0]; 
-    document.getElementById("ds_order_ship2").innerHTML = shipDate?.toISOString()?.split("T")[0]; 
+    document.getElementById("ds_deliverOrder_ship").innerHTML = shipDate?.toISOString()?.split("T")[0]; 
+    document.getElementById("ds_deliverOrder_ship2").innerHTML = shipDate?.toISOString()?.split("T")[0]; 
 
     const expectedDate = new Date(filter?.orderDate)
     expectedDate.setDate(expectedDate.getDate() + 5);
-    document.getElementById("ds_order_expected").innerHTML = expectedDate?.toISOString()?.split("T")[0]; 
-    document.getElementById("ds_order_expected2").innerHTML = expectedDate?.toISOString()?.split("T")[0]; 
+    document.getElementById("ds_deliverOrder_out").innerHTML = expectedDate?.toISOString()?.split("T")[0]; 
+    document.getElementById("ds_deliverOrder_out2").innerHTML = expectedDate?.toISOString()?.split("T")[0]; 
 
     const deliverDate = new Date(filter?.orderDate)
     deliverDate.setDate(deliverDate.getDate() + 10);
-    document.getElementById("ds_order_deliver").innerHTML = deliverDate?.toISOString()?.split("T")[0]; 
-    document.getElementById("ds_order_deliver2").innerHTML = deliverDate?.toISOString()?.split("T")[0]; 
+    document.getElementById("ds_deliverOrder_come").innerHTML = deliverDate?.toISOString()?.split("T")[0]; 
+    document.getElementById("ds_deliverOrder_come2").innerHTML = deliverDate?.toISOString()?.split("T")[0]; 
 
-    document.getElementById("ds_order_miniId").innerHTML = filter?.batchId
-    document.getElementById("ds_order_confirm").innerHTML = filter?.orderDate
-    document.getElementById("ds_order_come").innerHTML = filter?.deliveryDate
+    document.getElementById("ds_deliverOrder_miniId").innerHTML = filter?.batchId
+    document.getElementById("ds_deliverOrder_confirm").innerHTML = filter?.orderDate
+    document.getElementById("ds_deliverOrder_come").innerHTML = filter?.deliveryDate
 
-    document.getElementById("ds_order_name").innerHTML = filter?.shippingDetails?.name
-    document.getElementById("ds_order_address").innerHTML = filter?.shippingDetails?.address
-    document.getElementById("ds_order_num").innerHTML = filter?.shippingDetails?.mobile
+    document.getElementById("ds_deliverOrder_name").innerHTML = filter?.shippingDetails?.name
+    document.getElementById("ds_deliverOrder_address").innerHTML = filter?.shippingDetails?.address
+    document.getElementById("ds_deliverOrder_num").innerHTML = filter?.shippingDetails?.mobile
 
-    let productData = document.getElementById("ds_product_detail")
+    let productData = document.getElementById("ds_deliverProduct_detail")
     let html = filter?.orders?.map((element)=>{
           return `<div class="row align-items-center">
                                 <div class="col-xl-2 col-lg-4 col-md-5 col-sm-4 col-6  mt-3">
@@ -59,10 +59,10 @@ async function getOrderData () {
     }).join("")
     productData.innerHTML = html
 
-    document.getElementById("ds_item_length").innerHTML = filter?.orders?.length
-    document.getElementById("ds_sub_total").innerHTML = filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount)
-    document.getElementById("ds_item_discount").innerHTML = parseFloat(filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount) * 20 / 100)
-    document.getElementById("ds_item_total").innerHTML = filter?.totalAmount
+    document.getElementById("ds_deliverItem_length").innerHTML = filter?.orders?.length
+    document.getElementById("ds_deliverSub_total").innerHTML = filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount)
+    document.getElementById("ds_deliverItem_discount").innerHTML = parseFloat(filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount) * 20 / 100)
+    document.getElementById("ds_deliverItem_total").innerHTML = filter?.totalAmount
 
 }
 

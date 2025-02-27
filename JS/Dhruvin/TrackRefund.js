@@ -16,11 +16,17 @@ async function getOrderData () {
     document.getElementById("ds_refund_date").innerHTML = filter?.cancel?.cancelDate
     document.getElementById("ds_refund_date2").innerHTML = filter?.cancel?.cancelDate
 
-    document.getElementById("ds_order_miniId").innerHTML = filter?.batchId
-    document.getElementById("ds_order_confirm").innerHTML = filter?.orderDate
-    document.getElementById("ds_order_come").innerHTML = filter?.deliveryDate
+    document.getElementById("ds_track_miniId").innerHTML = filter?.batchId
+    document.getElementById("ds_track_confirm").innerHTML = filter?.orderDate
+    document.getElementById("ds_track_come").innerHTML = filter?.deliveryDate
 
-    let productData = document.getElementById("ds_product_detail")
+    document.getElementById("ds_track_name").innerHTML = filter?.shippingDetails?.name
+    document.getElementById("ds_track_address").innerHTML = filter?.shippingDetails?.address
+    document.getElementById("ds_track_num").innerHTML = filter?.shippingDetails?.mobile
+
+
+
+    let productData = document.getElementById("ds_track_detail")
     let html = filter?.orders?.map((element)=>{
           return `<div class="row align-items-center">
                                 <div class="col-xl-2 col-lg-4 col-md-5 col-sm-4 col-6  mt-3">
@@ -44,10 +50,10 @@ async function getOrderData () {
     }).join("")
     productData.innerHTML = html
 
-    document.getElementById("ds_item_length").innerHTML = filter?.orders?.length
-    document.getElementById("ds_sub_total").innerHTML = filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount)
-    document.getElementById("ds_item_discount").innerHTML = Math.floor(filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount) - filter?.totalAmount)
-    document.getElementById("ds_item_total").innerHTML = filter?.totalAmount
+    document.getElementById("ds_track_length").innerHTML = filter?.orders?.length
+    document.getElementById("ds_track_subTotal").innerHTML = filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount)
+    document.getElementById("ds_track_discount").innerHTML = parseFloat(filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount) * 20 / 100)
+    document.getElementById("ds_track_total").innerHTML = filter?.totalAmount
 }
 
 getOrderData()
