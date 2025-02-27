@@ -666,7 +666,7 @@ async function fetchAndCalculateOrderTotal() {
         // Update UI
         document.getElementById("total-items").innerText = totalItems;
         document.getElementById("total-price").innerText = `$${totalPrice.toFixed(2)}`;
-        document.getElementById("discount").innerText = `-$${totalDiscount.toFixed(2)}`;
+        document.getElementById("discount").innerText = `-$${parseFloat(totalDiscount)}`;
         document.getElementById("final-total").innerText = `$${finalTotal.toFixed(2)}`;
 
     } catch (error) {

@@ -123,28 +123,6 @@
             .catch(error => {
                 console.error("Error creating user:", error);
             });
-
-            fetch('http://localhost:3000/User')
-            .then(response => response.json())
-            .then(users => {
-                // Search for the user that matches the email and password
-                const user = users.find(user => user.email === email && user.password === password);
-    
-                if (user) {
-                    // If user is found, store the user ID in localStorage
-                    localStorage.setItem("RegisterId", user.id);
-                    alert("Login successful!");
-                    window.location.reload();
-                    // You can now redirect to another page or update the UI accordingly
-                } else {
-                    // If no match found
-                    alert("Invalid email or password.");
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching users:", error);
-                alert("There was an error processing your login. Please try again.");
-            });
         }
 
 

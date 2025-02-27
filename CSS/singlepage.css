@@ -518,7 +518,7 @@ img {
 .slide-content img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 
@@ -1455,7 +1455,7 @@ product-container {
     padding: 10px 43px;
   }
   .slide-item1 {
-    width: 33.333%; 
+    width: 20%; 
 }
 .A_horizontle_slider{
   display: block;
@@ -1471,6 +1471,6 @@ product-container {
     width: 100% !important;
   }
   .slide-item1 {
-    width: 50%; /* Show 2 items on mobile */
+    width: 35%; /* Show 2 items on mobile */
 }
 }

@@ -230,7 +230,9 @@ $(document).ready(async function () {
                                     <i class="fa-solid fa-heart wishlist-btn ${isWishlisted ? '' : 'd-none'}" style="color: #ff0000;"></i>
                                 </div>
                             </div>
+                             <a href="../../Akshay/singlepage.html?id=${product.id}&array=newarrival">
                             <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}">
+                            </a>
                             <div class="card-body">
                                 <h6 class="card-title text-truncate">${product.name}</h6>
                                 <div class="product-price justify-content-center">
