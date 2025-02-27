@@ -341,9 +341,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 async function processOrders() {
     const userId = localStorage.getItem("userId");
     const total = localStorage.getItem("finalTotal");
+    const selectedAddressId = localStorage.getItem("selectedAddressId");
 
-    if (!userId) {
-        console.error("User ID not found in localStorage.");
+   
+    if (!userId || !selectedAddressId) {
+        console.error("User ID or Selected Address ID not found in local storage.");
         return;
     }
 
@@ -357,6 +359,20 @@ async function processOrders() {
             console.log("No orders found.");
             return;
         }
+        // Find the selected address
+        const selectedAddress = userData.addresses.find(
+            address => address.id.toString() === selectedAddressId
+        );
+
+        if (!selectedAddress) {
+            console.error("Selected address not found.");
+            return;
+        }
+
+        // Construct full address
+        const fullAddress = `${selectedAddress.address1}, ${selectedAddress.address2 ? selectedAddress.address2 + ', ' : ''}${selectedAddress.city}, ${selectedAddress.state}, ${selectedAddress.zipCode}, ${selectedAddress.country}`;
+
+
 
         // ✅ Create Unique Batch ID
         const batchId = `batch_${Date.now()}`;
@@ -373,6 +389,11 @@ async function processOrders() {
             deliveryDate: deliveryDate.toISOString().split("T")[0],
             orderStatus: "pending",
             totalAmount: total,
+           shippingDetails: {
+                name: `${selectedAddress.firstName} ${selectedAddress.lastName}`,
+                address: fullAddress,
+                mobile: selectedAddress.mobileNumber,
+            },
             orders: userData.orders.map(order => ({
                 ...order,
                 orderId: `order_${Date.now()}`,

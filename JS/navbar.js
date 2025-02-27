@@ -1,3 +1,12 @@
+function gotooffer() {
+    window.location.href = "../Parth/Offer.html";
+}
+
+
+
+
+
+
 let userId = localStorage.getItem("userId")
 
 function handleSingUp() {
@@ -87,62 +96,62 @@ menuInner.addEventListener("click", toggleSubMenu);
 
 // *****************************   best seller js************************  //
 
-const bestSellerData = async () => {
-    try {
-        const response = await fetch("http://localhost:3000/products");
-        const products = await response.json();
-        console.log(products);
+// const bestSellerData = async () => {
+//     try {
+//         const response = await fetch("http://localhost:3000/products");
+//         const products = await response.json();
+//         console.log(products);
 
-        const container = document.getElementById("product-container");
-        container.innerHTML = ""; // Clear previous content
+//         const container = document.getElementById("product-container");
+//         container.innerHTML = ""; // Clear previous content
 
-        products.forEach(product => {
-            const productElement = document.createElement("div");
-            productElement.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-3", "mb-4");
-            let colorDotsHTML = product.colors ? product.colors.map((color, index) => `
-            <div class="V_color_border mx-1" data-color-index="${index}" data-color="${color.color}">
-                <p class="color-dot" style="background-color: ${color.color};"></p>
-            </div>
-        `).join('') : "";
-            let moreColorsHTML = product.moreColors ? `<span class="more-colors ">+${product.moreColors}</span>` : '';
-            productElement.innerHTML = `
-                        <div class="card h-100 text-center p-3">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                   ${product.tags ? `<span class="badge">${product.tags}</span>` : ''}
-                                </div>
-                                <span class="ms-auto heart-container" >
-                                    <i class="fa-regular fa-heart" onclick="addWishList(event)" ></i>
-                                    <i class="fa-solid fa-heart d-none" style=" color: #ff0000; " onclick="addWishList(event)" ></i>
-                                </span>
-                           </div>
-                            <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}" style="max-width: 100%; height: auto;">
-                            <div class="card-body ">
-                                <h6 class="card-title">${product.name}</h6>
-                                <div class="product-price justify-content-center">
-                                    <span class="current-price">$${product.price}</span>
-                                    <span class="original-price">$${product.originalPrice}</span>
-                                    <span class="discount">${product.discount}</span>
-                                </div>
-                                <div class="color-options justify-content-center">
-                                    ${colorDotsHTML}
-                                    ${moreColorsHTML}
-                                </div>
-                                <div>
-                                       <button class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
-                                </div>
+//         products.forEach(product => {
+//             const productElement = document.createElement("div");
+//             productElement.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-3", "mb-4");
+//             let colorDotsHTML = product.colors ? product.colors.map((color, index) => `
+//             <div class="V_color_border mx-1" data-color-index="${index}" data-color="${color.color}">
+//                 <p class="color-dot" style="background-color: ${color.color};"></p>
+//             </div>
+//         `).join('') : "";
+//             let moreColorsHTML = product.moreColors ? `<span class="more-colors ">+${product.moreColors}</span>` : '';
+//             productElement.innerHTML = `
+//                         <div class="card h-100 text-center p-3">
+//                             <div class="d-flex justify-content-between align-items-center">
+//                                 <div>
+//                                    ${product.tags ? `<span class="badge">${product.tags}</span>` : ''}
+//                                 </div>
+//                                 <span class="ms-auto heart-container" >
+//                                     <i class="fa-regular fa-heart"  ></i>
+//                                     <i class="fa-solid fa-heart d-none" style=" color: #ff0000; " ></i>
+//                                 </span>
+//                            </div>
+//                             <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}" style="max-width: 100%; height: auto;">
+//                             <div class="card-body ">
+//                                 <h6 class="card-title">${product.name}</h6>
+//                                 <div class="product-price justify-content-center">
+//                                     <span class="current-price">$${product.price}</span>
+//                                     <span class="original-price">$${product.originalPrice}</span>
+//                                     <span class="discount">${product.discount}</span>
+//                                 </div>
+//                                 <div class="color-options justify-content-center">
+//                                     ${colorDotsHTML}
+//                                     ${moreColorsHTML}
+//                                 </div>
+//                                 <div>
+//                                        <button class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
+//                                 </div>
                             
-                            </div>
-                        </div>
-                    `;
-            container.appendChild(productElement);
-        });
-    } catch (error) {
-        console.error("Error fetching products:", error.message);
-    }
-};
+//                             </div>
+//                         </div>
+//                     `;
+//             container.appendChild(productElement);
+//         });
+//     } catch (error) {
+//         console.error("Error fetching products:", error.message);
+//     }
+// };
 
-window.onload = bestSellerData;
+// window.onload = bestSellerData;
 
 $(document).ready(async function () {
     const userId = localStorage.getItem("userId");
@@ -258,6 +267,30 @@ $(document).ready(async function () {
         }
     }
 
+    let lastSelectedColor = null; // Store the last selected color globally
+
+    $(document).on("click", ".V_color_border", function (event) {
+        const selectedElement = event.target.closest(".V_color_border");
+        if (!selectedElement) return;
+    
+        const productElement = $(selectedElement).closest(".item"); // Get the product container
+        const selectedColor = selectedElement.getAttribute("data-color");
+    
+        // Reset the previously selected color's border
+        if (lastSelectedColor) {
+            lastSelectedColor.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";
+        }
+    
+        // Apply border to the newly selected color
+        selectedElement.style.border = "1px solid black"; // Updated border to highlight selected color
+        lastSelectedColor = selectedElement; 
+    
+        // Store the selected color in the product element for wishlist/cart functionality
+        productElement.data("selectedColor", selectedColor);
+    });
+    
+
+    
     async function toggleWishlist(event) {
         event.stopPropagation();
         const heartContainer = $(event.currentTarget).closest(".heart-container");
@@ -266,6 +299,8 @@ $(document).ready(async function () {
 
         const productElement = $(event.currentTarget).closest(".item");
         const productId = productElement.data("id");
+
+        const selectedColor = productElement.data("selectedColor") || null;
 
         // Fetch product data from JSON server
         const response = await fetch(`http://localhost:3000/newarrival/${productId}`);
@@ -290,7 +325,7 @@ $(document).ready(async function () {
                 discount: product.discount,
                 colors: product.colors ? product.colors.map(color => color.color) : [], // Extract only color values
                 moreColors: product.moreColors || 0,
-                selectedColor: product.selectedColor || null,
+                selectedColor: selectedColor || null,
                 badge: product.tags ? true : false
             };
 
@@ -320,6 +355,10 @@ $(document).on("click", ".A_addtocart_hover", async function (event) {
     const productElement = $(this).closest(".item");
     const productId = productElement.data("id");
 
+     // Get the selected color
+     const selectedColor = productElement.data("selectedColor") || null;
+
+
     try {
         // Fetch product details
         const response = await fetch(`http://localhost:3000/newarrival/${productId}`);
@@ -348,7 +387,7 @@ $(document).on("click", ".A_addtocart_hover", async function (event) {
                 name: product.name,
                 currentPrice: product.price,
                 quantity: 1,
-                selectedColor: null // Default color selection
+                selectedColor: selectedColor || null // Default color selection
             };
             cart.push(cartItem);
         }
