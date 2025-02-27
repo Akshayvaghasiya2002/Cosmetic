@@ -705,27 +705,23 @@ input[type="text"] {
 }
 
 .filter-tag {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  padding: 6px 12px;
-  background-color: #f1f1f1;
-  border-radius: 20px;
-  font-size: 13px;
+  background-color: #f0f0f0; /* Light gray background */
+  border-radius: 20px; /* Rounded corners */
+  padding: 5px 10px; /* Padding around the text */
+  margin: 5px; /* Space between tags */
+  font-size: 14px; /* Font size */
 }
 
-.filter-tag.pink {
-  background-color: #ffddee;
-}
-
-.filter-tag.purple {
-  background-color: #e5d4f1;
-  color: #fff;
+.filter-name {
+  margin-right: 5px; /* Space between name and close button */
 }
 
 .filter-close {
-  margin-left: 6px;
-  cursor: pointer;
-  font-size: 14px;
+  cursor: pointer; /* Pointer cursor for close button */
+  color: #ff0000; /* Red color for close button */
+  font-weight: bold; /* Bold close button */
 }
 
 .products-grid {
@@ -954,8 +950,8 @@ input[type="text"] {
   width: 100%;
   padding: 10px 0;
   border: 1px solid #ddd;
-  background-color: var(--color-3D4936);
-  color: var(--color-ffffff);
+  background-color: transparent;
+  color: var(--color-3D4936);
   border-radius: 4px;
   font-size: 14px;
   font-weight: 500;
@@ -964,8 +960,10 @@ input[type="text"] {
 }
 
 .add-to-cart:hover {
-  background-color: var(--color-ffffff);
-  color: var(--color-3D4936);
+  color: white;
+  background-color: rgba(61, 73, 54, 1);
+  box-shadow: 0px -8px 10px 0px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.5) inset;
 }
 
 /* ***************************** footer start ************************ */
