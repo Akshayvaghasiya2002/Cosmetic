@@ -12,7 +12,21 @@
       "description": "A highly pigmented liquid matte lipstick that provides long-lasting color with a creamy finish.",
       "expiryDate": "2026-12-31",
       "manufacturingDate": "2024-01-15",
-      "howToApply": "Apply evenly to lips using the applicator. Allow it to dry for a long-lasting matte finish."
+      "howToApply": "Apply evenly to lips using the applicator. Allow it to dry for a long-lasting matte finish.",
+      "sliderImage": [
+        {
+          "image": "../../IMG/Parth/offer_1.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_2.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_3.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_4.png"
+        }
+      ]
     },
     {
       "id": "2",
@@ -214,7 +228,7 @@
   ],
   "newarrival": [
     {
-      "id": "1",
+      "id": "11",
       "name": "Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick",
       "price": 450,
       "originalPrice": 600,
@@ -233,7 +247,7 @@
       ]
     },
     {
-      "id": "2",
+      "id": "12",
       "name": "MAC Glow Play Tender Talk Lip Balm",
       "price": 450,
       "originalPrice": 600,
@@ -264,7 +278,7 @@
       "moreColors": 10
     },
     {
-      "id": "3",
+      "id": "13",
       "name": "SUGAR Matte As Hell Mini Crayon Lipstick",
       "price": 450,
       "originalPrice": 600,
@@ -292,10 +306,33 @@
           "color": "#FD9FBD"
         }
       ],
+      "sliderImage": [
+        {
+          "image": "../../IMG/Parth/offer_1.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_2.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_3.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_4.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_2.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_3.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_4.png"
+        }
+      ],
       "moreColors": 2
     },
     {
-      "id": "4",
+      "id": "14",
       "name": "COLORBAR Power Kiss Matte Lipstick",
       "price": 450,
       "originalPrice": 600,
@@ -319,7 +356,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": "15",
       "name": "RENEE FAB 5 Matte Finish 5 in 1 Lipstick",
       "price": 450,
       "originalPrice": 600,
@@ -342,7 +379,7 @@
       ]
     },
     {
-      "id": "6",
+      "id": "16",
       "name": "Prixa Love Eyeshadow Palette",
       "price": 450,
       "originalPrice": 600,
@@ -365,7 +402,7 @@
       ]
     },
     {
-      "id": "7",
+      "id": "17",
       "name": "Holy Grail Mini Hyper Real Kit",
       "price": 450,
       "originalPrice": 600,
@@ -384,7 +421,7 @@
       ]
     },
     {
-      "id": "8",
+      "id": "18",
       "name": "Karité Premium Superfood Cleansing Balm",
       "price": 450,
       "originalPrice": 600,
@@ -403,7 +440,7 @@
       ]
     },
     {
-      "id": "9",
+      "id": "19",
       "name": "Eveline Cosmetics Body SHE Collagen Regeneration 200gm",
       "price": 450,
       "originalPrice": 600,
@@ -422,7 +459,7 @@
       ]
     },
     {
-      "id": "10",
+      "id": "20",
       "name": "SWISS BEAUTY Cream It Up Blusher",
       "price": 450,
       "originalPrice": 600,
@@ -455,7 +492,7 @@
   ],
   "offer": [
     {
-      "id": "1",
+      "id": "21",
       "topRated": "/IMG/Parth/25_off.png",
       "image": "../../IMG/Parth/offer_1.png",
       "name": "Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick",
@@ -479,7 +516,7 @@
       "moreColors": 4
     },
     {
-      "id": "2",
+      "id": "22",
       "topRated": "/IMG/Parth/10_off.png",
       "image": "../../IMG/Parth/offer_2.png",
       "name": "MAC Glow Play Tender Talk Lip Balm",
@@ -503,7 +540,7 @@
       "moreColors": 10
     },
     {
-      "id": "3",
+      "id": "23",
       "topRated": "/IMG/Parth/15_off.png",
       "image": "../../IMG/Parth/offer_3.png",
       "name": "MAC MACXIMAL SLEEK SATIN LIPSTICK",
@@ -527,7 +564,7 @@
       "moreColors": 15
     },
     {
-      "id": "4",
+      "id": "24",
       "topRated": "/IMG/Parth/20_off.png",
       "image": "../../IMG/Parth/offer_4.png",
       "name": "SUGAR Matte As Hell Mini Crayon Lipstick",

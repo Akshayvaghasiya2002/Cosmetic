@@ -373,7 +373,7 @@ const products = [
         moreColors: 2
     },
     {
-        id: 5,
+        id: 100,
         brand: "COLORBAR",
         name: "Power Kiss Matte Lipstick",
         currentPrice: 4.50,
@@ -389,19 +389,29 @@ const products = [
         moreColors: 10
     },
     {
-        id: 6,
-        brand: "RENEE FAB",
-        name: "5 Matte Finish 5 in 1 Lipstick 7.5gm",
+        id: "6",
+        brand: "COLORBAR",
+        image: "../../IMG/Parth/offer_4.png",
+        name: "SUGAR Matte As Hell Mini Crayon Lipstick",
         currentPrice: 4.50,
         originalPrice: 6.00,
-        discount: "20% OFF",
-        badge: { type: "BESTSELLER", class: "badge" },
-        image: "/IMG/Akshay/bodyshot.png",
+        discount: "20% Off",
         colors: [
-            { color: "#BB5A5A" },
-            { color: "#7D3131" }
-        ]
-    }
+          {
+            color: "#8C474C"
+          },
+          {
+            color: "#861819"
+          },
+          {
+            color: "#96547C"
+          },
+          {
+            color: "#A84954"
+          }
+        ],
+        moreColors: 2
+      }
 ];
 const filters = [
     // { name: "Lipstick", class: "" },

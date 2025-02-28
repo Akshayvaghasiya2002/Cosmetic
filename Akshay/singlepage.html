@@ -17,6 +17,33 @@
     <link rel="stylesheet" href="../CSS/singlepage.css">
     <link rel="stylesheet" href="/CSS/home.css">
 
+    <style>
+/* Vertical Slider */
+.vertical-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+}
+
+#sliderContainer {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    height: 100%; /* Adjust height based on design */
+    gap: 10px;
+}
+
+/* Horizontal Slider */
+.slider-wrapper1 {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    white-space: nowrap;
+}
+    </style>
 </head>
 
 <body>
@@ -1170,109 +1197,41 @@
     <section>
         <div class="container-xxl mt-5">
             <div class="row">
+                <!-- Vertical Slider (Left Side) -->
                 <div class="col-lg-2 A_verticle_slider">
                     <div class="vertical-slider">
-                        <div class="slider-wrapper">
-                            <!-- 8 slides total, showing 5 at a time -->
-                            <div class="slide-item">
-                                <div class="slide-content">
-                                    <img src="../IMG/Akshay/bathbody.png" alt="Product 1">
+                        <div class="slider-controls">
+                            <button class="control-btn prev"><i class="fa-solid fa-angle-up"></i></button>
+                        </div>
 
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="slide-content">
-                                    <img src="../IMG/Akshay/bathbody.png" alt="Product 2">
-
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="slide-content">
-                                    <img src="../IMG/Akshay/face.png" alt="Product 3">
-
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="slide-content">
-                                    <img src="../IMG/Akshay/bathbody.png" alt="Product 4">
-
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="slide-content">
-                                    <img src="../IMG/Akshay/face.png" alt="Product 5">
-
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="slide-content">
-                                    <img src="../IMG/Akshay/bathbody.png" alt="Product 6">
-
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="slide-content">
-                                    <img src="../IMG/Akshay/face.png" alt="Product 7">
-
-                                </div>
-                            </div>
-                            <div class="slide-item">
-                                <div class="slide-content">
-                                    <img src="../IMG/Akshay/bathbody.png" alt="Product 8">
-
-                                </div>
-                            </div>
+                        <div class="slider-wrapper" id="sliderContainer">
+                            <!-- Dynamic slider images will be inserted here -->
                         </div>
 
                         <div class="slider-controls">
-                            <button class="control-btn prev"><i class="fa-solid fa-angle-up"></i></button>
                             <button class="control-btn next"><i class="fa-solid fa-angle-down"></i></button>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <img src="../IMG/Akshay/image 3274.png" alt="">
+
+                <!-- Main Product Image -->
+                <div class="col-lg-5 product-main">
+                    <img src="../IMG/Akshay/image3274.png" alt="Product Image" id="productImage">
                 </div>
+
+                <!-- Horizontal Slider (Bottom Side) -->
                 <div class="col-lg-12 A_horizontle_slider">
                     <div class="horizontal-slider">
-                        <div class="slider-wrapper1">
-                            <!-- 8 slides total, showing 5 at a time by default -->
-                            <div class="slide-item1">
-                                <div class="slide-content1">
-                                    <img src="../IMG/Akshay/bathbody.png" alt="Product 1">
-                                </div>
-                            </div>
-                            <div class="slide-item1">
-                                <div class="slide-content1">
-                                    <img src="../IMG/Akshay/face.png" alt="Product 2">
-                                </div>
-                            </div>
-                            <div class="slide-item1">
-                                <div class="slide-content1">
-                                    <img src="../IMG/Akshay/face.png" alt="Product 3">
-                                </div>
-                            </div>
-                            <div class="slide-item1">
-                                <div class="slide-content1">
-                                    <img src="../IMG/Akshay/goldmac.png" alt="Product 4">
-                                </div>
-                            </div>
-                            <div class="slide-item1">
-                                <div class="slide-content1">
-                                    <img src="../IMG/Akshay/goldmac.png" alt="Product 5">
-                                </div>
-                            </div>
-                            <div class="slide-item1">
-                                <div class="slide-content1">
-                                    <img src="../IMG/Akshay/goldmac.png" alt="Product 6">
-                                </div>
-                            </div>
+                        <div class="slider-controls1">
                             
                         </div>
-            
+
+                        <div class="slider-wrapper1">
+                            <!-- Dynamic horizontal slider images will be inserted here -->
+                        </div>
+
                         <div class="slider-controls1">
-                            <button class="control-btn1 prev"><i class="fa-solid fa-angle-left"></i></button>
-                            <button class="control-btn1 next"><i class="fa-solid fa-angle-right"></i></button>
+                            
                         </div>
                     </div>
                 </div>
@@ -1280,20 +1239,20 @@
                     <div class="product-container">
                         <!-- Product header -->
                         <div class="product-header">
-                            <h1 class="product-title">
+                            <h1 class="product-title" id="productName">
                                 Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm
                                 <span class="in-stock">In Stock</span>
                             </h1>
                             <div class="action-icons">
                                 <button class="icon-btn"><i class="fa-regular fa-heart"></i></button>
-                                <button class="icon-btn " data-bs-toggle="modal" data-bs-target="#shareModal"><i class="fa-solid fa-share-nodes"></i></button>
+                                <button class="icon-btn " data-bs-toggle="modal" data-bs-target="#shareModal"><i
+                                        class="fa-solid fa-share-nodes"></i></button>
                             </div>
                         </div>
 
                         <!-- Product description -->
                         <p class="product-description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua.
+
                         </p>
 
                         <!-- Rating section -->
@@ -1304,9 +1263,9 @@
 
                         <!-- Price section -->
                         <div class="price-container">
-                            <span class="current-price">₹450</span>
-                            <span class="original-price">₹600</span>
-                            <span class="discount">20% Off</span>
+                            <span class="current-price" id="productPrice"></span>
+                            <span class="original-price" id="productOriginalPrice"></span>
+                            <span class="discount" id="productDiscount"></span>
                         </div>
 
                         <!-- Shade selection -->
@@ -1315,15 +1274,8 @@
                                 Shade: <span class="shade-name">Vintage Rose</span>
                             </label>
 
-                            <div class="color-options">
-                                <div class="color-option selected" style="background-color: #e6b8b8;"></div>
-                                <div class="color-option" style="background-color: #9e1c23;"></div>
-                                <div class="color-option" style="background-color: #e75480;"></div>
-                                <div class="color-option" style="background-color: #8076a3;"></div>
-                                <div class="color-option" style="background-color: #ab3b3a;"></div>
-                                <div class="color-option" style="background-color: #754c4c;"></div>
-                                <div class="color-option" style="background-color: #5e1d26;"></div>
-                                <div class="color-option" style="background-color: #ffb6c1;"></div>
+                            <div class="color-options" id="colorOptions">
+
                             </div>
                         </div>
 
@@ -1369,7 +1321,8 @@
                 <ul class="nav-tabs" id="productTabs" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info"
-                            type="button" role="tab" aria-controls="info" aria-selected="true">Product Information</button>
+                            type="button" role="tab" aria-controls="info" aria-selected="true">Product
+                            Information</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="benefits-tab" data-bs-toggle="tab" data-bs-target="#benefits"
@@ -1381,7 +1334,8 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients"
-                            type="button" role="tab" aria-controls="ingredients" aria-selected="false">Ingredients</button>
+                            type="button" role="tab" aria-controls="ingredients"
+                            aria-selected="false">Ingredients</button>
                     </li>
                 </ul>
             </div>
@@ -1647,11 +1601,16 @@
                                         <p class="text-wrap w-75 mb-0" style="color: #3D4936;">Eveline Cosmetics Wonder
                                             Match Creamy Liquid Matte Lipstick</p>
                                         <div class="star-rating">
-                                            <span class="star" data-rating="1"><i class="fa-solid fa-star" style="color: #e0e0e0;"></i></span>
-                                            <span class="star" data-rating="2"><i class="fa-solid fa-star" style="color: #e0e0e0;"></i></span>
-                                            <span class="star" data-rating="3"><i class="fa-solid fa-star" style="color: #e0e0e0;"></i></span>
-                                            <span class="star" data-rating="4"><i class="fa-solid fa-star" style="color: #e0e0e0;"></i></span>
-                                            <span class="star" data-rating="5"><i class="fa-solid fa-star" style="color: #e0e0e0;"></i></span>
+                                            <span class="star" data-rating="1"><i class="fa-solid fa-star"
+                                                    style="color: #e0e0e0;"></i></span>
+                                            <span class="star" data-rating="2"><i class="fa-solid fa-star"
+                                                    style="color: #e0e0e0;"></i></span>
+                                            <span class="star" data-rating="3"><i class="fa-solid fa-star"
+                                                    style="color: #e0e0e0;"></i></span>
+                                            <span class="star" data-rating="4"><i class="fa-solid fa-star"
+                                                    style="color: #e0e0e0;"></i></span>
+                                            <span class="star" data-rating="5"><i class="fa-solid fa-star"
+                                                    style="color: #e0e0e0;"></i></span>
                                         </div>
                                     </div>
                                 </div>
@@ -1660,21 +1619,24 @@
                             </div>
                             <div class="mb-3">
                                 <label for="reviewTitle" class="form-label">Review Title</label>
-                                <input type="text" class="form-control" id="reviewTitle" placeholder="Enter title" required style="background-color: #f8f8f8;">
+                                <input type="text" class="form-control" id="reviewTitle" placeholder="Enter title"
+                                    required style="background-color: #f8f8f8;">
                             </div>
                             <div class="mb-3">
                                 <label for="reviewText" class="form-label">Your Review</label>
-                                <textarea class="form-control" id="reviewText" rows="4" required style="background-color: #f8f8f8;"></textarea>
+                                <textarea class="form-control" id="reviewText" rows="4" required
+                                    style="background-color: #f8f8f8;"></textarea>
                             </div>
                             <div class="upload-container">
                                 <label for="fileInput" class="form-label">Add a photo or Video</label>
                                 <div class="file-input-wrapper">
                                     <input type="file" id="fileInput" class="file-input" accept="image/*,video/*">
                                     <div class="upload-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                            <polyline points="17 8 12 3 7 8"/>
-                                            <line x1="12" y1="3" x2="12" y2="15"/>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                            <polyline points="17 8 12 3 7 8" />
+                                            <line x1="12" y1="3" x2="12" y2="15" />
                                         </svg>
                                         <span class="upload-text">Click to upload or drag and drop</span>
                                     </div>
@@ -1682,7 +1644,8 @@
                             </div>
                         </form>
                     </div>
-                    <div class="modal-footer justify-content-center"> <!-- Added justify-content-center -->
+                    <div class="modal-footer justify-content-center">
+                        <!-- Added justify-content-center -->
                         <button type="button" class="btn V_proceed_payment1" data-bs-dismiss="modal">Close</button>
                         <button type="button" class="V_proceed_payment2" onclick="submitReview()">Submit Review</button>
                     </div>
@@ -1702,14 +1665,16 @@
                         <!-- Product Info -->
                         <div class="d-flex align-items-center mb-4">
                             <img src="../IMG/Akshay/image 3278.png" alt="Product" class="product-img rounded me-3">
-                            <p class="m-0" style="color: #383838;">Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick</p>
+                            <p class="m-0" style="color: #383838;">Eveline Cosmetics Wonder Match Creamy Liquid Matte
+                                Lipstick</p>
                         </div>
 
                         <div class="input-group">
-                            <input type="text" class="form-control" value="https://www.example.com/product/lipstick" readonly style="background-color: #f8f8f8;">
+                            <input type="text" class="form-control" value="https://www.example.com/product/lipstick"
+                                readonly style="background-color: #f8f8f8;">
                             <button class=" V_proceed_payment3" type="button" onclick="copyLink()">Copy URL</button>
                         </div>
-        
+
                         <!-- Share Icons -->
                         <div class="social-container mt-5">
                             <a href="#" class="share-link">
@@ -1737,9 +1702,9 @@
                                 <span>Instagram</span>
                             </a>
                         </div>
-        
+
                         <!-- Copy Link -->
-                        
+
                     </div>
                 </div>
             </div>
@@ -1751,17 +1716,19 @@
         </div>
         <div id="product-carousel" class="owl-carousel"></div>
     </div>
-  
+
     <section id="Footer"></section>
 
 
+    <script src="../JS/"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../JS/singlepage.js"></script>
+    <script src="../JS/Parth/SinglePage1.js"></script>
     <!-- bootsrap scripts  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -1778,16 +1745,16 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-                fetch('../Dhruvin/Footer.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('Footer').innerHTML = data;
-                    })
-                    .catch(error => console.error('Error loading Footer:', error));
-            });
-      </script>
-      
-   
+            fetch('../Dhruvin/Footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('Footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading Footer:', error));
+        });
+    </script>
+
+
 </body>
 
 </html>
