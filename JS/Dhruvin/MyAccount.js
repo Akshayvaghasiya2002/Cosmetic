@@ -139,7 +139,12 @@ function handleEditSubmit(event) {
 let userID = localStorage.getItem("userId")
 let passwordObj = {}
 
-function getUserProfileData() {
+function handleSelectFilter () {
+    const select = document.getElementById('ds_order_select').value.trim()
+    getUserProfileData(select)
+}
+
+function getUserProfileData(select = "all") {
     fetch("http://localhost:3000/User")
         .then((response) => response.json())
         .then((data) => {
@@ -171,19 +176,33 @@ function getUserProfileData() {
 
                 const OrderId = document.getElementById("ds_Order")
 
-                const html = user?.confirmedOrders?.map((element)=>{
+                let FinalMap = [];
+                if (select === "") {
+                     FinalMap = user?.confirmedOrders || [];
+                }
+                else if (select == "all") {
+                    FinalMap = user?.confirmedOrders
+                }
+                else {
+                    FinalMap = user?.confirmedOrders?.filter((element) => element?.orderStatus == select) || [];
+                }
+                console.log("dhdhd" , FinalMap);
+                
+                const html = FinalMap?.map((element)=>{
                       return `<div class="d-flex justify-content-between mt-4">
                                                     <div class="d-flex  justify-content-between w-100 align-items-center">
                                                         <div class="d-flex flex-wrap align-items-center">
-                                                           <div class="${element?.orderStatus == 'pending' ? 'ds_order_round' : ''} ${element?.orderStatus == 'delivered' ? 'ds_order_round2' : ''} ${element?.orderStatus == 'cancelled' ? 'ds_order_round3' : ''} ds_order_round me-2"></div>
+                                                           <div class="${element?.orderStatus == 'pending' ? 'ds_order_round' : ''} ${element?.orderStatus == 'delivered' ? 'ds_order_round2' : ''} ${element?.orderStatus == 'cancelled' ? 'ds_order_round3' : ''} ${element?.orderStatus == 'return order' ? 'ds_order_round3' : ''} ds_order_round me-2"></div>
                                                                ${element?.orderStatus == 'pending' ? '<h5 class="mb-0 me-2 ds_order_text" style="color:#F8A120;">Order arriving</h5>' : ''}
                                                                ${element?.orderStatus == 'delivered' ? '<h5 class="mb-0 me-2 ds_order_color2 ds_order_text" >Order Delivered</h5>' : ''}
                                                                ${element?.orderStatus == 'cancelled' ? '<h5 class="mb-0 me-2 ds_order_color3 ds_order_text" >Order Cancelled</h5>' : ''}
+                                                               ${element?.orderStatus == 'return order' ? '<h5 class="mb-0 me-2 ds_order_color3 ds_order_text" >Return Order</h5>' : ''}
                                                            <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">${element?.orderDate}</p>
                                                          </div>  
                                                                ${element?.orderStatus == 'pending' ? `<a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;" onclick="handleTrackOrder('${element?.batchId}')">Track Order</a>` : ''}
-                                                               ${element?.orderStatus == 'delivered' ? '<button class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit Review</button>' : ''}
-                                                               ${element?.orderStatus == 'cancelled' ? '<a href="./TrackRefund.html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;">View refund status</a>' : ''}
+                                                               ${element?.orderStatus == 'delivered' ? `<button class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="handleTrackOrder('${element?.batchId}')"  >Submit Review</button>` : ''}
+                                                               ${element?.orderStatus == 'cancelled' ? `<a href="./TrackRefund.html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;"  onclick="handleTrackOrder('${element?.batchId}')">View refund status</a>` : ''}
+                                                               ${element?.orderStatus == 'return order' ? `<button class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="handleTrackOrder('${element?.batchId}')">Submit Review</button>` : ''}
                                                        </div>
                                                 </div>
                                                 ${element?.orders?.map((item)=>{
@@ -225,6 +244,7 @@ function getUserProfileData() {
 
 // Call function to load user data into form
 getUserProfileData();
+
 
 
 function handleImageUpload(event) {
@@ -309,14 +329,19 @@ function handleUpdateProfile(event) {
     } else {
         // If no new image is selected, update profile without changing image
         let updatedUserData = {
-            fullName: `${First} ${Last}`,
-            phoneNumber: Mobile,
-            email: Email,
-            dateOfBirth: Date,
-            gender: gender,
-            password: passwordObj?.password,
-            selectedImage: null, // No image selected
-            addresses: passwordObj?.addresses ? passwordObj?.addresses : []
+            id:passwordObj?.id,
+                fullName: `${First} ${Last}`,
+                email: Email,
+                password: passwordObj?.password,
+                dateOfBirth: Date,
+                gender: gender,
+                phoneNumber: Mobile,
+                selectedImage: null, 
+                addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
+                carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
+                confirmedOrders:passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
+                orders:passwordObj?.orders ? passwordObj?.orders : [],
+                wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
         };
 
         fetch(`http://localhost:3000/User/${userID}`, {
@@ -344,6 +369,166 @@ function handleTrackOrder (id) {
     
    localStorage.setItem("MyBatchId" , id)
 } 
+
+////////// Submit Review ////////////
+document.addEventListener("DOMContentLoaded", function () {
+    const stars = document.querySelectorAll(".ds_review_star");
+    let selectedRating = 0;
+
+    stars.forEach(star => {
+        star.addEventListener("click", function () {
+            selectedRating = this.getAttribute("data-value");
+            highlightStars(selectedRating);
+        });
+
+        star.addEventListener("mouseover", function () {
+            highlightStars(this.getAttribute("data-value"));
+        });
+
+        star.addEventListener("mouseleave", function () {
+            highlightStars(selectedRating);
+        });
+    });
+
+    function highlightStars(rating) {
+        stars.forEach(star => {
+            if (star.getAttribute("data-value") <= rating) {
+                star.classList.add("text-warning"); // Add active class
+            } else {
+                star.classList.remove("text-warning");
+            }
+        });
+    }
+});
+
+function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = (error) => reject(error);
+    });
+}
+
+function previewFile(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const preview = document.getElementById('preview');
+        if (file.type.startsWith('image')) {
+            preview.src = URL.createObjectURL(file);
+            uploadFile(file);
+        } else if (file.type.startsWith('video')) {
+            preview.outerHTML = `<video controls width="100%"><source src="${URL.createObjectURL(file)}" type="${file.type}"></video>`;
+        }
+    }
+}
+
+async function uploadFile(file) {
+    if (!file) return null;
+    try {
+        const base64String = await fileToBase64(file);
+        return base64String;
+    } catch (error) {
+        console.error("Error converting file to Base64:", error);
+        return null;
+    }
+}
+
+async function handleSubmitReview() {
+    const rating = document.querySelectorAll(".ds_review_star.text-warning").length;
+    const title = document.querySelector("#ds_review_title").value.trim();
+    const reviewText = document.querySelector("#ds_review_textarea").value.trim();
+    const fileInput = document.querySelector("#ds_fileInput");
+    const file = fileInput.files[0];
+
+    // Validation checks
+    if (rating === 0) {
+        alert("Please select a rating.");
+        return;
+    }
+
+    if (title.length < 5) {
+        alert("Review title must be at least 5 characters long.");
+        return;
+    }
+
+    if (reviewText.length < 20) {
+        alert("Review text must be at least 20 characters long.");
+        return;
+    }
+
+    if (file) {
+        const validTypes = ["image/jpeg", "image/png", "image/gif", "video/mp4", "video/webm"];
+        if (!validTypes.includes(file.type)) {
+            alert("Invalid file format. Please upload an image (JPEG, PNG, GIF) or a video (MP4, WEBM).");
+            return;
+        }
+
+        if (file.size > 5 * 1024 * 1024) { // 5MB limit
+            alert("File size must be less than 5MB.");
+            return;
+        }
+    }
+
+    const BatchId = localStorage.getItem("MyBatchId")
+    // Convert file to Base64
+    const fileBase64 = file ? await uploadFile(file) : null;
+
+
+    const confirmedOrders = Array.isArray(passwordObj?.confirmedOrders)
+    ? [...passwordObj.confirmedOrders] 
+    : [];
+
+// Find the order with the matching batchId
+const orderIndex = confirmedOrders.findIndex(order => order?.batchId === BatchId);
+
+if (orderIndex !== -1) {
+    // Update the review for the found order
+    confirmedOrders[orderIndex].review = {
+        rating: rating,
+        title: title,
+        reviewText: reviewText,
+        image: fileBase64 || null
+    };
+} 
+
+
+    const userData = {
+        id:passwordObj?.id,
+        fullName:passwordObj?.fullName,
+        email: passwordObj?.email,
+        password: passwordObj?.password,
+        dateOfBirth: passwordObj?.dateOfBirth || "",
+        gender: passwordObj?.gender || "",
+        phoneNumber: passwordObj?.phoneNumber,
+        selectedImage: passwordObj?.selectedImage || "", // Store Base64 image string
+        addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
+        carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
+        confirmedOrders:confirmedOrders ? confirmedOrders : passwordObj?.confirmedOrders,
+        orders:passwordObj?.orders ? passwordObj?.orders : [],
+        wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
+    }
+
+    fetch(`http://localhost:3000/User/${userID}`, {
+        method: "PUT",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert("Review updated successfully!");
+        console.log("Updated User:", data);
+    })
+    .catch(error => console.error("Error updating profile:", error));
+
+    
+}
+
+
+
 
 // *********** My Address **********
 var editId = "";

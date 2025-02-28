@@ -22,29 +22,29 @@
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-6 mt-4">
                                     <div>
-                                        <input type="text" class="ds_cancel_input px-2 w-100" placeholder="Your order id" >
+                                        <input type="text" id="ds_order_input" class="ds_cancel_input px-2 w-100" placeholder="Your order id" >
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 mt-4">
                                     <div>
-                                        <input type="text" class="ds_cancel_input px-2 w-100" placeholder="Your phone id" >
+                                        <input type="text" id="ds_order_phone" class="ds_cancel_input px-2 w-100" placeholder="Your phone id" >
                                     </div>
                                 </div>
                             </div>
-                            <select class="ds_cancel_input w-100 mt-4">
+                            <select class="ds_cancel_input w-100 mt-4" name='reason'>
                                 <option value="" selected class="ds_muted">Select Reason</option>
-                                <option value="">I was hopping for a shorter delivery time</option>
-                                <option value="">Price of the product has now decreased</option>
-                                <option value="">I want to change the delivery address</option>
-                                <option value="">I’m worried about the ratings/reviews</option>
-                                <option value="">I want to change the payment option</option>
-                                <option value="">I want to change the contact details</option>
-                                <option value="">My reason are not listed here</option>
+                                <option >I was hopping for a shorter delivery time</option>
+                                <option >Price of the product has now decreased</option>
+                                <option >I want to change the delivery address</option>
+                                <option >I’m worried about the ratings/reviews</option>
+                                <option >I want to change the payment option</option>
+                                <option >I want to change the contact details</option>
+                                <option >My reason are not listed here</option>
                             </select>
                             <div>
                                 <div class="row justify-content-center">
                                     <div class="col-xl-6 col-lg-8 col-md-8 col-sm-9 col-12">
-                                        <div class="d-flex justify-content-between mt-4">
+                                        <div class="d-flex justify-content-between mt-4 d-none" id="ds_all_otp">
                                             <input type="text" class="ds_return_otp">
                                             <input type="text" class="ds_return_otp">
                                             <input type="text" class="ds_return_otp">
@@ -56,11 +56,11 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center align-items-center">
-                                <div class="text-center mt-5 me-3">
-                                    <a href="ReturnRefundStatus.html" class="ds_return_btn ds_confirm_return text-decoration-none ds_space">Confirm Return</a>
+                                <div class="text-center mt-5 me-3 d-none" id="ds_confirm_btn">
+                                    <a href="/Dhruvin/ReturnRefundStatus.html" class="ds_return_btn ds_confirm_return text-decoration-none ds_space" onclick="handleConfirmReturn('event')">Confirm Return</a>
                                 </div>
-                                <div class="text-center mt-5">
-                                    <button class="ds_cancel_btn ds_space">Request for OTP</button>
+                                <div class="text-center mt-5" id="ds_order_request">
+                                    <button class="ds_cancel_btn ds_space" onclick="handleRequestOtp()">Request for OTP</button>
                                 </div>
                             </div>
                             <p class="ds_muted mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
