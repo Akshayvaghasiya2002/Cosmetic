@@ -683,5 +683,154 @@
       "orders": [],
       "wishlist": []
     }
+  ],
+  "likeproduct":[
+    {
+      "id": 1,
+      "title": "Koric Proteinx Superfood Cleansing Balm",
+      "salePrice": 450,
+      "originalPrice": 600,
+      "isBestSeller": false,
+      "imageUrl": "/IMG/Akshay/bodyshot.png",
+      "colors": [
+        { "name": "Pink", "code": "#FFC0CB" },
+        { "name": "Orange", "code": "#FFA500" },
+        { "name": "Gold", "code": "#FFD700" },
+        { "name": "Red", "code": "#FF0000" },
+        { "name": "Blue", "code": "#0000FF" },
+        { "name": "Green", "code": "#008000" },
+        { "name": "Purple", "code": "#800080" },
+        { "name": "Teal", "code": "#008080" },
+        { "name": "Lavender", "code": "#E6E6FA" },
+        { "name": "Coral", "code": "#FF7F50" },
+        { "name": "Mint", "code": "#98FB98" },
+        { "name": "Peach", "code": "#FFDAB9" },
+        { "name": "Sky Blue", "code": "#87CEEB" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "MAC Glow Play Tender Talk Lip Balm",
+      "salePrice": 450,
+      "originalPrice": 600,
+      "isBestSeller": true,
+      "imageUrl": "/IMG/Akshay/lip_balm.png",
+      "colors": [
+        { "name": "Pink", "code": "#FFC0CB" },
+        { "name": "Orange", "code": "#FFA500" },
+        { "name": "Gold", "code": "#FFD700" },
+        { "name": "Red", "code": "#FF0000" },
+        { "name": "Berry", "code": "#990066" },
+        { "name": "Coral", "code": "#FF7F50" },
+        { "name": "Mauve", "code": "#E0B0FF" },
+        { "name": "Nude", "code": "#E3BC9A" },
+        { "name": "Peach", "code": "#FFDAB9" },
+        { "name": "Wine", "code": "#722F37" },
+        { "name": "Burgundy", "code": "#800020" },
+        { "name": "Rose", "code": "#FF007F" },
+        { "name": "Cherry", "code": "#DE3163" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Eveline Cosmetics Body Shot Collagen Regeneration 200ml",
+      "salePrice": 450,
+      "originalPrice": 600,
+      "isBestSeller": false,
+      "imageUrl": "/IMG/Akshay/bodyshot.png",
+      "colors": [
+        { "name": "Pink", "code": "#FFC0CB" },
+        { "name": "Orange", "code": "#FFA500" },
+        { "name": "Light Red", "code": "#FD7F7F" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "SWISS BEAUTY Cream It up Blusher",
+      "salePrice": 450,
+      "originalPrice": 600,
+      "isBestSeller": true,
+      "imageUrl": "/IMG/Akshay/lip_balm.png",
+      "colors": [
+        { "name": "Pink", "code": "#FFC0CB" },
+        { "name": "Hot Pink", "code": "#FF69B4" },
+        { "name": "Coral", "code": "#FF7F50" },
+        { "name": "Peach", "code": "#FFDAB9" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Luxe Facial Serum",
+      "salePrice": 450,
+      "originalPrice": 600,
+      "isBestSeller": true,
+      "imageUrl": "/IMG/Akshay/bodyshot.png",
+      "colors": [
+        { "name": "Pink", "code": "#FFC0CB" },
+        { "name": "Orange", "code": "#FFA500" }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Glow Moisturizer",
+      "salePrice": 450,
+      "originalPrice": 600,
+      "isBestSeller": false,
+      "imageUrl": "/IMG/Akshay/lip_balm.png",
+      "colors": [
+        { "name": "Pink", "code": "#FFC0CB" },
+        { "name": "Orange", "code": "#FFA500" },
+        { "name": "Gold", "code": "#FFD700" }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Vitamin C Face Mask",
+      "salePrice": 450,
+      "originalPrice": 600,
+      "isBestSeller": true,
+      "imageUrl": "/IMG/Akshay/bodyshot.png",
+      "colors": [
+        { "name": "Pink", "code": "#FFC0CB" },
+        { "name": "Orange", "code": "#FFA500" }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Hydrating Toner",
+      "salePrice": 450,
+      "originalPrice": 600,
+      "isBestSeller": false,
+      "imageUrl": "/IMG/Akshay/lip_balm.png",
+      "colors": [
+        { "name": "Pink", "code": "#FFC0CB" },
+        { "name": "Orange", "code": "#FFA500" },
+        { "name": "Gold", "code": "#FFD700" }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Premium Night Cream",
+      "salePrice": 450,
+      "originalPrice": 600,
+      "isBestSeller": false,
+      "imageUrl": "/IMG/Akshay/bodyshot.png",
+      "colors": [
+        { "name": "Pink", "code": "#FFC0CB" },
+        { "name": "Sky Blue", "code": "#87CEEB" }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Luxury Eye Cream",
+      "salePrice": 450,
+      "originalPrice": 600,
+      "isBestSeller": true,
+      "imageUrl": "/IMG/Akshay/lip_balm.png",
+      "colors": [
+        { "name": "Gray", "code": "#DCDCDC" },
+        { "name": "Beige", "code": "#F5F5DC" }
+      ]
+    }
   ]
 }

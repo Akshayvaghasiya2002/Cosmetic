@@ -428,11 +428,54 @@ function renderFilters() {
     const filtersContainer = document.getElementById('filters-container');
     filtersContainer.innerHTML = '';
 
-    filters.forEach(filter => {
+    // Check if filters array is not empty
+    if (filters.length > 0) {
+        filters.forEach(filter => {
+            const filterTag = document.createElement('div');
+            console.log(filterTag);
+            
+            filterTag.className = `filter-tag ${filter.class}`;
+            filterTag.innerHTML = `
+                <span class="filter-name">${filter.name}</span>
+                <span class="filter-close">×</span>
+            `;
+            filtersContainer.appendChild(filterTag);
+        });
+    } else {
+        filtersContainer.innerHTML = '<p>No filters available</p>'; // Display message if no filters
+    }
+
+    // Add event listeners to filter close buttons
+    document.querySelectorAll('.filter-close').forEach(closeBtn => {
+        closeBtn.addEventListener('click', function() {
+            const filterName = this.parentElement.textContent.trim(); // Get the filter name
+            this.parentElement.remove(); // Remove the filter tag
+            removeFilter(filterName); // Call function to remove the filter from the checkboxes
+            renderProducts(); // Re-render products after filter removal
+        });
+    });
+}
+
+// Function to remove filter from checkboxes
+function removeFilter(filterName) {
+    const filterOptions = document.querySelectorAll('.filter-option input[type="checkbox"]');
+    filterOptions.forEach(option => {
+        if (option.parentElement.textContent.trim() === filterName) {
+            option.checked = false; // Uncheck the checkbox
+        }
+    });
+}
+
+// Call this function to render selected filters
+function renderSelectedFilters(selectedFilters) {
+    const filtersContainer = document.getElementById('filters-container');
+    filtersContainer.innerHTML = '';
+
+    selectedFilters.forEach(filter => {
         const filterTag = document.createElement('div');
-        filterTag.className = `filter-tag ${filter.class}`;
+        filterTag.className = 'filter-tag';
         filterTag.innerHTML = `
-            ${filter.name}
+            ${filter}
             <span class="filter-close">×</span>
         `;
         filtersContainer.appendChild(filterTag);
@@ -441,16 +484,19 @@ function renderFilters() {
     // Add event listeners to filter close buttons
     document.querySelectorAll('.filter-close').forEach(closeBtn => {
         closeBtn.addEventListener('click', function() {
-            this.parentElement.remove();
+            const filterName = this.parentElement.textContent.trim(); // Get the filter name
+            this.parentElement.remove(); // Remove the filter tag
+            removeFilter(filterName); // Call function to remove the filter from the checkboxes
+            renderProducts(); // Re-render products after filter removal
         });
     });
 }
 
-
-
 // Sort products
 function sortProducts(sortBy) {
     let sortedProducts = [...products];
+    console.log(products);
+    
     
     switch(sortBy) {
         case 'price-low-high':
@@ -467,6 +513,7 @@ function sortProducts(sortBy) {
             break;
         default:
             sortedProducts = [...products]; // Default order (as defined in the array)
+
     }
     
     return sortedProducts;
@@ -519,8 +566,8 @@ function init() {
 document.addEventListener('DOMContentLoaded', init);
 // /////////////////////// product card part  /////////////////////////
 
-// Function to handle filter selection
-function handleFilterSelection() {
+// Function to filter products based on selected filters
+function filterProducts() {
     const filterOptions = document.querySelectorAll('.filter-option input[type="checkbox"]');
     const selectedFilters = [];
 
@@ -530,44 +577,16 @@ function handleFilterSelection() {
         }
     });
 
-    renderSelectedFilters(selectedFilters);
-}
-
-// Function to render selected filters
-function renderSelectedFilters(selectedFilters) {
-    const filtersContainer = document.getElementById('filters-container');
-    filtersContainer.innerHTML = '';
-
-    selectedFilters.forEach(filter => {
-        const filterTag = document.createElement('div');
-        filterTag.className = 'filter-tag';
-        filterTag.innerHTML = `
-            ${filter}
-            <span class="filter-close">×</span>
-        `;
-        filtersContainer.appendChild(filterTag);
-    });
-
-    // Add event listeners to filter close buttons
-    document.querySelectorAll('.filter-close').forEach(closeBtn => {
-        closeBtn.addEventListener('click', function() {
-            this.parentElement.remove();
+    const filteredProducts = products.filter(product => {
+        // Check if product matches any selected filter
+        return selectedFilters.every(filter => {
+            // Example: Check if product brand matches the selected filter
+            return product.brand.includes(filter) || product.name.includes(filter);
         });
     });
+
+    return filteredProducts;
 }
-
-// Add event listeners to checkboxes
-document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(checkbox => {
-    checkbox.addEventListener('change', handleFilterSelection);
-});
-    
-
-
-
-
-
-
-
 
 // Function to render products, handle wishlist and cart functionality
 async function renderProducts() {
@@ -576,7 +595,7 @@ async function renderProducts() {
 
     const userId = localStorage.getItem("userId");
     let wishlist = [];
-    let cart = []; // <-- Ensure 'cart' is initialized
+    let cart = [];
 
     // Fetch the user's wishlist and cart if logged in
     if (userId) {
@@ -585,23 +604,17 @@ async function renderProducts() {
             if (response.ok) {
                 const userData = await response.json();
                 wishlist = userData.wishlist || [];
-                cart = userData.orders || []; // Fetch user's cart from JSON Server
+                cart = userData.orders || [];
             }
         } catch (error) {
             console.error("Error fetching user data:", error);
         }
     }
 
-    // Ensure products have unique IDs using a Set
-    const uniqueProductsMap = new Map();
-    products.forEach(product => {
-        if (!uniqueProductsMap.has(product.id)) {
-            uniqueProductsMap.set(product.id, product);
-        }
-    });
-    const uniqueProducts = Array.from(uniqueProductsMap.values());
+    // Get filtered products
+    const filteredProducts = filterProducts();
 
-    productsContainer.innerHTML = uniqueProducts.map(product => {
+    productsContainer.innerHTML = filteredProducts.map(product => {
         const isWishlisted = wishlist.some(item => item.id == product.id);
         let badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
         let colorDotsHTML = product.colors.map((color, index) => `
@@ -641,7 +654,7 @@ async function renderProducts() {
         `;
     }).join('');
 
-    document.getElementById('results-number').textContent = uniqueProducts.length;
+    document.getElementById('results-number').textContent = filteredProducts.length;
 
     // Event delegation for better performance
     document.getElementById('products-container').addEventListener('click', async (event) => {
@@ -667,7 +680,7 @@ async function renderProducts() {
                 return;
             }
 
-            const productDetails = uniqueProducts.find(p => p.id == productId);
+            const productDetails = filteredProducts.find(p => p.id == productId);
             if (!productDetails) return;
 
             const selectedColor = localStorage.getItem(`selectedColor_${productId}`) || null;
@@ -759,6 +772,10 @@ async function renderProducts() {
     });
 }
 
-// Call function to render products
-renderProducts();
+// Add event listeners to checkboxes
+document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        renderProducts(); // Re-render products when filters change
+    });
+});
 

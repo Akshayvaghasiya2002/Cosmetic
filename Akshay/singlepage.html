@@ -16,6 +16,281 @@
     <link rel="stylesheet" href="../CSS/Parth/Search.css">
     <link rel="stylesheet" href="../CSS/singlepage.css">
     <link rel="stylesheet" href="/CSS/home.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <style>
+        .product-card {
+            border-radius: 8px;
+            padding: 12px;
+            position: relative;
+            margin: 8px 4px;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            height: 350px;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .product-image img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .badge {
+            position: absolute;
+            top: -32% !important;
+            left: 0px;
+            background-color: #2C3E50;
+            color: white;
+            padding: 3px 8px;
+            font-size: 10px;
+            font-weight: bold;
+            border-radius: 3px;
+            z-index: 1;
+        }
+
+        .wishlist-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .wishlist-btn:hover{
+            background-color: #3D4936;
+            transition: 0.3s;
+        }
+        .wishlist-btn i:hover{
+            color: white;
+            transition: 0.3s;
+        }
+
+        #productCarousel .product-title {
+            font-size: 14px;
+            font-weight: 500;
+            width: 92%;
+            margin-bottom: 8px;
+            text-align: center;
+            height: 36px;
+            overflow: hidden;
+            line-height: 1.5;
+            padding: 0 !important;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .sale-price {
+            font-weight: bold;
+            font-size: 14px;
+            margin-right: 6px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #777;
+            font-size: 12px;
+            margin-right: 6px;
+        }
+
+        .discount {
+            color: #28a745;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .color-options {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 12px;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .color-option {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+
+        .more-colors {
+            font-size: 10px;
+            margin-left: 4px;
+            color: #777;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            font-size: 12px;
+            text-align: center;
+            
+        }
+
+        .add-to-cart-btn:hover {
+            color: rgba(255, 255, 255, 1);
+    font-weight: 400;
+    background-color: rgba(61, 73, 54, 1);
+    border-radius: 4px;
+    box-shadow: 0px -8px 10px 0px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.5) inset;
+ 
+        }
+
+        /* Custom styling for Owl Carousel */
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel .owl-nav button.owl-next {
+            width: 40px;
+            height: 40px;
+            background-color: white !important;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            border: 1px solid white !important;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transform: translateY(-50%);
+            color: black !important;
+            font-size: 20px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+        .owl-carousel .owl-nav button.owl-prev:hover{
+            background-color: #3D4936 !important;
+            color: white !important;
+        }
+        .owl-carousel .owl-nav button.owl-next:hover{
+            color: white !important;
+background-color: #3D4936 !important;
+        }
+        .owl-carousel .owl-nav button.owl-prev {
+            left: -20px;
+        }
+
+        .owl-carousel .owl-nav button.owl-next {
+            right: -20px;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev span,
+        .owl-carousel .owl-nav button.owl-next span {
+            position: relative;
+            top: 1px;
+            font-size: 25px;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev.disabled,
+        .owl-carousel .owl-nav button.owl-next.disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+        .owl-theme .owl-nav {
+            margin-top: 0;
+        }
+
+        .product-carousel-container {
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* Loading indicator */
+        .loader {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .loader .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        /* Error message */
+        .error-message {
+            text-align: center;
+            padding: 20px;
+            color: #dc3545;
+        }
+
+        .A_likeproduct_width .product-card {
+            width: auto !important;
+        }
+
+        .badge {
+            background-color: #3b4637;
+            color: #fff;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 5px 12px;
+            border-radius: 5px;
+            display: inline-block;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        /* Left Ribbon Cut */
+        .badge::before {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 100%;
+            transform: translateY(-50%) rotate(-135deg);
+            background-color: #2e382b;
+            width: 10px;
+            height: 10px;
+            clip-path: polygon(0 0, 100% 0, 0 100%);
+        }
+
+        /* Right Ribbon Sparkle */
+        .badge::after {
+            content: "";
+            position: absolute;
+            right: -5px;
+            top: -25%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            background-color: #717a6e;
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0% 50%);
+        }
+        .badge1{position: absolute;}
+    </style>
 
     <style>
 /* Vertical Slider */
@@ -54,7 +329,7 @@
                 <div class="">
                     <p class="A_welcome mb-0 text-center py-2">Welcome to our Store</p>
                 </div>
-                <nav class="navbar container-xxl">
+                <nav class="navbar container-xxl A_navbar_padding">
                     <section class="navbar-left">
                         <a href="#" class="brand">Brand</a>
                         <div class="burger" id="burger">
@@ -1286,14 +1561,14 @@
                             <button class="quantity-btn">+</button>
                         </div>
 
-                        <button class="add-to-cart">Add to cart</button>
+                        <button class="add-to-cart1">Add to cart</button>
 
                         <!-- Delivery section -->
                         <div class="delivery-section">
                             <h3 class="section-title">Delivery Details</h3>
                             <div class="zip-container">
                                 <input type="text" class="zip-input" placeholder="Enter pin code here">
-                                <button class="check-btn">Check</button>
+                                <button class="check-btn1">Check</button>
                             </div>
                         </div>
 
@@ -1403,7 +1678,7 @@
                 </div>
                 <div class="tab-pane fade" id="apply" role="tabpanel" aria-labelledby="apply-tab">
                     <ul class="product-details">
-                        <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                             been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
                             galley of type and scrambled it to make a type specimen book. It has survived not only five
                             centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
@@ -1414,7 +1689,7 @@
                 </div>
                 <div class="tab-pane fade" id="ingredients" role="tabpanel" aria-labelledby="ingredients-tab">
                     <ul class="product-details">
-                        <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                             been the industry's standard dummy text ever since the 1500s, </li>
                     </ul>
                 </div>
@@ -1714,7 +1989,9 @@
         <div class="py-2">
             <div class="text-start fw-bold" style="color: #3D4936; font-size: 32px;">You May Also Like</div>
         </div>
-        <div id="product-carousel" class="owl-carousel"></div>
+        <div class="owl-carousel owl-theme product-carousel" id="productCarousel" style="display: none;">
+            <!-- Products will be dynamically inserted here -->
+        </div>
     </div>
 
     <section id="Footer"></section>

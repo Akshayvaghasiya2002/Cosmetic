@@ -456,3 +456,144 @@ function copyLink() {
                 }
             });
         });
+// //////////////////////////////////// like product slider /////////////////////////////////////////////
+$(document).ready(function(){
+    // API endpoint for json-server
+    const API_URL = 'http://localhost:3000/likeproduct';
+    
+    // Fetch products from JSON server
+    fetch(API_URL)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(products => {
+            // Hide loading indicator
+            $('#loading').hide();
+            
+            // Populate carousel with products
+            populateProductCarousel(products);
+            
+            // Show carousel
+            $('#productCarousel').show();
+            
+            // Initialize Owl Carousel
+            initializeOwlCarousel();
+        })
+        .catch(error => {
+            console.error('Error fetching products:', error);
+            $('#loading').hide();
+            $('#error').show();
+        });
+    
+    // Function to populate carousel with products
+    function populateProductCarousel(products) {
+        const carousel = $('#productCarousel');
+        
+        products.forEach(product => {
+            let colorOptionsHtml = '';
+            
+            // Generate color options
+            product.colors.forEach((color, index) => {
+                if (index < 3) {
+                    colorOptionsHtml += `<div class="color-option" style="background-color: ${color.code};"></div>`;
+                }
+            });
+            
+            // Add "more colors" text if applicable
+            if (product.colors.length > 3) {
+                colorOptionsHtml += `<span class="more-colors">+${product.colors.length - 3}</span>`;
+            }
+            
+            // Calculate discount percentage
+            const discountPercentage = Math.round((1 - (product.salePrice / product.originalPrice)) * 100);
+            
+            // Create product card HTML
+            const productHtml = `
+                <div class="item A_likeproduct_width">
+                    <div class="product-card">
+                    <div>
+                    ${product.isBestSeller ? '<div class="badge1"><div class="badge ">BEST SELLER</div> </div>' : ''}
+                    <button class="wishlist-btn" data-product-id="${product.id}">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    </div>
+                        <div class="product-image">
+                            <img src="${product.imageUrl}" alt="${product.title}">
+                        </div>
+                        <h3 class="product-title">${product.title}</h3>
+                        <div class="price-container">
+                            <span class="sale-price">$${product.salePrice}</span>
+                            <span class="original-price">$${product.originalPrice}</span>
+                            <span class="discount">${discountPercentage}% OFF</span>
+                        </div>
+                        <div class="color-options">
+                            ${colorOptionsHtml}
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="${product.id}">Add to Cart</button>
+                    </div>
+                </div>
+            `;
+            
+            // Append to carousel
+            carousel.append(productHtml);
+        });
+    }
+    
+    // Initialize Owl Carousel
+    function initializeOwlCarousel() {
+        $('#productCarousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            navText: ['<span>&lt;</span>','<span>&gt;</span>'],
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                576: {
+                    items: 2
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                }
+            }
+        });
+        
+        // Add event listeners to dynamically created elements
+        
+        // Wishlist button functionality
+        $(document).on('click', '.wishlist-btn', function() {
+            const productId = $(this).data('product-id');
+            console.log(`Adding product ID ${productId} to wishlist`);
+            $(this).find('i').toggleClass('far fas');
+        });
+        
+        // Add to cart button functionality
+        $(document).on('click', '.add-to-cart-btn', function() {
+            const productId = $(this).data('product-id');
+            console.log(`Adding product ID ${productId} to cart`);
+            
+            // Provide visual feedback
+            const originalText = $(this).text();
+            $(this).text('Added!').prop('disabled', true);
+            
+            setTimeout(() => {
+                $(this).text(originalText).prop('disabled', false);
+            }, 2000);
+        });
+        
+        // Color option functionality
+        $(document).on('click', '.color-option', function() {
+            $(this).closest('.color-options').find('.color-option').css('border-color', '#ddd');
+            $(this).css('border-color', '#333');
+        });
+    }
+});
+// //////////////////////////////////// like product slider /////////////////////////////////////////////
