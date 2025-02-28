@@ -1,12 +1,18 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const userId = localStorage.getItem("userId");
     const selectedAddressId = localStorage.getItem("selectedAddressId");
+    const paymetMethod = localStorage.getItem("paymentMethod");
 
     if (!userId || !selectedAddressId) {
         console.error("User ID or Selected Address ID not found in local storage.");
         return;
     }
 
+    
+    console.log('paymentMethod', paymetMethod);
+
+    document.getElementById("paymentmethod").textContent = paymetMethod;
+    document.getElementById("paymentmethod1").textContent = paymetMethod;
     try {
         // Fetch user data from JSON server
         const response = await fetch(`http://localhost:3000/User/${userId}`);
@@ -30,6 +36,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         // Construct full address
         const fullAddress = `${selectedAddress.address1}, ${selectedAddress.address2 ? selectedAddress.address2 + ', ' : ''}${selectedAddress.city}, ${selectedAddress.state}, ${selectedAddress.zipCode}, ${selectedAddress.country}`;
+      
+
 
          // Update email
          document.querySelector(".email").textContent = selectedAddress.email;
@@ -40,6 +48,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.querySelector(".shipping-address").textContent = fullAddress;
         document.querySelector(".shipping-mobile").textContent = selectedAddress.mobileNumber;
 
+       
         document.querySelector(".billing-name").textContent = `${selectedAddress.firstName} ${selectedAddress.lastName}`;
         document.querySelector(".billing-address").textContent = fullAddress;
         document.querySelector(".billing-mobile").textContent = selectedAddress.mobileNumber;
@@ -507,9 +516,9 @@ async function fetchAndCalculateConfirmedOrderTotal() {
         });
 
         const finalTotal = totalPrice - totalDiscount + platformFee;
-        // localStorage.setItem("finalTotal", finalTotal);
-
+       
         document.getElementById("total-items").innerText = totalItems;
+        
         document.getElementById("total-price").innerText = `$${totalPrice.toFixed(2)}`;
         document.getElementById("discount").innerText = `-$${totalDiscount.toFixed(2)}`;
         document.getElementById("final-total").innerText = `$${finalTotal.toFixed(2)}`;

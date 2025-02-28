@@ -304,115 +304,115 @@ maxPriceInput.addEventListener('input', function() {
 });
 // /////////////////////// multiproduct filter part /////////////////////////
 // /////////////////////// product card part  /////////////////////////
-const products = [
-    {
-        id: 1,
-        brand: "Eveline Cosmetics",
-        name: "Wonder Match Creamy Liquid Matte Lipstick",
-        currentPrice: 4.50,
-        originalPrice: 6.00,
-        discount: "20% OFF",
-        badge: { type: "TOP RATED", class: "badge-top-rated" },
-        image: "/IMG/Akshay/bodyshot.png",
-        colors: [
-            { color: "#D69F9F" },
-            { color: "#9D2235" },
-            { color: "#CC3333" },
-            { color: "#E68FAC" }
-        ],
-        moreColors: 4
-    },
-    {
-        id: 2,
-        brand: "MAC",
-        name: "Glow Play Tender Talk Lip Balm",
-        currentPrice: 4.50,
-        originalPrice: 6.00,
-        discount: "20% OFF",
-        image: "/IMG/Akshay/lip_balm.png",
-        colors: [
-            { color: "#FF9EBF" },
-            { color: "#EFCFCE" },
-            { color: "#FFBE7D" },
-            { color: "#E04F80" }
-        ],
-        moreColors: 10
-    },
-    {
-        id: 3,
-        brand: "SUGAR",
-        name: "Matte As Hell Mini Crayon Lipstick - 07 Viola",
-        currentPrice: 6.50,
-        originalPrice: 6.00,
-        discount: "20% OFF",
-        badge: { type: "BEST SELLER", class: "badge-best-seller" },
-        image: "/IMG/Akshay/pink_lipstick.png",
-        colors: [
-            { color: "#A54E4E" },
-            { color: "#8A2232" },
-            { color: "#B95C5C" },
-            { color: "#C06A6A" }
-        ],
-        moreColors: 2
-    },
-    {
-        id: 4,
-        brand: "SWISS BEAUTY",
-        name: "Non-Transfer Lipstick",
-        currentPrice: 4.50,
-        originalPrice: 6.00,
-        discount: "20% OFF",
-        badge: { type: "BEST SELLER", class: "badge-best-seller" },
-        image: "/IMG/Akshay/makeup.png",
-        colors: [
-            { color: "#C88C8C" },
-            { color: "#5A142A" },
-            { color: "#FF2D2D" },
-            { color: "#F29B9B" }
-        ],
-        moreColors: 2
-    },
-    {
-        id: 100,
-        brand: "COLORBAR",
-        name: "Power Kiss Matte Lipstick",
-        currentPrice: 4.50,
-        originalPrice: 6.00,
-        discount: "20% OFF",
-        image: "/IMG/Akshay/eyes.png",
-        colors: [
-            { color: "#B97562" },
-            { color: "#612A31" },
-            { color: "#CC5B6B" },
-            { color: "#843344" }
-        ],
-        moreColors: 10
-    },
-    {
-        id: "6",
-        brand: "COLORBAR",
-        image: "../../IMG/Parth/offer_4.png",
-        name: "SUGAR Matte As Hell Mini Crayon Lipstick",
-        currentPrice: 4.50,
-        originalPrice: 6.00,
-        discount: "20% Off",
-        colors: [
-          {
-            color: "#8C474C"
-          },
-          {
-            color: "#861819"
-          },
-          {
-            color: "#96547C"
-          },
-          {
-            color: "#A84954"
-          }
-        ],
-        moreColors: 2
-      }
-];
+// const products = [
+//     {
+//         id: 1,
+//         brand: "Eveline Cosmetics",
+//         name: "Wonder Match Creamy Liquid Matte Lipstick",
+//         currentPrice: 4.50,
+//         originalPrice: 6.00,
+//         discount: "20% OFF",
+//         badge: { type: "TOP RATED", class: "badge-top-rated" },
+//         image: "/IMG/Akshay/bodyshot.png",
+//         colors: [
+//             { color: "#D69F9F" },
+//             { color: "#9D2235" },
+//             { color: "#CC3333" },
+//             { color: "#E68FAC" }
+//         ],
+//         moreColors: 4
+//     },
+//     {
+//         id: 2,
+//         brand: "MAC",
+//         name: "Glow Play Tender Talk Lip Balm",
+//         currentPrice: 4.50,
+//         originalPrice: 6.00,
+//         discount: "20% OFF",
+//         image: "/IMG/Akshay/lip_balm.png",
+//         colors: [
+//             { color: "#FF9EBF" },
+//             { color: "#EFCFCE" },
+//             { color: "#FFBE7D" },
+//             { color: "#E04F80" }
+//         ],
+//         moreColors: 10
+//     },
+//     {
+//         id: 3,
+//         brand: "SUGAR",
+//         name: "Matte As Hell Mini Crayon Lipstick - 07 Viola",
+//         currentPrice: 6.50,
+//         originalPrice: 6.00,
+//         discount: "20% OFF",
+//         badge: { type: "BEST SELLER", class: "badge-best-seller" },
+//         image: "/IMG/Akshay/pink_lipstick.png",
+//         colors: [
+//             { color: "#A54E4E" },
+//             { color: "#8A2232" },
+//             { color: "#B95C5C" },
+//             { color: "#C06A6A" }
+//         ],
+//         moreColors: 2
+//     },
+//     {
+//         id: 4,
+//         brand: "SWISS BEAUTY",
+//         name: "Non-Transfer Lipstick",
+//         currentPrice: 4.50,
+//         originalPrice: 6.00,
+//         discount: "20% OFF",
+//         badge: { type: "BEST SELLER", class: "badge-best-seller" },
+//         image: "/IMG/Akshay/makeup.png",
+//         colors: [
+//             { color: "#C88C8C" },
+//             { color: "#5A142A" },
+//             { color: "#FF2D2D" },
+//             { color: "#F29B9B" }
+//         ],
+//         moreColors: 2
+//     },
+//     {
+//         id: 100,
+//         brand: "COLORBAR",
+//         name: "Power Kiss Matte Lipstick",
+//         currentPrice: 4.50,
+//         originalPrice: 6.00,
+//         discount: "20% OFF",
+//         image: "/IMG/Akshay/eyes.png",
+//         colors: [
+//             { color: "#B97562" },
+//             { color: "#612A31" },
+//             { color: "#CC5B6B" },
+//             { color: "#843344" }
+//         ],
+//         moreColors: 10
+//     },
+//     {
+//         id: "6",
+//         brand: "COLORBAR",
+//         image: "../../IMG/Parth/offer_4.png",
+//         name: "SUGAR Matte As Hell Mini Crayon Lipstick",
+//         currentPrice: 4.50,
+//         originalPrice: 6.00,
+//         discount: "20% Off",
+//         colors: [
+//           {
+//             color: "#8C474C"
+//           },
+//           {
+//             color: "#861819"
+//           },
+//           {
+//             color: "#96547C"
+//           },
+//           {
+//             color: "#A84954"
+//           }
+//         ],
+//         moreColors: 2
+//       }
+// ];
 const filters = [
     // { name: "Lipstick", class: "" },
     // { name: "SUGAR", class: "" },
@@ -588,16 +588,207 @@ function filterProducts() {
     return filteredProducts;
 }
 
-// Function to render products, handle wishlist and cart functionality
+// // Function to render products, handle wishlist and cart functionality
+// async function renderProducts() {
+//     const productsContainer = document.getElementById('products-container');
+//     productsContainer.innerHTML = '';
+
+//     const userId = localStorage.getItem("userId");
+//     let wishlist = [];
+//     let cart = [];
+
+//     // Fetch the user's wishlist and cart if logged in
+//     if (userId) {
+//         try {
+//             const response = await fetch(`http://localhost:3000/User/${userId}`);
+//             if (response.ok) {
+//                 const userData = await response.json();
+//                 wishlist = userData.wishlist || [];
+//                 cart = userData.orders || [];
+//             }
+//         } catch (error) {
+//             console.error("Error fetching user data:", error);
+//         }
+//     }
+
+//     // Get filtered products
+//     const filteredProducts = filterProducts();
+
+//     productsContainer.innerHTML = filteredProducts.map(product => {
+//         const isWishlisted = wishlist.some(item => item.id == product.id);
+//         let badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
+//         let colorDotsHTML = product.colors.map((color, index) => `
+//             <div class="V_color_border mx-1" data-color-index="${index}" data-color="${color.color}">
+//                 <p class="color-dot" style="background-color: ${color.color };"></p>
+//             </div>
+//         `).join('');
+//         let moreColorsHTML = product.moreColors ? `<span class="more-colors">+${product.moreColors}</span>` : '';
+
+//         return `
+//             <div class="product-card" data-id="${product.id}">
+//                 <div class="product-header px-3 pt-3">
+//                     ${badgeHTML}
+//                     <span class="ms-auto heart-container">
+//                         <i class="fa-regular fa-heart wishlist-button ${isWishlisted ? 'd-none' : ''}" data-id="${product.id}"></i>
+//                         <i class="fa-solid fa-heart wishlist-button ${isWishlisted ? '' : 'd-none'}" data-id="${product.id}" style="color: #ff0000;"></i>
+//                     </span>
+//                 </div>
+//                 <div class="product-image">
+//                     <img src="${product.image}" alt="${product.brand} ${product.name}">
+//                 </div>
+//                 <div class="product-info">
+//                     <div class="product-brand">${product.brand}</div>
+//                     <div class="product-title">${product.name}</div>
+//                     <div class="product-price">
+//                         <span class="current-price">$${product.currentPrice.toFixed(2)}</span>
+//                         <span class="original-price">$${product.originalPrice.toFixed(2)}</span>
+//                         <span class="discount">${product.discount}</span>
+//                     </div>
+//                     <div class="color-options">
+//                         ${colorDotsHTML}
+//                         ${moreColorsHTML}
+//                     </div>
+//                     <button class="add-to-cart V_add_cart" data-id="${product.id}">Add to Cart</button>
+//                 </div>
+//             </div>
+//         `;
+//     }).join('');
+
+//     document.getElementById('results-number').textContent = filteredProducts.length;
+
+//     // Event delegation for better performance
+//     document.getElementById('products-container').addEventListener('click', async (event) => {
+//         const target = event.target;
+
+//         // Handle Color Selection
+//         if (target.closest('.V_color_border')) {
+//             const colorDot = target.closest('.V_color_border');
+//             const productCard = colorDot.closest('.product-card');
+//             productCard.querySelectorAll('.V_color_border').forEach(dot => dot.style.border = '0.6px solid rgba(20, 20, 20, 0.2)');
+//             colorDot.style.border = '1px solid black';
+//             localStorage.setItem(`selectedColor_${productCard.dataset.id}`, colorDot.dataset.color);
+//         }
+
+//         // Handle Wishlist Button Click
+//         if (target.classList.contains('wishlist-button')) {
+//             event.stopPropagation();
+//             const productId = target.dataset.id;
+//             const productCard = target.closest(".product-card");
+
+//             if (!userId) {
+//                 alert("User not logged in!");
+//                 return;
+//             }
+
+//             const productDetails = filteredProducts.find(p => p.id == productId);
+//             if (!productDetails) return;
+
+//             const selectedColor = localStorage.getItem(`selectedColor_${productId}`) || null;
+
+//             const productData = {
+//                 id: productId,
+//                 image: productCard.querySelector(".product-image img").src,
+//                 brand: productCard.querySelector(".product-brand").textContent,
+//                 name: productCard.querySelector(".product-title").textContent,
+//                 currentPrice: productCard.querySelector(".current-price").textContent,
+//                 originalPrice: productCard.querySelector(".original-price").textContent,
+//                 discount: productCard.querySelector(".discount").textContent,
+//                 colors: productDetails.colors.map(color => color.color), // Store all colors
+//                 moreColors: productDetails.moreColors || null, // Store moreColors value if present
+//                 selectedColor: selectedColor
+//             };
+
+//             try {
+//                 const response = await fetch(`http://localhost:3000/User/${userId}`);
+//                 if (!response.ok) throw new Error("Failed to fetch user data");
+
+//                 const userData = await response.json();
+//                 let wishlist = userData.wishlist || [];
+
+//                 const existingIndex = wishlist.findIndex(item => item.id == productId);
+
+//                 if (existingIndex === -1) {
+//                     wishlist.push(productData);
+//                 } else {
+//                     wishlist.splice(existingIndex, 1);
+//                 }
+
+//                 await fetch(`http://localhost:3000/User/${userId}`, {
+//                     method: "PATCH",
+//                     headers: { "Content-Type": "application/json" },
+//                     body: JSON.stringify({ wishlist })
+//                 });
+
+//                 productCard.querySelector(".fa-regular").classList.toggle("d-none");
+//                 productCard.querySelector(".fa-solid").classList.toggle("d-none");
+//             } catch (error) {
+//                 console.error("Error updating wishlist:", error);
+//             }
+//         }
+
+//         // Handle Add to Cart
+//         if (target.classList.contains('V_add_cart')) {
+//             const productCard = target.closest(".product-card");
+//             const productId = productCard.dataset.id;
+//             const selectedColor = localStorage.getItem(`selectedColor_${productId}`) || null;
+
+//             if (!userId) {
+//                 alert("User not logged in!");
+//                 return;
+//             }
+
+//             let existingItem = cart.find(item => item.id == productId && item.selectedColor == selectedColor);
+
+//             if (existingItem) {
+//                 existingItem.quantity += 1;
+//             } else {
+//                 const cartItem = {
+//                     id: Date.now(),
+//                     image: productCard.querySelector(".product-image img").src,
+//                     brand: productCard.querySelector(".product-brand").textContent,
+//                     name: productCard.querySelector(".product-title").textContent,
+//                     currentPrice: parseFloat(productCard.querySelector(".current-price").textContent.replace("$", "")),
+//                     quantity: 1,
+//                     selectedColor: selectedColor
+//                 };
+//                 cart.push(cartItem);
+//                 alert("product added to cart.")
+//             }
+
+//             // Update JSON Server
+//             try {
+//                 await fetch(`http://localhost:3000/User/${userId}`, {
+//                     method: "PATCH",
+//                     headers: { "Content-Type": "application/json" },
+//                     body: JSON.stringify({ orders: cart })
+//                 });
+//             } catch (error) {
+//                 console.error("Error updating cart:", error);
+//             }
+
+//             target.textContent = 'Added!';
+//             setTimeout(() => target.textContent = 'Add to Cart', 1000);
+//         }
+//     });
+// }
+
+
+
+
+
+
+// Function to fetch products and render them
+
+
+
 async function renderProducts() {
     const productsContainer = document.getElementById('products-container');
     productsContainer.innerHTML = '';
 
     const userId = localStorage.getItem("userId");
-    let wishlist = [];
-    let cart = [];
+    let wishlist = [], cart = [];
 
-    // Fetch the user's wishlist and cart if logged in
+    // Fetch user data (wishlist & cart) if logged in
     if (userId) {
         try {
             const response = await fetch(`http://localhost:3000/User/${userId}`);
@@ -611,18 +802,35 @@ async function renderProducts() {
         }
     }
 
-    // Get filtered products
-    const filteredProducts = filterProducts();
+    // Fetch products from the JSON server (multiproducts array)
+    let products = [];
+    try {
+        const response = await fetch(`http://localhost:3000/multiproducts`);
+        if (!response.ok) throw new Error("Failed to fetch products");
+        products = await response.json();
+    } catch (error) {
+        console.error("Error fetching products:", error);
+    }
 
-    productsContainer.innerHTML = filteredProducts.map(product => {
+    // Validate unique product IDs
+    const uniqueProducts = new Map();
+    products.forEach(product => {
+        if (!uniqueProducts.has(product.id)) {
+            uniqueProducts.set(product.id, product);
+        }
+    });
+    products = Array.from(uniqueProducts.values());
+
+    // Render product cards
+    productsContainer.innerHTML = products.map(product => {
         const isWishlisted = wishlist.some(item => item.id == product.id);
-        let badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
-        let colorDotsHTML = product.colors.map((color, index) => `
-            <div class="V_color_border mx-1" data-color-index="${index}" data-color="${color.color}">
-                <p class="color-dot" style="background-color: ${color.color };"></p>
+        const badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
+        const colorDotsHTML = product.colors.map((colorObj, index) => `
+            <div class="V_color_border mx-1" data-color-index="${index}" data-color="${colorObj.color}">
+                <p class="color-dot" style="background-color: ${colorObj.color};"></p>
             </div>
         `).join('');
-        let moreColorsHTML = product.moreColors ? `<span class="more-colors">+${product.moreColors}</span>` : '';
+        const moreColorsHTML = product.moreColors ? `<span class="more-colors">+${product.moreColors}</span>` : '';
 
         return `
             <div class="product-card" data-id="${product.id}">
@@ -640,7 +848,7 @@ async function renderProducts() {
                     <div class="product-brand">${product.brand}</div>
                     <div class="product-title">${product.name}</div>
                     <div class="product-price">
-                        <span class="current-price">$${product.currentPrice.toFixed(2)}</span>
+                        <span class="current-price">$${product.price.toFixed(2)}</span>
                         <span class="original-price">$${product.originalPrice.toFixed(2)}</span>
                         <span class="discount">${product.discount}</span>
                     </div>
@@ -654,123 +862,136 @@ async function renderProducts() {
         `;
     }).join('');
 
-    document.getElementById('results-number').textContent = filteredProducts.length;
+    document.getElementById('results-number').textContent = products.length;
 
-    // Event delegation for better performance
+    setupEventListeners(products, wishlist, cart, userId);
+}
+
+function setupEventListeners(products, wishlist, cart, userId) {
+    let lastSelectedColor = null; // Store the last selected color globally
+
     document.getElementById('products-container').addEventListener('click', async (event) => {
         const target = event.target;
+        const productCard = target.closest('.product-card');
+        if (!productCard) return;
+        const productId = productCard.dataset.id;
+        let selectedColor = localStorage.getItem("selectedColor") || null;
+        const productDetails = products.find(p => p.id == productId);
 
-        // Handle Color Selection
+        // ✅ Handle Color Selection Globally
         if (target.closest('.V_color_border')) {
-            const colorDot = target.closest('.V_color_border');
-            const productCard = colorDot.closest('.product-card');
-            productCard.querySelectorAll('.V_color_border').forEach(dot => dot.style.border = '0.6px solid rgba(20, 20, 20, 0.2)');
-            colorDot.style.border = '1px solid black';
-            localStorage.setItem(`selectedColor_${productCard.dataset.id}`, colorDot.dataset.color);
+            const selectedElement = target.closest('.V_color_border');
+            selectedColor = selectedElement.dataset.color;
+
+            // Store the selected color in localStorage
+            localStorage.setItem("selectedColor", selectedColor);
+
+            // Reset the previous selection globally
+            if (lastSelectedColor && lastSelectedColor !== selectedElement) {
+                lastSelectedColor.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";
+            }
+
+            // Highlight the newly selected color
+            selectedElement.style.border = "1px solid black";
+            lastSelectedColor = selectedElement;
+
+            return;
         }
 
-        // Handle Wishlist Button Click
+        // ✅ Handle Wishlist
         if (target.classList.contains('wishlist-button')) {
             event.stopPropagation();
-            const productId = target.dataset.id;
-            const productCard = target.closest(".product-card");
+            if (!userId) return alert("User not logged in!");
 
-            if (!userId) {
-                alert("User not logged in!");
-                return;
-            }
-
-            const productDetails = filteredProducts.find(p => p.id == productId);
-            if (!productDetails) return;
-
-            const selectedColor = localStorage.getItem(`selectedColor_${productId}`) || null;
-
-            const productData = {
-                id: productId,
-                image: productCard.querySelector(".product-image img").src,
-                brand: productCard.querySelector(".product-brand").textContent,
-                name: productCard.querySelector(".product-title").textContent,
-                currentPrice: productCard.querySelector(".current-price").textContent,
-                originalPrice: productCard.querySelector(".original-price").textContent,
-                discount: productCard.querySelector(".discount").textContent,
-                colors: productDetails.colors.map(color => color.color), // Store all colors
-                moreColors: productDetails.moreColors || null, // Store moreColors value if present
-                selectedColor: selectedColor
-            };
-
-            try {
-                const response = await fetch(`http://localhost:3000/User/${userId}`);
-                if (!response.ok) throw new Error("Failed to fetch user data");
-
-                const userData = await response.json();
-                let wishlist = userData.wishlist || [];
-
-                const existingIndex = wishlist.findIndex(item => item.id == productId);
-
-                if (existingIndex === -1) {
-                    wishlist.push(productData);
-                } else {
-                    wishlist.splice(existingIndex, 1);
-                }
-
-                await fetch(`http://localhost:3000/User/${userId}`, {
-                    method: "PATCH",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ wishlist })
+            const existingIndex = wishlist.findIndex(item => item.id == productId);
+            if (existingIndex === -1) {
+                wishlist.push({
+                    id: productId,
+                    image: productDetails.image,
+                    name: productDetails.name,
+                    currentPrice: productDetails.price,
+                    originalPrice: productDetails.originalPrice,
+                    discount: productDetails.discount,
+                    colors: productDetails.colors.map(c => c.color),
+                    moreColors: productDetails.moreColors || null,
+                    selectedColor: selectedColor
                 });
-
-                productCard.querySelector(".fa-regular").classList.toggle("d-none");
-                productCard.querySelector(".fa-solid").classList.toggle("d-none");
-            } catch (error) {
-                console.error("Error updating wishlist:", error);
+            } else {
+                wishlist.splice(existingIndex, 1);
             }
+
+            await updateUserData(userId, { wishlist });
+            target.classList.toggle('d-none');
+            target.nextElementSibling.classList.toggle('d-none');
+            return;
         }
 
-        // Handle Add to Cart
+        // ✅ Handle Add to Cart
         if (target.classList.contains('V_add_cart')) {
-            const productCard = target.closest(".product-card");
-            const productId = productCard.dataset.id;
-            const selectedColor = localStorage.getItem(`selectedColor_${productId}`) || null;
+            if (!userId) return alert("User not logged in!");
 
-            if (!userId) {
-                alert("User not logged in!");
-                return;
-            }
-
-            let existingItem = cart.find(item => item.id == productId && item.selectedColor == selectedColor);
-
+            const existingItem = cart.find(item => item.id == productId && item.selectedColor == selectedColor);
             if (existingItem) {
                 existingItem.quantity += 1;
             } else {
-                const cartItem = {
-                    id: Date.now(),
-                    image: productCard.querySelector(".product-image img").src,
-                    brand: productCard.querySelector(".product-brand").textContent,
-                    name: productCard.querySelector(".product-title").textContent,
-                    currentPrice: parseFloat(productCard.querySelector(".current-price").textContent.replace("$", "")),
+                cart.push({
+                    id: Date.now(),  // ✅ Use actual product ID
+                    image: productDetails.image,
+                    name: productDetails.name,
+                    currentPrice: productDetails.price,
                     quantity: 1,
                     selectedColor: selectedColor
-                };
-                cart.push(cartItem);
-                alert("product added to cart.")
-            }
-
-            // Update JSON Server
-            try {
-                await fetch(`http://localhost:3000/User/${userId}`, {
-                    method: "PATCH",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ orders: cart })
                 });
-            } catch (error) {
-                console.error("Error updating cart:", error);
+                alert("Product added to cart.");
             }
 
+            await updateUserData(userId, { orders: cart });
             target.textContent = 'Added!';
             setTimeout(() => target.textContent = 'Add to Cart', 1000);
         }
     });
 }
+
+
+
+
+async function updateUserData(userId, updateData) {
+    try {
+        await fetch(`http://localhost:3000/User/${userId}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updateData)
+        });
+    } catch (error) {
+        console.error("Error updating user data:", error);
+    }
+}
+
+// Call render function
+renderProducts();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Add event listeners to checkboxes
 document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(checkbox => {
@@ -778,4 +999,3 @@ document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(check
         renderProducts(); // Re-render products when filters change
     });
 });
-

@@ -275,3 +275,39 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    window.location.reload = localStorage.removeItem("paymentMethod");
+    // Retrieve and apply the stored payment method when the page loads
+    const storedPaymentMethod = localStorage.getItem("paymentMethod");
+    if (storedPaymentMethod) {
+        document.querySelectorAll(".custom-radio input").forEach(radio => {
+            if (radio.getAttribute("data-method") === storedPaymentMethod) {
+                radio.checked = true; // Set checked for previously selected method
+            }
+        });
+    }
+
+    // Function to store the selected payment method in localStorage
+    function updatePaymentMethod(method) {
+        localStorage.setItem("paymentMethod", method);
+        console.log(`Payment method updated to: ${method}`);
+
+        const proceedPaymentBtn = document.querySelector(".V_proceed_payment");
+
+        proceedPaymentBtn.addEventListener("click", async function () {
+            window.location.href="/Parth/OrderDetail.html";
+        }
+    )
+    }
+
+    // Attach event listeners to all radio buttons
+    document.querySelectorAll(".custom-radio input").forEach(radio => {
+        radio.addEventListener("change", (event) => {
+            const selectedMethod = event.target.getAttribute("data-method");
+            updatePaymentMethod(selectedMethod);
+        });
+    });
+});
