@@ -780,3 +780,104 @@ function addWishList(event) {
     regularHeart.classList.toggle("d-none");
     solidHeart.classList.toggle("d-none");
 }
+//////////////////////////////////////// filter product btn //////////////////////////////////// 
+ 
+document.addEventListener('DOMContentLoaded', function() {
+    let products = [];
+    const productContainer = document.getElementById('productcontainer');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    async function fetchProducts() {
+        try {
+            const response = await fetch('http://localhost:3000/products');
+            if (!response.ok) throw new Error('Failed to fetch products');
+
+            products = await response.json();
+            console.log('Fetched products:', products);
+
+            if (products.length === 0) {
+                console.warn('No products found in the API response.');
+            }
+
+            filterProducts('Skincare'); // Change if Skincare is not available
+        } catch (error) {
+            console.error('Error fetching products:', error);
+            productContainer.innerHTML = '<p>Error loading products. Please try again later.</p>';
+        }
+    }
+
+    function displayProducts(productsToShow) {
+        console.log('Displaying products:', productsToShow);
+
+        if (!productContainer) {
+            console.error('Product container not found!');
+            return;
+        }
+
+        if (productsToShow.length === 0) {
+            productContainer.innerHTML = '<p>No products found in this category.</p>';
+            return;
+        }
+
+        let leftColumn = [];
+        let rightColumn = [];
+
+        productsToShow.forEach((product, index) => {
+            const productHTML = `
+                <div class="d-flex align-items-center A_care_margin" data-category="${product.category}">
+                    <div>
+                        <img src="${product.image}" alt="${product.name}" class="A_filter_size">
+                    </div>
+                    <div class="text-start A_filter_text">
+                        <h6>${product.name}</h6>
+                        <h5>$${product.price} ${product.oldPrice ? `<span class="text-decoration-line-through">$${product.oldPrice}</span>` : ''}</h5>
+                    </div>
+                </div>
+            `;
+
+            if (index % 2 === 0) {
+                leftColumn.push(productHTML);
+            } else {
+                rightColumn.push(productHTML);
+            }
+        });
+
+        productContainer.innerHTML = `
+            <div class="d-flex align-items-start justify-content-between">
+                <div>${leftColumn.join('')}</div>
+                <div>${rightColumn.join('')}</div>
+            </div>
+        `;
+    }
+
+    function filterProducts(category) {
+        console.log('Filtering for category:', category);
+        
+        if (!products || products.length === 0) {
+            console.error("Products array is empty or undefined.");
+            return;
+        }
+
+        const filteredProducts = products.filter(product => product.category === category);
+        console.log('Filtered products:', filteredProducts);
+
+        displayProducts(filteredProducts);
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.dataset.category;
+            console.log('Button clicked:', category);
+
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            filterProducts(category);
+        });
+    });
+
+    fetchProducts();
+});
+
+
+//////////////////////////////////////// filter product btn ////////////////////////////////////

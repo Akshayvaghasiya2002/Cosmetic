@@ -1479,4 +1479,18 @@ product-container {
   .slide-item1 {
     width: 35%; /* Show 2 items on mobile */
 }
+  #rating-container {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .rating-bars {
+      margin-left: 0 !important; /* Override the ms-5 class */
+      margin-top: 1rem;
+      width: 100%;
+  }
+  .star-rating {
+    color: #ffc107;
+    font-size: 16px;
+  }
 }

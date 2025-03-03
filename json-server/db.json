@@ -684,7 +684,7 @@
       "wishlist": []
     }
   ],
-  "likeproduct":[
+  "likeproduct": [
     {
       "id": 1,
       "title": "Koric Proteinx Superfood Cleansing Balm",
@@ -693,19 +693,58 @@
       "isBestSeller": false,
       "imageUrl": "/IMG/Akshay/bodyshot.png",
       "colors": [
-        { "name": "Pink", "code": "#FFC0CB" },
-        { "name": "Orange", "code": "#FFA500" },
-        { "name": "Gold", "code": "#FFD700" },
-        { "name": "Red", "code": "#FF0000" },
-        { "name": "Blue", "code": "#0000FF" },
-        { "name": "Green", "code": "#008000" },
-        { "name": "Purple", "code": "#800080" },
-        { "name": "Teal", "code": "#008080" },
-        { "name": "Lavender", "code": "#E6E6FA" },
-        { "name": "Coral", "code": "#FF7F50" },
-        { "name": "Mint", "code": "#98FB98" },
-        { "name": "Peach", "code": "#FFDAB9" },
-        { "name": "Sky Blue", "code": "#87CEEB" }
+        {
+          "name": "Pink",
+          "code": "#FFC0CB"
+        },
+        {
+          "name": "Orange",
+          "code": "#FFA500"
+        },
+        {
+          "name": "Gold",
+          "code": "#FFD700"
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000"
+        },
+        {
+          "name": "Blue",
+          "code": "#0000FF"
+        },
+        {
+          "name": "Green",
+          "code": "#008000"
+        },
+        {
+          "name": "Purple",
+          "code": "#800080"
+        },
+        {
+          "name": "Teal",
+          "code": "#008080"
+        },
+        {
+          "name": "Lavender",
+          "code": "#E6E6FA"
+        },
+        {
+          "name": "Coral",
+          "code": "#FF7F50"
+        },
+        {
+          "name": "Mint",
+          "code": "#98FB98"
+        },
+        {
+          "name": "Peach",
+          "code": "#FFDAB9"
+        },
+        {
+          "name": "Sky Blue",
+          "code": "#87CEEB"
+        }
       ]
     },
     {
@@ -716,19 +755,58 @@
       "isBestSeller": true,
       "imageUrl": "/IMG/Akshay/lip_balm.png",
       "colors": [
-        { "name": "Pink", "code": "#FFC0CB" },
-        { "name": "Orange", "code": "#FFA500" },
-        { "name": "Gold", "code": "#FFD700" },
-        { "name": "Red", "code": "#FF0000" },
-        { "name": "Berry", "code": "#990066" },
-        { "name": "Coral", "code": "#FF7F50" },
-        { "name": "Mauve", "code": "#E0B0FF" },
-        { "name": "Nude", "code": "#E3BC9A" },
-        { "name": "Peach", "code": "#FFDAB9" },
-        { "name": "Wine", "code": "#722F37" },
-        { "name": "Burgundy", "code": "#800020" },
-        { "name": "Rose", "code": "#FF007F" },
-        { "name": "Cherry", "code": "#DE3163" }
+        {
+          "name": "Pink",
+          "code": "#FFC0CB"
+        },
+        {
+          "name": "Orange",
+          "code": "#FFA500"
+        },
+        {
+          "name": "Gold",
+          "code": "#FFD700"
+        },
+        {
+          "name": "Red",
+          "code": "#FF0000"
+        },
+        {
+          "name": "Berry",
+          "code": "#990066"
+        },
+        {
+          "name": "Coral",
+          "code": "#FF7F50"
+        },
+        {
+          "name": "Mauve",
+          "code": "#E0B0FF"
+        },
+        {
+          "name": "Nude",
+          "code": "#E3BC9A"
+        },
+        {
+          "name": "Peach",
+          "code": "#FFDAB9"
+        },
+        {
+          "name": "Wine",
+          "code": "#722F37"
+        },
+        {
+          "name": "Burgundy",
+          "code": "#800020"
+        },
+        {
+          "name": "Rose",
+          "code": "#FF007F"
+        },
+        {
+          "name": "Cherry",
+          "code": "#DE3163"
+        }
       ]
     },
     {
@@ -739,9 +817,18 @@
       "isBestSeller": false,
       "imageUrl": "/IMG/Akshay/bodyshot.png",
       "colors": [
-        { "name": "Pink", "code": "#FFC0CB" },
-        { "name": "Orange", "code": "#FFA500" },
-        { "name": "Light Red", "code": "#FD7F7F" }
+        {
+          "name": "Pink",
+          "code": "#FFC0CB"
+        },
+        {
+          "name": "Orange",
+          "code": "#FFA500"
+        },
+        {
+          "name": "Light Red",
+          "code": "#FD7F7F"
+        }
       ]
     },
     {
@@ -752,10 +839,22 @@
       "isBestSeller": true,
       "imageUrl": "/IMG/Akshay/lip_balm.png",
       "colors": [
-        { "name": "Pink", "code": "#FFC0CB" },
-        { "name": "Hot Pink", "code": "#FF69B4" },
-        { "name": "Coral", "code": "#FF7F50" },
-        { "name": "Peach", "code": "#FFDAB9" }
+        {
+          "name": "Pink",
+          "code": "#FFC0CB"
+        },
+        {
+          "name": "Hot Pink",
+          "code": "#FF69B4"
+        },
+        {
+          "name": "Coral",
+          "code": "#FF7F50"
+        },
+        {
+          "name": "Peach",
+          "code": "#FFDAB9"
+        }
       ]
     },
     {
@@ -766,8 +865,14 @@
       "isBestSeller": true,
       "imageUrl": "/IMG/Akshay/bodyshot.png",
       "colors": [
-        { "name": "Pink", "code": "#FFC0CB" },
-        { "name": "Orange", "code": "#FFA500" }
+        {
+          "name": "Pink",
+          "code": "#FFC0CB"
+        },
+        {
+          "name": "Orange",
+          "code": "#FFA500"
+        }
       ]
     },
     {
@@ -778,9 +883,18 @@
       "isBestSeller": false,
       "imageUrl": "/IMG/Akshay/lip_balm.png",
       "colors": [
-        { "name": "Pink", "code": "#FFC0CB" },
-        { "name": "Orange", "code": "#FFA500" },
-        { "name": "Gold", "code": "#FFD700" }
+        {
+          "name": "Pink",
+          "code": "#FFC0CB"
+        },
+        {
+          "name": "Orange",
+          "code": "#FFA500"
+        },
+        {
+          "name": "Gold",
+          "code": "#FFD700"
+        }
       ]
     },
     {
@@ -791,8 +905,14 @@
       "isBestSeller": true,
       "imageUrl": "/IMG/Akshay/bodyshot.png",
       "colors": [
-        { "name": "Pink", "code": "#FFC0CB" },
-        { "name": "Orange", "code": "#FFA500" }
+        {
+          "name": "Pink",
+          "code": "#FFC0CB"
+        },
+        {
+          "name": "Orange",
+          "code": "#FFA500"
+        }
       ]
     },
     {
@@ -803,9 +923,18 @@
       "isBestSeller": false,
       "imageUrl": "/IMG/Akshay/lip_balm.png",
       "colors": [
-        { "name": "Pink", "code": "#FFC0CB" },
-        { "name": "Orange", "code": "#FFA500" },
-        { "name": "Gold", "code": "#FFD700" }
+        {
+          "name": "Pink",
+          "code": "#FFC0CB"
+        },
+        {
+          "name": "Orange",
+          "code": "#FFA500"
+        },
+        {
+          "name": "Gold",
+          "code": "#FFD700"
+        }
       ]
     },
     {
@@ -816,8 +945,14 @@
       "isBestSeller": false,
       "imageUrl": "/IMG/Akshay/bodyshot.png",
       "colors": [
-        { "name": "Pink", "code": "#FFC0CB" },
-        { "name": "Sky Blue", "code": "#87CEEB" }
+        {
+          "name": "Pink",
+          "code": "#FFC0CB"
+        },
+        {
+          "name": "Sky Blue",
+          "code": "#87CEEB"
+        }
       ]
     },
     {
@@ -828,8 +963,14 @@
       "isBestSeller": true,
       "imageUrl": "/IMG/Akshay/lip_balm.png",
       "colors": [
-        { "name": "Gray", "code": "#DCDCDC" },
-        { "name": "Beige", "code": "#F5F5DC" }
+        {
+          "name": "Gray",
+          "code": "#DCDCDC"
+        },
+        {
+          "name": "Beige",
+          "code": "#F5F5DC"
+        }
       ]
     }
   ]

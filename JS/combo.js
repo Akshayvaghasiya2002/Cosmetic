@@ -314,11 +314,9 @@ const products = [
         discount: "20% OFF",
         badge: { type: "TOP RATED", class: "badge-top-rated" },
         image: "/IMG/Akshay/bodyshot.png",
-        colors: [
-            { color: "#D69F9F" },
-            { color: "#9D2235" },
-            { color: "#CC3333" },
-            { color: "#E68FAC" }
+        images: [
+            { img: "/IMG/Akshay/redlipstickgroup.png" },
+            { img: "/IMG/Akshay/brownlipstick.png.png" },
         ],
         moreColors: 4
     },
@@ -674,12 +672,15 @@ async function renderProducts() {
     productsContainer.innerHTML = filteredProducts.map(product => {
         const isWishlisted = wishlist.some(item => item.id == product.id);
         let badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
-        let colorDotsHTML = product.colors.map((color, index) => `
-            <div class="V_color_border mx-1" data-color-index="${index}" data-color="${color.color}">
-                <p class="color-dot" style="background-color: ${color.color };"></p>
+        
+        // New image dots HTML generation
+        let imageDotsHTML = product.images ? product.images.map((imgObj, index) => `
+            <div class="V_image_border mx-1" data-image-index="${index}" data-image="${imgObj.img}">
+                <img src="${imgObj.img}" alt="Product variant ${index + 1}" class="variant-image-dot">
             </div>
-        `).join('');
-        let moreColorsHTML = product.moreColors ? `<span class="more-colors">+${product.moreColors}</span>` : '';
+        `).join('') : '';
+        
+        let moreImagesHTML = product.moreColors ? `<span class="more-images">+${product.moreColors}</span>` : '';
 
         return `
             <div class="product-card" data-id="${product.id}">
@@ -691,7 +692,7 @@ async function renderProducts() {
                     </span>
                 </div>
                 <div class="product-image">
-                    <img src="${product.image}" alt="${product.brand} ${product.name}">
+                    <img src="${product.image}" alt="${product.brand} ${product.name}" class="main-product-image">
                 </div>
                 <div class="product-info">
                     <div class="product-brand">${product.brand}</div>
@@ -701,9 +702,9 @@ async function renderProducts() {
                         <span class="original-price">$${product.originalPrice.toFixed(2)}</span>
                         <span class="discount">${product.discount}</span>
                     </div>
-                    <div class="color-options">
-                        ${colorDotsHTML}
-                        ${moreColorsHTML}
+                    <div class="variant-images">
+                        ${imageDotsHTML}
+                        ${moreImagesHTML}
                     </div>
                     <button class="add-to-cart V_add_cart" data-id="${product.id}">Add to Cart</button>
                 </div>
@@ -717,13 +718,20 @@ async function renderProducts() {
     document.getElementById('products-container').addEventListener('click', async (event) => {
         const target = event.target;
 
-        // Handle Color Selection
-        if (target.closest('.V_color_border')) {
-            const colorDot = target.closest('.V_color_border');
-            const productCard = colorDot.closest('.product-card');
-            productCard.querySelectorAll('.V_color_border').forEach(dot => dot.style.border = '0.6px solid rgba(20, 20, 20, 0.2)');
-            colorDot.style.border = '1px solid black';
-            localStorage.setItem(`selectedColor_${productCard.dataset.id}`, colorDot.dataset.color);
+        // Handle Image Selection
+        if (target.closest('.V_image_border')) {
+            const imageDot = target.closest('.V_image_border');
+            const productCard = imageDot.closest('.product-card');
+            const mainImage = productCard.querySelector('.main-product-image');
+            const newImageSrc = imageDot.dataset.image;
+            
+            // Update border styles for selected image
+            productCard.querySelectorAll('.V_image_border').forEach(dot => dot.style.border = '0.6px solid rgba(20, 20, 20, 0.2)');
+            imageDot.style.border = '1px solid black';
+            
+            // Update main product image
+            mainImage.src = newImageSrc;
+            localStorage.setItem(`selectedImage_${productCard.dataset.id}`, newImageSrc);
         }
 
         // Handle Wishlist Button Click
