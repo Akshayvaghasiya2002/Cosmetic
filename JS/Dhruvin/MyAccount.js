@@ -88,6 +88,8 @@ document.getElementById('cameraIcon').addEventListener('click', function() {
         reader.onload = function(e) {
             document.getElementById('userImage').src = e.target.result;
             document.getElementById('ds_mini_img').src = e.target.result;
+            document.getElementById('ds_offcan_img').src = e.target.result;
+
         };
         reader.readAsDataURL(file);
     }
@@ -161,9 +163,13 @@ function getUserProfileData(select = "all") {
                 document.getElementById("datePicker").value = user?.dateOfBirth || "";
                 document.getElementById("ds_mini_img").src = `${user?.selectedImage ? user?.selectedImage : '/IMG/Dhruvin/myPerson.png'}` ;
                 document.getElementById("userImage").src = `${user?.selectedImage ? user?.selectedImage : '/IMG/Dhruvin/myPerson.png'}` ;
+                document.getElementById("ds_offcan_img").src = `${user?.selectedImage ? user?.selectedImage : '/IMG/Dhruvin/myPerson.png'}` ;
                 document.getElementById("ds_person_name").innerHTML = user?.fullName.split(" ")[0] || "";
+                document.getElementById("ds_offcan_name").innerHTML = user?.fullName.split(" ")[0] || "";
                 document.getElementById("ds_person_email").innerHTML = user?.email || "";
+                document.getElementById("ds_offcan_email").innerHTML = user?.email || "";
                 document.getElementById("ds_person_num").innerHTML = user?.phoneNumber || "";
+                document.getElementById("ds_offcan_num").innerHTML = user?.phoneNumber || "";
                 // Set gender correctly
                 if (user?.gender == "Female") {
                     document.getElementById("female").checked = true;
@@ -236,7 +242,7 @@ function getUserProfileData(select = "all") {
                                             } `
                         }).join("")
 
-                        OrderId.innerHTML = html
+                        OrderId.innerHTML = html ? html : ""
             }
         })
         .catch((error) => console.error("Error fetching user data:", error));
@@ -336,7 +342,7 @@ function handleUpdateProfile(event) {
                 dateOfBirth: Date,
                 gender: gender,
                 phoneNumber: Mobile,
-                selectedImage: null, 
+                selectedImage: passwordObj?.selectedImage ? passwordObj?.selectedImage : null, 
                 addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
                 carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
                 confirmedOrders:passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
@@ -1113,9 +1119,9 @@ document.addEventListener("click", function (event) {
 
 // <!-- -------------- Deactivate  Account Popup  -------------- -->
 
-const otpFields = document.querySelectorAll('.ds_deactivate_otp');
+const otpField2 = document.querySelectorAll('.ds_deactivate_otp');
 
-otpFields.forEach((field, index) => {
+otpField2.forEach((field, index) => {
     field.addEventListener('input', (e) => {
         let value = e.target.value;
         
