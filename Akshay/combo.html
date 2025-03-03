@@ -12,316 +12,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="../CSS/combo.css">
+    <link rel="stylesheet" href="../CSS/Parth/cart.css">
     <link rel="stylesheet" href="../CSS/Parth/Search.css">
-    <link rel="stylesheet" href="../CSS/singlepage.css">
-    <link rel="stylesheet" href="/CSS/home.css">
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-
-    <style>
-        .product-card {
-            border-radius: 8px;
-            padding: 12px;
-            position: relative;
-            margin: 8px 4px;
-            transition: all 0.3s ease;
-            border: 1px solid #eee;
-            height: 350px;
-        }
-
-        .product-card:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-image {
-            height: 160px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 12px;
-            position: relative;
-        }
-
-        .product-image img {
-            max-height: 100%;
-            max-width: 100%;
-            object-fit: contain;
-        }
-
-        .badge {
-            position: absolute;
-            top: -32% !important;
-            left: 0px;
-            background-color: #2C3E50;
-            color: white;
-            padding: 3px 8px;
-            font-size: 10px;
-            font-weight: bold;
-            border-radius: 3px;
-            z-index: 1;
-        }
-
-        .wishlist-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 50%;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1;
-        }
-        .wishlist-btn:hover{
-            background-color: #3D4936;
-            transition: 0.3s;
-        }
-        .wishlist-btn i:hover{
-            color: white;
-            transition: 0.3s;
-        }
-
-        #productCarousel .product-title {
-            font-size: 14px;
-            font-weight: 500;
-            width: 92%;
-            margin-bottom: 8px;
-            text-align: center;
-            height: 36px;
-            overflow: hidden;
-            line-height: 1.5;
-            padding: 0 !important;
-        }
-
-        .price-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 8px;
-        }
-
-        .sale-price {
-            font-weight: bold;
-            font-size: 14px;
-            margin-right: 6px;
-        }
-
-        .original-price {
-            text-decoration: line-through;
-            color: #777;
-            font-size: 12px;
-            margin-right: 6px;
-        }
-
-        .discount {
-            color: #28a745;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .color-options {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 12px;
-            gap: 4px;
-            align-items: center;
-        }
-
-        .color-option {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 1px solid #ddd;
-        }
-
-        .more-colors {
-            font-size: 10px;
-            margin-left: 4px;
-            color: #777;
-        }
-
-        .add-to-cart-btn {
-            width: 100%;
-            padding: 10px;
-            background-color: white;
-            color: #333;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.5s ease;
-            font-size: 12px;
-            text-align: center;
-            
-        }
-
-        .add-to-cart-btn:hover {
-            color: rgba(255, 255, 255, 1);
-    font-weight: 400;
-    background-color: rgba(61, 73, 54, 1);
-    border-radius: 4px;
-    box-shadow: 0px -8px 10px 0px rgba(0, 0, 0, 0.2) inset;
-    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.5) inset;
- 
-        }
-
-        /* Custom styling for Owl Carousel */
-        .owl-carousel .owl-nav button.owl-prev,
-        .owl-carousel .owl-nav button.owl-next {
-            width: 40px;
-            height: 40px;
-            background-color: white !important;
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            border: 1px solid white !important;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-            transform: translateY(-50%);
-            color: black !important;
-            font-size: 20px !important;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-        }
-        .owl-carousel .owl-nav button.owl-prev:hover{
-            background-color: #3D4936 !important;
-            color: white !important;
-        }
-        .owl-carousel .owl-nav button.owl-next:hover{
-            color: white !important;
-background-color: #3D4936 !important;
-        }
-        .owl-carousel .owl-nav button.owl-prev {
-            left: -20px;
-        }
-
-        .owl-carousel .owl-nav button.owl-next {
-            right: -20px;
-        }
-
-        .owl-carousel .owl-nav button.owl-prev span,
-        .owl-carousel .owl-nav button.owl-next span {
-            position: relative;
-            top: 1px;
-            font-size: 25px;
-        }
-
-        .owl-carousel .owl-nav button.owl-prev.disabled,
-        .owl-carousel .owl-nav button.owl-next.disabled {
-            opacity: 0.5;
-            cursor: default;
-        }
-
-        .owl-theme .owl-nav {
-            margin-top: 0;
-        }
-
-        .product-carousel-container {
-            padding: 0 20px;
-            position: relative;
-        }
-
-        /* Loading indicator */
-        .loader {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .loader .spinner-border {
-            width: 3rem;
-            height: 3rem;
-        }
-
-        /* Error message */
-        .error-message {
-            text-align: center;
-            padding: 20px;
-            color: #dc3545;
-        }
-
-        .A_likeproduct_width .product-card {
-            width: auto !important;
-        }
-
-        .badge {
-            background-color: #3b4637;
-            color: #fff;
-            font-size: 10px;
-            font-weight: bold;
-            padding: 5px 12px;
-            border-radius: 5px;
-            display: inline-block;
-            position: relative;
-            text-transform: uppercase;
-        }
-
-        /* Left Ribbon Cut */
-        .badge::before {
-            content: "";
-            position: absolute;
-            left: 5px;
-            top: 100%;
-            transform: translateY(-50%) rotate(-135deg);
-            background-color: #2e382b;
-            width: 10px;
-            height: 10px;
-            clip-path: polygon(0 0, 100% 0, 0 100%);
-        }
-
-        /* Right Ribbon Sparkle */
-        .badge::after {
-            content: "";
-            position: absolute;
-            right: -5px;
-            top: -25%;
-            transform: translateY(-50%);
-            width: 15px;
-            height: 15px;
-            background-color: #717a6e;
-            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0% 50%);
-        }
-        .badge1{position: absolute;}
-    </style>
-
-    <style>
-/* Vertical Slider */
-.vertical-slider {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    overflow: hidden;
-}
-
-#sliderContainer {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    height: 100%; /* Adjust height based on design */
-    gap: 10px;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-/* Horizontal Slider */
-.slider-wrapper1 {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 10px;
-    white-space: nowrap;
-}
-    </style>
+    <!-- <link rel="stylesheet" href="../CSS/home.css"> -->
+    <script src="../JS/Parth/signUp.js"></script>
+    <script src="../JS/Parth/Cart.js"></script>
 </head>
 
 <body>
@@ -341,6 +37,8 @@ background-color: #3D4936 !important;
                             <span class="burger-line"></span>
                         </div>
                     </section>
+
+                   
                     <section class="navbar-center">
                         <span class="overlay"></span>
                         <div class="menu mt-2" id="menu">
@@ -1088,11 +786,12 @@ background-color: #3D4936 !important;
                         <div>
                             <i class="fa-solid fa-magnifying-glass" id="searchIcon" onclick="emptyNav()"></i>
                         </div>
-                        <div>
+                        <div onclick="renderWishlist()">
                             <i class="fa-regular fa-heart"></i>
                         </div>
                         <div>
-                            <i class="fa-solid fa-cart-shopping"></i>
+                            <i class="fa-solid fa-cart-shopping" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
                         </div>
                         <div>
                             <i class="fa-solid fa-user" data-bs-toggle="modal" data-bs-target="#signUpModal"></i>
@@ -1472,570 +1171,560 @@ background-color: #3D4936 !important;
             </div>
         </div>
     </section>
+
     <section>
-        <div class="container-xxl mt-5">
+        <div class="container-xxl my-4">
             <div class="row">
-                <!-- Vertical Slider (Left Side) -->
-                <div class="col-lg-2 A_verticle_slider">
-                    <div class="vertical-slider">
-                        <div class="slider-controls">
-                            <button class="control-btn prev"><i class="fa-solid fa-angle-up"></i></button>
-                        </div>
+                <!-- <button class=" A_filter_offcanvas btn-sm d-lg-none w-25" data-bs-toggle="offcanvas" data-bs-target="#filtersOffcanvas" aria-controls="filtersOffcanvas">
+                    Open Filters
+                </button> -->
 
-                        <div class="slider-wrapper" id="sliderContainer">
-                            <!-- Dynamic slider images will be inserted here -->
-                        </div>
-
-                        <div class="slider-controls">
-                            <button class="control-btn next"><i class="fa-solid fa-angle-down"></i></button>
-                        </div>
+                <!-- Offcanvas for Filters -->
+                <div class="A_offcanvas_filter offcanvas offcanvas-start" tabindex="-1" id="filtersOffcanvas"
+                    aria-labelledby="filtersOffcanvasLabel">
+                    <div class="offcanvas-header">
+                        <h5 id="filtersOffcanvasLabel" class="m-0">Filters</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
                     </div>
-                </div>
-
-                <!-- Main Product Image -->
-                <div class="col-lg-5 product-main">
-                    <img src="../IMG/Akshay/image3274.png" alt="Product Image" id="productImage">
-                </div>
-
-                <!-- Horizontal Slider (Bottom Side) -->
-                <div class="col-lg-12 A_horizontle_slider">
-                    <div class="horizontal-slider">
-                        <div class="slider-controls1">
-                            
-                        </div>
-
-                        <div class="slider-wrapper1">
-                            <!-- Dynamic horizontal slider images will be inserted here -->
-                        </div>
-
-                        <div class="slider-controls1">
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="product-container">
-                        <!-- Product header -->
-                        <div class="product-header">
-                            <h1 class="product-title" id="productName">
-                                Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm
-                                <span class="in-stock">In Stock</span>
-                            </h1>
-                            <div class="action-icons d-flex">
-                                <div id="wishlist-button-container"></div>
-                                <button class="icon-btn " data-bs-toggle="modal" data-bs-target="#shareModal"><i
-                                        class="fa-solid fa-share-nodes"></i></button>
+                    <div class="offcanvas-body">
+                        <div class="filters-container">
+                            <div class="filters-header">
+                                <button class="remove-all">Remove All</button>
                             </div>
-                        </div>
-
-                        <!-- Product description -->
-                        <p class="product-description">
-
-                        </p>
-
-                        <!-- Rating section -->
-                        <div class="rating-container">
-                            <div class="stars">★★★★☆</div>
-                            <span class="review-count">4.1 (294 Reviews)</span>
-                        </div>
-
-                        <!-- Price section -->
-                        <div class="price-container justify-content-start">
-                            <span class="current-price" id="productPrice"></span>
-                            <span class="original-price" id="productOriginalPrice"></span>
-                            <span class="discount" id="productDiscount"></span>
-                        </div>
-
-                        <!-- Shade selection -->
-                        <div class="shade-section">
-                            <label class="shade-label">
-                                Shade: <span class="shade-name">Vintage Rose</span>
-                            </label>
-
-                            <div class="color-options justify-content-start" id="colorOptions">
-
+                            <!-- Product Type Filter -->
+                            <div class="filter-section active">
+                                <div class="filter-header">
+                                    <h3>Product Type</h3>
+                                    <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                                </div>
+                                <div class="filter-content">
+                                    <label class="filter-option">
+                                        <input type="checkbox" > Lipstick
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lipstick Combo
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Balm
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Balm Combo
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Gloss
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Kit
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Liner
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Oil
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lip Tint
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-
-                        <!-- Quantity and Add to cart -->
-                        <!-- <div class="quantity-container">
-                            <button class="quantity-btn">-</button>
-                            <input type="text" class="quantity-input" value="1">
-                            <button class="quantity-btn">+</button>
-                        </div>
-
-                        <button class="add-to-cart1">Add to cart</button> -->
-                        <div id="cart-container"></div>
-
-                        <!-- Delivery section -->
-                        <div class="delivery-section">
-                            <h3 class="section-title">Delivery Details</h3>
-                            <div class="zip-container">
-                                <input type="text" class="zip-input" placeholder="Enter pin code here">
-                                <button class="check-btn1">Check</button>
+                            <!-- Brands Filter -->
+                            <div class="filter-section">
+                                <div class="filter-header">
+                                    <h3>Brands</h3>
+                                    <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                                </div>
+                                <div class="filter-content">
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Colorbar
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lakmé
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lakmé Herbals
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> L'Oréal
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Maybelline
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> SUGAR
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" > RENEE
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" > SWISS BEAUTY
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Nykaa
+                                    </label>
+                                    <button class="show-more">Show More</button>
+                                </div>
                             </div>
-                        </div>
-
-                        <!-- Available offers -->
-                        <div class="offers-section">
-                            <div class="offers-header">
-                                <h3 class="section-title">Available Offers</h3>
-                                <span class="chevron"><i class="fa-solid fa-angle-down"></i></span>
-                            </div>
-                            <div class="offers-content">
-                                <ul class="offers-list">
-                                    <li class="offer-item">- Welcome offer: Extra 10% OFF for First-Time Buyers!</li>
-                                    <li class="offer-item">- Get 6 special surprises on orders above ₹999.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="mt-5 product-info">
-        <div class="container-xxl">
-            <div class="nav-container">
-                <ul class="nav-tabs" id="productTabs" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info"
-                            type="button" role="tab" aria-controls="info" aria-selected="true">Product
-                            Information</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="benefits-tab" data-bs-toggle="tab" data-bs-target="#benefits"
-                            type="button" role="tab" aria-controls="benefits" aria-selected="false">Benefits</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="apply-tab" data-bs-toggle="tab" data-bs-target="#apply"
-                            type="button" role="tab" aria-controls="apply" aria-selected="false">How to Apply</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients"
-                            type="button" role="tab" aria-controls="ingredients"
-                            aria-selected="false">Ingredients</button>
-                    </li>
-                </ul>
-            </div>
-            <!-- <ul class="nav nav-tabs" id="productTabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info"
-                        type="button" role="tab" aria-controls="info" aria-selected="true">Product Information</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="benefits-tab" data-bs-toggle="tab" data-bs-target="#benefits"
-                        type="button" role="tab" aria-controls="benefits" aria-selected="false">Benefits</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="apply-tab" data-bs-toggle="tab" data-bs-target="#apply" type="button"
-                        role="tab" aria-controls="apply" aria-selected="false">How to Apply</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients"
-                        type="button" role="tab" aria-controls="ingredients" aria-selected="false">Ingredients</button>
-                </li>
-            </ul> -->
-            <div class="tab-content" id="productTabsContent">
-                <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
-                    <div class="mb-4">
-                        <h4 style="color: #3D4936;">Product Description</h4>
-                        <p class="text-secondary">Swiss Beauty Liquid Concealer is a must-have for anyone looking to
-                            conceal blemishes, dark circles, age spots, or pigmentation. This creamy and
-                            crease-resistant formula offers full coverage and promises a natural, no-makeup matte
-                            finish. Available in 14 shades, this easily blendable and buildable formulation suits all
-                            skin types and tones. Not only does this multi-purpose concealer reduce the appearance of
-                            redness, but it also conceals dark spots, under eyes, and covers blemishes for a
-                            crease-free, non-cakey flawless finish.</p>
-                    </div>
-
-                    <!-- Product Details -->
-                    <div class="mb-4">
-                        <h4 style="color: #3D4936;">Product Details</h4>
-                        <ul class="product-details">
-                            <li><span class="text-secondary">Imported & Mktd. by (Regd. Office):</span> Bloom Beauty
-                                Cosmetics Pvt. Ltd. Add: Unit No. 207, NDM-1, Plot No- B-2,3,4, Netaji Subhash Place,
-                                Pitampura, Delhi - 110034.</li>
-                            <li><span class="text-secondary">Mfg. For:</span> Global Beauty Group Limited. Add: RM
-                                2914C, 29/F Ho King Commercial Centre, 2-16 FA Yuen Street, Mongkok, Kowloon Hong Kong.,
-                                Delhi - 110034.</li>
-                            <li><span class="text-secondary">Shade:</span> Vintage Rose</li>
-                            <li><span class="text-secondary">Net Quantity:</span> 4.5gm</li>
-                            <li><span class="text-secondary">Dimension of Product:</span> 1.5*1.5*8 per pc (In CM)</li>
-                            <li><span class="text-secondary">Country of Origin:</span> India</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="benefits" role="tabpanel" aria-labelledby="benefits-tab">
-                    <ul class="product-details">
-                        <li>Bloom Beauty Non-Transfer Lipstick provides long-lasting wear without any smudging or
-                            feathering.</li>
-                        <li>This luxurious lipstick glides on like silk with a one swipe application that delivers
-                            incredible colour payoff.his creamy and crease-resistant formula offers full </li>
-                        <li>The non-drying, super creamy formula hydrates your lips and leaves them smoother and plumper
-                            than ever before.</li>
-                        <li>Bloom Beauty's Non-Transfer Lipstick doesn't settle into fine lines, giving you a smooth
-                            matte finish that lasts all day.</li>
-                        <li>TWith its lightweight and comfortable formula, this lipstick is perfect for anyone who loves
-                            a bold, matte look that doesn't compromise on comfort.</li>
-                    </ul>
-                </div>
-                <div class="tab-pane fade" id="apply" role="tabpanel" aria-labelledby="apply-tab">
-                    <ul class="product-details">
-                        <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.</li>
-                    </ul>
-                </div>
-                <div class="tab-pane fade" id="ingredients" role="tabpanel" aria-labelledby="ingredients-tab">
-                    <ul class="product-details">
-                        <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="rating-overview">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h4 class="mb-0 ">Customer Rating & Reviews</h4>
-                            <button type="button" class=" write-review-btn V_proceed_payment" data-bs-toggle="modal"
-                                data-bs-target="#reviewModal">
-                                Write A Review
-                            </button>
-                        </div>
-                        <div class="d-flex  align-items-center " id="rating-container">
-                            <div class=" mt-3">
-                                <div class=" me-3" style="font-size: 30px;">4.8 / 5</div>
-                                <div>
-                                    <div class="star-rating"><i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star text-secondary"></i>
+                            <!-- Colors Filter -->
+                            <div class="filter-section">
+                                <div class="filter-header">
+                                    <h3>Colors</h3>
+                                    <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                                </div>
+                                <div class="filter-content">
+                                    <div class="color-option">
+                                        <input type="checkbox" >
+                                        <span class="color-swatch" style="background-color: #8B4513;"></span>
+                                        <span>Brown</span>
                                     </div>
-                                    <small class="text-muted">(254 Reviews)</small>
+                                    <div class="color-option">
+                                        <input type="checkbox">
+                                        <span class="color-swatch" style="background-color: #FFD700;"></span>
+                                        <span>Gold</span>
+                                    </div>
+                                    <div class="color-option">
+                                        <input type="checkbox" >
+                                        <span class="color-swatch" style="background-color: #800080;"></span>
+                                        <span>Purple</span>
+                                    </div>
+                                    <div class="color-option">
+                                        <input type="checkbox">
+                                        <span class="color-swatch" style="background-color: #FF0000;"></span>
+                                        <span>Red</span>
+                                    </div>
+                                    <div class="color-option">
+                                        <input type="checkbox">
+                                        <span class="color-swatch" style="background-color: #FFC0CB;"></span>
+                                        <span>Pink</span>
+                                    </div>
+                                    <button class="show-more">Show More</button>
                                 </div>
                             </div>
-                            <div class="rating-bars ms-5">
-                                <div class="rating-bar-container">
-                                    <span class="star-number">5 <i class="fa-solid fa-star text-warning"
-                                            style="font-size: 14px;"></i></span>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-dark" style="width: 70%"></div>
-                                    </div>
+                            <!-- Finish Filter -->
+                            <div class="filter-section">
+                                <div class="filter-header">
+                                    <h3>Finish</h3>
+                                    <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
                                 </div>
-                                <div class="rating-bar-container">
-                                    <span class="star-number">4 <i class="fa-solid fa-star text-warning"
-                                            style="font-size: 14px;"></i></span>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-dark" style="width: 20%"></div>
-                                    </div>
-                                </div>
-                                <div class="rating-bar-container">
-                                    <span class="star-number">3 <i class="fa-solid fa-star text-warning"
-                                            style="font-size: 14px;"></i></span>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-dark" style="width: 5%"></div>
-                                    </div>
-                                </div>
-                                <div class="rating-bar-container">
-                                    <span class="star-number">2 <i class="fa-solid fa-star text-warning"
-                                            style="font-size: 14px;"></i></span>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-dark" style="width: 3%"></div>
-                                    </div>
-                                </div>
-                                <div class="rating-bar-container">
-                                    <span class="star-number ">1 <i class="fa-solid fa-star text-warning"
-                                            style="font-size: 14px;"></i></span>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-dark" style="width: 2%"></div>
-                                    </div>
+                                <div class="filter-content">
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Matte
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Satin
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Glossy
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Tinted
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Shiny
+                                    </label>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Individual Reviews -->
-                    <div class="reviews-container">
-                        <h3 class="mb-4">Reviews</h3>
-
-                        <!-- Review 1 -->
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="reviewer-avatar">C</div>
-                                <div>
-                                    <h6 class="mb-0">Cathy K.</h6>
-                                    <div class="star-rating">
-                                        <i class="fa-solid fa-star fs-6"></i>
-                                        <i class="fa-solid fa-star fs-6"></i>
-                                        <i class="fa-solid fa-star fs-6"></i>
-                                        <i class="fa-solid fa-star fs-6"></i>
-                                        <i class="fa-solid fa-star fs-6 text-secondary"></i>
-                                    </div>
+                            <!-- Formulation Filter -->
+                            <div class="filter-section">
+                                <div class="filter-header">
+                                    <h3>Formulation</h3>
+                                    <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
                                 </div>
-                                <div class="ms-auto review-date">26/02/25</div>
-                            </div>
-                            <div class="ps-5">
-                                <h6 class="fw-bold">Great Product</h6>
-                                <p style="font-size: 12px; width: 60%;" class="text-secondary A_review_dis">I didn't
-                                    know how effective the gel cream would be since I was skeptical of the texture, but
-                                    my sensitive skin loved it and I didn't even break out when I first started using
-                                    it. Love it!</p>
-                                <div class="review-images">
-                                    <img src="../IMG/Akshay/face.png" alt="Product image" class="img-fluid">
+                                <div class="filter-content">
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Liquid
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Solid
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Pencil
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Tint
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Cream
+                                    </label>
+                                    <button class="show-more">Show More</button>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Review 2 -->
-                        <div class="review-card">
-                            <div class="review-header">
-                                <div class="reviewer-avatar">A</div>
-                                <div>
-                                    <h6 class="mb-0">Aileen R.</h6>
-                                    <div class="star-rating">
-                                        <i class="fa-solid fa-star fs-6"></i>
-                                        <i class="fa-solid fa-star fs-6"></i>
-                                        <i class="fa-solid fa-star fs-6"></i>
-                                        <i class="fa-solid fa-star fs-6"></i>
-                                        <i class="fa-solid fa-star fs-6 text-secondary"></i>
-                                    </div>
+                            <!-- Price Filter -->
+                            <div class="filter-section">
+                                <div class="filter-header">
+                                    <h3>Price</h3>
+                                    <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
                                 </div>
-                                <div class="ms-auto review-date">12/02/24</div>
-                            </div>
-                            <div class="ps-5">
-                                <h6 class="fw-bold">Great Product</h6>
-                                <p style="font-size: 12px; width: 60%;" class="text-secondary A_review_dis">I didn't
-                                    know how effective the gel cream would be since I was skeptical of the texture, but
-                                    my sensitive skin loved it and I didn't even break out when I first started using
-                                    it. Love it!</p>
-                                <div class="review-images">
-                                    <img src="../IMG/Akshay/eyes.png" alt="Product image" class="img-fluid">
-                                    <img src="../IMG/Akshay/nail.png" alt="Product image" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Review 3 -->
-
-                        <div class="review-card hidden" id="thirdReview">
-                            <div class="review-header">
-                                <div class="reviewer-avatar">A</div>
-                                <div>
-                                    <h6 class="mb-0">Ali khan R.</h6>
-                                    <div class="star-rating">
-                                        <i class="fa-solid fa-star fs-6"></i>
-                                        <i class="fa-solid fa-star fs-6"></i>
-                                        <i class="fa-solid fa-star fs-6"></i>
-                                        <i class="fa-solid fa-star fs-6"></i>
-                                        <i class="fa-solid fa-star fs-6 text-secondary"></i>
-                                    </div>
-                                </div>
-                                <div class="ms-auto review-date">12/08/24</div>
-                            </div>
-                            <div class="ps-5">
-                                <h6 class="fw-bold">Great Product</h6>
-                                <p style="font-size: 12px; width: 60%;" class="text-secondary A_review_dis">I didn't
-                                    know how effective the gel cream would be since I was skeptical of the texture, but
-                                    my sensitive skin loved it and I didn't even break out when I first started using
-                                    it. Love it!</p>
-                                <div class="review-images">
-                                    <img src="../IMG/Akshay/eyes.png" alt="Product image" class="img-fluid">
-                                    <img src="../IMG/Akshay/hair.png" alt="Product image" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class=" text-secondary text-decoration-underline mt-3" style="font-size: 12px;"
-                        id="viewAllBtn">View All</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="reviewModalLabel">Write Your Review</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="reviewForm">
-                            <div class="mb-3">
-                                <div class="d-flex justify-content-start  align-items-center">
-                                    <div class="pe-3"><img src="../IMG/Akshay/image 3278.png" alt=""
-                                            style="width: 100px; height: 100px;"></div>
-                                    <div>
-                                        <p class="text-wrap w-75 mb-0" style="color: #3D4936;">Eveline Cosmetics Wonder
-                                            Match Creamy Liquid Matte Lipstick</p>
-                                        <div class="star-rating">
-                                            <span class="star" data-rating="1"><i class="fa-solid fa-star"
-                                                    style="color: #e0e0e0;"></i></span>
-                                            <span class="star" data-rating="2"><i class="fa-solid fa-star"
-                                                    style="color: #e0e0e0;"></i></span>
-                                            <span class="star" data-rating="3"><i class="fa-solid fa-star"
-                                                    style="color: #e0e0e0;"></i></span>
-                                            <span class="star" data-rating="4"><i class="fa-solid fa-star"
-                                                    style="color: #e0e0e0;"></i></span>
-                                            <span class="star" data-rating="5"><i class="fa-solid fa-star"
-                                                    style="color: #e0e0e0;"></i></span>
+                                <div class="filter-content">
+                                    <div class="price-slider">
+                                        <input type="range" class="price-range A_range_width" min="0" max="1000"
+                                            value="50" id="minPrice">
+                                        <input type="range" class="price-range" min="0" max="1000" value="200"
+                                            id="maxPrice">
+                                        <div class="price-inputs">
+                                            <span class="price-label mt-4">From <input type="text" id="minPriceInput"
+                                                    class="A_range_width" value="$50" readonly></span>
+                                            <span class="price-label mt-4">To <input type="text" id="maxPriceInput"
+                                                    class="A_range_width" value="$200" readonly></span>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 d-none d-lg-block">
+                    <div class="filters-container">
+                        <div class="filters-header">
+                            <h2 style="color: #3D4936;">Filters</h2>
+                            <button class="remove-all">Remove All</button>
+                        </div>
 
+                        <!-- Product Type Filter -->
+                        <div class="filter-section active">
+                            <div class="filter-header">
+                                <h3>Product Type</h3>
+                                <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                            </div>
+                            <div class="filter-content">
+                                <label class="filter-option">
+                                    <input type="checkbox" > Lipstick
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Lipstick Combo
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Lip Balm
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Lip Balm Combo
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Lip Gloss
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Lip Kit
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Lip Liner
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Lip Oil
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Lip Tint
+                                </label>
+                            </div>
+                        </div>
 
+                        <!-- Brands Filter -->
+                        <div class="filter-section">
+                            <div class="filter-header">
+                                <h3>Brands</h3>
+                                <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
                             </div>
-                            <div class="mb-3">
-                                <label for="reviewTitle" class="form-label">Review Title</label>
-                                <input type="text" class="form-control" id="reviewTitle" placeholder="Enter title"
-                                    required style="background-color: #f8f8f8;">
+                            <div class="filter-content">
+                                <label class="filter-option">
+                                    <input type="checkbox"> Colorbar
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Lakmé
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Lakmé Herbals
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> L'Oréal
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Maybelline
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> SUGAR
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" > RENEE
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" > SWISS BEAUTY
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Nykaa
+                                </label>
+                                <button class="show-more">Show More</button>
                             </div>
-                            <div class="mb-3">
-                                <label for="reviewText" class="form-label">Your Review</label>
-                                <textarea class="form-control" id="reviewText" rows="4" required
-                                    style="background-color: #f8f8f8;"></textarea>
+                        </div>
+
+                        <!-- Colors Filter -->
+                        <div class="filter-section">
+                            <div class="filter-header">
+                                <h3>Colors</h3>
+                                <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
                             </div>
-                            <div class="upload-container">
-                                <label for="fileInput" class="form-label">Add a photo or Video</label>
-                                <div class="file-input-wrapper">
-                                    <input type="file" id="fileInput" class="file-input" accept="image/*,video/*">
-                                    <div class="upload-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                            <polyline points="17 8 12 3 7 8" />
-                                            <line x1="12" y1="3" x2="12" y2="15" />
-                                        </svg>
-                                        <span class="upload-text">Click to upload or drag and drop</span>
+                            <div class="filter-content">
+                                <div class="color-option">
+                                    <input type="checkbox" >
+                                    <span class="color-swatch" style="background-color: #8B4513;"></span>
+                                    <span>Brown</span>
+                                </div>
+                                <div class="color-option">
+                                    <input type="checkbox">
+                                    <span class="color-swatch" style="background-color: #FFD700;"></span>
+                                    <span>Gold</span>
+                                </div>
+                                <div class="color-option">
+                                    <input type="checkbox" >
+                                    <span class="color-swatch" style="background-color: #800080;"></span>
+                                    <span>Purple</span>
+                                </div>
+                                <div class="color-option">
+                                    <input type="checkbox">
+                                    <span class="color-swatch" style="background-color: #FF0000;"></span>
+                                    <span>Red</span>
+                                </div>
+                                <div class="color-option">
+                                    <input type="checkbox">
+                                    <span class="color-swatch" style="background-color: #FFC0CB;"></span>
+                                    <span>Pink</span>
+                                </div>
+                                <button class="show-more">Show More</button>
+                            </div>
+                        </div>
+
+                        <!-- Finish Filter -->
+                        <div class="filter-section">
+                            <div class="filter-header">
+                                <h3>Finish</h3>
+                                <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                            </div>
+                            <div class="filter-content">
+                                <label class="filter-option">
+                                    <input type="checkbox"> Matte
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Satin
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Glossy
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Tinted
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Shiny
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Formulation Filter -->
+                        <div class="filter-section">
+                            <div class="filter-header">
+                                <h3>Formulation</h3>
+                                <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                            </div>
+                            <div class="filter-content">
+                                <label class="filter-option">
+                                    <input type="checkbox"> Liquid
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Solid
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Pencil
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Tint
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox"> Cream
+                                </label>
+                                <button class="show-more">Show More</button>
+                            </div>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div class="filter-section">
+                            <div class="filter-header">
+                                <h3>Price</h3>
+                                <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                            </div>
+                            <div class="filter-content">
+                                <div class="price-slider">
+                                    <input type="range" class="price-range A_range_width" min="0" max="1000" value="50"
+                                        id="minPrice">
+                                    <input type="range" class="price-range" min="0" max="1000" value="200"
+                                        id="maxPrice">
+                                    <div class="price-inputs">
+                                        <span class="price-label mt-4">From <input type="text" id="minPriceInput"
+                                                class="A_range_width" value="$50" readonly></span>
+                                        <span class="price-label mt-4">To <input type="text" id="maxPriceInput"
+                                                class="A_range_width" value="$200" readonly></span>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                    <div class="modal-footer justify-content-center">
-                        <!-- Added justify-content-center -->
-                        <button type="button" class="btn V_proceed_payment1" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="V_proceed_payment2" onclick="submitReview()">Submit Review</button>
+                </div>
+                <div class="col-xl-9 col-lg-8">
+                    <div class="header">
+                        <button class="A_filter_offcanvas btn-sm d-lg-none " data-bs-toggle="offcanvas"
+                            data-bs-target="#filtersOffcanvas" aria-controls="filtersOffcanvas">
+                            <i class="fa-solid fa-filter"></i>
+                        </button>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="results-count ">Showing <span id="results-number">0</span> Results</div>
+                            <div class="sort-container ">
+                                <span class="sort-text">Sort By:</span>
+                                <select class="sort-select" id="sort-select">
+                                    <option value="default">Default</option>
+                                    <option value="price-low-high">Price: Low to High</option>
+                                    <option value="price-high-low">Price: High to Low</option>
+                                    <option value="name-a-z">Name: A to Z</option>
+                                    <option value="name-z-a">Name: Z to A</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="filters" id="filters-container">
+                        <!-- Filters will be loaded dynamically -->
+                    </div>
+                    <div class="products-grid" id="products-container">
+                        <!-- Products will be loaded dynamically -->
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
-    <section>
-        <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="shareModalLabel">Share Product</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Product Info -->
-                        <div class="d-flex align-items-center mb-4">
-                            <img src="../IMG/Akshay/image 3278.png" alt="Product" class="product-img rounded me-3">
-                            <p class="m-0" style="color: #383838;">Eveline Cosmetics Wonder Match Creamy Liquid Matte
-                                Lipstick</p>
-                        </div>
-
-                        <div class="input-group">
-                            <input type="text" class="form-control" value="https://www.example.com/product/lipstick"
-                                readonly style="background-color: #f8f8f8;">
-                            <button class=" V_proceed_payment3" type="button" onclick="copyLink()">Copy URL</button>
-                        </div>
-
-                        <!-- Share Icons -->
-                        <div class="social-container mt-5">
-                            <a href="#" class="share-link">
-                                <div class="share-icon">
-                                    <img src="../IMG/Akshay/facebook.png" alt="Facebook">
-                                </div>
-                                <span>Facebook</span>
-                            </a>
-                            <a href="#" class="share-link">
-                                <div class="share-icon">
-                                    <img src="../IMG/Akshay/whatsapp.png" alt="WhatsApp">
-                                </div>
-                                <span>WhatsApp</span>
-                            </a>
-                            <a href="#" class="share-link">
-                                <div class="share-icon">
-                                    <img src="../IMG/Akshay/x.jpg" alt="X">
-                                </div>
-                                <span>X</span>
-                            </a>
-                            <a href="#" class="share-link">
-                                <div class="share-icon">
-                                    <img src="../IMG/Akshay/insta.png" alt="Instagram">
-                                </div>
-                                <span>Instagram</span>
-                            </a>
-                        </div>
-
-                        <!-- Copy Link -->
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="container py-3">
-        <div class="py-2">
-            <div class="text-start fw-bold" style="color: #3D4936; font-size: 32px;">You May Also Like</div>
-        </div>
-        <div class="owl-carousel owl-theme product-carousel" id="productCarousel" style="display: none;">
-            <!-- Products will be dynamically inserted here -->
-        </div>
-    </div>
 
     <section id="Footer"></section>
 
+    <!-- <footer class="mt-3">
+        <div class="A_container">
+            <div class="row">
+                Left Section: Logo + Social Media
+                <div class="col-lg-6 col-md-12 text-center text-md-start">
+                    <h2 class="footer-title">Bloom Beauty</h2>
+                    <p class="footer-text w-75 text-wrap mx-auto mx-md-0">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the.
+                    </p>
+                    
+                    <h5>Follow us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
 
+                Right Section: Categories + Links
+                <div class="col-lg-6 col-md-12 d-flex flex-wrap mt-3 justify-content-around">
+                    <div class="footer-section">
+                        <h3>Category</h3>
+                        <ul>
+                            <li><a href="#">Eyes</a></li>
+                            <li><a href="#">Lips</a></li>
+                            <li><a href="#">Face</a></li>
+                            <li><a href="#">Skin</a></li>
+                            <li><a href="#">Hair</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Popular Brands</h3>
+                        <ul>
+                            <li><a href="#">SWISS BEAUTY</a></li>
+                            <li><a href="#">Nykaa</a></li>
+                            <li><a href="#">MARS</a></li>
+                            <li><a href="#">RENEE</a></li>
+                            <li><a href="#">MAC</a></li>
+                            <li><a href="#">SUGAR</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Terms & Condition</a></li>
+                            <li><a href="#">Track Order</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        Footer Bottom
+        <div class="footer-bottom text-center mt-3">
+            <p>Copyright 2025 ASK Project</p>
+        </div>
+    </footer> -->
+
+
+
+    <!-- cart's offcanvas -->
+
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel" class="m-0">Cart(0)</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <hr class="m-0 mx-3">
+        <div class="offcanvas-body h-100 d-none">
+            <div class="h-100 d-flex justify-content-center flex-column align-content-center">
+                <img src="../IMG//Parth/EmptyState.png" alt="empty cart" class="V_emptycard_img mx-auto">
+                <div class="text-center">
+                    <p class="text V_oops m-0">Oops! Your cart is still empty.</p>
+                    <p class="text V_sub_oops mx-auto m-0">There is nothing in your cart.
+                        add some item.</p>
+                </div>
+                <div class="mt-4 text-center">
+                    <button class="text V_c_shopping py-2 px-3  py-md-2 px-md-3   py-xl-2 px-xl-5">Continue
+                        Shopping</button>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas-body  ">
+            <div class="d-flex flex-column justify-content-between h-100">
+                <div class="">
+                    <div id="cartContainer"></div>
+                </div>
+                <div class="mx-2">
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <p class="text V_amount m-0">Total</p>
+                        <p class="text V_amount m-0" id="totalAmount">$0.00</p>
+                    </div>
+                    <div class="mt-4 mb-4 mb-md-0  text-center  text V_c_shopping py-2 " onclick="gotoaddresspage()">
+                        Checkout
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../JS/owl.carousel.min.js"></script>
-    <script src="../JS/singlepage.js"></script>
-    <script src="../JS/Parth/SinglePage1.js"></script>
+    <script src="../JS/multiproduct.js"></script>
+    <!-- <script src="../multiproduct.js"></script> -->
+
+    <script src="../JS/navbar.js"></script>
     <!-- bootsrap scripts  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const viewAllBtn = document.getElementById('view-all-btn');
-            const additionalReview = document.getElementById('additional-review');
-            let isExpanded = false;
-
-            viewAllBtn.addEventListener('click', function () {
-                isExpanded = !isExpanded;
-                additionalReview.classList.toggle('hidden');
-                viewAllBtn.textContent = isExpanded ? 'Show Less' : 'View All';
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            fetch('../Dhruvin/Footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('Footer').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading Footer:', error));
-        });
-    </script>
-
-
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('../Dhruvin/Footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('Footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading Footer:', error));
+    });
+</script>
 
 </html>
