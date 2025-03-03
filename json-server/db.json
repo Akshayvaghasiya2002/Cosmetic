@@ -590,74 +590,183 @@
   ],
   "multiproducts": [
     {
-      "id": "ad58",
-      "fullName": "hello",
-      "email": "hi@gmail.com",
-      "password": "hello@123",
-      "dateOfBirth": "",
-      "gender": "",
-      "phoneNumber": "1234567890",
-      "selectedImage": "",
-      "addresses": [
+      "id": "25",
+      "brand": "Eveline Cosmetics",
+      "name": "Wonder Match Creamy Liquid Matte Lipstick",
+      "price": 4.5,
+      "originalPrice": 6,
+      "discount": "20% OFF",
+      "badge": {
+        "type": "TOP RATED",
+        "class": "badge-top-rated"
+      },
+      "image": "/IMG/Akshay/bodyshot.png",
+      "colors": [
         {
-          "id": 1740722669094,
-          "firstName": "Sujal",
-          "lastName": "Parajapat",
-          "mobileNumber": "0123456789",
-          "email": "hi@gmail.com",
-          "zipCode": "525252",
-          "address1": "katargam",
-          "address2": "new rise",
-          "city": "surat",
-          "state": "Gujarat",
-          "country": "India",
-          "addressType": "Home",
-          "otherType": ""
-        }
-      ],
-      "carddetails": [
-        {
-          "cardNumber": "123456789012",
-          "expiryDate": "12/2025",
-          "cvv": "12345",
-          "cardHolderName": "HELLO BETA"
+          "color": "#D69F9F"
         },
         {
-          "cardNumber": "123456789012",
-          "expiryDate": "05/2025",
-          "cvv": "12345",
-          "cardHolderName": "HELLO BETA"
+          "color": "#9D2235"
+        },
+        {
+          "color": "#CC3333"
+        },
+        {
+          "color": "#E68FAC"
         }
       ],
-      "moreColors": 4
+      "moreColors": 4,
+      "sliderImage": [
+        {
+          "image": "../../IMG/Parth/offer_1.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_2.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_3.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_4.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_2.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_3.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_4.png"
+        }
+      ]
     },
     {
       "id": "26",
-      "brand": "Eveline Cosmetics",
-      "name": "Wonder Match Creamy Liquid Matte Lipstick",
+      "brand": "MAC",
+      "name": "Glow Play Tender Talk Lip Balm",
+      "price": 4.5,
+      "originalPrice": 6,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/pink_lipstick.png",
+      "colors": [
+        {
+          "color": "#FF9EBF"
+        },
+        {
+          "color": "#EFCFCE"
+        },
+        {
+          "color": "#FFBE7D"
+        },
+        {
+          "color": "#E04F80"
+        }
+      ],
+      "moreColors": 10
+    },
+    {
+      "id": "27",
+      "brand": "SUGAR",
+      "name": "Matte As Hell Mini Crayon Lipstick - 07 Viola",
       "badge": {
         "type": "BEST SELLER",
         "class": "badge-best-seller"
       },
-      "price": 450,
-      "originalPrice": 600,
+      "price": 4.5,
+      "originalPrice": 6,
       "discount": "20% OFF",
-      "image": "/IMG/Akshay/bodyshot.png",
+      "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
         {
-          "color": "#FF7AA6"
+          "color": "#A54E4E"
         },
         {
-          "color": "#CCB9D8"
+          "color": "#8A2232"
         },
         {
-          "color": "#EC9C53"
+          "color": "#B95C5C"
         },
         {
-          "color": "#B5296A"
+          "color": "#C06A6A"
         }
       ],
-      "moreColors": 4
+      "moreColors": 2
+    },
+    {
+      "id": "28",
+      "brand": "SWISS BEAUTY",
+      "name": "Non-Transfer Lipstick",
+      "badge": {
+        "type": "BEST SELLER",
+        "class": "badge-best-seller"
+      },
+      "price": 4.5,
+      "originalPrice": 6,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/makeup.png",
+      "colors": [
+        {
+          "color": "#C88C8C"
+        },
+        {
+          "color": "#5A142A"
+        },
+        {
+          "color": "#FF2D2D"
+        },
+        {
+          "color": "#F29B9B"
+        }
+      ],
+      "moreColors": 2
+    },
+    {
+      "id": "29",
+      "brand": "COLORBAR",
+      "name": "Power Kiss Matte Lipstick",
+      "price": 4.5,
+      "originalPrice": 6,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/eyes.png",
+      "colors": [
+        {
+          "color": "#B97562"
+        },
+        {
+          "color": "#612A31"
+        },
+        {
+          "color": "#CC5B6B"
+        },
+        {
+          "color": "#843344"
+        }
+      ],
+      "moreColors": 10
+    },
+    {
+      "id": "30",
+      "brand": "COLORBAR",
+      "name": "SUGAR Matte As Hell Mini Crayon Lipstick",
+      "price": 4.5,
+      "originalPrice": 6,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/clean_balm.png",
+      "colors": [
+        {
+          "color": "#8C474C"
+        },
+        {
+          "color": "#861819"
+        },
+        {
+          "color": "#96547C"
+        },
+        {
+          "color": "#A84954"
+        }
+      ],
+      "moreColors": 2
     }
   ],
   "User": [
@@ -687,15 +796,40 @@
         }
       ],
       "id": "fdc1",
-      "wishlist": [],
       "orders": [],
-      "carddetails": [],
+      "wishlist": [
+        {
+          "id": "32",
+          "image": "/IMG/Akshay/lip_balm.png",
+          "name": "MAC Glow Play Tender Talk Lip Balm",
+          "currentPrice": 450,
+          "originalPrice": 600,
+          "discount": "20% OFF",
+          "colors": [
+            "#FFC0CB",
+            "#FFA500",
+            "#FFD700",
+            "#FF0000",
+            "#990066",
+            "#FF7F50",
+            "#E0B0FF",
+            "#E3BC9A",
+            "#FFDAB9",
+            "#722F37",
+            "#800020",
+            "#FF007F",
+            "#DE3163"
+          ],
+          "moreColors": null,
+          "selectedColor": "#FFC0CB"
+        }
+      ],
       "confirmedOrders": [
         {
-          "batchId": "batch_1740722838048",
-          "orderDate": "2025-02-28",
-          "deliveryDate": "2025-03-10",
-          "orderStatus": "cancelled",
+          "batchId": "batch_1741001506858",
+          "orderDate": "2025-03-03",
+          "deliveryDate": "2025-03-13",
+          "orderStatus": "pending",
           "totalAmount": "721",
           "shippingDetails": {
             "name": "Parth Vaghasiya",
@@ -704,359 +838,412 @@
           },
           "orders": [
             {
-              "id": "10",
+              "id": 1741000810348,
+              "image": "/IMG/Akshay/lip_balm.png",
+              "name": "MAC Glow Play Tender Talk Lip Balm",
+              "currentPrice": 450,
+              "quantity": 2,
+              "selectedColor": "#E3BC9A",
+              "orderId": "order_1741001506858",
+              "totalAmount": 900
+            }
+          ]
+        },
+        {
+          "batchId": "batch_1741003312374",
+          "orderDate": "2025-03-03",
+          "deliveryDate": "2025-03-13",
+          "orderStatus": "pending",
+          "totalAmount": "361",
+          "shippingDetails": {
+            "name": "Parth Vaghasiya",
+            "address": "163, Gadhapur TownShip, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
+            "mobile": "6352285710"
+          },
+          "orders": [
+            {
+              "id": 1741003287081,
               "image": "/IMG/Akshay/swiss.png",
               "name": "SWISS BEAUTY Cream It Up Blusher",
               "currentPrice": 450,
               "quantity": 1,
               "selectedColor": null,
-              "orderId": "order_1740722838049",
-              "totalAmount": 450
-            },
-            {
-              "id": "8",
-              "image": "/IMG/Akshay/clean_balm.png",
-              "name": "Karité Premium Superfood Cleansing Balm",
-              "currentPrice": 450,
-              "quantity": 1,
-              "selectedColor": null,
-              "orderId": "order_1740722838049",
+              "orderId": "order_1741003312374",
               "totalAmount": 450
             }
-          ],
-          "cancel": {
-            "reason": "Price of the product has now decreased",
-            "comment": "This Is Bad Product",
-            "cancelDate": "2025-02-28"
-          }
+          ]
         },
         {
-          "batchId": "batch_1740741246027",
-          "orderDate": "2025-02-28",
-          "deliveryDate": "2025-03-10",
-          "orderStatus": "return order",
-          "totalAmount": "721",
+          "batchId": "batch_1741004117649",
+          "orderDate": "2025-03-03",
+          "deliveryDate": "2025-03-13",
+          "orderStatus": "pending",
+          "totalAmount": "361",
           "shippingDetails": {
-            "name": "Sujal Parajapat",
-            "address": "katargam, new rise, surat, Gujarat, 525252, India",
-            "mobile": "0123456789"
+            "name": "Parth Vaghasiya",
+            "address": "163, Gadhapur TownShip, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
+            "mobile": "6352285710"
           },
           "orders": [
             {
-              "id": "4",
-              "image": "/IMG/Akshay/dark_pink.png",
-              "name": "COLORBAR Power Kiss Matte Lipstick",
+              "id": 1741003778922,
+              "image": "/IMG/Akshay/swiss.png",
+              "name": "SWISS BEAUTY Cream It Up Blusher",
               "currentPrice": 450,
               "quantity": 1,
               "selectedColor": null,
-              "orderId": "order_1740741246027",
-              "totalAmount": 450
-            },
-            {
-              "id": "8",
-              "image": "/IMG/Akshay/clean_balm.png",
-              "name": "Karité Premium Superfood Cleansing Balm",
-              "currentPrice": 450,
-              "quantity": 1,
-              "selectedColor": null,
-              "orderId": "order_1740741246027",
+              "orderId": "order_1741004117650",
               "totalAmount": 450
             }
-          ],
-          "returnOrder": {
-            "reason": "I was hopping for a shorter delivery time",
-            "returnDate": "2025-02-28"
-          }
+          ]
+        },
+        {
+          "batchId": "batch_1741004332787",
+          "orderDate": "2025-03-03",
+          "deliveryDate": "2025-03-13",
+          "orderStatus": "pending",
+          "totalAmount": "361",
+          "shippingDetails": {
+            "name": "Parth Vaghasiya",
+            "address": "163, Gadhapur TownShip, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
+            "mobile": "6352285710"
+          },
+          "orders": [
+            {
+              "id": 1741004325057,
+              "image": "/IMG/Akshay/pink_lipstick.png",
+              "name": "SUGAR Matte As Hell Mini Crayon Lipstick",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": null,
+              "orderId": "order_1741004332788",
+              "totalAmount": 450
+            }
+          ]
+        },
+        {
+          "batchId": "batch_1741004375727",
+          "orderDate": "2025-03-03",
+          "deliveryDate": "2025-03-13",
+          "orderStatus": "pending",
+          "totalAmount": "361",
+          "shippingDetails": {
+            "name": "Parth Vaghasiya",
+            "address": "163, Gadhapur TownShip, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
+            "mobile": "6352285710"
+          },
+          "orders": [
+            {
+              "id": 1741004365793,
+              "image": "/IMG/Akshay/lip_balm.png",
+              "name": "MAC Glow Play Tender Talk Lip Balm",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": null,
+              "orderId": "order_1741004375728",
+              "totalAmount": 450
+            }
+          ]
         }
       ]
     }
   ],
   "likeproduct": [
     {
-      "id": "1",
-      "title": "Koric Proteinx Superfood Cleansing Balm",
-      "salePrice": 450,
+      "id": "31",
+      "name": "Koric Proteinx Superfood Cleansing Balm",
+      "price": 450,
       "originalPrice": 600,
-      "isBestSeller": false,
-      "imageUrl": "/IMG/Akshay/bodyshot.png",
+      "tag": false,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
         {
           "name": "Pink",
-          "code": "#FFC0CB"
+          "color": "#FFC0CB"
         },
         {
           "name": "Orange",
-          "code": "#FFA500"
+          "color": "#FFA500"
         },
         {
           "name": "Gold",
-          "code": "#FFD700"
+          "color": "#FFD700"
         },
         {
           "name": "Red",
-          "code": "#FF0000"
+          "color": "#FF0000"
         },
         {
           "name": "Blue",
-          "code": "#0000FF"
+          "color": "#0000FF"
         },
         {
           "name": "Green",
-          "code": "#008000"
+          "color": "#008000"
         },
         {
           "name": "Purple",
-          "code": "#800080"
+          "color": "#800080"
         },
         {
           "name": "Teal",
-          "code": "#008080"
+          "color": "#008080"
         },
         {
           "name": "Lavender",
-          "code": "#E6E6FA"
+          "color": "#E6E6FA"
         },
         {
           "name": "Coral",
-          "code": "#FF7F50"
+          "color": "#FF7F50"
         },
         {
           "name": "Mint",
-          "code": "#98FB98"
+          "color": "#98FB98"
         },
         {
           "name": "Peach",
-          "code": "#FFDAB9"
+          "color": "#FFDAB9"
         },
         {
           "name": "Sky Blue",
-          "code": "#87CEEB"
+          "color": "#87CEEB"
         }
       ]
     },
     {
-      "id": "2",
-      "title": "MAC Glow Play Tender Talk Lip Balm",
-      "salePrice": 450,
+      "id": "32",
+      "name": "MAC Glow Play Tender Talk Lip Balm",
+      "price": 450,
       "originalPrice": 600,
-      "isBestSeller": true,
-      "imageUrl": "/IMG/Akshay/lip_balm.png",
+      "tag": true,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
         {
           "name": "Pink",
-          "code": "#FFC0CB"
+          "color": "#FFC0CB"
         },
         {
           "name": "Orange",
-          "code": "#FFA500"
+          "color": "#FFA500"
         },
         {
           "name": "Gold",
-          "code": "#FFD700"
+          "color": "#FFD700"
         },
         {
           "name": "Red",
-          "code": "#FF0000"
+          "color": "#FF0000"
         },
         {
           "name": "Berry",
-          "code": "#990066"
+          "color": "#990066"
         },
         {
           "name": "Coral",
-          "code": "#FF7F50"
+          "color": "#FF7F50"
         },
         {
           "name": "Mauve",
-          "code": "#E0B0FF"
+          "color": "#E0B0FF"
         },
         {
           "name": "Nude",
-          "code": "#E3BC9A"
+          "color": "#E3BC9A"
         },
         {
           "name": "Peach",
-          "code": "#FFDAB9"
+          "color": "#FFDAB9"
         },
         {
           "name": "Wine",
-          "code": "#722F37"
+          "color": "#722F37"
         },
         {
           "name": "Burgundy",
-          "code": "#800020"
+          "color": "#800020"
         },
         {
           "name": "Rose",
-          "code": "#FF007F"
+          "color": "#FF007F"
         },
         {
           "name": "Cherry",
-          "code": "#DE3163"
+          "color": "#DE3163"
         }
       ]
     },
     {
-      "id": "3",
-      "title": "Eveline Cosmetics Body Shot Collagen Regeneration 200ml",
-      "salePrice": 450,
+      "id": "33",
+      "name": "Eveline Cosmetics Body Shot Collagen Regeneration 200ml",
+      "price": 450,
       "originalPrice": 600,
-      "isBestSeller": false,
-      "imageUrl": "/IMG/Akshay/bodyshot.png",
+      "tag": false,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
         {
           "name": "Pink",
-          "code": "#FFC0CB"
+          "color": "#FFC0CB"
         },
         {
           "name": "Orange",
-          "code": "#FFA500"
+          "color": "#FFA500"
         },
         {
           "name": "Light Red",
-          "code": "#FD7F7F"
+          "color": "#FD7F7F"
         }
       ]
     },
     {
-      "id": "4",
-      "title": "SWISS BEAUTY Cream It up Blusher",
-      "salePrice": 450,
+      "id": "34",
+      "name": "SWISS BEAUTY Cream It up Blusher",
+      "price": 450,
       "originalPrice": 600,
-      "isBestSeller": true,
-      "imageUrl": "/IMG/Akshay/lip_balm.png",
+      "tag": true,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
         {
           "name": "Pink",
-          "code": "#FFC0CB"
+          "color": "#FFC0CB"
         },
         {
           "name": "Hot Pink",
-          "code": "#FF69B4"
+          "color": "#FF69B4"
         },
         {
           "name": "Coral",
-          "code": "#FF7F50"
+          "color": "#FF7F50"
         },
         {
           "name": "Peach",
-          "code": "#FFDAB9"
+          "color": "#FFDAB9"
         }
       ]
     },
     {
-      "id": "5",
-      "title": "Luxe Facial Serum",
-      "salePrice": 450,
+      "id": "35",
+      "name": "Luxe Facial Serum",
+      "price": 450,
       "originalPrice": 600,
-      "isBestSeller": true,
-      "imageUrl": "/IMG/Akshay/bodyshot.png",
+      "tag": true,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
         {
           "name": "Pink",
-          "code": "#FFC0CB"
+          "color": "#FFC0CB"
         },
         {
           "name": "Orange",
-          "code": "#FFA500"
+          "color": "#FFA500"
         }
       ]
     },
     {
-      "id": "6",
-      "title": "Glow Moisturizer",
-      "salePrice": 450,
+      "id": "36",
+      "name": "Glow Moisturizer",
+      "price": 450,
       "originalPrice": 600,
-      "isBestSeller": false,
-      "imageUrl": "/IMG/Akshay/lip_balm.png",
+      "tag": false,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
         {
           "name": "Pink",
-          "code": "#FFC0CB"
+          "color": "#FFC0CB"
         },
         {
           "name": "Orange",
-          "code": "#FFA500"
+          "color": "#FFA500"
         },
         {
           "name": "Gold",
-          "code": "#FFD700"
+          "color": "#FFD700"
         }
       ]
     },
     {
-      "id": "7",
-      "title": "Vitamin C Face Mask",
-      "salePrice": 450,
+      "id": "37",
+      "name": "Vitamin C Face Mask",
+      "price": 450,
       "originalPrice": 600,
-      "isBestSeller": true,
-      "imageUrl": "/IMG/Akshay/bodyshot.png",
+      "tag": true,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
         {
           "name": "Pink",
-          "code": "#FFC0CB"
+          "color": "#FFC0CB"
         },
         {
           "name": "Orange",
-          "code": "#FFA500"
+          "color": "#FFA500"
         }
       ]
     },
     {
-      "id": "8",
-      "title": "Hydrating Toner",
-      "salePrice": 450,
+      "id": "38",
+      "name": "Hydrating Toner",
+      "price": 450,
       "originalPrice": 600,
-      "isBestSeller": false,
-      "imageUrl": "/IMG/Akshay/lip_balm.png",
+      "tag": false,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
         {
           "name": "Pink",
-          "code": "#FFC0CB"
+          "color": "#FFC0CB"
         },
         {
           "name": "Orange",
-          "code": "#FFA500"
+          "color": "#FFA500"
         },
         {
           "name": "Gold",
-          "code": "#FFD700"
+          "color": "#FFD700"
         }
       ]
     },
     {
-      "id": "9",
-      "title": "Premium Night Cream",
-      "salePrice": 450,
+      "id": "39",
+      "name": "Premium Night Cream",
+      "price": 450,
       "originalPrice": 600,
-      "isBestSeller": false,
-      "imageUrl": "/IMG/Akshay/bodyshot.png",
+      "tag": false,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
         {
           "name": "Pink",
-          "code": "#FFC0CB"
+          "color": "#FFC0CB"
         },
         {
           "name": "Sky Blue",
-          "code": "#87CEEB"
+          "color": "#87CEEB"
         }
       ]
     },
     {
-      "id": "10",
-      "title": "Luxury Eye Cream",
-      "salePrice": 450,
+      "id": "40",
+      "name": "Luxury Eye Cream",
+      "price": 450,
       "originalPrice": 600,
-      "isBestSeller": true,
-      "imageUrl": "/IMG/Akshay/lip_balm.png",
+      "tag": true,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
         {
           "name": "Gray",
-          "code": "#DCDCDC"
+          "color": "#DCDCDC"
         },
         {
           "name": "Beige",
-          "code": "#F5F5DC"
+          "color": "#F5F5DC"
         }
       ]
     }
