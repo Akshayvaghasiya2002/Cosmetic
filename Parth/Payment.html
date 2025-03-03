@@ -102,7 +102,7 @@
                                 <h2 class="accordion-header" id="headingOne">
                                     <div class="d-flex align-content-center mx-3 mx-sm-5 px-xl-3">
                                         <label class="custom-radio">
-                                            <input type="radio" name="name" class="hidden-radio">
+                                            <input type="radio" name="payment" class="hidden-radio" data-bs-toggle="collapse" data-method="Pay on Delivery">
                                             <span class="radio-circle"></span>
                                         </label>
                                         <button class="accordion-button" type="button">
@@ -115,13 +115,11 @@
                                 <h2 class="accordion-header" id="headingTwo">
                                     <div class="d-flex align-content-center mx-3 mx-sm-5 px-xl-3">
                                         <label class="custom-radio">
-                                            <input type="radio" name="name" class="hidden-radio"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                            <input type="radio" name="payment" class="hidden-radio"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"  data-method=" Credit card / Debit Card">
                                             <span class="radio-circle"></span>
                                         </label>
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                            aria-expanded="false" aria-controls="collapseTwo">
+                                        <button class="accordion-button collapsed" >
                                             Credit card / Debit Card
                                         </button>
                                     </div>
@@ -165,13 +163,11 @@
                                 <h2 class="accordion-header" id="headingThree">
                                     <div class="d-flex align-content-center mx-3 mx-sm-5 px-xl-3">
                                         <label class="custom-radio">
-                                            <input type="radio" name="name" class="hidden-radio "
-                                                data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                            <input type="radio" name="payment" class="hidden-radio "
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree" data-method="Net banking">
                                                 <span class="radio-circle"></span>
                                         </label>
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                            aria-expanded="false" aria-controls="collapseThree">
+                                        <button class="accordion-button collapsed" >
                                             Net banking
                                         </button>
                                     </div>
@@ -190,50 +186,66 @@
                                         </div>
                                         <div class="d-flex flex-wrap justify-content-between">
                                             <div class="V_bank_width">
+                                                <div class="d-flex justify-content-center">
                                                 <img src="../IMG/Parth/citi bank.png" alt="citi bank"
                                                     class="V_bank mx-auto">
+                                                </div>
                                                 <p class="text V_bank_name text-center mt-2">Citi
                                                     Bank</p>
                                             </div>
                                             <div class="V_bank_width">
+                                                <div class="d-flex justify-content-center">
                                                 <img src="../IMG/Parth/walse fargo bank.png" alt="Wells Fargo Bank"
                                                     class="V_bank mx-auto">
+                                                </div>
                                                 <p class="text V_bank_name text-center mt-2">Wells Fargo
                                                     Bank</p>
                                             </div>
                                             <div class="V_bank_width">
+                                                <div class="d-flex justify-content-center">
                                                 <img src="../IMG/Parth/capital one.png" alt="Capital One Bank"
                                                     class="V_bank mx-auto">
+                                                </div>
                                                 <p class="text V_bank_name text-center mt-2">Capital One
                                                     Bank</p>
                                             </div>
                                             <div class="V_bank_width">
+                                                <div class="d-flex justify-content-center">
                                                 <img src="../IMG/Parth/TD bank.png" alt="TD Bank"
                                                     class="V_bank mx-auto">
+                                                </div>
                                                 <p class="text V_bank_name text-center mt-2">TD
                                                     Bank</p>
                                             </div>
                                             <div class="V_bank_width">
+                                                <div class="d-flex justify-content-center">
                                                 <img src="../IMG/Parth/citi bank.png" alt="citi bank"
                                                     class="V_bank mx-auto">
+                                                </div>
                                                 <p class="text V_bank_name text-center mt-2">Citi
                                                     Bank</p>
                                             </div>
                                             <div class="V_bank_width">
+                                                <div class="d-flex justify-content-center">
                                                 <img src="../IMG/Parth/capital one.png" alt="Capital One Bank"
                                                     class="V_bank mx-auto">
+                                                </div>
                                                 <p class="text V_bank_name text-center mt-2">Capital One
                                                     Bank</p>
                                             </div>
                                             <div class="V_bank_width">
+                                                <div class="d-flex justify-content-center">
                                                 <img src="../IMG/Parth/citi bank.png" alt="citi bank"
                                                     class="V_bank mx-auto">
+                                                </div>
                                                 <p class="text V_bank_name text-center mt-2">Citi
                                                     Bank</p>
                                             </div>
                                             <div class="V_bank_width">
+                                                <div class="d-flex justify-content-center">
                                                 <img src="../IMG/Parth/walse fargo bank.png" alt="Wells Fargo Bank"
                                                     class="V_bank mx-auto">
+                                                </div>
                                                 <p class="text V_bank_name text-center mt-2">Wells Fargo
                                                     Bank</p>
                                             </div>
@@ -243,8 +255,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-center text V_proceed_payment V_wid align-content-center ms-2  my-5 my-md-5"
-                        >
+
+                    <div class="text-center text V_proceed_payment V_wid align-content-center ms-2  my-5 my-md-5" >
                         Pay <span id="V_total"> $1350 </span>
                     </div>
                 </div>

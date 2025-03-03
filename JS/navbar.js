@@ -780,3 +780,108 @@ function addWishList(event) {
     regularHeart.classList.toggle("d-none");
     solidHeart.classList.toggle("d-none");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    let products = [];
+    const productContainer = document.getElementById('product-container');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    console.log(filterButtons);
+    
+
+    // Fetch products from JSON server
+    async function fetchProducts() {
+        try {
+            const response = await fetch('http://localhost:3000/products');
+            products = await response.json();
+            console.log(products);
+            
+            // Initially filter by Skincare (first category)
+            filterProducts('Skincare');
+        } catch (error) {
+            console.error('Error fetching products:', error);
+            productContainer.innerHTML = '<p>Error loading products. Please try again later.</p>';
+        }
+    }
+
+    // Display products
+    function displayProducts(productsToShow) {
+        const productsHTML = productsToShow.map(product => `
+            <div class="d-flex align-items-center A_care_margin" data-category="${product.category}">
+                <div>
+                    <img src="${product.image}" alt="${product.name}" class="A_filter_size">
+                </div>
+                <div class="text-start A_filter_text">
+                    <h6>${product.name}</h6>
+                    <h5>$${product.price} ${product.oldPrice ? `<span class="text-decoration-line-through">$${product.oldPrice}</span>` : ''}</h5>
+                </div>
+            </div>
+        `).join('');
+
+        productContainer.innerHTML = `
+            <div class="d-flex align-items-center justify-content-between">
+                <div>${productsHTML}</div>
+            </div>
+        `;
+    }
+
+    // Filter products
+    function filterProducts(category) {
+        const filteredProducts = products.filter(product => product.category === category);
+        displayProducts(filteredProducts);
+    }
+
+    // Add click event listeners to filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+            // Filter products
+            filterProducts(button.dataset.category);
+        });
+    });
+
+    // Initial fetch
+    fetchProducts();
+});

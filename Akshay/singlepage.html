@@ -310,6 +310,9 @@ background-color: #3D4936 !important;
     gap: 10px;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
 /* Horizontal Slider */
 .slider-wrapper1 {
     display: flex;
@@ -1518,8 +1521,8 @@ background-color: #3D4936 !important;
                                 Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm
                                 <span class="in-stock">In Stock</span>
                             </h1>
-                            <div class="action-icons">
-                                <button class="icon-btn"><i class="fa-regular fa-heart"></i></button>
+                            <div class="action-icons d-flex">
+                                <div id="wishlist-button-container"></div>
                                 <button class="icon-btn " data-bs-toggle="modal" data-bs-target="#shareModal"><i
                                         class="fa-solid fa-share-nodes"></i></button>
                             </div>
@@ -1537,7 +1540,7 @@ background-color: #3D4936 !important;
                         </div>
 
                         <!-- Price section -->
-                        <div class="price-container">
+                        <div class="price-container justify-content-start">
                             <span class="current-price" id="productPrice"></span>
                             <span class="original-price" id="productOriginalPrice"></span>
                             <span class="discount" id="productDiscount"></span>
@@ -1549,19 +1552,20 @@ background-color: #3D4936 !important;
                                 Shade: <span class="shade-name">Vintage Rose</span>
                             </label>
 
-                            <div class="color-options" id="colorOptions">
+                            <div class="color-options justify-content-start" id="colorOptions">
 
                             </div>
                         </div>
 
                         <!-- Quantity and Add to cart -->
-                        <div class="quantity-container">
+                        <!-- <div class="quantity-container">
                             <button class="quantity-btn">-</button>
                             <input type="text" class="quantity-input" value="1">
                             <button class="quantity-btn">+</button>
                         </div>
 
-                        <button class="add-to-cart1">Add to cart</button>
+                        <button class="add-to-cart1">Add to cart</button> -->
+                        <div id="cart-container"></div>
 
                         <!-- Delivery section -->
                         <div class="delivery-section">
@@ -1997,7 +2001,6 @@ background-color: #3D4936 !important;
     <section id="Footer"></section>
 
 
-    <script src="../JS/"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../JS/singlepage.js"></script>

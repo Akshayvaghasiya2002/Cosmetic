@@ -588,7 +588,7 @@
       "moreColors": 2
     }
   ],
-  "User": [
+  "multiproducts": [
     {
       "id": "ad58",
       "fullName": "hello",
@@ -629,6 +629,67 @@
           "cardHolderName": "HELLO BETA"
         }
       ],
+      "moreColors": 4
+    },
+    {
+      "id": "26",
+      "brand": "Eveline Cosmetics",
+      "name": "Wonder Match Creamy Liquid Matte Lipstick",
+      "badge": {
+        "type": "BEST SELLER",
+        "class": "badge-best-seller"
+      },
+      "price": 450,
+      "originalPrice": 600,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/bodyshot.png",
+      "colors": [
+        {
+          "color": "#FF7AA6"
+        },
+        {
+          "color": "#CCB9D8"
+        },
+        {
+          "color": "#EC9C53"
+        },
+        {
+          "color": "#B5296A"
+        }
+      ],
+      "moreColors": 4
+    }
+  ],
+  "User": [
+    {
+      "fullName": "Parth Vaghsiya",
+      "phoneNumber": "7284854011",
+      "email": "parth@gmail.com",
+      "dateOfBirth": "2002-11-29",
+      "gender": "Male",
+      "password": "Parth@123",
+      "selectedImage": null,
+      "addresses": [
+        {
+          "id": 1740720796372,
+          "firstName": "Parth",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "6352285710",
+          "email": "parth@gmail.com",
+          "zipCode": "395004",
+          "address1": "163, Gadhapur TownShip, Pasodara, Kathodara, Surat",
+          "address2": "",
+          "city": "Surat",
+          "state": "Guj",
+          "country": "IND",
+          "addressType": "Other",
+          "otherType": "Hello Parth"
+        }
+      ],
+      "id": "fdc1",
+      "wishlist": [],
+      "orders": [],
+      "carddetails": [],
       "confirmedOrders": [
         {
           "batchId": "batch_1740722838048",
@@ -637,9 +698,9 @@
           "orderStatus": "cancelled",
           "totalAmount": "721",
           "shippingDetails": {
-            "name": "Sujal Parajapat",
-            "address": "katargam, new rise, surat, Gujarat, 525252, India",
-            "mobile": "0123456789"
+            "name": "Parth Vaghasiya",
+            "address": "163, Gadhapur TownShip, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
+            "mobile": "6352285710"
           },
           "orders": [
             {
@@ -707,9 +768,7 @@
             "returnDate": "2025-02-28"
           }
         }
-      ],
-      "orders": [],
-      "wishlist": []
+      ]
     }
   ],
   "likeproduct": [

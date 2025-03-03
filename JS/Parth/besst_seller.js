@@ -371,7 +371,7 @@ $(document).ready(async function () {
                 cart[existingItemIndex].quantity += 1;
             } else {
                 cart.push({
-                    id: product.id,
+                    id: Date.now(),
                     image: product.image,
                     brand: product.brand,
                     name: product.name,
