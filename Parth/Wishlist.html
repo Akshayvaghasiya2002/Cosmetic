@@ -17,9 +17,36 @@
     <link rel="stylesheet" href="../CSS/main.css">
     <link rel="stylesheet" href="../CSS/Parth/Wishlist.css">
 
+    <style>
+        #sliderContainer {
+            display: flex;
+            overflow-x: auto; /* Allows horizontal scrolling */
+            overflow-y: hidden; /* Prevents vertical scrolling */
+            white-space: nowrap; /* Prevents wrapping */
+            scroll-behavior: smooth; /* Smooth scrolling effect */
+            gap: 8px; /* Adds spacing between color options */
+            max-width: 100%;
+            padding-bottom: 0px;
+            
+            /* Hide scrollbar but keep scrolling enabled */
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        #sliderContainer::-webkit-scrollbar {
+            display: none; /* Hides scrollbar in Chrome, Safari, Edge */
+        }      
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
 </head>
 
 <body>
+
+
+    
 
     <section class="d-none">
         <div class="d_container ">

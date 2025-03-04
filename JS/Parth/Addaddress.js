@@ -618,6 +618,16 @@ async function fetchOrders() {
     } catch (error) {
         console.error("Error fetching orders:", error);
     }
+
+
+    const currentDate = new Date(); // Define current date
+    const deliveryDate = new Date(currentDate); // Create a new date object
+    deliveryDate.setDate(currentDate.getDate() + 10); // Add 10 days
+    
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    document.getElementById("expiryDtae").innerText = deliveryDate.toLocaleDateString("en-US", options);
+    
+    
 }
 
 // Call function on page load

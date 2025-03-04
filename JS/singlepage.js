@@ -104,14 +104,14 @@ function displayPwd1() {
     displayNewPassword.classList.toggle("d-none");
     const hideNewPassword = document.getElementById("openeye1");
     hideNewPassword.classList.toggle('d-none');
-   
+
     const newPassword = document.getElementById("pwd1");
     if (newPassword.type === "password") {
         newPassword.type = "text";
     } else {
         newPassword.type = "password";
     }
-    
+
 }
 
 function displayPwd2() {
@@ -120,7 +120,7 @@ function displayPwd2() {
     displayConfirmPassword.classList.toggle("d-none");
     const hideConfirmPassword = document.getElementById("openeye2");
     hideConfirmPassword.classList.toggle('d-none');
-   
+
     const confirmPassword = document.getElementById("pwd2");
     if (confirmPassword.type === "password") {
         confirmPassword.type = "text";
@@ -136,7 +136,7 @@ function displayPwd3() {
     displayConfirmPassword.classList.toggle("d-none");
     const hideConfirmPassword = document.getElementById("openeye3");
     hideConfirmPassword.classList.toggle('d-none');
-   
+
     const confirmPassword = document.getElementById("pwd3");
     if (confirmPassword.type === "password") {
         confirmPassword.type = "text";
@@ -220,7 +220,7 @@ const otpFields = document.querySelectorAll('.V_otp_6');
 otpFields.forEach((field, index) => {
     field.addEventListener('input', (e) => {
         let value = e.target.value;
-        
+
         // Ensure only a single digit is entered
         e.target.value = value.replace(/\D/g, '').slice(0, 1);
 
@@ -239,12 +239,12 @@ otpFields.forEach((field, index) => {
 
 //////////////////////////////////////// first part  left side////////////////////////////////////////////////////////////
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const wrapper = document.querySelector('.slider-wrapper');
     const slides = document.querySelectorAll('.slide-item');
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
-    
+
     let currentIndex = 0;
     const slideHeight = slides[0].offsetHeight;
     const maxIndex = slides.length - 5; // Show 5 slides at once
@@ -283,55 +283,55 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 ///////////////////////////////////// first part right side //////////////////////////////////////////////////////
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Color selection
     const colorOptions = document.querySelectorAll('.color-option');
     colorOptions.forEach(option => {
-      option.addEventListener('click', function() {
-        colorOptions.forEach(opt => opt.classList.remove('selected'));
-        this.classList.add('selected');
-      });
+        option.addEventListener('click', function () {
+            colorOptions.forEach(opt => opt.classList.remove('selected'));
+            this.classList.add('selected');
+        });
     });
-    
+
     // // Quantity buttons
     // const minusBtn = document.querySelector('.quantity-btn:first-child');
     // const plusBtn = document.querySelector('.quantity-btn:last-child');
     // const quantityInput = document.querySelector('.quantity-input');
-    
+
     // minusBtn.addEventListener('click', function() {
     //   let value = parseInt(quantityInput.value);
     //   if (value > 1) {
     //     quantityInput.value = value - 1;
     //   }
     // });
-    
+
     // plusBtn.addEventListener('click', function() {
     //   let value = parseInt(quantityInput.value);
     //   quantityInput.value = value + 1;
     // });
-    
+
     // Offers dropdown
     const offersSection = document.querySelector('.offers-section');
     const offersHeader = document.querySelector('.offers-header');
-    
-    offersHeader.addEventListener('click', function() {
-      offersSection.classList.toggle('expanded');
-      // Ensure the offers content is toggled
-      const offersContent = offersSection.querySelector('.offers-content');
-      if (offersSection.classList.contains('expanded')) {
-          offersContent.style.maxHeight = offersContent.scrollHeight + "px"; // Set max-height to the scroll height
-      } else {
-          offersContent.style.maxHeight = "0"; // Collapse
-      }
+
+    offersHeader.addEventListener('click', function () {
+        offersSection.classList.toggle('expanded');
+        // Ensure the offers content is toggled
+        const offersContent = offersSection.querySelector('.offers-content');
+        if (offersSection.classList.contains('expanded')) {
+            offersContent.style.maxHeight = offersContent.scrollHeight + "px"; // Set max-height to the scroll height
+        } else {
+            offersContent.style.maxHeight = "0"; // Collapse
+        }
     });
-  });
+});
 
 //   //////////////////////////////// review all ////////////////////////////////
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Get the button and review elements
     const viewAllBtn = document.getElementById('viewAllBtn');
     const thirdReview = document.getElementById('thirdReview');
-    
+
     // Add CSS for hidden class if not already in your CSS
     const style = document.createElement('style');
     style.textContent = `
@@ -340,25 +340,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
-    
+
     // Track if reviews are expanded
     let isExpanded = false;
-    
+
     // Add click event listener to the button
-    viewAllBtn.addEventListener('click', function() {
+    viewAllBtn.addEventListener('click', function () {
         // Toggle the expanded state
         isExpanded = !isExpanded;
-        
+
         // Toggle the hidden class on the third review
         thirdReview.classList.toggle('hidden');
-        
+
         // Update button text
         viewAllBtn.textContent = isExpanded ? 'Show Less' : 'View All';
     });
 });
 // ////////////////////////////////// review model /////////////////////////////////////
 document.querySelectorAll('.star').forEach(star => {
-    star.addEventListener('click', function() {
+    star.addEventListener('click', function () {
         const rating = this.dataset.rating;
         document.querySelectorAll('.star').forEach(s => {
             s.classList.remove('active');
@@ -378,7 +378,7 @@ function submitReview() {
     if (title && text && rating) {
         alert('Review submitted successfully!');
         // Here you would typically send the data to your backend
-        
+
         // Close modal and reset form
         const modal = bootstrap.Modal.getInstance(document.getElementById('reviewModal'));
         modal.hide();
@@ -393,74 +393,77 @@ function copyLink() {
     const input = document.querySelector('.input-group input');
     input.select();
     document.execCommand('copy');
-    
+
     const button = document.querySelector('.input-group button');
     const originalText = button.textContent;
     button.textContent = 'Copied!';
-    
+
     setTimeout(() => {
         button.textContent = originalText;
     }, 2000);
 }
 /////////////////////////// horizontle slider //////////////////////////////////
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const sliderWrapper = document.querySelector('.slider-wrapper');
-            const prevBtn = document.querySelector('.prev');
-            const nextBtn = document.querySelector('.next');
-            const slideItems = document.querySelectorAll('.slide-item');
-            
-            // Calculate variables for slider movement
-            const slideWidth = slideItems[0].offsetWidth;
-            const visibleSlides = Math.floor(sliderWrapper.offsetWidth / slideWidth);
-            const totalSlides = slideItems.length;
-            let currentIndex = 0;
-            
-            // Initialize slider
+document.addEventListener('DOMContentLoaded', function () {
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    const slideItems = document.querySelectorAll('.slide-item');
+
+    // Calculate variables for slider movement
+    const slideWidth = slideItems[0].offsetWidth;
+    const visibleSlides = Math.floor(sliderWrapper.offsetWidth / slideWidth);
+    const totalSlides = slideItems.length;
+    let currentIndex = 0;
+
+    // Initialize slider
+    updateSliderPosition();
+
+    // Add event listeners for buttons
+    prevBtn.addEventListener('click', function () {
+        if (currentIndex > 0) {
+            currentIndex--;
             updateSliderPosition();
-            
-            // Add event listeners for buttons
-            prevBtn.addEventListener('click', function() {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateSliderPosition();
-                }
-            });
-            
-            nextBtn.addEventListener('click', function() {
-                if (currentIndex < totalSlides - visibleSlides) {
-                    currentIndex++;
-                    updateSliderPosition();
-                }
-            });
-            
-            // Function to update slider position
-            function updateSliderPosition() {
-                const translateX = -currentIndex * slideWidth;
-                sliderWrapper.style.transform = `translateX(${translateX}px)`;
-                
-                // Update button states (optional)
-                prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-                nextBtn.style.opacity = currentIndex >= totalSlides - visibleSlides ? '0.5' : '1';
-            }
-            
-            // Handle window resize (recalculate visible slides)
-            window.addEventListener('resize', function() {
-                const newVisibleSlides = Math.floor(sliderWrapper.offsetWidth / slideItems[0].offsetWidth);
-                
-                // Adjust current index if needed
-                if (currentIndex > totalSlides - newVisibleSlides) {
-                    currentIndex = totalSlides - newVisibleSlides;
-                    if (currentIndex < 0) currentIndex = 0;
-                    updateSliderPosition();
-                }
-            });
-        });
+        }
+    });
+
+    nextBtn.addEventListener('click', function () {
+        if (currentIndex < totalSlides - visibleSlides) {
+            currentIndex++;
+            updateSliderPosition();
+        }
+    });
+
+    // Function to update slider position
+    function updateSliderPosition() {
+        const translateX = -currentIndex * slideWidth;
+        sliderWrapper.style.transform = `translateX(${translateX}px)`;
+
+        // Update button states (optional)
+        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        nextBtn.style.opacity = currentIndex >= totalSlides - visibleSlides ? '0.5' : '1';
+    }
+
+    // Handle window resize (recalculate visible slides)
+    window.addEventListener('resize', function () {
+        const newVisibleSlides = Math.floor(sliderWrapper.offsetWidth / slideItems[0].offsetWidth);
+
+        // Adjust current index if needed
+        if (currentIndex > totalSlides - newVisibleSlides) {
+            currentIndex = totalSlides - newVisibleSlides;
+            if (currentIndex < 0) currentIndex = 0;
+            updateSliderPosition();
+        }
+    });
+});
 // //////////////////////////////////// like product slider /////////////////////////////////////////////
-$(document).ready(function(){
+
+
+
+$(document).ready(function () {
     // API endpoint for json-server
     const API_URL = 'http://localhost:3000/likeproduct';
-    
+
     // Fetch products from JSON server
     fetch(API_URL)
         .then(response => {
@@ -472,13 +475,13 @@ $(document).ready(function(){
         .then(products => {
             // Hide loading indicator
             $('#loading').hide();
-            
+
             // Populate carousel with products
             populateProductCarousel(products);
-            
+
             // Show carousel
             $('#productCarousel').show();
-            
+
             // Initialize Owl Carousel
             initializeOwlCarousel();
         })
@@ -487,47 +490,53 @@ $(document).ready(function(){
             $('#loading').hide();
             $('#error').show();
         });
-    
+
     // Function to populate carousel with products
     function populateProductCarousel(products) {
         const carousel = $('#productCarousel');
-        
+
         products.forEach(product => {
             let colorOptionsHtml = '';
-            
+
             // Generate color options
             product.colors.forEach((color, index) => {
                 if (index < 3) {
-                    colorOptionsHtml += `<div class="color-option" style="background-color: ${color.code};"></div>`;
+                    colorOptionsHtml += `
+                    <div class="more-colors V_color_border">
+                    <div class="color-option" style="background-color: ${color.color};"></div>
+                    </div>`;
                 }
             });
-            
+
             // Add "more colors" text if applicable
             if (product.colors.length > 3) {
                 colorOptionsHtml += `<span class="more-colors">+${product.colors.length - 3}</span>`;
             }
-            
+
             // Calculate discount percentage
-            const discountPercentage = Math.round((1 - (product.salePrice / product.originalPrice)) * 100);
-            
+            const discountPercentage = Math.round((1 - (product.price / product.originalPrice)) * 100);
+
             // Create product card HTML
             const productHtml = `
                 <div class="item A_likeproduct_width">
                     <div class="product-card">
                     <div>
-                    ${product.isBestSeller ? '<div class="badge1"><div class="badge ">BEST SELLER</div> </div>' : ''}
+                    ${product.tag ? '<div class="badge1"><div class="badge ">BEST SELLER</div> </div>' : ''}
                     <button class="wishlist-btn" data-product-id="${product.id}">
-                        <i class="far fa-heart"></i>
+                        <i class="fa-regular fa-heart" ></i>
+                         <i class="fa-solid fa-heart d-none" style="color: #ff0000;"></i>
                     </button>
                     </div>
+                    <a href="../../Akshay/singlepage.html?id=${product.id}&array=likeproduct">
                         <div class="product-image">
-                            <img src="${product.imageUrl}" alt="${product.title}">
+                            <img src="${product.image}" alt="${product.name}">
                         </div>
-                        <h3 class="product-title">${product.title}</h3>
+                        </a>
+                        <h3 class="product-title">${product.name}</h3>
                         <div class="price-container">
-                            <span class="sale-price">$${product.salePrice}</span>
+                            <span class="sale-price">$${product.price}</span>
                             <span class="original-price">$${product.originalPrice}</span>
-                            <span class="discount">${discountPercentage}% OFF</span>
+                            <span class="discount">${product.discount}</span>
                         </div>
                         <div class="color-options">
                             ${colorOptionsHtml}
@@ -536,19 +545,19 @@ $(document).ready(function(){
                     </div>
                 </div>
             `;
-            
+
             // Append to carousel
             carousel.append(productHtml);
         });
     }
-    
+
     // Initialize Owl Carousel
     function initializeOwlCarousel() {
         $('#productCarousel').owlCarousel({
             loop: true,
             margin: 10,
             nav: true,
-            navText: ['<span>&lt;</span>','<span>&gt;</span>'],
+            navText: ['<span>&lt;</span>', '<span>&gt;</span>'],
             dots: false,
             responsive: {
                 0: {
@@ -565,35 +574,243 @@ $(document).ready(function(){
                 }
             }
         });
-        
+
         // Add event listeners to dynamically created elements
-        
+
         // Wishlist button functionality
-        $(document).on('click', '.wishlist-btn', function() {
+        $(document).on('click', '.wishlist-btn', function () {
             const productId = $(this).data('product-id');
             console.log(`Adding product ID ${productId} to wishlist`);
             $(this).find('i').toggleClass('far fas');
         });
-        
+
         // Add to cart button functionality
-        $(document).on('click', '.add-to-cart-btn', function() {
+        $(document).on('click', '.add-to-cart-btn', function () {
             const productId = $(this).data('product-id');
             console.log(`Adding product ID ${productId} to cart`);
-            
+
             // Provide visual feedback
             const originalText = $(this).text();
             $(this).text('Added!').prop('disabled', true);
-            
+
             setTimeout(() => {
                 $(this).text(originalText).prop('disabled', false);
             }, 2000);
         });
+
+      
         
-        // Color option functionality
-        $(document).on('click', '.color-option', function() {
-            $(this).closest('.color-options').find('.color-option').css('border-color', '#ddd');
-            $(this).css('border-color', '#333');
-        });
+        $(document).on('click', '.color-option', function () {
+            const selectedColor = $(this).css('background-color'); // Get clicked color
+            const colorContainer = $(this).closest('.more-colors'); // Get the parent div
+        
+            // Retrieve the last selected color from localStorage
+            let lastSelectedColor = localStorage.getItem("YouMayLikeSelectedColor");
+        
+            // Reset the border of the previously selected color globally
+            if (lastSelectedColor) {
+                $('.V_color_border').each(function () {
+                    if ($(this).find('.color-option').css('background-color') === lastSelectedColor) {
+                        $(this).css('border-color', '#ddd'); // Reset border
+                    }
+                });
+            }
+        
+            // Store only the selected color globally
+            localStorage.setItem("YouMayLikeSelectedColor", selectedColor);
+        
+            // Update border for the newly selected color globally
+            $('.V_color_border').css('border-color', '#ddd'); // Reset all borders
+            colorContainer.css('border-color', '#333'); // Highlight selected color
+        
+            console.log(`Stored globally selected color: ${selectedColor}`);
+        });    
     }
+
+
+
+
+    $(document).on("click", ".wishlist-btn", async function () {
+        const productId = String($(this).data("product-id")); // Ensure ID is stored as string
+        const userId = localStorage.getItem("userId");
+    
+        if (!userId) {
+            alert("User not logged in!");
+            return;
+        }
+    
+        const wishlistBtn = $(this);
+        const emptyHeart = wishlistBtn.find(".fa-regular.fa-heart");
+        const redHeart = wishlistBtn.find(".fa-solid.fa-heart");
+    
+        try {
+            let userResponse = await fetch(`http://localhost:3000/User/${userId}`);
+            if (!userResponse.ok) throw new Error("User not found");
+    
+            let userData = await userResponse.json();
+            if (!userData.wishlist) userData.wishlist = []; // Ensure wishlist array exists
+    
+            let existingItemIndex = userData.wishlist.findIndex(item => item.id === productId);
+    
+            if (existingItemIndex === -1) {
+                // Product not in wishlist, add it
+                let productResponse = await fetch(`http://localhost:3000/likeproduct/${productId}`);
+                if (!productResponse.ok) throw new Error("Product not found");
+    
+                let productDetails = await productResponse.json();
+                const selectedColor = productDetails.colors.length > 0 ? productDetails.colors[0].color : null;
+    
+                userData.wishlist.push({
+                    id: productId,
+                    image: productDetails.image,
+                    name: productDetails.name,
+                    currentPrice: productDetails.price,
+                    originalPrice: productDetails.originalPrice,
+                    discount: productDetails.discount,
+                    colors: productDetails.colors.map(c => c.color),
+                    moreColors: productDetails.moreColors || null,
+                    selectedColor: selectedColor
+                });
+    
+                await fetch(`http://localhost:3000/User/${userId}`, {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ wishlist: userData.wishlist })
+                });
+    
+                // Show red heart, hide empty heart
+                emptyHeart.addClass("d-none");
+                redHeart.removeClass("d-none");
+    
+            } else {
+                // Product is in wishlist, remove it
+                userData.wishlist.splice(existingItemIndex, 1);
+    
+                await fetch(`http://localhost:3000/User/${userId}`, {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ wishlist: userData.wishlist })
+                });
+    
+                // Show empty heart, hide red heart
+                emptyHeart.removeClass("d-none"); // Explicitly show empty heart
+                redHeart.addClass("d-none");
+            }
+        } catch (error) {
+            console.error("Error updating wishlist:", error);
+        }
+    });
+    
+    // Ensure wishlist state persists on page load
+    async function updateWishlistIcons() {
+        const userId = localStorage.getItem("userId");
+    
+        if (!userId) return;
+    
+        try {
+            let userResponse = await fetch(`http://localhost:3000/User/${userId}`);
+            if (!userResponse.ok) throw new Error("User not found");
+    
+            let userData = await userResponse.json();
+            if (!userData.wishlist) userData.wishlist = []; // Ensure wishlist exists
+    
+            $(".wishlist-btn").each(function () {
+                const productId = String($(this).data("product-id"));
+                const emptyHeart = $(this).find(".fa-regular.fa-heart");
+                const redHeart = $(this).find(".fa-solid.fa-heart");
+    
+                if (userData.wishlist.some(item => item.id === productId)) {
+                    emptyHeart.addClass("d-none");
+                    redHeart.removeClass("d-none");
+                } else {
+                    emptyHeart.removeClass("d-none"); // Explicitly show empty heart
+                    redHeart.addClass("d-none");
+                }
+            });
+    
+        } catch (error) {
+            console.error("Error fetching wishlist:", error);
+        }
+    }
+    
+    // Run on page load
+    $(document).ready(updateWishlistIcons);
+    
+
+
+$(document).on('click', '.add-to-cart-btn', async function () {
+    const productId = String($(this).data("product-id")); // Ensure ID is string
+    const userId = localStorage.getItem("userId");
+
+    if (!userId) {
+        alert("User not logged in!");
+        return;
+    }
+
+    try {
+        // Fetch user data
+        let userResponse = await fetch(`http://localhost:3000/User/${userId}`);
+        if (!userResponse.ok) throw new Error("User not found");
+
+        let userData = await userResponse.json();
+
+        // Fetch product details
+        let productResponse = await fetch(`http://localhost:3000/likeproduct/${productId}`);
+        if (!productResponse.ok) throw new Error("Product not found");
+
+        let productDetails = await productResponse.json();
+
+        // Get selected color from localStorage
+        let selectedColor = localStorage.getItem("YouMayLikeSelectedColor") || null;
+
+        // Check if product is already in cart
+        let existingCartItemIndex = userData.orders.findIndex(item => item.id === productId);
+
+        if (existingCartItemIndex === -1) {
+            // If not in cart, add new item
+            let newCartItem = {
+                id: Date.now(), // Use actual product ID
+                image: productDetails.image,
+                name: productDetails.name,
+                currentPrice: productDetails.price,
+                quantity: 1,
+                selectedColor: selectedColor // Use selected color from localStorage
+            };
+
+            userData.orders.push(newCartItem);
+
+            // Update JSON Server
+            await fetch(`http://localhost:3000/User/${userId}`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ orders: userData.orders })
+            });
+
+            console.log("Added to cart:", newCartItem);
+        } else {
+            // If product is already in cart, increase quantity
+            userData.orders[existingCartItemIndex].quantity++;
+
+            await fetch(`http://localhost:3000/User/${userId}`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ orders: userData.orders })
+            });
+
+            console.log("Updated cart quantity:", userData.orders[existingCartItemIndex]);
+        }
+
+        // Provide visual feedback
+        const originalText = $(this).text();
+        $(this).text('Added!').prop('disabled', true);
+        setTimeout(() => {
+            $(this).text(originalText).prop('disabled', false);
+        }, 2000);
+    } catch (error) {
+        console.error("Error adding to cart:", error);
+    }
+});
+
+
 });
 // //////////////////////////////////// like product slider /////////////////////////////////////////////

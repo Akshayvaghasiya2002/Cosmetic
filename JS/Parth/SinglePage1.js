@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get("id");
-    const arrayName = urlParams.get("array") || "products"; // Default to 'products' if no array is provided
+    const arrayName = urlParams.get("array") || "products";
 
     console.log('Product ID:', productId, 'Array:', arrayName);
 
@@ -11,68 +11,71 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
+    const availableArrays = ["products", "newarrival", "multiproducts", "likeproduct"];
+    let product = null;
+
     try {
-        // Fetch product data from the correct array
-        let response = await fetch(`http://localhost:3000/${arrayName}/${productId}`);
-
-        // If not found, try the alternative array
-        if (!response.ok) {
-            console.warn(`Product not found in ${arrayName}, searching in alternative array.`);
-            const alternativeArray = arrayName === "products" ? "newarrival" : "products";
-            response = await fetch(`http://localhost:3000/${alternativeArray}/${productId}`);
-
-            if (!response.ok) throw new Error(`Product not found in both arrays.`);
+        for (const arr of availableArrays) {
+            const response = await fetch(`http://localhost:3000/${arr}/${productId}`);
+            if (response.ok) {
+                product = await response.json();
+                break;
+            }
         }
 
-        const product = await response.json();
-            const productImage = document.getElementById("productImage");
-            productImage.src = product.image; // Default main image
+        if (!product) throw new Error("Product not found in any array");
 
-            document.getElementById("productName").textContent = product.name;
-            document.getElementById("productPrice").textContent = `$${product.price}`;
-            document.getElementById("productOriginalPrice").textContent = `$${product.originalPrice}`;
-            document.getElementById("productDiscount").textContent = product.discount;
-
-            // Render color options dynamically
-            const colorContainer = document.getElementById("colorOptions");
-            let lastSelectedColor = null; // Store last selected color globally
-    
-            if (product.colors) {
-                colorContainer.innerHTML = product.colors.map(color => `
-                    <div class="color-dot" 
-                         style="background-color: ${color.color}; border: 0.6px solid rgba(20, 20, 20, 0.2);" 
-                         data-color="${color.color}">
-                    </div>
-                `).join("");
-    
-                // Add click event listener to all color dots
-                document.querySelectorAll(".color-dot").forEach(dot => {
-                    dot.addEventListener("click", function () {
-                        // Reset previous selection
-                        if (lastSelectedColor) {
-                            lastSelectedColor.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";
-                        }
-    
-                        // Set new selection
-                        this.style.border = "2px solid black";
-                        lastSelectedColor = this;
-    
-                        // Store selected color in localStorage
-                        localStorage.setItem("selectedSingleColor", this.dataset.color);
-                    });
-    
-                    // ✅ Maintain selection from localStorage
-                    if (localStorage.getItem("selectedColor") === dot.dataset.color) {
-                        dot.style.border = "2px solid black";
-                        lastSelectedColor = dot;
-                    }
-                });
-            }
-
-        // Populate single product details
         document.getElementById("productImage").src = product.image;
+        document.getElementById("productName").textContent = product.name;
+        document.getElementById("productPrice").textContent = `$${product.price}`;
+        document.getElementById("productOriginalPrice").textContent = `$${product.originalPrice}`;
+        document.getElementById("productDiscount").textContent = product.discount;
 
-        // Render vertical slider images dynamically
+
+
+          // ✅ Color Selection
+          const colorContainer = document.getElementById("colorOptions");
+          let lastSelectedColor = null;
+  
+          if (product.colors) {
+              colorContainer.innerHTML = product.colors.map(color => `
+                  <div class="color-dot" 
+                       style="background-color: ${color.color}; border: 0.6px solid rgba(20, 20, 20, 0.2);" 
+                       data-color="${color.color}">
+                  </div>
+              `).join("");
+  
+              document.querySelectorAll(".color-dot").forEach(dot => {
+                dot.addEventListener("click", function () {
+                    if (lastSelectedColor) {
+                        lastSelectedColor.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";
+                    }
+                    this.style.border = "2px solid black";
+                    lastSelectedColor = this;
+                    localStorage.setItem("selectedSingleColor", this.dataset.color);
+                });
+
+                if (localStorage.getItem("selectedSingleColor") === dot.dataset.color) {
+                    dot.style.border = "2px solid black";
+                    lastSelectedColor = dot;
+                }
+            });
+        }
+              // ✅ Wishlist Feature
+              manageWishlist(product);
+
+              // ✅ Cart Feature
+              manageCart(product);
+      
+          } catch (error) {
+              console.error("Error fetching product details:", error.message);
+          }
+
+
+
+
+
+            // Render vertical slider images dynamically
         const verticalSliderContainer = document.getElementById("sliderContainer");
         if (product.sliderImage && product.sliderImage.length > 0) {
             verticalSliderContainer.innerHTML = product.sliderImage.map((imageObj, index) => `
@@ -119,11 +122,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         } else {
             horizontalSliderContainer.innerHTML = "<p>No additional images available.</p>";
         }
-
-    } catch (error) {
-        console.error("Error fetching product details:", error.message);
-    }
 });
+
+
 
 
 document.addEventListener("DOMContentLoaded", async () => {

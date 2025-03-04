@@ -1,3 +1,33 @@
+
+
+window.onload = function () {
+    const currentDate = new Date(); // Define current date
+    const deliveryDate = new Date(currentDate); // Create a new date object
+    deliveryDate.setDate(currentDate.getDate() + 10); // Add 10 days
+
+    // Format date to readable form (e.g., "Thu, 30 Jan")
+    const options = { weekday: "short", day: "numeric", month: "short" };
+    document.getElementById("expiryDate").innerText = deliveryDate.toLocaleDateString("en-US", options);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", async () => {
     const userId = localStorage.getItem("userId");
     const selectedAddressId = localStorage.getItem("selectedAddressId");

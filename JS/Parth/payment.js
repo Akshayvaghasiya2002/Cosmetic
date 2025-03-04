@@ -95,6 +95,17 @@ async function fetchOrders() {
     } catch (error) {
         console.error("Error fetching orders:", error);
     }
+    const currentDate = new Date(); // Define current date
+    const deliveryDate = new Date(currentDate); // Create a new date object
+    deliveryDate.setDate(currentDate.getDate() + 10); // Add 10 days
+
+    const options = {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    };
+    document.getElementById("expiryDate").innerText = deliveryDate.toLocaleDateString("en-US", options);
+
 }
 
 // Call function on page load
@@ -180,134 +191,153 @@ fetchAndCalculateOrderTotal();
 
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    event.preventDefault();
-    const cardNumber = document.getElementById("cardNumber");
-    const expiryDate = document.getElementById("expiryDtae");
-    const cvv = document.getElementById("cvv");
-    const cardHolderName = document.getElementById("cardholdername");
-    const proceedPaymentBtn = document.querySelector(".V_proceed_payment");
-    const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+            event.preventDefault();
 
-    proceedPaymentBtn.addEventListener("click", async function () {
-        let errors = [];
 
-        // Get userId from localStorage
-        const userId = localStorage.getItem("userId");
-        if (!userId) {
-            alert("User not logged in!");
-            return;
-        }
 
-        // ✅ Validate Card Details
-        const cardNumRegex = /^\d{12,16}$/;
-        if (!cardNumRegex.test(cardNumber.value)) errors.push("Card Number must be 12 to 16 digits.");
+            const method = localStorage.getItem("paymentMethod");
+            console.log('method', method);
 
-        const expRegex = /^(0[1-9]|1[0-2])\/\d{4}$/;
-        if (!expRegex.test(expiryDate.value)) {
-            errors.push("Expiry Date must be in MM/YYYY format.");
-        } else {
-            const [month, year] = expiryDate.value.split("/").map(Number);
-            const currentDate = new Date();
-            if (year < currentDate.getFullYear() || (year === currentDate.getFullYear() && month < currentDate.getMonth() + 1)) {
-                errors.push("Your card has expired.");
+
+            if (method === "Credit card / Debit Card") {
+                const cardNumber = document.getElementById("cardNumber");
+                const expiryDate = document.getElementById("expiryDtae");
+                const cvv = document.getElementById("cvv");
+                const cardHolderName = document.getElementById("cardholdername");
+                const proceedPaymentBtn = document.querySelector(".V_proceed_payment");
+                const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+
+                proceedPaymentBtn.addEventListener("click", async function () {
+                    let errors = [];
+
+                    // Get userId from localStorage
+                    const userId = localStorage.getItem("userId");
+                    if (!userId) {
+                        alert("User not logged in!");
+                        return;
+                    }
+
+                    // ✅ Validate Card Details
+                    const cardNumRegex = /^\d{12,16}$/;
+                    if (!cardNumRegex.test(cardNumber.value)) errors.push("Card Number must be 12 to 16 digits.");
+
+                    const expRegex = /^(0[1-9]|1[0-2])\/\d{4}$/;
+                    if (!expRegex.test(expiryDate.value)) {
+                        errors.push("Expiry Date must be in MM/YYYY format.");
+                    } else {
+                        const [month, year] = expiryDate.value.split("/").map(Number);
+                        const currentDate = new Date();
+                        if (year < currentDate.getFullYear() || (year === currentDate.getFullYear() && month < currentDate.getMonth() + 1)) {
+                            errors.push("Your card has expired.");
+                        }
+                    }
+
+                    const cvvRegex = /^\d{3,6}$/;
+                    if (!cvvRegex.test(cvv.value)) errors.push("CVV must be 3 to 6 digits.");
+
+                    const nameRegex = /^[A-Za-z\s]+$/;
+                    if (!nameRegex.test(cardHolderName.value.trim())) errors.push("Card Holder Name must contain only letters.");
+
+                    if (!cardNumber.value || !expiryDate.value || !cvv.value || !cardHolderName.value) {
+                        errors.push("Please fill in all required fields.");
+                    }
+
+                    if (errors.length > 0) {
+                        alert(errors.join("\n"));
+                        return;
+                    }
+
+                    // ✅ Prepare Card Data
+                    const cardData = {
+                        cardNumber: cardNumber.value,
+                        expiryDate: expiryDate.value,
+                        cvv: cvv.value,
+                        cardHolderName: cardHolderName.value.trim().toUpperCase()
+                    };
+
+                    try {
+                        // ✅ Fetch User Data
+                        const response = await fetch(`http://localhost:3000/User/${userId}`);
+                        if (!response.ok) throw new Error("Failed to fetch user data.");
+                        let userData = await response.json();
+
+                        // ✅ Ensure `carddetails` array exists
+                        if (!userData.carddetails) userData.carddetails = [];
+
+                        // ✅ Append New Card Data
+                        userData.carddetails.push(cardData);
+
+                        // ✅ Update User Data in JSON Server
+                        const updateResponse = await fetch(`http://localhost:3000/User/${userId}`, {
+                            method: "PATCH",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                carddetails: userData.carddetails
+                            })
+                        });
+
+                        if (!updateResponse.ok) throw new Error("Failed to update card details.");
+
+                        // ✅ Show Success Modal & Redirect
+                        successModal.show();
+
+                        setTimeout(() => {
+                            successModal.hide();
+                            // setTimeout(() => {
+                            //     window.location.href = "/Parth/OrderDetail.html"; // Redirect after 3s + 2s = 5s
+                            // }, 2000);
+                        }, 3000);
+
+                        window.location.href = "/Parth/OrderDetail.html";
+
+                    } catch (error) {
+                        console.error("Error:", error);
+                        alert("Something went wrong. Please try again.");
+                    }
+                });
             }
-        }
+            else {
 
-        const cvvRegex = /^\d{3,6}$/;
-        if (!cvvRegex.test(cvv.value)) errors.push("CVV must be 3 to 6 digits.");
-
-        const nameRegex = /^[A-Za-z\s]+$/;
-        if (!nameRegex.test(cardHolderName.value.trim())) errors.push("Card Holder Name must contain only letters.");
-
-        if (!cardNumber.value || !expiryDate.value || !cvv.value || !cardHolderName.value) {
-            errors.push("Please fill in all required fields.");
-        }
-
-        if (errors.length > 0) {
-            alert(errors.join("\n"));
-            return;
-        }
-
-        // ✅ Prepare Card Data
-        const cardData = {
-            cardNumber: cardNumber.value,
-            expiryDate: expiryDate.value,
-            cvv: cvv.value,
-            cardHolderName: cardHolderName.value.trim().toUpperCase()
-        };
-
-        try {
-            // ✅ Fetch User Data
-            const response = await fetch(`http://localhost:3000/User/${userId}`);
-            if (!response.ok) throw new Error("Failed to fetch user data.");
-            let userData = await response.json();
-
-            // ✅ Ensure `carddetails` array exists
-            if (!userData.carddetails) userData.carddetails = [];
-
-            // ✅ Append New Card Data
-            userData.carddetails.push(cardData);
-
-            // ✅ Update User Data in JSON Server
-            const updateResponse = await fetch(`http://localhost:3000/User/${userId}`, {
-                method: "PATCH",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ carddetails: userData.carddetails })
+                proceedPaymentBtn.addEventListener("click", async function () {
+                window.location.href = "/Parth/OrderDetail.html";
+                })
+            }
             });
 
-            if (!updateResponse.ok) throw new Error("Failed to update card details.");
 
-            // ✅ Show Success Modal & Redirect
-            successModal.show();
+        document.addEventListener("DOMContentLoaded", () => {
 
-            setTimeout(() => {
-                successModal.hide();
-                // setTimeout(() => {
-                //     window.location.href = "/Parth/OrderDetail.html"; // Redirect after 3s + 2s = 5s
-                // }, 2000);
-            }, 3000);
-
-            window.location.href="/Parth/OrderDetail.html";
-
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Something went wrong. Please try again.");
-        }
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    window.location.reload = localStorage.removeItem("paymentMethod");
-    // Retrieve and apply the stored payment method when the page loads
-    const storedPaymentMethod = localStorage.getItem("paymentMethod");
-    if (storedPaymentMethod) {
-        document.querySelectorAll(".custom-radio input").forEach(radio => {
-            if (radio.getAttribute("data-method") === storedPaymentMethod) {
-                radio.checked = true; // Set checked for previously selected method
+            window.location.reload = localStorage.removeItem("paymentMethod");
+            // Retrieve and apply the stored payment method when the page loads
+            const storedPaymentMethod = localStorage.getItem("paymentMethod");
+            if (storedPaymentMethod) {
+                document.querySelectorAll(".custom-radio input").forEach(radio => {
+                    if (radio.getAttribute("data-method") === storedPaymentMethod) {
+                        radio.checked = true; // Set checked for previously selected method
+                    }
+                });
             }
+
+            // Function to store the selected payment method in localStorage
+            function updatePaymentMethod(method) {
+                localStorage.setItem("paymentMethod", method);
+                console.log(`Payment method updated to: ${method}`);
+
+                const proceedPaymentBtn = document.querySelector(".V_proceed_payment");
+
+                proceedPaymentBtn.addEventListener("click", async function () {
+                    window.location.href = "/Parth/OrderDetail.html";
+                })
+            }
+
+            // Attach event listeners to all radio buttons
+            document.querySelectorAll(".custom-radio input").forEach(radio => {
+                radio.addEventListener("change", (event) => {
+                    const selectedMethod = event.target.getAttribute("data-method");
+                    updatePaymentMethod(selectedMethod);
+                });
+            });
+
         });
-    }
-
-    // Function to store the selected payment method in localStorage
-    function updatePaymentMethod(method) {
-        localStorage.setItem("paymentMethod", method);
-        console.log(`Payment method updated to: ${method}`);
-
-        const proceedPaymentBtn = document.querySelector(".V_proceed_payment");
-
-        proceedPaymentBtn.addEventListener("click", async function () {
-            window.location.href="/Parth/OrderDetail.html";
-        }
-    )
-    }
-
-    // Attach event listeners to all radio buttons
-    document.querySelectorAll(".custom-radio input").forEach(radio => {
-        radio.addEventListener("change", (event) => {
-            const selectedMethod = event.target.getAttribute("data-method");
-            updatePaymentMethod(selectedMethod);
-        });
-    });
-});
