@@ -1,7 +1,10 @@
-
+var productObj = {}
+var productArr = []
+var mainId;
 document.addEventListener("DOMContentLoaded", async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get("id");
+    mainId = productId
     const arrayName = urlParams.get("array") || "products";
 
     console.log('Product ID:', productId, 'Array:', arrayName);
@@ -12,15 +15,22 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const availableArrays = ["products", "newarrival", "multiproducts", "likeproduct"];
+    productArr = arrayName
     let product = null;
 
     try {
         for (const arr of availableArrays) {
             const response = await fetch(`http://localhost:3000/${arr}/${productId}`);
             if (response.ok) {
-                product = await response.json();
+                let json = await response.json();
+                console.log(json);
+                
+                product = json
+                productObj = json
                 break;
             }
+          
+            
         }
 
         if (!product) throw new Error("Product not found in any array");
@@ -424,3 +434,197 @@ function initializeVerticalSlider() {
         wrapper.scrollBy({ top: slideHeight, behavior: "smooth" });
     });
 }
+
+
+// ***********  Review  ************
+const userId = localStorage.getItem("userId")
+var passwordObj = {}
+async function usergetData () {
+    const respose = await fetch(`http://localhost:3000/User/${userId}`)
+    const json = await respose.json()
+    passwordObj = json
+    console.log("json" , json);
+}
+usergetData()
+
+function handleReviewPopup() {
+    var myModal = new bootstrap.Modal(document.getElementById('reviewModal'));
+    myModal.show();
+
+    document.getElementById("ds_reviewPopup_img").src = productObj?.image ? productObj?.image : `/IMG/Dhruvin/lipstick.png`
+    document.getElementById("ds_reviewPopup_title").innerHTML = productObj?.name
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const stars = document.querySelectorAll(".ds_review_star");
+    let selectedRating = 0;
+
+    stars.forEach(star => {
+        star.addEventListener("click", function () {
+            selectedRating = this.getAttribute("data-value");
+            highlightStars(selectedRating);
+        });
+
+        star.addEventListener("mouseover", function () {
+            highlightStars(this.getAttribute("data-value"));
+        });
+
+        star.addEventListener("mouseleave", function () {
+            highlightStars(selectedRating);
+        });
+    });
+
+    function highlightStars(rating) {
+        stars.forEach(star => {
+            if (star.getAttribute("data-value") <= rating) {
+                star.classList.add("text-warning"); // Add active class
+            } else {
+                star.classList.remove("text-warning");
+            }
+        });
+    }
+});
+
+
+
+
+function previewFiles(event) {
+    const files = event.target.files;
+    const previewContainer = document.getElementById("previewContainer");
+
+    Array.from(files).forEach(file => {
+        const fileReader = new FileReader();
+        fileReader.onload = function (e) {
+            if (file.type.startsWith("image")) {
+                const img = document.createElement("img");
+                img.src = e.target.result;
+                img.classList.add("preview-img");
+                img.style.width = "80px";
+                img.style.height = "80px";
+                img.style.marginRight = "5px";
+                previewContainer.appendChild(img);
+            } else if (file.type.startsWith("video")) {
+                const video = document.createElement("video");
+                video.controls = true;
+                video.width = 100;
+                video.height = 100;
+                const source = document.createElement("source");
+                source.src = e.target.result;
+                source.type = file.type;
+                video.appendChild(source);
+                previewContainer.appendChild(video);
+            }
+        };
+        fileReader.readAsDataURL(file);
+    });
+}
+
+
+async function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
+}
+
+async function uploadFiles(files) {
+    let base64Files = [];
+    for (const file of files) {
+        if (file) {
+            try {
+                const base64String = await fileToBase64(file);
+                base64Files.push(base64String);  // Directly push base64 string
+            } catch (error) {
+                console.error("Error converting file to Base64:", error);
+            }
+        }
+    }
+    console.log("jnojo" , base64Files);
+    
+    return base64Files;
+}
+
+async function handleSubmitReview() {
+    const rating = document.querySelectorAll(".ds_review_star.text-warning").length;
+    const title = document.querySelector("#ds_reviewPopup_input").value.trim();
+    const reviewText = document.querySelector("#ds_reviewPopup_textarea").value.trim();
+    const fileInput = document.querySelector("#ds_fileInput");
+    const files = fileInput.files;
+
+    if (rating === 0) {
+        alert("Please select a rating.");
+        return;
+    }
+
+    if (title.length < 5) {
+        alert("Review title must be at least 5 characters long.");
+        return;
+    }
+
+    if (reviewText.length < 20) {
+        alert("Review text must be at least 20 characters long.");
+        return;
+    }
+
+    let fileBase64Array = [];
+    if (files.length > 0) {
+        const validTypes = ["image/jpeg", "image/png", "image/gif", "video/mp4", "video/webm"];
+        for (const file of files) {
+            if (!validTypes.includes(file.type)) {
+                alert("Invalid file format. Please upload an image (JPEG, PNG, GIF) or a video (MP4, WEBM).");
+                return;
+            }
+            if (file.size > 5 * 1024 * 1024) {
+                alert("File size must be less than 5MB.");
+                return;
+            }
+        }
+        fileBase64Array = await uploadFiles(files);
+    }
+
+    // Create an array of objects with the base64 data in the 'file' key
+    const fileObjects = fileBase64Array.map(base64 => {
+        return { file: base64 };
+    });
+
+    console.log("object" , fileObjects);
+    
+    // const newReview = {
+    //     id: passwordObj?.id,
+    //     name: passwordObj?.fullName,
+    //     selectedImage: passwordObj?.selectedImage ? passwordObj?.selectedImage : "/IMG/Dhruvin/myPerson.png",
+    //     rating,
+    //     title,
+    //     reviewText,
+    //     files: fileObjects,  // Now using the 'file' key in each object
+    //     date: new Date().toISOString().split("T")[0]
+    // };
+
+    // try {
+    //     const response = await fetch(`http://localhost:3000/${productArr}/${mainId}`);
+    //     if (!response.ok) throw new Error("Failed to fetch product data");
+
+    //     let productData = await response.json();
+    //     if (!productData.reviews) productData.reviews = [];
+    //     productData.reviews.push(newReview);
+
+    //     const updateResponse = await fetch(`http://localhost:3000/${productArr}/${mainId}`, {
+    //         method: "PATCH",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify({ reviews: productData.reviews })
+    //     });
+
+    //     if (!updateResponse.ok) throw new Error("Failed to update product reviews");
+
+    //     console.log("Review added successfully!", await updateResponse.json());
+    //     alert("Review submitted successfully!");
+
+    // } catch (error) {
+    //     alert("Error: " + error.message);
+    // }
+}
+
+
+

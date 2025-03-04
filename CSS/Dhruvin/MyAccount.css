@@ -40,7 +40,9 @@
 
 
 
-
+.modal-backdrop {
+    --bs-backdrop-zindex: 1040 !important;
+}
 /* ***************** My Profile *************** */
 .ds_pro_inner{
     border: 0.6px solid #14141433;

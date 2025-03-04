@@ -336,18 +336,18 @@ function handleUpdateProfile(event) {
         // If no new image is selected, update profile without changing image
         let updatedUserData = {
             id:passwordObj?.id,
-                fullName: `${First} ${Last}`,
-                email: Email,
-                password: passwordObj?.password,
-                dateOfBirth: Date,
-                gender: gender,
-                phoneNumber: Mobile,
-                selectedImage: passwordObj?.selectedImage ? passwordObj?.selectedImage : null, 
-                addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
-                carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
-                confirmedOrders:passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
-                orders:passwordObj?.orders ? passwordObj?.orders : [],
-                wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
+            fullName: `${First} ${Last}`,
+            email: Email,
+            password: passwordObj?.password,
+            dateOfBirth: Date,
+            gender: gender,
+            phoneNumber: Mobile,
+            selectedImage: passwordObj?.selectedImage ? passwordObj?.selectedImage : null, 
+            addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
+            carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
+            confirmedOrders:passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
+            orders:passwordObj?.orders ? passwordObj?.orders : [],
+            wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
         };
 
         fetch(`http://localhost:3000/User/${userID}`, {
@@ -1197,7 +1197,9 @@ async function handleDeactive(event) {
         localStorage.removeItem("userId");
 
         // Delay before redirecting to ensure modal is fully closed
-            window.open('http://127.0.0.1:5503/Akshay/home.html');
+            // window.open('http://127.0.0.1:5507/Akshay/home.html');
+            window.location.href = "../Akshay/home.html"
+            localStorage.clear()
 
     } catch (error) {
         alert(error);

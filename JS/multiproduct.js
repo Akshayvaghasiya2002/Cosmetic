@@ -730,31 +730,14 @@ async function updateUserData(userId, updateData) {
 renderProducts();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Add event listeners to checkboxes
 document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', function() {
         renderProducts(); // Re-render products when filters change
     });
 });
+
+
+// ************ Submit Review ************
+
+
