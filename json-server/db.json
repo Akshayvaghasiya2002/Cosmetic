@@ -1369,5 +1369,163 @@
         }
       ]
     }
+  ],
+  "combooffers": [
+    {
+      "id": "26",
+      "brand": "Eveline Cosmetics",
+      "name": "Wonder Match Creamy Liquid Matte Lipstick",
+      "badge": {
+        "type": "BEST SELLER",
+        "class": "badge-best-seller"
+      },
+      "price": 450,
+      "originalPrice": 600,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/bodyshot.png",
+      "colors": [
+        {
+          "image": "/IMG/Akshay/bodyshot.png"
+        },
+        {
+          "image": "/IMG/Akshay/bodyshot.png"
+        },
+        {
+          "image": "/IMG/Akshay/bodyshot.png"
+        },
+        {
+          "image": "/IMG/Akshay/bodyshot.png"
+        }
+      ],
+      "moreColors": 4
+    },
+    {
+      "id": "23",
+      "topRated": "/IMG/Parth/15_off.png",
+      "brand": "RENEE",
+      "image": "../../IMG/Parth/offer_3.png",
+      "name": "MAC MACXIMAL SLEEK SATIN LIPSTICK",
+      "price": 450,
+      "originalPrice": 600,
+      "discount": "20% Off",
+      "colors": [
+        {
+          "image": "../../IMG/Parth/offer_3.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_3.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_3.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_3.png"
+        }
+      ],
+      "moreColors": 15
+    },
+    {
+      "id": "24",
+      "topRated": "/IMG/Parth/20_off.png",
+      "brand": "SUGAR",
+      "image": "../../IMG/Parth/offer_4.png",
+      "name": "SUGAR Matte As Hell Mini Crayon Lipstick",
+      "price": 450,
+      "originalPrice": 600,
+      "discount": "20% Off",
+      "colors": [
+        {
+          "image": "../../IMG/Parth/offer_4.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_4.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_4.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_4.png"
+        }
+      ],
+      "moreColors": 2
+    },
+    {
+      "id": "25",
+      "brand": "Eveline Cosmetics",
+      "name": "Wonder Match Creamy Liquid Matte Lipstick",
+      "badge": {
+        "type": "BEST SELLER",
+        "class": "badge-best-seller"
+      },
+      "price": 450,
+      "originalPrice": 600,
+      "discount": "20% OFF",
+      "image": "/IMG/Akshay/bodyshot.png",
+      "colors": [
+        {
+          "image": "/IMG/Akshay/bodyshot.png"
+        },
+        {
+          "image": "/IMG/Akshay/bodyshot.png"
+        },
+        {
+          "image": "/IMG/Akshay/bodyshot.png"
+        },
+        {
+          "image": "/IMG/Akshay/bodyshot.png"
+        }
+      ],
+      "moreColors": 4
+    },
+    {
+      "id": "27",
+      "topRated": "/IMG/Parth/15_off.png",
+      "brand": "RENEE",
+      "image": "../../IMG/Parth/offer_3.png",
+      "name": "MAC MACXIMAL SLEEK SATIN LIPSTICK",
+      "price": 450,
+      "originalPrice": 600,
+      "discount": "20% Off",
+      "colors": [
+        {
+          "image": "../../IMG/Parth/offer_3.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_3.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_3.png"
+        },
+        {
+          "image": "../../IMG/Parth/offer_3.png"
+        }
+      ],
+      "moreColors": 15
+    },
+    {
+      "id": "28",
+      "topRated": "/IMG/Parth/20_off.png",
+      "brand": "SUGAR",
+      "image": "../../IMG/Parth/offer_4.png",
+      "name": "SUGAR Matte As Hell Mini Crayon Lipstick",
+      "price": 450,
+      "originalPrice": 600,
+      "discount": "20% Off",
+      "colors": [
+        {
+          "image": "/IMG/Akshay/bodyshot.png"
+        },
+        {
+          "image": "/IMG/Akshay/bodyshot.png"
+        },
+        {
+          "image": "/IMG/Akshay/bodyshot.png"
+        },
+        {
+          "image": "/IMG/Akshay/bodyshot.png"
+        }
+      ],
+      "moreColors": 2
+    }
   ]
 }
