@@ -771,183 +771,6 @@
   ],
   "User": [
     {
-      "fullName": "Parth Vaghsiya",
-      "phoneNumber": "7284854011",
-      "email": "parth@gmail.com",
-      "dateOfBirth": "2002-11-29",
-      "gender": "Male",
-      "password": "Parth@123",
-      "selectedImage": null,
-      "addresses": [
-        {
-          "id": 1740720796372,
-          "firstName": "Parth",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "6352285710",
-          "email": "parth@gmail.com",
-          "zipCode": "395004",
-          "address1": "163, Gadhapur TownShip, Pasodara, Kathodara, Surat",
-          "address2": "",
-          "city": "Surat",
-          "state": "Guj",
-          "country": "IND",
-          "addressType": "Other",
-          "otherType": "Hello Parth"
-        }
-      ],
-      "id": "fdc1",
-      "orders": [],
-      "wishlist": [
-        {
-          "id": "32",
-          "image": "/IMG/Akshay/lip_balm.png",
-          "name": "MAC Glow Play Tender Talk Lip Balm",
-          "currentPrice": 450,
-          "originalPrice": 600,
-          "discount": "20% OFF",
-          "colors": [
-            "#FFC0CB",
-            "#FFA500",
-            "#FFD700",
-            "#FF0000",
-            "#990066",
-            "#FF7F50",
-            "#E0B0FF",
-            "#E3BC9A",
-            "#FFDAB9",
-            "#722F37",
-            "#800020",
-            "#FF007F",
-            "#DE3163"
-          ],
-          "moreColors": null,
-          "selectedColor": "#FFC0CB"
-        }
-      ],
-      "confirmedOrders": [
-        {
-          "batchId": "batch_1741001506858",
-          "orderDate": "2025-03-03",
-          "deliveryDate": "2025-03-13",
-          "orderStatus": "pending",
-          "totalAmount": "721",
-          "shippingDetails": {
-            "name": "Parth Vaghasiya",
-            "address": "163, Gadhapur TownShip, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
-            "mobile": "6352285710"
-          },
-          "orders": [
-            {
-              "id": 1741000810348,
-              "image": "/IMG/Akshay/lip_balm.png",
-              "name": "MAC Glow Play Tender Talk Lip Balm",
-              "currentPrice": 450,
-              "quantity": 2,
-              "selectedColor": "#E3BC9A",
-              "orderId": "order_1741001506858",
-              "totalAmount": 900
-            }
-          ]
-        },
-        {
-          "batchId": "batch_1741003312374",
-          "orderDate": "2025-03-03",
-          "deliveryDate": "2025-03-13",
-          "orderStatus": "pending",
-          "totalAmount": "361",
-          "shippingDetails": {
-            "name": "Parth Vaghasiya",
-            "address": "163, Gadhapur TownShip, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
-            "mobile": "6352285710"
-          },
-          "orders": [
-            {
-              "id": 1741003287081,
-              "image": "/IMG/Akshay/swiss.png",
-              "name": "SWISS BEAUTY Cream It Up Blusher",
-              "currentPrice": 450,
-              "quantity": 1,
-              "selectedColor": null,
-              "orderId": "order_1741003312374",
-              "totalAmount": 450
-            }
-          ]
-        },
-        {
-          "batchId": "batch_1741004117649",
-          "orderDate": "2025-03-03",
-          "deliveryDate": "2025-03-13",
-          "orderStatus": "pending",
-          "totalAmount": "361",
-          "shippingDetails": {
-            "name": "Parth Vaghasiya",
-            "address": "163, Gadhapur TownShip, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
-            "mobile": "6352285710"
-          },
-          "orders": [
-            {
-              "id": 1741003778922,
-              "image": "/IMG/Akshay/swiss.png",
-              "name": "SWISS BEAUTY Cream It Up Blusher",
-              "currentPrice": 450,
-              "quantity": 1,
-              "selectedColor": null,
-              "orderId": "order_1741004117650",
-              "totalAmount": 450
-            }
-          ]
-        },
-        {
-          "batchId": "batch_1741004332787",
-          "orderDate": "2025-03-03",
-          "deliveryDate": "2025-03-13",
-          "orderStatus": "pending",
-          "totalAmount": "361",
-          "shippingDetails": {
-            "name": "Parth Vaghasiya",
-            "address": "163, Gadhapur TownShip, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
-            "mobile": "6352285710"
-          },
-          "orders": [
-            {
-              "id": 1741004325057,
-              "image": "/IMG/Akshay/pink_lipstick.png",
-              "name": "SUGAR Matte As Hell Mini Crayon Lipstick",
-              "currentPrice": 450,
-              "quantity": 1,
-              "selectedColor": null,
-              "orderId": "order_1741004332788",
-              "totalAmount": 450
-            }
-          ]
-        },
-        {
-          "batchId": "batch_1741004375727",
-          "orderDate": "2025-03-03",
-          "deliveryDate": "2025-03-13",
-          "orderStatus": "pending",
-          "totalAmount": "361",
-          "shippingDetails": {
-            "name": "Parth Vaghasiya",
-            "address": "163, Gadhapur TownShip, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
-            "mobile": "6352285710"
-          },
-          "orders": [
-            {
-              "id": 1741004365793,
-              "image": "/IMG/Akshay/lip_balm.png",
-              "name": "MAC Glow Play Tender Talk Lip Balm",
-              "currentPrice": 450,
-              "quantity": 1,
-              "selectedColor": null,
-              "orderId": "order_1741004375728",
-              "totalAmount": 450
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "8ce0",
       "fullName": "hello news",
       "email": "hi@gmail.com",
@@ -987,87 +810,123 @@
           "cardHolderName": "HELLO BETA"
         }
       ],
+      "orders": [],
+      "wishlist": []
+    },
+    {
+      "id": "b707",
+      "fullName": "Parth Vaghasiya",
+      "phoneNumber": "7284854011",
+      "email": "parthvaghasiya123@gmail.com",
+      "password": "Parth@123",
+      "wishlist": [],
+      "orders": [],
+      "addresses": [
+        {
+          "id": 1741084668658,
+          "firstName": "Parth",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "7284854011",
+          "email": "parth@123gmail.com",
+          "zipCode": "395004",
+          "address1": "163, Gadhapur Township, Pasodara, Kathodara",
+          "address2": "Surat",
+          "city": "Surat",
+          "state": "Guj",
+          "country": "IND",
+          "addressType": "Other",
+          "otherType": "Hello Parth"
+        }
+      ],
       "confirmedOrders": [
         {
-          "batchId": "batch_1740980839736",
-          "orderDate": "2025-03-03",
-          "deliveryDate": "2025-03-13",
+          "batchId": "batch_1741084695346",
+          "orderDate": "2025-03-04",
+          "deliveryDate": "2025-03-14",
           "orderStatus": "pending",
-          "totalAmount": "1081",
+          "totalAmount": 4634.6,
+          "specialOffer": 50,
           "shippingDetails": {
-            "name": "Sujal Parajapat",
-            "address": "katargam, new rise, surat, Guj, 525252, IND",
-            "mobile": "6789012345"
+            "name": "Parth Vaghasiya",
+            "address": "163, Gadhapur Township, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
+            "mobile": "7284854011"
           },
           "orders": [
             {
-              "id": 1740980769241,
-              "image": "/IMG/Akshay/bodyshot.png",
-              "name": "Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick",
-              "currentPrice": 450,
-              "quantity": 2,
-              "selectedColor": null,
-              "orderId": "order_1740980839737",
-              "totalAmount": 900
-            },
-            {
-              "id": 1740980772031,
+              "id": 1741084514074,
               "image": "/IMG/Akshay/lip_balm.png",
               "name": "MAC Glow Play Tender Talk Lip Balm",
               "currentPrice": 450,
               "quantity": 1,
               "selectedColor": null,
-              "orderId": "order_1740980839737",
-              "totalAmount": 450
-            }
-          ],
-          "cancel": {
-            "reason": "I want to change the delivery address",
-            "comment": "ghrsg awd",
-            "cancelDate": "2025-03-03"
-          }
-        },
-        {
-          "batchId": "batch_1740985372612",
-          "orderDate": "2025-03-03",
-          "deliveryDate": "2025-03-13",
-          "orderStatus": "delivered",
-          "totalAmount": "1081",
-          "shippingDetails": {
-            "name": "Sujal Parajapat",
-            "address": "katargam, new rise, surat, Guj, 525252, IND",
-            "mobile": "6789012345"
-          },
-          "orders": [
-            {
-              "id": 1740985335263,
-              "image": "/IMG/Akshay/makeup.png",
-              "name": "RENEE FAB 5 Matte Finish 5 in 1 Lipstick",
-              "currentPrice": 450,
-              "quantity": 1,
-              "selectedColor": null,
-              "orderId": "order_1740985372612",
+              "orderId": "order_1741084695346",
               "totalAmount": 450
             },
             {
-              "id": 1740985338344,
-              "image": "/IMG/Akshay/clean_balm.png",
-              "name": "Karité Premium Superfood Cleansing Balm",
+              "id": 1741084518923,
+              "image": "../IMG/Parth/MAC_glow_lip_balm.png",
+              "name": "MAC Glow Play Tender Talk Lip Balm",
               "currentPrice": 450,
-              "quantity": 2,
+              "quantity": 1,
+              "selectedColor": "#EC9C53",
+              "orderId": "order_1741084695346",
+              "totalAmount": 450
+            },
+            {
+              "id": 1741084533337,
+              "image": "/IMG/Akshay/pink_lipstick.png",
+              "name": "SUGAR Matte As Hell Mini Crayon Lipstick",
+              "currentPrice": 450,
+              "quantity": 8,
+              "selectedColor": {
+                "color": "#8E3E42"
+              },
+              "orderId": "order_1741084695346",
+              "totalAmount": 3600
+            },
+            {
+              "id": 1741084536465,
+              "image": "/IMG/Akshay/lip_balm.png",
+              "name": "MAC Glow Play Tender Talk Lip Balm",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": "rgb(255, 165, 0)",
+              "orderId": "order_1741084695346",
+              "totalAmount": 450
+            },
+            {
+              "id": 1741084547011,
+              "image": "/IMG/Akshay/pink_lipstick.png",
+              "name": "Glow Play Tender Talk Lip Balm",
+              "currentPrice": 4.5,
+              "quantity": 1,
+              "selectedColor": "#FFBE7D",
+              "orderId": "order_1741084695346",
+              "totalAmount": 4.5
+            },
+            {
+              "id": 1741084554835,
+              "image": "../../IMG/Parth/offer_3.png",
+              "name": "MAC MACXIMAL SLEEK SATIN LIPSTICK",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": "../../IMG/Parth/offer_3.png",
+              "orderId": "order_1741084695346",
+              "totalAmount": 450
+            },
+            {
+              "id": 1741084577426,
+              "image": "../../IMG/Parth/offer_3.png",
+              "name": "MAC MACXIMAL SLEEK SATIN LIPSTICK",
+              "currentPrice": 450,
+              "quantity": 1,
               "selectedColor": null,
-              "orderId": "order_1740985372612",
-              "totalAmount": 900
+              "orderId": "order_1741084695346",
+              "totalAmount": 450
             }
-          ],
-          "returnOrder": {
-            "reason": "My reason are not listed here",
-            "returnDate": "2025-03-03"
-          }
+          ]
         }
-      ],
-      "orders": [],
-      "wishlist": []
+      ]
     }
   ],
   "likeproduct": [
@@ -1383,7 +1242,7 @@
       "originalPrice": 600,
       "discount": "20% OFF",
       "image": "/IMG/Akshay/bodyshot.png",
-      "colors": [
+      "images": [
         {
           "image": "/IMG/Akshay/bodyshot.png"
         },
@@ -1397,7 +1256,7 @@
           "image": "/IMG/Akshay/bodyshot.png"
         }
       ],
-      "moreColors": 4
+      "moreImages": 4
     },
     {
       "id": "23",
@@ -1408,7 +1267,7 @@
       "price": 450,
       "originalPrice": 600,
       "discount": "20% Off",
-      "colors": [
+      "images": [
         {
           "image": "../../IMG/Parth/offer_3.png"
         },
@@ -1422,7 +1281,7 @@
           "image": "../../IMG/Parth/offer_3.png"
         }
       ],
-      "moreColors": 15
+      "moreImages": 15
     },
     {
       "id": "24",
@@ -1433,7 +1292,7 @@
       "price": 450,
       "originalPrice": 600,
       "discount": "20% Off",
-      "colors": [
+      "images": [
         {
           "image": "../../IMG/Parth/offer_4.png"
         },
@@ -1447,7 +1306,7 @@
           "image": "../../IMG/Parth/offer_4.png"
         }
       ],
-      "moreColors": 2
+      "moreImages": 2
     },
     {
       "id": "25",
@@ -1461,7 +1320,7 @@
       "originalPrice": 600,
       "discount": "20% OFF",
       "image": "/IMG/Akshay/bodyshot.png",
-      "colors": [
+      "images": [
         {
           "image": "/IMG/Akshay/bodyshot.png"
         },
@@ -1475,7 +1334,7 @@
           "image": "/IMG/Akshay/bodyshot.png"
         }
       ],
-      "moreColors": 4
+      "moreImages": 4
     },
     {
       "id": "27",
@@ -1486,7 +1345,7 @@
       "price": 450,
       "originalPrice": 600,
       "discount": "20% Off",
-      "colors": [
+      "images": [
         {
           "image": "../../IMG/Parth/offer_3.png"
         },
@@ -1500,7 +1359,7 @@
           "image": "../../IMG/Parth/offer_3.png"
         }
       ],
-      "moreColors": 15
+      "moreImages": 15
     },
     {
       "id": "28",
@@ -1511,7 +1370,7 @@
       "price": 450,
       "originalPrice": 600,
       "discount": "20% Off",
-      "colors": [
+      "images": [
         {
           "image": "/IMG/Akshay/bodyshot.png"
         },
@@ -1525,7 +1384,7 @@
           "image": "/IMG/Akshay/bodyshot.png"
         }
       ],
-      "moreColors": 2
+      "moreImages": 2
     }
   ]
 }

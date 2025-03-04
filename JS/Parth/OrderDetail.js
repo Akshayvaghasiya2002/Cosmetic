@@ -379,17 +379,16 @@ document.addEventListener("DOMContentLoaded", async function () {
  */
 async function processOrders() {
     const userId = localStorage.getItem("userId");
-    const total = localStorage.getItem("finalTotal");
+    const total = parseFloat(localStorage.getItem("finalTotal")) || 0;
+    const specialOffer = parseFloat(localStorage.getItem("specialOffer")) || 0;
     const selectedAddressId = localStorage.getItem("selectedAddressId");
 
-   
     if (!userId || !selectedAddressId) {
         console.error("User ID or Selected Address ID not found in local storage.");
         return;
     }
 
     try {
-        // ✅ Fetch User Data
         const response = await fetch(`http://localhost:3000/User/${userId}`);
         if (!response.ok) throw new Error("Failed to fetch user data.");
         const userData = await response.json();
@@ -398,7 +397,7 @@ async function processOrders() {
             console.log("No orders found.");
             return;
         }
-        // Find the selected address
+
         const selectedAddress = userData.addresses.find(
             address => address.id.toString() === selectedAddressId
         );
@@ -408,16 +407,11 @@ async function processOrders() {
             return;
         }
 
-        // Construct full address
         const fullAddress = `${selectedAddress.address1}, ${selectedAddress.address2 ? selectedAddress.address2 + ', ' : ''}${selectedAddress.city}, ${selectedAddress.state}, ${selectedAddress.zipCode}, ${selectedAddress.country}`;
 
-
-
-        // ✅ Create Unique Batch ID
         const batchId = `batch_${Date.now()}`;
         localStorage.setItem("batchId", batchId);
 
-        // ✅ Process Orders
         const currentDate = new Date();
         const deliveryDate = new Date();
         deliveryDate.setDate(currentDate.getDate() + 10);
@@ -428,7 +422,8 @@ async function processOrders() {
             deliveryDate: deliveryDate.toISOString().split("T")[0],
             orderStatus: "pending",
             totalAmount: total,
-           shippingDetails: {
+            specialOffer: specialOffer,  // ✅ Storing specialOffer in the order
+            shippingDetails: {
                 name: `${selectedAddress.firstName} ${selectedAddress.lastName}`,
                 address: fullAddress,
                 mobile: selectedAddress.mobileNumber,
@@ -440,17 +435,15 @@ async function processOrders() {
             }))
         };
 
-        // ✅ Append new confirmed order
         const confirmedOrders = userData.confirmedOrders || [];
         confirmedOrders.push(newConfirmedOrder);
 
-        // ✅ Update JSON Server: Move orders to `confirmedOrders` and clear `orders`
         const updateResponse = await fetch(`http://localhost:3000/User/${userId}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 confirmedOrders: confirmedOrders,
-                orders: [] // Clear the `orders` array
+                orders: []
             })
         });
 
@@ -461,6 +454,7 @@ async function processOrders() {
         console.error("Error processing orders:", error);
     }
 }
+
 
 /**
  * Step 2: Fetch and Display Confirmed Orders
@@ -545,14 +539,18 @@ async function fetchAndCalculateConfirmedOrderTotal() {
             totalDiscount += (order.currentPrice * order.quantity) * 0.2;
         });
 
-        const finalTotal = totalPrice - totalDiscount + platformFee;
-       
+        const specialOffer = matchingOrder.specialOffer || 0;  // ✅ Fetch specialOffer
+        const finalTotal = totalPrice - totalDiscount - specialOffer + platformFee;
+
         document.getElementById("total-items").innerText = totalItems;
-        
         document.getElementById("total-price").innerText = `$${totalPrice.toFixed(2)}`;
         document.getElementById("discount").innerText = `-$${totalDiscount.toFixed(2)}`;
         document.getElementById("final-total").innerText = `$${finalTotal.toFixed(2)}`;
         document.getElementById("final-total1").innerText = `$${finalTotal.toFixed(2)}`;
+
+        // ✅ Display special offer amount
+        document.getElementById("special-offer").innerText = `-$${specialOffer.toFixed(2)}`;
+
     } catch (error) {
         console.error("Error fetching confirmed orders:", error);
     }

@@ -764,13 +764,13 @@ productsContainer.innerHTML = products.map(product => {
     const isWishlisted = wishlist.some(item => item.id == product.id);
     const badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
     
-    const colorDotsHTML = product.colors.map((colorObj, index) => `
-        <div class="V_color_border mx-1" data-color-index="${index}" data-color="${colorObj.image}">
-            <img src="${colorObj.image}" alt="Color Option" class="color-dot">
+    const imageDotsHTML = product.images.map((imageObj, index) => `
+        <div class="V_color_border mx-1" data-color-index="${index}" data-color="${imageObj.image}">
+            <img src="${imageObj.image}" alt="Color Option" class="color-dot">
         </div>
     `).join('');
 
-    const moreColorsHTML = product.moreColors ? `<span class="more-colors">+${product.moreColors}</span>` : '';
+    const moreImagesHTML = product.moreImages ? `<span class="more-colors">+${product.moreImages}</span>` : '';
 
         return `
             <div class="product-card" data-id="${product.id}">
@@ -793,8 +793,8 @@ productsContainer.innerHTML = products.map(product => {
                         <span class="discount">${product.discount}</span>
                     </div>
                     <div class="color-options">
-                        ${colorDotsHTML}
-                        ${moreColorsHTML}
+                        ${imageDotsHTML}
+                        ${moreImagesHTML}
                     </div>
                     <button class="add-to-cart V_add_cart" data-id="${product.id}">Add to Cart</button>
                 </div>
@@ -852,8 +852,8 @@ function setupEventListeners(products, wishlist, cart, userId) {
                     currentPrice: productDetails.price,
                     originalPrice: productDetails.originalPrice,
                     discount: productDetails.discount,
-                    colors: productDetails.colors.map(c => c.color),
-                    moreColors: productDetails.moreColors || null,
+                    images: productDetails.images.map(c => c.image),
+                    moreImages: productDetails.moreImages || null,
                     selectedColor: selectedColor
                 });
             } else {

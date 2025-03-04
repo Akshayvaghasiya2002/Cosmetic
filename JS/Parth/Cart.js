@@ -207,8 +207,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const cartContainer = document.getElementById("cartContainer");
     const cartHeader = document.getElementById("offcanvasRightLabel");
     const totalAmount = document.getElementById("totalAmount");
-    const emptyCartSection = document.querySelector(".offcanvas-body.h-100.d-none");
-    const filledCartSection = document.querySelector(".offcanvas-body:not(.h-100.d-none)");
+    const emptyCartSection = document.querySelector(".emptycart.h-100.d-none");
+    const filledCartSection = document.querySelector(".filledcart:not(.h-100.d-none)");
 
     let cartItems = [];
 

@@ -122,55 +122,126 @@ document.addEventListener("DOMContentLoaded", async () => {
             : "";
 
         emptyWishlistSection.classList.toggle("d-none", wishlistData.length > 0);
-        applyStoredColorSelection();
+        applyColorOrImageSelection();
     }
 
-    // Create wishlist item HTML
-    function createWishlistItemHTML(item) {
-        const colorsHTML = (item.colors || []).map(color => `
+    // // Create wishlist item HTML
+    // function createWishlistItemHTML(item) {
+    //     const colorsHTML = (item.colors || []).map(color => `
+    //         <div class="V_color_border mx-1" data-item-id="${item.id}" data-color="${color}">
+    //             <p class="V_color" style="background-color: ${color};"></p>
+    //         </div>`).join("");
+
+    //     const moreColorHTML = item.moreColors 
+    //         ? `<div class="V_color_border mx-1">
+    //             <p class="V_color V_more d-flex align-items-center justify-content-center">+${item.moreColors}</p>
+    //           </div>` 
+    //         : "";
+
+    //     const badgeHTML = item.badge 
+    //         ? `<img src="../../IMG/Parth/top rated.png" alt="top rated" class="V_top_rated">` 
+    //         : "";
+
+    //     return `
+    //         <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 mb-5 mb-sm-4 wishlist-item" data-id="${item.id}">
+    //             <div class="V_border mx-auto">
+    //                 <div class="position-relative">
+    //                     ${badgeHTML}
+    //                     <img src="${item.image}" alt="${item.name}" class="V_image mx-auto">
+    //                     <div class="V_dil_border d-flex align-items-center justify-content-center" data-id="${item.id}">
+    //                         <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
+    //                     </div>
+    //                 </div>
+    //                 <div class="V_name_width mx-auto">
+    //                     <p class="text text-center V_name">${item.name}</p>
+    //                     <div class="d-flex justify-content-center align-items-center">
+    //                         <p class="text V_price mx-2 mb-0">${item.currentPrice}</p>
+    //                         <p class="text V_actual_price mb-0 mx-1">${item.originalPrice}</p>
+    //                         <p class="text V_green mb-0 mx-2">${item.discount}</p>
+    //                     </div>
+    //                     <div class="d-flex V_height justify-content-center mt-2 color-options" id="sliderContainer">
+    //                         ${colorsHTML}
+    //                         ${moreColorHTML}
+    //                     </div>
+    //                     <div class="V_cart_btn my-4 move-to-cart" data-id="${item.id}">
+    //                         <p class="text text-center mb-0 py-2">Move to Cart</p>
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     `;
+    // }
+
+
+
+    // Create wishlist item HTML based on item structure
+function createWishlistItemHTML(item) {
+    let colorOptionsHTML = "";
+    let moreOptionsHTML = "";
+
+    if (item.images && item.images.length > 0) {
+        // If `images` array exists, show images as color options
+        colorOptionsHTML = item.images.map(image => `
+            <div class="V_color_border mx-1" data-item-id="${item.id}" data-color="${image}">
+                <img src="${image}" alt="Color Option" class="V_color">
+            </div>
+        `).join("");
+
+        moreOptionsHTML = item.moreImages 
+            ? `<div class="V_color_border mx-1">
+                <p class="V_color V_more d-flex align-items-center justify-content-center">+${item.moreImages}</p>
+              </div>` 
+            : "";
+
+    } else if (item.colors && item.colors.length > 0) {
+        // If `colors` array exists, show colors as background
+        colorOptionsHTML = item.colors.map(color => `
             <div class="V_color_border mx-1" data-item-id="${item.id}" data-color="${color}">
                 <p class="V_color" style="background-color: ${color};"></p>
-            </div>`).join("");
+            </div>
+        `).join("");
 
-        const moreColorHTML = item.moreColors 
+        moreOptionsHTML = item.moreColors 
             ? `<div class="V_color_border mx-1">
                 <p class="V_color V_more d-flex align-items-center justify-content-center">+${item.moreColors}</p>
               </div>` 
             : "";
+    }
 
-        const badgeHTML = item.badge 
-            ? `<img src="../../IMG/Parth/top rated.png" alt="top rated" class="V_top_rated">` 
-            : "";
+    const badgeHTML = item.badge 
+        ? `<img src="../../IMG/Parth/top rated.png" alt="top rated" class="V_top_rated">` 
+        : "";
 
-        return `
-            <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 mb-5 mb-sm-4 wishlist-item" data-id="${item.id}">
-                <div class="V_border mx-auto">
-                    <div class="position-relative">
-                        ${badgeHTML}
-                        <img src="${item.image}" alt="${item.name}" class="V_image mx-auto">
-                        <div class="V_dil_border d-flex align-items-center justify-content-center" data-id="${item.id}">
-                            <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
-                        </div>
+    return `
+        <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 mb-5 mb-sm-4 wishlist-item" data-id="${item.id}">
+            <div class="V_border mx-auto">
+                <div class="position-relative">
+                    ${badgeHTML}
+                    <img src="${item.image}" alt="${item.name}" class="V_image mx-auto">
+                    <div class="V_dil_border d-flex align-items-center justify-content-center" data-id="${item.id}">
+                        <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
                     </div>
-                    <div class="V_name_width mx-auto">
-                        <p class="text text-center V_name">${item.name}</p>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <p class="text V_price mx-2 mb-0">${item.currentPrice}</p>
-                            <p class="text V_actual_price mb-0 mx-1">${item.originalPrice}</p>
-                            <p class="text V_green mb-0 mx-2">${item.discount}</p>
-                        </div>
-                        <div class="d-flex V_height justify-content-center mt-2 color-options" id="sliderContainer">
-                            ${colorsHTML}
-                            ${moreColorHTML}
-                        </div>
-                        <div class="V_cart_btn my-4 move-to-cart" data-id="${item.id}">
-                            <p class="text text-center mb-0 py-2">Move to Cart</p>
-                        </div>
+                </div>
+                <div class="V_name_width mx-auto">
+                    <p class="text text-center V_name">${item.name}</p>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <p class="text V_price mx-2 mb-0">${item.currentPrice}</p>
+                        <p class="text V_actual_price mb-0 mx-1">${item.originalPrice}</p>
+                        <p class="text V_green mb-0 mx-2">${item.discount}</p>
+                    </div>
+                    <div class="d-flex V_height justify-content-center mt-2 color-options" id="sliderContainer">
+                        ${colorOptionsHTML}
+                        ${moreOptionsHTML}
+                    </div>
+                    <div class="V_cart_btn my-4 move-to-cart" data-id="${item.id}">
+                        <p class="text text-center mb-0 py-2">Move to Cart</p>
                     </div>
                 </div>
             </div>
-        `;
-    }
+        </div>
+    `;
+}
+
 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -187,17 +258,77 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
     
-    // Apply stored color selection
-    function applyStoredColorSelection() {
-        document.querySelectorAll(".V_color_border").forEach(el => {
-            const storedColor = localStorage.getItem("selectedColor");
-            if (el.getAttribute("data-color") === storedColor) {
-                el.style.border = "1px solid black";
-            } else {
-                el.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";
+    $(document).ready(function () {
+        let lastSelectedElement = null; // Store reference to last selected element
+    
+        // Load stored selection from localStorage and apply border
+        applyStoredSelection();
+    
+        $(document).on("click", ".V_color_border", function (event) {
+            event.preventDefault(); // Prevent default behavior
+    
+            if (!userId) return; // Prevent selection if user is not logged in
+    
+            const selectedElement = $(this);
+            const selectedColor = selectedElement.attr("data-color");
+    
+            // Remove border from previously selected element
+            if (lastSelectedElement) {
+                lastSelectedElement.css("border", "0.6px solid rgba(20, 20, 20, 0.2)");
             }
+    
+            // Apply border to newly selected element
+            selectedElement.css("border", "1px solid black");
+    
+            // Update last selected element
+            lastSelectedElement = selectedElement;
+    
+            // Store selection in localStorage
+            localStorage.setItem("selectedColor", selectedColor);
         });
-    }
+    
+        function applyStoredSelection() {
+            const storedColor = localStorage.getItem("selectedColor");
+    
+            if (storedColor) {
+                $(".V_color_border").each(function () {
+                    if ($(this).attr("data-color") === storedColor) {
+                        $(this).css("border", "1px solid black");
+                        lastSelectedElement = $(this); // Set last selected
+                    } else {
+                        $(this).css("border", "0.6px solid rgba(20, 20, 20, 0.2)");
+                    }
+                });
+            }
+        }
+    });
+    
+
+    
+    
+// 
+
+// Restore selection when page reloads
+function restoreSelectedColors() {
+    document.querySelectorAll(".V_color_border").forEach(el => {
+        const selectedItemId = el.getAttribute("data-item-id");
+        const storedColor = localStorage.getItem("selectedColor_" + selectedItemId);
+
+        if (storedColor && el.getAttribute("data-color") === storedColor) {
+            el.style.border = "1px solid black";
+        } else {
+            el.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";
+        }
+    });
+}
+
+// Call functions on page load
+document.addEventListener("DOMContentLoaded", () => {
+    restoreSelectedColors();
+    applyColorOrImageSelection();
+});
+
+    
 
     // Wishlist color selection logic
     document.getElementById("wishlistContainer").addEventListener("click", async event => {

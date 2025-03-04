@@ -324,15 +324,16 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         let orders = user.orders || [];
-        const selectedColor = product.colors?.[0] || null; // Default to first available color if present
+        const selectedColor = localStorage.getItem("selectedSingleColor") || (product.colors?.length ? product.colors[0].color : null);
         const quantity = parseInt(quantityInput.value);
 
         // Check if product already exists in cart
         let existingItem = orders.find(item => item.id === productId);
 
         if (existingItem) {
-            // Update existing item's quantity
-            existingItem.quantity = quantity;
+                    // Update existing item's quantity and selected color
+        existingItem.quantity = quantity;
+        existingItem.selectedColor = selectedColor;
         } else {
             // Add new product to cart
             const newItem = {
