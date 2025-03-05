@@ -450,6 +450,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
    color: #3D4936;
 }
 
+@media (max-width:1441px) {
+    .ds_person-img{
+        width: 82px;
+        height: 80px;
+        border-radius: 50%;
+    }    
+}
+
 @media (max-width:1200px) {
 /* <!-- ************ My Order  *********** --> */
 .ds_order_txt{
@@ -468,6 +476,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* <!-- -------------- Add Address Popup ---------  --> */
 .ds_add_add_popup{
     --bs-modal-width: 650px !important;
+}
+
+/* ******** Edit Profile *********** */
+.ds_pro_div{
+    height: 45px;
+    width: 79px;
+    background: #1414140F;
+    border-radius: 5px;
 }
 }
 

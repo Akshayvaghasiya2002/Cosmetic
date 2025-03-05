@@ -241,6 +241,7 @@ otpFields.forEach((field, index) => {
         }
     });
 });
+
 // /////////////////////// multiproduct filter part /////////////////////////
 document.addEventListener('DOMContentLoaded', function() {
     // Get all filter headers
@@ -288,24 +289,64 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Add this script to your JS file
-const minPriceInput = document.getElementById('minPrice');
-const maxPriceInput = document.getElementById('maxPrice');
-const minPriceDisplay = document.getElementById('minPriceInput');
-const maxPriceDisplay = document.getElementById('maxPriceInput');
+// const minPriceInput = document.getElementById('minPrice');
+// const maxPriceInput = document.getElementById('maxPrice');
+// const minPriceDisplay = document.getElementById('minPriceInput');
+// const maxPriceDisplay = document.getElementById('maxPriceInput');
 
-minPriceInput.addEventListener('input', function() {
-    if (parseInt(minPriceInput.value) > parseInt(maxPriceInput.value)) {
-        minPriceInput.value = maxPriceInput.value;
-    }
-    minPriceDisplay.value = '$' + minPriceInput.value;
-});
+// minPriceInput.addEventListener('input', function() {
+//     if (parseInt(minPriceInput.value) > parseInt(maxPriceInput.value)) {
+//         minPriceInput.value = maxPriceInput.value;
+//     }
+//     minPriceDisplay.value = '$' + minPriceInput.value;
+// });
 
-maxPriceInput.addEventListener('input', function() {
-    if (parseInt(maxPriceInput.value) < parseInt(minPriceInput.value)) {
-        maxPriceInput.value = minPriceInput.value;
-    }
-    maxPriceDisplay.value = '$' + maxPriceInput.value;
-});
+// maxPriceInput.addEventListener('input', function() {
+//     if (parseInt(maxPriceInput.value) < parseInt(minPriceInput.value)) {
+//         maxPriceInput.value = minPriceInput.value;
+//     }
+//     maxPriceDisplay.value = '$' + maxPriceInput.value;
+// });
+
+
+
+// const fromSlider = document.getElementById('fromSlider');
+// const toSlider = document.getElementById('toSlider');
+// const fromInput = document.getElementById('fromInput');
+// const toInput = document.getElementById('toInput');
+
+// fromSlider.addEventListener('input', () => {
+//     fromInput.value = fromSlider.value;
+//     if (parseInt(fromSlider.value) > parseInt(toSlider.value)) {
+//         toSlider.value = fromSlider.value;
+//         toInput.value = fromSlider.value;
+//     }
+// });
+
+// toSlider.addEventListener('input', () => {
+//     toInput.value = toSlider.value;
+//     if (parseInt(toSlider.value) < parseInt(fromSlider.value)) {
+//         fromSlider.value = toSlider.value;
+//         fromInput.value = toSlider.value;
+//     }
+// });
+
+// fromInput.addEventListener('change', () => {
+//     fromSlider.value = fromInput.value;
+//     if (parseInt(fromInput.value) > parseInt(toInput.value)) {
+//         toInput.value = fromInput.value;
+//         toSlider.value = fromInput.value;
+//     }
+// });
+
+// toInput.addEventListener('change', () => {
+//     toSlider.value = toInput.value;
+//     if (parseInt(toInput.value) < parseInt(fromInput.value)) {
+//         fromInput.value = toInput.value;
+//         fromSlider.value = toInput.value;
+//     }
+// });
+
 
 
 
@@ -314,6 +355,8 @@ maxPriceInput.addEventListener('input', function() {
 
 // Initialize filters array
 let filters = [];
+let Product = [];
+let FilterMyProduct = []
 
 // Function to add filter
 function addFilter(name, filterClass = '') {
@@ -430,16 +473,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Sort products
 function sortProducts(sortBy) {
-    let sortedProducts = [...products];
-    console.log(products);
+    let sortedProducts = [...Product];
     
     
     switch(sortBy) {
         case 'price-low-high':
-            sortedProducts.sort((a, b) => a.currentPrice - b.currentPrice);
+            sortedProducts.sort((a, b) => a.price - b.price);
             break;
         case 'price-high-low':
-            sortedProducts.sort((a, b) => b.currentPrice - a.currentPrice);
+            sortedProducts.sort((a, b) => b.price - a.price);
             break;
         case 'name-a-z':
             sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
@@ -448,18 +490,22 @@ function sortProducts(sortBy) {
             sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
             break;
         default:
-            sortedProducts = [...products]; // Default order (as defined in the array)
+            sortedProducts = [...Product]; // Default order (as defined in the array)
 
     }
+    FilterMyProduct = sortedProducts
+    // console.log("zzzzzzzzzzzzzzz",sortProducts);
     
-    return sortedProducts;
+    renderProducts()
+    // return sortedProducts;
 }
 
 // Handle sort change
 document.getElementById('sort-select').addEventListener('change', function() {
     const sortBy = this.value;
-    products.splice(0, products.length, ...sortProducts(sortBy));
-    renderProducts();
+    Product?.splice(0, Product.length, ...sortProducts(sortBy));
+    // renderProducts();
+    
 });
 
 // Responsive adjustments
@@ -503,38 +549,89 @@ document.addEventListener('DOMContentLoaded', init);
 // /////////////////////// product card part  /////////////////////////
 
 // Function to filter products based on selected filters
-function filterProducts() {
-    const filterOptions = document.querySelectorAll('.filter-option input[type="checkbox"]');
+function filterProducts(products) {
     const selectedFilters = [];
-    
-    filterOptions.forEach(option => {
+    const minPrice = parseFloat(document.querySelector('.min-value').value) || 0;
+    const maxPrice = parseFloat(document.querySelector('.max-value').value) || 300;
+
+    // Get selected filters from checkboxes
+    document.querySelectorAll('.filter-option input[type="checkbox"], .color-option input[type="checkbox"]').forEach(option => {
         if (option.checked) {
-            selectedFilters.push(option.parentElement.textContent.trim());
+            selectedFilters.push(option.parentElement.textContent.trim().toLowerCase());
         }
     });
 
-    // If no filters are selected, return all products
-    if (selectedFilters.length === 0) {
-        return products;
-    }
+    return products.filter(product => {
+        const productPrice = product.price;
 
-    const filteredProducts = products.filter(product => {
-        // Check if product matches any selected filter
-        return selectedFilters.some(filter => {
-            // Check if product name contains filter text
-            if (filter.includes("Lipstick")) {
-                return product.name.toLowerCase().includes("lipstick");
-            }
-            // For other filters, check brand or full name match
-            return product.brand.includes(filter) || 
-                   product.name.toLowerCase().includes(filter.toLowerCase());
+        // Check if the product matches selected filters
+        const matchesFilters = selectedFilters.length === 0 || selectedFilters.some(filter => {
+            return (
+                product.brand.toLowerCase().includes(filter) ||         
+                (product.brands && product.brands.toLowerCase().includes(filter)) ||
+                product.name.toLowerCase().includes(filter) ||          
+                (product.product && product.product.toLowerCase().includes(filter)) ||
+                (product.discount && product.discount.toLowerCase().includes(filter)) ||
+                (product.finish && product.finish.toLowerCase().includes(filter)) ||
+                (product.formulation && product.formulation.toLowerCase().includes(filter)) ||
+                product.colors.some(colorObj => colorObj.color.toLowerCase() === filter)
+            );
         });
-    });
 
-    return filteredProducts;
+        // Return only products that match selected filters and fall within the price range
+        return matchesFilters && productPrice >= minPrice && productPrice <= maxPrice;
+    });
 }
 
 
+document.querySelectorAll('.slider-container').forEach(container => {
+    const rangeMin = container.querySelector('.range-min');
+    const rangeMax = container.querySelector('.range-max');
+    const rangeSelected = container.querySelector('.range-selected');
+    const minValue = container.querySelector('.min-value');
+    const maxValue = container.querySelector('.max-value');
+
+    function updateSlider() {
+        const min = parseInt(rangeMin.value);
+        const max = parseInt(rangeMax.value);
+
+        // Ensure min doesn't exceed max
+        if (min > max) {
+            rangeMin.value = max;
+        }
+
+        // Calculate percentage for visual representation
+        const percentage = ((max - min) / 300) * 100;
+        const startPercentage = (min / 300) * 100;
+
+        rangeSelected.style.width = `${percentage}%`;
+        rangeSelected.style.left = `${startPercentage}%`;
+
+        // Update number inputs
+        minValue.value = min;
+        maxValue.value = max;
+    }
+
+    // Slider input event listeners
+    rangeMin.addEventListener('input', updateSlider);
+    rangeMax.addEventListener('input', updateSlider);
+
+    // Direct number input event listeners
+    minValue.addEventListener('change', () => {
+        const min = Math.max(0, Math.min(parseInt(minValue.value), 300));
+        rangeMin.value = min;
+        updateSlider();
+    });
+
+    maxValue.addEventListener('change', () => {
+        const max = Math.max(0, Math.min(parseInt(maxValue.value), 300));
+        rangeMax.value = max;
+        updateSlider();
+    });
+
+    // Initial update
+    updateSlider();
+});
 
 
 
@@ -563,15 +660,21 @@ async function renderProducts() {
         }
     }
 
-    // Fetch products from the JSON server (multiproducts array)
+    // Fetch products from the JSON server
     let products = [];
     try {
         const response = await fetch(`http://localhost:3000/multiproducts`);
         if (!response.ok) throw new Error("Failed to fetch products");
-        products = await response.json();
+        let json = await response.json();
+        products = json
+        Product = json
+        
     } catch (error) {
         console.error("Error fetching products:", error);
     }
+
+    // Apply filters
+    products = filterProducts(products);
 
     // Validate unique product IDs
     const uniqueProducts = new Map();
@@ -581,9 +684,16 @@ async function renderProducts() {
         }
     });
     products = Array.from(uniqueProducts.values());
+  console.log("hello" ,products);
+  
+    // Render filtered product cards
+    
+    products = FilterMyProduct.length > 0 ? FilterMyProduct : products;
 
-    // Render product cards
-    productsContainer.innerHTML = products.map(product => {
+    console.log("fafgaqfg" , FilterMyProduct);
+
+
+    productsContainer.innerHTML = products?.map(product => {
         const isWishlisted = wishlist.some(item => item.id == product.id);
         const badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
         const colorDotsHTML = product.colors.map((colorObj, index) => `
@@ -595,7 +705,7 @@ async function renderProducts() {
 
         return `
             <div class="product-card" data-id="${product.id}">
-                <div class="product-header px-3 pt-3">
+                <div class="product-header px-3 ">
                     ${badgeHTML}
                     <span class="ms-auto heart-container">
                         <i class="fa-regular fa-heart wishlist-button ${isWishlisted ? 'd-none' : ''}" data-id="${product.id}"></i>
@@ -629,6 +739,24 @@ async function renderProducts() {
 
     setupEventListeners(products, wishlist, cart, userId);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.filter-option input[type="checkbox"], .color-option input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            renderProducts();
+        });
+    });
+
+    document.querySelector('.remove-all').addEventListener('click', function() {
+        document.querySelectorAll('.filter-option input[type="checkbox"], .color-option input[type="checkbox"]').forEach(checkbox => {
+            checkbox.checked = false;
+        });
+        renderProducts();
+    });
+
+    renderProducts();
+});
+
 
 function setupEventListeners(products, wishlist, cart, userId) {
     let lastSelectedColor = null; // Store the last selected color globally

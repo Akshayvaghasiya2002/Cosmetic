@@ -19,14 +19,13 @@
     <script src="../JS/Parth/signUp.js"></script>
     <script src="../JS/Parth/Cart.js"></script>
 
-    
 </head>
 
 <body>
 
     <section>
         <div class="">
-            <header class="header" id="header">
+            <header class="header" id="header" style="box-shadow: none;">
                 <div class="">
                     <p class="A_welcome mb-0 text-center py-2">Welcome to our Store</p>
                 </div>
@@ -1350,26 +1349,31 @@
                                 </div>
                             </div>
                             <!-- Price Filter -->
-                            <div class="filter-section">
-                                <div class="filter-header">
-                                    <h3>Price</h3>
-                                    <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
-                                </div>
-                                <div class="filter-content">
-                                    <div class="price-slider">
-                                        <input type="range" class="price-range A_range_width" min="0" max="1000"
-                                            value="50" id="minPrice">
-                                        <input type="range" class="price-range" min="0" max="1000" value="200"
-                                            id="maxPrice">
-                                        <div class="price-inputs">
-                                            <span class="price-label mt-4">From <input type="text" id="minPriceInput"
-                                                    class="A_range_width" value="$50" readonly></span>
-                                            <span class="price-label mt-4">To <input type="text" id="maxPriceInput"
-                                                    class="A_range_width" value="$200" readonly></span>
-                                        </div>
+                              <div class="filter-section">
+                            <div class="filter-header">
+                                <h3>Price</h3>
+                                <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
+                            </div>
+                          
+                            <div class="filter-content">
+                                <div class="slider-container">
+                                    <div class="range-slider">
+                                        <div class="range-selected"></div>
+                                        <input type="range" min="0" max="300" value="0" class="range-input range-min">
+                                        <input type="range" min="0" max="300" value="300" class="range-input range-max">
+                                    </div>
+                                    <div class="range-values">
+                                        <input type="number" class="value-input min-value" min="0" max="300" >
+                                        <input type="number" class="value-input max-value" min="0" max="300" >
                                     </div>
                                 </div>
                             </div>
+                            
+
+
+                        </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -1548,11 +1552,11 @@
                                 <h3>Price</h3>
                                 <span class="filter-icon"><i class="fa-solid fa-angle-down"></i></span>
                             </div>
-                            <div class="filter-content">
+                            <!-- <div class="filter-content">
                                 <div class="price-slider">
-                                    <input type="range" class="price-range A_range_width" min="0" max="1000" value="50"
+                                    <input type="range" class="price-range ds_first A_range_width" min="0" max="1000" value="0"
                                         id="minPrice">
-                                    <input type="range" class="price-range" min="0" max="1000" value="200"
+                                    <input type="range" class="price-range ds_second" min="0" max="1000" value="200"
                                         id="maxPrice">
                                     <div class="price-inputs">
                                         <span class="price-label mt-4">From <input type="text" id="minPriceInput"
@@ -1561,12 +1565,30 @@
                                                 class="A_range_width" value="$200" readonly></span>
                                     </div>
                                 </div>
+                            </div> -->
+
+                          
+                            <div class="filter-content">
+                                <div class="slider-container">
+                                    <div class="range-slider">
+                                        <div class="range-selected"></div>
+                                        <input type="range" min="0" max="300" value="0" class="range-input range-min">
+                                        <input type="range" min="0" max="300" value="300" class="range-input range-max">
+                                    </div>
+                                    <div class="range-values">
+                                        <input type="number" class="value-input min-value" min="0" max="300" value="0">
+                                        <input type="number" class="value-input max-value" min="0" max="300" value="300">
+                                    </div>
+                                </div>
                             </div>
+                            
+
+
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-8">
-                    <div class="header">
+                    <div class="header" style="box-shadow: none;">
                         <button class="A_filter_offcanvas btn-sm d-lg-none " data-bs-toggle="offcanvas"
                             data-bs-target="#filtersOffcanvas" aria-controls="filtersOffcanvas">
                             <i class="fa-solid fa-filter"></i>

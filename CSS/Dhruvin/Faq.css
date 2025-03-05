@@ -104,3 +104,12 @@
     display: inline;
     cursor: pointer;
   }
+
+
+  @media (max-width:767px) {
+    .ds_fre-inner{
+      margin-right: 0px;
+      border: 0.6px solid #14141433;
+      border-radius: 5px;
+  }
+  }

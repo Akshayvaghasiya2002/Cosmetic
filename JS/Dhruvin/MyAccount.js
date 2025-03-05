@@ -192,7 +192,13 @@ function getUserProfileData(select = "all") {
                 else {
                     FinalMap = user?.confirmedOrders?.filter((element) => element?.orderStatus == select) || [];
                 }
-                console.log("dhdhd" , FinalMap);
+                
+                if(FinalMap?.length == 0) {
+                    document.getElementById("ds_no_order").classList.remove("d-none")
+                }
+                else{
+                    document.getElementById("ds_no_order").classList.add("d-none")
+                }
                 
                 const html = FinalMap?.map((element)=>{
                       return `<div class="d-flex justify-content-between mt-4">

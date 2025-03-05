@@ -241,7 +241,37 @@ otpFields.forEach((field, index) => {
         }
     });
 });
+
 // /////////////////////// multiproduct filter part /////////////////////////
+
+
+
+// Add this script to your JS file
+// const minPriceInput = document.getElementById('minPrice');
+// const maxPriceInput = document.getElementById('maxPrice');
+// const minPriceDisplay = document.getElementById('minPriceInput');
+// const maxPriceDisplay = document.getElementById('maxPriceInput');
+
+// minPriceInput.addEventListener('input', function() {
+//     if (parseInt(minPriceInput.value) > parseInt(maxPriceInput.value)) {
+//         minPriceInput.value = maxPriceInput.value;
+//     }
+//     minPriceDisplay.value = '$' + minPriceInput.value;
+// });
+
+// maxPriceInput.addEventListener('input', function() {
+//     if (parseInt(maxPriceInput.value) < parseInt(minPriceInput.value)) {
+//         maxPriceInput.value = minPriceInput.value;
+//     }
+//     maxPriceDisplay.value = '$' + maxPriceInput.value;
+// });
+// /////////////////////// multiproduct filter part /////////////////////////
+
+// // Initialize filters array
+let filters = [];
+let Product = [];
+let FilterMyProduct = []
+
 document.addEventListener('DOMContentLoaded', function() {
     // Get all filter headers
     const filterHeaders = document.querySelectorAll('.filter-header');
@@ -260,6 +290,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach(checkbox => {
             checkbox.checked = false;
+            filters.length == 0
+            renderFilters()
         });
     });
     
@@ -286,36 +318,45 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// ******** Range Input **********
+document.querySelectorAll('.slider-container').forEach(container => {
+    const rangeMin = container.querySelector('.range-min');
+    const rangeMax = container.querySelector('.range-max');
+    const minValue = container.querySelector('.min-value');
+    const maxValue = container.querySelector('.max-value');
+    const hello = container.querySelectorAll(".range-selected")
 
-// Add this script to your JS file
-const minPriceInput = document.getElementById('minPrice');
-const maxPriceInput = document.getElementById('maxPrice');
-const minPriceDisplay = document.getElementById('minPriceInput');
-const maxPriceDisplay = document.getElementById('maxPriceInput');
+    function updateSlider() {
+        const min = parseFloat(rangeMin.value);
+        const max = parseFloat(rangeMax.value);
 
-minPriceInput.addEventListener('input', function() {
-    if (parseInt(minPriceInput.value) > parseInt(maxPriceInput.value)) {
-        minPriceInput.value = maxPriceInput.value;
+        if (min > max) {
+            rangeMin.value = max;
+        }
+
+        const percentage = (max - min) / (300 - 60) * 100;
+        const startPercentage = (min - 60) / (300 - 60) * 100;
+
+        hello.forEach((element)=>{
+            element.textContent.c
+        })
+        minValue.value = min;
+        maxValue.value = max;
+
+        // Call renderProducts to update displayed products
+        renderProducts();
     }
-    minPriceDisplay.value = '$' + minPriceInput.value;
+
+    // Trigger filtering when slider changes
+    rangeMin.addEventListener('input', updateSlider);
+    rangeMax.addEventListener('input', updateSlider);
+    minValue.addEventListener('change', updateSlider);
+    maxValue.addEventListener('change', updateSlider);
 });
-
-maxPriceInput.addEventListener('input', function() {
-    if (parseInt(maxPriceInput.value) < parseInt(minPriceInput.value)) {
-        maxPriceInput.value = minPriceInput.value;
-    }
-    maxPriceDisplay.value = '$' + maxPriceInput.value;
-});
-// /////////////////////// multiproduct filter part /////////////////////////
-
-// // Initialize filters array
-let filters = [];
-
 // Function to add filter
 function addFilter(name, filterClass = '') {
     // Check if filter already exists
     const filterExists = filters.some(filter => filter.name === name);
-    console.log(filters);
     
     if (!filterExists) {
         filters.push({ name: name, class: filterClass });
@@ -428,14 +469,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Sort products
 function sortProducts(sortBy) {
-    let sortedProducts = [...products];
+    let sortedProducts = [...Product];
+    
     
     switch(sortBy) {
         case 'price-low-high':
-            sortedProducts.sort((a, b) => a.currentPrice - b.currentPrice);
+            sortedProducts.sort((a, b) => a.price - b.price);
             break;
         case 'price-high-low':
-            sortedProducts.sort((a, b) => b.currentPrice - a.currentPrice);
+            sortedProducts.sort((a, b) => b.price - a.price);
             break;
         case 'name-a-z':
             sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
@@ -444,10 +486,14 @@ function sortProducts(sortBy) {
             sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
             break;
         default:
-            // No need to reassign if it's already a copy
+            sortedProducts = [...Product]; // Default order (as defined in the array)
+
     }
+    FilterMyProduct = sortedProducts
+    // console.log("zzzzzzzzzzzzzzz",sortProducts);
     
-    return sortedProducts;
+    renderProducts()
+    // return sortedProducts;
 }
 
 // Handle sort change
@@ -501,13 +547,13 @@ document.addEventListener('DOMContentLoaded', init);
 // /////////////////////// product card part  /////////////////////////
 
 // Function to filter products based on selected filters
-function filterProducts() {
-    const filterOptions = document.querySelectorAll('.filter-option input[type="checkbox"]');
+function filterProducts(products) {
     const selectedFilters = [];
-    
-    filterOptions.forEach(option => {
+
+    // Get selected filters from checkboxes
+    document.querySelectorAll('.filter-option input[type="checkbox"], .color-option input[type="checkbox"]').forEach(option => {
         if (option.checked) {
-            selectedFilters.push(option.parentElement.textContent.trim());
+            selectedFilters.push(option.parentElement.textContent.trim().toLowerCase());
         }
     });
 
@@ -516,20 +562,20 @@ function filterProducts() {
         return products;
     }
 
-    const filteredProducts = products.filter(product => {
-        // Check if product matches any selected filter
+    return products.filter(product => {
         return selectedFilters.some(filter => {
-            // Check if product name contains filter text
-            if (filter.includes("Lipstick")) {
-                return product.name.toLowerCase().includes("lipstick");
-            }
-            // For other filters, check brand or full name match
-            return product.brand.includes(filter) || 
-                   product.name.toLowerCase().includes(filter.toLowerCase());
+            return (
+                product.brand.toLowerCase().includes(filter) ||         // Brand filter
+                (product.brands && product.brands.toLowerCase().includes(filter)) || // Alternate brand field
+                product.name.toLowerCase().includes(filter) ||          // Product name filter
+                (product.product && product.product.toLowerCase().includes(filter)) || // Product type
+                (product.discount && product.discount.toLowerCase().includes(filter)) || // Discount filter
+                (product.finish && product.finish.toLowerCase().includes(filter)) || // Finish type
+                (product.formulation && product.formulation.toLowerCase().includes(filter)) || // Formulation type
+                product.colors.some(colorObj => colorObj.color.toLowerCase() === filter) // Color filter
+            );
         });
     });
-
-    return filteredProducts;
 }
 
 // // Function to render products, handle wishlist and cart functionality
@@ -746,50 +792,63 @@ async function renderProducts() {
         }
     }
 
-    // Fetch products from the JSON server (multiproducts array)
+    // Fetch products from the JSON server
     let products = [];
-try {
-    const response = await fetch(`http://localhost:3000/combooffers`);
-    if (!response.ok) throw new Error("Failed to fetch products");
-    products = await response.json();
-} catch (error) {
-    console.error("Error fetching products:", error);
-}
-
-// Validate unique product IDs
-const uniqueProducts = new Map();
-products.forEach(product => {
-    if (!uniqueProducts.has(product.id)) {
-        uniqueProducts.set(product.id, product);
+    try {
+        const response = await fetch(`http://localhost:3000/multiproducts`);
+        if (!response.ok) throw new Error("Failed to fetch products");
+        let json = await response.json();
+        products = json
+        Product = json
+        
+    } catch (error) {
+        console.error("Error fetching products:", error);
     }
-});
-products = Array.from(uniqueProducts.values());
 
-// Render product cards
-productsContainer.innerHTML = products.map(product => {
-    const isWishlisted = wishlist.some(item => item.id == product.id);
-    const badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
+    // Apply filters
+    products = filterProducts(products);
+
+    // Validate unique product IDs
+    const uniqueProducts = new Map();
+    products.forEach(product => {
+        if (!uniqueProducts.has(product.id)) {
+            uniqueProducts.set(product.id, product);
+        }
+    });
+    products = Array.from(uniqueProducts.values());
+  console.log("hello" ,products);
+  
+    // Render filtered product cards
     
-    const imageDotsHTML = product.images.map((imageObj, index) => `
-        <div class="V_color_border mx-1" data-color-index="${index}" data-color="${imageObj.image}">
-            <img src="${imageObj.image}" alt="Color Option" class="color-dot">
-        </div>
-    `).join('');
+    products = FilterMyProduct.length > 0 ? FilterMyProduct : products;
 
-    const moreImagesHTML = product.moreImages ? `<span class="more-colors">+${product.moreImages}</span>` : '';
+    console.log("fafgaqfg" , FilterMyProduct);
+
+
+    productsContainer.innerHTML = products?.map(product => {
+        const isWishlisted = wishlist.some(item => item.id == product.id);
+        const badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
+        const colorDotsHTML = product.colors.map((colorObj, index) => `
+            <div class="V_color_border mx-1" data-color-index="${index}" data-color="${colorObj.color}">
+                <p class="color-dot" style="background-color: ${colorObj.color};"></p>
+            </div>
+        `).join('');
+        const moreColorsHTML = product.moreColors ? `<span class="more-colors">+${product.moreColors}</span>` : '';
 
         return `
             <div class="product-card" data-id="${product.id}">
-                <div class="product-header px-3 pt-3">
+                <div class="product-header px-3 ">
                     ${badgeHTML}
                     <span class="ms-auto heart-container">
                         <i class="fa-regular fa-heart wishlist-button ${isWishlisted ? 'd-none' : ''}" data-id="${product.id}"></i>
                         <i class="fa-solid fa-heart wishlist-button ${isWishlisted ? '' : 'd-none'}" data-id="${product.id}" style="color: #ff0000;"></i>
                     </span>
                 </div>
+                <a href="../../Akshay/singlepage.html?id=${product.id}&array=multiproducts">
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.brand} ${product.name}">
                 </div>
+                </a>
                 <div class="product-info">
                     <div class="product-brand">${product.brand}</div>
                     <div class="product-title">${product.name}</div>
@@ -799,8 +858,8 @@ productsContainer.innerHTML = products.map(product => {
                         <span class="discount">${product.discount}</span>
                     </div>
                     <div class="color-options">
-                        ${imageDotsHTML}
-                        ${moreImagesHTML}
+                        ${colorDotsHTML}
+                        ${moreColorsHTML}
                     </div>
                     <button class="add-to-cart V_add_cart" data-id="${product.id}">Add to Cart</button>
                 </div>
@@ -812,6 +871,24 @@ productsContainer.innerHTML = products.map(product => {
 
     setupEventListeners(products, wishlist, cart, userId);
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.filter-option input[type="checkbox"], .color-option input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            renderProducts();
+        });
+    });
+
+    document.querySelector('.remove-all').addEventListener('click', function() {
+        document.querySelectorAll('.filter-option input[type="checkbox"], .color-option input[type="checkbox"]').forEach(checkbox => {
+            checkbox.checked = false;
+        });
+        renderProducts();
+    });
+
+    renderProducts();
+});
 
 function setupEventListeners(products, wishlist, cart, userId) {
     let lastSelectedColor = null; // Store the last selected color globally

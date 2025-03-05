@@ -586,45 +586,46 @@ async function handleSubmitReview() {
     }
 
     // Create an array of objects with the base64 data in the 'file' key
-    const fileObjects = fileBase64Array.map(base64 => {
-        return { file: base64 };
-    });
+    const fileObjects = fileBase64Array.map(base64 => ({
+        data: base64
+    }));
+    
 
     console.log("object" , fileObjects);
     
-    // const newReview = {
-    //     id: passwordObj?.id,
-    //     name: passwordObj?.fullName,
-    //     selectedImage: passwordObj?.selectedImage ? passwordObj?.selectedImage : "/IMG/Dhruvin/myPerson.png",
-    //     rating,
-    //     title,
-    //     reviewText,
-    //     files: fileObjects,  // Now using the 'file' key in each object
-    //     date: new Date().toISOString().split("T")[0]
-    // };
+    const newReview = {
+        id: passwordObj?.id,
+        name: passwordObj?.fullName,
+        selectedImage: passwordObj?.selectedImage ? passwordObj?.selectedImage : "/IMG/Dhruvin/myPerson.png",
+        rating,
+        title,
+        reviewText,
+        files: fileObjects,  // Now using the 'file' key in each object
+        date: new Date().toISOString().split("T")[0]
+    };
 
-    // try {
-    //     const response = await fetch(`http://localhost:3000/${productArr}/${mainId}`);
-    //     if (!response.ok) throw new Error("Failed to fetch product data");
+    try {
+        const response = await fetch(`http://localhost:3000/${productArr}/${mainId}`);
+        if (!response.ok) throw new Error("Failed to fetch product data");
 
-    //     let productData = await response.json();
-    //     if (!productData.reviews) productData.reviews = [];
-    //     productData.reviews.push(newReview);
+        let productData = await response.json();
+        if (!productData.reviews) productData.reviews = [];
+        productData.reviews.push(newReview);
 
-    //     const updateResponse = await fetch(`http://localhost:3000/${productArr}/${mainId}`, {
-    //         method: "PATCH",
-    //         headers: { "Content-Type": "application/json" },
-    //         body: JSON.stringify({ reviews: productData.reviews })
-    //     });
+        const updateResponse = await fetch(`http://localhost:3000/${productArr}/${mainId}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ reviews: productData.reviews })
+        });
 
-    //     if (!updateResponse.ok) throw new Error("Failed to update product reviews");
+        if (!updateResponse.ok) throw new Error("Failed to update product reviews");
 
-    //     console.log("Review added successfully!", await updateResponse.json());
-    //     alert("Review submitted successfully!");
+        console.log("Review added successfully!", await updateResponse.json());
+        alert("Review submitted successfully!");
 
-    // } catch (error) {
-    //     alert("Error: " + error.message);
-    // }
+    } catch (error) {
+        alert("Error: " + error.message);
+    }
 }
 
 
