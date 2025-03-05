@@ -44,6 +44,8 @@ const overlay = document.querySelector(".overlay");
 function toggleMenu() {
     menu.classList.toggle("is-active");
     overlay.classList.toggle("is-active");
+
+    console.log('cliksss');
 }
 
 // Show Mobile Submenu Function

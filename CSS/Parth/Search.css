@@ -50,26 +50,26 @@
     font-size: 16px;
 }
 
-.V_name {
+.V_name1 {
     font-weight: 400;
     font-size: 14px;
     color: rgba(20, 20, 20, 1);
 }
 
-.V_price {
+.V_price1{
     font-weight: 400;
     font-size: 14px;
     color: rgba(20, 20, 20, 1);
 }
 
-.V_shade {
+.V_shade1 {
     font-weight: 400;
     font-size: 12px;
     text-decoration: line-through;
     color: rgba(20, 20, 20, 0.6);
 }
 
-.V_image {
+.V_image1 {
     width: 60px;
     height: 60px;
 }
@@ -159,15 +159,15 @@
     color: rgba(20, 20, 20, 0.6);
 }
 
-.V_bottom {
+.V_bottom1 {
     padding-bottom: 30px;
 }
 
-.V_bottom1 {
+.V_bottom11 {
     margin-bottom: 30px;
 }
 
-.V_bottom2 {
+.V_bottom12 {
     margin-bottom: 15px;
 }
 
@@ -223,17 +223,17 @@
     font-size: 14px;
     color: white;
 } */
-.V_border {
+.V_border1 {
     border: 0.8px solid #3D4936;
     height: 50px;
     border-radius: 4px;
 }
-.V_border:hover {
+.V_border1:hover {
     background-color: rgba(20, 20, 20, 1);
     cursor: pointer;
     color: white;
 }
-.V_border:hover .V_log_google {
+.V_border1:hover .V_log_google {
     color: white;
 }
 .V_glg {
@@ -363,19 +363,19 @@
         font-size: 16px;
     }
 
-    .V_name {
+    .V_name1 {
         font-size: 14px;
     }
 
-    .V_price {
+    .V_price1{
         font-size: 14px;
     }
 
-    .V_shade {
+    .V_shade1 {
         font-size: 12px;
     }
 
-    .V_image {
+    .V_image1 {
         width: 60px;
         height: 60px;
     }
@@ -418,19 +418,19 @@
         font-size: 16px;
     }
 
-    .V_name {
+    .V_name1 {
         font-size: 14px;
     }
 
-    .V_price {
+    .V_price1{
         font-size: 14px;
     }
 
-    .V_shade {
+    .V_shade1 {
         font-size: 12px;
     }
 
-    .V_image {
+    .V_image1 {
         width: 60px;
         height: 60px;
     }
@@ -473,19 +473,19 @@
         font-size: 16px;
     }
 
-    .V_name {
+    .V_name1 {
         font-size: 14px;
     }
 
-    .V_price {
+    .V_price1{
         font-size: 14px;
     }
 
-    .V_shade {
+    .V_shade1 {
         font-size: 12px;
     }
 
-    .V_image {
+    .V_image1 {
         width: 60px;
         height: 60px;
     }
@@ -528,19 +528,19 @@
         font-size: 16px;
     }
 
-    .V_name {
+    .V_name1 {
         font-size: 14px;
     }
 
-    .V_price {
+    .V_price1{
         font-size: 14px;
     }
 
-    .V_shade {
+    .V_shade1 {
         font-size: 12px;
     }
 
-    .V_image {
+    .V_image1 {
         width: 60px;
         height: 60px;
     }
@@ -593,7 +593,7 @@
         font-size: 14px;
     }
 
-    .V_border {
+    .V_border1 {
         height: 45px;
     }
 
@@ -640,19 +640,19 @@
         font-size: 16px;
     }
 
-    .V_name {
+    .V_name1 {
         font-size: 14px;
     }
 
-    .V_price {
+    .V_price1{
         font-size: 14px;
     }
 
-    .V_shade {
+    .V_shade1 {
         font-size: 12px;
     }
 
-    .V_image {
+    .V_image1 {
         width: 70px;
         height: 70px;
     }
@@ -708,7 +708,7 @@
         font-size: 14px;
     }
 
-    .V_border {
+    .V_border1 {
         height: 45px;
     }
 
@@ -756,19 +756,19 @@
         font-size: 16px;
     }
 
-    .V_name {
+    .V_name1 {
         font-size: 16px;
     }
 
-    .V_price {
+    .V_price1{
         font-size: 16px;
     }
 
-    .V_shade {
+    .V_shade1 {
         font-size: 14px;
     }
 
-    .V_image {
+    .V_image1 {
         width: 80px;
         height: 80px;
     }
@@ -798,11 +798,11 @@
     }
 
 
-    .V_bottom {
+    .V_bottom1 {
         padding-bottom: 30px;
     }
 
-    .V_bottom1 {
+    .V_bottom11 {
         margin-bottom: 30px;
     }
 
@@ -818,7 +818,7 @@
         font-size: 16px;
     }
 
-    .V_border {
+    .V_border1 {
         height: 40px;
     }
 
@@ -877,19 +877,19 @@
         font-size: 16px;
     }
 
-    .V_name {
+    .V_name1 {
         font-size: 16px;
     }
 
-    .V_price {
+    .V_price1{
         font-size: 16px;
     }
 
-    .V_shade {
+    .V_shade1 {
         font-size: 14px;
     }
 
-    .V_image {
+    .V_image1 {
         width: 80px;
         height: 80px;
     }
@@ -933,11 +933,11 @@
     }
 
 
-    .V_bottom {
+    .V_bottom1 {
         padding-bottom: 30px;
     }
 
-    .V_bottom1 {
+    .V_bottom11 {
         margin-bottom: 30px;
     }
 
@@ -953,7 +953,7 @@
         font-size: 14px;
     }
 
-    .V_border {
+    .V_border1 {
         height: 40px;
     }
 
@@ -1012,19 +1012,19 @@
         font-size: 16px;
     }
 
-    .V_name {
+    .V_name1 {
         font-size: 14px;
     }
 
-    .V_price {
+    .V_price1{
         font-size: 14px;
     }
 
-    .V_shade {
+    .V_shade1 {
         font-size: 12px;
     }
 
-    .V_image {
+    .V_image1 {
         width: 120px;
         height: 90px;
     }
@@ -1068,11 +1068,11 @@
     }
 
 
-    .V_bottom {
+    .V_bottom1 {
         padding-bottom: 30px;
     }
 
-    .V_bottom1 {
+    .V_bottom11 {
         margin-bottom: 30px;
     }
 
@@ -1087,7 +1087,7 @@
         font-size: 14px;
     }
 
-    .V_border {
+    .V_border1 {
         height: 40px;
     }
 

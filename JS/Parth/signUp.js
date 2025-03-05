@@ -222,11 +222,7 @@ function handleLogin() {
 
 
 
-function renderWishlist() {
-    window.location.href = "/Parth/Wishlist.html";
+let newData = localStorage.getItem("Register");
+if (newData) {
+    newData = JSON.parse(newData);
 }
-
-
-
-let newData = JSON.parse(localStorage.getItem("Register"))
-newData ? newData : ""
