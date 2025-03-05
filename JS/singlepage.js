@@ -1,3 +1,7 @@
+function gotooffer() {
+    window.location.href = "../Parth/Offer.html";
+}
+
 const menu = document.querySelector(".menu");
 const menuInner = menu.querySelector(".menu-inner");
 const menuArrow = menu.querySelector(".menu-arrow");
