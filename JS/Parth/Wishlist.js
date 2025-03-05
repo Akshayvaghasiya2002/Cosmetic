@@ -217,7 +217,7 @@ function createWishlistItemHTML(item) {
             <div class="V_border mx-auto">
                 <div class="position-relative">
                     ${badgeHTML}
-                    <img src="${item.image}" alt="${item.name}" class="V_image mx-auto">
+                    <img src="${item.image}" alt="${item.name}" class="V_imagemx-auto">
                     <div class="V_dil_border d-flex align-items-center justify-content-center" data-id="${item.id}">
                         <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
                     </div>
@@ -225,9 +225,9 @@ function createWishlistItemHTML(item) {
                 <div class="V_name_width mx-auto">
                     <p class="text text-center V_name">${item.name}</p>
                     <div class="d-flex justify-content-center align-items-center">
-                        <p class="text V_price mx-2 mb-0">${item.currentPrice}</p>
-                        <p class="text V_actual_price mb-0 mx-1">${item.originalPrice}</p>
-                        <p class="text V_green mb-0 mx-2">${item.discount}</p>
+                        <p class="text V_price mx-2 mb-0">$${item.currentPrice}</p>
+                        <p class="text V_actual_price mb-0 mx-1">$${item.originalPrice}</p>
+                        <p class="text V_green mb-0 mx-2">$${item.discount}</p>
                     </div>
                     <div class="d-flex V_height justify-content-center mt-2 color-options" id="sliderContainer">
                         ${colorOptionsHTML}

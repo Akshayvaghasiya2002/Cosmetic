@@ -343,7 +343,7 @@ function validateForm() {
     if (!selectedButton) {
         errors.push("Please select an address type.");
     } else if (selectedButton.id === "Other") {
-        let otherType = document.getElementById("exampleInputEmail1").value.trim();
+        let otherType = document.getElementById("Othervalue").value.trim();
         if (!otherType) {
             errors.push("Please specify the 'Other' address type.");
         }
@@ -386,7 +386,7 @@ async function saveAddress() {
     let addressType = selectedButton ? selectedButton.innerText.trim() : "Other";
 
     let otherTypeValue = addressType === "Other"
-        ? document.getElementById("exampleInputEmail1").value.trim()
+        ? document.getElementById("Othervalue").value.trim()
         : null;
 
     // Collect input values

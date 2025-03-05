@@ -51,9 +51,7 @@
       "originalPrice": 600,
       "discount": "20% OFF",
       "category": "body care",
-      "tags": [
-        ""
-      ],
+      "tags": "BEST SELLER",
       "image": "/IMG/Akshay/lip_balm.png",
       "description": "A hydrating lip balm with a natural tint that adjusts to your lip’s pH for a custom color.",
       "expiryDate": "2026-08-15",
@@ -936,28 +934,13 @@
     {
       "id": "b707",
       "fullName": "Parth Vaghasiya",
-      "phoneNumber": "7284854011",
       "email": "parthvaghasiya123@gmail.com",
       "password": "Parth@123",
-      "wishlist": [],
-      "orders": [],
-      "addresses": [
-        {
-          "id": 1741084668658,
-          "firstName": "Parth",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "7284854011",
-          "email": "parth@123gmail.com",
-          "zipCode": "395004",
-          "address1": "163, Gadhapur Township, Pasodara, Kathodara",
-          "address2": "Surat",
-          "city": "Surat",
-          "state": "Guj",
-          "country": "IND",
-          "addressType": "Other",
-          "otherType": "Hello Parth"
-        }
-      ],
+      "dateOfBirth": "2002-11-29",
+      "gender": "Male",
+      "phoneNumber": "7284854011",
+      "selectedImage": null,
+      "carddetails": [],
       "confirmedOrders": [
         {
           "batchId": "batch_1741084695346",
@@ -1045,6 +1028,191 @@
               "totalAmount": 450
             }
           ]
+        },
+        {
+          "batchId": "batch_1741147059928",
+          "orderDate": "2025-03-05",
+          "deliveryDate": "2025-03-15",
+          "orderStatus": "pending",
+          "totalAmount": 311,
+          "specialOffer": 50,
+          "shippingDetails": {
+            "name": "Parth Vaghasiya",
+            "address": "163, Gadhapur Township, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
+            "mobile": "7284854011"
+          },
+          "orders": [
+            {
+              "id": 1741147026798,
+              "image": "../../IMG/Parth/offer_3.png",
+              "name": "MAC MACXIMAL SLEEK SATIN LIPSTICK",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": null,
+              "orderId": "order_1741147059929",
+              "totalAmount": 450
+            }
+          ]
+        },
+        {
+          "batchId": "batch_1741154081168",
+          "orderDate": "2025-03-05",
+          "deliveryDate": "2025-03-15",
+          "orderStatus": "pending",
+          "totalAmount": 721,
+          "specialOffer": 0,
+          "shippingDetails": {
+            "name": "Parth Vaghasiya",
+            "address": "163, Gadhapur Township, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
+            "mobile": "7284854011"
+          },
+          "orders": [
+            {
+              "id": 1741151430488,
+              "image": "/IMG/Akshay/lip_balm.png",
+              "name": "MAC Glow Play Tender Talk Lip Balm",
+              "currentPrice": 450,
+              "quantity": 2,
+              "selectedColor": "#CCB9D8",
+              "orderId": "order_1741154081169",
+              "totalAmount": 900
+            }
+          ]
+        },
+        {
+          "batchId": "batch_1741154663008",
+          "orderDate": "2025-03-05",
+          "deliveryDate": "2025-03-15",
+          "orderStatus": "pending",
+          "totalAmount": 311,
+          "specialOffer": 50,
+          "shippingDetails": {
+            "name": "Parth Vaghasiya",
+            "address": "163, Gadhapur Township, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
+            "mobile": "7284854011"
+          },
+          "orders": [
+            {
+              "id": 1741154602338,
+              "image": "/IMG/Akshay/bodyshot.png",
+              "name": "Wonder Match Creamy Liquid Matte Lipstick",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": "/IMG/Akshay/bodyshot.png",
+              "orderId": "order_1741154663008",
+              "totalAmount": 450
+            }
+          ]
+        },
+        {
+          "batchId": "batch_1741155216317",
+          "orderDate": "2025-03-05",
+          "deliveryDate": "2025-03-15",
+          "orderStatus": "pending",
+          "totalAmount": 361,
+          "specialOffer": 50,
+          "shippingDetails": {
+            "name": "Parth Vaghasiya",
+            "address": "163, Gadhapur Township, Pasodara, Kathodara, Surat, Surat, Guj, 395004, IND",
+            "mobile": "7284854011"
+          },
+          "orders": [
+            {
+              "id": 1741155190828,
+              "image": "../../IMG/Parth/offer_2.png",
+              "name": "MAC Glow Play Tender Talk Lip Balm",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": null,
+              "orderId": "order_1741155216317",
+              "totalAmount": 450
+            }
+          ]
+        },
+        {
+          "batchId": "batch_1741173714633",
+          "orderDate": "2025-03-05",
+          "deliveryDate": "2025-03-15",
+          "orderStatus": "pending",
+          "totalAmount": 721,
+          "specialOffer": 20,
+          "shippingDetails": {
+            "name": "Parth vaghasiya",
+            "address": "163, gadhpur township, pasodata, surat, Surat, Guj, 395004, USA",
+            "mobile": "7284854011"
+          },
+          "orders": [
+            {
+              "id": 1741156420552,
+              "image": "/IMG/Akshay/bodyshot.png",
+              "name": "Wonder Match Creamy Liquid Matte Lip Balm",
+              "currentPrice": 450,
+              "quantity": 2,
+              "selectedColor": "/IMG/Akshay/bodyshot.png",
+              "orderId": "order_1741173714633",
+              "totalAmount": 900
+            }
+          ]
+        }
+      ],
+      "orders": [
+        {
+          "id": 1741173982608,
+          "image": "/IMG/Akshay/bodyshot.png",
+          "name": "Wonder Match Creamy Liquid Matte Lipstick",
+          "currentPrice": 450,
+          "quantity": 1,
+          "selectedColor": "/IMG/Akshay/bodyshot.png"
+        }
+      ],
+      "wishlist": [
+        {
+          "id": "27",
+          "image": "../../IMG/Parth/offer_3.png",
+          "name": "MAC MACXIMAL SLEEK SATIN LIPSTICK",
+          "currentPrice": 450,
+          "originalPrice": 600,
+          "discount": "20% Off",
+          "images": [
+            "../../IMG/Parth/offer_3.png",
+            "../../IMG/Parth/offer_3.png",
+            "../../IMG/Parth/offer_3.png",
+            "../../IMG/Parth/offer_3.png"
+          ],
+          "moreImages": 15,
+          "selectedColor": "../../IMG/Parth/offer_3.png"
+        }
+      ],
+      "addresses": [
+        {
+          "id": 1741157495367,
+          "firstName": "Parth",
+          "lastName": "vaghasiya",
+          "mobileNumber": "7284854011",
+          "email": "parthvaghasiya2911@gmail.com",
+          "zipCode": "395004",
+          "address1": "163, gadhpur township, pasodata, surat",
+          "address2": "",
+          "city": "Surat",
+          "state": "Guj",
+          "country": "USA",
+          "addressType": "Other",
+          "otherType": "aaaa"
+        },
+        {
+          "id": 1741157526070,
+          "firstName": "John",
+          "lastName": "Wick",
+          "mobileNumber": "7418529630",
+          "email": "john@wick123gmail.com",
+          "zipCode": "940431",
+          "address1": "1600 Fake Street",
+          "address2": "Apartment 1",
+          "city": "Mountain View",
+          "state": "Guj",
+          "country": "IND",
+          "addressType": "Other",
+          "otherType": "ascdzxaqaq"
         }
       ]
     }

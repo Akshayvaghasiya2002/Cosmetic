@@ -1,3 +1,12 @@
+function gotooffer() {
+  window.location.href = "../Parth/Offer.html";
+}
+
+
+
+
+
+
 const userId = localStorage.getItem("userId")
 const batchId = localStorage.getItem("MyBatchId")
 let passwordObj = {}
