@@ -41,7 +41,10 @@
 .ds_space {
   white-space: nowrap;
 }
-
+.ds_preview_img{
+  width: 80px;
+  height: 80px;
+}
 
 .selected-color{
   border: 0.6px solid rgba(20, 20, 20, 0.2);
