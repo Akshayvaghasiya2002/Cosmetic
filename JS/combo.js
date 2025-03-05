@@ -1,5 +1,7 @@
-
-//////////////////////////////////////////  combno offers /////////////////////////////////////////////
+function gotooffer() {
+    window.location.href = "../Parth/Offer.html";
+}
+//////////////////////////////////////////  combo offers /////////////////////////////////////////////
 const menu = document.querySelector(".menu");
 const menuInner = menu.querySelector(".menu-inner");
 const menuArrow = menu.querySelector(".menu-arrow");
@@ -306,13 +308,15 @@ maxPriceInput.addEventListener('input', function() {
 });
 // /////////////////////// multiproduct filter part /////////////////////////
 
-// Initialize filters array
+// // Initialize filters array
 let filters = [];
 
 // Function to add filter
 function addFilter(name, filterClass = '') {
     // Check if filter already exists
     const filterExists = filters.some(filter => filter.name === name);
+    console.log(filters);
+    
     if (!filterExists) {
         filters.push({ name: name, class: filterClass });
         renderFilters();
@@ -492,6 +496,8 @@ function init() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', init);
+
+
 // /////////////////////// product card part  /////////////////////////
 
 // Function to filter products based on selected filters
