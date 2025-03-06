@@ -5,7 +5,7 @@
 
 
 function gotoaddresspage() {
-    window.location.href = "../../Parth/AddAddress.html";
+    window.location.href = "/AddAddress.html";
 }
 
 // Wait for the DOM to load before running the script
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                                 </div>
                                 <div class="px-xl-2 V_plus text-center mt-4" data-action="increase" data-id="${item.id}">+</div>
                                 <div class="V_delete ms-1 ms-xl-2 pt-2" data-action="delete" data-id="${item.id}">
-                                    <img src="../IMG/Parth/delete.png" alt="delete btn" class="ms-auto w-100">
+                                    <img src="/IMG/delete.png" alt="delete btn" class="ms-auto w-100">
                                 </div>
                             </div>
                         </div>

@@ -19,7 +19,7 @@
 }
 
 .V_off_back {
-    background-image: url("../../IMG/Parth/off_back.png");
+    background-image: url("/IMG/off_back.png");
     width: 100%;
     height: 510px;
     background-size: cover;
@@ -45,7 +45,7 @@
 
 
 .V_back_image_1 {
-    background-image: url("../../IMG/Parth/iconic_image.png");
+    background-image: url("/IMG/iconic_image.png");
     width: 100%;
     height: 270px;
     background-size: cover;
@@ -99,7 +99,7 @@
 }
 
 .V_back_image_2 {
-    background-image: url("../../IMG/Parth/Loreal_image.png");
+    background-image: url("/IMG/Loreal_image.png");
     width: 100%;
     height: 270px;
     background-size: cover;
@@ -107,7 +107,7 @@
 }
 
 .V_back_image_3 {
-    background-image: url("../../IMG/Parth/Sugar_image.png");
+    background-image: url("/IMG/Sugar_image.png");
     width: 100%;
     height: 270px;
     background-size: cover;

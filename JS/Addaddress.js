@@ -433,7 +433,7 @@ async function saveAddress() {
 
         alert("Address saved successfully in JSON server!");
 
-        window.location.href = "../../Parth/Payment.html"; 
+        window.location.href = "/Payment.html"; 
     } catch (error) {
         console.error("Error saving address:", error);
         alert("Failed to save address. Please try again.");
@@ -443,7 +443,7 @@ async function saveAddress() {
 
 
 function payment() {
-    window.location.href = "../../Parth/Payment.html";
+    window.location.href = "/Payment.html";
 }
 
 

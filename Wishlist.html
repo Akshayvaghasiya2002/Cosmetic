@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment</title>
+    <title>Wishlist</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -13,30 +13,61 @@
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="../index.html">
-    <link rel="stylesheet" href="../CSS/home.css">
-    <link rel="stylesheet" href="../CSS/Parth/Payment.css">
+    <!-- <link rel="stylesheet" href="../index.html"> -->
+    <link rel="stylesheet" href="/CSS/home.css">
+    <link rel="stylesheet" href="/CSS/Wishlist.css">
+
 
     <!-- ////////////////////////////     for header   ////////////////////////// -->
-    <link rel="stylesheet" href="../CSS/Parth/Search.css">
+    <link rel="stylesheet" href="/CSS/Search.css">
 
 
-    <link rel="stylesheet" href="../CSS/Parth/cart.css">
+    <link rel="stylesheet" href="/CSS/cart.css">
 
-    <script src="../JS/Parth/Cart.js"></script>
+    <script src="/JS/Cart.js"></script>
 
     <!-- ////  for header   ///// -->
+     <!-- /////////////////////  Footer  ////////////////////// -->
 
-    <!-- /////////////////////  Footer  ////////////////////// -->
+     <link rel="stylesheet" href="/CSS/Dhruvin/Footer.css">
 
-    <link rel="stylesheet" href="/CSS/Dhruvin/Footer.css">
+     <!-- /////  footer ///// -->
 
-    <!-- /////  footer ///// -->
+
+    <style>
+        #sliderContainer {
+            display: flex;
+            overflow-x: auto;
+            /* Allows horizontal scrolling */
+            overflow-y: hidden;
+            /* Prevents vertical scrolling */
+            white-space: nowrap;
+            /* Prevents wrapping */
+            scroll-behavior: smooth;
+            /* Smooth scrolling effect */
+            gap: 8px;
+            /* Adds spacing between color options */
+            max-width: 100%;
+            padding-bottom: 0px;
+
+            /* Hide scrollbar but keep scrolling enabled */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        #sliderContainer::-webkit-scrollbar {
+            display: none;
+            /* Hides scrollbar in Chrome, Safari, Edge */
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 
 </head>
 
 <body>
-
 
 
     <!-- ////////////////////////////     for header   ////////////////////////// -->
@@ -761,7 +792,7 @@
                                     </div>
                                 </li>
                                 <li class="menu-item menu-dropdown">
-                                    <span class="menu-link"><a href="/Akshay/combo.html" class="text-dark text-decoration-none">Combo</a><i class="fa-solid fa-angle-down ps-2"></i></span> 
+                                    <span class="menu-link"><a href="/Akshay/combo.html" class="text-dark text-decoration-none">Combo</a><i class="fa-solid fa-angle-down ps-2"></i></span>
                                     <div class="submenu megamenu megamenu-column-1">
                                         <ul class="submenu-list">
                                             <li class="submenu-item">
@@ -788,7 +819,7 @@
                         <div>
                             <i class="fa-solid ds_cursor fa-magnifying-glass" id="searchIcon" onclick="emptyNav()"></i>
                         </div>
-                        <a href="../Parth/Wishlist.html" class="ds_color">
+                        <a href="/Wishlist.html" class="ds_color">
                             <div>
                                 <i class="fa-regular ds_cursor fa-heart"></i>
                             </div>
@@ -827,7 +858,7 @@
                                     <div class="row m-0 p-0 my-2 mb-2 ms-lg-4">
                                         <div class="col-12 col-md-6 d-flex my-2">
                                             <div>
-                                                <img src="../IMG//Parth/product_1.png" class="V_image" alt="">
+                                                <img src="/IMG/product_1.png" class="V_image" alt="">
                                             </div>
                                             <div class="ps-3 ps-md-0 ps-lg-3">
                                                 <p class="text V_name mb-1">SWISS BEAUTY
@@ -841,7 +872,7 @@
                                         </div>
                                         <div class="col-12 col-md-6 d-flex my-2">
                                             <div>
-                                                <img src="../IMG//Parth/product_2.png" class="V_image" alt="">
+                                                <img src="/IMG/product_2.png" class="V_image" alt="">
                                             </div>
                                             <div class="ps-3 ps-md-0 ps-lg-3">
                                                 <p class="text V_name mb-1">Colorbar PowerKiss Vegan Matte Lipcolor</p>
@@ -854,7 +885,7 @@
                                         </div>
                                         <div class="col-12 col-md-6 d-flex my-2">
                                             <div>
-                                                <img src="../IMG//Parth/product_3.png" class="V_image" alt="">
+                                                <img src="/IMG/product_3.png" class="V_image" alt="">
                                             </div>
                                             <div class="ps-3 ps-md-0 ps-lg-3">
                                                 <p class="text V_name mb-1">Lakmē Lip Love Gelato Collection, 4.5g </p>
@@ -867,7 +898,7 @@
                                         </div>
                                         <div class="col-12 col-md-6 d-flex my-2">
                                             <div>
-                                                <img src="../IMG//Parth/product_4.png" class="V_image" alt="">
+                                                <img src="/IMG/product_4.png" class="V_image" alt="">
                                             </div>
                                             <div class="ps-3 ps-md-0 ps-lg-3">
                                                 <p class="text V_name mb-1">HOK Focallure Kissproof Liquid Lipstick</p>
@@ -880,7 +911,7 @@
                                         </div>
                                         <div class="col-12 col-md-6 d-flex my-2">
                                             <div>
-                                                <img src="../IMG//Parth/product_5.png" class="V_image" alt="">
+                                                <img src="/IMG/product_5.png" class="V_image" alt="">
                                             </div>
                                             <div class="ps-3 ps-md-0 ps-lg-3">
                                                 <p class="text V_name mb-1">SUGAR Swipe Right Cleansing Water</p>
@@ -893,7 +924,7 @@
                                         </div>
                                         <div class="col-12 col-md-6 d-flex my-2">
                                             <div>
-                                                <img src="../IMG//Parth/product_6.png" class="V_image" alt="">
+                                                <img src="/IMG/product_6.png" class="V_image" alt="">
                                             </div>
                                             <div class="ps-3 ps-md-0 ps-lg-3">
                                                 <p class="text V_name mb-1">RENEE Prime Matte Lipstick, 4.5gm </p>
@@ -917,7 +948,7 @@
                             <div class="my-3 my-lg-5 py-3 py-lg-5  justify-content-center ">
                                 <p class="text V_you text-center">You searched for “ <span class="V_lorem">Lorem
                                         Ipsum</span>”</p>
-                                <img src="../IMG/Parth//EmptySearch.png" alt="" class="V_emptysearch mx-auto">
+                                <img src="/IMG/EmptySearch.png" alt="" class="V_emptysearch mx-auto">
                                 <p class="text V_you text-center">We couldn't find any matches!</p>
                                 <p class="text V_you text-center">Please check the spelling or try searching for
                                     something else.</p>
@@ -946,7 +977,7 @@
                             <div class="col-6 d-none d-md-block position-relative">
                                 <p class="text V_logo mb-0 px-3"> <span class="V_logo_b">B</span>loom <span
                                         class="V_logo_b">B</span>eauty</p>
-                                <img src="../IMG/Parth/sign_up_image.png" alt="" class="V_sign ">
+                                <img src="/IMG/sign_up_image.png" alt="" class="V_sign ">
                             </div>
                             <div class="col-12 col-md-6 px-4 px-sm-5 px-md-0 ps-md-4 pe-md-5 V_sign_section ">
                                 <p class="text V_modal_head mb-2">Register</p>
@@ -985,7 +1016,7 @@
                                 </div>
                                 <div class="d-flex justify-content-center mb-4 mb-md-4 mb-lg-5 V_border py-2">
                                     <div class="d-flex">
-                                        <img src="../IMG/Parth/google_logo.png" alt="google logo"
+                                        <img src="/IMG/google_logo.png" alt="google logo"
                                             class="V_glg align-self-center">
                                         <p class="text px-3 align-content-center mb-0 V_log_google">Log in with Google
                                         </p>
@@ -1032,7 +1063,7 @@
                                 </div>
                                 <div class="d-flex justify-content-center mb-4 mb-md-4 mb-lg-5 V_border py-2">
                                     <div class="d-flex">
-                                        <img src="../IMG/Parth/google_logo.png" alt="google logo"
+                                        <img src="/IMG/google_logo.png" alt="google logo"
                                             class="V_glg align-self-center">
                                         <p class="text px-3 align-content-center mb-0 V_log_google">Log in with Google
                                         </p>
@@ -1194,7 +1225,7 @@
             <hr class="m-0 mx-3">
             <div class="offcanvas-body h-100 d-none">
                 <div class="h-100 d-flex justify-content-center flex-column align-content-center">
-                    <img src="../IMG//Parth/EmptyState.png" alt="empty cart" class="V_emptycard_img mx-auto">
+                    <img src="/IMG//EmptyState.png" alt="empty cart" class="V_emptycard_img mx-auto">
                     <div class="text-center">
                         <p class="text V_oops m-0">Oops! Your cart is still empty.</p>
                         <p class="text V_sub_oops mx-auto m-0">There is nothing in your cart.
@@ -1231,328 +1262,36 @@
 
 
 
-    <section class="my-3 my-md-5 mb-3 pt-3 pb-5">
-        <div class="d_container">
-            <div class="row m-0">
-                <div class="col-12 col-md-8">
-                    <div class="V_select_add">
-                        <p class="py-2 V_cuppon  mb-0  my-3 ms-3 ms-sm-5 text">Apply Coupon </p>
-                        <hr class=" V_line mx-auto mt-3">
-                        <div class="d-flex  mx-2 V_div mx-auto align-items-center mb-3 ">
-                            <img src="../IMG//Parth/Enter cuppon icon.png" alt="" class="V_c_icon ms-2">
-                            <input type="text " placeholder="Enter Coupon code"
-                                class=" ms-3 flex-fill V_input_cuppon text w-100">
 
-                            <button type="button" class="V_apply py-2 px-3 px-sm-5 ">Apply</button>
-                        </div>
-                        <p class="text mx-3 mx-sm-5 px-xl-3 V_sprcial">Special offers</p>
-                        <hr class=" V_line mx-auto mt-3">
-                        <div class="d-flex  mx-3 mx-sm-5 px-xl-3 justify-content-between">
-                            <div class="d-flex">
-                                <div class="align-content-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="name" class="hidden-radio" onclick="offer(30)">
-                                        <span class="radio-circle"></span>
-                                    </label>
-                                </div>
-                                <div class="text ps-3">
-                                    <p class="V_C_code mb-0">NEW100</p>
-                                    <p class="V_code_des mb-0">Get Flat $100 Off on cart value of 500 & Above</p>
-                                </div>
-                            </div>
-                            <div class="">
-                                <p class="V_C_save_price">Save $30 </p>
-                            </div>
-                        </div>
-                        <hr class=" V_line mx-auto mt-3">
-                        <div class="d-flex mx-3 mx-sm-5 px-xl-3 justify-content-between">
-                            <div class="d-flex">
-                                <div class="align-content-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="name" class="hidden-radio" onclick="offer(20)">
-                                        <span class="radio-circle"></span>
-                                    </label>
-                                </div>
-                                <div class="text ps-3">
-                                    <p class="V_C_code mb-0">NEW100</p>
-                                    <p class="V_code_des mb-0">Lorem ipsum dolor sit amet consectetur. Massa facilisis
-                                        scelerisque iaculis habitant congue est blandit amet. Lorem ipsum dolor sit amet
-                                        consectetur.</p>
-                                </div>
-                            </div>
-                            <div class="">
-                                <p class="V_C_save_price">Save $20 </p>
-                            </div>
-                        </div>
-                        <hr class=" V_line mx-auto mt-3">
-                        <div class="d-flex mx-3 mx-sm-5 px-xl-3 pb-3 justify-content-between">
-                            <div class="d-flex">
-                                <div class="align-content-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="name" class="hidden-radio" onclick="offer(50)">
-                                        <span class="radio-circle"></span>
-                                    </label>
-                                </div>
-                                <div class="text ps-3">
-                                    <p class="V_C_code mb-0">NEW100</p>
-                                    <p class="V_code_des mb-0">Lorem ipsum dolor sit amet consectetur. Massa facilisis
-                                        scelerisque iaculis habitant congue est blandit amet. Lorem ipsum dolor sit amet
-                                        consectetur.</p>
-                                </div>
-                            </div>
-                            <div class="">
-                                <p class="V_C_save_price">Save $50 </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h2 class="text V_banking mt-5 mb-3">Select Payment method</h2>
-                    <div class="V_select_add">
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <div class="d-flex align-content-center mx-3 mx-sm-5 px-xl-3">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="payment" class="hidden-radio"
-                                                data-bs-toggle="collapse" data-method="Pay on Delivery"
-                                                onclick="handle('Delivery')">
-                                            <span class="radio-circle" onclick="store()"></span>
-                                        </label>
-                                        <button class="accordion-button" type="button">
-                                            Pay on Delivery
-                                        </button>
-                                    </div>
-                                </h2>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <div class="d-flex align-content-center mx-3 mx-sm-5 px-xl-3">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="payment" class="hidden-radio"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                data-method=" Credit card / Debit Card" onclick="handle('Credit')">
-                                            <span class="radio-circle" onclick="store2()"></span>
-                                        </label>
-                                        <button class="accordion-button collapsed">
-                                            Credit card / Debit Card
-                                        </button>
-                                    </div>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body mx-sm-5 px-xl-5">
-                                        <div class="row m-0 w-100">
-                                            <div class="col-12 V_div1 d-flex mx-auto align-items-center V_bottom">
-                                                <div class="flex-fill">
-                                                    <input type="text " placeholder="Card Number" id="cardNumber"
-                                                        class="  flex-fill V_card_number text bg-transparent w-100">
-                                                </div>
-                                                <div class="d-flex justify-content-end ">
-                                                    <img class="V_credit_card" src="../IMG/Parth/visa.png" alt="">
-                                                    <img class="V_credit_card" src="../IMG/Parth/Credit card.png"
-                                                        alt="">
-                                                    <img class="V_credit_card" src="../IMG/Parth/Amex.png" alt="">
-                                                    <img class="V_credit_card" src="../IMG//Parth/Discover.png" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-between">
-                                            <div class="V_50 V_bottom ">
-                                                <input type="text" class="form-control" id="expiryDtae"
-                                                    aria-describedby="text" placeholder="MM/YYYY">
-                                            </div>
-                                            <div class="V_50 V_bottom ">
-                                                <input type="text" class="form-control" id="cvv" aria-describedby="text"
-                                                    placeholder="CVV">
-                                            </div>
-                                        </div>
-                                        <div class="col-12  ">
-                                            <input type="text" class="form-control" id="cardholdername"
-                                                aria-describedby="text" placeholder="Card Holder Name">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <div class="d-flex align-content-center mx-3 mx-sm-5 px-xl-3">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="payment" class="hidden-radio "
-                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                                data-method="Net banking" onclick="handle('banking')">
-                                            <span class="radio-circle" onclick="store3()"></span>
-                                        </label>
-                                        <button class="accordion-button collapsed">
-                                            Net banking
-                                        </button>
-                                    </div>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body mx-sm-5 px-sm-5">
-                                        <div class="V_div1 d-flex  align-items-center flex-fill V_bottom">
-                                            <div class="mx-3">
-                                                <i class="fa-solid fa-magnifying-glass V_color"></i>
-                                            </div>
-                                            <div class="flex-fill ">
-                                                <input type="text" placeholder="Search your bank..."
-                                                    class=" w-100 V_card_number bg-transparent">
-                                            </div>
-                                        </div>
-                                        <div class="d-flex flex-wrap justify-content-between">
-                                            <div class="V_bank_width">
-                                                <div class="d-flex justify-content-center">
-                                                    <img src="../IMG/Parth/citi bank.png" alt="citi bank"
-                                                        class="V_bank mx-auto">
-                                                </div>
-                                                <p class="text V_bank_name text-center mt-2">Citi
-                                                    Bank</p>
-                                            </div>
-                                            <div class="V_bank_width">
-                                                <div class="d-flex justify-content-center">
-                                                    <img src="../IMG/Parth/walse fargo bank.png" alt="Wells Fargo Bank"
-                                                        class="V_bank mx-auto">
-                                                </div>
-                                                <p class="text V_bank_name text-center mt-2">Wells Fargo
-                                                    Bank</p>
-                                            </div>
-                                            <div class="V_bank_width">
-                                                <div class="d-flex justify-content-center">
-                                                    <img src="../IMG/Parth/capital one.png" alt="Capital One Bank"
-                                                        class="V_bank mx-auto">
-                                                </div>
-                                                <p class="text V_bank_name text-center mt-2">Capital One
-                                                    Bank</p>
-                                            </div>
-                                            <div class="V_bank_width">
-                                                <div class="d-flex justify-content-center">
-                                                    <img src="../IMG/Parth/TD bank.png" alt="TD Bank"
-                                                        class="V_bank mx-auto">
-                                                </div>
-                                                <p class="text V_bank_name text-center mt-2">TD
-                                                    Bank</p>
-                                            </div>
-                                            <div class="V_bank_width">
-                                                <div class="d-flex justify-content-center">
-                                                    <img src="../IMG/Parth/citi bank.png" alt="citi bank"
-                                                        class="V_bank mx-auto">
-                                                </div>
-                                                <p class="text V_bank_name text-center mt-2">Citi
-                                                    Bank</p>
-                                            </div>
-                                            <div class="V_bank_width">
-                                                <div class="d-flex justify-content-center">
-                                                    <img src="../IMG/Parth/capital one.png" alt="Capital One Bank"
-                                                        class="V_bank mx-auto">
-                                                </div>
-                                                <p class="text V_bank_name text-center mt-2">Capital One
-                                                    Bank</p>
-                                            </div>
-                                            <div class="V_bank_width">
-                                                <div class="d-flex justify-content-center">
-                                                    <img src="../IMG/Parth/citi bank.png" alt="citi bank"
-                                                        class="V_bank mx-auto">
-                                                </div>
-                                                <p class="text V_bank_name text-center mt-2">Citi
-                                                    Bank</p>
-                                            </div>
-                                            <div class="V_bank_width">
-                                                <div class="d-flex justify-content-center">
-                                                    <img src="../IMG/Parth/walse fargo bank.png" alt="Wells Fargo Bank"
-                                                        class="V_bank mx-auto">
-                                                </div>
-                                                <p class="text V_bank_name text-center mt-2">Wells Fargo
-                                                    Bank</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text-center text V_proceed_payment V_wid align-content-center ms-2  my-5 my-md-5">
-                        Pay <span id="V_total"> $1350 </span>
-                    </div>
-                </div>
-
-
-                <div class="modal" tabindex="-1" id="successModal">
-                    <div class="modal-dialog modal-sm modal-dialog-centered">
-                        <div class="modal-content">
-
-                            <div class="modal-body p-sm-3  m-sm-5 text-center">
-                                <p class="text V_success_head mb-0">Thank you </p>
-                                <p class="text V_shade ">Your order has been placed successfully. </p>
-                                <img src="../IMG/Parth/Succes Icons.png" alt="" class="V_s_icon mx-auto">
-                                <p class="text V_shade mt-sm-3">Please don’t refresh. You’ll be redirected to the order
-                                    confirmation page.</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-12 col-md-4">
-                    <div class="row m-0 V_border mb-5 ">
-                        <div class="d-flex justify-content-between py-3 px-4">
-                            <p class="text V_summary align-self-center mb-0 ">Shipping Address</p>
-                            <p class="py-2 px-3 V_place mb-0 text-center  text">Home </p>
-                        </div>
-                        <hr class="mx-auto V_line">
-                        <p class="text px-4 V_nsme">Jenny Wilson</p>
-                        <p class="text px-4 V_nsme">+1 56565 56565</p>
-                        <p class="text px-4 V_Address">Ehrenkranz 13 Washington Square S, New
-                            York,Washington
-                            Square, NY
-                            10012, USA</p>
-                    </div>
-                    <div class="row m-0  V_border">
-                        <p class="text V_summary ps-4 py-3 m-0 ms-sm-2 ms-md-0">Order Summary</p>
-                        <hr class="mx-auto V_line">
-                        <div id="order-container"></div>
-                        <div class="">
-                            <p class="text V_delivery ps-sm-3 ms-2 ms-sm-2 ms-md-0">Expected Delivery Date : <span
-                                    class="V_shade" id="expiryDate"> Thu, 30 Jan </span></p>
-                        </div>
-                    </div>
-                    <div id="price-details-container" class="row m-0 V_border mt-5">
-                        <p class="text V_summary py-3 m-0 mx-3">Price Details</p>
-                        <hr class="mx-auto V_line">
-                        <div class="d-flex justify-content-between px-4">
-                            <p class="text V_price_detail">Price (<span id="total-items">0</span> Items)</p>
-                            <p class="text V_price_detail" id="total-price">$0</p>
-                        </div>
-                        <div class="d-flex justify-content-between px-4">
-                            <p class="text V_price_detail">Discount</p>
-                            <p class="text V_price_detail V_green" id="discount">-$0</p>
-                        </div>
-                        <div class="d-flex justify-content-between px-4">
-                            <p class="text V_price_detail">Platform Fee</p>
-                            <p class="text V_price_detail" id="platform-fee">$1</p>
-                        </div>
-                        <div class="d-flex justify-content-between px-4">
-                            <p class="text V_price_detail">Delivery Charges</p>
-                            <p class="text V_price_detail">
-                                <span class="V_shade text-decoration-line-through">$20</span>
-                                <span class="V_green">FREE</span>
-                            </p>
-                        </div>
-                        <div class="d-flex justify-content-between px-4">
-                            <p class="text V_price_detail">Special Offers</p>
-                            <p class="text V_price_detail" id="specialOffer">$0</p>
-                        </div>
-                        <hr class="V_line mx-auto mt-3">
-                        <div class="d-flex justify-content-between px-3">
-                            <p class="text V_price_detail1">Total</p>
-                            <p class="text V_price_detail1" id="final-total">$0</p>
-                        </div>
-                    </div>
+    <section class="d-none">
+        <div class="d_container ">
+            <div class="V_sec">
+                <div
+                    class="row m-0 h-100 align-items-center text-content-center justify-content-center flex-column V_width mx-auto">
+                    <img src="/IMG/empty wishlist.png" alt="empty wishlist" class="V_empty">
+                    <p class="text V_you text-center mb-0 mt-3">You haven’t added any
+                        products yet</p>
+                    <p class="text V_shade text-center mt-1"> Click ❤️ to save produts </p>
+                    <a href="../Akshay/home.html">
+                        <button class="V_continue mt-2 mt-sm-4">Continue Shopping</button>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class=" my-4 py-4 my-lg-5 py-lg-5">
+        <div class="d_container">
+            <div class="row m-0" id="wishlistContainer">
+                <!-- Wishlist items will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ////////////////////////////     for header   ////////////////////////// -->
+
 
 
 
@@ -1662,18 +1401,20 @@
 
         <!-- /////  Footer  ///// -->
 
-    <!-- ////////////////////////////     for header   ////////////////////////// -->
+
+
+        
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
-    <script src="../JS/navbar.js"></script>
+    <script src="/JS/navbar.js"></script>
 
     <!-- ////  for header   ///// -->
 
-    <script src="../JS/Parth/payment.js"></script>
+    <script src="/JS/Wishlist.js"></script>
+
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- bootsrap scripts  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
@@ -1684,7 +1425,9 @@
             menu.classList.toggle("open");
         }
     </script>
-    <!-- <script src="../JS/navbar.js"></script> -->
+    <!-- <script src="../JS/Parth/signUp.js" ></script> -->
+
+
 </body>
 
 </html>
