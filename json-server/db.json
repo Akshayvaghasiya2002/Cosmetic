@@ -884,6 +884,24 @@
           "expiryDate": "12/2025",
           "cvv": "12345",
           "cardHolderName": "HELLO BETA"
+        },
+        {
+          "cardNumber": "123456789012",
+          "expiryDate": "12/2025",
+          "cvv": "12345",
+          "cardHolderName": "HELLO BETA"
+        },
+        {
+          "cardNumber": "123456789012",
+          "expiryDate": "10/2025",
+          "cvv": "12345",
+          "cardHolderName": "HELLO BETA"
+        },
+        {
+          "cardNumber": "123456789012",
+          "expiryDate": "12/2025",
+          "cvv": "12345",
+          "cardHolderName": "HELLO BETA"
         }
       ],
       "confirmedOrders": [
@@ -891,7 +909,7 @@
           "batchId": "batch_1741154580841",
           "orderDate": "2025-03-05",
           "deliveryDate": "2025-03-15",
-          "orderStatus": "cancelled",
+          "orderStatus": "pending",
           "totalAmount": 1081,
           "specialOffer": 0,
           "shippingDetails": {
@@ -920,12 +938,112 @@
               "orderId": "order_1741154580842",
               "totalAmount": 450
             }
-          ],
-          "cancel": {
-            "reason": "Price of the product has now decreased",
-            "comment": "fqwfgqwqw",
-            "cancelDate": "2025-03-05"
-          }
+          ]
+        },
+        {
+          "batchId": "batch_1741262368109",
+          "orderDate": "2025-03-06",
+          "deliveryDate": "2025-03-16",
+          "orderStatus": "delivered",
+          "totalAmount": 1081,
+          "specialOffer": 0,
+          "shippingDetails": {
+            "name": "Sujal Parajapat",
+            "address": "katargam, new rise, surat, Guj, 525252, IND",
+            "mobile": "6789012345"
+          },
+          "orders": [
+            {
+              "id": 1741262324779,
+              "image": "/IMG/Akshay/makeup.png",
+              "name": "RENEE FAB 5 Matte Finish 5 in 1 Lipstick",
+              "currentPrice": 450,
+              "quantity": 2,
+              "selectedColor": null,
+              "orderId": "order_1741262368110",
+              "totalAmount": 900
+            },
+            {
+              "id": 1741262341940,
+              "image": "/IMG/Akshay/clean_balm.png",
+              "name": "Karité Premium Superfood Cleansing Balm",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": null,
+              "orderId": "order_1741262368110",
+              "totalAmount": 450
+            }
+          ]
+        },
+        {
+          "batchId": "batch_1741262532717",
+          "orderDate": "2025-03-06",
+          "deliveryDate": "2025-03-16",
+          "orderStatus": "cancelled",
+          "totalAmount": 721,
+          "specialOffer": 0,
+          "shippingDetails": {
+            "name": "Sujal Parajapat",
+            "address": "katargam, new rise, surat, Guj, 525252, IND",
+            "mobile": "6789012345"
+          },
+          "orders": [
+            {
+              "id": 1741262493235,
+              "image": "/IMG/Akshay/swiss.png",
+              "name": "SWISS BEAUTY Cream It Up Blusher",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": null,
+              "orderId": "order_1741262532718",
+              "totalAmount": 450
+            },
+            {
+              "id": 1741262495869,
+              "image": "/IMG/Akshay/bathbody.png",
+              "name": "Eveline Cosmetics Body SHE Collagen Regeneration 200gm",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": null,
+              "orderId": "order_1741262532718",
+              "totalAmount": 450
+            }
+          ]
+        },
+        {
+          "batchId": "batch_1741262577061",
+          "orderDate": "2025-03-06",
+          "deliveryDate": "2025-03-16",
+          "orderStatus": "return order",
+          "totalAmount": 721,
+          "specialOffer": 0,
+          "shippingDetails": {
+            "name": "Sujal Parajapat",
+            "address": "katargam, new rise, surat, Guj, 525252, IND",
+            "mobile": "6789012345"
+          },
+          "orders": [
+            {
+              "id": 1741262546003,
+              "image": "/IMG/Akshay/dark_pink.png",
+              "name": "COLORBAR Power Kiss Matte Lipstick",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": null,
+              "orderId": "order_1741262577061",
+              "totalAmount": 450
+            },
+            {
+              "id": 1741262549795,
+              "image": "/IMG/Akshay/eyes.png",
+              "name": "Prixa Love Eyeshadow Palette",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": null,
+              "orderId": "order_1741262577061",
+              "totalAmount": 450
+            }
+          ]
         }
       ],
       "orders": [],
@@ -1215,6 +1333,14 @@
           "otherType": "ascdzxaqaq"
         }
       ]
+    },
+    {
+      "id": "8c4d",
+      "fullName": "Darshan",
+      "phoneNumber": "0123456789",
+      "email": "dk@gmail.com",
+      "password": "darshan@123",
+      "wishlist": []
     }
   ],
   "likeproduct": [

@@ -813,7 +813,7 @@ img {
 }
 
 /* Right Ribbon Sparkle */
-.badge::after {
+/* .badge::after {
   content: "";
   position: absolute;
   right: -5px;
@@ -823,7 +823,11 @@ img {
   height: 15px;
   background-color: #717a6e;
   clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0% 50%);
-}
+  background-image: url(../IMG/Dhruvin/star.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+} */
 
 .heart-container {
   display: flex;
@@ -1308,8 +1312,8 @@ img {
 
 .A_newletter_content {
   position: absolute;
-  top: 25px;
-  right: 100px;
+  top: 35%;
+  right: 8%;
   text-align: start;
   max-width: 500px;
 }
@@ -1458,8 +1462,8 @@ footer {
 /* ***************************** footer end ************************ */
 /* ***************************** All mediaquery start ************************ */
 
-@media only screen and (max-width: 1440px) {
-  /* #product-carousel .owl-nav button.owl-next {
+@media only screen and (max-width: 1441px) {
+  /* #product-carousel .owl-nav butto.owl-next {
     position: absolute;
     right: -50px;
     border: 1px solid black !important;
@@ -1474,6 +1478,11 @@ footer {
     border-radius: 50% !important;
     width: 3%;
   } */
+
+  .A_newletter_content {
+    top: 31%;
+    right: 8%;
+  }
 }
 
 
@@ -1498,6 +1507,10 @@ footer {
     display: block !important;
     border: 1px solid black !important;
     border-radius: 50% !important;
+  }
+
+  .A_newletter_image {
+    height: 215px;
   }
  
 }
@@ -1534,8 +1547,8 @@ footer {
     left: 36%;
   }
   .A_newletter_content{
-    right: 5px;
-    top: 3%;
+    top: 21%;
+    right: 0%;
   }
   .care-img {
     width: 100%;
@@ -1562,6 +1575,9 @@ footer {
 .A_newarrival_slider.card {
     max-width: 100%; /* Ensure cards do not exceed their container */
 }
+
+
+
 }
 
 @media only screen and (min-width: 993px) {
@@ -1763,9 +1779,39 @@ footer {
     opacity: 1;
     visibility: visible;
   }
+
+  .A_newletter_image {
+    height: 225px;
 }
 
-@media only screen and (max-width: 768px) {
+.A_subscribe{
+  font-size: 14px;
+}
+.A_subscribe_discription{
+  font-size: 11px;
+}
+.newsletter-input{
+  font-size: 12px;
+}
+.A_newletter_content {
+  top: 32%;
+  right: 3%;
+}
+.ds_offer_img{
+  height: 280px;
+}
+.ds_offer_img2{
+  height: 280px;
+}
+.ds_offer_img3{
+  height: 280px;
+}
+.offer-text1{
+  top: 40%;
+}
+}
+
+@media only screen and (max-width: 767px) {
   .A_banner_title_width {
     width: 65%;
   }
@@ -1804,9 +1850,10 @@ footer {
     height: 120px;
   }
   .A_newletter_content{
-    right: 25px;
-    top: 0%;
+    right: 0%;
+    top: 11%;
   }
+ 
   .A_subscribe_discription{
     font-size: 15px;
   }
@@ -1854,7 +1901,7 @@ footer {
   }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 426px) {
   .A_banner_title_width {
     width: 100%;
   }
@@ -1931,9 +1978,12 @@ footer {
     font-size: 1.8rem;
   }
   .A_newletter_image {
-height: 130px;
+    height: 270px;
+    object-position: right;
   }
   .A_newletter_content{
+    top: 33%;
+    left: 12%;
     width: 85%;
   }
   .A_subscribe{
@@ -1964,8 +2014,28 @@ height: 130px;
     top: -2%;
     left: 36%;
 }
+
+.ds_offer_img{
+  height: 200px;
 }
-@media only screen and (max-width: 320px) {
+.ds_offer_img2{
+  height: 200px;
+}
+.ds_offer_img3{
+  height: 200px;
+}
+}
+
+@media (max-width:376px) {
+  .A_newletter_content {
+    left: 8%;
+}
+.A_newletter_image {
+   height: 220px;
+}
+}
+
+@media only screen and (max-width: 321px) {
   .newsletter-input button {
     padding: 5px;
   }
@@ -1981,6 +2051,9 @@ height: 130px;
   }
   .filter-btn {
     padding: 7px;
+  }
+  .A_newletter_content{
+    top: 30%;
   }
 }
 /* ***************************** All mediaquery end ************************ */
@@ -2612,10 +2685,10 @@ height: 130px;
       right: -20px !important;
   }
   #product-carousel .owl-prev{
-    left: -25px !important;
+    left: -12px !important;
   }
   #product-carousel .owl-next{
-    right: -25px !important;
+    right: -12px !important;
   }
 }
 
@@ -2948,5 +3021,8 @@ height: 130px;
   }
   #product-carousel .owl-next{
     right: 0px !important;
+  }
+  .A_view_all{
+    padding: 7px 24px;
   }
 }

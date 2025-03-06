@@ -454,18 +454,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Handle "Remove All" button
-    const removeAllButton = document.querySelector('.remove-all');
-    if (removeAllButton) {
-        removeAllButton.addEventListener('click', function() {
+    document.querySelectorAll('.remove-all').forEach(button => {
+        button.addEventListener('click', function () {
             filters = []; // Clear all filters
-            // Uncheck all checkboxes
-            allCheckboxes.forEach(checkbox => {
-                checkbox.checked = false;
-            });
-            renderFilters();
-            renderProducts();
+            renderFilters(); // Re-render UI
         });
-    }
+    });
+    
     
     // Initial render
     renderFilters();
@@ -741,21 +736,26 @@ async function renderProducts() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Attach event listeners to all checkboxes
     document.querySelectorAll('.filter-option input[type="checkbox"], .color-option input[type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', function() {
             renderProducts();
         });
     });
 
-    document.querySelector('.remove-all').addEventListener('click', function() {
-        document.querySelectorAll('.filter-option input[type="checkbox"], .color-option input[type="checkbox"]').forEach(checkbox => {
-            checkbox.checked = false;
+    // Fix: Loop through all 'Remove All' buttons and add event listener
+    document.querySelectorAll('.remove-all').forEach(button => {
+        button.addEventListener('click', function() {
+            document.querySelectorAll('.filter-option input[type="checkbox"], .color-option input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            renderProducts();
         });
-        renderProducts();
     });
 
     renderProducts();
 });
+
 
 
 function setupEventListeners(products, wishlist, cart, userId) {

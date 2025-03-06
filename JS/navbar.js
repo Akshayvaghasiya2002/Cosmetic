@@ -18,7 +18,7 @@ function handleSingUp() {
     }
 }
 
-let registerId = localStorage.getItem("RegisterId")
+let registerId = localStorage.getItem("userId")
 let handleObj = {}
 
 async function handleApiGetData() {
@@ -226,7 +226,9 @@ $(document).ready(async function () {
                     <div class="item A_newarrival_slider" data-id="${product.id}">
                         <div class="card h-100 text-center p-3">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div>${product.tags ? `<span class="badge">${product.tags}</span>` : ''}</div>
+                                <div class="position-relative">
+                                    <div>${product.tags ? `<span class="badge">${product.tags}</span>` : ''}</div>
+                                </div>
                                 <div class="heart-container">
                                     <i class="fa-regular fa-heart wishlist-btn ${isWishlisted ? 'd-none' : ''}"></i>
                                     <i class="fa-solid fa-heart wishlist-btn ${isWishlisted ? '' : 'd-none'}" style="color: #ff0000;"></i>
@@ -848,7 +850,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Display products
     function displayProducts(productsToShow) {
         const productsHTML = productsToShow.map(product => `
-            <div class="d-flex align-items-center A_care_margin" data-category="${product.category}">
+            <div class="d-flex align-items-center A_care_margin " data-category="${product.category}">
                 <div>
                     <img src="${product.image}" alt="${product.name}" class="A_filter_size">
                 </div>

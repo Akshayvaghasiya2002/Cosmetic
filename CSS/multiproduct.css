@@ -1428,3 +1428,23 @@ Footer Bottom
 
   }
 }
+
+
+@media (max-width:321px) {
+  .ds_count{
+     font-size: 11px !important;
+  }
+  .A_filter_offcanvas {
+    font-size: 20px;
+    width: 44px;
+    height: 36px;
+    margin-left: 5px;
+}
+.sort-text {
+  margin-right: 7px;
+  font-size: 12px;
+}
+.fa-filter{
+  font-size: 15px;
+}
+}

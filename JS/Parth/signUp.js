@@ -226,3 +226,4 @@ let newData = localStorage.getItem("Register");
 if (newData) {
     newData = JSON.parse(newData);
 }
+   

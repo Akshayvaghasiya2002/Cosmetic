@@ -285,15 +285,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Remove all filters button
-    const removeAllButton = document.querySelector('.remove-all');
-    removeAllButton.addEventListener('click', function() {
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach(checkbox => {
-            checkbox.checked = false;
-            filters.length == 0
-            renderFilters()
+    document.querySelectorAll('.remove-all').forEach(button => {
+        button.addEventListener('click', function () {
+            filters = []; // Clear all filters
+            renderFilters(); // Re-render UI
         });
     });
+    
     
     // Show more buttons
     const showMoreButtons = document.querySelectorAll('.show-more');
@@ -450,18 +448,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Handle "Remove All" button
-    const removeAllButton = document.querySelector('.remove-all');
-    if (removeAllButton) {
-        removeAllButton.addEventListener('click', function() {
-            filters = []; // Clear all filters
-            // Uncheck all checkboxes
-            allCheckboxes.forEach(checkbox => {
+    document.querySelectorAll('.remove-all').forEach(button => {
+        button.addEventListener('click', function() {
+            document.querySelectorAll('.filter-option input[type="checkbox"], .color-option input[type="checkbox"]').forEach(checkbox => {
                 checkbox.checked = false;
             });
-            renderFilters();
             renderProducts();
         });
-    }
+    });
     
     // Initial render
     renderFilters();
