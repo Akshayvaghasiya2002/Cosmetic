@@ -217,7 +217,7 @@ function createWishlistItemHTML(item) {
             <div class="V_border mx-auto">
                 <div class="position-relative">
                     ${badgeHTML}
-                    <img src="${item.image}" alt="${item.name}" class="V_imagemx-auto">
+                    <img src="${item.image}" alt="${item.name}" class="V_image mx-auto">
                     <div class="V_dil_border d-flex align-items-center justify-content-center" data-id="${item.id}">
                         <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
                     </div>

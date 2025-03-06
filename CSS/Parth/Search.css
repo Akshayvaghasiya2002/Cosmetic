@@ -327,6 +327,12 @@
 
 
 
+.best_seller_image{
+    width: 137px;
+height: 57px;
+}
+
+
 /* ================ media query ================ */
 
 
@@ -605,6 +611,10 @@
     .V_question {
         font-size: 14px;
     }
+    .best_seller_image{
+        width: 120px;
+    height: 47px;
+    }
 }
 
 @media (max-width: 991px) and (min-width: 768px) {
@@ -721,9 +731,16 @@
         font-size: 14px;
     }
 
+
+
+    .best_seller_image{
+        width: 120px;
+    height: 47px;
+    }
 }
 
 @media (max-width: 767px) and (min-width: 576px) {
+    
     .V_search {
         padding: 15px 0px;
     }

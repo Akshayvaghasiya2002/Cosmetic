@@ -18,7 +18,7 @@ function handleSingUp() {
     }
 }
 
-let registerId = localStorage.getItem("RegisterId")
+let registerId = localStorage.getItem("userId")
 let handleObj = {}
 
 async function handleApiGetData() {
@@ -242,11 +242,12 @@ $(document).ready(async function () {
                                     <span class="original-price">$${product.originalPrice}</span>
                                     <span class="discount">${product.discount}</span>
                                 </div>
-                                <div class="color-options justify-content-center">
+                                <div class="color-options V_height justify-content-center">
                                     ${colorDotsHTML} ${moreColorsHTML}
                                 </div>
-                                <button class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
+                                
                             </div>
+                            <button class="mt-2 w-100 A_addtocart_hover">Add To Cart</button>
                         </div>
                     </div>`;
 
@@ -330,7 +331,7 @@ $(document).ready(async function () {
                 colors: product.colors ? product.colors.map(color => color.color) : [], // Extract only color values
                 moreColors: product.moreColors || 0,
                 selectedColor: selectedColor || null,
-                badge: product.tags ? true : false
+                badge: product?.tags ? true : false
             };
 
             wishlist.push(wishlistItem);
@@ -849,10 +850,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayProducts(productsToShow) {
         const productsHTML = productsToShow.map(product => `
             <div class="d-flex align-items-center A_care_margin" data-category="${product.category}">
-                <div>
-                    <img src="${product.image}" alt="${product.name}" class="A_filter_size">
+                <div class="align-self-center">
+                    <img src="${product.image}" alt="${product.name}" class="A_filter_size ">
                 </div>
-                <div class="text-start A_filter_text">
+                <div class=" A_filter_text">
                     <h6>${product.name}</h6>
                     <h5>$${product.price} ${product.oldPrice ? `<span class="text-decoration-line-through">$${product.oldPrice}</span>` : ''}</h5>
                 </div>
@@ -860,7 +861,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `).join('');
 
         productContainer.innerHTML = `
-            <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center ">
                 <div>${productsHTML}</div>
             </div>
         `;
@@ -933,11 +934,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         productsToShow.forEach((product, index) => {
             const productHTML = `
-                <div class="d-flex align-items-center A_care_margin" data-category="${product.category}">
-                    <div>
+                <div class="d-flex align-items-center A_care_margin " data-category="${product.category}">
+                    <div class="align-self-center">
                         <img src="${product.image}" alt="${product.name}" class="A_filter_size">
                     </div>
-                    <div class="text-start A_filter_text">
+                    <div class=" A_filter_text">
                         <h6>${product.name}</h6>
                         <h5>$${product.price} ${product.oldPrice ? `<span class="text-decoration-line-through">$${product.oldPrice}</span>` : ''}</h5>
                     </div>
@@ -952,9 +953,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         productContainer.innerHTML = `
-            <div class="d-flex align-items-start justify-content-between">
-                <div>${leftColumn.join('')}</div>
-                <div>${rightColumn.join('')}</div>
+            <div class="d-sm-flex  justify-content-around">
+                <div class="mx-auto">${leftColumn.join('')}</div>
+                <div class=" mx-auto ">${rightColumn.join('')}</div>
             </div>
         `;
     }

@@ -8,6 +8,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 
+
+.V_height {
+  height: 32px;
+}
+
 .ds_fs {
   font-family: "Outfit", serif;
 }
@@ -271,7 +276,7 @@ button {
 img,
 video {
   display: block;
-  max-width: 100%;
+  /* max-width: 100%; */
   height: auto;
   object-fit: cover;
 }
@@ -702,8 +707,8 @@ img {
 }
 
 .A_smallslider {
-  width: 100px !important;
-  height: 100px;
+  width: 120px !important;
+  height: 120px;
 }
 
 .smallslider.owl-carousel .owl-nav.disabled {
@@ -833,7 +838,7 @@ img {
   /* Adjust size as needed */
   height: 40px;
   border-radius: 50%;
-  border: 2px solid black;
+  border: 0.6px solid rgba(20, 20, 20, 0.6);
   /* Default border */
   transition: all 0.3s ease-in-out;
 }
@@ -990,7 +995,7 @@ img {
   cursor: pointer;
 }
 .A_view_all{
-  padding: 7px 30px;
+  padding: 7px 24px;
   margin-top: 10px;
   cursor: pointer;
   font-size: 14px;
@@ -1246,7 +1251,7 @@ img {
   margin-top: 15px;
 }
 .A_filter_text{
-  margin-left: 12px;
+  margin-left: 15px;
 }
 
 /* ***************************** product filter end ************************ */
@@ -1970,7 +1975,7 @@ height: 130px;
     padding: 5px;
   }
   .care-content {
-    top: 14%;
+    top: 18%;
     left: 72%;
   }
   .care-title {
@@ -2064,7 +2069,7 @@ height: 130px;
   height: 30px;
   background: transparent !important;
   color: #3D4936 !important;
-  left: -20px !important;
+  left: -40px !important;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 .brandslider .owl-prev span{
@@ -2495,6 +2500,11 @@ height: 130px;
 }
 
 @media (max-width: 991px) and (min-width: 768px) {
+  .A_filter_text {
+    margin-right: 78px;
+    margin-left: 30px;
+}
+
   .V_head {
       font-size: 34px;
   }

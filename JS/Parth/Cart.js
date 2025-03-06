@@ -10,6 +10,7 @@ function gotoaddresspage() {
 
 // Wait for the DOM to load before running the script
 document.addEventListener("DOMContentLoaded", async () => {
+
     const cartContainer = document.getElementById("cartContainer");
     const cartHeader = document.getElementById("offcanvasRightLabel");
     const totalAmount = document.getElementById("totalAmount");
@@ -87,6 +88,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 🔹 Update Cart Summary
     function updateCartSummary() {
+
+        console.log('updatecart called');
+
         console.log("Updating cart summary...", cartItems);
 
         const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
@@ -100,9 +104,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         // 🔹 Update total amount
         totalAmount.textContent = `$${totalPrice.toFixed(2)}`;
 
-        // 🔹 Toggle empty cart message
-        filledCartSection.classList.toggle("d-none", cartItems.length === 0);
-        emptyCartSection.classList.toggle("d-none", cartItems.length > 0);
+         // 🔹 Toggle visibility of empty and filled cart sections
+    if (cartItems.length === 0) {
+        emptyCartSection.classList.remove("d-none");
+        filledCartSection.classList.add("d-none");
+    } else {
+        emptyCartSection.classList.add("d-none");
+        filledCartSection.classList.remove("d-none");
+    }
     }
 
     // 🔹 Render Cart Items
@@ -124,14 +133,14 @@ document.addEventListener("DOMContentLoaded", async () => {
                                 <p class="text V_selected_price m-0 text-end" id="itemPrice${item.id}">$${(item.price * item.quantity).toFixed(2)}</p>
                             </div>
                             <div class="d-flex justify-content-center align-items-center justify-content-between pt-4">
-                                <div class="px-xl-2 V_minus text-center mt-4" data-action="decrease" data-id="${item.id}">-</div>
+                                <button class="px-xl-2 V_minus text-center mt-4" data-action="decrease" data-id="${item.id}">-</button>
                                 <div class="text V_count m-0 mt-4">
                                     <p class="mx-1 px-xl-3 m-0 item-count" id="itemCount${item.id}">${item.quantity}</p>
                                 </div>
-                                <div class="px-xl-2 V_plus text-center mt-4" data-action="increase" data-id="${item.id}">+</div>
-                                <div class="V_delete ms-1 ms-xl-2 pt-2" data-action="delete" data-id="${item.id}">
+                                <button class="px-xl-2 V_plus text-center mt-4" data-action="increase" data-id="${item.id}">+</button>
+                                <button class="V_delete ms-1 ms-xl-2 pt-2" data-action="delete" data-id="${item.id}">
                                     <img src="../IMG/Parth/delete.png" alt="delete btn" class="ms-auto w-100">
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -146,8 +155,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 🔹 Handle Button Clicks (Increase, Decrease, Delete)
     cartContainer.addEventListener("click", async (event) => {
+       
+        
         const target = event.target.closest("[data-action]");
         if (!target) return;
+
+        // Prevent default behavior (important to stop page reload)
+        event.preventDefault();
+        event.stopPropagation();
 
         const action = target.getAttribute("data-action");
         const id = parseInt(target.getAttribute("data-id"));
@@ -161,6 +176,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 🔹 Delete Item from Cart
     async function deleteItem(id) {
+
         try {
             const userId = localStorage.getItem("userId");
             const response = await fetch(`http://localhost:3000/User/${userId}`);
@@ -178,8 +194,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             cartItems = cartItems.filter(cartItem => cartItem.id !== id);
 
             // Remove item from UI
-            document.querySelector(`[data-id="${id}"]`).remove();
-
+            const itemToRemove = document.querySelector(`div.row[data-id="${id}"]`);
+            if (itemToRemove) {
+                // Also remove the <hr> element that follows the item
+                const nextSibling = itemToRemove.nextElementSibling;
+                if (nextSibling && nextSibling.tagName === 'HR') {
+                    nextSibling.remove();
+                }
+                itemToRemove.remove();
+            }
+            
             updateCartSummary();
         } catch (error) {
             console.error("Error deleting item:", error);
