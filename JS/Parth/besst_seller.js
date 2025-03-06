@@ -255,7 +255,7 @@ $(document).ready(async function () {
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 item" data-id="${product.id}">
                         <div class="card h-100 text-center p-3">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div>${product.tags ? `<span class="badge">${product.tags}</span>` : ''}</div>
+                                <div><img src="../../IMG/Parth/bestsellerlogo.png" class="best_seller_image" /></div>
                                 <span class="ms-auto heart-container ${userId ? '' : 'disabled'}">
                                     <i class="fa-regular fa-heart wishlist-btn ${isWishlisted ? 'd-none' : ''}"></i>
                                     <i class="fa-solid fa-heart wishlist-btn ${isWishlisted ? '' : 'd-none'}" style="color: #ff0000;"></i>
@@ -265,17 +265,18 @@ $(document).ready(async function () {
                                 <img src="${product.image}" class="card-img-top w-100 mx-auto d-block" alt="${product.name}">
                             </a>
                             <div class="card-body">
-                                <h6 class="card-title">${product.name}</h6>
+                                <h6 class="card-title text-truncate">${product.name}</h6>
                                 <div class="product-price justify-content-center">
                                     <span class="current-price">$${product.price}</span>
                                     <span class="original-price">$${product.originalPrice}</span>
                                     <span class="discount">${product.discount}</span>
                                 </div>
-                                <div class="color-options justify-content-center">
+                                <div class="color-options  justify-content-center">
                                     ${colorDotsHTML} ${moreColorsHTML}
                                 </div>
-                                <button class="mt-2 w-100 A_addtocart_hover ${userId ? '' : 'disabled'}">Add To Cart</button>
                             </div>
+                                <button class="mt-2 w-100 A_addtocart_hover ${userId ? '' : 'disabled'}">Add To Cart</button>
+
                         </div>
                     </div>
                 `);

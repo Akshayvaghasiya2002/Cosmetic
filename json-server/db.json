@@ -110,7 +110,7 @@
       "price": 450,
       "originalPrice": 600,
       "discount": "20% OFF",
-      "category": "Lipstick",
+      "category": "Body Care",
       "tags": [
         "BEST SELLER"
       ],
@@ -150,7 +150,7 @@
       "price": 450,
       "originalPrice": 600,
       "discount": "20% OFF",
-      "category": "Eyeshadow",
+      "category": "Body Care",
       "tags": [
         "BEST SELLER"
       ],
@@ -194,7 +194,7 @@
     },
     {
       "id": "9",
-      "name": "Eveline Cosmetics Body SHE Collagen Regeneration 200gm",
+      "name": "Eveline Cosmetics Body SHE Collagen ",
       "price": 450,
       "originalPrice": 600,
       "discount": "20% OFF",
@@ -299,9 +299,6 @@
       "originalPrice": 600,
       "discount": "20% OFF",
       "category": "body care",
-      "tags": [
-        ""
-      ],
       "image": "../IMG/Parth/MAC_glow_lip_balm.png",
       "description": "A hydrating lip balm with a natural tint that adjusts to your lip’s pH for a custom color.",
       "expiryDate": "2026-08-15",
@@ -492,9 +489,6 @@
       "originalPrice": 600,
       "discount": "20% OFF",
       "category": "Body Care",
-      "tags": [
-        "BEST SELLER"
-      ],
       "image": "/IMG/Akshay/bathbody.png",
       "description": "A collagen-infused body cream that provides deep hydration and skin regeneration.",
       "expiryDate": "2027-08-05",
@@ -510,7 +504,7 @@
       "price": 450,
       "originalPrice": 600,
       "discount": "20% OFF",
-      "category": "Skincare",
+      "category": "Body Care",
       "tags": [
         "BEST SELLER"
       ],

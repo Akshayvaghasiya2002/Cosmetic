@@ -939,6 +939,7 @@ input[type="text"] {
   align-items: center;
   /* Centers items vertically */
   margin-bottom: 10px;
+  margin-top: 16px;
   /* Space between header and image */
 }
 
@@ -947,6 +948,9 @@ input[type="text"] {
   /* Change cursor to pointer for heart icon */
 }
 
+.V_bottom{
+  margin-bottom: 30px;
+}
 .add-to-cart {
   width: 100%;
   padding: 10px 0;

@@ -908,6 +908,7 @@
     /* Adjust size as needed */
     height: 40px;
     border-radius: 50%;
+    margin-top: 16px;
     border: 0.6px solid rgba(20, 20, 20, 0.6);
     /* Default border */
     transition: all 0.3s ease-in-out;

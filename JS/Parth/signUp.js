@@ -128,8 +128,10 @@
                 .then(data => {
                     if (data) {
                         console.log("New user created:", data);
-                        localStorage.setItem("userId", data.id);
-                        verifyEmail();
+                        localStorage.setItem("demoId", data.id);
+                        localStorage.setItem("registerSuccess" , "true" );
+                        localStorage.setItem("email" , email );
+                        // verifyEmail();
                     }
                 })
                 .catch(error => console.error("Error:", error));
@@ -137,43 +139,50 @@
         
 
 
-        // Function to verify email and display the modal
-        function verifyEmail() {
-            // Proceed only if validation passes
-            const hideResister = document.querySelector('.V_sign_section');
-            hideResister.classList.add('d-none');
+        // // Function to verify email and display the modal
+        // function verifyEmail() {
+        //     // Proceed only if validation passes
+        //     const hideResister = document.querySelector('.V_sign_section');
+        //     hideResister.classList.add('d-none');
 
-            const hideWholeResister = document.querySelector('.V_sign_login');
-            hideWholeResister.classList.add('d-none');
+        //     const hideWholeResister = document.querySelector('.V_sign_login');
+        //     hideWholeResister.classList.add('d-none');
             
-            const displaySignUp = document.querySelector(".V_520");
-            displaySignUp.classList.remove('d-none');
+        //     const displaySignUp = document.querySelector(".V_520");
+        //     displaySignUp.classList.remove('d-none');
             
-            const displayEmail = document.querySelector(".V_verify_email_section");
-            displayEmail.classList.remove("d-none");
+        //     const displayEmail = document.querySelector(".V_verify_email_section");
+        //     displayEmail.classList.remove("d-none");
             
-            const displayOtp = document.querySelector(".V_verify_section");
-            displayOtp.classList.add('d-none');
+        //     const displayOtp = document.querySelector(".V_verify_section");
+        //     displayOtp.classList.add('d-none');
             
-            const displayResetPwd = document.querySelector(".V_reset_section");
-            displayResetPwd.classList.add('d-none');
+        //     const displayResetPwd = document.querySelector(".V_reset_section");
+        //     displayResetPwd.classList.add('d-none');
             
-            const hideforPwd = document.querySelector(".V_Forgot_section");
-            hideforPwd.classList.add("d-none");
+        //     const hideforPwd = document.querySelector(".V_Forgot_section");
+        //     hideforPwd.classList.add("d-none");
 
-            // Log success to console for debugging
-            console.log("UI updated successfully");
+        //     // Log success to console for debugging
+        //     console.log("UI updated successfully");
 
-            // Open the "Forget Password" modal using Bootstrap's modal API
-            const modalElement = document.getElementById('forgetPwdModal');
-            const modal = new bootstrap.Modal(modalElement);
-            modal.show();  // This triggers the modal to show
-        }
+        //     // Open the "Forget Password" modal using Bootstrap's modal API
+        //     const modalElement = document.getElementById('forgetPwdModal');
+        //     const modal = new bootstrap.Modal(modalElement);
+        //     modal.show();  // This triggers the modal to show
+        //     alert("your otp is: 123456");
+
+        // }
 
 
 
 
-
+        // document.addEventListener("DOMContentLoaded", () => {
+        //     if (localStorage.getItem("registerSuccess") === "true") {
+        //         localStorage.removeItem("registerSuccess"); 
+        //         verifyEmail(); 
+        //     }
+        // });
 
 
 
@@ -226,4 +235,279 @@ let newData = localStorage.getItem("Register");
 if (newData) {
     newData = JSON.parse(newData);
 }
-   
+
+
+
+
+// Initialize variables to store OTP and user email
+let userOtp = "123456"; // Static OTP
+
+// Function to display the verification email screen with the user's email
+function verifyEmail() {
+    // Try to get the email from multiple sources
+    let userEmail = "";
+    
+    // First, try to get from input if we're coming directly from registration
+    const emailInput = document.getElementById("email");
+    if (emailInput && emailInput.value) {
+        userEmail = emailInput.value.trim();
+        localStorage.setItem("userEmail", userEmail); // Store for later use
+    } 
+    // If not available, try to get from localStorage
+    else if (localStorage.getItem("email")) {
+        userEmail = localStorage.getItem("email");
+    } 
+    // If still not available, try to get from userId in localStorage
+    else if (localStorage.getItem("userId")) {
+        // Fetch user data from server using userId
+        fetchUserEmailFromServer(localStorage.getItem("userId"))
+            .then(email => {
+                if (email) {
+                    userEmail = email;
+                    updateEmailDisplay(email);
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching user email:", error);
+            });
+    }
+    
+    // Update the email display immediately if we have it
+    if (userEmail) {
+        updateEmailDisplay(userEmail);
+    }
+
+    // Show verification UI
+    showVerificationUI();
+    
+    // Alert the static OTP
+    alert("Your OTP is: " + userOtp);
+    
+    // Setup OTP input fields
+    setupOtpInputs();
+}
+
+// Function to fetch user email from server using userId
+async function fetchUserEmailFromServer(userId) {
+    try {
+        const response = await fetch(`http://localhost:3000/User/${userId}`);
+        const userData = await response.json();
+        
+        if (userData && userData.email) {
+            // Store email in localStorage for future use
+            localStorage.setItem("userEmail", userData.email);
+            return userData.email;
+        }
+        return null;
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+        return null;
+    }
+}
+
+// Function to update the email display
+function updateEmailDisplay(email) {
+    const emailSpan = document.getElementById("verifyEmail");
+    if (emailSpan) {
+        emailSpan.textContent = email;
+    }
+}
+
+// Function to show verification UI
+function showVerificationUI() {
+    // Hide registration section
+    const hideResister = document.querySelector('.V_sign_section');
+    if (hideResister) hideResister.classList.add('d-none');
+
+    const hideWholeResister = document.querySelector('.V_sign_login');
+    if (hideWholeResister) hideWholeResister.classList.add('d-none');
+    
+    // Show verification container
+    const displaySignUp = document.querySelector(".V_520");
+    if (displaySignUp) displaySignUp.classList.remove('d-none');
+    
+    // Show email verification section
+    const displayEmail = document.querySelector(".V_verify_email_section");
+    if (displayEmail) displayEmail.classList.remove("d-none");
+    
+    // Hide other sections
+    const displayOtp = document.querySelector(".V_verify_section");
+    if (displayOtp) displayOtp.classList.add('d-none');
+    
+    const displayResetPwd = document.querySelector(".V_reset_section");
+    if (displayResetPwd) displayResetPwd.classList.add('d-none');
+    
+    const hideforPwd = document.querySelector(".V_Forgot_section");
+    if (hideforPwd) hideforPwd.classList.add("d-none");
+
+    // Open modal
+    const modalElement = document.getElementById('forgetPwdModal');
+    if (modalElement) {
+        const modal = new bootstrap.Modal(modalElement);
+        modal.show();
+    }
+}
+
+// Function to set up OTP input field behavior
+function setupOtpInputs() {
+    const otpInputs = document.querySelectorAll('.V_otp_6');
+    
+    // Clear any previous values
+    otpInputs.forEach(input => {
+        input.value = '';
+    });
+    
+    // Add event listeners for input fields
+    otpInputs.forEach((input, index) => {
+        // Remove any existing event listeners
+        input.removeEventListener('input', handleInput);
+        input.removeEventListener('keydown', handleKeyDown);
+        
+        // Add new event listeners
+        input.addEventListener('input', handleInput);
+        input.addEventListener('keydown', handleKeyDown);
+        
+        // Set maxlength to 1
+        input.maxLength = 1;
+    });
+    
+    // Focus on the first input
+    if (otpInputs.length > 0) {
+        otpInputs[0].focus();
+    }
+}
+
+// Handle input in OTP fields
+function handleInput(e) {
+    const inputs = document.querySelectorAll('.V_otp_6');
+    const index = Array.from(inputs).indexOf(e.target);
+    
+    // If user entered a value and there's a next input, focus on it
+    if (e.target.value && index < inputs.length - 1) {
+        inputs[index + 1].focus();
+    }
+}
+
+// Handle keydown in OTP fields
+function handleKeyDown(e) {
+    const inputs = document.querySelectorAll('.V_otp_6');
+    const index = Array.from(inputs).indexOf(e.target);
+    
+    // Handle backspace
+    if (e.key === 'Backspace') {
+        // If the current field is empty and there's a previous field, focus on it
+        if (!e.target.value && index > 0) {
+            inputs[index - 1].focus();
+        }
+    }
+}
+
+// Function to verify the entered OTP
+function verifyOtp() {
+    const inputs = document.querySelectorAll('.V_otp_6');
+    const enteredOtp = Array.from(inputs).map(input => input.value).join('');
+    
+    // Error message container
+    let errorContainer = document.querySelector('.otp-error-message');
+    
+    // Create error message element if it doesn't exist
+    if (!errorContainer) {
+        errorContainer = document.createElement('div');
+        errorContainer.className = 'otp-error-message text-danger text-center mt-2';
+        const verifyButton = document.querySelector('.V_verify_email_section .V_register');
+        if (verifyButton) {
+            verifyButton.parentNode.insertBefore(errorContainer, verifyButton);
+        }
+    }
+    
+    // Check if OTP is correct
+    if (enteredOtp === userOtp) {
+        // Clear any error message
+        errorContainer.textContent = '';
+        
+        // Close the modal
+        const modalElement = document.getElementById('forgetPwdModal');
+        if (modalElement) {
+            const modal = bootstrap.Modal.getInstance(modalElement);
+            if (modal) {
+                modal.hide();
+            }
+        }
+        
+        // Optional: Show success message
+        alert("Email verified successfully!");
+
+       const userId = localStorage.getItem("demoId")
+        
+        // Remove registerSuccess flag as verification is complete
+        localStorage.removeItem("registerSuccess");
+        localStorage.removeItem("email");
+        localStorage.removeItem("demoId");
+        localStorage.setItem("userId", userId);
+    } else {
+        alert("incorrect otp");
+    }
+}
+
+// Function to resend OTP
+function resendOtp() {
+    // Generate new OTP (in this case, we're keeping the static OTP)
+    // userOtp = "123456"; // Uncomment if you want to generate a new OTP
+    
+    // Alert the user with the OTP
+    alert("Your OTP is: " + userOtp);
+    
+    // Clear input fields and set focus to first input
+    const inputs = document.querySelectorAll('.V_otp_6');
+    inputs.forEach(input => {
+        input.value = '';
+    });
+    
+    if (inputs.length > 0) {
+        inputs[0].focus();
+    }
+    
+    // Clear any error messages
+    const errorContainer = document.querySelector('.otp-error-message');
+    if (errorContainer) {
+        errorContainer.textContent = '';
+    }
+}
+
+// Set up event listeners when DOM is loaded
+document.addEventListener("DOMContentLoaded", function() {
+    // Setup for Verify OTP button
+    const verifyButton = document.querySelector('.V_verify_email_section .V_register');
+    if (verifyButton) {
+        verifyButton.addEventListener('click', verifyOtp);
+    }
+    
+    // Setup for Resend link
+    const resendLink = document.querySelector('.V_verify_email_section .V_r_login');
+    if (resendLink) {
+        resendLink.addEventListener('click', resendOtp);
+        // Add pointer cursor to make it obvious it's clickable
+        resendLink.style.cursor = 'pointer';
+    }
+    
+    // Check if we need to show verification screen after registration
+    if (localStorage.getItem("registerSuccess") === "true") {
+        verifyEmail();
+    }
+    
+    // Modify the storeUserData function to call verifyEmail after successful registration
+    const originalStoreUserData = window.storeUserData;
+    if (typeof originalStoreUserData === 'function') {
+        window.storeUserData = function() {
+            // Call the original function
+            originalStoreUserData.apply(this, arguments);
+            
+            // Then call verifyEmail
+            setTimeout(() => {
+                if (localStorage.getItem("registerSuccess") === "true") {
+                    verifyEmail();
+                }
+            }, 500);
+        };
+    }
+});
