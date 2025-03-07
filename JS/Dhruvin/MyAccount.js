@@ -289,90 +289,93 @@ function handleUpdateProfile(event) {
 
     // Determine selected gender
     let gender = document.getElementById("female").checked ? "Female" : 
-                 document.getElementById("male").checked ? "Male" : "";
+                 document.getElementById("male").checked ? "Male" : "Male";
+
+                 console.log(gender);
+                 
 
     // Function to convert image to Base64
-    function convertImageToBase64(imageFile, callback) {
-        const reader = new FileReader();
-        reader.onloadend = function () {
-            callback(reader.result); // Get Base64 string
-        };
-        reader.readAsDataURL(imageFile);
-    }
+    // function convertImageToBase64(imageFile, callback) {
+    //     const reader = new FileReader();
+    //     reader.onloadend = function () {
+    //         callback(reader.result); // Get Base64 string
+    //     };
+    //     reader.readAsDataURL(imageFile);
+    // }
 
-    if (selectedImage) {
-        convertImageToBase64(selectedImage, function (base64String) {
-            let updatedUserData = {
-                id:passwordObj?.id,
-                fullName: `${First} ${Last}`,
-                email: Email,
-                password: passwordObj?.password,
-                dateOfBirth: Date,
-                gender: gender,
-                phoneNumber: Mobile,
-                selectedImage: base64String, // Store Base64 image string
-                addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
-                carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
-                confirmedOrders:passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
-                orders:passwordObj?.orders ? passwordObj?.orders : [],
-                wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
-            };
+    // if (selectedImage) {
+    //     convertImageToBase64(selectedImage, function (base64String) {
+    //         let updatedUserData = {
+    //             id:passwordObj?.id,
+    //             fullName: `${First} ${Last}`,
+    //             email: Email,
+    //             password: passwordObj?.password,
+    //             dateOfBirth: Date,
+    //             gender: gender,
+    //             phoneNumber: Mobile,
+    //             selectedImage: base64String, // Store Base64 image string
+    //             addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
+    //             carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
+    //             confirmedOrders:passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
+    //             orders:passwordObj?.orders ? passwordObj?.orders : [],
+    //             wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
+    //         };
 
             
 
-            // Send JSON data to JSON Server
-            fetch(`http://localhost:3000/User/${userID}`, {
-                method: "PUT",
-                headers: {
-                    "Accept": "application/json",
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(updatedUserData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert("Profile updated successfully!");
-                console.log("Updated User:", data);
-            })
-            .catch(error => console.error("Error updating profile:", error));
+    //         // Send JSON data to JSON Server
+    //         fetch(`http://localhost:3000/User/${userID}`, {
+    //             method: "PUT",
+    //             headers: {
+    //                 "Accept": "application/json",
+    //                 "Content-Type": "application/json"
+    //             },
+    //             body: JSON.stringify(updatedUserData)
+    //         })
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             alert("Profile updated successfully!");
+    //             console.log("Updated User:", data);
+    //         })
+    //         .catch(error => console.error("Error updating profile:", error));
             
-            getUserProfileData();
-        });
-    } else {
-        // If no new image is selected, update profile without changing image
-        let updatedUserData = {
-            id:passwordObj?.id,
-            fullName: `${First} ${Last}`,
-            email: Email,
-            password: passwordObj?.password,
-            dateOfBirth: Date,
-            gender: gender,
-            phoneNumber: Mobile,
-            selectedImage: passwordObj?.selectedImage ? passwordObj?.selectedImage : null, 
-            addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
-            carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
-            confirmedOrders:passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
-            orders:passwordObj?.orders ? passwordObj?.orders : [],
-            wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
-        };
+    //         getUserProfileData();
+    //     });
+    // } else {
+    //     // If no new image is selected, update profile without changing image
+    //     let updatedUserData = {
+    //         id:passwordObj?.id,
+    //         fullName: `${First} ${Last}`,
+    //         email: Email,
+    //         password: passwordObj?.password,
+    //         dateOfBirth: Date,
+    //         gender: gender,
+    //         phoneNumber: Mobile,
+    //         selectedImage: passwordObj?.selectedImage ? passwordObj?.selectedImage : null, 
+    //         addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
+    //         carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
+    //         confirmedOrders:passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
+    //         orders:passwordObj?.orders ? passwordObj?.orders : [],
+    //         wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
+    //     };
 
-        fetch(`http://localhost:3000/User/${userID}`, {
-            method: "PUT",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(updatedUserData)
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert("Profile updated successfully!");
-            console.log("Updated User:", data);
-        })
-        .catch(error => console.error("Error updating profile:", error));
+    //     fetch(`http://localhost:3000/User/${userID}`, {
+    //         method: "PUT",
+    //         headers: {
+    //             "Accept": "application/json",
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify(updatedUserData)
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         alert("Profile updated successfully!");
+    //         console.log("Updated User:", data);
+    //     })
+    //     .catch(error => console.error("Error updating profile:", error));
 
-        getUserProfileData();
-    }
+    //     getUserProfileData();
+    // }
 }
 
 
@@ -589,18 +592,21 @@ function selectGender(gender) {
     // Remove 'active' class from all gender options
     document.querySelectorAll('.gender-option').forEach(el => el.classList.remove('active'));
 
-    // Get selected radio input and apply 'active' class to its parent
+    // Get selected radio input
     let selectedInput = document.getElementById(gender);
     if (selectedInput) {
         selectedInput.checked = true;
 
-        // Find the associated label div and add 'active' class
-        let parentDiv = selectedInput.parentElement;
-        if (parentDiv.classList.contains('gender-option')) {
+        // Add 'active' class to the correct gender div
+        let parentDiv = selectedInput.closest('.gender-option');
+        if (parentDiv) {
             parentDiv.classList.add('active');
         }
     }
+
+
 }
+
 
 
 let selectedAddressType = 'Home';

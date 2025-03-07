@@ -18,7 +18,7 @@ function handleSingUp() {
     }
 }
 
-let registerId = localStorage.getItem("userId")
+let registerId = localStorage.getItem("registerId")
 let handleObj = {}
 
 async function handleApiGetData() {
@@ -669,7 +669,7 @@ function asItIs() {
     hideforPwd.classList.remove("d-none");
 }
 
-function verifyOtp() {
+function verifyOtp1() {
     
     
     const veriEmail = document.getElementById("ds_verify_email").value.trim()
@@ -691,60 +691,87 @@ function verifyOtp() {
 }
 
 function resetPassword() {
-    
     let otpInputs = document.querySelectorAll(".ds_verify_otp");
-    let enteredOtp = Array.from(otpInputs).map(input => input.value).join('');
-
-    if (enteredOtp !== "123456") {  // Simulate OTP validation (replace with actual API)
-        alert("Invalid OTP. Please try again.");
-        const hideforPwd = document.querySelector(".V_Forgot_section");
-        hideforPwd.classList.add("d-none");
+    let enteredOtp = Array.from(otpInputs).map(input => input.value.trim()).join('');
+    
+    // Check if OTP fields are empty
+    if (!enteredOtp || enteredOtp.length !== 6) {
+        alert("Please enter a valid 6-digit OTP.");
         return;
     }
-    else{
+    
+    // Simulate API call for OTP verification (Replace this with actual API request)
+    dsVerifyOtp(enteredOtp).then(isValid => {
+        if (!isValid) {
+            alert("Invalid OTP. Please try again.");
+            return;
+        }
         
-        const hideOtp = document.querySelector(".V_verify_section");
-        hideOtp.classList.add('d-none');
-        const displayResetPwd = document.querySelector(".V_reset_section");
-        displayResetPwd.classList.remove('d-none');
+        // Hide OTP section and show reset password section
+        document.querySelector(".V_verify_section").classList.add("d-none");
+        document.querySelector(".V_reset_section").classList.remove("d-none");
+    }).catch(error => {
+        alert("Error verifying OTP. Please try again later.");
+        console.error("OTP Verification Error:", error);
+    });
+}
+
+// Simulated API function (Replace with real API request)
+function dsVerifyOtp(otp) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(otp === "123456"); // Replace with actual API logic
+        }, 1000);
+    });
+}
+
+
+async function handleResetPassword() {
+    let newPass = document.getElementById("pwd1").value.trim();
+    let conPass = document.getElementById("pwd2").value.trim();
+ 
+    // Password validation regex (at least 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special character)
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+ 
+    if (!newPass || !conPass) {
+       alert("Both password fields are required.");
+       return;
     }
-    // if(){
-
-    // }
-}
-
-async function handleResetPassword () {
-   let newPass = document.getElementById("pwd1").value.trim()
-   let conPass = document.getElementById("pwd2").value.trim()
-
-   if(newPass != conPass){
-     alert("Passwords do not match.");
-     return;
-   }
-   else{
-     let obj = {
-        fullName: `${handleObj.fullName}`,
-        phoneNumber: handleObj?.phoneNumber,
-        email: handleObj?.email,
-        dateOfBirth: handleObj?.dateOfBirth,
-        gender: handleObj?.gender,
-        password:conPass,
-        addresses:handleObj?.addresses ? handleObj?.addresses : []
-     }
-     try{
-        const response = await fetch(`http://localhost:3000/User/${registerId}`,{
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(obj)
-       })
-         console.log("response" , response);
-         alert("Password Change SuccessFully")
-       }catch(error){
-        alert(error)
-       }
-     
-   }
-}
+ 
+    if (!passwordRegex.test(newPass)) {
+       alert("Password must be at least 8 characters long and include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.");
+       return;
+    }
+ 
+    if (newPass !== conPass) {
+       alert("Passwords do not match.");
+       return;
+    }
+ 
+    let obj = {
+       fullName: `${handleObj.fullName}`,
+       phoneNumber: handleObj?.phoneNumber,
+       email: handleObj?.email,
+       dateOfBirth: handleObj?.dateOfBirth,
+       gender: handleObj?.gender,
+       password: conPass,
+       addresses: handleObj?.addresses ? handleObj?.addresses : []
+    };
+ 
+    try {
+       const response = await fetch(`http://localhost:3000/User/${registerId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(obj)
+       });
+ 
+       console.log("Response:", response);
+       alert("Password changed successfully!");
+    } catch (error) {
+       alert("Error: " + error.message);
+    }
+ }
+ 
 
 
 const otpFields = document.querySelectorAll('.V_otp_6');
