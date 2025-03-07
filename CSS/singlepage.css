@@ -156,6 +156,10 @@ img {
   margin-bottom: 1rem;
 }
 
+.V_bg_pro{
+  background: #3D4936;
+}
+
 .btn {
   display: inline-block;
   font-family: inherit;
@@ -634,7 +638,7 @@ product-container {
 }
 
 .original-price {
-  font-size: 16px;
+  font-size: 20px;
   color: #999;
   text-decoration: line-through;
   margin-right: 8px;
@@ -645,7 +649,7 @@ product-container {
   color: #2e7d32;
   padding: 2px 6px;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -777,8 +781,8 @@ product-container {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #ccc;
+  /* padding-bottom: 8px; */
+  /* border-bottom: 1px solid #ccc; */
 }
 
 .chevron {
@@ -885,7 +889,8 @@ product-container {
 }
 
 .product-details {
-  padding-left: 0;
+  margin-left: 20px;
+  /* padding-left: 0; */
 }
 
 /* #productTabs {
@@ -893,7 +898,7 @@ product-container {
 } */
 
 #productTabs .nav-link {
-  padding: 10px 110px;
+  padding: 10px 96px;
   border-left: none;
   /* Remove left border */
   border-right: none;

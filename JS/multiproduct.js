@@ -758,9 +758,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
 function setupEventListeners(products, wishlist, cart, userId) {
     let lastSelectedColor = null; // Store the last selected color globally
-
+    let isAddingToCart = false; // Flag to prevent duplicate operations
+    
     document.getElementById('products-container').addEventListener('click', async (event) => {
         const target = event.target;
         const productCard = target.closest('.product-card');
@@ -768,32 +770,32 @@ function setupEventListeners(products, wishlist, cart, userId) {
         const productId = productCard.dataset.id;
         let selectedColor = localStorage.getItem("selectedColor") || null;
         const productDetails = products.find(p => p.id == productId);
-
+        
         // ✅ Handle Color Selection Globally
         if (target.closest('.V_color_border')) {
             const selectedElement = target.closest('.V_color_border');
             selectedColor = selectedElement.dataset.color;
-
+            
             // Store the selected color in localStorage
             localStorage.setItem("selectedColor", selectedColor);
-
+            
             // Reset the previous selection globally
             if (lastSelectedColor && lastSelectedColor !== selectedElement) {
                 lastSelectedColor.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";
             }
-
+            
             // Highlight the newly selected color
             selectedElement.style.border = "1px solid black";
             lastSelectedColor = selectedElement;
-
+            
             return;
         }
-
+        
         // ✅ Handle Wishlist
         if (target.classList.contains('wishlist-button')) {
             event.stopPropagation();
             if (!userId) return alert("User not logged in!");
-
+            
             const existingIndex = wishlist.findIndex(item => item.id == productId);
             if (existingIndex === -1) {
                 wishlist.push({
@@ -811,40 +813,55 @@ function setupEventListeners(products, wishlist, cart, userId) {
             } else {
                 wishlist.splice(existingIndex, 1);
             }
-
+            
             await updateUserData(userId, { wishlist });
             target.classList.toggle('d-none');
             target.nextElementSibling.classList.toggle('d-none');
             return;
         }
-
+        
         // ✅ Handle Add to Cart
         if (target.classList.contains('V_add_cart')) {
-            if (!userId) return alert("User not logged in!");
-
-            const existingItem = cart.find(item => item.id == productId && item.selectedColor == selectedColor);
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    id: Date.now(),  // ✅ Use actual product ID
-                    image: productDetails.image,
-                    name: productDetails.name,
-                    currentPrice: productDetails.price,
-                    quantity: 1,
-                    selectedColor: selectedColor
-                });
-                alert("Product added to cart.");
+            // Prevent multiple clicks or operations
+            if (isAddingToCart) return;
+            isAddingToCart = true;
+            
+            if (!userId) {
+                isAddingToCart = false;
+                return alert("User not logged in!");
             }
-
-            await updateUserData(userId, { orders: cart });
-            target.textContent = 'Added!';
-            setTimeout(() => target.textContent = 'Add to Cart', 1000);
+            
+            try {
+                const existingItem = cart.find(item => item.id == productId && item.selectedColor == selectedColor);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id: Date.now(),
+                        image: productDetails.image,
+                        name: productDetails.name,
+                        currentPrice: productDetails.price,
+                        quantity: 1,
+                        selectedColor: selectedColor
+                    });
+                }
+                
+                // Update user data
+                await updateUserData(userId, { orders: cart });
+                
+                // Update button text
+                target.textContent = 'Added!';
+                setTimeout(() => {
+                    target.textContent = 'Add to Cart';
+                    isAddingToCart = false; // Reset the flag after operation is complete
+                }, 1000);
+            } catch (error) {
+                console.error("Error adding to cart:", error);
+                isAddingToCart = false; // Reset the flag on error
+            }
         }
     });
 }
-
-
 
 
 async function updateUserData(userId, updateData) {
