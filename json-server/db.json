@@ -1423,6 +1423,14 @@
       "email": "dk@gmail.com",
       "password": "darshan@123",
       "wishlist": []
+    },
+    {
+      "id": "09eb",
+      "fullName": "marry Jane",
+      "phoneNumber": "8523698523",
+      "email": "marry@gmail.com",
+      "password": "Marry@123",
+      "wishlist": []
     }
   ],
   "likeproduct": [
