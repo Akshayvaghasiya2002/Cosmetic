@@ -228,6 +228,7 @@ $(document).ready(async function () {
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="position-relative">
                                     <div>${product.tags ? `<span class="badge">${product.tags}</span>` : ''}</div>
+                                    ${product.tags ?  `<img src="../IMG/Dhruvin/star.png" class="ds_label_star">` : ""}
                                 </div>
                                 <div class="heart-container">
                                     <i class="fa-regular fa-heart wishlist-btn ${isWishlisted ? 'd-none' : ''}"></i>

@@ -176,6 +176,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Create wishlist item HTML based on item structure
 function createWishlistItemHTML(item) {
+    console.log("vgwevgebw" , item);
+    
     let colorOptionsHTML = "";
     let moreOptionsHTML = "";
 

@@ -795,13 +795,14 @@ img {
 
   background-color: #3b4637;
   color: #fff;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
   padding: 5px 12px;
   border-radius: 5px;
   display: inline-block;
   position: relative;
   text-transform: uppercase;
+  z-index: 1;
 }
 
 /* Left Ribbon Cut */
@@ -833,6 +834,15 @@ img {
   background-repeat: no-repeat;
   background-size: contain;
 } */
+
+.ds_label_star{
+  position: absolute;
+  top: -9px;
+  right: -14px;
+  height: 25px;
+  width: 26px !important;
+  object-fit: cover;
+}
 
 .heart-container {
   display: flex;
