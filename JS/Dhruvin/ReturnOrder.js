@@ -1,17 +1,17 @@
 const userId = localStorage.getItem("userId")
 const batchId = localStorage.getItem("MyBatchId")
 let passwordObj = {}
-var mainId 
-var json
+var ds_MainId 
+var ds_json
 
 async function getOrderData () {
     const respose = await fetch(`http://localhost:3000/User/${userId}`)
-    json = await respose?.json()
-    passwordObj = json
-    console.log("json" , json);
-    const finalId = json?.confirmedOrders?.filter((element)=> element?.batchId == batchId)
-    mainId = finalId?.find((element)=> element?.batchId)    
-    console.log(mainId?.batchId);
+    ds_json = await respose?.json()
+    passwordObj = ds_json
+    console.log("json" , ds_json);
+    const finalId = ds_json?.confirmedOrders?.filter((element)=> element?.batchId == batchId)
+    ds_MainId = finalId?.find((element)=> element?.batchId)    
+    console.log(ds_MainId?.batchId);
 }
 
 getOrderData()
@@ -34,11 +34,11 @@ async function handleRequestOtp () {
         alert("Please select a reason for return.");
         return;
     }
-    if (orderId !== mainId?.batchId) {
+    if (orderId !== ds_MainId?.batchId) {
         alert("Invalid order ID. Please check and try again.");
         return;
     }
-    if (phone !== json?.phoneNumber) {
+    if (phone !== ds_json?.phoneNumber) {
         alert("Invalid phone number. Please check and try again.");
         return;
     }
@@ -93,11 +93,11 @@ async function handleConfirmReturn(event) {
         alert("Please select a reason for return.");
         return;
     }
-    if (orderId !== mainId?.batchId) {
+    if (orderId !== ds_MainId?.batchId) {
         alert("Invalid order ID. Please check and try again.");
         return;
     }
-    if (phone !== json?.phoneNumber) {
+    if (phone !== ds_json?.phoneNumber) {
         alert("Invalid phone number. Please check and try again.");
         return;
     }
@@ -125,10 +125,10 @@ async function handleConfirmReturn(event) {
 
     try {
         // Ensure batchId is properly defined
-        const batchId = mainId?.batchId;
+        const batchId = ds_MainId?.batchId;
 
         // Check if the order exists in confirmedOrders
-        const orderIndex = json?.confirmedOrders?.findIndex(order => order.batchId === batchId);
+        const orderIndex = ds_json?.confirmedOrders?.findIndex(order => order.batchId === batchId);
 
         if (orderIndex === -1) {
             alert("Order not found.");
@@ -136,8 +136,8 @@ async function handleConfirmReturn(event) {
         }
 
         // Add returnOrder key to the matched order
-        json.confirmedOrders[orderIndex].orderStatus = "return order";
-        json.confirmedOrders[orderIndex].returnOrder = {
+        ds_json.confirmedOrders[orderIndex].orderStatus = "return order";
+        ds_json.confirmedOrders[orderIndex].returnOrder = {
             reason: reason,
             returnDate: new Date().toISOString()?.split("T")[0],
         };
@@ -153,7 +153,7 @@ async function handleConfirmReturn(event) {
             selectedImage: passwordObj?.selectedImage || "", // Store Base64 image string
             addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
             carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
-            confirmedOrders:json?.confirmedOrders,
+            confirmedOrders:ds_json?.confirmedOrders,
             orders:passwordObj?.orders ? passwordObj?.orders : [],
             wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
         }

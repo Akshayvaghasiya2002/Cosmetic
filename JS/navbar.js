@@ -641,6 +641,10 @@ function verifyEmail() {
 }
 
 function displayForgetPwd() {
+    const backdrop = document.querySelector(".modal-backdrop");
+            if (backdrop) {
+                backdrop.remove(); 
+            }
     const displayLogin = document.querySelector(".V_login_section");
     displayLogin.classList.add("d-none");
     const displaySignUp = document.querySelector(".V_520");
@@ -651,6 +655,9 @@ function displayForgetPwd() {
     displayResetPwd.classList.add('d-none');
     const displayEmail = document.querySelector(".V_verify_email_section");
     displayEmail.classList.add("d-none");
+    const RegisterModal = document.querySelector(".V_sign_login");
+    RegisterModal.classList.add("d-none");
+
 }
 
 function loginClose() {
@@ -1020,4 +1027,546 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-//////////////////////////////////////// filter product btn ////////////////////////////////////
+
+
+
+
+
+
+
+
+// ************* Cancel Order ********************
+const batchId = localStorage.getItem("MyBatchId")
+let passwordObj = {}
+
+async function getOrderData () {
+    const respose = await fetch(`http://localhost:3000/User/${userId}`)
+    const json = await respose.json()
+    console.log(json);
+    
+    passwordObj = json
+
+    const filter = json?.confirmedOrders?.find((element)=> element?.batchId == batchId)
+    // console.log('filter' , filter);
+}
+
+getOrderData()
+
+
+async function handleCancelOrder() {
+    let select = document.querySelector("select[name='reason']")?.value;
+    let comments = document.querySelector("#ds_textarea").value.trim();
+
+    if (!select) {
+        alert("Please select a reason for cancellation.");
+        return;
+    }
+
+    if (comments === "") {
+        alert("Please provide additional comments for your reason.");
+        return;
+    }
+
+    let myDate =  new Date().toISOString()?.split("T")[0]
+    // Find the specific order using batchId
+    let updatedOrders = passwordObj?.confirmedOrders?.map(order => {
+        if (order.batchId === batchId) {
+            return {
+                ...order,
+                orderStatus:"cancelled",
+                cancel: {
+                    reason: select,
+                    comment: comments,
+                    cancelDate:myDate
+                }
+            };
+        }
+        return order;
+    });
+
+
+
+    const userData = {
+        id:passwordObj?.id,
+        fullName:passwordObj?.fullName,
+        email:passwordObj?.email,
+        password:passwordObj?.password,
+        dateOfBirth:passwordObj?.dateOfBirth,
+        gender:passwordObj?.gender,
+        phoneNumber:passwordObj?.phoneNumber,
+        selectedImage:passwordObj?.selectedImage,
+        addresses: passwordObj?.addresses,
+        carddetails: passwordObj?.carddetails,
+        confirmedOrders: updatedOrders,
+        orders:passwordObj?.orders,
+        wishlist:passwordObj?.wishlist
+    };
+
+    try {
+        const response = await fetch(`http://localhost:3000/User/${userId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(userData)
+        });
+
+        if (response) {
+            alert("Order cancellation request submitted successfully!");
+            localStorage.setItem("cancelSuccess", "true");
+        } else {
+            alert("Failed to update order. Please try again.");
+        }
+    } catch (error) {
+        console.error("Error updating order:", error);
+        alert("An error occurred. Please try again later.");
+    }
+}
+
+function hello() {
+    let modal = new bootstrap.Modal(document.getElementById('cancelOrder'));
+    modal.show();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("cancelSuccess") === "true") {
+        localStorage.removeItem("cancelSuccess"); 
+        hello(); 
+    }
+});
+
+
+
+
+
+
+// ************* OrderStatus Delivered.html ********************
+
+async function getOrderData () {
+    const respose = await fetch(`http://localhost:3000/User/${userId}`)
+    const json = await respose.json()
+    console.log("json" , json);
+
+    const filter = json?.confirmedOrders?.find((element)=> element?.batchId == batchId)
+    console.log('filter' , filter);
+    document.getElementById("ds_deliverOrder_id").innerHTML = filter?.batchId
+    document.getElementById("ds_deliverOrder_date").innerHTML = filter?.orderDate
+    document.getElementById("ds_deliverOrder_date2").innerHTML = filter?.orderDate
+
+    const shipDate = new Date(filter?.orderDate)
+    shipDate.setDate(shipDate.getDate() + 3);
+    document.getElementById("ds_deliverOrder_ship").innerHTML = shipDate?.toISOString()?.split("T")[0]; 
+    document.getElementById("ds_deliverOrder_ship2").innerHTML = shipDate?.toISOString()?.split("T")[0]; 
+
+    const expectedDate = new Date(filter?.orderDate)
+    expectedDate.setDate(expectedDate.getDate() + 5);
+    document.getElementById("ds_deliverOrder_out").innerHTML = expectedDate?.toISOString()?.split("T")[0]; 
+    document.getElementById("ds_deliverOrder_out2").innerHTML = expectedDate?.toISOString()?.split("T")[0]; 
+
+    const deliverDate = new Date(filter?.orderDate)
+    deliverDate.setDate(deliverDate.getDate() + 10);
+    document.getElementById("ds_deliverOrder_come").innerHTML = deliverDate?.toISOString()?.split("T")[0]; 
+    document.getElementById("ds_deliverOrder_come2").innerHTML = deliverDate?.toISOString()?.split("T")[0]; 
+
+    document.getElementById("ds_deliverOrder_miniId").innerHTML = filter?.batchId
+    document.getElementById("ds_deliverOrder_confirm").innerHTML = filter?.orderDate
+    document.getElementById("ds_deliverOrder_come").innerHTML = filter?.deliveryDate
+
+    document.getElementById("ds_deliverOrder_name").innerHTML = filter?.shippingDetails?.name
+    document.getElementById("ds_deliverOrder_address").innerHTML = filter?.shippingDetails?.address
+    document.getElementById("ds_deliverOrder_num").innerHTML = filter?.shippingDetails?.mobile
+
+    let productData = document.getElementById("ds_deliverProduct_detail")
+    let html = filter?.orders?.map((element)=>{
+          return `<div class="row align-items-center">
+                                <div class="col-xl-2 col-lg-4 col-md-5 col-sm-4 col-6  mt-3">
+                                  <div>
+                                    <img src="${element?.image}" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-xl-10 col-lg-8 col-md-7 col-sm-8 col-12 mt-3">
+                                  <div>
+                                     <p class="ds_color">${element?.brand ? element?.brand : ''} ${element?.name}</p>
+                                     <p class="ds_muted">Shade : <span class="ds_color">${element?.selectedColor ? element?.selectedColor : 'No Color'}</span></p>
+                                     <div class="d-flex justify-content-between">
+                                        <p class="ds_muted">Qty : <span class="ds_color">X1</span></p>
+                                        <h5 class="ds_color ds_600">$${element?.currentPrice}</h5>
+                                     </div>
+                                  </div>
+                                </div>
+                               </div>
+                               <div class="ds_order_border mt-3"></div>
+                               `
+    }).join("")
+    productData.innerHTML = html
+
+    document.getElementById("ds_deliverItem_length").innerHTML = filter?.orders?.length
+    document.getElementById("ds_deliverSub_total").innerHTML = filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount)
+    document.getElementById("ds_deliverItem_discount").innerHTML = parseFloat(filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount) * 20 / 100)
+    document.getElementById("ds_deliverItem_total").innerHTML = filter?.totalAmount
+
+}
+
+getOrderData()
+
+
+
+
+// ************* OrderStatus Processing.html ********************
+
+async function getOrderDataProccessing () {
+    const respose = await fetch(`http://localhost:3000/User/${userId}`)
+    const json = await respose.json()
+    console.log("json" , json);
+
+    const filter = json?.confirmedOrders?.find((element)=> element?.batchId == batchId)
+    console.log('filter' , filter);
+    document.getElementById("ds_order_id").innerHTML = filter?.batchId
+    document.getElementById("ds_order_date").innerHTML = filter?.orderDate
+    document.getElementById("ds_order_date2").innerHTML = filter?.orderDate
+
+    const shipDate = new Date(filter?.orderDate)
+    shipDate.setDate(shipDate.getDate() + 3);
+    document.getElementById("ds_order_ship").innerHTML = shipDate?.toISOString()?.split("T")[0]; 
+    document.getElementById("ds_order_ship2").innerHTML = shipDate?.toISOString()?.split("T")[0]; 
+
+    const expectedDate = new Date(filter?.orderDate)
+    expectedDate.setDate(expectedDate.getDate() + 5);
+    document.getElementById("ds_order_expected").innerHTML = expectedDate?.toISOString()?.split("T")[0]; 
+    document.getElementById("ds_order_expected2").innerHTML = expectedDate?.toISOString()?.split("T")[0]; 
+
+    const deliverDate = new Date(filter?.orderDate)
+    deliverDate.setDate(deliverDate.getDate() + 10);
+    document.getElementById("ds_order_deliver").innerHTML = deliverDate?.toISOString()?.split("T")[0]; 
+    document.getElementById("ds_order_deliver2").innerHTML = deliverDate?.toISOString()?.split("T")[0]; 
+
+    document.getElementById("ds_order_miniId").innerHTML = filter?.batchId
+    document.getElementById("ds_order_confirm").innerHTML = filter?.orderDate
+    document.getElementById("ds_order_come").innerHTML = filter?.deliveryDate
+
+    document.getElementById("ds_order_name").innerHTML = filter?.shippingDetails?.name
+    document.getElementById("ds_order_address").innerHTML = filter?.shippingDetails?.address
+    document.getElementById("ds_order_num").innerHTML = filter?.shippingDetails?.mobile
+
+    let productData = document.getElementById("ds_product_detail")
+    let html = filter?.orders?.map((element)=>{
+          return `<div class="row align-items-center">
+                                <div class="col-xl-2 col-lg-4 col-md-5 col-sm-4 col-6  mt-3">
+                                  <div>
+                                    <img src="${element?.image}" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-xl-10 col-lg-8 col-md-7 col-sm-8 col-12 mt-3">
+                                  <div>
+                                     <p class="ds_color">${element?.brand ? element?.brand : ''} ${element?.name}</p>
+                                     <p class="ds_muted">Shade : <span class="ds_color">${element?.selectedColor ? element?.selectedColor : 'No Color'}</span></p>
+                                     <div class="d-flex justify-content-between">
+                                        <p class="ds_muted">Qty : <span class="ds_color">X1</span></p>
+                                        <h5 class="ds_color ds_600">$${element?.currentPrice}</h5>
+                                     </div>
+                                  </div>
+                                </div>
+                               </div>
+                               <div class="ds_order_border mt-3"></div>
+                               `
+    }).join("")
+    productData.innerHTML = html
+
+    document.getElementById("ds_item_length").innerHTML = filter?.orders?.length
+    document.getElementById("ds_sub_total").innerHTML = filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount)
+    document.getElementById("ds_item_discount").innerHTML = parseFloat(filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount) * 20 / 100)
+    document.getElementById("ds_item_total").innerHTML = filter?.totalAmount
+
+}
+
+getOrderDataProccessing()
+
+
+
+// ************* ReturnOrder.html ********************
+var ds_MainId 
+var ds_json
+
+async function getReturnOrderData () {
+    const respose = await fetch(`http://localhost:3000/User/${userId}`)
+    ds_json = await respose?.json()
+    passwordObj = ds_json
+    console.log("json" , ds_json);
+    const finalId = ds_json?.confirmedOrders?.filter((element)=> element?.batchId == batchId)
+    ds_MainId = finalId?.find((element)=> element?.batchId)    
+    console.log(ds_MainId?.batchId);
+}
+
+getReturnOrderData()
+
+
+async function handleRequestOtp () {
+    const orderId = document.getElementById("ds_order_input").value.trim()
+    const phone = document.getElementById("ds_order_phone").value.trim()
+    const reason = document.querySelector("select[name='reason']")?.value;
+
+    if (!orderId) {
+        alert("Please enter your order ID.");
+        return;
+    }
+    if (!phone) {
+        alert("Please enter your phone number.");
+        return;
+    }
+    if (!reason) {
+        alert("Please select a reason for return.");
+        return;
+    }
+    if (orderId !== ds_MainId?.batchId) {
+        alert("Invalid order ID. Please check and try again.");
+        return;
+    }
+    if (phone !== ds_json?.phoneNumber) {
+        alert("Invalid phone number. Please check and try again.");
+        return;
+    }
+
+    
+    document.getElementById("ds_all_otp").classList.remove("d-none");
+    document.getElementById("ds_confirm_btn").classList.remove("d-none");
+    alert("Your Otp Is -: 123456")
+    document.getElementById("ds_order_request").classList.add("d-none");
+
+    
+}
+
+async function handleConfirmReturn(event) {
+    // event.preventDefault();
+    const orderId = document.getElementById("ds_order_input").value.trim();
+    const phone = document.getElementById("ds_order_phone").value.trim();
+    const reason = document.querySelector("select[name='reason']")?.value;
+    const otpInputs = document.querySelectorAll(".ds_return_otp");
+
+    if (!orderId) {
+        alert("Please enter your order ID.");
+        return;
+    }
+    if (!phone) {
+        alert("Please enter your phone number.");
+        return;
+    }
+    if (!reason) {
+        alert("Please select a reason for return.");
+        return;
+    }
+    if (orderId !== ds_MainId?.batchId) {
+        alert("Invalid order ID. Please check and try again.");
+        return;
+    }
+    if (phone !== ds_json?.phoneNumber) {
+        alert("Invalid phone number. Please check and try again.");
+        return;
+    }
+
+    let enteredOtp = "";
+    let finalOtp = "123456"
+    otpInputs.forEach(input => {
+        enteredOtp += input.value.trim();
+    });
+
+    if (enteredOtp.length !== 6 || isNaN(enteredOtp)) {
+        alert("Please enter a valid 6-digit OTP.");
+        return;
+    }
+
+    // Assuming expectedOtp is stored somewhere (Fix the incorrect condition)
+    if (enteredOtp !== finalOtp) {
+        alert("Incorrect OTP. Please try again.");
+        return;
+    }
+
+    document.getElementById("ds_all_otp").classList.add("d-none");
+    document.getElementById("ds_confirm_btn").classList.add("d-none");
+    document.getElementById("ds_order_request").classList.remove("d-none");
+
+    try {
+        // Ensure batchId is properly defined
+        const batchId = ds_MainId?.batchId;
+
+        // Check if the order exists in confirmedOrders
+        const orderIndex = ds_json?.confirmedOrders?.findIndex(order => order.batchId === batchId);
+
+        if (orderIndex === -1) {
+            alert("Order not found.");
+            return;
+        }
+
+        // Add returnOrder key to the matched order
+        ds_json.confirmedOrders[orderIndex].orderStatus = "return order";
+        ds_json.confirmedOrders[orderIndex].returnOrder = {
+            reason: reason,
+            returnDate: new Date().toISOString()?.split("T")[0],
+        };
+
+        const userData = {
+            id:passwordObj?.id,
+            fullName:passwordObj?.fullName,
+            email: passwordObj?.email,
+            password: passwordObj?.password,
+            dateOfBirth: passwordObj?.dateOfBirth || "",
+            gender: passwordObj?.gender || "",
+            phoneNumber: passwordObj?.phoneNumber,
+            selectedImage: passwordObj?.selectedImage || "", // Store Base64 image string
+            addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
+            carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
+            confirmedOrders:ds_json?.confirmedOrders,
+            orders:passwordObj?.orders ? passwordObj?.orders : [],
+            wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
+        }
+
+        // Send the updated data to the server using fetch
+        const response = await fetch(`http://localhost:3000/User/${userId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userData)
+        });
+
+        if (response.ok) {
+            alert("Return request submitted successfully.");
+            
+        } else {
+            alert("Failed to submit return request. Try again.");
+        }
+    } catch (error) {
+        console.error("Error updating order:", error);
+        alert("An error occurred while processing your request.");
+    }
+
+}
+
+
+
+// ************* ReturnRefundStatus.html ********************
+
+async function getReturnRefundStatusData () {
+    const respose = await fetch(`http://localhost:3000/User/${userId}`)
+    const json = await respose.json()
+    console.log("json" , json);
+
+    const filter = json?.confirmedOrders?.find((element)=> element?.batchId == batchId)
+    console.log('filter' , filter);
+    document.getElementById("ds_refund_id").innerHTML = filter?.batchId
+    document.getElementById("ds_refund_date").innerHTML = filter?.returnOrder?.returnDate
+    document.getElementById("ds_refund_date2").innerHTML = filter?.returnOrder?.returnDate
+
+    const shipDate = new Date(filter?.returnOrder?.returnDate)
+    shipDate.setDate(shipDate.getDate() + 3);
+    document.getElementById("ds_refund_picke").innerHTML = shipDate?.toISOString()?.split("T")[0]; 
+    document.getElementById("ds_refund_picke2").innerHTML = shipDate?.toISOString()?.split("T")[0]; 
+
+    // const expectedDate = new Date(filter?.orderDate)
+    // expectedDate.setDate(expectedDate.getDate() + 5);
+    // document.getElementById("ds_order_expected").innerHTML = expectedDate?.toISOString()?.split("T")[0]; 
+    // document.getElementById("ds_order_expected2").innerHTML = expectedDate?.toISOString()?.split("T")[0]; 
+
+    // const deliverDate = new Date(filter?.orderDate)
+    // deliverDate.setDate(deliverDate.getDate() + 10);
+    // document.getElementById("ds_order_deliver").innerHTML = deliverDate?.toISOString()?.split("T")[0]; 
+    // document.getElementById("ds_order_deliver2").innerHTML = deliverDate?.toISOString()?.split("T")[0]; 
+
+    document.getElementById("ds_refund_miniId").innerHTML = filter?.batchId
+    document.getElementById("ds_refund_confirm").innerHTML = filter?.orderDate
+    document.getElementById("ds_refund_come").innerHTML = filter?.deliveryDate
+
+    document.getElementById("ds_refund_name").innerHTML = filter?.shippingDetails?.name
+    document.getElementById("ds_refund_address").innerHTML = filter?.shippingDetails?.address
+    document.getElementById("ds_refund_num").innerHTML = filter?.shippingDetails?.mobile
+
+    let productData = document.getElementById("ds_refund_details")
+    let html = filter?.orders?.map((element)=>{
+          return `<div class="row align-items-center">
+                                <div class="col-xl-2 col-lg-4 col-md-5 col-sm-4 col-6  mt-3">
+                                  <div>
+                                    <img src="${element?.image}" alt="">
+                                  </div>
+                                </div>
+                                <div class="col-xl-10 col-lg-8 col-md-7 col-sm-8 col-12 mt-3">
+                                  <div>
+                                     <p class="ds_color">${element?.brand ? element?.brand : ''} ${element?.name}</p>
+                                     <p class="ds_muted">Shade : <span class="ds_color">${element?.selectedColor ? element?.selectedColor : 'No Color'}</span></p>
+                                     <div class="d-flex justify-content-between">
+                                        <p class="ds_muted">Qty : <span class="ds_color">X1</span></p>
+                                        <h5 class="ds_color ds_600">$${element?.currentPrice}</h5>
+                                     </div>
+                                  </div>
+                                </div>
+                               </div>
+                               <div class="ds_order_border mt-3"></div>
+                               `
+    }).join("")
+    productData.innerHTML = html
+
+    document.getElementById("ds_item_length").innerHTML = filter?.orders?.length
+    document.getElementById("ds_sub_total").innerHTML = filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount)
+    document.getElementById("ds_item_discount").innerHTML = parseFloat(filter?.orders?.reduce((x , y)=> x.totalAmount + y.totalAmount) * 20 / 100)
+    document.getElementById("ds_item_total").innerHTML = filter?.totalAmount
+
+}
+
+getReturnRefundStatusData()
+
+
+// ************* TrackOrder.html ********************
+
+
+let ds_AllBatchId = [];
+let ds_PendingId = [];
+let ds_DeliverId = [];
+let ds_PhoneNumber;
+
+async function getTrackOrderData() {
+    try {
+        const response = await fetch(`http://localhost:3000/User/${userId}`);
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+        const json = await response.json();
+        console.log(json);
+
+        passwordObj = json;
+        ds_DeliverId = json?.phoneNumber;
+
+        ds_AllBatchId = json?.confirmedOrders?.filter(order => order?.batchId)?.map(order => order?.batchId) || [];
+        console.log("All Batch IDs:", ds_AllBatchId);
+
+        ds_PendingId = json?.confirmedOrders?.filter(order => order?.orderStatus === "pending")?.map(order => order?.batchId) || [];
+
+        ds_DeliverId = json?.confirmedOrders?.filter(order => order?.orderStatus === "delivered")?.map(order => order?.batchId) || [];
+        console.log("Delivered Order Batch IDs:", ds_DeliverId);
+        
+    } catch (error) {
+        console.error("Error fetching order data:", error);
+    }
+}
+
+getTrackOrderData();
+
+function handleTrackOrder() {
+    let orderId = document.getElementById("ds_track_input").value.trim();
+    let phone = document.getElementById("ds_track_phone").value.trim();
+
+    if (!ds_AllBatchId.includes(orderId)) {
+        alert("Your Order ID does not match any existing orders.");
+        return;
+    }
+
+    if (phone !== ds_DeliverId) {
+        alert("Your Phone Number does not match.");
+        return;
+    }
+
+    localStorage.setItem("MyBatchId", orderId);
+
+    if (ds_PendingId.includes(orderId)) {
+        window.location.href = "/Dhruvin/OrderStatus(Processing).html";
+    } else if (ds_DeliverId.includes(orderId)) {
+        window.location.href = "/Dhruvin/OrderStatus(Delivered).html";
+    }
+    else{
+        alert("Your Order Is Not Match")
+    }
+}
