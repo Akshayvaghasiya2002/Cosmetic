@@ -320,37 +320,53 @@ document.addEventListener('DOMContentLoaded', function() {
 document.querySelectorAll('.slider-container').forEach(container => {
     const rangeMin = container.querySelector('.range-min');
     const rangeMax = container.querySelector('.range-max');
+    const rangeSelected = container.querySelector('.range-selected');
     const minValue = container.querySelector('.min-value');
     const maxValue = container.querySelector('.max-value');
-    const hello = container.querySelectorAll(".range-selected")
 
     function updateSlider() {
-        const min = parseFloat(rangeMin.value);
-        const max = parseFloat(rangeMax.value);
+        const min = parseInt(rangeMin.value);
+        const max = parseInt(rangeMax.value);
 
+        // Ensure min doesn't exceed max
         if (min > max) {
             rangeMin.value = max;
         }
 
-        const percentage = (max - min) / (300 - 60) * 100;
-        const startPercentage = (min - 60) / (300 - 60) * 100;
+        // Calculate percentage for visual representation
+        const percentage = ((max - min) / 300) * 100;
+        const startPercentage = (min / 300) * 100;
 
-        hello.forEach((element)=>{
-            element.textContent.c
-        })
+        rangeSelected.style.width = `${percentage}%`;
+        rangeSelected.style.left = `${startPercentage}%`;
+
+        // Update number inputs
         minValue.value = min;
         maxValue.value = max;
-
-        // Call renderProducts to update displayed products
-        renderProducts();
     }
 
-    // Trigger filtering when slider changes
+    // Slider input event listeners
     rangeMin.addEventListener('input', updateSlider);
     rangeMax.addEventListener('input', updateSlider);
-    minValue.addEventListener('change', updateSlider);
-    maxValue.addEventListener('change', updateSlider);
+
+    // Direct number input event listeners
+    minValue.addEventListener('change', () => {
+        const min = Math.max(0, Math.min(parseInt(minValue.value), 300));
+        rangeMin.value = min;
+        updateSlider();
+    });
+
+    maxValue.addEventListener('change', () => {
+        const max = Math.max(0, Math.min(parseInt(maxValue.value), 300));
+        rangeMax.value = max;
+        updateSlider();
+    });
+
+    // Initial update
+    updateSlider();
 });
+
+
 // Function to add filter
 function addFilter(name, filterClass = '') {
     // Check if filter already exists
@@ -565,8 +581,7 @@ function filterProducts(products) {
                 (product.product && product.product.toLowerCase().includes(filter)) || // Product type
                 (product.discount && product.discount.toLowerCase().includes(filter)) || // Discount filter
                 (product.finish && product.finish.toLowerCase().includes(filter)) || // Finish type
-                (product.formulation && product.formulation.toLowerCase().includes(filter)) || // Formulation type
-                product.colors.some(colorObj => colorObj.color.toLowerCase() === filter) // Color filter
+                (product.formulation && product.formulation.toLowerCase().includes(filter)) 
             );
         });
     });
@@ -789,7 +804,7 @@ async function renderProducts() {
     // Fetch products from the JSON server
     let products = [];
     try {
-        const response = await fetch(`http://localhost:3000/multiproducts`);
+        const response = await fetch(`http://localhost:3000/combooffers`);
         if (!response.ok) throw new Error("Failed to fetch products");
         let json = await response.json();
         products = json
@@ -818,13 +833,20 @@ async function renderProducts() {
 
     console.log("fafgaqfg" , FilterMyProduct);
 
+                                    // <div>${product.tags ? `<span class="badge">${product.tags}</span>` : ''}</div>
+                                    
+                              
 
     productsContainer.innerHTML = products?.map(product => {
         const isWishlisted = wishlist.some(item => item.id == product.id);
-        const badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
-        const colorDotsHTML = product.colors.map((colorObj, index) => `
-            <div class="V_color_border mx-1" data-color-index="${index}" data-color="${colorObj.color}">
-                <p class="color-dot" style="background-color: ${colorObj.color};"></p>
+        const badgeHTML = product.badge ? `<div class="position-relative">
+                                             <span class="badge ${product.badge.class}">${product.badge.type}</span>
+                                               ${product.badge.type ?  `<img src="../IMG/Dhruvin/star.png" class="ds_label_star">` : ""}
+                                               </div>
+                                              ` : '';
+        const colorDotsHTML = product?.images?.map((IMAGEObj, index) => `
+            <div class="V_color_border mx-1" data-color-index="${index}" data-color="${IMAGEObj.image}">
+                <img class="color-dot" src="${IMAGEObj.image}"></img>
             </div>
         `).join('');
         const moreColorsHTML = product.moreColors ? `<span class="more-colors">+${product.moreColors}</span>` : '';

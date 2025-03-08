@@ -129,6 +129,7 @@
                     if (data) {
                         console.log("New user created:", data);
                         localStorage.setItem("demoId", data.id);
+                        localStorage.setItem("registerId", data?.id);
                         localStorage.setItem("registerSuccess" , "true" );
                         localStorage.setItem("email" , email );
                         // verifyEmail();

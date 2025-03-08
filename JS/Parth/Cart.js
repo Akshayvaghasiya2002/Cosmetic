@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const cartContainer = document.getElementById("cartContainer");
     const cartHeader = document.getElementById("offcanvasRightLabel");
     const totalAmount = document.getElementById("totalAmount");
-    const emptyCartSection = document.querySelector(".emptycart.h-100.d-none");
-    const filledCartSection = document.querySelector(".filledcart:not(.h-100.d-none)");
+    const emptyCartSection = document.querySelector(".emptycart");
+    const filledCartSection = document.querySelector(".filledcart");
 
     let cartItems = [];
 
@@ -106,8 +106,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
          // 🔹 Toggle visibility of empty and filled cart sections
     if (cartItems.length === 0) {
-        emptyCartSection.classList.remove("d-none");
         filledCartSection.classList.add("d-none");
+        emptyCartSection.classList.remove("d-none");
     } else {
         emptyCartSection.classList.add("d-none");
         filledCartSection.classList.remove("d-none");

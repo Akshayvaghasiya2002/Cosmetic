@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 function gotooffer() {
     window.location.href = "../Parth/Offer.html";
 }
@@ -872,5 +879,6 @@ document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(check
 
 
 // ************ Submit Review ************
+
 
 

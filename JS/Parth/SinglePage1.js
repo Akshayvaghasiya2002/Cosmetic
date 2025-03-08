@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 var productObj = {}
 var productArr = []
 var mainId;
@@ -627,6 +636,91 @@ async function handleSubmitReview() {
         alert("Error: " + error.message);
     }
 }
+
+
+
+// let userId = localStorage.getItem("userId")
+
+function handleSingUp() {
+    if (userId) {
+        window.location.href = "/Dhruvin/MyAccount.html"
+    } else {
+        var myModal = new bootstrap.Modal(document.getElementById('signUpModal'));
+        myModal.show();
+    }
+}
+
+let registerId = localStorage.getItem("registerId")
+let HandleObj = {}
+
+async function handleApiGetData() {
+    if(registerId){
+        try{
+            const response = await fetch(`http://localhost:3000/User/${registerId}`)
+            const json = await response.json()
+            HandleObj = json
+          }catch(error){
+             alert(error)
+          }
+    }
+}
+handleApiGetData()
+
+
+function verifyOtp1() {
+    
+    
+    const veriEmail = document.getElementById("ds_verify_email").value.trim()
+    
+    if(registerId){
+        if(HandleObj?.email == veriEmail){
+            const displayOtp = document.querySelector(".V_verify_section");
+            displayOtp.classList.remove('d-none'); 
+            const hideforPwd = document.querySelector(".V_Forgot_section");
+            hideforPwd.classList.add("d-none");
+            setTimeout(()=>{
+               alert("Your Otp Is -: 123456")
+            }, 500)
+        }
+        else{
+            alert("Your Emil Is Wrong!")
+        }
+    }
+}
+
+async function handleResetPassword () {
+   let newPass = document.getElementById("pwd1").value.trim()
+   let conPass = document.getElementById("pwd2").value.trim()
+
+   if(newPass != conPass){
+     alert("Passwords do not match.");
+     return;
+   }
+   else{
+     let obj = {
+        fullName: `${HandleObj.fullName}`,
+        phoneNumber: HandleObj?.phoneNumber,
+        email: HandleObj?.email,
+        dateOfBirth: HandleObj?.dateOfBirth,
+        gender: HandleObj?.gender,
+        password:conPass,
+        addresses:HandleObj?.addresses ? HandleObj?.addresses : []
+     }
+     try{
+        const response = await fetch(`http://localhost:3000/User/${registerId}`,{
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(obj)
+       })
+         console.log("response" , response);
+         alert("Password Change SuccessFully")
+       }catch(error){
+        alert(error)
+       }
+     
+   }
+}
+
 
 
 
