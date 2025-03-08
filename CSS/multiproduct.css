@@ -486,7 +486,11 @@ img {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  padding: 15px 15px 0px 15px;
+}
+
+.offcanvas-body {
+  padding: 0px;
 }
 
 .filters-header {
@@ -794,7 +798,7 @@ input[type="text"] {
   border: none;
   border-radius: 50%;
   /* width: 30px; */
-  height: 30px;
+  /* height: 30px; */
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -855,18 +859,18 @@ input[type="text"] {
 }
 
 .current-price {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
 }
 
 .original-price {
-  font-size: 14px;
+  font-size: 20px;
   text-decoration: line-through;
   color: #999;
 }
 
 .discount {
-  font-size: 14px;
+  font-size: 18px;
   color: #388E3C;
   font-weight: 500;
 }

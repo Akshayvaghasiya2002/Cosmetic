@@ -981,7 +981,6 @@ function setupEventListeners(products, wishlist, cart, userId) {
                     quantity: 1,
                     selectedColor: selectedColor
                 });
-                alert("Product added to cart.");
             }
 
             await updateUserData(userId, { orders: cart });

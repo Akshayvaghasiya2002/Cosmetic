@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         console.log("Updating cart summary...", cartItems);
 
-        const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+        const totalCount = cartItems?.length;
         const totalPrice = cartItems.reduce((sum, item) => sum + item.quantity * item.price, 0);
 
         console.log("Total Items:", totalCount, "Total Price:", totalPrice);

@@ -1792,18 +1792,13 @@
       "finish": "matte",
       "formulation": "liquid",
       "image": "/IMG/Akshay/bodyshot.png",
+      "image": "/IMG/Parth/combo_1.png",
       "images": [
         {
-          "image": "/IMG/Akshay/bodyshot.png"
+          "image": "/IMG/Parth/combo_1.png"
         },
         {
-          "image": "/IMG/Akshay/bodyshot.png"
-        },
-        {
-          "image": "/IMG/Akshay/bodyshot.png"
-        },
-        {
-          "image": "/IMG/Akshay/bodyshot.png"
+          "image": "/IMG/Parth/combo_12.png"
         }
       ],
       "moreImages": 4
@@ -1812,7 +1807,7 @@
       "id": "23",
       "topRated": "/IMG/Parth/15_off.png",
       "brand": "RENEE",
-      "image": "../../IMG/Parth/offer_3.png",
+      "image": "../../IMG/Parth/combo_2.png",
       "name": "MAC MACXIMAL SLEEK SATIN LIPSTICK",
       "price": 450,
       "originalPrice": 600,
@@ -1823,16 +1818,10 @@
       "formulation": "bullet",
       "images": [
         {
-          "image": "../../IMG/Parth/offer_3.png"
+          "image": "/IMG/Parth/combo_2.png"
         },
         {
-          "image": "../../IMG/Parth/offer_3.png"
-        },
-        {
-          "image": "../../IMG/Parth/offer_3.png"
-        },
-        {
-          "image": "../../IMG/Parth/offer_3.png"
+          "image": "/IMG/Parth/combo_2.png"
         }
       ],
       "moreImages": 15
@@ -1841,7 +1830,7 @@
       "id": "24",
       "topRated": "/IMG/Parth/20_off.png",
       "brand": "SUGAR",
-      "image": "../../IMG/Parth/offer_4.png",
+      "image": "/IMG/Parth/combo_3.png",
       "name": "SUGAR Matte As Hell Mini Crayon Lipstick",
       "price": 450,
       "originalPrice": 600,
@@ -1883,16 +1872,10 @@
       "image": "/IMG/Akshay/bodyshot.png",
       "images": [
         {
-          "image": "/IMG/Akshay/bodyshot.png"
+          "image": "/IMG/Parth/combo_4.png"
         },
         {
-          "image": "/IMG/Akshay/bodyshot.png"
-        },
-        {
-          "image": "/IMG/Akshay/bodyshot.png"
-        },
-        {
-          "image": "/IMG/Akshay/bodyshot.png"
+          "image": "/IMG/Parth/combo_4.png"
         }
       ],
       "moreImages": 4
@@ -1901,7 +1884,7 @@
       "id": "27",
       "topRated": "/IMG/Parth/15_off.png",
       "brand": "RENEE",
-      "image": "../../IMG/Parth/offer_3.png",
+      "image": "/IMG/Parth/combo_5.png",
       "name": "MAC MACXIMAL SLEEK SATIN LIPSTICK",
       "price": 450,
       "originalPrice": 600,
@@ -1928,7 +1911,7 @@
     },
     {
       "id": "28",
-      "topRated": "/IMG/Parth/20_off.png",
+      "topRated": "/IMG/Parth/combo_6.png",
       "brand": "SUGAR",
       "image": "../../IMG/Parth/offer_4.png",
       "name": "SUGAR Matte As Hell Mini Crayon Lipstick",
@@ -1941,16 +1924,13 @@
       "formulation": "tint",
       "images": [
         {
-          "image": "/IMG/Akshay/bodyshot.png"
+          "image": "/IMG/Parth/combo_6.png"
         },
         {
-          "image": "/IMG/Akshay/bodyshot.png"
+          "image": "/IMG/Parth/combo_6.png"
         },
         {
-          "image": "/IMG/Akshay/bodyshot.png"
-        },
-        {
-          "image": "/IMG/Akshay/bodyshot.png"
+          "image": "/IMG/Parth/combo_6.png"
         }
       ],
       "moreImages": 2
