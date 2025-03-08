@@ -867,13 +867,13 @@ async function renderProducts() {
                 </a>
                 <div class="product-info">
                     <div class="product-brand">${product.brand}</div>
-                    <div class="product-title">${product.name}</div>
+                    <div class="product-title text-truncate">${product.name}</div>
                     <div class="product-price">
-                        <span class="current-price">$${product.price.toFixed(2)}</span>
-                        <span class="original-price">$${product.originalPrice.toFixed(2)}</span>
+                        <span class="current-price">$${product.price}</span>
+                        <span class="original-price">$${product.originalPrice}</span>
                         <span class="discount">${product.discount}</span>
                     </div>
-                    <div class="color-options">
+                    <div class="color-options V_height justify-content-center">
                         ${colorDotsHTML}
                         ${moreColorsHTML}
                     </div>

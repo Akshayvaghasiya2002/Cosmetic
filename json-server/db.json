@@ -1417,14 +1417,6 @@
       ]
     },
     {
-      "fullName": "bolo",
-      "phoneNumber": "1234567890",
-      "email": "new@gmail.com",
-      "password": "toko@123",
-      "addresses": [],
-      "id": "af76"
-    },
-    {
       "fullName": "Darshan",
       "phoneNumber": "0123456789",
       "email": "dk@gmail.com",
@@ -1473,6 +1465,16 @@
       "email": "marry@gmail.com",
       "password": "Marry@123",
       "wishlist": []
+    },
+    {
+      "fullName": "Parth vaghasiya",
+      "phoneNumber": "6352285710",
+      "email": "parth@gmail.com",
+      "password": "Parth@12345",
+      "addresses": [],
+      "id": "3352",
+      "wishlist": [],
+      "orders": []
     }
   ],
   "likeproduct": [
@@ -1486,56 +1488,16 @@
       "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
         {
-          "name": "Pink",
-          "color": "#FFC0CB"
+          "color": "#FF7AA6"
         },
         {
-          "name": "Orange",
-          "color": "#FFA500"
+          "color": "#CCB9D8"
         },
         {
-          "name": "Gold",
-          "color": "#FFD700"
+          "color": "#EC9C53"
         },
         {
-          "name": "Red",
-          "color": "#FF0000"
-        },
-        {
-          "name": "Blue",
-          "color": "#0000FF"
-        },
-        {
-          "name": "Green",
-          "color": "#008000"
-        },
-        {
-          "name": "Purple",
-          "color": "#800080"
-        },
-        {
-          "name": "Teal",
-          "color": "#008080"
-        },
-        {
-          "name": "Lavender",
-          "color": "#E6E6FA"
-        },
-        {
-          "name": "Coral",
-          "color": "#FF7F50"
-        },
-        {
-          "name": "Mint",
-          "color": "#98FB98"
-        },
-        {
-          "name": "Peach",
-          "color": "#FFDAB9"
-        },
-        {
-          "name": "Sky Blue",
-          "color": "#87CEEB"
+          "color": "#B5296A"
         }
       ]
     },
@@ -1549,56 +1511,16 @@
       "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
         {
-          "name": "Pink",
-          "color": "#FFC0CB"
+          "color": "#E88482"
         },
         {
-          "name": "Orange",
-          "color": "#FFA500"
+          "color": "#E48883"
         },
         {
-          "name": "Gold",
-          "color": "#FFD700"
+          "color": "#E27F7C"
         },
         {
-          "name": "Red",
-          "color": "#FF0000"
-        },
-        {
-          "name": "Berry",
-          "color": "#990066"
-        },
-        {
-          "name": "Coral",
-          "color": "#FF7F50"
-        },
-        {
-          "name": "Mauve",
-          "color": "#E0B0FF"
-        },
-        {
-          "name": "Nude",
-          "color": "#E3BC9A"
-        },
-        {
-          "name": "Peach",
-          "color": "#FFDAB9"
-        },
-        {
-          "name": "Wine",
-          "color": "#722F37"
-        },
-        {
-          "name": "Burgundy",
-          "color": "#800020"
-        },
-        {
-          "name": "Rose",
-          "color": "#FF007F"
-        },
-        {
-          "name": "Cherry",
-          "color": "#DE3163"
+          "color": "#E37E65"
         }
       ]
     },
@@ -1612,16 +1534,16 @@
       "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
         {
-          "name": "Pink",
-          "color": "#FFC0CB"
+          "color": "#A54E4E"
         },
         {
-          "name": "Orange",
-          "color": "#FFA500"
+          "color": "#8A2232"
         },
         {
-          "name": "Light Red",
-          "color": "#FD7F7F"
+          "color": "#B95C5C"
+        },
+        {
+          "color": "#C06A6A"
         }
       ]
     },
@@ -1635,20 +1557,16 @@
       "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
         {
-          "name": "Pink",
-          "color": "#FFC0CB"
+          "color": "#C88C8C"
         },
         {
-          "name": "Hot Pink",
-          "color": "#FF69B4"
+          "color": "#5A142A"
         },
         {
-          "name": "Coral",
-          "color": "#FF7F50"
+          "color": "#FF2D2D"
         },
         {
-          "name": "Peach",
-          "color": "#FFDAB9"
+          "color": "#F29B9B"
         }
       ]
     },
@@ -1662,12 +1580,16 @@
       "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
         {
-          "name": "Pink",
-          "color": "#FFC0CB"
+          "color": "#A54E4E"
         },
         {
-          "name": "Orange",
-          "color": "#FFA500"
+          "color": "#8A2232"
+        },
+        {
+          "color": "#B95C5C"
+        },
+        {
+          "color": "#C06A6A"
         }
       ]
     },
@@ -1681,16 +1603,16 @@
       "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
         {
-          "name": "Pink",
-          "color": "#FFC0CB"
+          "color": "#FF7AA6"
         },
         {
-          "name": "Orange",
-          "color": "#FFA500"
+          "color": "#CCB9D8"
         },
         {
-          "name": "Gold",
-          "color": "#FFD700"
+          "color": "#EC9C53"
+        },
+        {
+          "color": "#B5296A"
         }
       ]
     },
@@ -1704,12 +1626,16 @@
       "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
         {
-          "name": "Pink",
-          "color": "#FFC0CB"
+          "color": "#E88482"
         },
         {
-          "name": "Orange",
-          "color": "#FFA500"
+          "color": "#E48883"
+        },
+        {
+          "color": "#E27F7C"
+        },
+        {
+          "color": "#E37E65"
         }
       ]
     },
@@ -1723,16 +1649,16 @@
       "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
         {
-          "name": "Pink",
-          "color": "#FFC0CB"
+          "color": "#C88C8C"
         },
         {
-          "name": "Orange",
-          "color": "#FFA500"
+          "color": "#5A142A"
         },
         {
-          "name": "Gold",
-          "color": "#FFD700"
+          "color": "#FF2D2D"
+        },
+        {
+          "color": "#F29B9B"
         }
       ]
     },
@@ -1746,12 +1672,16 @@
       "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
         {
-          "name": "Pink",
-          "color": "#FFC0CB"
+          "color": "#A54E4E"
         },
         {
-          "name": "Sky Blue",
-          "color": "#87CEEB"
+          "color": "#8A2232"
+        },
+        {
+          "color": "#B95C5C"
+        },
+        {
+          "color": "#C06A6A"
         }
       ]
     },
@@ -1765,19 +1695,23 @@
       "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
         {
-          "name": "Gray",
-          "color": "#DCDCDC"
+          "color": "#E88482"
         },
         {
-          "name": "Beige",
-          "color": "#F5F5DC"
+          "color": "#E48883"
+        },
+        {
+          "color": "#E27F7C"
+        },
+        {
+          "color": "#E37E65"
         }
       ]
     }
   ],
   "combooffers": [
     {
-      "id": "26",
+      "id": "41",
       "brand": "Eveline Cosmetics",
       "name": "Wonder Match Creamy Liquid Matte Lip Balm",
       "badge": {
@@ -1791,7 +1725,6 @@
       "discount": "20% OFF",
       "finish": "matte",
       "formulation": "liquid",
-      "image": "/IMG/Akshay/bodyshot.png",
       "image": "/IMG/Parth/combo_1.png",
       "images": [
         {
@@ -1804,7 +1737,7 @@
       "moreImages": 4
     },
     {
-      "id": "23",
+      "id": "42",
       "topRated": "/IMG/Parth/15_off.png",
       "brand": "RENEE",
       "image": "../../IMG/Parth/combo_2.png",
@@ -1827,7 +1760,7 @@
       "moreImages": 15
     },
     {
-      "id": "24",
+      "id": "43",
       "topRated": "/IMG/Parth/20_off.png",
       "brand": "SUGAR",
       "image": "/IMG/Parth/combo_3.png",
@@ -1838,24 +1771,11 @@
       "discount": "20% Off",
       "finish": "glossy",
       "formulation": "Bullet",
-      "images": [
-        {
-          "image": "../../IMG/Parth/offer_4.png"
-        },
-        {
-          "image": "../../IMG/Parth/offer_4.png"
-        },
-        {
-          "image": "../../IMG/Parth/offer_4.png"
-        },
-        {
-          "image": "../../IMG/Parth/offer_4.png"
-        }
-      ],
+      "images": [],
       "moreImages": 2
     },
     {
-      "id": "25",
+      "id": "44",
       "brand": "Eveline Cosmetics",
       "name": "Wonder Match Creamy Liquid Matte Lipstick",
       "badge": {
@@ -1869,7 +1789,7 @@
       "discount": "20% OFF",
       "finish": "tinted",
       "formulation": "tint",
-      "image": "/IMG/Akshay/bodyshot.png",
+      "image": "/IMG/Parth/combo_4.png",
       "images": [
         {
           "image": "/IMG/Parth/combo_4.png"
@@ -1881,7 +1801,7 @@
       "moreImages": 4
     },
     {
-      "id": "27",
+      "id": "45",
       "topRated": "/IMG/Parth/15_off.png",
       "brand": "RENEE",
       "image": "/IMG/Parth/combo_5.png",
@@ -1893,27 +1813,14 @@
       "discount": "20% Off",
       "finish": "crayon",
       "formulation": "tint",
-      "images": [
-        {
-          "image": "../../IMG/Parth/offer_3.png"
-        },
-        {
-          "image": "../../IMG/Parth/offer_3.png"
-        },
-        {
-          "image": "../../IMG/Parth/offer_3.png"
-        },
-        {
-          "image": "../../IMG/Parth/offer_3.png"
-        }
-      ],
+      "images": [],
       "moreImages": 15
     },
     {
-      "id": "28",
+      "id": "46",
       "topRated": "/IMG/Parth/combo_6.png",
       "brand": "SUGAR",
-      "image": "../../IMG/Parth/offer_4.png",
+      "image": "/IMG/Parth/combo_6.png",
       "name": "SUGAR Matte As Hell Mini Crayon Lipstick",
       "price": 450,
       "originalPrice": 600,
