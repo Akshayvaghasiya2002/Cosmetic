@@ -16,7 +16,7 @@
 
 .form-control {
     border: 0px;
-    background-color: rgba(20, 20, 20, 0.06) !important;
+    background-color: rgba(20, 20, 20, 0.06) ;
     height: 50px;
 }
 

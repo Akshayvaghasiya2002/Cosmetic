@@ -846,7 +846,7 @@
       "addresses": [
         {
           "id": 1740980815651,
-          "firstName": "Sujal",
+          "firstName": "Sujals",
           "lastName": "Parajapat",
           "mobileNumber": "6789012345",
           "email": "hi@gmail.com",
@@ -854,10 +854,9 @@
           "address1": "katargam",
           "address2": "new rise",
           "city": "surat",
-          "state": "Guj",
-          "country": "IND",
-          "addressType": "Home",
-          "otherType": null
+          "state": "Gujarat",
+          "country": "India",
+          "addressType": "Home"
         }
       ],
       "carddetails": [
@@ -1128,6 +1127,20 @@
           "moreColors": 2,
           "selectedColor": null,
           "badge": true
+        },
+        {
+          "id": "42",
+          "image": "../../IMG/Parth/combo_2.png",
+          "name": "MAC MACXIMAL SLEEK SATIN LIPSTICK",
+          "currentPrice": 450,
+          "originalPrice": 600,
+          "discount": "20% Off",
+          "images": [
+            "/IMG/Parth/combo_2.png",
+            "/IMG/Parth/combo_2.png"
+          ],
+          "moreImages": 15,
+          "selectedColor": null
         }
       ]
     },
@@ -1460,6 +1473,14 @@
       "id": "3352",
       "wishlist": [],
       "orders": []
+    },
+    {
+      "id": "57a8",
+      "fullName": "beta",
+      "phoneNumber": "1234567890",
+      "email": "beta@gmail.com",
+      "password": "hello@123",
+      "wishlist": []
     }
   ],
   "likeproduct": [

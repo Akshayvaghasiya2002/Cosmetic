@@ -638,9 +638,21 @@ product-container {
 
 .in-stock {
   color: #2e7d32;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   margin-left: 5px;
+  background: #ECF3E5;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.out-stock{
+  color: #d12a2a;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 5px;
+  background: #f3e7e5;
+  padding: 8px 12px;
+  border-radius: 5px;
 }
 
 .action-icons {
