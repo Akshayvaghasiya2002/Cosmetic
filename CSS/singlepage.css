@@ -565,7 +565,7 @@ img {
 
 .slide-item {
   height: calc(100vh / 4);
-  max-height: 110px;
+  max-height: 123px;
   padding: 10px;
   flex-shrink: 0;
 }

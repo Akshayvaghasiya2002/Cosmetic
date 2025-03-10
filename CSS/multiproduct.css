@@ -186,13 +186,13 @@ img {
 }
 
 .header {
-  /* position: fixed; */
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: auto;
-  z-index: 100;
-  margin: 20px auto;
+  z-index: 1051;
+  margin: 0 auto;
   background-color: var(--white-100);
   box-shadow: var(--shadow-medium);
 }

@@ -32,9 +32,18 @@
     background-color: white;
     top: 100%;
     left: 0;
-    z-index: 2;
+    z-index: 1051;
 }
 
+.ds_modal_backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1050; 
+  }
 .V_syggestions {
     font-weight: 500;
     font-size: 14px;
@@ -1000,6 +1009,7 @@ height: 57px;
 }
 
 @media (max-width: 480px) and (min-width: 320px) {
+
     .V_search {
         padding: 15px 0px;
     }
@@ -1046,7 +1056,7 @@ height: 57px;
 
     .V_image1 {
         width: 120px;
-        height: 90px;
+        height: 150px;
     }
 
     .V_for_li {

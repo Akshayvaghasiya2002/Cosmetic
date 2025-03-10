@@ -222,7 +222,7 @@
                                                                                                                 Combo</a>
                                                                                                 </li>
                                                                                         </ul>
-    
+
                                                                                 </div>
                                                                                 <div class="submenu-inner">
                                                                                         <h4
@@ -515,7 +515,7 @@
                                                                                                                 Peels</a>
                                                                                                 </li>
                                                                                         </ul>
-    
+
                                                                                 </div>
                                                                                 <div class="submenu-inner">
                                                                                         <h4
@@ -556,7 +556,7 @@
                                                                                                         <a href="#"
                                                                                                                 class="submenu-link text-decoration-none text-secondary">Scrubs</a>
                                                                                                 </li>
-    
+
                                                                                         </ul>
                                                                                         <h4
                                                                                                 class="submenu-title fw-bold">
@@ -894,7 +894,7 @@
                                                                                                                 Clips &
                                                                                                                 Bands</a>
                                                                                                 </li>
-    
+
                                                                                         </ul>
                                                                                         <h4
                                                                                                 class="submenu-title fw-bold">
@@ -936,7 +936,7 @@
                                                                         </div>
                                                                 </li>
                                                                 <li class="menu-item menu-dropdown">
-                                                                        <span class="menu-link"><a href="../Akshay/combo.html"
+                                                                        <span class="menu-link"><a href="combo.html"
                                                                                         class="text-dark text-decoration-none">Combo</a><i
                                                                                         class="fa-solid fa-angle-down ps-2"></i></span>
                                                                         <!-- <div class="submenu megamenu megamenu-column-1">
@@ -969,17 +969,18 @@
                                                 </div>
                                                 <a href="../Parth/Wishlist.html" class="ds_color">
                                                         <div>
-                                                                <i class="fa-regular ds_cursor fa-heart" style="color: #3D4936;"></i>
+                                                                <i class="fa-regular ds_cursor fa-heart"></i>
                                                         </div>
                                                 </a>
                                                 <div>
                                                         <i class="fa-solid ds_cursor fa-cart-shopping"
                                                                 data-bs-toggle="offcanvas"
                                                                 data-bs-target="#offcanvasRight"
-                                                                aria-controls="offcanvasRight"></i>
+                                                                aria-controls="offcanvasRight"
+                                                                onclick="carting()"></i>
                                                 </div>
                                                 <div>
-                                                        <i class="fa-solid ds_cursor fa-user" 
+                                                        <i class="fa-solid ds_cursor fa-user"
                                                                 onclick="handleSingUp()"></i>
                                                 </div>
                                         </section>
@@ -1033,7 +1034,7 @@
                                                                                                                 $200</p>
                                                                                                 </div>
                                                                                         </div>
-    
+
                                                                                 </div>
                                                                                 <div
                                                                                         class="col-12 col-md-6 d-flex my-2">
@@ -1059,7 +1060,7 @@
                                                                                                                 $200</p>
                                                                                                 </div>
                                                                                         </div>
-    
+
                                                                                 </div>
                                                                                 <div
                                                                                         class="col-12 col-md-6 d-flex my-2">
@@ -1085,7 +1086,7 @@
                                                                                                                 $150</p>
                                                                                                 </div>
                                                                                         </div>
-    
+
                                                                                 </div>
                                                                                 <div
                                                                                         class="col-12 col-md-6 d-flex my-2">
@@ -1110,7 +1111,7 @@
                                                                                                                 $600</p>
                                                                                                 </div>
                                                                                         </div>
-    
+
                                                                                 </div>
                                                                                 <div
                                                                                         class="col-12 col-md-6 d-flex my-2">
@@ -1135,7 +1136,7 @@
                                                                                                                 $300</p>
                                                                                                 </div>
                                                                                         </div>
-    
+
                                                                                 </div>
                                                                                 <div
                                                                                         class="col-12 col-md-6 d-flex my-2">
@@ -1160,7 +1161,7 @@
                                                                                                                 $450</p>
                                                                                                 </div>
                                                                                         </div>
-    
+
                                                                                 </div>
                                                                         </div>
                                                                 </div>
@@ -1170,12 +1171,12 @@
                                                                         <p class="text mb-0 V_for_li">Search for "Li"
                                                                         </p>
                                                                         <i class="fa-solid fa-arrow-right-long"
-                                                                                style="color: #787878;"></i>
+                                                                                style="color: #787878; cursor: pointer;"></i>
                                                                 </div>
                                                         </div>
                                                 </div>
-                                                <div class="d-none V_result py-3 py-xl-5 w-100">
-                                                        <div class="my-3 my-lg-5 py-3 py-lg-5  justify-content-center ">
+                                                <div class="d-none V_result V_empty_result py-3 py-xl-5 w-100">
+                                                        <div class="my-3  py-3 py-lg-5  justify-content-center ">
                                                                 <p class="text V_you text-center">You searched for "
                                                                         <span class="V_lorem">Lorem Ipsum</span>"</p>
                                                                 <img src="../IMG/Parth//EmptySearch.png" alt=""
@@ -1188,11 +1189,11 @@
                                                         </div>
                                                 </div>
                                                 <i class="fa-solid fa-xmark ms-1 mx-xl-3 fs-3 align-self-center d-md-none"
-                                                        onclick="emptyNav()"></i>
-    
+                                                        onclick="emptyNav53()"></i>
+
                                         </div>
                                         <i class="fa-solid fa-xmark ms-1 mx-xl-3 fs-3 align-self-center d-none d-md-block"
-                                                onclick="emptyNav()"></i>
+                                                onclick="emptyNav53()"></i>
                                 </div>
                         </header>
                 </div>
@@ -1510,50 +1511,50 @@
             <!-- cart's offcanvas -->
     
     
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                            <h5 id="offcanvasRightLabel" class="m-0">Cart(0)</h5>
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                    aria-label="Close"></button>
-                    </div>
-                    <hr class="m-0 mx-3">
-                    <div class="offcanvas-body h-100  emptycart">
-                            <div class="h-100 d-flex justify-content-center flex-column align-content-center">
-                                    <img src="../IMG//Parth/EmptyState.png" alt="empty cart"
-                                            class="V_emptycard_img mx-auto">
-                                    <div class="text-center">
-                                            <p class="text V_oops m-0">Oops! Your cart is still empty.</p>
-                                            <p class="text V_sub_oops mx-auto m-0">There is nothing in your cart.
-                                                    add some item.</p>
-                                    </div>
-                                    <a href="../Akshay/home.html">
-                                            <div class="mt-4 text-center">
-                                                    <button
-                                                            class="text V_c_shopping py-2 px-3  py-md-2 px-md-3   py-xl-2 px-xl-5">Continue
-                                                            Shopping</button>
-                                            </div>
-                                    </a>
-                            </div>
-                    </div>
-                    <div class="offcanvas-body d-none  filledcart">
-                            <div class="d-flex flex-column justify-content-between h-100">
-                                    <div class="">
-                                            <div id="cartContainer"></div>
-                                    </div>
-                                    <div class="mx-2">
-                                            <hr>
-                                            <div class="d-flex justify-content-between">
-                                                    <p class="text V_amount m-0">Total</p>
-                                                    <p class="text V_amount m-0" id="totalAmount">$1350.00</p>
-                                            </div>
-                                            <div class="mt-4 mb-4 mb-md-0  text-center  text V_c_shopping py-2 "
-                                                    onclick="gotoaddresspage()">
-                                                    Checkout
-                                            </div>
-                                    </div>
-                            </div>
-                    </div>
-            </div>
+            <div class="offcanvas offcanvas-end V_cart_offcanvas" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                        <h5 id="offcanvasRightLabel" class="m-0">Cart(0)</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                </div>
+                <hr class="m-0 mx-3">
+                <div class="offcanvas-body h-100  emptycart">
+                        <div class="h-100 d-flex justify-content-center flex-column align-content-center">
+                                <img src="../IMG//Parth/EmptyState.png" alt="empty cart"
+                                        class="V_emptycard_img mx-auto">
+                                <div class="text-center">
+                                        <p class="text V_oops m-0">Oops! Your cart is still empty.</p>
+                                        <p class="text V_sub_oops mx-auto m-0">There is nothing in your cart.
+                                                add some item.</p>
+                                </div>
+                                <a href="../Akshay/home.html">
+                                        <div class="mt-4 text-center">
+                                                <button
+                                                        class="text V_c_shopping py-2 px-3  py-md-2 px-md-3   py-xl-2 px-xl-5">Continue
+                                                        Shopping</button>
+                                        </div>
+                                </a>
+                        </div>
+                </div>
+                <div class="offcanvas-body d-none  filledcart">
+                        <div class="d-flex flex-column justify-content-between h-100">
+                                <div class="">
+                                        <div id="cartContainer"></div>
+                                </div>
+                                <div class="mx-2">
+                                        <hr>
+                                        <div class="d-flex justify-content-between">
+                                                <p class="text V_amount m-0">Total</p>
+                                                <p class="text V_amount m-0" id="totalAmount">$1350.00</p>
+                                        </div>
+                                        <div class="mt-4 mb-4   text-center  text V_c_shopping py-2 "
+                                                onclick="gotoaddresspage()">
+                                                Checkout
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
             </div>
         </section>
     

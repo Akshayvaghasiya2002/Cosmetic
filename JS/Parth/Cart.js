@@ -213,3 +213,39 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Fetch cart items on page load
     await fetchCartItems();
 });
+
+
+
+
+
+
+
+
+function carting() {
+    const cartOffcanvas = document.querySelector(".V_cart_offcanvas");
+    const header = document.querySelector("header");
+
+    // Add z-index when opening the cart
+    cartOffcanvas.style.setProperty("--bs-offcanvas-zindex", "1051");
+    header.style.zIndex = "0";
+}
+
+// Function to reset properties when the cart is closed
+function resetCartZIndex() {
+    const cartOffcanvas = document.querySelector(".V_cart_offcanvas");
+    const header = document.querySelector("header");
+
+    // Remove added styles (reset to default)
+    cartOffcanvas.style.removeProperty("--bs-offcanvas-zindex");
+    header.style.removeProperty("z-index");
+}
+
+// Attach event listener to detect when the offcanvas is closed
+document.addEventListener("DOMContentLoaded", function () {
+    const cartOffcanvas = document.getElementById("offcanvasRight");
+
+    cartOffcanvas.addEventListener("hidden.bs.offcanvas", resetCartZIndex);
+});
+
+
+

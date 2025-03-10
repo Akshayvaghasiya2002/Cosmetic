@@ -985,7 +985,8 @@
                                                         <i class="fa-solid ds_cursor fa-cart-shopping"
                                                                 data-bs-toggle="offcanvas"
                                                                 data-bs-target="#offcanvasRight"
-                                                                aria-controls="offcanvasRight"></i>
+                                                                aria-controls="offcanvasRight"
+                                                                onclick="carting()"></i>
                                                 </div>
                                                 <div>
                                                         <i class="fa-solid ds_cursor fa-user"
@@ -1179,12 +1180,12 @@
                                                                         <p class="text mb-0 V_for_li">Search for "Li"
                                                                         </p>
                                                                         <i class="fa-solid fa-arrow-right-long"
-                                                                                style="color: #787878;"></i>
+                                                                                style="color: #787878; cursor: pointer;"></i>
                                                                 </div>
                                                         </div>
                                                 </div>
-                                                <div class="d-none V_result py-3 py-xl-5 w-100">
-                                                        <div class="my-3 my-lg-5 py-3 py-lg-5  justify-content-center ">
+                                                <div class="d-none V_result V_empty_result py-3 py-xl-5 w-100">
+                                                        <div class="my-3  py-3 py-lg-5  justify-content-center ">
                                                                 <p class="text V_you text-center">You searched for "
                                                                         <span class="V_lorem">Lorem Ipsum</span>"</p>
                                                                 <img src="../IMG/Parth//EmptySearch.png" alt=""
@@ -1197,11 +1198,11 @@
                                                         </div>
                                                 </div>
                                                 <i class="fa-solid fa-xmark ms-1 mx-xl-3 fs-3 align-self-center d-md-none"
-                                                        onclick="emptyNav()"></i>
+                                                        onclick="emptyNav53()"></i>
 
                                         </div>
                                         <i class="fa-solid fa-xmark ms-1 mx-xl-3 fs-3 align-self-center d-none d-md-block"
-                                                onclick="emptyNav()"></i>
+                                                onclick="emptyNav53()"></i>
                                 </div>
                         </header>
                 </div>
@@ -2033,7 +2034,7 @@
         <!-- cart's offcanvas -->
 
 
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas offcanvas-end V_cart_offcanvas" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                         <h5 id="offcanvasRightLabel" class="m-0">Cart(0)</h5>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
@@ -2316,6 +2317,10 @@
                 //     });
         </script>
 
+        <script>
+          
+                    
+        </script>
         <script src="../JS/Parth/besst_seller.js"></script>
         <script src="../JS/navbar.js"></script>
 

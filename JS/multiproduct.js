@@ -71,25 +71,78 @@ menuInner.addEventListener("click", toggleSubMenu);
 
 
 //////////////////////////  parth js search  //////////////////////////
-
 function emptyNav() {
     const emptyNavbar = document.querySelector("nav");
-    emptyNavbar.classList.toggle("d-none");
+    emptyNavbar.classList.add("d-none");
+    
     const displaySearch = document.querySelector(".V_search");
-    displaySearch.classList.toggle('d-none');
+    displaySearch.classList.remove("d-none");
+
+    addBackdrop(); // Ensure backdrop is added when the function is called
+}
+
+function addBackdrop() {
+    let backdrop = document.querySelector(".ds_modal_backdrop");
+
+    if (!backdrop) {
+        backdrop = document.createElement("div");
+        backdrop.className = "ds_modal_backdrop";
+        document.body.appendChild(backdrop);
+        // document.body.style.overflow = "hidden"; // Prevent scrolling
+
+        // Click outside to close
+        backdrop.addEventListener("click", emptyNav53);
+    }
+}
+
+function removeBackdrop() {
+    const backdrop = document.querySelector(".ds_modal_backdrop");
+    if (backdrop) {
+        backdrop.remove();
+        // document.body.style.overflow = ""; // Restore scrolling
+    }
 }
 
 const searchInput = document.querySelector(".V_input");
 const searchResult = document.querySelector(".V_result");
+const emptyResult = document.querySelector(".V_empty_result");
 
-// Function to toggle d-none class based on input value
+// Function to toggle display based on input value
 searchInput.addEventListener("input", function () {
-    if (searchInput.value.trim() !== "" || searchInput.value.length > 0) {
+    const inputValue = searchInput.value.trim();
+
+    if (inputValue !== "") {
         searchResult.classList.remove("d-none"); // Show results
+        emptyResult.classList.add("d-none"); // Hide empty result
+        addBackdrop(); // Ensure backdrop is added while typing
     } else {
         searchResult.classList.add("d-none"); // Hide results
+        // removeBackdrop(); // Remove backdrop only when input is empty
+    }
+
+    if (inputValue === "lorem") {
+        emptyResult.classList.remove("d-none"); // Show empty result
+        searchResult.classList.add("d-none"); // Hide regular results
+    } else {
+        emptyResult.classList.add("d-none"); // Hide empty result
     }
 });
+
+// Redirect when clicking the arrow icon
+document.querySelector(".fa-arrow-right-long").addEventListener("click", function () {
+    window.location.href = "/Akshay/multiproduct.html";
+});
+
+// Function to close the search and restore navbar
+function emptyNav53() {
+    const emptyNavbar = document.querySelector("nav");
+    emptyNavbar.classList.remove("d-none");
+
+    const displaySearch = document.querySelector(".V_search");
+    displaySearch.classList.add("d-none");
+
+    removeBackdrop(); // Ensure backdrop is removed when closing
+}
 
 
 // password

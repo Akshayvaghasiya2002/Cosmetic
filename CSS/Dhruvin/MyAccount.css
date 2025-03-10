@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 
+
+select:focus,
+select:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
+input:focus,
+input:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
 .ds_star-img{
     width: 25px;
     object-fit: cover;

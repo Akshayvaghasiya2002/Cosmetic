@@ -1456,10 +1456,53 @@
       "phoneNumber": "6352285710",
       "email": "parth@gmail.com",
       "password": "Parth@12345",
-      "addresses": [],
+      "addresses": [
+        {
+          "id": 1741579616157,
+          "firstName": "Jon",
+          "lastName": "Doe",
+          "mobileNumber": "6019521325",
+          "email": "sdef@sdfg.com",
+          "zipCode": "94043",
+          "address1": "1600 Fake Street",
+          "address2": "Apartment 1",
+          "city": "Mountain View",
+          "state": "Goa",
+          "country": "IND",
+          "addressType": "Home",
+          "otherType": null
+        }
+      ],
       "id": "3352",
       "wishlist": [],
-      "orders": []
+      "orders": [],
+      "confirmedOrders": [
+        {
+          "batchId": "batch_1741579637298",
+          "orderDate": "2025-03-10",
+          "deliveryDate": "2025-03-20",
+          "orderStatus": "pending",
+          "totalAmount": 311,
+          "specialOffer": 50,
+          "shippingDetails": {
+            "name": "Jon Doe",
+            "address": "1600 Fake Street, Apartment 1, Mountain View, Guj, 94043, USA",
+            "mobile": "6019521325"
+          },
+          "orders": [
+            {
+              "id": 1741579575836,
+              "image": "/IMG/Parth/combo_1.png",
+              "name": "Wonder Match Creamy Liquid Matte Lip Balm",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": "/IMG/Parth/combo_12.png",
+              "orderId": "order_1741579637299",
+              "totalAmount": 450
+            }
+          ]
+        }
+      ]
     }
   ],
   "likeproduct": [
@@ -1826,6 +1869,16 @@
         }
       ],
       "moreImages": 2
+    }
+  ],
+  "contactUs": [
+    {
+      "id": 1741583061389,
+      "name": "Parth vaghasiya",
+      "email": "patyh@gail.com",
+      "subject": "erwdfgv",
+      "message": "1234567890",
+      "timestamp": "2025-03-10T05:04:21.389Z"
     }
   ]
 }

@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Email validation with more robust regex
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!formData.email || !emailRegex.test(formData.email.trim())) {
-            errors.email = "Please enter a valid email address";
+            errors.email23 = "Please enter a valid email address";
         }
 
         // Subject validation
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayErrors(errors) {
         // Clear previous errors
         document.querySelectorAll('.error-message').forEach(el => el.remove());
-
+    
         Object.entries(errors).forEach(([field, message]) => {
             const inputElement = document.getElementById(field);
             if (inputElement) {
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 errorSpan.className = 'error-message text-danger small mt-1';
                 errorSpan.textContent = message;
                 inputElement.classList.add('is-invalid');
-                inputElement.parentNode.appendChild(errorSpan);
+                inputElement.insertAdjacentElement("afterend", errorSpan);
             }
         });
     }
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const formData = {
             id: Date.now(), // Unique identifier
             name: document.getElementById("name").value.trim(),
-            email: document.getElementById("email").value.trim(),
+            email: document.getElementById("email23").value.trim(),
             subject: document.getElementById("subject").value.trim(),
             message: document.getElementById("message").value.trim(),
             timestamp: new Date().toISOString()
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Optional: Real-time validation as user types
-    ['name', 'email', 'subject', 'message'].forEach(fieldId => {
+    ['email23', 'name', 'subject', 'message'].forEach(fieldId => {
         const field = document.getElementById(fieldId);
         field.addEventListener('input', function() {
             this.classList.remove('is-invalid');

@@ -9,6 +9,11 @@
 
 
 
+select {
+  border: 1px solid #ccc; /* Add your own border style */
+  background: white; /* Ensure consistent background */
+}
+
 .V_height {
   height: 32px;
 }
@@ -63,11 +68,11 @@
 .color-options {
   display: flex;
   gap: 8px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 .color-dot {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   margin: 5px;
   line-height: 20px;
@@ -359,12 +364,12 @@ img {
 }
 
 .header {
-  /* position: fixed; */
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: auto;
-  z-index: 100;
+  z-index: 1051;
   margin: 0 auto;
   background-color: var(--white-100);
   box-shadow: var(--shadow-medium);

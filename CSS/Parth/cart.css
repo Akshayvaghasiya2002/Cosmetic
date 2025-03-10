@@ -15,6 +15,9 @@
     width: 186px;
     height: 150px;
 }
+.V_cart_offcanvas{
+    --bs-offcanvas-zindex: 1051;
+}
 
 .V_oops {
     color: #141414;
