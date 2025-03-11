@@ -390,55 +390,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ******** Range Input **********
-document.querySelectorAll('.slider-container').forEach(container => {
-    const rangeMin = container.querySelector('.range-min');
-    const rangeMax = container.querySelector('.range-max');
-    const rangeSelected = container.querySelector('.range-selected');
-    const minValue = container.querySelector('.min-value');
-    const maxValue = container.querySelector('.max-value');
 
-    function updateSlider() {
-        const min = parseInt(rangeMin.value);
-        const max = parseInt(rangeMax.value);
-
-        // Ensure min doesn't exceed max
-        if (min > max) {
-            rangeMin.value = max;
-        }
-
-        // Calculate percentage for visual representation
-        const percentage = ((max - min) / 300) * 100;
-        const startPercentage = (min / 300) * 100;
-
-        rangeSelected.style.width = `${percentage}%`;
-        rangeSelected.style.left = `${startPercentage}%`;
-
-        // Update number inputs
-        minValue.value = min;
-        maxValue.value = max;
-    }
-
-    // Slider input event listeners
-    rangeMin.addEventListener('input', updateSlider);
-    rangeMax.addEventListener('input', updateSlider);
-
-    // Direct number input event listeners
-    minValue.addEventListener('change', () => {
-        const min = Math.max(0, Math.min(parseInt(minValue.value), 300));
-        rangeMin.value = min;
-        updateSlider();
-    });
-
-    maxValue.addEventListener('change', () => {
-        const max = Math.max(0, Math.min(parseInt(maxValue.value), 300));
-        rangeMax.value = max;
-        updateSlider();
-    });
-
-    // Initial update
-    updateSlider();
-});
 
 
 // Function to add filter
@@ -634,32 +586,86 @@ document.addEventListener('DOMContentLoaded', init);
 function filterProducts(products) {
     const selectedFilters = [];
 
+    console.log("value" ,ds_inputMin , ds_inputMax);
+    
     // Get selected filters from checkboxes
     document.querySelectorAll('.filter-option input[type="checkbox"], .color-option input[type="checkbox"]').forEach(option => {
         if (option.checked) {
             selectedFilters.push(option.parentElement.textContent.trim().toLowerCase());
         }
     });
-
-    // If no filters are selected, return all products
-    if (selectedFilters.length === 0) {
-        return products;
-    }
+   
+    
 
     return products.filter(product => {
-        return selectedFilters.some(filter => {
+        const productPrice = product?.price;
+        const matchesPrice = productPrice >= ds_inputMin && productPrice <= ds_inputMax;
+
+        // Check if the product matches selected filters
+        const matchesFilters = selectedFilters.length === 0 || selectedFilters.some(filter => {
             return (
-                product.brand.toLowerCase().includes(filter) ||         // Brand filter
-                (product.brands && product.brands.toLowerCase().includes(filter)) || // Alternate brand field
-                product.name.toLowerCase().includes(filter) ||          // Product name filter
-                (product.product && product.product.toLowerCase().includes(filter)) || // Product type
-                (product.discount && product.discount.toLowerCase().includes(filter)) || // Discount filter
-                (product.finish && product.finish.toLowerCase().includes(filter)) || // Finish type
-                (product.formulation && product.formulation.toLowerCase().includes(filter)) 
+                product.brand.toLowerCase().includes(filter) ||         
+                (product.brands && product.brands.toLowerCase().includes(filter)) ||
+                product.name.toLowerCase().includes(filter) ||          
+                (product.product && product.product.toLowerCase().includes(filter)) ||
+                (product.discount && product.discount.toLowerCase().includes(filter)) ||
+                (product.finish && product.finish.toLowerCase().includes(filter)) ||
+                (product.formulation && product.formulation.toLowerCase().includes(filter)) ||
+                product.colors.some(colorObj => colorObj.color.toLowerCase() === filter)
             );
         });
+        return matchesPrice && matchesFilters;
+    
     });
 }
+
+// ******** Range Input **********
+document.querySelectorAll('.slider-container').forEach(container => {
+    const rangeMin = container.querySelector('.range-min');
+    const rangeMax = container.querySelector('.range-max');
+    const rangeSelected = container.querySelector('.range-selected');
+    const minValue = container.querySelector('.min-value');
+    const maxValue = container.querySelector('.max-value');
+
+    function updateSlider() {
+        let min = parseInt(rangeMin.value) || 0;
+        let max = parseInt(rangeMax.value) || 300;
+    
+        if (min > max) {
+            [min, max] = [max, min]; // Swap values if min > max
+        }
+        rangeMin.value = min;
+        rangeMax.value = max;
+        minValue.value = min;
+        maxValue.value = max;
+        ds_inputMin = min
+        ds_inputMax = max
+    
+        rangeSelected.style.width = `${((max - min) / 300) * 100}%`;
+        rangeSelected.style.left = `${(min / 300) * 100}%`;
+    
+        renderProducts(); // Trigger filtering
+    }
+
+    rangeMin.addEventListener('input', updateSlider);
+    rangeMax.addEventListener('input', updateSlider);
+
+    minValue.addEventListener('change', () => {
+        const min = Math.max(0, Math.min(parseInt(minValue.value), 300));
+        rangeMin.value = min;
+        updateSlider();
+    });
+
+    maxValue.addEventListener('change', () => {
+        const max = Math.max(0, Math.min(parseInt(maxValue.value), 300));
+        rangeMax.value = max;
+        updateSlider();
+    });
+
+    updateSlider();
+});
+
+
 
 // // Function to render products, handle wishlist and cart functionality
 // async function renderProducts() {
@@ -855,6 +861,9 @@ function filterProducts(products) {
 
 
 async function renderProducts() {
+    // alert('')
+
+
     const productsContainer = document.getElementById('products-container');
     productsContainer.innerHTML = '';
 
@@ -878,7 +887,7 @@ async function renderProducts() {
     // Fetch products from the JSON server
     let products = [];
     try {
-        const response = await fetch(`http://localhost:3000/combooffers`);
+        const response = await fetch(`http://localhost:3000/multiproducts`);
         if (!response.ok) throw new Error("Failed to fetch products");
         let json = await response.json();
         products = json
@@ -889,8 +898,8 @@ async function renderProducts() {
     }
 
     // Apply filters
-    products = filterProducts(products);
-
+     products = filterProducts(products);
+  
     // Validate unique product IDs
     const uniqueProducts = new Map();
     products.forEach(product => {
@@ -905,11 +914,7 @@ async function renderProducts() {
     
     products = FilterMyProduct.length > 0 ? FilterMyProduct : products;
 
-    console.log("fafgaqfg" , FilterMyProduct);
 
-                                    // <div>${product.tags ? `<span class="badge">${product.tags}</span>` : ''}</div>
-                                    
-                              
 
     productsContainer.innerHTML = products?.map(product => {
         const isWishlisted = wishlist.some(item => item.id == product.id);
@@ -918,9 +923,9 @@ async function renderProducts() {
                                                ${product.badge.type ?  `<img src="../IMG/Dhruvin/star.png" class="ds_label_star">` : ""}
                                                </div>
                                               ` : '';
-        const colorDotsHTML = product?.images?.map((IMAGEObj, index) => `
-            <div class="V_color_border mx-1" data-color-index="${index}" data-color="${IMAGEObj.image}">
-                <img class="color-dot" src="${IMAGEObj.image}"></img>
+        const colorDotsHTML = product.colors.map((colorObj, index) => `
+            <div class="V_color_border mx-1" data-color-index="${index}" data-color="${colorObj.color}">
+                <p class="color-dot" style="background-color: ${colorObj.color};"></p>
             </div>
         `).join('');
         const moreColorsHTML = product.moreColors ? `<span class="more-colors">+${product.moreColors}</span>` : '';
@@ -934,7 +939,7 @@ async function renderProducts() {
                         <i class="fa-solid fa-heart wishlist-button ${isWishlisted ? '' : 'd-none'}" data-id="${product.id}" style="color: #ff0000;"></i>
                     </span>
                 </div>
-                <a href="../../Akshay/singlepage.html?id=${product.id}&array=combooffers">
+                <a href="../../Akshay/singlepage.html?id=${product.id}&array=multiproducts">
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.brand} ${product.name}">
                 </div>
@@ -943,11 +948,11 @@ async function renderProducts() {
                     <div class="product-brand">${product.brand}</div>
                     <div class="product-title text-truncate">${product.name}</div>
                     <div class="product-price">
-                        <span class="current-price">$${product.price}</span>
-                        <span class="original-price">$${product.originalPrice}</span>
+                        <span class="current-price">$${product.price.toFixed(2)}</span>
+                        <span class="original-price">$${product.originalPrice.toFixed(2)}</span>
                         <span class="discount">${product.discount}</span>
                     </div>
-                    <div class="color-options V_height justify-content-center">
+                    <div class="color-options">
                         ${colorDotsHTML}
                         ${moreColorsHTML}
                     </div>
@@ -1063,8 +1068,6 @@ function setupEventListeners(products, wishlist, cart, userId) {
         }
     });
 }
-
-
 
 
 async function updateUserData(userId, updateData) {

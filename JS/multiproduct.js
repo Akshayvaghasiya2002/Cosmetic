@@ -418,6 +418,8 @@ document.addEventListener('DOMContentLoaded', function() {
 let filters = [];
 let Product = [];
 let FilterMyProduct = []
+let ds_inputMin;
+let ds_inputMax;
 
 // Function to add filter
 function addFilter(name, filterClass = '') {
@@ -607,18 +609,21 @@ document.addEventListener('DOMContentLoaded', init);
 // Function to filter products based on selected filters
 function filterProducts(products) {
     const selectedFilters = [];
-    const minPrice = parseFloat(document.querySelector('.min-value').value) || 0;
-    const maxPrice = parseFloat(document.querySelector('.max-value').value) || 300;
 
+    // console.log("value" ,ds_inputMin , ds_inputMax);
+    
     // Get selected filters from checkboxes
     document.querySelectorAll('.filter-option input[type="checkbox"], .color-option input[type="checkbox"]').forEach(option => {
         if (option.checked) {
             selectedFilters.push(option.parentElement.textContent.trim().toLowerCase());
         }
     });
+   
+    
 
     return products.filter(product => {
-        // const productPrice = product.price;
+        const productPrice = product?.price;
+        const matchesPrice = productPrice >= ds_inputMin && productPrice <= ds_inputMax;
 
         // Check if the product matches selected filters
         const matchesFilters = selectedFilters.length === 0 || selectedFilters.some(filter => {
@@ -633,9 +638,8 @@ function filterProducts(products) {
                 product.colors.some(colorObj => colorObj.color.toLowerCase() === filter)
             );
         });
-        return matchesFilters;
-        // Return only products that match selected filters and fall within the price range
-        // return matchesFilters && productPrice >= minPrice && productPrice <= maxPrice;
+        return matchesPrice && matchesFilters;
+    
     });
 }
 
@@ -648,7 +652,6 @@ document.querySelectorAll('.slider-container').forEach(container => {
     const maxValue = container.querySelector('.max-value');
 
     function updateSlider() {
-        // alert('')
         let min = parseInt(rangeMin.value) || 0;
         let max = parseInt(rangeMax.value) || 300;
     
@@ -659,20 +662,18 @@ document.querySelectorAll('.slider-container').forEach(container => {
         rangeMax.value = max;
         minValue.value = min;
         maxValue.value = max;
+        ds_inputMin = min
+        ds_inputMax = max
     
         rangeSelected.style.width = `${((max - min) / 300) * 100}%`;
         rangeSelected.style.left = `${(min / 300) * 100}%`;
     
         renderProducts(); // Trigger filtering
-
     }
 
-
-    // Slider input event listeners
     rangeMin.addEventListener('input', updateSlider);
     rangeMax.addEventListener('input', updateSlider);
 
-    // Direct number input event listeners
     minValue.addEventListener('change', () => {
         const min = Math.max(0, Math.min(parseInt(minValue.value), 300));
         rangeMin.value = min;
@@ -684,10 +685,9 @@ document.querySelectorAll('.slider-container').forEach(container => {
         rangeMax.value = max;
         updateSlider();
     });
-    // Initial update
+
     updateSlider();
 });
-
 
 
 // Function to fetch products and render them
@@ -696,12 +696,8 @@ document.querySelectorAll('.slider-container').forEach(container => {
 
 async function renderProducts() {
     // alert('')
-    let rangeMin = container.querySelector('.range-min');
 
-    // const rangeMax = container.querySelector('.range-max');
-    console.log('value',rangeMin.value );  
 
-    console.log('reange',rangeMin)
     const productsContainer = document.getElementById('products-container');
     productsContainer.innerHTML = '';
 
@@ -736,10 +732,8 @@ async function renderProducts() {
     }
 
     // Apply filters
-    var products1 = filterProducts(products);
-    console.log('product1', products1)
-    products =  products1.filter(item => { console.log(rangeMin);
-    })
+     products = filterProducts(products);
+  
     // Validate unique product IDs
     const uniqueProducts = new Map();
     products.forEach(product => {
@@ -748,13 +742,12 @@ async function renderProducts() {
         }
     });
     products = Array.from(uniqueProducts.values());
-  console.log("hello" ,products);
+//   console.log("hello" ,products);
   
     // Render filtered product cards
     
     products = FilterMyProduct.length > 0 ? FilterMyProduct : products;
 
-    console.log("fafgaqfg" , FilterMyProduct);
 
 
     productsContainer.innerHTML = products?.map(product => {

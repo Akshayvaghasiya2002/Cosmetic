@@ -935,7 +935,7 @@
                                                                 </div>
                                                         </li>
                                                         <li class="menu-item menu-dropdown">
-                                                                <span class="menu-link"><a href="combo.html"
+                                                                <span class="menu-link"><a href="../Akshay/combo.html"
                                                                                 class="text-dark text-decoration-none">Combo</a><i
                                                                                 class="fa-solid fa-angle-down ps-2"></i></span>
                                                                 <!-- <div class="submenu megamenu megamenu-column-1">
@@ -1742,30 +1742,33 @@
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <!-- <script src="/JS/Dhruvin/ReturnOrder.js"></script> -->
 
+        <script>
+               
+            </script>
         <script src="../JS/navbar.js"></script>
 
         <script>
-            const otpFields = document.querySelectorAll('.ds_return_otp');
+//             const otpFields = document.querySelectorAll('.ds_return_otp');
 
-otpFields.forEach((field, index) => {
-    field.addEventListener('input', (e) => {
-        let value = e.target.value;
+// otpFields.forEach((field, index) => {
+//     field.addEventListener('input', (e) => {
+//         let value = e.target.value;
         
-        // Ensure only a single digit is entered
-        e.target.value = value.replace(/\D/g, '').slice(0, 1);
+//         // Ensure only a single digit is entered
+//         e.target.value = value.replace(/\D/g, '').slice(0, 1);
 
-        // Move to next field if a digit is entered
-        if (e.target.value && index < otpFields.length - 1) {
-            otpFields[index + 1].focus();
-        }
-    });
+//         // Move to next field if a digit is entered
+//         if (e.target.value && index < otpFields.length - 1) {
+//             otpFields[index + 1].focus();
+//         }
+//     });
 
-    field.addEventListener('keydown', (e) => {
-        if (e.key === 'Backspace' && !field.value && index > 0) {
-            otpFields[index - 1].focus();
-        }
-    });
-});
+//     field.addEventListener('keydown', (e) => {
+//         if (e.key === 'Backspace' && !field.value && index > 0) {
+//             otpFields[index - 1].focus();
+//         }
+//     });
+// });
         </script>
     <!-- ////  for header   ///// -->
      

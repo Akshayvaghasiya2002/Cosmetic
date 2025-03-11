@@ -939,7 +939,7 @@
                                                                 </div>
                                                         </li>
                                                         <li class="menu-item menu-dropdown">
-                                                                <span class="menu-link"><a href="combo.html"
+                                                                <span class="menu-link"><a href="../Akshay/combo.html"
                                                                                 class="text-dark text-decoration-none">Combo</a><i
                                                                                 class="fa-solid fa-angle-down ps-2"></i></span>
                                                                 <!-- <div class="submenu megamenu megamenu-column-1">
@@ -1808,15 +1808,15 @@
                                                             <div class="mb-3">
                                                                 <label for="exampleInputEmail1" class="form-label ds_pro_label ds_muted">Gender</label>
                                                                 <div class="d-flex">
-                                                                    <div class="gender-option ds_muted ds_color ds_cursor me-3" onclick="selectGender('female')">
-                                                                        <input type="radio " id="female" name="gender"  hidden>
-                                                                        <label for="female" class="ds_pro_div text-center ds_cursor pt-2" id="femaleLabel">Female</label>
+                                                                        <div class="gender-option ds_muted ds_color ds_cursor me-3" onclick="selectGender('female')" id="femaleOption">
+                                                                            <input type="radio" id="female" name="gender" hidden>
+                                                                            <label for="female" class="ds_pro_div text-center ds_cursor pt-2" id="femaleLabel">Female</label>
+                                                                        </div>
+                                                                        <div class="gender-option ds_cursor" onclick="selectGender('male')" id="maleOption">
+                                                                            <input type="radio" id="male" name="gender" hidden>
+                                                                            <label class="ds_pro_div text-center pt-2 ds_cursor" for="male" id="maleLabel">Male</label>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="gender-option ds_cursor" onclick="selectGender('male')">
-                                                                        <input type="radio " id="male" name="gender" hidden>
-                                                                        <label class="ds_pro_div text-center pt-2 ds_cursor " for="male" id="maleLabel">Male</label>
-                                                                    </div>
-                                                                </div>
                                                               </div>
                                                         </div>  
                                                     </div>
@@ -2580,87 +2580,86 @@
     <!-- /////  Footer  ///// -->
 
 </body>
+<script src="../JS/navbar.js" defer></script>
 
-<script>
-        function emptyNav() {
-                const emptyNavbar = document.querySelector("nav");
-                emptyNavbar.classList.add("d-none");
+<!-- <script>
+        // function emptyNav() {
+        //         const emptyNavbar = document.querySelector("nav");
+        //         emptyNavbar.classList.add("d-none");
                 
-                const displaySearch = document.querySelector(".V_search");
-                displaySearch.classList.remove("d-none");
+        //         const displaySearch = document.querySelector(".V_search");
+        //         displaySearch.classList.remove("d-none");
             
-                addBackdrop(); // Ensure backdrop is added when the function is called
-            }
+        //         addBackdrop(); // Ensure backdrop is added when the function is called
+        //     }
             
-            function addBackdrop() {
-                let backdrop = document.querySelector(".ds_modal_backdrop");
+        //     function addBackdrop() {
+        //         let backdrop = document.querySelector(".ds_modal_backdrop");
             
-                if (!backdrop) {
-                    backdrop = document.createElement("div");
-                    backdrop.className = "ds_modal_backdrop";
-                    document.body.appendChild(backdrop);
-                    // document.body.style.overflow = "hidden"; // Prevent scrolling
+        //         if (!backdrop) {
+        //             backdrop = document.createElement("div");
+        //             backdrop.className = "ds_modal_backdrop";
+        //             document.body.appendChild(backdrop);
+        //             // document.body.style.overflow = "hidden"; // Prevent scrolling
             
-                    // Click outside to close
-                    backdrop.addEventListener("click", emptyNav53);
-                }
-            }
+        //             // Click outside to close
+        //             backdrop.addEventListener("click", emptyNav53);
+        //         }
+        //     }
             
-            function removeBackdrop() {
-                const backdrop = document.querySelector(".ds_modal_backdrop");
-                if (backdrop) {
-                    backdrop.remove();
-                    // document.body.style.overflow = ""; // Restore scrolling
-                }
-            }
+        //     function removeBackdrop() {
+        //         const backdrop = document.querySelector(".ds_modal_backdrop");
+        //         if (backdrop) {
+        //             backdrop.remove();
+        //             // document.body.style.overflow = ""; // Restore scrolling
+        //         }
+        //     }
             
-            const searchInput = document.querySelector(".V_input");
-            const searchResult = document.querySelector(".V_result");
-            const emptyResult = document.querySelector(".V_empty_result");
+        //     const searchInput = document.querySelector(".V_input");
+        //     const searchResult = document.querySelector(".V_result");
+        //     const emptyResult = document.querySelector(".V_empty_result");
             
             // Function to toggle display based on input value
-            searchInput.addEventListener("input", function () {
-                const inputValue = searchInput.value.trim();
+        //     searchInput.addEventListener("input", function () {
+        //         const inputValue = searchInput.value.trim();
             
-                if (inputValue !== "") {
-                    searchResult.classList.remove("d-none"); // Show results
-                    emptyResult.classList.add("d-none"); // Hide empty result
-                    addBackdrop(); // Ensure backdrop is added while typing
-                } else {
-                    searchResult.classList.add("d-none"); // Hide results
-                    // removeBackdrop(); // Remove backdrop only when input is empty
-                }
+        //         if (inputValue !== "") {
+        //             searchResult.classList.remove("d-none"); // Show results
+        //             emptyResult.classList.add("d-none"); // Hide empty result
+        //             addBackdrop(); // Ensure backdrop is added while typing
+        //         } else {
+        //             searchResult.classList.add("d-none"); // Hide results
+        //             // removeBackdrop(); // Remove backdrop only when input is empty
+        //         }
             
-                if (inputValue === "lorem") {
-                    emptyResult.classList.remove("d-none"); // Show empty result
-                    searchResult.classList.add("d-none"); // Hide regular results
-                } else {
-                    emptyResult.classList.add("d-none"); // Hide empty result
-                }
-            });
+        //         if (inputValue === "lorem") {
+        //             emptyResult.classList.remove("d-none"); // Show empty result
+        //             searchResult.classList.add("d-none"); // Hide regular results
+        //         } else {
+        //             emptyResult.classList.add("d-none"); // Hide empty result
+        //         }
+        //     });
             
             // Redirect when clicking the arrow icon
-            document.querySelector(".fa-arrow-right-long").addEventListener("click", function () {
-                window.location.href = "/Akshay/multiproduct.html";
-            });
+        //     document.querySelector(".fa-arrow-right-long").addEventListener("click", function () {
+        //         window.location.href = "/Akshay/multiproduct.html";
+        //     });
             
             // Function to close the search and restore navbar
-            function emptyNav53() {
-                const emptyNavbar = document.querySelector("nav");
-                emptyNavbar.classList.remove("d-none");
+        //     function emptyNav53() {
+        //         const emptyNavbar = document.querySelector("nav");
+        //         emptyNavbar.classList.remove("d-none");
             
-                const displaySearch = document.querySelector(".V_search");
-                displaySearch.classList.add("d-none");
+        //         const displaySearch = document.querySelector(".V_search");
+        //         displaySearch.classList.add("d-none");
             
-                removeBackdrop(); // Ensure backdrop is removed when closing
-            }
-</script>
+        //         removeBackdrop(); // Ensure backdrop is removed when closing
+        //     }
+</script> -->
 
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
-<!-- <script src="/JS/Dhruvin/MyAccount.js"></script> -->
 <!-- <script src="/JS/header.js"></script> -->
 
-<script src="../JS/navbar.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>

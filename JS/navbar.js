@@ -1194,6 +1194,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
 // ************* OrderStatus Delivered.html ********************
 
 async function getOrderData () {
@@ -1490,11 +1491,33 @@ async function handleConfirmReturn(event) {
         }
     } catch (error) {
         console.error("Error updating order:", error);
-        alert("An error occurred while processing your request.");
+        // alert("An error occurred while processing your request.");
     }
 
 }
 
+
+const ReturnOtpFields = document.querySelectorAll('.ds_return_otp');
+            
+ReturnOtpFields.forEach((field, index) => {
+    field.addEventListener('input', (e) => {
+        let value = e.target.value;
+        
+        // Ensure only a single digit is entered
+        e.target.value = value.replace(/\D/g, '').slice(0, 1);
+
+        // Move to next field if a digit is entered
+        if (e.target.value && index < ReturnOtpFields.length - 1) {
+            ReturnOtpFields[index + 1].focus();
+        }
+    });
+
+    field.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !field.value && index > 0) {
+            ReturnOtpFields[index - 1].focus();
+        }
+    });
+});
 
 
 // ************* ReturnRefundStatus.html ********************
@@ -1505,10 +1528,10 @@ async function getReturnRefundStatusData () {
     console.log("json" , json);
 
     const filter = json?.confirmedOrders?.find((element)=> element?.batchId == batchId)
-    console.log('filter' , filter);
+    console.log('filter' , filter?.returnOrder.returnDate);
     document.getElementById("ds_refund_id").innerHTML = filter?.batchId
-    document.getElementById("ds_refund_date").innerHTML = filter?.returnOrder?.returnDate
-    document.getElementById("ds_refund_date2").innerHTML = filter?.returnOrder?.returnDate
+    document.getElementById("ds_refund_date").innerHTML = filter?.returnOrder.returnDate
+    document.getElementById("ds_refund_date2").innerHTML = filter?.returnOrder.returnDate
 
     const shipDate = new Date(filter?.returnOrder?.returnDate)
     shipDate.setDate(shipDate.getDate() + 3);
@@ -1643,8 +1666,8 @@ async function getTrackRefundData () {
     console.log('filter' , filter);
 
     document.getElementById("ds_refund_id").innerHTML = filter?.batchId
-    document.getElementById("ds_refund_date").innerHTML = filter?.cancel?.cancelDate
-    document.getElementById("ds_refund_date2").innerHTML = filter?.cancel?.cancelDate
+    document.getElementById("ds_track_date").innerHTML = filter?.cancel?.cancelDate
+    document.getElementById("ds_track_date2").innerHTML = filter?.cancel?.cancelDate
 
     document.getElementById("ds_track_miniId").innerHTML = filter?.batchId
     document.getElementById("ds_track_confirm").innerHTML = filter?.orderDate
@@ -1762,15 +1785,7 @@ function handleManage(element) {
 
 
 
-// function handle (element) {
-//    console.log("element",element);
-// }
 
-// function yes () {
-//     let data = document.getElementById("kabali")
-//     handle(data)
-// }
-// yes()
 // *********** My Profile **********
 
 // -------- Edit Image
@@ -1992,88 +2007,87 @@ function handleUpdateProfile(event) {
                  console.log(gender);
                  
 
-    // Function to convert image to Base64
-    // function convertImageToBase64(imageFile, callback) {
-    //     const reader = new FileReader();
-    //     reader.onloadend = function () {
-    //         callback(reader.result); // Get Base64 string
-    //     };
-    //     reader.readAsDataURL(imageFile);
-    // }
+    function convertImageToBase64(imageFile, callback) {
+        const reader = new FileReader();
+        reader.onloadend = function () {
+            callback(reader.result); // Get Base64 string
+        };
+        reader.readAsDataURL(imageFile);
+    }
 
-    // if (selectedImage) {
-    //     convertImageToBase64(selectedImage, function (base64String) {
-    //         let updatedUserData = {
-    //             id:passwordObj?.id,
-    //             fullName: `${First} ${Last}`,
-    //             email: Email,
-    //             password: passwordObj?.password,
-    //             dateOfBirth: Date,
-    //             gender: gender,
-    //             phoneNumber: Mobile,
-    //             selectedImage: base64String, // Store Base64 image string
-    //             addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
-    //             carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
-    //             confirmedOrders:passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
-    //             orders:passwordObj?.orders ? passwordObj?.orders : [],
-    //             wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
-    //         };
+    if (selectedImage) {
+        convertImageToBase64(selectedImage, function (base64String) {
+            let updatedUserData = {
+                id:passwordObj?.id,
+                fullName: `${First} ${Last}`,
+                email: Email,
+                password: passwordObj?.password,
+                dateOfBirth: Date,
+                gender: gender,
+                phoneNumber: Mobile,
+                selectedImage: base64String, // Store Base64 image string
+                addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
+                carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
+                confirmedOrders:passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
+                orders:passwordObj?.orders ? passwordObj?.orders : [],
+                wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
+            };
 
             
 
-    //         // Send JSON data to JSON Server
-    //         fetch(`http://localhost:3000/User/${userID}`, {
-    //             method: "PUT",
-    //             headers: {
-    //                 "Accept": "application/json",
-    //                 "Content-Type": "application/json"
-    //             },
-    //             body: JSON.stringify(updatedUserData)
-    //         })
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             alert("Profile updated successfully!");
-    //             console.log("Updated User:", data);
-    //         })
-    //         .catch(error => console.error("Error updating profile:", error));
+            // Send JSON data to JSON Server
+            fetch(`http://localhost:3000/User/${userID}`, {
+                method: "PUT",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(updatedUserData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("Profile updated successfully!");
+                console.log("Updated User:", data);
+            })
+            .catch(error => console.error("Error updating profile:", error));
             
-    //         getUserProfileData();
-    //     });
-    // } else {
-    //     // If no new image is selected, update profile without changing image
-    //     let updatedUserData = {
-    //         id:passwordObj?.id,
-    //         fullName: `${First} ${Last}`,
-    //         email: Email,
-    //         password: passwordObj?.password,
-    //         dateOfBirth: Date,
-    //         gender: gender,
-    //         phoneNumber: Mobile,
-    //         selectedImage: passwordObj?.selectedImage ? passwordObj?.selectedImage : null, 
-    //         addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
-    //         carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
-    //         confirmedOrders:passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
-    //         orders:passwordObj?.orders ? passwordObj?.orders : [],
-    //         wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
-    //     };
+            getUserProfileData();
+        });
+    } else {
+        // If no new image is selected, update profile without changing image
+        let updatedUserData = {
+            id:passwordObj?.id,
+            fullName: `${First} ${Last}`,
+            email: Email,
+            password: passwordObj?.password,
+            dateOfBirth: Date,
+            gender: gender,
+            phoneNumber: Mobile,
+            selectedImage: passwordObj?.selectedImage ? passwordObj?.selectedImage : null, 
+            addresses: passwordObj?.addresses ? passwordObj?.addresses : [],
+            carddetails: passwordObj?.carddetails ? passwordObj?.carddetails : [],
+            confirmedOrders:passwordObj?.confirmedOrders ? passwordObj?.confirmedOrders : [],
+            orders:passwordObj?.orders ? passwordObj?.orders : [],
+            wishlist:passwordObj?.wishlist ? passwordObj?.wishlist : []
+        };
 
-    //     fetch(`http://localhost:3000/User/${userID}`, {
-    //         method: "PUT",
-    //         headers: {
-    //             "Accept": "application/json",
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(updatedUserData)
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         alert("Profile updated successfully!");
-    //         console.log("Updated User:", data);
-    //     })
-    //     .catch(error => console.error("Error updating profile:", error));
+        fetch(`http://localhost:3000/User/${userID}`, {
+            method: "PUT",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedUserData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert("Profile updated successfully!");
+            console.log("Updated User:", data);
+        })
+        .catch(error => console.error("Error updating profile:", error));
 
-    //     getUserProfileData();
-    // }
+        getUserProfileData();
+    }
 }
 
 
@@ -2290,21 +2304,19 @@ function selectGender(gender) {
     // Remove 'active' class from all gender options
     document.querySelectorAll('.gender-option').forEach(el => el.classList.remove('active'));
 
-    // Get selected radio input
-    let selectedInput = document.getElementById(gender);
-    if (selectedInput) {
-        selectedInput.checked = true;
+    // Get selected gender div
+    let selectedDiv = document.getElementById(gender + "Option");
 
-        // Add 'active' class to the correct gender div
-        let parentDiv = selectedInput.closest('.gender-option');
-        if (parentDiv) {
-            parentDiv.classList.add('active');
+    if (selectedDiv) {
+        selectedDiv.classList.add('active');
+
+        // Set the corresponding input as checked
+        let selectedInput = document.getElementById(gender);
+        if (selectedInput) {
+            selectedInput.checked = true;
         }
     }
-
-
 }
-
 
 
 let selectedAddressType = 'Home';
@@ -2899,7 +2911,7 @@ async function handleDeactive(event) {
                 "Content-Type": "application/json"
             }
         });
-
+        window.location.href = "../Akshay/home.html"
         alert("Account deactivated successfully!"); 
 
         $('#deactivateModal').modal('hide'); 
@@ -2907,10 +2919,7 @@ async function handleDeactive(event) {
 
         localStorage.removeItem("userId");
 
-        // Delay before redirecting to ensure modal is fully closed
-            // window.open('http://127.0.0.1:5507/Akshay/home.html');
-            window.location.href = "../Akshay/home.html"
-            localStorage.clear()
+        localStorage.clear()
 
     } catch (error) {
         alert(error);
