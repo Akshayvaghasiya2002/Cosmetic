@@ -19,6 +19,9 @@
 
 }
 
+.V_bggggg:focus{
+    background-color: rgba(20, 20, 20, 0.06) ;
+}
 .V_div1 {
     background-color: rgba(20, 20, 20, 0.06);
     height: 50px;

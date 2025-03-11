@@ -20,6 +20,10 @@
     height: 50px;
 }
 
+.V_bggggg:focus{
+    background-color: rgba(20, 20, 20, 0.06) ;
+}
+
 .form-control:focus {
     border-color: rgba(20, 20, 20, 0.06) !important;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
