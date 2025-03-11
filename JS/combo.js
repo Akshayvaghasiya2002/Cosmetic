@@ -585,8 +585,8 @@ document.addEventListener('DOMContentLoaded', init);
 // Function to filter products based on selected filters
 function filterProducts(products) {
     const selectedFilters = [];
-
-    console.log("value" ,ds_inputMin , ds_inputMax);
+console.log("hihihi" , products);
+    // console.log("value" ,ds_inputMin , ds_inputMax);
     
     // Get selected filters from checkboxes
     document.querySelectorAll('.filter-option input[type="checkbox"], .color-option input[type="checkbox"]').forEach(option => {
@@ -614,7 +614,7 @@ function filterProducts(products) {
                 product.colors.some(colorObj => colorObj.color.toLowerCase() === filter)
             );
         });
-        return matchesPrice && matchesFilters;
+        return  matchesFilters;
     
     });
 }
@@ -887,11 +887,12 @@ async function renderProducts() {
     // Fetch products from the JSON server
     let products = [];
     try {
-        const response = await fetch(`http://localhost:3000/multiproducts`);
+        const response = await fetch(`http://localhost:3000/combooffers`);
         if (!response.ok) throw new Error("Failed to fetch products");
         let json = await response.json();
         products = json
         Product = json
+
         
     } catch (error) {
         console.error("Error fetching products:", error);
@@ -899,7 +900,6 @@ async function renderProducts() {
 
     // Apply filters
      products = filterProducts(products);
-  
     // Validate unique product IDs
     const uniqueProducts = new Map();
     products.forEach(product => {
@@ -923,11 +923,11 @@ async function renderProducts() {
                                                ${product.badge.type ?  `<img src="../IMG/Dhruvin/star.png" class="ds_label_star">` : ""}
                                                </div>
                                               ` : '';
-        const colorDotsHTML = product.colors.map((colorObj, index) => `
-            <div class="V_color_border mx-1" data-color-index="${index}" data-color="${colorObj.color}">
-                <p class="color-dot" style="background-color: ${colorObj.color};"></p>
-            </div>
-        `).join('');
+                                              const colorDotsHTML = product?.images?.map((IMAGEObj, index) => `
+                                              <div class="V_color_border mx-1" data-color-index="${index}" data-color="${IMAGEObj.image}">
+                                                  <img class="color-dot" src="${IMAGEObj.image}"></img>
+                                              </div>
+                                          `).join('');
         const moreColorsHTML = product.moreColors ? `<span class="more-colors">+${product.moreColors}</span>` : '';
 
         return `
@@ -952,7 +952,7 @@ async function renderProducts() {
                         <span class="original-price">$${product.originalPrice.toFixed(2)}</span>
                         <span class="discount">${product.discount}</span>
                     </div>
-                    <div class="color-options">
+                    <div class="color-options V_height justify-content-center">
                         ${colorDotsHTML}
                         ${moreColorsHTML}
                     </div>

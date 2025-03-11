@@ -1211,8 +1211,51 @@
         }
       ],
       "id": "e501",
-      "orders": [],
-      "wishlist": [],
+      "orders": [
+        {
+          "id": 1741689590515,
+          "image": "../../IMG/Parth/offer_3.png",
+          "name": "MAC MACXIMAL SLEEK SATIN LIPSTICK",
+          "currentPrice": 450,
+          "quantity": 1,
+          "selectedColor": "#924B57"
+        }
+      ],
+      "wishlist": [
+        {
+          "id": "2",
+          "image": "/IMG/Akshay/lip_balm.png",
+          "name": "MAC Glow Play Tender Talk Lip Balm",
+          "originalPrice": 600,
+          "currentPrice": 450,
+          "discount": "20% OFF",
+          "colors": [
+            "#FF7AA6",
+            "#CCB9D8",
+            "#EC9C53",
+            "#B5296A"
+          ],
+          "moreColors": 10,
+          "selectedColor": null,
+          "badge": true
+        },
+        {
+          "id": "23",
+          "image": "../../IMG/Parth/offer_3.png",
+          "name": "MAC MACXIMAL SLEEK SATIN LIPSTICK",
+          "originalPrice": 600,
+          "currentPrice": 450,
+          "discount": "20% Off",
+          "colors": [
+            "#891D24",
+            "#701F24",
+            "#924B57",
+            "#E9513E"
+          ],
+          "moreColors": 15,
+          "badge": false
+        }
+      ],
       "confirmedOrders": [
         {
           "batchId": "batch_1741683596943",
@@ -1235,6 +1278,31 @@
               "quantity": 1,
               "selectedColor": null,
               "orderId": "order_1741683596943",
+              "totalAmount": 450
+            }
+          ]
+        },
+        {
+          "batchId": "batch_1741689174012",
+          "orderDate": "2025-03-11",
+          "deliveryDate": "2025-03-21",
+          "orderStatus": "pending",
+          "totalAmount": 361,
+          "specialOffer": 0,
+          "shippingDetails": {
+            "name": "Jon Doe",
+            "address": "1600 Fake Street, Apartment 1, Mountain View, Goa, 94043, USA",
+            "mobile": "6019521325"
+          },
+          "orders": [
+            {
+              "id": 1741688986679,
+              "image": "../../IMG/Parth/combo_2.png",
+              "name": "MAC MACXIMAL SLEEK SATIN LIPSTICK",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": "/IMG/Parth/combo_4.png",
+              "orderId": "order_1741689174013",
               "totalAmount": 450
             }
           ]
@@ -1626,7 +1694,7 @@
       "timestamp": "2025-03-10T05:04:21.389Z"
     },
     {
-      "id": 1741683687561,
+      "id": "1741683687561",
       "name": "hello",
       "email": "helllo@gmail.com",
       "subject": "fwefwe",
