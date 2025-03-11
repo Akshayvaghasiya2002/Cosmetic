@@ -1141,17 +1141,18 @@ otpField2.forEach((field, index) => {
         e.target.value = value.replace(/\D/g, '').slice(0, 1);
 
         // Move to next field if a digit is entered
-        if (e.target.value && index < otpFields.length - 1) {
-            otpFields[index + 1].focus();
+        if (e.target.value && index < otpField2.length - 1) {  // Fix here
+            otpField2[index + 1].focus();
         }
     });
 
     field.addEventListener('keydown', (e) => {
         if (e.key === 'Backspace' && !field.value && index > 0) {
-            otpFields[index - 1].focus();
+            otpField2[index - 1].focus();  // Fix here
         }
     });
 });
+
 
 function handleDeactiveSendOtp() {
     

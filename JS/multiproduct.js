@@ -325,20 +325,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Show more buttons
-    const showMoreButtons = document.querySelectorAll('.show-more');
-    showMoreButtons.forEach(button => {
+    document.querySelectorAll('.show-more').forEach(button => {
         button.addEventListener('click', function(e) {
             e.stopPropagation();
-            // Here you would add logic to show more options
-            // For simplicity, we'll just toggle the button text
-            if (this.textContent === 'Show More') {
+            const parent = this.closest('.filter-container');
+            const hiddenSection = parent.querySelector('.ds_show_hide');
+
+            if (hiddenSection.classList.contains('d-none')) {
+                hiddenSection.classList.remove('d-none');
                 this.textContent = 'Show Less';
             } else {
+                hiddenSection.classList.add('d-none');
                 this.textContent = 'Show More';
             }
         });
     });
-    
     // Price slider functionality
     const priceSlider = document.querySelector('.price-range');
     priceSlider.addEventListener('input', function() {
@@ -617,7 +618,7 @@ function filterProducts(products) {
     });
 
     return products.filter(product => {
-        const productPrice = product.price;
+        // const productPrice = product.price;
 
         // Check if the product matches selected filters
         const matchesFilters = selectedFilters.length === 0 || selectedFilters.some(filter => {
@@ -632,9 +633,9 @@ function filterProducts(products) {
                 product.colors.some(colorObj => colorObj.color.toLowerCase() === filter)
             );
         });
-
+        return matchesFilters;
         // Return only products that match selected filters and fall within the price range
-        return matchesFilters && productPrice >= minPrice && productPrice <= maxPrice;
+        // return matchesFilters && productPrice >= minPrice && productPrice <= maxPrice;
     });
 }
 
@@ -647,25 +648,25 @@ document.querySelectorAll('.slider-container').forEach(container => {
     const maxValue = container.querySelector('.max-value');
 
     function updateSlider() {
-        const min = parseInt(rangeMin.value);
-        const max = parseInt(rangeMax.value);
-
-        // Ensure min doesn't exceed max
+        // alert('')
+        let min = parseInt(rangeMin.value) || 0;
+        let max = parseInt(rangeMax.value) || 300;
+    
         if (min > max) {
-            rangeMin.value = max;
+            [min, max] = [max, min]; // Swap values if min > max
         }
-
-        // Calculate percentage for visual representation
-        const percentage = ((max - min) / 300) * 100;
-        const startPercentage = (min / 300) * 100;
-
-        rangeSelected.style.width = `${percentage}%`;
-        rangeSelected.style.left = `${startPercentage}%`;
-
-        // Update number inputs
+        rangeMin.value = min;
+        rangeMax.value = max;
         minValue.value = min;
         maxValue.value = max;
+    
+        rangeSelected.style.width = `${((max - min) / 300) * 100}%`;
+        rangeSelected.style.left = `${(min / 300) * 100}%`;
+    
+        renderProducts(); // Trigger filtering
+
     }
+
 
     // Slider input event listeners
     rangeMin.addEventListener('input', updateSlider);
@@ -683,7 +684,6 @@ document.querySelectorAll('.slider-container').forEach(container => {
         rangeMax.value = max;
         updateSlider();
     });
-
     // Initial update
     updateSlider();
 });
@@ -695,6 +695,13 @@ document.querySelectorAll('.slider-container').forEach(container => {
 
 
 async function renderProducts() {
+    // alert('')
+    let rangeMin = container.querySelector('.range-min');
+
+    // const rangeMax = container.querySelector('.range-max');
+    console.log('value',rangeMin.value );  
+
+    console.log('reange',rangeMin)
     const productsContainer = document.getElementById('products-container');
     productsContainer.innerHTML = '';
 
@@ -729,8 +736,10 @@ async function renderProducts() {
     }
 
     // Apply filters
-    products = filterProducts(products);
-
+    var products1 = filterProducts(products);
+    console.log('product1', products1)
+    products =  products1.filter(item => { console.log(rangeMin);
+    })
     // Validate unique product IDs
     const uniqueProducts = new Map();
     products.forEach(product => {
@@ -750,7 +759,11 @@ async function renderProducts() {
 
     productsContainer.innerHTML = products?.map(product => {
         const isWishlisted = wishlist.some(item => item.id == product.id);
-        const badgeHTML = product.badge ? `<span class="badge ${product.badge.class}">${product.badge.type}</span>` : '';
+        const badgeHTML = product.badge ? `<div class="position-relative">
+                                             <span class="badge ${product.badge.class}">${product.badge.type}</span>
+                                               ${product.badge.type ?  `<img src="../IMG/Dhruvin/star.png" class="ds_label_star">` : ""}
+                                               </div>
+                                              ` : '';
         const colorDotsHTML = product.colors.map((colorObj, index) => `
             <div class="V_color_border mx-1" data-color-index="${index}" data-color="${colorObj.color}">
                 <p class="color-dot" style="background-color: ${colorObj.color};"></p>

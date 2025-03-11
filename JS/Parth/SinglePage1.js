@@ -7,13 +7,14 @@
 
 
 
-var productObj = {}
-var productArr = []
+var productObj = {};
+var productArr = [];
 var mainId;
+
 document.addEventListener("DOMContentLoaded", async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get("id");
-    mainId = productId
+    mainId = productId;
     const arrayName = urlParams.get("array") || "products";
 
     console.log('Product ID:', productId, 'Array:', arrayName);
@@ -23,8 +24,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    const availableArrays = ["products", "newarrival", "multiproducts", "likeproduct"];
-    productArr = arrayName
+    const availableArrays = ["products", "newarrival", "multiproducts", "likeproduct", "combooffers"];
+    productArr = arrayName;
     let product = null;
 
     try {
@@ -33,66 +34,132 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (response.ok) {
                 let json = await response.json();
                 console.log(json);
-                
-                product = json
-                productObj = json
+
+                product = json;
+                productObj = json;
                 break;
             }
-          
-            
         }
 
         if (!product) throw new Error("Product not found in any array");
 
-        document.getElementById("productImage").src = product.image;
-        document.getElementById("productName").textContent = product.name;
-        document.getElementById("productPrice").textContent = `$${product.price}`;
-        document.getElementById("productOriginalPrice").textContent = `$${product.originalPrice}`;
-        document.getElementById("productDiscount").textContent = product.discount;
+        document.getElementById("productImage").src = product.image || "";
+        document.getElementById("productName").textContent = product.name || "N/A";
+        document.getElementById("productPrice").textContent = `$${product.price || "0.00"}`;
+        document.getElementById("productOriginalPrice").textContent = `$${product.originalPrice || "0.00"}`;
+        document.getElementById("productDiscount").textContent = product.discount || "0%";
 
+        // ✅ Define containers before using them
+        const colorContainer = document.getElementById("colorOptions");
+        const imageContainer = document.getElementById("imageOptions");
 
+        if (colorContainer) colorContainer.innerHTML = "";
+        if (imageContainer) imageContainer.innerHTML = "";
 
-          // ✅ Color Selection
-          const colorContainer = document.getElementById("colorOptions");
-          let lastSelectedColor = null;
-  
-          if (product.colors) {
-              colorContainer.innerHTML = product.colors.map(color => `
-                  <div class="color-dot" 
-                       style="background-color: ${color.color}; border: 0.6px solid rgba(20, 20, 20, 0.2);" 
-                       data-color="${color.color}">
-                  </div>
-              `).join("");
-  
-              document.querySelectorAll(".color-dot").forEach(dot => {
-                dot.addEventListener("click", function () {
-                    if (lastSelectedColor) {
-                        lastSelectedColor.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";
-                    }
-                    this.style.border = "2px solid black";
-                    lastSelectedColor = this;
-                    localStorage.setItem("selectedSingleColor", this.dataset.color);
-                });
-
-                if (localStorage.getItem("selectedSingleColor") === dot.dataset.color) {
-                    dot.style.border = "2px solid black";
-                    lastSelectedColor = dot;
-                }
-            });
+        // ✅ Handle Colors or Images
+        if (product.colors && product.colors.length > 0) {
+            console.log("Displaying Colors...");
+            displayColors(product.colors);
+        } else if (product.images && product.images.length > 0) {
+            console.log("Displaying Images...");
+            displayImages(product.images);
+        } else {
+            console.warn("No colors or images found for this product.");
         }
-              // ✅ Wishlist Feature
-              manageWishlist(product);
 
-              // ✅ Cart Feature
-              manageCart(product);
-      
-          } catch (error) {
-              console.error("Error fetching product details:", error.message);
-          }
+        // ✅ Wishlist Feature
+        manageWishlist(product);
 
+        // ✅ Cart Feature
+        manageCart(product);
 
+    } catch (error) {
+        console.error("Error fetching product details:", error.message);
+    }
 
+    // ✅ Function to Display Colors
+    function displayColors(colors) {
+        const colorContainer = document.getElementById("colorOptions");
+        if (!colorContainer) {
+            console.error("Color container not found!");
+            return;
+        }
 
+        let lastSelectedColor = null;
+
+        colorContainer.innerHTML = colors.map(color => `
+        <div class="color-dot" 
+             style="background-color: ${color.color}; border: 0.6px solid rgba(20, 20, 20, 0.2);" 
+             data-color="${color.color}">
+        </div>
+    `).join("");
+
+        document.querySelectorAll(".color-dot").forEach(dot => {
+            dot.addEventListener("click", function () {
+                if (lastSelectedColor) {
+                    lastSelectedColor.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";
+                }
+                this.style.border = "2px solid black";
+                lastSelectedColor = this;
+                localStorage.setItem("selectedSingleColor", this.dataset.color);
+            });
+
+            if (localStorage.getItem("selectedSingleColor") === dot.dataset.color) {
+                dot.style.border = "2px solid black";
+                lastSelectedColor = dot;
+            }
+        });
+    }
+
+    // ✅ Function to Display Images
+    function displayImages(images) {
+        const imageContainer = document.getElementById("colorOptions");
+        if (!imageContainer) {
+            console.error("Image container not found!");
+            return;
+        }
+
+        let lastSelectedImage = null;
+
+        // ✅ Ensure images array exists
+        if (!images || !Array.isArray(images) || images.length === 0) {
+            console.warn("No images available for this product.");
+            return;
+        }
+
+        // ✅ Render images
+        imageContainer.innerHTML = images.map(img => `
+        <img src="${img.image}" class="color-dot combo-image" alt="Product Image">
+    `).join("");
+
+        console.log("Images Rendered:", images); // ✅ Debugging log
+
+        // ✅ Select images & store in localStorage
+        document.querySelectorAll(".color-dot").forEach(dot => {
+            dot.addEventListener("click", function () {
+                if (lastSelectedImage) {
+                    lastSelectedImage.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";
+                }
+                this.style.border = "2px solid black";
+                lastSelectedImage = this;
+
+                // ✅ Extract only filename from src URL
+                const imageUrl = this.src;
+                const filename = imageUrl.substring(imageUrl.lastIndexOf("/") + 1);
+
+                // ✅ Store selected image in localStorage
+                localStorage.setItem("selectedSingleColor", filename);
+            });
+
+            // ✅ Apply border if selected image exists in localStorage
+            const storedImage = localStorage.getItem("selectedSingleImage");
+            const currentFilename = dot.src.substring(dot.src.lastIndexOf("/") + 1);
+            if (storedImage === currentFilename) {
+                dot.style.border = "2px solid black";
+                lastSelectedImage = dot;
+            }
+        });
+    }
 
             // Render vertical slider images dynamically
         const verticalSliderContainer = document.getElementById("sliderContainer");
@@ -222,6 +289,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 currentPrice: product.price,
                 discount: product.discount,
                 colors: product.colors ? product.colors.map(color => color.color) : [],
+                images: product.images ? product.images.map(ele => ele.image) : [],
                 moreColors: product.moreColors || 0,
                 selectedColor: null,
                 badge: product.tags ? true : false

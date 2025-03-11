@@ -366,15 +366,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     // Show more buttons
-    const showMoreButtons = document.querySelectorAll('.show-more');
-    showMoreButtons.forEach(button => {
+    document.querySelectorAll('.show-more').forEach(button => {
         button.addEventListener('click', function(e) {
             e.stopPropagation();
-            // Here you would add logic to show more options
-            // For simplicity, we'll just toggle the button text
-            if (this.textContent === 'Show More') {
+            const parent = this.closest('.filter-container');
+            const hiddenSection = parent.querySelector('.ds_show_hide');
+
+            if (hiddenSection.classList.contains('d-none')) {
+                hiddenSection.classList.remove('d-none');
                 this.textContent = 'Show Less';
             } else {
+                hiddenSection.classList.add('d-none');
                 this.textContent = 'Show More';
             }
         });
