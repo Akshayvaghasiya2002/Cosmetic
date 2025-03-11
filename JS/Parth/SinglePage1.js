@@ -88,13 +88,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         let lastSelectedColor = null;
 
         colorContainer.innerHTML = colors.map(color => `
-        <div class="color-dot" 
+        <div class="color-dot1" 
              style="background-color: ${color.color}; border: 0.6px solid rgba(20, 20, 20, 0.2);" 
              data-color="${color.color}">
         </div>
     `).join("");
 
-        document.querySelectorAll(".color-dot").forEach(dot => {
+        document.querySelectorAll(".color-dot1").forEach(dot => {
             dot.addEventListener("click", function () {
                 if (lastSelectedColor) {
                     lastSelectedColor.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";
@@ -129,13 +129,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         // ✅ Render images
         imageContainer.innerHTML = images.map(img => `
-        <img src="${img.image}" class="color-dot combo-image" alt="Product Image">
+        <img src="${img.image}" class="color-dot1 combo-image" alt="Product Image">
     `).join("");
 
         console.log("Images Rendered:", images); // ✅ Debugging log
 
         // ✅ Select images & store in localStorage
-        document.querySelectorAll(".color-dot").forEach(dot => {
+        document.querySelectorAll(".color-dot1").forEach(dot => {
             dot.addEventListener("click", function () {
                 if (lastSelectedImage) {
                     lastSelectedImage.style.border = "0.6px solid rgba(20, 20, 20, 0.2)";

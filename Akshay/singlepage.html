@@ -25,10 +25,10 @@
 
         <link rel="stylesheet" href="../CSS/Parth/cart.css">
         <link rel="stylesheet" href="/CSS/Dhruvin/Footer.css">
+        <script src="../JS/singlepage.js" defer></script>
+        <script src="../JS/Parth/Cart.js" defer></script>
 
-        <script src="../JS/Parth/Cart.js"></script>
-
-
+       
 
 
         <style>
@@ -312,10 +312,11 @@
         <style>
                 /* Vertical Slider */
                 .vertical-slider {
+                        position: relative;
                         display: flex;
                         flex-direction: column;
-                        gap: 10px;
-                        overflow: hidden;
+                        gap: 5px;
+
                 }
 
                 #sliderContainer {
@@ -325,7 +326,21 @@
                         scroll-behavior: smooth;
                         height: 100%;
                         /* Adjust height based on design */
-                        gap: 10px;
+                        gap: 3px;
+                }
+
+                .control-btn.next {
+                        position: absolute;
+                        bottom: -50px;
+                        left: 50px;
+
+                }
+
+                .control-btn.prev {
+                        position: absolute;
+                        top: -50px;
+                        left: 50px;
+
                 }
 
                 ::-webkit-scrollbar {
@@ -1334,7 +1349,7 @@
                             </div> -->
                                                                         </li>
                                                                         <li class="menu-item" onclick="gotooffer()"><a
-                                                                                        href="#"
+                                                                                        href="/Parth/Offer.html"
                                                                                         class="menu-link text-decoration-none">Offers</a>
                                                                         </li>
                                                                 </ul>
@@ -2038,9 +2053,9 @@
                 <div class="container-xxl mt-5">
                         <div class="row">
                                 <!-- Vertical Slider (Left Side) -->
-                                <div class="col-lg-2 A_verticle_slider">
+                                <div class="col-lg-2 A_verticle_slider align-self-center">
                                         <div class="vertical-slider">
-                                                <div class="slider-controls">
+                                                <div class="">
                                                         <button class="control-btn prev"><i
                                                                         class="fa-solid fa-angle-up"></i></button>
                                                 </div>
@@ -2049,7 +2064,7 @@
                                                         <!-- Dynamic slider images will be inserted here -->
                                                 </div>
 
-                                                <div class="slider-controls">
+                                                <div class="">
                                                         <button class="control-btn next"><i
                                                                         class="fa-solid fa-angle-down"></i></button>
                                                 </div>
@@ -2057,7 +2072,7 @@
                                 </div>
 
                                 <!-- Main Product Image -->
-                                <div class="col-lg-5 product-main">
+                                <div class="col-lg-5 product-main align-self-center">
                                         <img src="../IMG/Akshay/image3274.png" alt="Product Image" id="productImage">
                                 </div>
 
@@ -2084,8 +2099,10 @@
                                                         <h1 class="product-title" id="productName">
                                                                 Eveline Cosmetics Wonder Match Creamy Liquid Matte
                                                                 Lipstick 4.5gm
-                                                                <span class="in-stock">In Stock</span>
+
                                                         </h1>
+                                                        <span class="in-stock">In Stock</span>
+                                                        <span class="out-stock d-none">Out Of Stock</span>
                                                         <div class="action-icons d-flex">
                                                                 <div id="wishlist-button-container"></div>
                                                                 <button class="icon-btn " data-bs-toggle="modal"
@@ -2111,111 +2128,62 @@
                                                         <span class="original-price" id="productOriginalPrice"></span>
                                                         <span class="discount" id="productDiscount"></span>
                                                 </div>
+                                        </div>
 
-                                                <!-- Shade selection -->
-                                                <div class="shade-section">
-                                                        <label class="shade-label">
-                                                                Shade: <span class="shade-name">Vintage Rose</span>
-                                                        </label>
+                                        <!-- Shade selection -->
+                                        <div class="shade-section">
+                                                <label class="shade-label">
+                                                        Shade: <span class="shade-name">Vintage Rose</span>
+                                                </label>
 
-                                                        <div class="color-options justify-content-start"
-                                                                id="colorOptions">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="product-container">
-                        <!-- Product header -->
-                        <div class="product-header">
-                            <div>
-                                <h1 class="product-title" id="productName">
-                                        Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick 4.5gm
-                                    </h1>
-                                <span class="in-stock">In Stock</span>
-                                <span class="out-stock d-none">Out Of Stock</span>
-                            </div>
-                            <div class="action-icons d-flex">
-                                <div id="wishlist-button-container"></div>
-                                <button class="icon-btn " data-bs-toggle="modal" data-bs-target="#shareModal"><i
-                                        class="fa-solid fa-share-nodes"></i></button>
-                            </div>
-                        </div>
+                                                <div class="color-options justify-content-start" id="colorOptions">
 
-                                                        </div>
                                                 </div>
+                                                <div class="color-options justify-content-start" id="colorOptions">
 
-                                                <!-- Quantity and Add to cart -->
-                                                <!-- <div class="quantity-container">
-                        </p>
+                                                </div>
+                                        </div>
 
-                        <!-- Rating section -->
-                        <div class="rating-container">
-                            <div class="stars">★★★★☆</div>
-                            <span class="review-count">4.1 (294 Reviews)</span>
-                        </div>
-
-                        <!-- Price section -->
-                        <div class="price-container justify-content-start">
-                            <span class="current-price" id="productPrice"></span>
-                            <span class="original-price" id="productOriginalPrice"></span>
-                            <span class="discount" id="productDiscount"></span>
-                        </div>
-
-                        <!-- Shade selection -->
-                        <div class="shade-section">
-                            <label class="shade-label">
-                                Shade: <span class="shade-name">Vintage Rose</span>
-                            </label>
-
-                            <div class="color-options justify-content-start" id="colorOptions">
-
-                            </div>
-                            <div class="color-options justify-content-start"
-                            id="colorOptions">
-
-                    </div>
-                        </div>
-
-                        <!-- Quantity and Add to cart -->
-                        <!-- <div class="quantity-container">
+                                        <!-- Quantity and Add to cart -->
+                                        <!-- <div class="quantity-container">
                             <button class="quantity-btn">-</button>
                             <input type="text" class="quantity-input" value="1">
                             <button class="quantity-btn">+</button>
                         </div>
 
                         <button class="add-to-cart1">Add to cart</button> -->
-                                                <div id="cart-container"></div>
+                                        <div id="cart-container"></div>
 
-                                                <!-- Delivery section -->
-                                                <div class="delivery-section">
-                                                        <h3 class="section-title">Delivery Details</h3>
-                                                        <div class="zip-container">
-                                                                <input type="text" class="zip-input"
-                                                                        placeholder="Enter pin code here">
-                                                                <button class="check-btn1">Check</button>
-                                                        </div>
+                                        <!-- Delivery section -->
+                                        <div class="delivery-section">
+                                                <h3 class="section-title">Delivery Details</h3>
+                                                <div class="zip-container">
+                                                        <input type="text" class="zip-input"
+                                                                placeholder="Enter pin code here">
+                                                        <button class="check-btn1">Check</button>
                                                 </div>
+                                        </div>
 
-                                                <!-- Available offers -->
-                                                <div class="offers-section">
-                                                        <div class="offers-header">
-                                                                <h3 class="section-title mb-0">Available Offers</h3>
-                                                                <span class="chevron"><i
-                                                                                class="fa-solid fa-angle-down"></i></span>
-                                                        </div>
-                                                        <div class="offers-content">
-                                                                <ul class="offers-list">
-                                                                        <hr>
-                                                                        <li class="offer-item">- Welcome offer: Extra
-                                                                                10% OFF for First-Time Buyers!</li>
-                                                                        <li class="offer-item">- Get 6 special surprises
-                                                                                on orders above ₹999.</li>
-                                                                </ul>
-                                                        </div>
+                                        <!-- Available offers -->
+                                        <div class="offers-section">
+                                                <div class="offers-header">
+                                                        <h3 class="section-title mb-0">Available Offers</h3>
+                                                        <span class="chevron"><i
+                                                                        class="fa-solid fa-angle-down"></i></span>
+                                                </div>
+                                                <div class="offers-content">
+                                                        <ul class="offers-list">
+                                                                <hr>
+                                                                <li class="offer-item">- Welcome offer: Extra
+                                                                        10% OFF for First-Time Buyers!</li>
+                                                                <li class="offer-item">- Get 6 special surprises
+                                                                        on orders above ₹999.</li>
+                                                        </ul>
                                                 </div>
                                         </div>
                                 </div>
                         </div>
+                </div>
                 </div>
         </section>
         <section class="mt-5 product-info">
@@ -2223,9 +2191,9 @@
                         <div class="nav-container">
                                 <ul class="nav-tabs" id="productTabs" role="tablist">
                                         <li class="nav-item" role="presentation" style="outline: 0px !important;">
-                                                <button class="nav-link btn-outline-none active" id="info-tab"
-                                                        data-bs-toggle="tab" data-bs-target="#info" type="button"
-                                                        role="tab" aria-controls="info" aria-selected="true">PRODUCT
+                                                <button class="nav-link active" id="info-tab" data-bs-toggle="tab"
+                                                        data-bs-target="#info" type="button" role="tab"
+                                                        aria-controls="info" aria-selected="true">PRODUCT
                                                         INFORMATION</button>
                                         </li>
                                         <li class="nav-item" role="presentation">
@@ -2913,11 +2881,13 @@
                 }
         </script>
 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="../JS/owl.carousel.min.js"></script>
-        <script src="../JS/singlepage.js"></script>
-        <script src="../JS/Parth/SinglePage1.js"></script>
-        <script src="../JS/Parth/signUp.js"></script>
-        <script src="../JS/navbar.js"></script>
+        
+        <script src="../JS/Parth/SinglePage1.js" defer></script>
+        <script src="../JS/Parth/signUp.js" defer></script>
+        <script src="../JS/navbar.js" defer></script>
+
 
 
         <!-- bootsrap scripts  -->
@@ -2939,16 +2909,9 @@
                         });
                 });
         </script>
-        <!-- <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            fetch('../Dhruvin/Footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('Footer').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading Footer:', error));
-        });
-    </script> -->
+        <script>
+    
+    </script>
 
 
 

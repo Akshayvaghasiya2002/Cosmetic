@@ -59,7 +59,7 @@ select {
 
 .ds_modal_backdrop {
   position: fixed;
-  top: 17%;
+  top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -81,13 +81,21 @@ select {
   gap: 8px;
   /* margin-bottom: 20px; */
 }
-.color-dot {
+.color-dot1 {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   margin: 5px;
   line-height: 20px;
 
+}
+
+.color-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 5px;
+  line-height: 20px;
 }
 
 .more-colors {

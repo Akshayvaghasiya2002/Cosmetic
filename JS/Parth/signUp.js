@@ -16,7 +16,7 @@
             console.log("Form submission triggered");
 
             // Run validation
-            if (validateForm()) {
+            if (validateForm1()) {
                 console.log("Validation passed");
                 // Store user data and proceed with the verification
                 storeUserData();
@@ -26,7 +26,7 @@
         }
 
         // Function to validate the form
-        function validateForm() {
+        function validateForm1() {
             const fullNameInput = document.getElementById("fullName");
             const phoneNumberInput = document.getElementById("phoneNumber");
             const emailInput = document.getElementById("email");
@@ -445,6 +445,9 @@ function verifyOtp() {
         localStorage.removeItem("email");
         localStorage.removeItem("demoId");
         localStorage.setItem("userId", userId);
+
+
+        window.location.reload();
     } else {
         alert("incorrect otp");
     }

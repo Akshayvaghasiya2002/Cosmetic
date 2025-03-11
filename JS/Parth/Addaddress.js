@@ -185,7 +185,7 @@ function setupChangeAddress(addresses) {
 
                 // Handle update button click
                 document.querySelector(".V_save_change").onclick = async function () {
-                    if (!validateForm1()) return; // Stop execution if validation fails
+                    if (!validateForm2()) return; // Stop execution if validation fails
 
                 
                     // Get updated values
@@ -241,7 +241,7 @@ function setupChangeAddress(addresses) {
 }
 
 
-function validateForm1() {
+function validateForm2() {
     let firstName = document.querySelector(".first").value.trim();
     let lastName = document.querySelector(".last").value.trim();
     let mobileNumber = document.querySelector(".Mobileno").value.trim();
@@ -693,3 +693,282 @@ fetchAndCalculateOrderTotal();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+function displayPwd() {
+
+    const displayPassword = document.querySelector(".fa-eye-slash");
+    displayPassword.classList.toggle("d-none");
+    const hidePassword = document.querySelector(".fa-eye");
+    hidePassword.classList.toggle('d-none');
+
+    const fieldtype = document.getElementById("pwd");
+    if (fieldtype.type === "password") {
+        fieldtype.type = "text";
+    } else {
+        fieldtype.type = "password";
+    }
+
+}
+
+function displayPwd1() {
+
+    const displayNewPassword = document.getElementById("closeeye1");
+    displayNewPassword.classList.toggle("d-none");
+    const hideNewPassword = document.getElementById("openeye1");
+    hideNewPassword.classList.toggle('d-none');
+
+    const newPassword = document.getElementById("pwd1");
+    if (newPassword.type === "password") {
+        newPassword.type = "text";
+    } else {
+        newPassword.type = "password";
+    }
+
+}
+
+function displayPwd2() {
+
+    const displayConfirmPassword = document.getElementById("closeeye2");
+    displayConfirmPassword.classList.toggle("d-none");
+    const hideConfirmPassword = document.getElementById("openeye2");
+    hideConfirmPassword.classList.toggle('d-none');
+
+    const confirmPassword = document.getElementById("pwd2");
+    if (confirmPassword.type === "password") {
+        confirmPassword.type = "text";
+    } else {
+        confirmPassword.type = "password";
+    }
+
+}
+
+function displayPwd3() {
+
+    const displayConfirmPassword = document.getElementById("closeeye3");
+    displayConfirmPassword.classList.toggle("d-none");
+    const hideConfirmPassword = document.getElementById("openeye3");
+    hideConfirmPassword.classList.toggle('d-none');
+
+    const confirmPassword = document.getElementById("pwd3");
+    if (confirmPassword.type === "password") {
+        confirmPassword.type = "text";
+    } else {
+        confirmPassword.type = "password";
+    }
+
+}
+
+function displayLogin() {
+    const displayLogin = document.querySelector(".V_login_section");
+    displayLogin.classList.toggle("d-none");
+    const displaySignUp = document.querySelector(".V_sign_section");
+    displaySignUp.classList.toggle('d-none');
+}
+
+function verifyEmail() {
+    const hideResister = document.querySelector('.V_sign_section');
+    hideResister.classList.add('d-none');
+    const displaySignUp = document.querySelector(".V_520");
+    displaySignUp.classList.remove('d-none');
+    const displayEmail = document.querySelector(".V_verify_email_section");
+    displayEmail.classList.remove("d-none");
+    const displayOtp = document.querySelector(".V_verify_section");
+    displayOtp.classList.add('d-none');
+    const displayResetPwd = document.querySelector(".V_reset_section");
+    displayResetPwd.classList.add('d-none');
+    const hideforPwd = document.querySelector(".V_Forgot_section");
+    hideforPwd.classList.add("d-none");
+}
+
+function displayForgetPwd() {
+    const backdrop = document.querySelector(".modal-backdrop");
+            if (backdrop) {
+                // backdrop.remove(); 
+            }
+    const displayLogin = document.querySelector(".V_login_section");
+    displayLogin.classList.add("d-none");
+    const displaySignUp = document.querySelector(".V_520");
+    displaySignUp.classList.remove('d-none');
+    const displayOtp = document.querySelector(".V_verify_section");
+    displayOtp.classList.add('d-none');
+    const displayResetPwd = document.querySelector(".V_reset_section");
+    displayResetPwd.classList.add('d-none');
+    const displayEmail = document.querySelector(".V_verify_email_section");
+    displayEmail.classList.add("d-none");
+    const RegisterModal = document.querySelector(".V_sign_login");
+    RegisterModal.classList.add("d-none");
+
+}
+
+function loginClose() {
+    const displayLogin = document.querySelector(".V_login_section");
+    displayLogin.classList.add("d-none");
+    const displaySignUp = document.querySelector(".V_sign_section");
+    displaySignUp.classList.remove('d-none');
+}
+
+function asItIs() {
+    const displaySignUp = document.querySelector(".V_sign_section");
+    displaySignUp.classList.remove("d-none");
+    const displayLogin = document.querySelector(".V_520");
+    displayLogin.classList.add('d-none');
+    const hideforPwd = document.querySelector(".V_Forgot_section");
+    hideforPwd.classList.remove("d-none");
+}
+
+function verifyOtp1() {
+    
+    
+    const veriEmail = document.getElementById("ds_verify_email").value.trim()
+    
+    if(registerId){
+        if(handleObj?.email == veriEmail){
+            const displayOtp = document.querySelector(".V_verify_section");
+            displayOtp.classList.remove('d-none'); 
+            const hideforPwd = document.querySelector(".V_Forgot_section");
+            hideforPwd.classList.add("d-none");
+            setTimeout(()=>{
+               alert("Your Otp Is -: 123456")
+            }, 500)
+        }
+        else{
+            alert("Your Emil Is Wrong!")
+        }
+    }
+}
+
+function resetPassword() {
+    let otpInputs = document.querySelectorAll(".ds_verify_otp");
+    let enteredOtp = Array.from(otpInputs).map(input => input.value.trim()).join('');
+    
+    // Check if OTP fields are empty
+    if (!enteredOtp || enteredOtp.length !== 6) {
+        alert("Please enter a valid 6-digit OTP.");
+        return;
+    }
+    
+    // Simulate API call for OTP verification (Replace this with actual API request)
+    dsVerifyOtp(enteredOtp).then(isValid => {
+        if (!isValid) {
+            alert("Invalid OTP. Please try again.");
+            return;
+        }
+        
+        // Hide OTP section and show reset password section
+        document.querySelector(".V_verify_section").classList.add("d-none");
+        document.querySelector(".V_reset_section").classList.remove("d-none");
+    }).catch(error => {
+        alert("Error verifying OTP. Please try again later.");
+        console.error("OTP Verification Error:", error);
+    });
+}
+
+// Simulated API function (Replace with real API request)
+function dsVerifyOtp(otp) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(otp === "123456"); // Replace with actual API logic
+        }, 1000);
+    });
+}
+
+
+async function handleResetPassword() {
+    let newPass = document.getElementById("pwd1").value.trim();
+    let conPass = document.getElementById("pwd2").value.trim();
+ 
+    // Password validation regex (at least 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special character)
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+ 
+    if (!newPass || !conPass) {
+       alert("Both password fields are required.");
+       return;
+    }
+ 
+    if (!passwordRegex.test(newPass)) {
+       alert("Password must be at least 8 characters long and include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.");
+       return;
+    }
+ 
+    if (newPass !== conPass) {
+       alert("Passwords do not match.");
+       return;
+    }
+ 
+    let obj = {
+       fullName: `${handleObj.fullName}`,
+       phoneNumber: handleObj?.phoneNumber,
+       email: handleObj?.email,
+       dateOfBirth: handleObj?.dateOfBirth,
+       gender: handleObj?.gender,
+       password: conPass,
+       addresses: handleObj?.addresses ? handleObj?.addresses : []
+    };
+ 
+    try {
+       const response = await fetch(`http://localhost:3000/User/${registerId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(obj)
+       });
+ 
+       console.log("Response:", response);
+       alert("Password changed successfully!");
+    } catch (error) {
+       alert("Error: " + error.message);
+    }
+ }
+ 
+
+
+const otpFields = document.querySelectorAll('.V_otp_6');
+
+otpFields.forEach((field, index) => {
+    field.addEventListener('input', (e) => {
+        let value = e.target.value;
+
+        // Ensure only a single digit is entered
+        e.target.value = value.replace(/\D/g, '').slice(0, 1);
+
+        // Move to next field if a digit is entered
+        if (e.target.value && index < otpFields.length - 1) {
+            otpFields[index + 1].focus();
+        }
+    });
+
+    field.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !field.value && index > 0) {
+            otpFields[index - 1].focus();
+        }
+    });
+});
+
+
+
+function addWishList(event) {
+    // Get the clicked heart icon
+    const clickedHeart = event.target;
+
+    // Find the container (parent) that holds both hearts
+    const heartContainer = clickedHeart.closest(".heart-container");
+
+    // Select the hearts inside the same container
+    const regularHeart = heartContainer.querySelector(".fa-regular");
+    const solidHeart = heartContainer.querySelector(".fa-solid");
+
+    // Toggle visibility
+    regularHeart.classList.toggle("d-none");
+    solidHeart.classList.toggle("d-none");
+}

@@ -2750,7 +2750,7 @@ function handlePasswordCancel () {
      document.getElementById("confirmPassword").value = ""
 }
 
-async function handleResetPassword() {
+async function handleResetPasswordFunction() {
     let oldPass = document.getElementById("oldPassword").value.trim();
     let newPass = document.getElementById("newPassword").value.trim();
     let confirmPass = document.getElementById("confirmPassword").value.trim();
