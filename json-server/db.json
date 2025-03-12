@@ -1256,7 +1256,7 @@
       "name": "Koric Proteinx Superfood Cleansing Balm",
       "price": 450,
       "originalPrice": 600,
-      "tag": false,
+      "tags": "BEST SELLER",
       "discount": "20% OFF",
       "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
@@ -1279,7 +1279,7 @@
       "name": "MAC Glow Play Tender Talk Lip Balm",
       "price": 450,
       "originalPrice": 600,
-      "tag": true,
+      "tags": "BEST SELLER",
       "discount": "20% OFF",
       "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
@@ -1302,7 +1302,7 @@
       "name": "Eveline Cosmetics Body Shot Collagen Regeneration 200ml",
       "price": 450,
       "originalPrice": 600,
-      "tag": false,
+     "tags": "BEST SELLER",
       "discount": "20% OFF",
       "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
@@ -1325,7 +1325,7 @@
       "name": "SWISS BEAUTY Cream It up Blusher",
       "price": 450,
       "originalPrice": 600,
-      "tag": true,
+      "tags": "BEST SELLER",
       "discount": "20% OFF",
       "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
@@ -1348,7 +1348,7 @@
       "name": "Luxe Facial Serum",
       "price": 450,
       "originalPrice": 600,
-      "tag": true,
+      "tags": "BEST SELLER",
       "discount": "20% OFF",
       "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
@@ -1371,7 +1371,7 @@
       "name": "Glow Moisturizer",
       "price": 450,
       "originalPrice": 600,
-      "tag": false,
+      "tags": "BEST SELLER",
       "discount": "20% OFF",
       "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
@@ -1394,7 +1394,7 @@
       "name": "Vitamin C Face Mask",
       "price": 450,
       "originalPrice": 600,
-      "tag": true,
+      "tags": "BEST SELLER",
       "discount": "20% OFF",
       "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
@@ -1417,7 +1417,7 @@
       "name": "Hydrating Toner",
       "price": 450,
       "originalPrice": 600,
-      "tag": false,
+      "tags": "BEST SELLER",
       "discount": "20% OFF",
       "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
@@ -1440,7 +1440,7 @@
       "name": "Premium Night Cream",
       "price": 450,
       "originalPrice": 600,
-      "tag": false,
+      "tags": "BEST SELLER",
       "discount": "20% OFF",
       "image": "/IMG/Akshay/bodyshot.png",
       "colors": [
@@ -1463,7 +1463,7 @@
       "name": "Luxury Eye Cream",
       "price": 450,
       "originalPrice": 600,
-      "tag": true,
+      "tags": "BEST SELLER",
       "discount": "20% OFF",
       "image": "/IMG/Akshay/lip_balm.png",
       "colors": [
