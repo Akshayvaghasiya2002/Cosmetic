@@ -507,7 +507,10 @@ $(document).ready(function () {
                 <div class="item A_likeproduct_width">
                     <div class="product-card">
                     <div>
-                    ${product.tag ? '<div class="badge1"><div class="badge ">BEST SELLER</div> </div>' : ''}
+                    <div class="position-relative">
+                                    <div>${product.tags ? `<span class="badge">${product.tags}</span>` : ''}</div>
+                                    ${product.tags ?  `<img src="../IMG/Dhruvin/star.png" class="ds_label_star">` : ""}
+                      </div>
                     <button class="wishlist-btn" data-product-id="${product.id}">
                         <i class="fa-regular fa-heart" ></i>
                          <i class="fa-solid fa-heart d-none" style="color: #ff0000;"></i>

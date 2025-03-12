@@ -1158,6 +1158,70 @@ product-container {
   font-weight: 500;
 }
 
+.owl-prev span{
+  display: none;
+}
+.owl-prev{
+  width: 40px;
+  height: 40px;
+  background-color: white !important;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  border: 1px solid white !important;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%);
+  color: black !important;
+  font-size: 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.owl-prev::before{
+  content: '\f104';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 16px;
+  color: black;
+  transition: all 0.3s ease;
+}
+.owl-prev:hover::before{
+  color: white;
+}
+
+.owl-next span{
+  display: none;
+}
+.owl-next{
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 38%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.owl-next::before{
+  content: '\f105';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 16px;
+  color: black;
+  transition: all 0.3s ease;
+}
+.owl-next:hover::before{
+  color: white;
+}
+
+
 .owl-carousel .owl-nav button.owl-prev span,
 .owl-carousel .owl-nav button.owl-next span {
   position: relative;
