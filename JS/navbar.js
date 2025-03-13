@@ -45,7 +45,7 @@ function toggleMenu() {
     menu.classList.toggle("is-active");
     overlay.classList.toggle("is-active");
 
-    console.log('cliksss');
+    // console.log('cliksss');
 }
 
 // Show Mobile Submenu Function
@@ -239,7 +239,7 @@ $(document).ready(async function () {
                             <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}">
                             </a>
                             <div class="card-body">
-                                <h6 class="card-title text-truncate">${product.name}</h6>
+                                <h6 class="card-title ">${product.name}</h6>
                                 <div class="product-price justify-content-center">
                                     <span class="current-price">$${product.price}</span>
                                     <span class="original-price">$${product.originalPrice}</span>
@@ -260,14 +260,16 @@ $(document).ready(async function () {
             // Initialize the carousel after appending elements
             carousel.owlCarousel({
                 loop: true,
-                margin: 10,
+                margin: 20,
+                stagePadding: 10,
                 nav: true,
                 // navText: ["<span class='owl-prev'>&lsaquo;</span>", "<span class='owl-next'>&rsaquo;</span>"],
                 dots: false,
                 responsive: {
                     0: { items: 1 },
                     600: { items: 2 },
-                    1000: { items: 4 }
+                    992:{items:3},
+                    1200: { items: 4 }
                 }
             });
         } catch (error) {
@@ -1924,14 +1926,14 @@ function getUserProfileData(select = "all") {
                                                                ${element?.orderStatus == 'return order' ? '<h5 class="mb-0 me-2 ds_order_color3 ds_order_text" >Return Order</h5>' : ''}
                                                            <p class="mb-0 ds_muted align-self-end" style="font-size: 14px;">${element?.orderDate}</p>
                                                          </div>  
-                                                               ${element?.orderStatus == 'pending' ? `<a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;" onclick="handleTrackOrder('${element?.batchId}')">Track Order</a>` : ''}
-                                                               ${element?.orderStatus == 'delivered' ? `<button class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="handleTrackOrder('${element?.batchId}')"  >Submit Review</button>` : ''}
-                                                               ${element?.orderStatus == 'cancelled' ? `<a href="./TrackRefund.html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;"  onclick="handleTrackOrder('${element?.batchId}')">View refund status</a>` : ''}
-                                                               ${element?.orderStatus == 'return order' ? `<button class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="handleTrackOrder('${element?.batchId}')">Submit Review</button>` : ''}
+                                                               ${element?.orderStatus == 'pending' ? `<a href="/Dhruvin/OrderStatus(Processing).html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;" onclick="handleTrackOrderManageId('${element?.batchId}')">Track Order</a>` : ''}
+                                                               ${element?.orderStatus == 'delivered' ? `<button class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="handleTrackOrderManageId('${element?.batchId}')"  >Submit Review</button>` : ''}
+                                                               ${element?.orderStatus == 'cancelled' ? `<a href="./TrackRefund.html" class="ds_color ds_order_anker ds_600" style="white-space: nowrap;"  onclick="handleTrackOrderManageId('${element?.batchId}')">View refund status</a>` : ''}
+                                                               ${element?.orderStatus == 'return order' ? `<button class="ds_color text-decoration-underline ds_600 ds_order_anker "  style="white-space: nowrap;" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="handleTrackOrderManageId('${element?.batchId}')">Submit Review</button>` : ''}
                                                        </div>
                                                 </div>
                                                 ${element?.orders?.map((item)=>{
-                                                    return  `<a href="${element?.orderStatus == 'delivered' ? '/Dhruvin/OrderStatus(Delivered).html' :'#'}" onclick="handleTrackOrder('${element?.batchId}')" class="row align-items-center text-decoration-none ${element?.orderStatus == 'delivered' ? 'ds_cursor' :'ds_cur_text'}" >
+                                                    return  `<a href="${element?.orderStatus == 'delivered' ? '/Dhruvin/OrderStatus(Delivered).html' :'#'}" onclick="handleTrackOrderManageId('${element?.batchId}')" class="row align-items-center text-decoration-none ${element?.orderStatus == 'delivered' ? 'ds_cursor' :'ds_cur_text'}" >
                                                                  <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 mt-3">
                                                                     <div>
                                                                       <img src="${item?.image}" alt="" class="ds_order_img">
@@ -2092,7 +2094,7 @@ function handleUpdateProfile(event) {
 
 
 // **************** My Order **********
-function handleTrackOrder (id) {
+function handleTrackOrderManageId (id) {
     
    localStorage.setItem("MyBatchId" , id)
 } 
