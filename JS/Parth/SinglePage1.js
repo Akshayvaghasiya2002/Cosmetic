@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    const availableArrays = ["products", "newarrival", "multiproducts", "likeproduct", "combooffers"];
+    const availableArrays = ["products", "newarrival", "multiproducts", "likeproduct", "combooffers", "offer"];
     productArr = arrayName;
     let product = null;
 
