@@ -513,7 +513,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         return `
             <div class="col-12 col-sm-6 col-lg-4 col-xxl-3 mb-5 mb-sm-4 wishlist-item" data-id="${item.id}">
-                <div class="V_border mx-auto">
+                <div class="V_border mx-auto h-100 d-flex flex-column pb-3">
                     <div class="position-relative">
                         ${badgeHTML}
                         <img src="${item.image}" alt="${item.name}" class="V_image mx-auto">
@@ -532,7 +532,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                             ${colorOptionsHTML}
                             ${moreOptionsHTML}
                         </div>
-                        <div class="V_cart_btn my-4 move-to-cart" data-id="${item.id}">
+                        
+                    </div>
+                    <div class="mt-auto pt-4">
+                       <div class="V_cart_btn  move-to-cart  mx-3" data-id="${item.id}">
                             <p class="text text-center mb-0 py-2">Move to Cart</p>
                         </div>
                     </div>

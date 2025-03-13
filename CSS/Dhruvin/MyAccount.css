@@ -540,9 +540,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 @media (max-width:426px) {
+    .ds_pro_profile{
+        text-align: center;
+    }
     .ds_pro_offcanvas{
         --bs-offcanvas-width: 300px !important;
     } 
+
     .ds_flex_manage{
         flex-wrap: wrap;
     }
