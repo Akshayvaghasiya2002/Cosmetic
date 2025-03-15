@@ -25,6 +25,7 @@
     <!-- /////////////////////  Footer  ////////////////////// -->
 
     <link rel="stylesheet" href="/CSS/Dhruvin/Footer.css">
+    
 
     <!-- /////  footer ///// -->
 </head>
@@ -1580,7 +1581,7 @@
             </div>
             <div class="">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-5 mt-5 position-sticky top-0 z-1" style="height: max-content;">
+                    <div class="col-xl-3 col-lg-4 col-md-5 mt-5 " >
                         <div class="ds_inner d-md-block d-none">
                            <div>
                               <div class="d-flex px-4 my-4">
@@ -1651,7 +1652,7 @@
                         <div class="d-md-none">
                             <div class="ds_pro_res">
                               <div class="d-flex justify-content-between">
-                                <h4 class="py-2 mb-0" >My Account</h4>
+                                <h4 class="py-2 mb-0 " >My Account</h4>
                                 <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button> -->
                                 <!-- <i class="fa-solid fa-bars" data-bs-dismiss="offcanvas" aria-label="Close"></i> -->
                                 <button class="" data-bs-toggle="offcanvas" data-bs-target="#ds_offcanvasRight">
@@ -1660,12 +1661,12 @@
                               </div>
                             </div>
                              <div class="offcanvas offcanvas-end ds_pro_offcanvas" tabindex="-1" id="ds_offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                               <div class="offcanvas-header">
+                               <div class="offcanvas-header pb-0">
                                  <h5 id="offcanvasRightLabel">Cosmetic</h5>
                                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                  
                                </div>
-                               <div class="offcanvas-body">
+                               <div class="offcanvas-body pt-0">
                                 <div class="d-flex ds_flex_manage px-4 my-4">
                                     <div>
                                        <img src="/IMG/Dhruvin/person.png" alt="" id="ds_offcan_img" class="ds_person-img" >
@@ -2171,7 +2172,7 @@
                                                             
                                                         </div>
                                                         <div>
-                                                            <h6 class="mt-4 pt-2">Save Address asa</h6>
+                                                            <h6 class="mt-4 pt-2">Save Address as</h6>
                                                             <div class="">
                                                                 <button class="ds_add_popup_btn mt-3" onclick="selectAddressType(this, 'Home' , event)">Home</button>
                                                                 <button class="ds_add_non_select mt-3" onclick="selectAddressType(this, 'Office' , event)">Office</button>
@@ -2361,7 +2362,7 @@
                                                 <h5 class="text-center">Are you sure you want to leave?</h5>
                                                 <div class="mt-4 pt-2">
                                                     <div class="position-relative">
-                                                        <input type="text" id="ds_deactive_input" class="ds_pro_input  w-100 px-3" placeholder="+1 56565 65656">
+                                                        <input type="text" id="ds_deactive_input" class="ds_pro_input  w-100 px-3" readonly>
                                                         <button class="ds_deactivate_text ds_color text-decoration-underline" onclick="handleDeactiveSendOtp()">Send OTP</button>
                                                     </div>
                                                     <div class="mt-5 mx-sm-5 mx-3">
@@ -2426,7 +2427,7 @@
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content px-3 ">
                 <div class="modal-header">
-                  <h5 class="modal-title ds_color" id="exampleModalLabel">Write a review</h5>
+                  <h5 class="modal-title " id="exampleModalLabel">Write a review</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -2580,7 +2581,6 @@
     <!-- /////  Footer  ///// -->
 
 </body>
-<script src="../JS/navbar.js" defer></script>
 
 <!-- <script>
         // function emptyNav() {
@@ -2660,6 +2660,8 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 <!-- <script src="/JS/header.js"></script> -->
+<script src="../JS/navbar.js" ></script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>

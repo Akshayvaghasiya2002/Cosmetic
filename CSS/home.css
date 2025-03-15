@@ -2621,10 +2621,10 @@ footer {
       font-size: 14px;
   }
   #product-carousel .owl-prev{
-    left: -30px !important;
+    left: -15px !important;
   }
   #product-carousel .owl-next{
-    right: -30px !important;
+    right: -15px !important;
   }
 
  
@@ -3090,12 +3090,7 @@ footer {
   .V_more {
       font-size: 14px;
   }
-  #product-carousel .owl-prev{
-    left: -9px !important;
-  }
-  #product-carousel .owl-next{
-    right: 0px !important;
-  }
+ 
   .A_view_all{
     padding: 7px 24px;
   }
@@ -3105,4 +3100,38 @@ footer {
   .brandslider .owl-next{
     right: -10px !important;
   }
+  .ds_manage_title{
+    font-size: 15px;
+  }
+  .current-price{
+    font-size: 16px
+  }
+  .original-price{
+    font-size: 16px
+  }
+  .discount{
+    font-size: 15px;
+  }
+  .more-colors {
+    font-size: 15px;
+  }
+
+}
+
+@media (max-width:376px) {
+  #product-carousel .owl-prev{
+    left: -8px !important;
+  }
+  #product-carousel .owl-next{
+    right: -3px !important;
+  } 
+}
+
+@media (max-width:321px) {
+  #product-carousel .owl-prev{
+    left: -9px !important;
+  }
+  #product-carousel .owl-next{
+    right: -5px !important;
+  } 
 }

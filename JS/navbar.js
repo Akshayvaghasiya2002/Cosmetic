@@ -239,13 +239,13 @@ $(document).ready(async function () {
                             <img src="${product.image}" class="card-img-top A_img_size mx-auto d-block" alt="${product.name}">
                             </a>
                             <div class="card-body">
-                                <h6 class="card-title ">${product.name}</h6>
+                                <h6 class="card-title ds_manage_title">${product.name}</h6>
                                 <div class="product-price justify-content-center">
                                     <span class="current-price">$${product.price}</span>
                                     <span class="original-price">$${product.originalPrice}</span>
                                     <span class="discount">${product.discount}</span>
                                 </div>
-                                <div class="color-options V_height justify-content-center">
+                                <div class="color-options  justify-content-center">
                                     ${colorDotsHTML} ${moreColorsHTML}
                                 </div>
                                 
@@ -1731,7 +1731,7 @@ function handleManage(element) {
     
     const value = element.dataset.value;
 
-    let offCanvas = document.getElementById("offcanvasRight");
+    let offCanvas = document.getElementById("ds_offcanvasRight");
     if (offCanvas && offCanvas.classList.contains("show")) {
         let offcanvasInstance = bootstrap.Offcanvas.getInstance(offCanvas);
         if (offcanvasInstance) {
@@ -2866,10 +2866,12 @@ otpField2.forEach((field, index) => {
 });
 
 
+
 function handleDeactiveSendOtp() {
     
-    let mobileInput = document.getElementById("ds_deactive_input")?.value.trim();
+    let mobileInput = document.getElementById("ds_deactive_input")?.value = passwordObj?.phoneNumber
     // console.log(passwordObj?.phoneNumber == mobileInput);
+    console.log("zzzzzzzzzzzz" ,passwordObj);
 
     
     let mobilePattern = /^\+?[1-9]\d{9,14}$/; // Ensures at least 10 digits

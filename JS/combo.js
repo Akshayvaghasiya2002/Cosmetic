@@ -610,8 +610,7 @@ console.log("hihihi" , products);
                 (product.product && product.product.toLowerCase().includes(filter)) ||
                 (product.discount && product.discount.toLowerCase().includes(filter)) ||
                 (product.finish && product.finish.toLowerCase().includes(filter)) ||
-                (product.formulation && product.formulation.toLowerCase().includes(filter)) ||
-                product.colors.some(colorObj => colorObj.color.toLowerCase() === filter)
+                (product.formulation && product.formulation.toLowerCase().includes(filter)) 
             );
         });
         return  matchesFilters;
