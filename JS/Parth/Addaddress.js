@@ -162,6 +162,7 @@ function setupChangeAddress(addresses) {
 
                 // Find the selected address
                 let selectedAddress = userData.addresses.find(address => address.id === parseInt(selectedAddressId));
+                console.log('selectedAddress', selectedAddress);
                 if (!selectedAddress) {
                     console.error("Address not found!");
                     return;
@@ -180,9 +181,11 @@ function setupChangeAddress(addresses) {
                 document.querySelector(".address1").value = selectedAddress.address1;
                 document.querySelector(".address2").value = selectedAddress.address2 || "";
                 document.querySelector(".city").value = selectedAddress.city;
-                document.querySelector(".state").value = selectedAddress.state;
-                document.querySelector(".counrty").value = selectedAddress.country;
-
+                // document.querySelector(".state").value = selectedAddress.state;
+                // document.querySelector(".counrty").value = selectedAddress.country;
+                 // Fixed selectors for dropdown elements
+                 document.querySelector("select[name='V_state']").value = selectedAddress.state || "";
+                 document.querySelector("select[name='v_country']").value = selectedAddress.country || "";
                 // Handle update button click
                 document.querySelector(".V_save_change").onclick = async function () {
                     if (!validateForm2()) return; // Stop execution if validation fails
@@ -198,8 +201,9 @@ function setupChangeAddress(addresses) {
                         address1: document.querySelector(".address1").value,
                         address2: document.querySelector(".address2").value,
                         city: document.querySelector(".city").value,
-                        state: document.querySelector(".state").value,
-                        country: document.querySelector(".counrty").value
+                        // Fixed selectors to get values from dropdowns
+                        state: document.querySelector("select[name='V_state']").value,
+                        country: document.querySelector("select[name='v_country']").value
                     };
 
                     // Update only the selected address in the array

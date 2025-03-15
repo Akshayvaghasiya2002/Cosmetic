@@ -557,6 +557,12 @@ img {
   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
 }
 
+.V_top_position{
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}
+
 .slider-wrapper {
   display: flex;
   flex-direction: column;

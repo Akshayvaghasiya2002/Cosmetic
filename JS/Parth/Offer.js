@@ -82,7 +82,7 @@ function renderOfferData(offerData, wishlist) {
                             <i class="fa-solid fa-heart wishlist-btn text-danger ${isWishlisted ? '' : 'd-none'}" data-id="${item.id}"></i>
                         </div>
                     </div>
-                    <div class="V_name_width mx-auto">
+                    <div class="V_name_width px-2 mx-auto">
                         <p class="text text-center V_name">${item.name}</p>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="text V_price mx-2 mb-0 defe">$${item.price}</p>
@@ -93,7 +93,7 @@ function renderOfferData(offerData, wishlist) {
                             ${colorsHTML}
                             ${moreColorsHTML}
                         </div>
-                        <div class="V_cart_btn my-4">
+                        <div class="V_cart_btn my-4 mx-3">
                             <p class="text text-center mb-0 py-2">Move to Cart</p>
                         </div>
                     </div>

@@ -53,7 +53,7 @@
                                 </section>
                                 <section class="navbar-center">
                                         <span class="overlay"></span>
-                                        <div class="menu mt-2" id="menu">
+                                        <div class="menu " id="menu">
                                                 <div class="menu-header">
                                                         <span class="menu-arrow">
                                                                 <i class="fa-solid fa-angle-left"></i>
@@ -1026,7 +1026,7 @@
                                                                                                 alt="">
                                                                                 </div>
                                                                                 <div
-                                                                                        class="ps-3 ps-md-0 ps-lg-3">
+                                                                                        class="ps-3 ">
                                                                                         <p
                                                                                                 class="text V_name1 mb-1">
                                                                                                 SWISS BEAUTY
@@ -1051,7 +1051,7 @@
                                                                                                 alt="">
                                                                                 </div>
                                                                                 <div
-                                                                                        class="ps-3 ps-md-0 ps-lg-3">
+                                                                                        class="ps-3 ">
                                                                                         <p
                                                                                                 class="text V_name1 mb-1">
                                                                                                 Colorbar
@@ -1077,7 +1077,7 @@
                                                                                                 alt="">
                                                                                 </div>
                                                                                 <div
-                                                                                        class="ps-3 ps-md-0 ps-lg-3">
+                                                                                        class="ps-3 ">
                                                                                         <p
                                                                                                 class="text V_name1 mb-1">
                                                                                                 Lakmē Lip Love
@@ -1103,7 +1103,7 @@
                                                                                                 alt="">
                                                                                 </div>
                                                                                 <div
-                                                                                        class="ps-3 ps-md-0 ps-lg-3">
+                                                                                        class="ps-3 ">
                                                                                         <p
                                                                                                 class="text V_name1 mb-1">
                                                                                                 HOK Focallure
@@ -1128,7 +1128,7 @@
                                                                                                 alt="">
                                                                                 </div>
                                                                                 <div
-                                                                                        class="ps-3 ps-md-0 ps-lg-3">
+                                                                                        class="ps-3 ">
                                                                                         <p
                                                                                                 class="text V_name1 mb-1">
                                                                                                 SUGAR Swipe
@@ -1153,7 +1153,7 @@
                                                                                                 alt="">
                                                                                 </div>
                                                                                 <div
-                                                                                        class="ps-3 ps-md-0 ps-lg-3">
+                                                                                        class="ps-3 ">
                                                                                         <p
                                                                                                 class="text V_name1 mb-1">
                                                                                                 RENEE Prime
@@ -1615,7 +1615,7 @@
                                 placeholder="City">
                         </div>
                         <div class="col-lg-6 V_bottom ">
-                            <select class="V_select" style="" placeholder="State" id="state">
+                            <select class="V_select" style="" name="V_state" placeholder="State" id="state">
                                 <option>State</option>
                                 <option value="Guj">Gujarat</option>
                                 <option value="Goa">Goa</option>
@@ -1623,7 +1623,7 @@
                             </select>
                         </div>
                         <div class="col-12 V_bottom ">
-                            <select class="V_select" placeholder="Country" type="select" id="counrty">
+                            <select class="V_select" name="V_country" placeholder="Country" type="select" id="counrty">
                                 <option>Country</option>
                                 <option value="IND">India</option>
                                 <option value="USA">United States of America</option>
@@ -1801,8 +1801,8 @@
                         </div>
                         <div class="col-lg-6 mt-3">
                             <label for="exampleInputState" class="form-label text">State</label>
-                            <select class="V_select ps-2 state" placeholder="State" type="select">
-                                <option>State</option>
+                            <select class="V_select ps-2 state" name="V_state" placeholder="State" type="select">
+                                <!-- <option>State</option> -->
                                 <option value="Guj">Gujarat</option>
                                 <option value="Goa">Goa</option>
                                 <option value="Raj">Rajsthan</option>
@@ -1810,8 +1810,8 @@
                         </div>
                         <div class="col-12 mt-3">
                             <label for="exampleInputCountry" class="form-label text">Country</label>
-                            <select class="V_select ps-2 counrty" placeholder="Country" type="select">
-                                <option>Country</option>
+                            <select class="V_select ps-2 counrty" name="V_country" placeholder="Country" type="select">
+                                <!-- <option>Country</option> -->
                                 <option value="IND">India</option>
                                 <option value="USA">United States of America</option>
                                 <option value="UK">United Kingdom</option>
@@ -1895,9 +1895,9 @@
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
                                     <div>
-                                        <select class="ds_pro_input w-100 px-2" name="state"
+                                        <select class="ds_pro_input w-100 px-2" name="V_state"
                                             style="border-radius: 5px;">
-                                            <option selected>State</option>
+                                            <option >State</option>
                                             <option>Gujarat</option>
                                             <option>Maharastra</option>
                                         </select>
@@ -1905,9 +1905,9 @@
                                 </div>
                                 <div class="col-xl-12 mt-4">
                                     <div>
-                                        <select class="ds_pro_input w-100 px-2" name="country"
+                                        <select class="ds_pro_input w-100 px-2" name="V_country"
                                             style="border-radius: 5px;">
-                                            <option selected>Country</option>
+                                            <option >Country</option>
                                             <option>India</option>
                                             <option>Austrlia</option>
                                         </select>

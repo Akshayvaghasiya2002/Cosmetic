@@ -860,7 +860,7 @@ function setupEventListeners(products, wishlist, cart, userId) {
         // ✅ Handle Wishlist
         if (target.classList.contains('wishlist-button')) {
             event.stopPropagation();
-            if (!userId) return alert("User not logged in!");
+            if (!userId) return ;
             
             const existingIndex = wishlist.findIndex(item => item.id == productId);
             if (existingIndex === -1) {
@@ -894,7 +894,7 @@ function setupEventListeners(products, wishlist, cart, userId) {
             
             if (!userId) {
                 isAddingToCart = false;
-                return alert("User not logged in!");
+                return ;
             }
             
             try {

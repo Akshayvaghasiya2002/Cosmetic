@@ -252,7 +252,7 @@ $(document).ready(async function () {
                 let moreColorsHTML = product.moreColors ? `<span class="more-colors">+${product.moreColors}</span>` : '';
 
                 const productElement = $(`
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 " data-id="${product.id}">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 item " style="margin:0px" data-id="${product.id}">
                         <div class="card h-100 text-center p-3">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="position-relative">
