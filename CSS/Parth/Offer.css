@@ -526,7 +526,7 @@
 
 
     .V_border {
-        width: 100%;
+        width: 335px;
     }
 
     .V_image {
@@ -644,7 +644,8 @@
 
 
     .V_border {
-        width: 100%;
+        /* width: 100%; */
+        width: 285px;
     }
 
     .V_image {
@@ -675,6 +676,13 @@
 
     .V_more {
         font-size: 14px;
+    }
+
+    .owl-prev {
+        left: -2%;
+    }
+    .owl-next {
+        right: -14px;
     }
 }
 
@@ -751,7 +759,7 @@
 
 
     .V_border {
-        width: 100%;
+        /* width: 100%; */
     }
 
     .V_image {
@@ -1094,7 +1102,7 @@
 
 
     .V_border {
-        width: 100%;
+        /* width: 100%; */
     }
 
     .V_image {
@@ -1103,7 +1111,7 @@
     }
 
     .V_name_width {
-        width: 240px;
+        width: 234px !important;
     }
 
     .V_name {
@@ -1125,10 +1133,20 @@
     .V_more {
         font-size: 14px;
     }
+
     .owl-next{
         width: 40px !important;
         height: 40px;
-        right: -2px !important;
+        right: 5px !important;
+    }
+}
+
+@media (max-width:374px) {
+    .V_border{
+        width: 100%;
+    }
+    .V_cart_btn{
+        margin: 0px 10px;
     }
 }
 

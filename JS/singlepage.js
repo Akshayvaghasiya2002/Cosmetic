@@ -555,10 +555,10 @@ $(document).ready(function () {
                 576: {
                     items: 2
                 },
-                768: {
-                    items: 3
-                },
                 992: {
+                    items: 2
+                },
+                1200: {
                     items: 4
                 }
             }

@@ -111,13 +111,13 @@ function renderOfferData(offerData, wishlist) {
         margin: 10,
         nav: true,
         dots: false,
-        autoplay: true,
+        // autoplay: true,
         autoplayTimeout: 3000,
         responsive: {
             0: { items: 1, nav: true },
             576: { items: 2, nav: true },
-            768: { items: 3, nav: true },
-            1400: { items: 4, nav: true }
+            992: { items: 3, nav: true },
+            1500: { items: 4, nav: true}
         }
     });
 }
