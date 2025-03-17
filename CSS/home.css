@@ -429,6 +429,7 @@ img {
 
 .navbar-center {
   display: flex;
+  margin-top: 8px;
 }
 
 .navbar-right {
@@ -3115,7 +3116,12 @@ footer {
   .more-colors {
     font-size: 15px;
   }
-
+  #product-carousel .owl-prev {
+    left: -8px !important;
+}
+#product-carousel .owl-next {
+  right: -3px !important;
+}
 }
 
 @media (max-width:376px) {

@@ -238,6 +238,37 @@
         }
       ],
       "moreColors": 1
+    },
+    {
+      "id": "10",
+      "name": "SWISS BEAUTY Cream It Up Blusher",
+      "price": 450,
+      "originalPrice": 600,
+      "discount": "20% OFF",
+      "category": "Lipstick",
+      "tags": [
+        "BEST SELLER"
+      ],
+      "image": "/IMG/Akshay/swiss.png",
+      "description": "A creamy blush that blends seamlessly, giving a natural flush to the cheeks.",
+      "expiryDate": "2026-10-20",
+      "manufacturingDate": "2023-12-05",
+      "howToApply": "Dab onto cheeks using fingers or a brush and blend outwards.",
+      "colors": [
+        {
+          "color": "#E88482"
+        },
+        {
+          "color": "#E48883"
+        },
+        {
+          "color": "#E27F7C"
+        },
+        {
+          "color": "#E37E65"
+        }
+      ],
+      "moreColors": 1
     }
   ],
   "newarrival": [
