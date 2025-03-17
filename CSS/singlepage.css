@@ -1398,11 +1398,16 @@ product-container {
   display: block;
 }
 .A_likeproduct_width .product-card {
-  width: 250px !important;
+  width: 270px !important;
 }
 
 /* ////////////////////// horizontal slider //////////////////// */
 /* ///////////////  all media query ////////////////// */
+@media (max-width:1441px) {
+  .A_likeproduct_width .product-card {
+    width: 250px !important;
+}
+}
 @media (max-width:1200px) {
   .A_likeproduct_width .product-card {
     width: 280px !important;
