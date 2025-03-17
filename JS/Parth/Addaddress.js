@@ -139,6 +139,150 @@ function setupAddressSelection() {
 setupAddressSelection();
 
 
+// function setupChangeAddress(addresses) {
+//     document.querySelectorAll(".change-address-btn").forEach(button => {
+//         button.addEventListener("click", async function () {
+//             const selectedAddressId = localStorage.getItem("selectedAddressId");
+//             const userId = localStorage.getItem("userId");
+
+//             if (!userId || !selectedAddressId) {
+//                 console.error("User ID or Address ID is missing!");
+//                 return;
+//             }
+
+//             try {
+//                 // Fetch user data
+//                 let userResponse = await fetch(`http://localhost:3000/User/${userId}`);
+//                 if (!userResponse.ok) {
+//                     console.error("User not found in the database!");
+//                     return;
+//                 }
+
+//                 let userData = await userResponse.json();
+
+//                 // Find the selected address
+//                 let selectedAddress = userData.addresses.find(address => address.id === parseInt(selectedAddressId));
+//                 console.log('selectedAddress', selectedAddress);
+//                 if (!selectedAddress) {
+//                     console.error("Address not found!");
+//                     return;
+//                 }
+
+//                 // Show modal
+//                 // const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+//                 // modal.show();
+
+//                 // Populate modal fields
+//                 document.querySelector(".first").value = selectedAddress.firstName;
+//                 document.querySelector(".last").value = selectedAddress.lastName;
+//                 document.querySelector(".Mobileno").value = selectedAddress.mobileNumber;
+//                 document.querySelector(".Email").value = selectedAddress.email;
+//                 document.querySelector(".ZIP_Postal").value = selectedAddress.zipCode;
+//                 document.querySelector(".address1").value = selectedAddress.address1;
+//                 document.querySelector(".address2").value = selectedAddress.address2 || "";
+//                 document.querySelector(".city").value = selectedAddress.city;
+//                 // document.querySelector(".state").value = selectedAddress.state;
+//                 // document.querySelector(".counrty").value = selectedAddress.country;
+//                  // Fixed selectors for dropdown elements
+//                  document.querySelector("select[name='V_state']").value = selectedAddress.state || "";
+//                  document.querySelector("select[name='v_country']").value = selectedAddress.country || "";
+//                 // Handle update button click
+//                 document.querySelector(".V_save_change").onclick = async function () {
+//                     if (!validateForm2()) return; // Stop execution if validation fails
+
+                
+//                     // Get updated values
+//                     const updatedAddress = {
+//                         firstName: document.querySelector(".first").value,
+//                         lastName: document.querySelector(".last").value,
+//                         mobileNumber: document.querySelector(".Mobileno").value,
+//                         email: document.querySelector(".Email").value,
+//                         zipCode: document.querySelector(".ZIP_Postal").value,
+//                         address1: document.querySelector(".address1").value,
+//                         address2: document.querySelector(".address2").value,
+//                         city: document.querySelector(".city").value,
+//                         // Fixed selectors to get values from dropdowns
+//                         state: document.querySelector("select[name='V_state']").value,
+//                         country: document.querySelector("select[name='v_country']").value
+//                     };
+
+//                     // Update only the selected address in the array
+//                     let updatedAddresses = userData.addresses.map(address =>
+//                         address.id === parseInt(selectedAddressId) ? { ...address, ...updatedAddress } : address
+//                     );
+
+//                     // Send PATCH request to update the user data
+//                     let updateResponse = await fetch(`http://localhost:3000/User/${userId}`, {
+//                         method: "PATCH",
+//                         headers: { "Content-Type": "application/json" },
+//                         body: JSON.stringify({ addresses: updatedAddresses })
+//                     });
+
+//                     if (updateResponse.ok) {
+//                         console.log("Address updated successfully!");
+//                         // modal.hide(); // Close modal after update
+//                     } else {
+//                         console.error("Failed to update address!");
+//                     }
+//                 };
+//             } catch (error) {
+//                 console.error("Error fetching user data:", error);
+//             }
+//         });
+//     });
+
+//     // Handle cancel button click
+//     document.querySelector(".V_cancle").addEventListener("click", function () {
+//         const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+//         modal.hide();
+//     });
+
+//     // Handle close button click
+//     document.querySelector(".btn-close").addEventListener("click", function () {
+//         const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+//         modal.hide();
+//     });
+// }
+
+
+
+// function validateForm2() {
+//     let firstName = document.querySelector(".first").value.trim();
+//     let lastName = document.querySelector(".last").value.trim();
+//     let mobileNumber = document.querySelector(".Mobileno").value.trim();
+//     let email = document.querySelector(".Email").value.trim();
+//     let zipCode = document.querySelector(".ZIP_Postal").value.trim();
+//     let address1 = document.querySelector(".address1").value.trim();
+//     let city = document.querySelector(".city").value.trim();
+//     let state = document.querySelector(".state").value.trim();
+//     let country = document.querySelector(".counrty").value.trim();
+
+//     if (!firstName || !lastName || !mobileNumber || !email || !zipCode || !address1 || !city || !state || !country) {
+//         alert("please fill all the fields except street address2");
+//         return false;
+//     }
+
+//     if (!/^\d{10}$/.test(mobileNumber)) {
+//         alert("Please enter a valid 10-digit mobile number.");
+//         return false;
+//     }
+
+//     if (!/^\S+@\S+\.\S+$/.test(email)) {
+//         alert("Please enter a valid email address.");
+//         return false;
+//     }
+
+//     if (!/^\d{5,6}$/.test(zipCode)) {
+//         alert("ZIP/Postal Code should be 5 or 6 digits.");
+//         return false;
+//     }
+
+//     return true; // Validation passed
+// }
+
+
+
+
 function setupChangeAddress(addresses) {
     document.querySelectorAll(".change-address-btn").forEach(button => {
         button.addEventListener("click", async function () {
@@ -181,18 +325,31 @@ function setupChangeAddress(addresses) {
                 document.querySelector(".address1").value = selectedAddress.address1;
                 document.querySelector(".address2").value = selectedAddress.address2 || "";
                 document.querySelector(".city").value = selectedAddress.city;
-                // document.querySelector(".state").value = selectedAddress.state;
-                // document.querySelector(".counrty").value = selectedAddress.country;
-                 // Fixed selectors for dropdown elements
-                 document.querySelector("select[name='V_state']").value = selectedAddress.state || "";
-                 document.querySelector("select[name='v_country']").value = selectedAddress.country || "";
+                
+                // Set values for dropdown elements - using both class and name attribute for certainty
+                const stateSelect = document.querySelector("select.state");
+                const countrySelect = document.querySelector("select.counrty");
+                
+                console.log("State from database:", selectedAddress.state);
+                console.log("Country from database:", selectedAddress.country);
+                
+                if (stateSelect) {
+                    stateSelect.value = selectedAddress.state || "";
+                    console.log("State dropdown set to:", stateSelect.value);
+                }
+                
+                if (countrySelect) {
+                    countrySelect.value = selectedAddress.country || "";
+                    console.log("Country dropdown set to:", countrySelect.value);
+                }
+                
                 // Handle update button click
                 document.querySelector(".V_save_change").onclick = async function () {
                     if (!validateForm2()) return; // Stop execution if validation fails
 
-                
                     // Get updated values
                     const updatedAddress = {
+                        id: parseInt(selectedAddressId), // Make sure ID is preserved
                         firstName: document.querySelector(".first").value,
                         lastName: document.querySelector(".last").value,
                         mobileNumber: document.querySelector(".Mobileno").value,
@@ -201,15 +358,18 @@ function setupChangeAddress(addresses) {
                         address1: document.querySelector(".address1").value,
                         address2: document.querySelector(".address2").value,
                         city: document.querySelector(".city").value,
-                        // Fixed selectors to get values from dropdowns
-                        state: document.querySelector("select[name='V_state']").value,
-                        country: document.querySelector("select[name='v_country']").value
+                        state: document.querySelector("select.state").value,
+                        country: document.querySelector("select.counrty").value
                     };
+
+                    console.log("Updated address data:", updatedAddress);
 
                     // Update only the selected address in the array
                     let updatedAddresses = userData.addresses.map(address =>
                         address.id === parseInt(selectedAddressId) ? { ...address, ...updatedAddress } : address
                     );
+
+                    console.log("Full addresses array being sent:", updatedAddresses);
 
                     // Send PATCH request to update the user data
                     let updateResponse = await fetch(`http://localhost:3000/User/${userId}`, {
@@ -220,13 +380,18 @@ function setupChangeAddress(addresses) {
 
                     if (updateResponse.ok) {
                         console.log("Address updated successfully!");
-                        // modal.hide(); // Close modal after update
+                        alert("Address updated successfully!");
+                        modal.hide(); // Close modal after update
+                        // Reload the page to reflect the changes
+                        location.reload();
                     } else {
                         console.error("Failed to update address!");
+                        alert("Failed to update address. Please try again.");
                     }
                 };
             } catch (error) {
                 console.error("Error fetching user data:", error);
+                alert("An error occurred: " + error.message);
             }
         });
     });
@@ -234,16 +399,15 @@ function setupChangeAddress(addresses) {
     // Handle cancel button click
     document.querySelector(".V_cancle").addEventListener("click", function () {
         const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
-        modal.hide();
+        if (modal) modal.hide();
     });
 
     // Handle close button click
     document.querySelector(".btn-close").addEventListener("click", function () {
         const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
-        modal.hide();
+        if (modal) modal.hide();
     });
 }
-
 
 function validateForm2() {
     let firstName = document.querySelector(".first").value.trim();
@@ -253,8 +417,8 @@ function validateForm2() {
     let zipCode = document.querySelector(".ZIP_Postal").value.trim();
     let address1 = document.querySelector(".address1").value.trim();
     let city = document.querySelector(".city").value.trim();
-    let state = document.querySelector(".state").value.trim();
-    let country = document.querySelector(".counrty").value.trim();
+    let state = document.querySelector("select.state").value.trim();
+    let country = document.querySelector("select.counrty").value.trim();
 
     if (!firstName || !lastName || !mobileNumber || !email || !zipCode || !address1 || !city || !state || !country) {
         alert("please fill all the fields except street address2");
@@ -278,8 +442,6 @@ function validateForm2() {
 
     return true; // Validation passed
 }
-
-
 
 
 
@@ -454,37 +616,41 @@ function payment() {
 
 // ===================   Add Address Popup Modal   ==================== 
 
+// ================================================  ADD ADDRESS POPUP MODAL
+ 
 
+// This function remains unchanged
 let selectedAddressType = 'Home';
 
 function selectAddressType(button, type, event) {
-        event.preventDefault();
+    event.preventDefault();
 
-        // Reset button states
-        document.querySelectorAll('.ds_add_popup_btn, .ds_add_non_select').forEach(btn => {
-            btn.classList.remove('ds_add_popup_btn');
-            btn.classList.add('ds_add_non_select');
-        });
+    // Reset button states
+    document.querySelectorAll('.ds_add_popup_btn, .ds_add_non_select').forEach(btn => {
+        btn.classList.remove('ds_add_popup_btn');
+        btn.classList.add('ds_add_non_select');
+    });
 
-        // Highlight the selected button
-        button.classList.remove('ds_add_non_select');
-        button.classList.add('ds_add_popup_btn');
+    // Highlight the selected button
+    button.classList.remove('ds_add_non_select');
+    button.classList.add('ds_add_popup_btn');
 
-        // Set selected address type
-        selectedAddressType = type;
+    // Set selected address type
+    selectedAddressType = type;
 
-        // Show or hide input field based on the selected address type
-        const inputContainer = document.getElementById('ds_address_type');
-        if (type === 'Other') {
-            inputContainer.style.display = 'block'; // Show input field for 'Other'
-        } else {
-            inputContainer.style.display = 'none'; // Hide input field for other types
-        }
+    // Show or hide input field based on the selected address type
+    const inputContainer = document.getElementById('ds_address_type');
+    if (type === 'Other') {
+        inputContainer.style.display = 'block'; // Show input field for 'Other'
+    } else {
+        inputContainer.style.display = 'none'; // Hide input field for other types
+    }
 }
 
+// Fixed handleAddress function
 async function handleAddress(event) {
     event.preventDefault();
-    const userID = localStorage.getItem("userId")
+    const userID = localStorage.getItem("userId");
 
     let firstName = document.getElementById("ds_add_first")?.value.trim();
     let lastName = document.getElementById("ds_add_last")?.value.trim();
@@ -494,17 +660,29 @@ async function handleAddress(event) {
     let address = document.getElementById("ds_add_bilding")?.value.trim();
     let address2 = document.getElementById("ds_add_street")?.value.trim();
     let city = document.getElementById("ds_add_city")?.value.trim();
-    let state = document.querySelector("select.ds_pro_input[name='state']")?.value;
-    let country = document.querySelector("select.ds_pro_input[name='country']")?.value;
-    let otherAddress = document.getElementById("ds_address_type_input")?.value.trim();
+    
+   // Fix the selectors for state and country
+   let stateElement = document.querySelector("select.ds_pro_input[name='V_state']");
+   let countryElement = document.querySelector("select.ds_pro_input[name='V_country']");
+   
+   // Check if elements exist before trying to get their values
+   let state = stateElement ? stateElement.value : null;
+   let country = countryElement ? countryElement.value : null;
+   
+   let otherAddress = document.getElementById("ds_address_type_input")?.value.trim();
+
+   // Log the values for debugging
+   console.log("State:", state);
+   console.log("Country:", country);
+   console.log("State element:", stateElement);
+   console.log("Country element:", countryElement);
 
     let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let mobilePattern = /^\d{10}$/;
     let zipPattern = /^\d{5,}$/;
 
     // Validation checks
-    if (!firstName || !lastName || !mobilePattern.test(mobile) || !emailPattern.test(email)
- ||
+    if (!firstName || !lastName || !mobilePattern.test(mobile) || !emailPattern.test(email) ||
         !zipPattern.test(zip) || !address || !city || !state || !country || !selectedAddressType) {
         alert("Please fill all required fields correctly.");
         return;
@@ -536,6 +714,10 @@ async function handleAddress(event) {
     try {
         // This should be dynamically fetched based on the logged-in user
         const userResponse = await fetch(`http://localhost:3000/User/${userID}`);
+        if (!userResponse.ok) {
+            throw new Error("User not found");
+        }
+        
         const userData = await userResponse.json();
         console.log('userID', userID);
 
@@ -547,7 +729,7 @@ async function handleAddress(event) {
         userData.addresses.push(addressData);
 
         // Update the user data in the database (db.json)
-        await fetch(`http://localhost:3000/User/${userID}`, {
+        const updateResponse = await fetch(`http://localhost:3000/User/${userID}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -555,21 +737,30 @@ async function handleAddress(event) {
             body: JSON.stringify(userData)
         });
 
+        if (!updateResponse.ok) {
+            throw new Error("Failed to update user data");
+        }
+
         alert("Address saved successfully!");
 
-        // Close the modal 
-        $('#addressModal').hide();
-        $('.modal-backdrop').remove(); // Remove the backdrop
+        // Close the modal using Bootstrap
+        const modalElement = document.getElementById('addressModal');
+        const modal = bootstrap.Modal.getInstance(modalElement);
+        if (modal) {
+            modal.hide();
+        } else {
+            // Fallback for jQuery
+            $('#addressModal').modal('hide');
+            $('.modal-backdrop').remove();
+        }
 
     } catch (error) {
         console.error("Error while saving address: ", error);
-        alert("Failed to save address.");
+        alert("Failed to save address: " + error.message);
     }
-
 }
 
-
-
+// ==========================================
 
 async function fetchOrders() {
     const userId = localStorage.getItem("userId");
