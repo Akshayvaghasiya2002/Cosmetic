@@ -71,31 +71,36 @@ function renderOfferData(offerData, wishlist) {
         return `
             <div class="item" data-itemid="${item.id}" data-selectedColor="">
                 <div class="V_border mx-auto">
-                    <div class="position-relative">
-                        <a href="../../Akshay/singlepage.html?id=${item.id}&array=offer">
-                            <img src="${item.image}" alt="${item.name}" class="V_image mx-auto">
-                        </a>
-                        ${item.topRated ? `<img src="${item.topRated}" alt="Top Rated" class="V_top_rated w-auto">` : ""}
-
-                        <div class="V_dil_border d-flex align-items-center justify-content-center wishlist-container">
-                            <i class="fa-regular fa-heart wishlist-btn ${isWishlisted ? 'd-none' : ''}" data-id="${item.id}"></i>
-                            <i class="fa-solid fa-heart wishlist-btn text-danger ${isWishlisted ? '' : 'd-none'}" data-id="${item.id}"></i>
-                        </div>
-                    </div>
-                    <div class="V_name_width px-2 mx-auto">
-                        <p class="text text-center V_name">${item.name}</p>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <p class="text V_price mx-2 mb-0 defe">$${item.price}</p>
-                            <p class="text V_actual_price mb-0 mx-1">$${item.originalPrice}</p>
-                            <p class="text V_green mb-0 mx-2">${item.discount}</p>
-                        </div>
-                        <div class="d-flex V_height justify-content-center mt-2 color-container">
-                            ${colorsHTML}
-                            ${moreColorsHTML}
-                        </div>
-                        <div class="V_cart_btn my-4 mx-3">
-                            <p class="text text-center mb-0 py-2">Move to Cart</p>
-                        </div>
+                    <div class="d-flex flex-column h-100">
+                       <div class="position-relative">
+                           <a href="../../Akshay/singlepage.html?id=${item.id}&array=offer">
+                               <img src="${item.image}" alt="${item.name}" class="V_image mx-auto">
+                           </a>
+                           ${item.topRated ? `<img src="${item.topRated}" alt="Top Rated" class="V_top_rated w-auto">` : ""}
+   
+                           <div class="V_dil_border d-flex align-items-center justify-content-center wishlist-container">
+                               <i class="fa-regular fa-heart wishlist-btn ${isWishlisted ? 'd-none' : ''}" data-id="${item.id}"></i>
+                               <i class="fa-solid fa-heart wishlist-btn text-danger ${isWishlisted ? '' : 'd-none'}" data-id="${item.id}"></i>
+                           </div>
+                       </div>
+                       <div class="V_name_width px-2 mx-auto">
+                           <p class="text text-center V_name">${item.name}</p>
+                           <div class="d-flex justify-content-center align-items-center">
+                               <p class="text V_price mx-2 mb-0 defe">$${item.price}</p>
+                               <p class="text V_actual_price mb-0 mx-1">$${item.originalPrice}</p>
+                               <p class="text V_green mb-0 mx-2">${item.discount}</p>
+                           </div>
+                           <div class="d-flex V_height justify-content-center mt-2 color-container">
+                               ${colorsHTML}
+                               ${moreColorsHTML}
+                           </div>
+                           
+                       </div>
+                       <div class="mt-auto py-4">
+                         <div class="V_cart_btn  mx-3">
+                                 <p class="text text-center mb-0 py-2">Move to Cart</p>
+                         </div>
+                       </div>
                     </div>
                 </div>
             </div>

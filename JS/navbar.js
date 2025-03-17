@@ -1867,7 +1867,13 @@ function getUserProfileData(select = "all") {
         .then((data) => {
             
             let user = data?.find((element) => element?.id == userID);             
-            console.log(user);
+            console.log("zzzzzzzzzzzz" , user );
+            let deactiveInput = document.getElementById("ds_deactive_input");
+if (deactiveInput) {
+    deactiveInput.value = user?.phoneNumber || "";
+}
+
+
             passwordObj = user      
             
             if (user) {
@@ -2869,9 +2875,9 @@ otpField2.forEach((field, index) => {
 
 function handleDeactiveSendOtp() {
     
-    let mobileInput = document.getElementById("ds_deactive_input")?.value = passwordObj?.phoneNumber
+    let mobileInput = document.getElementById("ds_deactive_input")?.value
     // console.log(passwordObj?.phoneNumber == mobileInput);
-    console.log("zzzzzzzzzzzz" ,passwordObj);
+    // console.log("zzzzzzzzzzzz" ,passwordObj);
 
     
     let mobilePattern = /^\+?[1-9]\d{9,14}$/; // Ensures at least 10 digits
