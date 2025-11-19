@@ -868,9 +868,98 @@
     {
       "id": "666c",
       "fullName": "Parth Vaghasiya",
-      "phoneNumber": "6352285710",
       "email": "Parth@gmail.com",
       "password": "Parth@123",
+      "dateOfBirth": "",
+      "gender": "Male",
+      "phoneNumber": "6352285710",
+      "selectedImage": null,
+      "addresses": [
+        {
+          "id": 1742189877694,
+          "firstName": "Parth",
+          "lastName": "Vaghasiya",
+          "mobileNumber": "7284854045",
+          "email": "parth@123gmail.com",
+          "zipCode": "395004",
+          "address1": "163, Gadhpur Township, Pasodara",
+          "address2": "Kathodara, surat",
+          "city": "surat",
+          "state": "Guj",
+          "country": "IND",
+          "addressType": "Home",
+          "otherType": null
+        },
+        {
+          "id": 1742189920486,
+          "firstName": "Jon",
+          "lastName": "Wick",
+          "mobileNumber": "1478523690",
+          "email": "john@wick123gmail.com",
+          "zipCode": "94043",
+          "address1": "1600 Fake Street",
+          "address2": "dfg",
+          "city": "Mountain View",
+          "state": "Raj",
+          "country": "USA",
+          "addressType": "Office",
+          "otherType": ""
+        },
+        {
+          "id": 1742189965230,
+          "firstName": "Jon",
+          "lastName": "Doe",
+          "mobileNumber": "7410741074",
+          "email": "Parth@gmail.com",
+          "zipCode": "784852",
+          "address1": "Rua Inexistente, 2000",
+          "address2": "Andar 2, Apartamento 1",
+          "city": "Belo Horizonte",
+          "state": "Goa",
+          "country": "UK",
+          "addressType": "Office",
+          "otherType": ""
+        }
+      ],
+      "carddetails": [],
+      "confirmedOrders": [
+        {
+          "batchId": "batch_1763468712527",
+          "orderDate": "2025-11-18",
+          "deliveryDate": "2025-11-28",
+          "orderStatus": "pending",
+          "totalAmount": 721,
+          "specialOffer": 30,
+          "shippingDetails": {
+            "name": "Parth Vaghasiya",
+            "address": "163, Gadhpur Township, Pasodara, Kathodara, surat, surat, Guj, 395004, IND",
+            "mobile": "7284854045"
+          },
+          "orders": [
+            {
+              "id": 1742189745653,
+              "image": "/IMG/Akshay/bodyshot.png",
+              "name": "Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": null,
+              "orderId": "order_1763468712528",
+              "totalAmount": 450
+            },
+            {
+              "id": 1742189791798,
+              "image": "../../IMG/Parth/offer_2.png",
+              "name": "MAC Glow Play Tender Talk Lip Balm",
+              "currentPrice": 450,
+              "quantity": 1,
+              "selectedColor": "#DC5485",
+              "orderId": "order_1763468712528",
+              "totalAmount": 450
+            }
+          ]
+        }
+      ],
+      "orders": [],
       "wishlist": [
         {
           "id": "1",
@@ -926,104 +1015,23 @@
           "moreColors": 10,
           "badge": false
         }
-      ],
-      "orders": [
-        {
-          "id": 1742189745653,
-          "image": "/IMG/Akshay/bodyshot.png",
-          "name": "Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick",
-          "currentPrice": 450,
-          "quantity": 1,
-          "selectedColor": null
-        },
-        {
-          "id": 1742189753600,
-          "image": "/IMG/Akshay/bodyshot.png",
-          "name": "Eveline Cosmetics Wonder Match Creamy Liquid Matte Lipstick",
-          "currentPrice": 450,
-          "quantity": 1,
-          "selectedColor": null
-        },
-        {
-          "id": 1742189765847,
-          "image": "/IMG/Akshay/pink_lipstick.png",
-          "name": "Glow Play Tender Talk Lip Balm",
-          "currentPrice": 10.5,
-          "quantity": 1,
-          "selectedColor": "#FF9EBF"
-        },
-        {
-          "id": 1742189782239,
-          "image": "/IMG/Parth/combo_1.png",
-          "name": "Wonder Match Creamy Liquid Matte Lip Balm",
-          "currentPrice": 450,
-          "quantity": 1,
-          "selectedColor": "/IMG/Parth/combo_1.png"
-        },
-        {
-          "id": 1742189791798,
-          "image": "../../IMG/Parth/offer_2.png",
-          "name": "MAC Glow Play Tender Talk Lip Balm",
-          "currentPrice": 450,
-          "quantity": 1,
-          "selectedColor": "#DC5485"
-        },
-        {
-          "id": 1742189804537,
-          "image": "/IMG/Akshay/pink_lipstick.png",
-          "name": "Glow Play Tender Talk Lip Balm",
-          "currentPrice": 10.5,
-          "quantity": 1,
-          "selectedColor": "#EFCFCE"
-        }
-      ],
-      "addresses": [
-        {
-          "id": 1742189877694,
-          "firstName": "Parth",
-          "lastName": "Vaghasiya",
-          "mobileNumber": "7284854045",
-          "email": "parth@123gmail.com",
-          "zipCode": "395004",
-          "address1": "163, Gadhpur Township, Pasodara",
-          "address2": "Kathodara, surat",
-          "city": "surat",
-          "state": "Guj",
-          "country": "IND",
-          "addressType": "Home",
-          "otherType": null
-        },
-        {
-          "id": 1742189920486,
-          "firstName": "Jon",
-          "lastName": "Wick",
-          "mobileNumber": "1478523690",
-          "email": "john@wick123gmail.com",
-          "zipCode": "94043",
-          "address1": "1600 Fake Street",
-          "address2": "dfg",
-          "city": "Mountain View",
-          "state": "Raj",
-          "country": "USA",
-          "addressType": "Office",
-          "otherType": ""
-        },
-        {
-          "id": 1742189965230,
-          "firstName": "Jon",
-          "lastName": "Doe",
-          "mobileNumber": "7410741074",
-          "email": "Parth@gmail.com",
-          "zipCode": "784852",
-          "address1": "Rua Inexistente, 2000",
-          "address2": "Andar 2, Apartamento 1",
-          "city": "Belo Horizonte",
-          "state": "Goa",
-          "country": "UK",
-          "addressType": "Office",
-          "otherType": ""
-        }
       ]
+    },
+    {
+      "id": "b52a",
+      "fullName": "Sujal Parajapat",
+      "phoneNumber": "1234567890",
+      "email": "hi@gmail.com",
+      "password": "Hello@123",
+      "wishlist": []
+    },
+    {
+      "id": "4779",
+      "fullName": "Hello",
+      "phoneNumber": "1234567890",
+      "email": "Hello@gmail.com",
+      "password": "Hello@123",
+      "wishlist": []
     }
   ],
   "likeproduct": [
